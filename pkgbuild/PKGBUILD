@@ -1,7 +1,8 @@
 # Maintainer: Tales A. Mendonça <talesam@gmail.com>
+# Maintainer: Narayan Lima da Silva <narayan.song@gmail.com>
 
-pkgname=pkgbuild-template-translate
-pkgdesc="Package template for BigCommunity"
+pkgname=comm-tac-writer
+pkgdesc="Academic writing assistant using the Continuous Argumentation Technique (CAT)"
 # Uncomment and edit the following lines as needed
 #depends=('')
 #makedepends=('')
