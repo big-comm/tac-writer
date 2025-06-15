@@ -374,10 +374,8 @@ class ExportService:
         return True
     
     def _export_odt(self, project: Project, output_path: str) -> bool:
-        """Export to LibreOffice ODT format (simplified)"""
-        # This is a basic ODT implementation
-        # For production, consider using python-odf library
-        
+        """Export to LibreOffice ODT format with preserved formatting"""
+        # Generate content XML with formatting
         content_xml = self._generate_odt_content(project)
         
         try:
@@ -400,10 +398,37 @@ class ExportService:
                 with open(temp_path / 'content.xml', 'w', encoding='utf-8') as f:
                     f.write(content_xml)
                 
-                # Basic styles
+                # Styles file with custom styles for formatting
                 with open(temp_path / 'styles.xml', 'w', encoding='utf-8') as f:
                     f.write('''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0">
+<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+    xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
+    <office:styles>
+        <!-- Standard paragraph style -->
+        <style:style style:name="Standard" style:family="paragraph" style:class="text">
+            <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-indent="0cm"/>
+            <style:text-properties style:font-name="Liberation Sans" fo:font-size="12pt"/>
+        </style:style>
+        
+        <!-- Quote paragraph style -->
+        <style:style style:name="Quotations" style:family="paragraph" style:parent-style-name="Standard">
+            <style:paragraph-properties fo:margin-left="4cm" fo:margin-right="4cm"/>
+            <style:text-properties fo:font-style="italic" style:font-size="10pt"/>
+        </style:style>
+        
+        <!-- Custom styles for other paragraph types -->
+        <style:style style:name="Introduction" style:family="paragraph" style:parent-style-name="Standard">
+            <style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
+            <style:text-properties fo:font-weight="bold" style:font-size="14pt"/>
+        </style:style>
+        
+        <style:style style:name="Conclusion" style:family="paragraph" style:parent-style-name="Standard">
+            <style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
+            <style:text-properties fo:font-weight="bold" style:font-size="14pt"/>
+        </style:style>
+    </office:styles>
 </office:document-styles>''')
                 
                 # Create ZIP file
@@ -423,11 +448,13 @@ class ExportService:
             return True
     
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate ODT content XML"""
+        """Generate ODT content XML with preserved formatting"""
         content = '''<?xml version="1.0" encoding="UTF-8"?>
 <office:document-content 
     xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0">
+    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+    xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
     <office:body>
         <office:text>
 '''
@@ -435,13 +462,32 @@ class ExportService:
         # Title
         content += f'            <text:h text:style-name="Heading_20_1" text:outline-level="1">{project.name}</text:h>\n'
         
-        # Paragraphs
+        # Metadata
+        if project.metadata.get('author') or project.metadata.get('date'):
+            content += '            <text:p text:style-name="Standard">\n'
+            if project.metadata.get('author'):
+                content += f'                Author: {project.metadata["author"]}<text:line-break/>\n'
+            if project.metadata.get('date'):
+                content += f'                Date: {project.metadata["date"]}\n'
+            content += '            </text:p>\n'
+            content += '            <text:p text:style-name="Standard"/>\n'  # Empty line
+        
+        # Content
         for paragraph in project.paragraphs:
             p_content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
             
+            # Apply specific styles based on paragraph type
             if paragraph.type == ParagraphType.QUOTE:
+                # Use quote style with italics and margins
                 content += f'            <text:p text:style-name="Quotations">{p_content}</text:p>\n'
+            elif paragraph.type == ParagraphType.INTRODUCTION:
+                # Use introduction style
+                content += f'            <text:p text:style-name="Introduction">{p_content}</text:p>\n'
+            elif paragraph.type == ParagraphType.CONCLUSION:
+                # Use conclusion style
+                content += f'            <text:p text:style-name="Conclusion">{p_content}</text:p>\n'
             else:
+                # Default style for other paragraphs
                 content += f'            <text:p text:style-name="Standard">{p_content}</text:p>\n'
         
         content += '''        </office:text>

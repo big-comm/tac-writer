@@ -8,7 +8,7 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, GObject, Gio, Pango
 
-from core.models import Project, DEFAULT_TEMPLATES
+from core.models import Project, DEFAULT_TEMPLATES, Paragraph
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import ValidationHelper, FileHelper
@@ -263,7 +263,7 @@ class FormatDialog(Adw.Window):
     
     __gtype_name__ = 'TacFormatDialog'
     
-    def __init__(self, parent, paragraph=None, **kwargs):
+    def __init__(self, parent, paragraphs: list = None, **kwargs):
         super().__init__(**kwargs)
         
         self.set_title("Format Text")
@@ -272,9 +272,26 @@ class FormatDialog(Adw.Window):
         self.set_default_size(500, 600)  # Increased height
         self.set_resizable(True)
         
-        self.paragraph = paragraph
-        self.formatting = paragraph.formatting.copy() if paragraph else {}
+        self.paragraphs = paragraphs or []  # Lista de parágrafos a serem formatados
         
+        # Se tivermos parágrafos, usamos a formatação do primeiro como padrão
+        if self.paragraphs:
+            self.formatting = self.paragraphs[0].formatting.copy()
+        else:
+            self.formatting = {
+                'font_family': 'Liberation Sans',
+                'font_size': 12,
+                'bold': False,
+                'italic': False,
+                'underline': False,
+                'line_spacing': 1.5,
+                'indent_first_line': 1.25,
+                'indent_left': 0.0,
+                'indent_right': 0.0,
+                'alignment': 'left'
+            }
+        
+        # Create UI
         self._create_ui()
         self._load_current_formatting()
     
@@ -480,7 +497,7 @@ class FormatDialog(Adw.Window):
         self.alignment_row.set_selected(alignment_map.get(alignment, 0))
     
     def _on_apply_clicked(self, button):
-        """Apply formatting changes"""
+        """Apply formatting changes to all paragraphs"""
         # Update formatting dictionary
         model = self.font_row.get_model()
         selected_font = model.get_string(self.font_row.get_selected())
@@ -489,7 +506,7 @@ class FormatDialog(Adw.Window):
         alignment_names = ['left', 'center', 'right', 'justify']
         selected_alignment = alignment_names[self.alignment_row.get_selected()]
         
-        self.formatting.update({
+        new_formatting = {
             'font_family': selected_font,
             'font_size': int(self.size_row.get_value()),
             'bold': self.bold_row.get_active(),
@@ -500,11 +517,11 @@ class FormatDialog(Adw.Window):
             'indent_left': self.left_margin_row.get_value(),
             'indent_right': self.right_margin_row.get_value(),
             'alignment': selected_alignment
-        })
+        }
         
-        # Apply to paragraph if provided
-        if self.paragraph:
-            self.paragraph.update_formatting(self.formatting)
+        # Apply to all paragraphs
+        for paragraph in self.paragraphs:
+            paragraph.update_formatting(new_formatting)
         
         self.destroy()
 

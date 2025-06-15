@@ -8,19 +8,17 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from enum import Enum
 
-
 class ParagraphType(Enum):
     """Types of paragraphs in academic writing"""
-    INTRODUCTION = "introduction"      # Introduction paragraph
-    ARGUMENT = "argument"              # Argumentation paragraph
-    QUOTE = "quote"                    # Quote paragraph (renamed from argument_quote)
-    CONCLUSION = "conclusion"          # Conclusion paragraph
-
+    INTRODUCTION = "introduction"  # Introduction paragraph
+    ARGUMENT = "argument"  # Argumentation paragraph
+    QUOTE = "quote"  # Quote paragraph (renamed from argument_quote)
+    CONCLUSION = "conclusion"  # Conclusion paragraph
 
 class Paragraph:
     """Represents a single paragraph in a document"""
     
-    def __init__(self, paragraph_type: ParagraphType, content: str = "", 
+    def __init__(self, paragraph_type: ParagraphType, content: str = "",
                  paragraph_id: Optional[str] = None):
         self.id = paragraph_id or str(uuid.uuid4())
         self.type = paragraph_type
@@ -29,26 +27,32 @@ class Paragraph:
         self.modified_at = self.created_at
         self.order = 0
         
-        # Formatting options
+        # Formatting options (padrão sem recuo inicial)
         self.formatting = {
             'font_family': 'Liberation Sans',
             'font_size': 12,
             'line_spacing': 1.5,
             'alignment': 'left',
-            'indent_first_line': 1.25,  # cm
-            'indent_left': 0.0,         # cm
-            'indent_right': 0.0,        # cm
+            'indent_first_line': 0.0,  # Sem recuo por padrão
+            'indent_left': 0.0,  # cm
+            'indent_right': 0.0,  # cm
             'bold': False,
             'italic': False,
             'underline': False,
         }
         
+        # Formatação especial para Introduction
+        if paragraph_type == ParagraphType.INTRODUCTION:
+            self.formatting.update({
+                'indent_first_line': 1.5,  # 1,5cm de recuo na primeira linha
+            })
+        
         # Formatação especial para Quote
-        if paragraph_type == ParagraphType.QUOTE:
+        elif paragraph_type == ParagraphType.QUOTE:
             self.formatting.update({
                 'font_size': 10,
-                'indent_left': 4.0,   # 4cm
-                'line_spacing': 1.0,   # espaçamento simples
+                'indent_left': 4.0,  # 4cm
+                'line_spacing': 1.0,  # espaçamento simples
                 'italic': True
             })
     
@@ -107,7 +111,6 @@ class Paragraph:
         
         return paragraph
 
-
 class Project:
     """Represents a writing project with multiple paragraphs"""
     
@@ -153,7 +156,7 @@ class Project:
             }
         }
     
-    def add_paragraph(self, paragraph_type: ParagraphType, content: str = "", 
+    def add_paragraph(self, paragraph_type: ParagraphType, content: str = "",
                      position: Optional[int] = None) -> Paragraph:
         """Add a new paragraph to the project"""
         paragraph = Paragraph(paragraph_type, content)
@@ -279,11 +282,11 @@ class Project:
             project.paragraphs = [
                 Paragraph.from_dict(p_data) for p_data in data['paragraphs']
             ]
-            # Sort by order
-            project.paragraphs.sort(key=lambda p: p.order)
+        
+        # Sort by order
+        project.paragraphs.sort(key=lambda p: p.order)
         
         return project
-
 
 class DocumentTemplate:
     """Template for creating new documents"""
@@ -312,7 +315,6 @@ class DocumentTemplate:
         
         return project
 
-
 # Predefined templates
 ACADEMIC_ESSAY_TEMPLATE = DocumentTemplate(
     name="Academic Essay",
@@ -323,7 +325,7 @@ ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
 ]
 
 RESEARCH_PAPER_TEMPLATE = DocumentTemplate(
-    name="Research Paper", 
+    name="Research Paper",
     description="Extended research paper structure"
 )
 RESEARCH_PAPER_TEMPLATE.paragraph_structure = [
@@ -334,3 +336,4 @@ DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
     RESEARCH_PAPER_TEMPLATE
 ]
+

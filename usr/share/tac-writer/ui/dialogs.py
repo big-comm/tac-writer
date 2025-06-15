@@ -13,23 +13,22 @@ from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import ValidationHelper, FileHelper
 
-
 class NewProjectDialog(Adw.Window):
     """Dialog for creating new projects"""
     
     __gtype_name__ = 'TacNewProjectDialog'
+    
     __gsignals__ = {
         'project-created': (GObject.SIGNAL_RUN_FIRST, None, (object,)),
     }
     
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
-        
         self.set_title("New Project")
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(600, 700)  # Increased size significantly
-        self.set_resizable(True)  # Allow resizing
+        self.set_default_size(600, 700) # Increased size significantly
+        self.set_resizable(True) # Allow resizing
         
         # Get project manager from parent
         self.project_manager = parent.project_manager
@@ -66,7 +65,7 @@ class NewProjectDialog(Adw.Window):
         # Scrolled window for content
         scrolled = Gtk.ScrolledWindow()
         scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scrolled.set_min_content_height(600)  # Ensure minimum height
+        scrolled.set_min_content_height(600) # Ensure minimum height
         content_box.append(scrolled)
         
         # Main content
@@ -75,7 +74,7 @@ class NewProjectDialog(Adw.Window):
         main_box.set_margin_end(24)
         main_box.set_margin_top(24)
         main_box.set_margin_bottom(24)
-        main_box.set_spacing(32)  # Increased spacing between sections
+        main_box.set_spacing(32) # Increased spacing between sections
         scrolled.set_child(main_box)
         
         # Project details section
@@ -95,10 +94,10 @@ class NewProjectDialog(Adw.Window):
         
         self.name_entry = Gtk.Entry()
         self.name_entry.set_placeholder_text("Enter project name...")
-        self.name_entry.set_text("My New Project")  # Default name
+        self.name_entry.set_text("My New Project") # Default name
         self.name_entry.set_size_request(200, -1)
         self.name_entry.connect('changed', self._on_name_changed)
-        self.name_entry.connect('activate', self._on_name_activate)  # Enter key support
+        self.name_entry.connect('activate', self._on_name_activate) # Enter key support
         
         # Initial validation check
         self._on_name_changed(self.name_entry)
@@ -117,7 +116,6 @@ class NewProjectDialog(Adw.Window):
         self.author_entry = Gtk.Entry()
         self.author_entry.set_placeholder_text("Your name...")
         self.author_entry.set_size_request(200, -1)
-        
         author_row.add_suffix(self.author_entry)
         details_group.add(author_row)
         
@@ -136,7 +134,7 @@ class NewProjectDialog(Adw.Window):
         
         desc_scrolled = Gtk.ScrolledWindow()
         desc_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        desc_scrolled.set_size_request(-1, 120)  # Increased height for description
+        desc_scrolled.set_size_request(-1, 120) # Increased height for description
         
         self.description_view = Gtk.TextView()
         self.description_view.set_wrap_mode(Gtk.WrapMode.WORD)
@@ -164,7 +162,7 @@ class NewProjectDialog(Adw.Window):
         self.template_combo = Gtk.ComboBoxText()
         for template in DEFAULT_TEMPLATES:
             self.template_combo.append(template.name, template.name)
-        self.template_combo.set_active(0)  # Select first template by default
+        self.template_combo.set_active(0) # Select first template by default
         
         template_row = Adw.ActionRow()
         template_row.set_title("Document Template")
@@ -257,7 +255,6 @@ class NewProjectDialog(Adw.Window):
             error_dialog.add_response("ok", "OK")
             error_dialog.present()
 
-
 class FormatDialog(Adw.Window):
     """Dialog for text formatting options"""
     
@@ -265,14 +262,13 @@ class FormatDialog(Adw.Window):
     
     def __init__(self, parent, paragraphs: list = None, **kwargs):
         super().__init__(**kwargs)
-        
         self.set_title("Format Text")
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(500, 600)  # Increased height
+        self.set_default_size(500, 600) # Increased height
         self.set_resizable(True)
         
-        self.paragraphs = paragraphs or []  # Lista de parágrafos a serem formatados
+        self.paragraphs = paragraphs or [] # Lista de parágrafos a serem formatados
         
         # Se tivermos parágrafos, usamos a formatação do primeiro como padrão
         if self.paragraphs:
@@ -337,14 +333,12 @@ class FormatDialog(Adw.Window):
             from gi.repository import PangoCairo
             font_map = PangoCairo.font_map_get_default()
             families = font_map.list_families()
-            
         except:
             try:
                 # Method 2: Try Pango context
                 context = Pango.Context()
                 font_map = context.get_font_map()
                 families = font_map.list_families()
-                
             except:
                 try:
                     # Method 3: Use fontconfig command
@@ -356,11 +350,10 @@ class FormatDialog(Adw.Window):
                             if line:
                                 family = line.split(',')[0].strip()
                                 font_names.add(family)
-                        
                         font_names = sorted(list(font_names))
                         for font_name in font_names:
                             font_model.append(font_name)
-                        families = None  # Skip the normal processing below
+                        families = None # Skip the normal processing below
                     else:
                         families = []
                 except:
@@ -371,7 +364,6 @@ class FormatDialog(Adw.Window):
             font_names = []
             for family in families:
                 font_names.append(family.get_name())
-            
             font_names.sort()
             for font_name in font_names:
                 font_model.append(font_name)
@@ -525,7 +517,6 @@ class FormatDialog(Adw.Window):
         
         self.destroy()
 
-
 class ExportDialog(Adw.Window):
     """Dialog for exporting projects"""
     
@@ -533,11 +524,10 @@ class ExportDialog(Adw.Window):
     
     def __init__(self, parent, project: Project, export_service: ExportService, **kwargs):
         super().__init__(**kwargs)
-        
         self.set_title("Export Project")
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(550, 500)  # Better proportions
+        self.set_default_size(550, 500) # Better proportions
         self.set_resizable(True)
         
         self.project = project
@@ -596,15 +586,18 @@ class ExportDialog(Adw.Window):
         self.format_row.set_title("Format")
         format_model = Gtk.StringList()
         formats = [
-            ("LibreOffice Document (ODT)", "odt"),  # Default first
-            ("Plain Text (TXT)", "txt")
+            ("ODT", "odt"),
+            ("TXT", "txt"), 
+            ("PDF", "pdf")
         ]
+        
         self.format_data = []
         for display_name, format_code in formats:
             format_model.append(display_name)
             self.format_data.append(format_code)
+        
         self.format_row.set_model(format_model)
-        self.format_row.set_selected(0)  # ODT as default
+        self.format_row.set_selected(0) # ODT como padrão
         export_group.add(self.format_row)
         
         # Include metadata
@@ -628,7 +621,6 @@ class ExportDialog(Adw.Window):
         choose_button.set_valign(Gtk.Align.CENTER)
         choose_button.connect('clicked', self._on_choose_location)
         self.location_row.add_suffix(choose_button)
-        
         location_group.add(self.location_row)
         
         # Initialize with default location
@@ -693,7 +685,6 @@ class ExportDialog(Adw.Window):
                 )
                 success_dialog.add_response("ok", "OK")
                 success_dialog.present()
-                
                 self.destroy()
             else:
                 # Show error message
@@ -715,7 +706,6 @@ class ExportDialog(Adw.Window):
             error_dialog.add_response("ok", "OK")
             error_dialog.present()
 
-
 class PreferencesDialog(Adw.PreferencesWindow):
     """Preferences dialog"""
     
@@ -723,11 +713,10 @@ class PreferencesDialog(Adw.PreferencesWindow):
     
     def __init__(self, parent, config: Config, **kwargs):
         super().__init__(**kwargs)
-        
         self.set_title("Preferences")
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(700, 600)  # Larger for preferences
+        self.set_default_size(700, 600) # Larger for preferences
         self.set_resizable(True)
         
         self.config = config
@@ -778,14 +767,12 @@ class PreferencesDialog(Adw.PreferencesWindow):
             from gi.repository import PangoCairo
             font_map = PangoCairo.font_map_get_default()
             families = font_map.list_families()
-            
         except:
             try:
                 # Method 2: Try Pango context
                 context = Pango.Context()
                 font_map = context.get_font_map()
                 families = font_map.list_families()
-                
             except:
                 try:
                     # Method 3: Use fontconfig command
@@ -797,11 +784,10 @@ class PreferencesDialog(Adw.PreferencesWindow):
                             if line:
                                 family = line.split(',')[0].strip()
                                 font_names.add(family)
-                        
                         font_names = sorted(list(font_names))
                         for font_name in font_names:
                             font_model.append(font_name)
-                        families = None  # Skip the normal processing below
+                        families = None # Skip the normal processing below
                     else:
                         families = []
                 except:
@@ -812,7 +798,6 @@ class PreferencesDialog(Adw.PreferencesWindow):
             font_names = []
             for family in families:
                 font_names.append(family.get_name())
-            
             font_names.sort()
             for font_name in font_names:
                 font_model.append(font_name)
@@ -915,10 +900,8 @@ class PreferencesDialog(Adw.PreferencesWindow):
         """Handle line numbers toggle"""
         self.config.set('show_line_numbers', switch.get_active())
 
-
 def AboutDialog(parent):
     """Create and show about dialog"""
-    
     dialog = Adw.AboutWindow()
     dialog.set_transient_for(parent)
     dialog.set_modal(True)
@@ -941,11 +924,10 @@ def AboutDialog(parent):
     dialog.set_developers([
         "Main Developer https://github.com/user"
     ])
-    
     dialog.set_designers([
         "Design Team"
     ])
-    
     dialog.set_copyright("© 2024 TAC Development Team")
     
     return dialog
+

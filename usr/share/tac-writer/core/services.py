@@ -86,7 +86,7 @@ class ProjectManager:
                     print(f"Error reading project file {file_path.name}: {e}")
                 except Exception as e:
                     print(f"Unexpected error reading {file_path.name}: {e}")
-        
+                    
         except Exception as e:
             print(f"Error listing projects: {e}")
         
@@ -107,6 +107,7 @@ class ProjectManager:
             # If not found by ID, try as direct file path
             if not file_path.exists():
                 file_path = Path(project_identifier)
+                
                 if not file_path.exists():
                     # Search by name
                     for candidate in self.projects_dir.glob("*.json"):
@@ -173,7 +174,6 @@ class ProjectManager:
                 return False
             
             file_path = self.projects_dir / f"{project.id}.json"
-            
             if file_path.exists():
                 # Create trash directory
                 trash_dir = self.projects_dir / '.trash'
@@ -243,12 +243,11 @@ class ExportService:
     """Service for exporting projects to various formats"""
     
     def __init__(self):
-        self.supported_formats = ['odt', 'txt']  # Only ODT and TXT as requested
+        self.supported_formats = ['odt', 'txt', 'pdf']
     
     def export_project(self, project: Project, output_path: str, format_type: str = 'txt') -> bool:
         """Export project to specified format"""
         format_type = format_type.lower()
-        
         if format_type not in self.supported_formats:
             print(f"Unsupported format: {format_type}")
             return False
@@ -256,17 +255,13 @@ class ExportService:
         try:
             if format_type == 'txt':
                 return self._export_txt(project, output_path)
-            elif format_type == 'html':
-                return self._export_html(project, output_path)
             elif format_type == 'odt':
                 return self._export_odt(project, output_path)
-            elif format_type == 'rtf':
-                return self._export_rtf(project, output_path)
-            
+            elif format_type == 'pdf':
+                return self._export_pdf(project, output_path)
         except Exception as e:
             print(f"Error exporting project to {format_type}: {e}")
             return False
-        
         return False
     
     def _export_txt(self, project: Project, output_path: str) -> bool:
@@ -297,82 +292,6 @@ class ExportService:
         
         return True
     
-    def _export_html(self, project: Project, output_path: str) -> bool:
-        """Export to HTML format"""
-        html_content = f'''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{project.name}</title>
-    <style>
-        body {{
-            font-family: '{project.document_formatting.get('font_family', 'Times New Roman')}', serif;
-            font-size: {project.document_formatting.get('font_size', 12)}pt;
-            line-height: {project.document_formatting.get('line_spacing', 1.5)};
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fff;
-            color: #000;
-        }}
-        h1 {{
-            text-align: center;
-            margin-bottom: 2em;
-            border-bottom: 2px solid #333;
-            padding-bottom: 0.5em;
-        }}
-        .paragraph {{
-            margin-bottom: 1.5em;
-            text-align: justify;
-            text-indent: {project.document_formatting.get('margins', {}).get('left', 1.25)}cm;
-        }}
-        .quote {{
-            margin: 2em 0;
-            padding: 1em;
-            border-left: 4px solid #ccc;
-            background-color: #f9f9f9;
-            font-style: italic;
-            margin-left: 4cm;
-            margin-right: 4cm;
-        }}
-        .metadata {{
-            text-align: center;
-            margin-bottom: 3em;
-            color: #666;
-        }}
-    </style>
-</head>
-<body>
-    <h1>{project.name}</h1>
-'''
-        
-        # Add metadata
-        if project.metadata.get('author') or project.metadata.get('date'):
-            html_content += '    <div class="metadata">\n'
-            if project.metadata.get('author'):
-                html_content += f'        <p>by {project.metadata["author"]}</p>\n'
-            if project.metadata.get('date'):
-                html_content += f'        <p>{project.metadata["date"]}</p>\n'
-            html_content += '    </div>\n'
-        
-        # Add paragraphs
-        for paragraph in project.paragraphs:
-            content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-            
-            if paragraph.type == ParagraphType.QUOTE:
-                html_content += f'    <div class="quote">{content}</div>\n'
-            else:
-                html_content += f'    <p class="paragraph">{content}</p>\n'
-        
-        html_content += '''</body>
-</html>'''
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(html_content)
-        
-        return True
-    
     def _export_odt(self, project: Project, output_path: str) -> bool:
         """Export to LibreOffice ODT format with preserved formatting"""
         # Generate content XML with formatting
@@ -389,133 +308,187 @@ class ExportService:
                 with open(temp_path / 'META-INF' / 'manifest.xml', 'w', encoding='utf-8') as f:
                     f.write('''<?xml version="1.0" encoding="UTF-8"?>
 <manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0">
-    <manifest:file-entry manifest:full-path="/" manifest:version="1.2" manifest:media-type="application/vnd.oasis.opendocument.text"/>
+    <manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.text"/>
     <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
     <manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
+    <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
 </manifest:manifest>''')
                 
                 # Content file
                 with open(temp_path / 'content.xml', 'w', encoding='utf-8') as f:
                     f.write(content_xml)
                 
-                # Styles file with custom styles for formatting
+                # Styles file
                 with open(temp_path / 'styles.xml', 'w', encoding='utf-8') as f:
-                    f.write('''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
-    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-    xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
-    <office:styles>
-        <!-- Standard paragraph style -->
-        <style:style style:name="Standard" style:family="paragraph" style:class="text">
-            <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-indent="0cm"/>
-            <style:text-properties style:font-name="Liberation Sans" fo:font-size="12pt"/>
-        </style:style>
-        
-        <!-- Quote paragraph style -->
-        <style:style style:name="Quotations" style:family="paragraph" style:parent-style-name="Standard">
-            <style:paragraph-properties fo:margin-left="4cm" fo:margin-right="4cm"/>
-            <style:text-properties fo:font-style="italic" style:font-size="10pt"/>
-        </style:style>
-        
-        <!-- Custom styles for other paragraph types -->
-        <style:style style:name="Introduction" style:family="paragraph" style:parent-style-name="Standard">
-            <style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-            <style:text-properties fo:font-weight="bold" style:font-size="14pt"/>
-        </style:style>
-        
-        <style:style style:name="Conclusion" style:family="paragraph" style:parent-style-name="Standard">
-            <style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-            <style:text-properties fo:font-weight="bold" style:font-size="14pt"/>
-        </style:style>
-    </office:styles>
-</office:document-styles>''')
+                    f.write(self._generate_odt_styles())
+                
+                # Meta file
+                with open(temp_path / 'meta.xml', 'w', encoding='utf-8') as f:
+                    f.write(self._generate_odt_meta(project))
                 
                 # Create ZIP file
                 with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zf:
                     for file_path in temp_path.rglob('*'):
                         if file_path.is_file():
-                            arcname = str(file_path.relative_to(temp_path))
+                            arcname = file_path.relative_to(temp_path)
                             zf.write(file_path, arcname)
             
             return True
             
         except Exception as e:
-            print(f"Error creating ODT file: {e}")
-            # Fallback to XML file
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(content_xml)
+            print(f"Error creating ODT: {e}")
+            return False
+    
+    def _export_pdf(self, project: Project, output_path: str) -> bool:
+        """Export to PDF format"""
+        try:
+            from reportlab.lib.pagesizes import A4
+            from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
+            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+            from reportlab.lib.units import cm
+            
+            # Create PDF document
+            doc = SimpleDocTemplate(output_path, pagesize=A4,
+                                  rightMargin=3*cm, leftMargin=3*cm,
+                                  topMargin=2.5*cm, bottomMargin=2.5*cm)
+            
+            story = []
+            styles = getSampleStyleSheet()
+            
+            # Title
+            title_style = ParagraphStyle(
+                'CustomTitle',
+                parent=styles['Heading1'],
+                fontSize=16,
+                spaceAfter=30,
+                alignment=1  # Center
+            )
+            story.append(RLParagraph(project.name, title_style))
+            
+            # Content
+            for paragraph in project.paragraphs:
+                # Create style based on paragraph type and formatting
+                style_name = f'Custom_{paragraph.type.value}'
+                
+                if paragraph.type == ParagraphType.QUOTE:
+                    para_style = ParagraphStyle(
+                        style_name,
+                        parent=styles['Normal'],
+                        fontSize=10,
+                        leftIndent=4*cm,
+                        fontName='Helvetica-Oblique',
+                        spaceBefore=12,
+                        spaceAfter=12
+                    )
+                elif paragraph.type == ParagraphType.INTRODUCTION:
+                    para_style = ParagraphStyle(
+                        style_name,
+                        parent=styles['Normal'],
+                        fontSize=12,
+                        firstLineIndent=1.5*cm,
+                        spaceBefore=12,
+                        spaceAfter=12
+                    )
+                else:
+                    para_style = ParagraphStyle(
+                        style_name,
+                        parent=styles['Normal'],
+                        fontSize=12,
+                        spaceBefore=12,
+                        spaceAfter=12
+                    )
+                
+                story.append(RLParagraph(paragraph.content, para_style))
+            
+            doc.build(story)
             return True
+            
+        except ImportError:
+            print("ReportLab not installed. Install with: pip install reportlab")
+            return False
+        except Exception as e:
+            print(f"Error creating PDF: {e}")
+            return False
     
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate ODT content XML with preserved formatting"""
-        content = '''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-content 
-    xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
-    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-    xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
-    <office:body>
-        <office:text>
-'''
+        """Generate content.xml for ODT with proper formatting"""
+        content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+                        xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+                        xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+                        xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
+<office:automatic-styles>
+    <style:style style:name="Title" style:family="paragraph">
+        <style:paragraph-properties fo:text-align="center" fo:margin-bottom="1cm"/>
+        <style:text-properties fo:font-size="16pt" fo:font-weight="bold"/>
+    </style:style>
+    <style:style style:name="Introduction" style:family="paragraph">
+        <style:paragraph-properties fo:text-indent="1.5cm" fo:margin-bottom="0.5cm"/>
+        <style:text-properties fo:font-size="12pt"/>
+    </style:style>
+    <style:style style:name="Quote" style:family="paragraph">
+        <style:paragraph-properties fo:margin-left="4cm" fo:margin-bottom="0.5cm"/>
+        <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
+    </style:style>
+    <style:style style:name="Normal" style:family="paragraph">
+        <style:paragraph-properties fo:margin-bottom="0.5cm"/>
+        <style:text-properties fo:font-size="12pt"/>
+    </style:style>
+</office:automatic-styles>
+<office:body>
+<office:text>'''
         
         # Title
-        content += f'            <text:h text:style-name="Heading_20_1" text:outline-level="1">{project.name}</text:h>\n'
+        content_xml += f'<text:h text:style-name="Title">{project.name}</text:h>\n'
         
-        # Metadata
-        if project.metadata.get('author') or project.metadata.get('date'):
-            content += '            <text:p text:style-name="Standard">\n'
-            if project.metadata.get('author'):
-                content += f'                Author: {project.metadata["author"]}<text:line-break/>\n'
-            if project.metadata.get('date'):
-                content += f'                Date: {project.metadata["date"]}\n'
-            content += '            </text:p>\n'
-            content += '            <text:p text:style-name="Standard"/>\n'  # Empty line
-        
-        # Content
+        # Content paragraphs
         for paragraph in project.paragraphs:
-            p_content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-            
-            # Apply specific styles based on paragraph type
-            if paragraph.type == ParagraphType.QUOTE:
-                # Use quote style with italics and margins
-                content += f'            <text:p text:style-name="Quotations">{p_content}</text:p>\n'
-            elif paragraph.type == ParagraphType.INTRODUCTION:
-                # Use introduction style
-                content += f'            <text:p text:style-name="Introduction">{p_content}</text:p>\n'
-            elif paragraph.type == ParagraphType.CONCLUSION:
-                # Use conclusion style
-                content += f'            <text:p text:style-name="Conclusion">{p_content}</text:p>\n'
+            # Determine style based on paragraph type
+            if paragraph.type == ParagraphType.INTRODUCTION:
+                style_name = "Introduction"
+            elif paragraph.type == ParagraphType.QUOTE:
+                style_name = "Quote"
             else:
-                # Default style for other paragraphs
-                content += f'            <text:p text:style-name="Standard">{p_content}</text:p>\n'
+                style_name = "Normal"
+            
+            # Escape XML special characters
+            content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+            content_xml += f'<text:p text:style-name="{style_name}">{content}</text:p>\n'
         
-        content += '''        </office:text>
-    </office:body>
+        content_xml += '''</office:text>
+</office:body>
 </office:document-content>'''
         
-        return content
+        return content_xml
     
-    def _export_rtf(self, project: Project, output_path: str) -> bool:
-        """Export to RTF format"""
-        rtf_content = r'''{\rtf1\ansi\deff0 {\fonttbl {\f0 Times New Roman;}}
-'''
+    def _generate_odt_styles(self) -> str:
+        """Generate styles.xml for ODT"""
+        return '''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+                       xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+                       xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
+<office:styles>
+    <style:default-style style:family="paragraph">
+        <style:paragraph-properties fo:line-height="150%"/>
+        <style:text-properties style:font-name="Liberation Sans" fo:font-size="12pt"/>
+    </style:default-style>
+</office:styles>
+</office:document-styles>'''
+    
+    def _generate_odt_meta(self, project: Project) -> str:
+        """Generate meta.xml for ODT"""
+        author = project.metadata.get('author', '')
+        creation_date = datetime.now().isoformat()
         
-        # Title
-        rtf_content += f'\\f0\\fs24\\b {project.name}\\b0\\par\\par\n'
-        
-        # Paragraphs
-        for paragraph in project.paragraphs:
-            content = paragraph.content.replace('\\', '\\\\').replace('{', '\\{').replace('}', '\\}')
-            
-            if paragraph.type == ParagraphType.QUOTE:
-                rtf_content += f'\\li720\\ri720\\i {content}\\i0\\li0\\ri0\\par\\par\n'  # Added right indent
-            else:
-                rtf_content += f'\\fi720 {content}\\par\\par\n'
-        
-        rtf_content += '}'
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(rtf_content)
-        
-        return True
+        return f'''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+                     xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+                     xmlns:dc="http://purl.org/dc/elements/1.1/">
+<office:meta>
+    <meta:generator>TAC - Text Analysis and Creation</meta:generator>
+    <dc:title>{project.name}</dc:title>
+    <dc:creator>{author}</dc:creator>
+    <meta:creation-date>{creation_date}</meta:creation-date>
+</office:meta>
+</office:document-meta>'''
+
