@@ -10,10 +10,12 @@ from enum import Enum
 
 class ParagraphType(Enum):
     """Types of paragraphs in academic writing"""
+    TITLE_1 = "title_1"           # Main title/chapter title (18pt)
+    TITLE_2 = "title_2"           # Subtitle/section title (16pt)
     INTRODUCTION = "introduction"  # Introduction paragraph
-    ARGUMENT = "argument"  # Argumentation paragraph
-    QUOTE = "quote"  # Quote paragraph (renamed from argument_quote)
-    CONCLUSION = "conclusion"  # Conclusion paragraph
+    ARGUMENT = "argument"          # Argumentation paragraph
+    QUOTE = "quote"               # Quote paragraph (renamed from argument_quote)
+    CONCLUSION = "conclusion"      # Conclusion paragraph
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -41,8 +43,26 @@ class Paragraph:
             'underline': False,
         }
         
+        # Formatação especial para Title 1
+        if paragraph_type == ParagraphType.TITLE_1:
+            self.formatting.update({
+                'font_size': 18,  # 18pt para títulos principais
+                'bold': True,     # Negrito por padrão
+                'alignment': 'left',
+                'line_spacing': 1.2,  # Espaçamento menor para títulos
+            })
+        
+        # Formatação especial para Title 2
+        elif paragraph_type == ParagraphType.TITLE_2:
+            self.formatting.update({
+                'font_size': 16,  # 16pt para subtítulos
+                'bold': True,     # Negrito por padrão
+                'alignment': 'left',
+                'line_spacing': 1.2,  # Espaçamento menor para títulos
+            })
+        
         # Formatação especial para Introduction
-        if paragraph_type == ParagraphType.INTRODUCTION:
+        elif paragraph_type == ParagraphType.INTRODUCTION:
             self.formatting.update({
                 'indent_first_line': 1.5,  # 1,5cm de recuo na primeira linha
             })
@@ -63,6 +83,18 @@ class Paragraph:
     
     def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
         """Update paragraph formatting"""
+        # Para Title 1 e Title 2, preservar o tamanho da fonte se não for explicitamente alterado
+        if self.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+            # Se o usuário não está explicitamente alterando o tamanho da fonte,
+            # preservar o tamanho padrão do tipo de título
+            if 'font_size' not in formatting_updates:
+                if self.type == ParagraphType.TITLE_1:
+                    formatting_updates = formatting_updates.copy()
+                    formatting_updates['font_size'] = 18
+                elif self.type == ParagraphType.TITLE_2:
+                    formatting_updates = formatting_updates.copy()
+                    formatting_updates['font_size'] = 16
+        
         self.formatting.update(formatting_updates)
         self.modified_at = datetime.now()
     

@@ -1,6 +1,5 @@
 """
 TAC UI Components
-
 Reusable UI components for the TAC application
 """
 
@@ -15,6 +14,7 @@ from utils.helpers import TextHelper, FormatHelper
 
 class WelcomeView(Gtk.Box):
     """Welcome view shown when no project is open"""
+    
     __gtype_name__ = 'TacWelcomeView'
     
     __gsignals__ = {
@@ -53,13 +53,13 @@ class WelcomeView(Gtk.Box):
         
         # Title
         title = Gtk.Label()
-        title.set_markup("<big><b>Welcome to TAC</b></big>")
+        title.set_markup("<span size='large' weight='bold'>Welcome to TAC</span>")
         title.set_halign(Gtk.Align.CENTER)
         content_box.append(title)
         
         # Subtitle
         subtitle = Gtk.Label()
-        subtitle.set_markup("Text Analysis and Creation")
+        subtitle.set_markup("<span size='medium'>Text Analysis and Creation</span>")
         subtitle.set_halign(Gtk.Align.CENTER)
         subtitle.add_css_class("dim-label")
         content_box.append(subtitle)
@@ -92,8 +92,8 @@ class WelcomeView(Gtk.Box):
             start_button.add_css_class("suggested-action")
             start_button.set_valign(Gtk.Align.CENTER)
             start_button.connect('clicked', lambda btn, tmpl=template.name: self.emit('create-project', tmpl))
-            row.add_suffix(start_button)
             
+            row.add_suffix(start_button)
             template_group.add(row)
         
         self.append(template_group)
@@ -106,6 +106,7 @@ class WelcomeView(Gtk.Box):
 
 class ProjectListWidget(Gtk.Box):
     """Widget for displaying and selecting projects"""
+    
     __gtype_name__ = 'TacProjectListWidget'
     
     __gsignals__ = {
@@ -133,6 +134,7 @@ class ProjectListWidget(Gtk.Box):
         self.project_list.set_selection_mode(Gtk.SelectionMode.SINGLE)
         self.project_list.connect('row-activated', self._on_project_activated)
         self.project_list.set_filter_func(self._filter_projects)
+        
         scrolled.set_child(self.project_list)
         self.append(scrolled)
         
@@ -367,11 +369,13 @@ class ParagraphEditor(Gtk.Box):
         
         # Create text editor
         self._create_text_editor()
+        
         # Create header
         self._create_header()
         
         # Setup drag and drop
         self._setup_drag_and_drop()
+        
         # Apply initial formatting
         self._apply_formatting()
     
@@ -556,8 +560,10 @@ class ParagraphEditor(Gtk.Box):
     def _get_type_label(self) -> str:
         """Get display label for paragraph type"""
         type_labels = {
+            ParagraphType.TITLE_1: "Title 1",
+            ParagraphType.TITLE_2: "Title 2",
             ParagraphType.INTRODUCTION: "Introduction",
-            ParagraphType.ARGUMENT: "Argument", 
+            ParagraphType.ARGUMENT: "Argument",
             ParagraphType.QUOTE: "Quote",
             ParagraphType.CONCLUSION: "Conclusion"
         }
@@ -642,6 +648,7 @@ class ParagraphEditor(Gtk.Box):
         dialog.set_response_appearance("remove", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
+        
         dialog.connect('response', self._on_remove_confirmed)
         dialog.present()
     
@@ -769,3 +776,4 @@ class FormatToolbar(Gtk.Box):
         self.bold_button.set_active(formatting.get('bold', False))
         self.italic_button.set_active(formatting.get('italic', False))
         self.underline_button.set_active(formatting.get('underline', False))
+

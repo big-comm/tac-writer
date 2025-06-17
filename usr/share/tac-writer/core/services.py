@@ -280,7 +280,11 @@ class ExportService:
             
             # Content
             for i, paragraph in enumerate(project.paragraphs):
-                if paragraph.type == ParagraphType.QUOTE:
+                if paragraph.type == ParagraphType.TITLE_1:
+                    f.write(f"# {paragraph.content}\n")
+                elif paragraph.type == ParagraphType.TITLE_2:
+                    f.write(f"## {paragraph.content}\n")
+                elif paragraph.type == ParagraphType.QUOTE:
                     f.write(f"[QUOTE {i+1}]\n")
                     # Indent quoted text
                     lines = paragraph.content.split('\n')
@@ -365,20 +369,40 @@ class ExportService:
             )
             story.append(RLParagraph(project.name, title_style))
             
-            # Content
+            # Content - SEM espaçamento entre parágrafos
             for paragraph in project.paragraphs:
                 # Create style based on paragraph type and formatting
                 style_name = f'Custom_{paragraph.type.value}'
                 
-                if paragraph.type == ParagraphType.QUOTE:
+                if paragraph.type == ParagraphType.TITLE_1:
+                    para_style = ParagraphStyle(
+                        style_name,
+                        parent=styles['Normal'],
+                        fontSize=18,
+                        fontName='Helvetica-Bold',
+                        spaceBefore=0,
+                        spaceAfter=0,
+                        alignment=0  # Left
+                    )
+                elif paragraph.type == ParagraphType.TITLE_2:
+                    para_style = ParagraphStyle(
+                        style_name,
+                        parent=styles['Normal'],
+                        fontSize=16,
+                        fontName='Helvetica-Bold',
+                        spaceBefore=0,
+                        spaceAfter=0,
+                        alignment=0  # Left
+                    )
+                elif paragraph.type == ParagraphType.QUOTE:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=10,
                         leftIndent=4*cm,
                         fontName='Helvetica-Oblique',
-                        spaceBefore=12,
-                        spaceAfter=12
+                        spaceBefore=0,  # REMOVIDO o espaçamento
+                        spaceAfter=0    # REMOVIDO o espaçamento
                     )
                 elif paragraph.type == ParagraphType.INTRODUCTION:
                     para_style = ParagraphStyle(
@@ -386,16 +410,16 @@ class ExportService:
                         parent=styles['Normal'],
                         fontSize=12,
                         firstLineIndent=1.5*cm,
-                        spaceBefore=12,
-                        spaceAfter=12
+                        spaceBefore=0,  # REMOVIDO o espaçamento
+                        spaceAfter=0    # REMOVIDO o espaçamento
                     )
                 else:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=12,
-                        spaceBefore=12,
-                        spaceAfter=12
+                        spaceBefore=0,  # REMOVIDO o espaçamento
+                        spaceAfter=0    # REMOVIDO o espaçamento
                     )
                 
                 story.append(RLParagraph(paragraph.content, para_style))
@@ -411,7 +435,7 @@ class ExportService:
             return False
     
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate content.xml for ODT with proper formatting"""
+        """Generate content.xml for ODT with proper formatting - SEM espaçamento entre parágrafos"""
         content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
 <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
                         xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
@@ -422,16 +446,24 @@ class ExportService:
         <style:paragraph-properties fo:text-align="center" fo:margin-bottom="1cm"/>
         <style:text-properties fo:font-size="16pt" fo:font-weight="bold"/>
     </style:style>
+    <style:style style:name="Title1" style:family="paragraph">
+        <style:paragraph-properties fo:margin-bottom="0cm"/>
+        <style:text-properties fo:font-size="18pt" fo:font-weight="bold"/>
+    </style:style>
+    <style:style style:name="Title2" style:family="paragraph">
+        <style:paragraph-properties fo:margin-bottom="0cm"/>
+        <style:text-properties fo:font-size="16pt" fo:font-weight="bold"/>
+    </style:style>
     <style:style style:name="Introduction" style:family="paragraph">
-        <style:paragraph-properties fo:text-indent="1.5cm" fo:margin-bottom="0.5cm"/>
+        <style:paragraph-properties fo:text-indent="1.5cm" fo:margin-bottom="0cm"/>
         <style:text-properties fo:font-size="12pt"/>
     </style:style>
     <style:style style:name="Quote" style:family="paragraph">
-        <style:paragraph-properties fo:margin-left="4cm" fo:margin-bottom="0.5cm"/>
+        <style:paragraph-properties fo:margin-left="4cm" fo:margin-bottom="0cm"/>
         <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
     </style:style>
     <style:style style:name="Normal" style:family="paragraph">
-        <style:paragraph-properties fo:margin-bottom="0.5cm"/>
+        <style:paragraph-properties fo:margin-bottom="0cm"/>
         <style:text-properties fo:font-size="12pt"/>
     </style:style>
 </office:automatic-styles>
@@ -444,7 +476,11 @@ class ExportService:
         # Content paragraphs
         for paragraph in project.paragraphs:
             # Determine style based on paragraph type
-            if paragraph.type == ParagraphType.INTRODUCTION:
+            if paragraph.type == ParagraphType.TITLE_1:
+                style_name = "Title1"
+            elif paragraph.type == ParagraphType.TITLE_2:
+                style_name = "Title2"
+            elif paragraph.type == ParagraphType.INTRODUCTION:
                 style_name = "Introduction"
             elif paragraph.type == ParagraphType.QUOTE:
                 style_name = "Quote"
