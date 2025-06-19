@@ -74,6 +74,18 @@ class WelcomeView(Gtk.Box):
         
         self.append(content_box)
     
+        #Note
+        title = Gtk.Label()
+        title.set_markup("<span size='medium'><i><b>Note:</b> exporting to ODT might require some adjustment in your Office Suite.</i></span>")
+        title.set_halign(Gtk.Align.CENTER)
+        content_box.append(title)
+
+        #Tips
+        title = Gtk.Label()
+        title.set_markup("<span size='medium'><i><b>Tip:</b> for directly quotes with less than 4 lines, use argument box.</i></span>")
+        title.set_halign(Gtk.Align.CENTER)
+        content_box.append(title)
+
     def _create_template_section(self):
         """Create template selection section"""
         template_group = Adw.PreferencesGroup()
@@ -98,6 +110,9 @@ class WelcomeView(Gtk.Box):
         
         self.append(template_group)
     
+        
+
+
     def _create_recent_section(self):
         """Create recent projects section"""
         # TODO: Implement recent projects display
