@@ -6,7 +6,7 @@ Dialog windows for the TAC application using GTK4 and libadwaita
 import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-from gi.repository import Gtk, Adw, GObject, Gio, Pango
+from gi.repository import Gtk, Adw, GObject, Gio, Gdk,  Pango
 
 from core.models import Project, DEFAULT_TEMPLATES, Paragraph
 from core.services import ProjectManager, ExportService
@@ -909,45 +909,46 @@ class WelcomeDialog(Adw.Window):
         super().__init__(**kwargs)
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(750, 400) # Size modal
+        self.set_default_size(750, 350)
         self.set_resizable(False)
         
         self.config = config
-        
-        # Remove window decorations for a cleaner modal look
-        self.set_decorated(False)
         
         # Create UI
         self._create_ui()
     
     def _create_ui(self):
         """Create the welcome dialog UI"""
-        # Main container with rounded corners
+        # Main container - similar to WebApps approach
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        main_box.add_css_class("card")
-        main_box.set_margin_start(32)
-        main_box.set_margin_end(32)
-        main_box.set_margin_top(16)
-        main_box.set_margin_bottom(20)
-        main_box.set_spacing(20)
-        self.set_content(main_box)
-        
-        # Close button in top-right corner
-        header_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        header_box.set_hexpand(True)
-        
-        spacer = Gtk.Box()
-        spacer.set_hexpand(True)
-        header_box.append(spacer)
-        
-        close_button = Gtk.Button()
-        close_button.set_icon_name("window-close-symbolic")
-        close_button.add_css_class("flat")
-        close_button.add_css_class("circular")
-        close_button.connect('clicked', lambda b: self.destroy())
-        header_box.append(close_button)
-        
-        main_box.append(header_box)
+
+        # Add a headerbar for window movement with custom styling
+        headerbar = Adw.HeaderBar()
+        headerbar.set_show_title(False)  # No title for cleaner look
+        headerbar.add_css_class("flat")  # Make it less prominent
+
+        # Apply custom CSS to reduce header padding
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(b"""
+            headerbar {
+                min-height: 38px;
+                padding: 2px 6px;
+            }
+        """)
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
+        )
+
+        main_box.append(headerbar)
+
+        # Content container
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        content_box.set_margin_top(12)
+        content_box.set_margin_bottom(24)
+        content_box.set_margin_start(24)
+        content_box.set_margin_end(24)
         
         # Icon and title
         title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
@@ -965,16 +966,16 @@ class WelcomeDialog(Adw.Window):
         title_label.set_halign(Gtk.Align.CENTER)
         title_box.append(title_label)
         
-        main_box.append(title_box)
+        content_box.append(title_box)
         
         # Content text
-        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        content_text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
         
         # CAT explanation
         cat_label = Gtk.Label()
         cat_label.set_markup("<span weight='bold'>Continuous Argumentation Technique (CAT):</span>")
         cat_label.set_halign(Gtk.Align.START)
-        content_box.append(cat_label)
+        content_text_box.append(cat_label)
         
         cat_desc = Gtk.Label()
         cat_desc.set_text("CAT consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand.")
@@ -982,14 +983,14 @@ class WelcomeDialog(Adw.Window):
         cat_desc.set_halign(Gtk.Align.START)
         cat_desc.set_justify(Gtk.Justification.LEFT)
         cat_desc.set_max_width_chars(60)
-        content_box.append(cat_desc)
+        content_text_box.append(cat_desc)
         
         # Structure explanation
         structure_label = Gtk.Label()
         structure_label.set_markup("<span weight='bold'>This is the writing structure:</span>")
         structure_label.set_halign(Gtk.Align.START)
         structure_label.set_margin_top(8)
-        content_box.append(structure_label)
+        content_text_box.append(structure_label)
         
         # Structure list
         structure_items = [
@@ -1020,23 +1021,18 @@ class WelcomeDialog(Adw.Window):
             text_label.set_xalign(0.0)  # Align text to left
             item_box.append(text_label)
             
-            content_box.append(item_box)
+            content_text_box.append(item_box)
         
-        main_box.append(content_box)
+        content_box.append(content_text_box)
         
-        # Bottom section with checkbox and button
-        bottom_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
-        bottom_box.set_margin_top(8)
-        
-        # Separator line
+        # Separator before switch
         separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
-        separator.set_margin_top(8)
-        separator.set_margin_bottom(8)
-        bottom_box.append(separator)
+        separator.set_margin_top(12)
+        content_box.append(separator)
         
         # Show on startup toggle
-        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        toggle_box.set_spacing(12)
+        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        toggle_box.set_margin_top(12)
         
         toggle_label = Gtk.Label()
         toggle_label.set_text("Show this dialog on startup")
@@ -1050,22 +1046,26 @@ class WelcomeDialog(Adw.Window):
         self.show_switch.set_valign(Gtk.Align.CENTER)
         toggle_box.append(self.show_switch)
         
-        bottom_box.append(toggle_box)
+        content_box.append(toggle_box)
         
         # Let's Start button
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         button_box.set_halign(Gtk.Align.CENTER)
+        button_box.set_margin_top(24)
         
         start_button = Gtk.Button()
         start_button.set_label("Let's Start")
         start_button.add_css_class("suggested-action")
-        start_button.add_css_class("pill")
-        start_button.set_size_request(120, 40)
         start_button.connect('clicked', self._on_start_clicked)
         button_box.append(start_button)
         
-        bottom_box.append(button_box)
-        main_box.append(bottom_box)
+        content_box.append(button_box)
+
+        # Add content box to main box
+        main_box.append(content_box)
+
+        # Set the content
+        self.set_content(main_box)
     
     def _on_switch_toggled(self, switch, gparam):
         """Handle switch toggle"""
