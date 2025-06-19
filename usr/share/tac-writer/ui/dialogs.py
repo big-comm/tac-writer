@@ -909,7 +909,7 @@ class WelcomeDialog(Adw.Window):
         super().__init__(**kwargs)
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(600, 500)
+        self.set_default_size(750, 400) # Size modal
         self.set_resizable(False)
         
         self.config = config
@@ -925,11 +925,11 @@ class WelcomeDialog(Adw.Window):
         # Main container with rounded corners
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         main_box.add_css_class("card")
-        main_box.set_margin_start(24)
-        main_box.set_margin_end(24)
-        main_box.set_margin_top(24)
-        main_box.set_margin_bottom(24)
-        main_box.set_spacing(24)
+        main_box.set_margin_start(32)
+        main_box.set_margin_end(32)
+        main_box.set_margin_top(16)
+        main_box.set_margin_bottom(20)
+        main_box.set_spacing(20)
         self.set_content(main_box)
         
         # Close button in top-right corner
@@ -950,7 +950,7 @@ class WelcomeDialog(Adw.Window):
         main_box.append(header_box)
         
         # Icon and title
-        title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
         title_box.set_halign(Gtk.Align.CENTER)
         
         # App icon
@@ -1001,29 +1001,25 @@ class WelcomeDialog(Adw.Window):
         ]
         
         for item_title, item_desc in structure_items:
-            item_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+            item_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
             item_box.set_margin_start(12)
             
             bullet = Gtk.Label()
             bullet.set_text("•")
             bullet.set_valign(Gtk.Align.START)
+            bullet.set_halign(Gtk.Align.START)
             item_box.append(bullet)
             
-            text_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
+            text_label = Gtk.Label()
+            full_text = f"<span weight='bold'>{item_title}</span> {item_desc}"
+            text_label.set_markup(full_text)
+            text_label.set_wrap(True)
+            text_label.set_halign(Gtk.Align.START)
+            text_label.set_valign(Gtk.Align.START)
+            text_label.set_hexpand(True)
+            text_label.set_xalign(0.0)  # Align text to left
+            item_box.append(text_label)
             
-            title_part = Gtk.Label()
-            title_part.set_markup(f"<span weight='bold'>{item_title}</span>")
-            title_part.set_halign(Gtk.Align.START)
-            text_box.append(title_part)
-            
-            desc_part = Gtk.Label()
-            desc_part.set_text(item_desc)
-            desc_part.set_wrap(True)
-            desc_part.set_halign(Gtk.Align.START)
-            desc_part.set_hexpand(True)
-            text_box.append(desc_part)
-            
-            item_box.append(text_box)
             content_box.append(item_box)
         
         main_box.append(content_box)
