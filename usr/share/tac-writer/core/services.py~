@@ -521,7 +521,7 @@ class ExportService:
                      xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
                      xmlns:dc="http://purl.org/dc/elements/1.1/">
 <office:meta>
-    <meta:generator>TAC - Continuous Argumentation Technique</meta:generator>
+    <meta:generator>TAC - Text Analysis and Creation</meta:generator>
     <dc:title>{project.name}</dc:title>
     <dc:creator>{author}</dc:creator>
     <meta:creation-date>{creation_date}</meta:creation-date>

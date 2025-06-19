@@ -357,6 +357,9 @@ ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
 ]
 
 
+
+]
+
 DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
 

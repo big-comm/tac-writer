@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TAC - Text Analysis and Creation
+TAC - Continuous Argumentation Technique
 Main entry point for the application
 GTK4 + libadwaita academic text writing assistant
 """
@@ -51,7 +51,7 @@ def check_dependencies():
 
 def main():
     """Main application entry point"""
-    print("=== Starting TAC - Text Analysis and Creation ===")
+    print("=== Starting TAC - Continuous Argumentation Technique ===")
     print(f"Python: {sys.version}")
     print(f"Platform: {sys.platform}")
     

@@ -50,7 +50,7 @@ class MainWindow(Adw.ApplicationWindow):
     
     def _setup_window(self):
         """Setup basic window properties"""
-        self.set_title("TAC - Text Analysis and Creation")
+        self.set_title("TAC - Continuous Argumentation Technique")
         self.set_icon_name("com.github.tac")
         
         # Set default size
@@ -331,7 +331,7 @@ class MainWindow(Adw.ApplicationWindow):
         if view_name == "welcome":
             title_widget = self.header_bar.get_title_widget()
             title_widget.set_title("TAC")
-            title_widget.set_subtitle("Text Analysis and Creation")
+            title_widget.set_subtitle("Continuous Argumentation Technique")
             self.save_button.set_sensitive(False)
         elif view_name == "editor" and self.current_project:
             title_widget = self.header_bar.get_title_widget()

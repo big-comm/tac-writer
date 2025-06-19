@@ -59,7 +59,7 @@ class WelcomeView(Gtk.Box):
         
         # Subtitle
         subtitle = Gtk.Label()
-        subtitle.set_markup("<span size='medium'>Continuous Argumentation Technique</span>")
+        subtitle.set_markup("<span size='medium'>Text Analysis and Creation</span>")
         subtitle.set_halign(Gtk.Align.CENTER)
         subtitle.add_css_class("dim-label")
         content_box.append(subtitle)
