@@ -304,10 +304,6 @@ class MainWindow(Adw.ApplicationWindow):
     
     def _refresh_paragraphs(self):
         """Refresh the paragraphs display"""
-        print(f"[DEBUG REFRESH] _refresh_paragraphs() chamado!")
-        import traceback
-        traceback.print_stack()
-        
         if not self.current_project:
             return
         
@@ -626,4 +622,13 @@ class MainWindow(Adw.ApplicationWindow):
     def _action_show_welcome(self, action, param):
         """Handle show welcome action"""
         self.show_welcome_dialog()
+    
+    def _refresh_paragraph_formatting(self):
+        """Refresh formatting display for all paragraph editors"""
+        if hasattr(self, 'paragraphs_box'):
+            child = self.paragraphs_box.get_first_child()
+            while child:
+                if hasattr(child, 'refresh_formatting'):
+                    child.refresh_formatting()
+                child = child.get_next_sibling()
 

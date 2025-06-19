@@ -10,6 +10,16 @@ from pathlib import Path
 from typing import List, Dict, Optional, Any
 from datetime import datetime
 
+# Imports condicionais para PDF
+try:
+    from reportlab.lib.pagesizes import A4
+    from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+    from reportlab.lib.units import cm
+    REPORTLAB_AVAILABLE = True
+except ImportError:
+    REPORTLAB_AVAILABLE = False
+
 from .models import Project, Paragraph, ParagraphType, DEFAULT_TEMPLATES
 
 
@@ -345,12 +355,11 @@ class ExportService:
     
     def _export_pdf(self, project: Project, output_path: str) -> bool:
         """Export to PDF format"""
-        try:
-            from reportlab.lib.pagesizes import A4
-            from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
-            from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-            from reportlab.lib.units import cm
+        if not REPORTLAB_AVAILABLE:
+            print("ReportLab not installed. Install with: pip install reportlab")
+            return False
             
+        try:
             # Create PDF document
             doc = SimpleDocTemplate(output_path, pagesize=A4,
                                   rightMargin=3*cm, leftMargin=3*cm,
@@ -379,47 +388,55 @@ class ExportService:
                         style_name,
                         parent=styles['Normal'],
                         fontSize=18,
+                        leading=27,  # 18 * 1.5 = 27
                         fontName='Helvetica-Bold',
                         spaceBefore=0,
                         spaceAfter=0,
-                        alignment=0  # Left
+                        alignment=0  # 0=Left, 1=Center, 2=Right, 4=Justify
                     )
                 elif paragraph.type == ParagraphType.TITLE_2:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=16,
+                        leading=24,  # 16 * 1.5 = 24
                         fontName='Helvetica-Bold',
                         spaceBefore=0,
                         spaceAfter=0,
-                        alignment=0  # Left
+                        alignment=0  # 0=Left, 1=Center, 2=Right, 4=Justify
                     )
                 elif paragraph.type == ParagraphType.QUOTE:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=10,
+                        leading=15,  # 10 * 1.5 = 15
                         leftIndent=4*cm,
                         fontName='Helvetica-Oblique',
-                        spaceBefore=0,  # REMOVIDO o espaçamento
-                        spaceAfter=0    # REMOVIDO o espaçamento
+                        spaceBefore=0,
+                        spaceAfter=0,
+                        alignment=4  # 0=Left, 1=Center, 2=Right, 4=Justify
                     )
                 elif paragraph.type == ParagraphType.INTRODUCTION:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=12,
+                        leading=18,  # 1.5x o tamanho da fonte (12 * 1.5 = 18)
                         firstLineIndent=1.5*cm,
-                        spaceBefore=0,  # REMOVIDO o espaçamento
-                        spaceAfter=0    # REMOVIDO o espaçamento
+                        spaceBefore=0,
+                        spaceAfter=0,
+                        alignment=4  # 0=Left, 1=Center, 2=Right, 4=Justify
                     )
                 else:
                     para_style = ParagraphStyle(
                         style_name,
                         parent=styles['Normal'],
                         fontSize=12,
-                        spaceBefore=0,  # REMOVIDO o espaçamento
-                        spaceAfter=0    # REMOVIDO o espaçamento
+                        leading=18,  # 1.5x o tamanho da fonte (12 * 1.5 = 18)
+                        spaceBefore=0,
+                        spaceAfter=0,
+                        alignment=4  # 0=Left, 1=Center, 2=Right, 4=Justify
                     )
                 
                 story.append(RLParagraph(paragraph.content, para_style))

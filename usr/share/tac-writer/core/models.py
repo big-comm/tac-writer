@@ -34,7 +34,7 @@ class Paragraph:
             'font_family': 'Liberation Sans',
             'font_size': 12,
             'line_spacing': 1.5,
-            'alignment': 'left',
+            'alignment': 'justify',
             'indent_first_line': 0.0,  # Sem recuo por padrão
             'indent_left': 0.0,  # cm
             'indent_right': 0.0,  # cm

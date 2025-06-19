@@ -7,11 +7,13 @@ Dialog windows for the TAC application using GTK4 and libadwaita
 """
 
 import gi
-
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
+from gi.repository import Gtk, Adw, GObject, Gio, Gdk, Pango, GLib
 
-from gi.repository import Gtk, Adw, GObject, Gio, Gdk, Pango
+import threading
+from pathlib import Path
+from datetime import datetime
 
 from core.models import Project, DEFAULT_TEMPLATES, Paragraph
 from core.services import ProjectManager, ExportService
@@ -410,7 +412,7 @@ class FormatDialog(Adw.Window):
 
         # Spacing group
         spacing_group = Adw.PreferencesGroup()
-        spacing_group.set_title("Spacing & Alignment")
+        spacing_group.set_title("Spacing &amp; Alignment")
         prefs_page.add(spacing_group)
 
         # Line spacing
@@ -517,6 +519,10 @@ class FormatDialog(Adw.Window):
         # Apply to all paragraphs
         for paragraph in self.paragraphs:
             paragraph.update_formatting(new_formatting)
+
+        # Notificar a janela principal para atualizar a visualização
+        if hasattr(self.get_transient_for(), '_refresh_paragraph_formatting'):
+            self.get_transient_for()._refresh_paragraph_formatting()
 
         self.destroy()
 
@@ -659,6 +665,10 @@ class ExportDialog(Adw.Window):
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
+        # Desabilitar o botão para evitar cliques múltiplos
+        button.set_sensitive(False)
+        button.set_label("Exporting...")
+        
         # Get selected format
         selected_index = self.format_row.get_selected()
         format_code = self.format_data[selected_index]
@@ -667,49 +677,77 @@ class ExportDialog(Adw.Window):
         safe_name = FileHelper.get_safe_filename(self.project.name)
         filename = FileHelper.ensure_extension(safe_name, format_code)
 
-        from pathlib import Path
         output_path = Path(self.selected_location) / filename
 
         # Ensure unique filename
         output_path = FileHelper.find_available_filename(output_path)
 
-        try:
-            # Export project
-            success = self.export_service.export_project(
-                self.project,
-                str(output_path),
-                format_code
+        # Executar exportação em thread separada
+        def export_thread():
+            try:
+                # Export project
+                success = self.export_service.export_project(
+                    self.project,
+                    str(output_path),
+                    format_code
+                )
+                
+                # Voltar para a thread principal para atualizar UI
+                GLib.idle_add(self._export_finished, success, str(output_path), None)
+                
+            except Exception as e:
+                # Voltar para a thread principal para mostrar erro
+                GLib.idle_add(self._export_finished, False, str(output_path), str(e))
+        
+        # Iniciar thread de exportação
+        thread = threading.Thread(target=export_thread)
+        thread.daemon = True
+        thread.start()
+    
+    def _export_finished(self, success, output_path, error_message):
+        """Callback executado na thread principal quando exportação termina"""
+        # Re-habilitar botão primeiro (para ambos os casos)
+        header = self.get_titlebar()
+        if header:
+            # Método mais simples: pegar o último botão do header (que é o export)
+            child = header.get_last_child()
+            while child:
+                if isinstance(child, Gtk.Button):
+                    child.set_sensitive(True)
+                    child.set_label("Export")
+                    break
+                child = child.get_prev_sibling()
+        
+        if success:
+            # Show success message
+            success_dialog = Adw.MessageDialog.new(
+                self,
+                "Export Successful",
+                f"Project exported to:\n{output_path}"
             )
-
-            if success:
-                # Show success message
-                success_dialog = Adw.MessageDialog.new(
-                    self,
-                    "Export Successful",
-                    f"Project exported to:\n{output_path}"
-                )
-                success_dialog.add_response("ok", "OK")
-                success_dialog.present()
-                self.destroy()
-            else:
-                # Show error message
-                error_dialog = Adw.MessageDialog.new(
-                    self,
-                    "Export Failed",
-                    "An error occurred while exporting the project."
-                )
-                error_dialog.add_response("ok", "OK")
-                error_dialog.present()
-
-        except Exception as e:
+            success_dialog.add_response("ok", "OK")
+            
+            # Conectar callback para só fechar DEPOIS que o usuário clicar OK
+            def on_success_response(dialog, response):
+                dialog.destroy()
+                self.destroy()  # Só destroi DEPOIS da resposta do usuário
+            
+            success_dialog.connect('response', on_success_response)
+            success_dialog.present()
+            
+            # NÃO chamar self.destroy() aqui!
+        else:
             # Show error message
+            error_msg = error_message if error_message else "An error occurred while exporting the project."
             error_dialog = Adw.MessageDialog.new(
                 self,
-                "Export Error",
-                f"Error during export: {str(e)}"
+                "Export Failed",
+                error_msg
             )
             error_dialog.add_response("ok", "OK")
             error_dialog.present()
+        
+        return False  # Remove from idle callbacks
 
 class PreferencesDialog(Adw.PreferencesWindow):
     """Preferences dialog"""

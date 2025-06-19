@@ -672,6 +672,10 @@ class ParagraphEditor(Gtk.Box):
         if response == "remove":
             self.emit('remove-requested', self.paragraph.id)
         dialog.destroy()
+    
+    def refresh_formatting(self):
+        """Refresh visual formatting (chamado quando formatação é alterada externamente)"""
+        self._apply_formatting()
 
 class TextEditor(Gtk.Box):
     """Advanced text editor component"""
