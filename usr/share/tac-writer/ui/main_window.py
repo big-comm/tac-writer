@@ -13,7 +13,7 @@ from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import TextHelper, ValidationHelper, FormatHelper
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
-from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog
+from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -42,6 +42,9 @@ class MainWindow(Adw.ApplicationWindow):
         self._setup_ui()
         self._setup_actions()
         self._restore_window_state()
+        
+        # Show welcome dialog if enabled
+        GLib.timeout_add(500, self._maybe_show_welcome_dialog)
         
         print("MainWindow initialized")
     
@@ -134,6 +137,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Help section
         help_section = Gio.Menu()
+        help_section.append("Welcome Guide", "win.show_welcome")
         help_section.append("About TAC", "app.about")
         menu_model.append_section(None, help_section)
         
@@ -184,6 +188,7 @@ class MainWindow(Adw.ApplicationWindow):
             ('show_recent', self._action_show_recent),
             ('toggle_sidebar', self._action_toggle_sidebar),
             ('add_paragraph', self._action_add_paragraph, 's'),  # 's' = string parameter
+            ('show_welcome', self._action_show_welcome),
         ]
         
         for action_data in actions:
@@ -606,4 +611,19 @@ class MainWindow(Adw.ApplicationWindow):
         from .dialogs import FormatDialog
         dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
         dialog.present()
+    
+    def _maybe_show_welcome_dialog(self):
+        """Show welcome dialog if enabled in config"""
+        if self.config.get('show_welcome_dialog', True):
+            self.show_welcome_dialog()
+        return False  # Don't repeat the timeout
+    
+    def show_welcome_dialog(self):
+        """Show the welcome dialog"""
+        dialog = WelcomeDialog(self, self.config)
+        dialog.present()
+    
+    def _action_show_welcome(self, action, param):
+        """Handle show welcome action"""
+        self.show_welcome_dialog()
 

@@ -900,6 +900,186 @@ class PreferencesDialog(Adw.PreferencesWindow):
         """Handle line numbers toggle"""
         self.config.set('show_line_numbers', switch.get_active())
 
+class WelcomeDialog(Adw.Window):
+    """Welcome dialog explaining TAC Writer and CAT technique"""
+    
+    __gtype_name__ = 'TacWelcomeDialog'
+    
+    def __init__(self, parent, config: Config, **kwargs):
+        super().__init__(**kwargs)
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(600, 500)
+        self.set_resizable(False)
+        
+        self.config = config
+        
+        # Remove window decorations for a cleaner modal look
+        self.set_decorated(False)
+        
+        # Create UI
+        self._create_ui()
+    
+    def _create_ui(self):
+        """Create the welcome dialog UI"""
+        # Main container with rounded corners
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        main_box.add_css_class("card")
+        main_box.set_margin_start(24)
+        main_box.set_margin_end(24)
+        main_box.set_margin_top(24)
+        main_box.set_margin_bottom(24)
+        main_box.set_spacing(24)
+        self.set_content(main_box)
+        
+        # Close button in top-right corner
+        header_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        header_box.set_hexpand(True)
+        
+        spacer = Gtk.Box()
+        spacer.set_hexpand(True)
+        header_box.append(spacer)
+        
+        close_button = Gtk.Button()
+        close_button.set_icon_name("window-close-symbolic")
+        close_button.add_css_class("flat")
+        close_button.add_css_class("circular")
+        close_button.connect('clicked', lambda b: self.destroy())
+        header_box.append(close_button)
+        
+        main_box.append(header_box)
+        
+        # Icon and title
+        title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        title_box.set_halign(Gtk.Align.CENTER)
+        
+        # App icon
+        icon = Gtk.Image.new_from_icon_name("document-edit-symbolic")
+        icon.set_pixel_size(64)
+        icon.add_css_class("accent")
+        title_box.append(icon)
+        
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup("<span size='x-large' weight='bold'>What is TAC Writer?</span>")
+        title_label.set_halign(Gtk.Align.CENTER)
+        title_box.append(title_label)
+        
+        main_box.append(title_box)
+        
+        # Content text
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        
+        # CAT explanation
+        cat_label = Gtk.Label()
+        cat_label.set_markup("<span weight='bold'>Continuous Argumentation Technique (CAT):</span>")
+        cat_label.set_halign(Gtk.Align.START)
+        content_box.append(cat_label)
+        
+        cat_desc = Gtk.Label()
+        cat_desc.set_text("CAT consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand.")
+        cat_desc.set_wrap(True)
+        cat_desc.set_halign(Gtk.Align.START)
+        cat_desc.set_justify(Gtk.Justification.LEFT)
+        cat_desc.set_max_width_chars(60)
+        content_box.append(cat_desc)
+        
+        # Structure explanation
+        structure_label = Gtk.Label()
+        structure_label.set_markup("<span weight='bold'>This is the writing structure:</span>")
+        structure_label.set_halign(Gtk.Align.START)
+        structure_label.set_margin_top(8)
+        content_box.append(structure_label)
+        
+        # Structure list
+        structure_items = [
+            ("Introduction:", "a sentence at the beginning of the paragraph that summarizes the topic that will be addressed."),
+            ("Argumentation:", "development of the topic."),
+            ("Quote:", "quote that supports the argument."),
+            ("Argumentative Resumption:", "beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph."),
+            ("Conclusion:", "closing of the idea presented.")
+        ]
+        
+        for item_title, item_desc in structure_items:
+            item_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+            item_box.set_margin_start(12)
+            
+            bullet = Gtk.Label()
+            bullet.set_text("•")
+            bullet.set_valign(Gtk.Align.START)
+            item_box.append(bullet)
+            
+            text_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
+            
+            title_part = Gtk.Label()
+            title_part.set_markup(f"<span weight='bold'>{item_title}</span>")
+            title_part.set_halign(Gtk.Align.START)
+            text_box.append(title_part)
+            
+            desc_part = Gtk.Label()
+            desc_part.set_text(item_desc)
+            desc_part.set_wrap(True)
+            desc_part.set_halign(Gtk.Align.START)
+            desc_part.set_hexpand(True)
+            text_box.append(desc_part)
+            
+            item_box.append(text_box)
+            content_box.append(item_box)
+        
+        main_box.append(content_box)
+        
+        # Bottom section with checkbox and button
+        bottom_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        bottom_box.set_margin_top(8)
+        
+        # Separator line
+        separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+        separator.set_margin_top(8)
+        separator.set_margin_bottom(8)
+        bottom_box.append(separator)
+        
+        # Show on startup toggle
+        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        toggle_box.set_spacing(12)
+        
+        toggle_label = Gtk.Label()
+        toggle_label.set_text("Show this dialog on startup")
+        toggle_label.set_hexpand(True)
+        toggle_label.set_halign(Gtk.Align.START)
+        toggle_box.append(toggle_label)
+        
+        self.show_switch = Gtk.Switch()
+        self.show_switch.set_active(self.config.get('show_welcome_dialog', True))
+        self.show_switch.connect('notify::active', self._on_switch_toggled)
+        self.show_switch.set_valign(Gtk.Align.CENTER)
+        toggle_box.append(self.show_switch)
+        
+        bottom_box.append(toggle_box)
+        
+        # Let's Start button
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        button_box.set_halign(Gtk.Align.CENTER)
+        
+        start_button = Gtk.Button()
+        start_button.set_label("Let's Start")
+        start_button.add_css_class("suggested-action")
+        start_button.add_css_class("pill")
+        start_button.set_size_request(120, 40)
+        start_button.connect('clicked', self._on_start_clicked)
+        button_box.append(start_button)
+        
+        bottom_box.append(button_box)
+        main_box.append(bottom_box)
+    
+    def _on_switch_toggled(self, switch, gparam):
+        """Handle switch toggle"""
+        self.config.set('show_welcome_dialog', switch.get_active())
+        self.config.save()
+    
+    def _on_start_clicked(self, button):
+        """Handle start button click"""
+        self.destroy()
+
 def AboutDialog(parent):
     """Create and show about dialog"""
     dialog = Adw.AboutWindow()
