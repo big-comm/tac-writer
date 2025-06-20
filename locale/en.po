@@ -516,18 +516,26 @@ msgstr "This is the writing structure:"
 msgid ""
 "• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
 "summarizes the topic that will be addressed.\n"
+"\n"
 "• <b>Argumentation:</b> development of the topic.\n"
+"\n"
 "• <b>Quote:</b> quote that supports the argument.\n"
+"\n"
 "• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
 "indicates a resumption of the argument from the previous paragraph.\n"
+"\n"
 "• <b>Conclusion:</b> closing of the idea presented."
 msgstr ""
 "• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
 "summarizes the topic that will be addressed.\n"
+"\n"
 "• <b>Argumentation:</b> development of the topic.\n"
+"\n"
 "• <b>Quote:</b> quote that supports the argument.\n"
+"\n"
 "• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
 "indicates a resumption of the argument from the previous paragraph.\n"
+"\n"
 "• <b>Conclusion:</b> closing of the idea presented."
 
 #
@@ -536,28 +544,28 @@ msgid "Show this dialog on startup"
 msgstr "Show this dialog on startup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1092
 msgid "Let's Start"
 msgstr "Let's Start"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
 msgid "TAC Development Team"
 msgstr "TAC Development Team"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1131
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Continuous Argumentation Technique - Academic Writing Assistant"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 msgid "Main Developer"
 msgstr "Main Developer"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 msgid "Design Team"
 msgstr "Design Team"
 

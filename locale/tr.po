@@ -1,0 +1,988 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the comm-tac-writer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: comm-tac-writer\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akademik Makale"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Standart akademik makale yapısı"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Hata: GTK 4.0 veya daha yüksek bir sürüm gereklidir"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Hata: Gerekli bağımlılıklar bulunamadı: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Lütfen kurun: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Hata kontrolü bağımlılıkları: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "TAC Başlatma - Sürekli Argümantasyon Tekniği"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Uygulama dizini: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Uygulama modülleri yükleniyor..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Uygulama örneği oluşturuluyor..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "TAC uygulaması çalışıyor..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Uygulama tamamlandı."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Kullanıcı tarafından uygulama kesildi."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Başlangıçta kritik hata: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Yeni Proje"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 57
+# File: usr/share/tac-writer/ui/dialogs.py, line: 307
+# File: usr/share/tac-writer/ui/dialogs.py, line: 555
+# File: usr/share/tac-writer/ui/dialogs.py, line: 650
+# File: usr/share/tac-writer/ui/main_window.py, line: 458
+# File: usr/share/tac-writer/ui/components.py, line: 305
+# File: usr/share/tac-writer/ui/components.py, line: 344
+# File: usr/share/tac-writer/ui/components.py, line: 660
+#: NEEDS WORK
+msgid "Cancel"
+msgstr "İptal"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 63
+#: NEEDS WORK
+msgid "Create"
+msgstr "Oluştur"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 95
+#: NEEDS WORK
+msgid "Project Details"
+msgstr "Proje Detayları"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 99
+# File: usr/share/tac-writer/ui/dialogs.py, line: 577
+#: NEEDS WORK
+msgid "Project Name"
+msgstr "Proje Adı"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 101
+#: NEEDS WORK
+msgid "Enter project name..."
+msgstr "Proje adını girin..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 102
+#: NEEDS WORK
+msgid "My New Project"
+msgstr "Yeni Projem"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 119
+#: NEEDS WORK
+msgid "Author"
+msgstr "Yazar"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 121
+#: NEEDS WORK
+msgid "Your name..."
+msgstr "Adınız..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 130
+#: NEEDS WORK
+msgid "Description"
+msgstr "Açıklama"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 162
+#: NEEDS WORK
+msgid "Template"
+msgstr "Şablon"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
+msgid "Choose a template to start with"
+msgstr "Başlamak için bir şablon seçin"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 172
+#: NEEDS WORK
+msgid "Document Template"
+msgstr "Belge Şablonu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 256
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Proje Oluşturma Hatası"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 259
+# File: usr/share/tac-writer/ui/dialogs.py, line: 727
+# File: usr/share/tac-writer/ui/dialogs.py, line: 746
+#: NEEDS WORK
+msgid "OK"
+msgstr "Tamam"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 269
+#: NEEDS WORK
+msgid "Format Text"
+msgstr "Metin Biçimlendir"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 312
+#: NEEDS WORK
+msgid "Apply"
+msgstr "Uygula"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 325
+#: NEEDS WORK
+msgid "Font"
+msgstr "Yazı Tipi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Yazı Tipi Ailesi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Yazı Tipi Boyutu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
+msgid "Style"
+msgstr "Tarz"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "Kalın"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "İtalik"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "Altı çizili"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 414
+#: NEEDS WORK
+msgid "Spacing & Alignment"
+msgstr "Boşluk ve Hizalama"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 420
+#: NEEDS WORK
+msgid "Line Spacing"
+msgstr "Satır Aralığı"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 421
+#: NEEDS WORK
+msgid "Space between lines"
+msgstr "Satırlar arasındaki boşluk"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 429
+#: NEEDS WORK
+msgid "First Line Indent (cm)"
+msgstr "İlk Satır Girintisi (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 430
+#: NEEDS WORK
+msgid "Indentation of the first line"
+msgstr "İlk satırın girintisi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 438
+#: NEEDS WORK
+msgid "Left Margin (cm)"
+msgstr "Sol Margin (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 439
+#: NEEDS WORK
+msgid "Left side margin"
+msgstr "Sol taraftaki kenar boşluğu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 447
+#: NEEDS WORK
+msgid "Right Margin (cm)"
+msgstr "Sağ Kenar Boşluğu (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 448
+#: NEEDS WORK
+msgid "Right side margin"
+msgstr "Sağ kenar boşluğu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 455
+#: NEEDS WORK
+msgid "Text Alignment"
+msgstr "Metin Hizalaması"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Left"
+msgstr "Sol"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Center"
+msgstr "Merkez"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Right"
+msgstr "Sağ"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Justify"
+msgstr "Hizala"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 535
+#: NEEDS WORK
+msgid "Export Project"
+msgstr "Projeyi Dışa Aktar"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 560
+# File: usr/share/tac-writer/ui/dialogs.py, line: 716
+#: NEEDS WORK
+msgid "Export"
+msgstr "Dışa Aktar"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 573
+#: NEEDS WORK
+msgid "Project Information"
+msgstr "Proje Bilgisi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 583
+#: NEEDS WORK
+msgid "Statistics"
+msgstr "İstatistikler"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#: NEEDS WORK
+msgid "{} words, {} paragraphs"
+msgstr "{} kelime, {} paragraf"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 589
+#: NEEDS WORK
+msgid "Export Options"
+msgstr "Dışa Aktarma Seçenekleri"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Biçim"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 614
+#: NEEDS WORK
+msgid "Include Metadata"
+msgstr "Meta Verileri Dahil Et"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
+msgid "Include author, creation date, and other project information"
+msgstr "Yazar, oluşturulma tarihi ve diğer proje bilgilerini dahil et"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
+msgid "Output Location"
+msgstr "Çıktı Konumu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 625
+#: NEEDS WORK
+msgid "Save Location"
+msgstr "Kaydetme Yeri"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
+msgid "Click to choose location"
+msgstr "Konum seçmek için tıklayın"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 629
+#: NEEDS WORK
+msgid "Choose..."
+msgstr "Seçin..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 646
+#: NEEDS WORK
+msgid "Choose Export Location"
+msgstr "Dışa Aktarma Konumunu Seçin"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 649
+#: NEEDS WORK
+msgid "Select"
+msgstr "Seçin"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 669
+#: NEEDS WORK
+msgid "Exporting..."
+msgstr "Dışa Aktarma..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Export Successful"
+msgstr "Başarıyla Dışa Aktarıldı"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#: NEEDS WORK
+msgid ""
+"Project exported to:\n"
+"{}"
+msgstr ""
+"Proje dışa aktarıldı:  \n"
+"{}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 740
+#: NEEDS WORK
+msgid "An error occurred while exporting the project."
+msgstr "Proje dışa aktarılırken bir hata oluştu."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 743
+#: NEEDS WORK
+msgid "Export Failed"
+msgstr "Dışa Aktarma Başarısız"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
+#: NEEDS WORK
+msgid "Preferences"
+msgstr "Tercihler"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "General"
+msgstr "Genel"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 779
+#: NEEDS WORK
+msgid "Appearance"
+msgstr "Görünüm"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 784
+#: NEEDS WORK
+msgid "Dark Theme"
+msgstr "Karanlık Tema"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 785
+#: NEEDS WORK
+msgid "Use dark theme for the application"
+msgstr "Uygulama için karanlık temayı kullanın"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 791
+#: NEEDS WORK
+msgid "Editor"
+msgstr "Düzenleyici"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 797
+#: NEEDS WORK
+msgid "Default Font"
+msgstr "Varsayılan Yazı Tipi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 868
+#: NEEDS WORK
+msgid "Behavior"
+msgstr "Davranış"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 873
+#: NEEDS WORK
+msgid "Auto Save"
+msgstr "Otomatik Kaydet"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 874
+#: NEEDS WORK
+msgid "Automatically save projects while editing"
+msgstr "Düzenleme sırasında projeleri otomatik olarak kaydet"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 880
+#: NEEDS WORK
+msgid "Word Wrap"
+msgstr "Kelime Sarma"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 881
+#: NEEDS WORK
+msgid "Wrap text to fit the editor width"
+msgstr "Metni düzenleyici genişliğine sığacak şekilde sar."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 887
+#: NEEDS WORK
+msgid "Show Line Numbers"
+msgstr "Satır Numaralarını Göster"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 888
+#: NEEDS WORK
+msgid "Display line numbers in the editor"
+msgstr "Editörde satır numaralarını göster"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1021
+#: NEEDS WORK
+msgid "What is TAC Writer?"
+msgstr "TAC Writer nedir?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
+msgstr "Sürekli Argümantasyon Tekniği (CAT, Portekizce'de TAC)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+#: NEEDS WORK
+msgid ""
+"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
+"text and make it easier to understand."
+msgstr ""
+"CAT, birbirleriyle etkileşimde bulunan paragraflardan oluşur. Bazı konuların açıklanması "
+"gerektiğinde, sadece bir paragrafla sonuçlandırılamayacağı fikri vardır. Bu, bir metni düzenlemeyi "
+"ve anlamayı kolaylaştırmayı amaçlayan bir tekniktir."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+#: NEEDS WORK
+msgid "This is the writing structure:"
+msgstr "Bu yazım yapısıdır:"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+#: NEEDS WORK
+msgid ""
+"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
+"will be addressed.\n"
+"\n"
+"• <b>Argumentation:</b> development of the topic.\n"
+"\n"
+"• <b>Quote:</b> quote that supports the argument.\n"
+"\n"
+"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
+"the argument from the previous paragraph.\n"
+"\n"
+"• <b>Conclusion:</b> closing of the idea presented."
+msgstr ""
+"• <b>Giriş:</b> Ele alınacak konuyu özetleyen paragrafın başındaki cümle.\n"
+"\n"
+"• <b>Argümantasyon:</b> Konunun geliştirilmesi.\n"
+"\n"
+"• <b>Alıntı:</b> Argümanı destekleyen alıntı.\n"
+"\n"
+"• <b>Argümantatif Yeniden Başlama:</b> Önceki paragraftaki argümanın yeniden alındığını belirten "
+"bir sonraki paragrafın başlangıcı.\n"
+"\n"
+"• <b>Sonuç:</b> Sunulan fikrin kapanışı."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1074
+#: NEEDS WORK
+msgid "Show this dialog on startup"
+msgstr "Bu iletişimi başlangıçta göster"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1092
+#: NEEDS WORK
+msgid "Let's Start"
+msgstr "Hadi Başlayalım"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC Geliştirme Ekibi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique - Academic Writing Assistant"
+msgstr "Sürekli Argümantasyon Tekniği - Akademik Yazım Asistanı"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
+#: NEEDS WORK
+msgid "Main Developer"
+msgstr "Ana Geliştirici"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
+#: NEEDS WORK
+msgid "Design Team"
+msgstr "Tasarım Ekibi"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
+#: NEEDS WORK
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Sürekli Argümantasyon Tekniği"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
+#: NEEDS WORK
+msgid "New Project (Ctrl+N)"
+msgstr "Yeni Proje (Ctrl+N)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
+#: NEEDS WORK
+msgid "Open Project (Ctrl+O)"
+msgstr "Proje Aç (Ctrl+O)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
+#: NEEDS WORK
+msgid "Save Project (Ctrl+S)"
+msgstr "Projeyi Kaydet (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Ana Menü"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
+#: NEEDS WORK
+msgid "Export Project..."
+msgstr "Projeyi Dışa Aktar..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Recent Projects"
+msgstr "Son Projeler"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
+msgid "Welcome Guide"
+msgstr "Karşılama Kılavuzu"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
+msgid "About TAC"
+msgstr "TAC Hakkında"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
+#: NEEDS WORK
+msgid "Projects"
+msgstr "Projeler"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Paragraf Ekle"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Başlık 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Başlık 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Giriş"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argüman"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Alıntı"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Sonuç"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Paragrafları biçimlendir"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Sürekli Argümantasyon Tekniği"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} kelime • {} paragraf"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Paragraf sıralandı"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Proje Aç"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Açık"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "TAC Projeleri (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Açık proje: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Proje açılamadı"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Proje başarıyla kaydedildi."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Proje kaydedilemedi"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Dışa aktarılacak proje yok"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Oluşturulan proje: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Biçimlendirilecek paragraf yok"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "TAC'a hoş geldiniz"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Yapılandırılmış akademik metinler oluşturun, yönlendirilmiş paragraf türleri ile."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Not:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "ODT'ye aktarma, Ofis Paketinizi ayarlamanızı gerektirebilir."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "İpucu:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "doğrudan alıntılar için 4 satırdan azsa, argüman kutusunu kullanın."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Yazmaya Başla"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Başlamak için bir şablon seçin"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Başla"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Projeleri ara..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Projeyi yeniden adlandır"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Projeyi sil"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Projeyi Yeniden Adlandır"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+msgid "Enter new name for '{}'"
+msgstr "'{}' için yeni ad girin"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+msgid "Delete '{}'?"
+msgstr "Silmek '{}' mi?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Bu proje çöp kutusuna taşınacak ve geri yüklenebilir."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Silmek"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Paragrafı kaldırın"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Paragraf"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 633
+#: NEEDS WORK
+msgid "{} words"
+msgstr "Tamam, lütfen çevrilecek metni sağlayın."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Paragrafı Kaldır?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Bu işlem geri alınamaz."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Kaldır"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Bilinmiyor"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 dakika"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 dakika"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 dakika"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+msgid "{} minutes"
+msgstr "{} dakika"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+msgid "{}h {}m"
+msgstr "{}s {}d"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Proje adı boş olamaz"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Proje adı en az 2 karakter uzunluğunda olmalıdır."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Proje adı 100 karakteri geçemez."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Proje adı geçersiz karakterler içeriyor."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Yol boş olamaz"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Ana dizin mevcut değil"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Yol çok uzun"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+msgid "Invalid path: {}"
+msgstr "Geçersiz yol: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{: ,} kelime"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{: ,} karakter"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Bilgi"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+msgid "Type: {}"
+msgstr "Tür: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+msgid "Module: {}"
+msgstr "Modül: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Öznitelikler:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Yöntemler:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+msgid "  ... and {} more methods"
+msgstr "... ve {} daha fazla yöntem"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Performans: {} {:.3f} saniye sürdü"
