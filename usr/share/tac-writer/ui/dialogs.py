@@ -961,7 +961,7 @@ class WelcomeDialog(Adw.Window):
         
         # Use 70% of screen width and 80% of screen height, with limits
         width = min(800, int(geometry.width * 0.7))
-        height = min(600, int(geometry.height * 0.8))
+        height = min(640, int(geometry.height * 0.8))
         
         self.set_default_size(width, height)
 
@@ -1049,7 +1049,7 @@ class WelcomeDialog(Adw.Window):
         content_text_box.append(structure_label)
 
         # Structure list - More compact layout
-        structure_text = _("• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.\n• <b>Argumentation:</b> development of the topic.\n• <b>Quote:</b> quote that supports the argument.\n• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.\n• <b>Conclusion:</b> closing of the idea presented.")
+        structure_text = _("• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.\n\n• <b>Argumentation:</b> development of the topic.\n\n• <b>Quote:</b> quote that supports the argument.\n\n• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.\n\n• <b>Conclusion:</b> closing of the idea presented.")
 
         structure_items_label = Gtk.Label()
         structure_items_label.set_markup(structure_text)
@@ -1081,7 +1081,6 @@ class WelcomeDialog(Adw.Window):
         self.show_switch.connect('notify::active', self._on_switch_toggled)
         self.show_switch.set_valign(Gtk.Align.CENTER)
         toggle_box.append(self.show_switch)
-
         content_box.append(toggle_box)
 
         # Let's Start button
