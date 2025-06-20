@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the comm-tac-writer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -14,89 +14,87 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#
+"X-Generator: attranslate\n"
+# 
 # File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
 msgid "Academic Essay"
-msgstr "Academic Essay"
-
-#
+msgstr "Akademísk ritgerð"
+# 
 # File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
 msgid "Standard academic essay structure"
-msgstr "Standard academic essay structure"
-
-#
+msgstr "Vönduð fræðileg ritgerðaskipulag"
+# 
 # File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
-msgstr "Error: GTK 4.0 or higher is required"
-
-#
+msgstr "Villa: GTK 4.0 eða hærra er nauðsynlegt"
+# 
 # File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
 msgid "Error: Required dependencies not found: {}"
-msgstr "Error: Required dependencies not found: {}"
-
-#
+msgstr "Villa: Nauðsynlegar háðingar fundust ekki: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 53
-msgid ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-
-#
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Vinsamlegast settu upp: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
 # File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
 msgid "Error checking dependencies: {}"
-msgstr "Error checking dependencies: {}"
-
-#
+msgstr "Villa að athuga háð: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
 msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Starting TAC - Continuous Argumentation Technique"
-
-#
+msgstr "Byrjun TAC - Samfelldar Röksemdaraðferðir"
+# 
 # File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
 msgid "Application directory: {}"
-msgstr "Application directory: {}"
-
-#
+msgstr "Skráarsafn forrits: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
 msgid "Loading application modules..."
-msgstr "Loading application modules..."
-
-#
+msgstr "Hlaða forritsmóduleum..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
 msgid "Creating application instance..."
-msgstr "Creating application instance..."
-
-#
+msgstr "Búið til forritsinstans..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
 msgid "Running TAC application..."
-msgstr "Running TAC application..."
-
-#
+msgstr "Keyrði TAC forritið..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
 msgid "Application finished."
-msgstr "Application finished."
-
-#
+msgstr "Forrit lokið."
+# 
 # File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
 msgid "Application interrupted by user."
-msgstr "Application interrupted by user."
-
-#
+msgstr "Forrit rofið af notanda."
+# 
 # File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
 msgid "Critical error during startup: {}"
-msgstr "Critical error during startup: {}"
-
-#
+msgstr "Kritísk villa við ræsingu: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
 msgid "New Project"
-msgstr "New Project"
-
-#
+msgstr "Nýr verkefni"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 57
 # File: usr/share/tac-writer/ui/dialogs.py, line: 307
 # File: usr/share/tac-writer/ui/dialogs.py, line: 555
@@ -105,880 +103,878 @@ msgstr "New Project"
 # File: usr/share/tac-writer/ui/components.py, line: 305
 # File: usr/share/tac-writer/ui/components.py, line: 344
 # File: usr/share/tac-writer/ui/components.py, line: 660
+#: NEEDS WORK
 msgid "Cancel"
-msgstr "Cancel"
-
-#
+msgstr "Hætta við"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
+#: NEEDS WORK
 msgid "Create"
-msgstr "Create"
-
-#
+msgstr "Búa til"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 95
+#: NEEDS WORK
 msgid "Project Details"
 msgstr "Project Details"
-
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 99
 # File: usr/share/tac-writer/ui/dialogs.py, line: 577
+#: NEEDS WORK
 msgid "Project Name"
-msgstr "Project Name"
-
-#
+msgstr "Verkefnisnafn"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 101
+#: NEEDS WORK
 msgid "Enter project name..."
-msgstr "Enter project name..."
-
-#
+msgstr "Sláðu inn nafn verkefnis..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 102
+#: NEEDS WORK
 msgid "My New Project"
-msgstr "My New Project"
-
-#
+msgstr "Mitt Nýja Verkefni"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 119
+#: NEEDS WORK
 msgid "Author"
-msgstr "Author"
-
-#
+msgstr "Höfundur"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 121
+#: NEEDS WORK
 msgid "Your name..."
-msgstr "Your name..."
-
-#
+msgstr "Þitt nafn..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 130
+#: NEEDS WORK
 msgid "Description"
-msgstr "Description"
-
-#
+msgstr "Lýsing"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 162
+#: NEEDS WORK
 msgid "Template"
-msgstr "Template"
-
-#
+msgstr "Sniðmát"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
 msgid "Choose a template to start with"
-msgstr "Choose a template to start with"
-
-#
+msgstr "Veldu sniðmát til að byrja með"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 172
+#: NEEDS WORK
 msgid "Document Template"
-msgstr "Document Template"
-
-#
+msgstr "Sniðmát skjalas"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 256
+#: NEEDS WORK
 msgid "Error Creating Project"
-msgstr "Error Creating Project"
-
-#
+msgstr "Villa við að búa til verkefni"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 259
 # File: usr/share/tac-writer/ui/dialogs.py, line: 727
 # File: usr/share/tac-writer/ui/dialogs.py, line: 746
+#: NEEDS WORK
 msgid "OK"
-msgstr "OK"
-
-#
+msgstr "Í lagi"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 269
+#: NEEDS WORK
 msgid "Format Text"
-msgstr "Format Text"
-
-#
+msgstr "Formata Texta"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 312
+#: NEEDS WORK
 msgid "Apply"
-msgstr "Apply"
-
-#
+msgstr "Beita"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 325
+#: NEEDS WORK
 msgid "Font"
-msgstr "Font"
-
-#
+msgstr "Letur"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 330
 # File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
 msgid "Font Family"
-msgstr "Font Family"
-
-#
+msgstr "Leturstefna"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 388
 # File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
 msgid "Font Size"
-msgstr "Font Size"
-
-#
+msgstr "Leturstærð"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
 msgid "Style"
-msgstr "Style"
-
-#
+msgstr "Stíll"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 399
 # File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
 msgid "Bold"
-msgstr "Bold"
-
-#
+msgstr "Feitletra"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 404
 # File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
 msgid "Italic"
-msgstr "Italic"
-
-#
+msgstr "Kursiv"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 409
 # File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
 msgid "Underline"
-msgstr "Underline"
-
-#
+msgstr "Undirstrika"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 414
+#: NEEDS WORK
 msgid "Spacing & Alignment"
-msgstr "Spacing & Alignment"
-
-#
+msgstr "Rými og Jöfnun"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 420
+#: NEEDS WORK
 msgid "Line Spacing"
-msgstr "Line Spacing"
-
-#
+msgstr "Línufjarlægð"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 421
+#: NEEDS WORK
 msgid "Space between lines"
-msgstr "Space between lines"
-
-#
+msgstr "Rými milli lína"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 429
+#: NEEDS WORK
 msgid "First Line Indent (cm)"
-msgstr "First Line Indent (cm)"
-
-#
+msgstr "Fyrsta línu innfelling (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 430
+#: NEEDS WORK
 msgid "Indentation of the first line"
-msgstr "Indentation of the first line"
-
-#
+msgstr "Inndæling fyrstu línu"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 438
+#: NEEDS WORK
 msgid "Left Margin (cm)"
-msgstr "Left Margin (cm)"
-
-#
+msgstr "Vinstri brún (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 439
+#: NEEDS WORK
 msgid "Left side margin"
-msgstr "Left side margin"
-
-#
+msgstr "Vinstri hliðarmörk"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 447
+#: NEEDS WORK
 msgid "Right Margin (cm)"
-msgstr "Right Margin (cm)"
-
-#
+msgstr "Hægri jaðar (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 448
+#: NEEDS WORK
 msgid "Right side margin"
-msgstr "Right side margin"
-
-#
+msgstr "Hægri jaðar"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 455
+#: NEEDS WORK
 msgid "Text Alignment"
-msgstr "Text Alignment"
-
-#
+msgstr "Texti stilling"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Left"
-msgstr "Left"
-
-#
+msgstr "Vinstri"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Center"
-msgstr "Center"
-
-#
+msgstr "Miðja"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Right"
-msgstr "Right"
-
-#
+msgstr "Hægra"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Justify"
-msgstr "Justify"
-
-#
+msgstr "Rökrétt stilla"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
+#: NEEDS WORK
 msgid "Export Project"
-msgstr "Export Project"
-
-#
+msgstr "Flytja út verkefni"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 560
 # File: usr/share/tac-writer/ui/dialogs.py, line: 716
+#: NEEDS WORK
 msgid "Export"
-msgstr "Export"
-
-#
+msgstr "Útflutningur"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 573
+#: NEEDS WORK
 msgid "Project Information"
-msgstr "Project Information"
-
-#
+msgstr "Upplýsingar um verkefni"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 583
+#: NEEDS WORK
 msgid "Statistics"
-msgstr "Statistics"
-
-#
+msgstr "Stærðfræði"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#: NEEDS WORK
 msgid "{} words, {} paragraphs"
-msgstr "{} words, {} paragraphs"
-
-#
+msgstr "{} orð, {} málsgreinar"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 589
+#: NEEDS WORK
 msgid "Export Options"
-msgstr "Export Options"
-
-#
+msgstr "Útflutningsvalkostir"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 594
 # File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
 msgid "Format"
-msgstr "Format"
-
-#
+msgstr "Snið"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
+#: NEEDS WORK
 msgid "Include Metadata"
-msgstr "Include Metadata"
-
-#
+msgstr "Innihald Metagagna"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
 msgid "Include author, creation date, and other project information"
-msgstr "Include author, creation date, and other project information"
-
-#
+msgstr "Inni höfund, stofndags, og aðrar upplýsingar um verkefnið"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
 msgid "Output Location"
-msgstr "Output Location"
-
-#
+msgstr "Útgangsstaður"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 625
+#: NEEDS WORK
 msgid "Save Location"
-msgstr "Save Location"
-
-#
+msgstr "Vista Sparna"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
 msgid "Click to choose location"
-msgstr "Click to choose location"
-
-#
+msgstr "Smelltu til að velja staðsetningu"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 629
+#: NEEDS WORK
 msgid "Choose..."
-msgstr "Choose..."
-
-#
+msgstr "Veldu..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 646
+#: NEEDS WORK
 msgid "Choose Export Location"
-msgstr "Choose Export Location"
-
-#
+msgstr "Veldu útflutningsstað"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 649
+#: NEEDS WORK
 msgid "Select"
-msgstr "Select"
-
-#
+msgstr "Veljaðu"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 669
+#: NEEDS WORK
 msgid "Exporting..."
-msgstr "Exporting..."
-
-#
+msgstr "Útflutningur..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
 msgid "Export Successful"
-msgstr "Export Successful"
-
-#
+msgstr "Útflutningur árangursríkur"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#: NEEDS WORK
 msgid ""
 "Project exported to:\n"
 "{}"
 msgstr ""
-"Project exported to:\n"
+"Verkefni flutt út í:  \n"
 "{}"
-
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 740
+#: NEEDS WORK
 msgid "An error occurred while exporting the project."
-msgstr "An error occurred while exporting the project."
-
-#
+msgstr "Villa kom upp á meðan verkefnið var flutt út."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 743
+#: NEEDS WORK
 msgid "Export Failed"
-msgstr "Export Failed"
-
-#
+msgstr "Útflutningur mistókst"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 758
 # File: usr/share/tac-writer/ui/main_window.py, line: 137
+#: NEEDS WORK
 msgid "Preferences"
-msgstr "Preferences"
-
-#
+msgstr "Valmyndir"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
 msgid "General"
-msgstr "General"
-
-#
+msgstr "Almennt"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 779
+#: NEEDS WORK
 msgid "Appearance"
-msgstr "Appearance"
-
-#
+msgstr "Útlit"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 784
+#: NEEDS WORK
 msgid "Dark Theme"
-msgstr "Dark Theme"
-
-#
+msgstr "Dökkt þema"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 785
+#: NEEDS WORK
 msgid "Use dark theme for the application"
-msgstr "Use dark theme for the application"
-
-#
+msgstr "Notaðu dökkt þema fyrir forritið"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 791
+#: NEEDS WORK
 msgid "Editor"
-msgstr "Editor"
-
-#
+msgstr "Ritillari"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 797
+#: NEEDS WORK
 msgid "Default Font"
-msgstr "Default Font"
-
-#
+msgstr "Sjálfgefið letur"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
+#: NEEDS WORK
 msgid "Behavior"
-msgstr "Behavior"
-
-#
+msgstr "Hegðun"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 873
+#: NEEDS WORK
 msgid "Auto Save"
-msgstr "Auto Save"
-
-#
+msgstr "Sjálfvirk Vista"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 874
+#: NEEDS WORK
 msgid "Automatically save projects while editing"
-msgstr "Automatically save projects while editing"
-
-#
+msgstr "Sjá sjálfvirkt vista verkefni meðan unnið er að þeim"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 880
+#: NEEDS WORK
 msgid "Word Wrap"
-msgstr "Word Wrap"
-
-#
+msgstr "Orðaflæði"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 881
+#: NEEDS WORK
 msgid "Wrap text to fit the editor width"
-msgstr "Wrap text to fit the editor width"
-
-#
+msgstr "Vefja texta til að passa breidd ritilsins"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 887
+#: NEEDS WORK
 msgid "Show Line Numbers"
-msgstr "Show Line Numbers"
-
-#
+msgstr "Sýna línunúmer"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 888
+#: NEEDS WORK
 msgid "Display line numbers in the editor"
-msgstr "Display line numbers in the editor"
-
-#
+msgstr "Sýna línunúmer í ritlinunni"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1021
+#: NEEDS WORK
 msgid "What is TAC Writer?"
-msgstr "What is TAC Writer?"
-
-#
+msgstr "Hvað er TAC Writer?"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-
-#
+msgstr "Samfelldar röksemdartækni (CAT, TAC á portúgölsku):"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+#: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that "
-"some topics, when explained, cannot be concluded with just one paragraph. "
-"This is a technique that aims to organize a text and make it easier to "
-"understand."
+"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
+"text and make it easier to understand."
 msgstr ""
-"CAT consists of paragraphs that interact with each other. The idea is that "
-"some topics, when explained, cannot be concluded with just one paragraph. "
-"This is a technique that aims to organize a text and make it easier to "
-"understand."
-
-#
+"CAT samanstendur af málsgreinum sem hafa samskipti sín á milli. Hugmyndin er sú að sum efni, þegar "
+"þau eru útskýrð, er ekki hægt að ljúka með einni málsgrein. Þetta er tækni sem miðar að því að "
+"skipuleggja texta og gera hann auðveldari að skilja."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+#: NEEDS WORK
 msgid "This is the writing structure:"
-msgstr "This is the writing structure:"
-
-#
+msgstr "Þetta er skrifgerðin:"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+#: NEEDS WORK
 msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
-"summarizes the topic that will be addressed.\n"
+"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
+"will be addressed.\n"
 "• <b>Argumentation:</b> development of the topic.\n"
 "• <b>Quote:</b> quote that supports the argument.\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
-"indicates a resumption of the argument from the previous paragraph.\n"
+"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
+"the argument from the previous paragraph.\n"
 "• <b>Conclusion:</b> closing of the idea presented."
 msgstr ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
-"summarizes the topic that will be addressed.\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
-"indicates a resumption of the argument from the previous paragraph.\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-
-#
+"• <b>Inngangur:</b> setning í upphafi málsgreinar sem samantekur efnið sem verður fjallað um.  \n"
+"• <b>Röksemdarfærsla:</b> þróun efnisins.  \n"
+"• <b>Tilvitnun:</b> tilvitnun sem styður röksemdina.  \n"
+"• <b>Röksemdarendurskoðun:</b> upphaf næstu málsgreinar sem bendir til endurtekningar á röksemdinni "
+"frá fyrri málsgrein.  \n"
+"• <b>Samantekt:</b> lokin á hugmyndinni sem kynnt var."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
+#: NEEDS WORK
 msgid "Show this dialog on startup"
-msgstr "Show this dialog on startup"
-
-#
+msgstr "Sýna þessa glugga við upphaf"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+#: NEEDS WORK
 msgid "Let's Start"
-msgstr "Let's Start"
-
-#
+msgstr "Við skulum byrja"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1126
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
 msgid "TAC Development Team"
-msgstr "TAC Development Team"
-
-#
+msgstr "TAC þróunarteymi"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
-msgstr "Continuous Argumentation Technique - Academic Writing Assistant"
-
-#
+msgstr "Samfelldar Röksemdartækni - Akademískur Ritunaraðstoðarmaður"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+#: NEEDS WORK
 msgid "Main Developer"
-msgstr "Main Developer"
-
-#
+msgstr "Aðal þróunaraðili"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+#: NEEDS WORK
 msgid "Design Team"
-msgstr "Design Team"
-
-#
+msgstr "Hönnunarteymi"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
+#: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
-msgstr "TAC - Continuous Argumentation Technique"
-
-#
+msgstr "TAC - Samfelldar röksemdaraðferð"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 99
+#: NEEDS WORK
 msgid "New Project (Ctrl+N)"
-msgstr "New Project (Ctrl+N)"
-
-#
+msgstr "Nýr Verkefni (Ctrl+N)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 105
+#: NEEDS WORK
 msgid "Open Project (Ctrl+O)"
-msgstr "Open Project (Ctrl+O)"
-
-#
+msgstr "Opna verkefni (Ctrl+O)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 112
+#: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
-msgstr "Save Project (Ctrl+S)"
-
-#
+msgstr "Vista Verkefni (Ctrl+S)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 121
+#: NEEDS WORK
 msgid "Main Menu"
-msgstr "Main Menu"
-
-#
+msgstr "Aðalvalmynd"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 131
+#: NEEDS WORK
 msgid "Export Project..."
-msgstr "Export Project..."
-
-#
+msgstr "Flytja út verkefni..."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
 msgid "Recent Projects"
-msgstr "Recent Projects"
-
-#
+msgstr "Nýleg verkefni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
 msgid "Welcome Guide"
-msgstr "Welcome Guide"
-
-#
+msgstr "Velkomin leiðarvísir"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
 msgid "About TAC"
-msgstr "About TAC"
-
-#
+msgstr "Um TAC"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 175
+#: NEEDS WORK
 msgid "Projects"
-msgstr "Projects"
-
-#
+msgstr "Verkefni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
 msgid "Add Paragraph"
-msgstr "Add Paragraph"
-
-#
+msgstr "Bæta við málsgrein"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 283
 # File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
 msgid "Title 1"
-msgstr "Title 1"
-
-#
+msgstr "Titill 1"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 284
 # File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
 msgid "Title 2"
-msgstr "Title 2"
-
-#
+msgstr "Titill 2"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 285
 # File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
 msgid "Introduction"
-msgstr "Introduction"
-
-#
+msgstr "Inngangur"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 286
 # File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
 msgid "Argument"
-msgstr "Argument"
-
-#
+msgstr "Röksemd"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 287
 # File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
 msgid "Quote"
-msgstr "Quote"
-
-#
+msgstr "Tilboð"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 288
 # File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
 msgid "Conclusion"
-msgstr "Conclusion"
-
-#
+msgstr "Niðurstaða"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
 msgid "Format paragraphs"
-msgstr "Format paragraphs"
-
-#
+msgstr "Formataðu málsgreinar"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 332
 # File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique"
-msgstr "Continuous Argumentation Technique"
-
-#
+msgstr "Samfelldar röksemdaraðferð"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 340
 # File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
 msgid "{} words • {} paragraphs"
-msgstr "{} words • {} paragraphs"
-
-#
+msgstr "{} orð • {} málsgreinar"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
 msgid "Paragraph reordered"
-msgstr "Paragraph reordered"
-
-#
+msgstr "Paragraph endurraðinn"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
 msgid "Open Project"
-msgstr "Open Project"
-
-#
+msgstr "Opna verkefni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
 msgid "Open"
-msgstr "Open"
-
-#
+msgstr "Opna"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
 msgid "TAC Projects (*.json)"
-msgstr "TAC Projects (*.json)"
-
-#
+msgstr "TAC Verkefni (*.json)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
 msgid "All Files"
-msgstr "All Files"
-
-#
+msgstr "Öll skrár"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
 msgid "Opened project: {}"
-msgstr "Opened project: {}"
-
-#
+msgstr "Opnað verkefni: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 493
 # File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
 msgid "Failed to open project"
-msgstr "Failed to open project"
-
-#
+msgstr "Mistók að opna verkefni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
 msgid "Project saved successfully"
-msgstr "Project saved successfully"
-
-#
+msgstr "Verkefni vistað með góðum árangri"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
 msgid "Failed to save project"
-msgstr "Failed to save project"
-
-#
+msgstr "Mistók að vista verkefni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
 msgid "No project to export"
-msgstr "No project to export"
-
-#
+msgstr "Engin til að flytja út"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
 msgid "Created project: {}"
-msgstr "Created project: {}"
-
-#
+msgstr "Skráður verkefni: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
 msgid "No paragraphs to format"
-msgstr "No paragraphs to format"
-
-#
+msgstr "Engin ekki málsgreinar til að sniðganga."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
 msgid "Welcome to TAC"
-msgstr "Welcome to TAC"
-
-#
+msgstr "Velkomin í TAC"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
-msgstr "Create structured academic texts with guided paragraph types"
-
-#
+msgstr "Búðu til uppbyggð fræðileg texta með leiðbeiningum um málsgreinar."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
 msgid "Note:"
-msgstr "Note:"
-
-#
+msgstr "Athugasemd:"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
 msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "exporting to ODT might require some adjustment in your Office Suite."
-
-#
+msgstr "útflutningur í ODT gæti krafist nokkurra aðlögunar í Office Suite þínum."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
 msgid "Tip:"
-msgstr "Tip:"
-
-#
+msgstr "Tipp:"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
 msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "for direct quotes with less than 4 lines, use argument box."
-
-#
+msgstr "fyrir beinar tilvitnanir með færri en 4 línur, notaðu rökbox."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
 msgid "Start Writing"
-msgstr "Start Writing"
-
-#
+msgstr "Byrjaðu að skrifa"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
 msgid "Choose a template to get started"
-msgstr "Choose a template to get started"
-
-#
+msgstr "Veldu sniðmát til að byrja."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
 msgid "Start"
-msgstr "Start"
-
-#
+msgstr "Byrjun"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
 msgid "Search projects..."
-msgstr "Search projects..."
-
-#
+msgstr "Leita að verkefnum..."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
 msgid "Rename project"
-msgstr "Rename project"
-
-#
+msgstr "Endurnefna verkefni"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
 msgid "Delete project"
-msgstr "Delete project"
-
-#
+msgstr "Eyða verkefni"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
 msgid "Rename Project"
-msgstr "Rename Project"
-
-#
+msgstr "Endurnefna verkefni"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
 msgid "Enter new name for '{}'"
-msgstr "Enter new name for '{}'"
-
-#
+msgstr "Sláðu inn nýtt nafn fyrir '{}'"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
 msgid "Rename"
-msgstr "Rename"
-
-#
+msgstr "Endurnefna"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
 msgid "Delete '{}'?"
-msgstr "Delete '{}'?"
-
-#
+msgstr "Eyða '{}'?"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
 msgid "This project will be moved to trash and can be recovered."
-msgstr "This project will be moved to trash and can be recovered."
-
-#
+msgstr "Þetta verkefni verður flutt í ruslið og hægt er að endurheimta það."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
 msgid "Delete"
-msgstr "Delete"
-
-#
+msgstr "Eyða"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
 msgid "Remove paragraph"
-msgstr "Remove paragraph"
-
-#
+msgstr "Fjarlægðu málsgrein"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
 msgid "Paragraph"
-msgstr "Paragraph"
-
-#
+msgstr "Málsgrein"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 633
+#: NEEDS WORK
 msgid "{} words"
-msgstr "{} words"
-
-#
+msgstr "Please provide the string you would like to translate."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
 msgid "Remove Paragraph?"
-msgstr "Remove Paragraph?"
-
-#
+msgstr "Fjarlægja málsgrein?"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
 msgid "This action cannot be undone."
-msgstr "This action cannot be undone."
-
-#
+msgstr "Þessi aðgerð er ekki hægt að afturkalla."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
 msgid "Remove"
-msgstr "Remove"
-
-#
+msgstr "Fjarlægja"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
 msgid "Unknown"
-msgstr "Unknown"
-
-#
+msgstr "Ókunnugt"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
 msgid "0 minutes"
-msgstr "0 minutes"
-
-#
+msgstr "0 mínútur"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
 msgid "< 1 minute"
-msgstr "< 1 minute"
-
-#
+msgstr "< 1 mínúta"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
 msgid "1 minute"
-msgstr "1 minute"
-
-#
+msgstr "1 mínúta"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
 msgid "{} minutes"
-msgstr "{} minutes"
-
-#
+msgstr "{} mínútur"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
 msgid "{}h {}m"
-msgstr "{}h {}m"
-
-#
+msgstr "{}klst {}mín"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
 msgid "Project name cannot be empty"
-msgstr "Project name cannot be empty"
-
-#
+msgstr "Nafn verkefnis má ekki vera tómt"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
 msgid "Project name must be at least 2 characters long"
-msgstr "Project name must be at least 2 characters long"
-
-#
+msgstr "Nafn verkefnis verður að vera að minnsta kosti 2 stafir að lengd."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
 msgid "Project name cannot exceed 100 characters"
-msgstr "Project name cannot exceed 100 characters"
-
-#
+msgstr "Nafn verkefnis má ekki fara yfir 100 stafi"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
 msgid "Project name contains invalid characters"
-msgstr "Project name contains invalid characters"
-
-#
+msgstr "Nafn verkefnis inniheldur ógild tákn."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
 msgid "Path cannot be empty"
-msgstr "Path cannot be empty"
-
-#
+msgstr "Slóð getur ekki verið tóm."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
 msgid "Parent directory does not exist"
-msgstr "Parent directory does not exist"
-
-#
+msgstr "Foreldra skrá er ekki til."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
 msgid "Path is too long"
-msgstr "Path is too long"
-
-#
+msgstr "Slóðin er of löng"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
 msgid "Invalid path: {}"
-msgstr "Invalid path: {}"
-
-#
+msgstr "Ógild leið: {}"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
 msgid "{:,} words"
-msgstr "{:,} words"
-
-#
+msgstr "{:,} orð"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
 msgid "{:,} characters"
-msgstr "{:,} characters"
-
-#
+msgstr "{:,} stafir"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 320
 # File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
 msgid "Info"
-msgstr "Info"
-
-#
+msgstr "Upplýsingar"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
 msgid "Type: {}"
-msgstr "Type: {}"
-
-#
+msgstr "Tegund: {}"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
 msgid "Module: {}"
 msgstr "Module: {}"
-
-#
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
 msgid "Attributes:"
-msgstr "Attributes:"
-
-#
+msgstr "Eiginleikar:"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
 msgid "Methods:"
-msgstr "Methods:"
-
-#
+msgstr "Aðferðir:"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
 msgid "  ... and {} more methods"
-msgstr "  ... and {} more methods"
-
-#
+msgstr "... og {} fleiri aðferðir"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
 msgid "Performance: {} took {:.3f} seconds"
-msgstr "Performance: {} took {:.3f} seconds"
+msgstr "Frammista: {} tók {:.3f} sekúndur"

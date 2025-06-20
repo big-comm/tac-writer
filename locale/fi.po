@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the comm-tac-writer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -14,89 +14,87 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#
+"X-Generator: attranslate\n"
+# 
 # File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
 msgid "Academic Essay"
-msgstr "Academic Essay"
-
-#
+msgstr "Akateeminen essee"
+# 
 # File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
 msgid "Standard academic essay structure"
-msgstr "Standard academic essay structure"
-
-#
+msgstr "Vakiintunut akateemisen esseen rakenne"
+# 
 # File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
-msgstr "Error: GTK 4.0 or higher is required"
-
-#
+msgstr "Virhe: GTK 4.0 tai uudempi vaaditaan"
+# 
 # File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
 msgid "Error: Required dependencies not found: {}"
-msgstr "Error: Required dependencies not found: {}"
-
-#
+msgstr "Virhe: Vaadittuja riippuvuuksia ei löytynyt: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 53
-msgid ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-
-#
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Asenna: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
 # File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
 msgid "Error checking dependencies: {}"
-msgstr "Error checking dependencies: {}"
-
-#
+msgstr "Virhe tarkistaessa riippuvuuksia: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
 msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Starting TAC - Continuous Argumentation Technique"
-
-#
+msgstr "Aloittava TAC - Jatkuva Argumentointitekniikka"
+# 
 # File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
 msgid "Application directory: {}"
-msgstr "Application directory: {}"
-
-#
+msgstr "Sovellushakemisto: {}"
+# 
 # File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
 msgid "Loading application modules..."
-msgstr "Loading application modules..."
-
-#
+msgstr "Ladataan sovellusmoduuleja..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
 msgid "Creating application instance..."
-msgstr "Creating application instance..."
-
-#
+msgstr "Luodaan sovelluksen instanssia..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
 msgid "Running TAC application..."
-msgstr "Running TAC application..."
-
-#
+msgstr "Suoritetaan TAC-sovellusta..."
+# 
 # File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
 msgid "Application finished."
-msgstr "Application finished."
-
-#
+msgstr "Sovellus valmis."
+# 
 # File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
 msgid "Application interrupted by user."
-msgstr "Application interrupted by user."
-
-#
+msgstr "Sovellus keskeytettiin käyttäjän toimesta."
+# 
 # File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
 msgid "Critical error during startup: {}"
-msgstr "Critical error during startup: {}"
-
-#
+msgstr "Kriittinen virhe käynnistyksen aikana: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
 msgid "New Project"
-msgstr "New Project"
-
-#
+msgstr "Uusi projekti"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 57
 # File: usr/share/tac-writer/ui/dialogs.py, line: 307
 # File: usr/share/tac-writer/ui/dialogs.py, line: 555
@@ -105,880 +103,878 @@ msgstr "New Project"
 # File: usr/share/tac-writer/ui/components.py, line: 305
 # File: usr/share/tac-writer/ui/components.py, line: 344
 # File: usr/share/tac-writer/ui/components.py, line: 660
+#: NEEDS WORK
 msgid "Cancel"
-msgstr "Cancel"
-
-#
+msgstr "Peruuta"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
+#: NEEDS WORK
 msgid "Create"
-msgstr "Create"
-
-#
+msgstr "Luo"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 95
+#: NEEDS WORK
 msgid "Project Details"
-msgstr "Project Details"
-
-#
+msgstr "Projektin tiedot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 99
 # File: usr/share/tac-writer/ui/dialogs.py, line: 577
+#: NEEDS WORK
 msgid "Project Name"
-msgstr "Project Name"
-
-#
+msgstr "Projektin nimi"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 101
+#: NEEDS WORK
 msgid "Enter project name..."
-msgstr "Enter project name..."
-
-#
+msgstr "Syötä projektin nimi..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 102
+#: NEEDS WORK
 msgid "My New Project"
-msgstr "My New Project"
-
-#
+msgstr "Uusi projektini"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 119
+#: NEEDS WORK
 msgid "Author"
-msgstr "Author"
-
-#
+msgstr "Kirjoittaja"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 121
+#: NEEDS WORK
 msgid "Your name..."
-msgstr "Your name..."
-
-#
+msgstr "Nimesi..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 130
+#: NEEDS WORK
 msgid "Description"
-msgstr "Description"
-
-#
+msgstr "Kuvaus"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 162
+#: NEEDS WORK
 msgid "Template"
-msgstr "Template"
-
-#
+msgstr "Malli"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
 msgid "Choose a template to start with"
-msgstr "Choose a template to start with"
-
-#
+msgstr "Valitse malli, jota käyttää aloittamiseen"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 172
+#: NEEDS WORK
 msgid "Document Template"
-msgstr "Document Template"
-
-#
+msgstr "Asiakirjamalli"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 256
+#: NEEDS WORK
 msgid "Error Creating Project"
-msgstr "Error Creating Project"
-
-#
+msgstr "Virhe projektin luomisessa"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 259
 # File: usr/share/tac-writer/ui/dialogs.py, line: 727
 # File: usr/share/tac-writer/ui/dialogs.py, line: 746
+#: NEEDS WORK
 msgid "OK"
 msgstr "OK"
-
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 269
+#: NEEDS WORK
 msgid "Format Text"
-msgstr "Format Text"
-
-#
+msgstr "Muotoile teksti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 312
+#: NEEDS WORK
 msgid "Apply"
-msgstr "Apply"
-
-#
+msgstr "Käytä"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 325
+#: NEEDS WORK
 msgid "Font"
-msgstr "Font"
-
-#
+msgstr "Fontti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 330
 # File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
 msgid "Font Family"
-msgstr "Font Family"
-
-#
+msgstr "Fonttiperhe"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 388
 # File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
 msgid "Font Size"
-msgstr "Font Size"
-
-#
+msgstr "Fonttikoko"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
 msgid "Style"
-msgstr "Style"
-
-#
+msgstr "Tyyli"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 399
 # File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
 msgid "Bold"
-msgstr "Bold"
-
-#
+msgstr "Rohkea"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 404
 # File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
 msgid "Italic"
-msgstr "Italic"
-
-#
+msgstr "Kursivo"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 409
 # File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
 msgid "Underline"
-msgstr "Underline"
-
-#
+msgstr "Alleviivaa"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 414
+#: NEEDS WORK
 msgid "Spacing & Alignment"
-msgstr "Spacing & Alignment"
-
-#
+msgstr "Väli ja kohdistus"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 420
+#: NEEDS WORK
 msgid "Line Spacing"
-msgstr "Line Spacing"
-
-#
+msgstr "Riviväli"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 421
+#: NEEDS WORK
 msgid "Space between lines"
-msgstr "Space between lines"
-
-#
+msgstr "Riviväli"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 429
+#: NEEDS WORK
 msgid "First Line Indent (cm)"
-msgstr "First Line Indent (cm)"
-
-#
+msgstr "Ensimmäinen rivin sisennys (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 430
+#: NEEDS WORK
 msgid "Indentation of the first line"
-msgstr "Indentation of the first line"
-
-#
+msgstr "Ensimmäisen rivin sisennys"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 438
+#: NEEDS WORK
 msgid "Left Margin (cm)"
-msgstr "Left Margin (cm)"
-
-#
+msgstr "Vasen marginaali (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 439
+#: NEEDS WORK
 msgid "Left side margin"
-msgstr "Left side margin"
-
-#
+msgstr "Vasen reunan marginaali"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 447
+#: NEEDS WORK
 msgid "Right Margin (cm)"
-msgstr "Right Margin (cm)"
-
-#
+msgstr "Oikea marginaali (cm)"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 448
+#: NEEDS WORK
 msgid "Right side margin"
-msgstr "Right side margin"
-
-#
+msgstr "Oikea sivureuna"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 455
+#: NEEDS WORK
 msgid "Text Alignment"
-msgstr "Text Alignment"
-
-#
+msgstr "Tekstin tasaus"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Left"
-msgstr "Left"
-
-#
+msgstr "Vasen"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Center"
-msgstr "Center"
-
-#
+msgstr "Keskus"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Right"
-msgstr "Right"
-
-#
+msgstr "Oikea"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
 msgid "Justify"
-msgstr "Justify"
-
-#
+msgstr "Perusta"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
+#: NEEDS WORK
 msgid "Export Project"
-msgstr "Export Project"
-
-#
+msgstr "Vie projekti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 560
 # File: usr/share/tac-writer/ui/dialogs.py, line: 716
+#: NEEDS WORK
 msgid "Export"
-msgstr "Export"
-
-#
+msgstr "Vienti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 573
+#: NEEDS WORK
 msgid "Project Information"
-msgstr "Project Information"
-
-#
+msgstr "Projektin tiedot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 583
+#: NEEDS WORK
 msgid "Statistics"
-msgstr "Statistics"
-
-#
+msgstr "Tilastot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#: NEEDS WORK
 msgid "{} words, {} paragraphs"
-msgstr "{} words, {} paragraphs"
-
-#
+msgstr "{} sanaa, {} kappaletta"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 589
+#: NEEDS WORK
 msgid "Export Options"
-msgstr "Export Options"
-
-#
+msgstr "Vientiasetukset"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 594
 # File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
 msgid "Format"
-msgstr "Format"
-
-#
+msgstr "Muoto"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
+#: NEEDS WORK
 msgid "Include Metadata"
-msgstr "Include Metadata"
-
-#
+msgstr "Sisällytä metatiedot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
 msgid "Include author, creation date, and other project information"
-msgstr "Include author, creation date, and other project information"
-
-#
+msgstr "Sisällytä tekijä, luontipäivämäärä ja muut projektitiedot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
 msgid "Output Location"
-msgstr "Output Location"
-
-#
+msgstr "Tulostuspaikka"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 625
+#: NEEDS WORK
 msgid "Save Location"
-msgstr "Save Location"
-
-#
+msgstr "Tallennuspaikka"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
 msgid "Click to choose location"
-msgstr "Click to choose location"
-
-#
+msgstr "Napsauta valitaksesi sijainnin"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 629
+#: NEEDS WORK
 msgid "Choose..."
-msgstr "Choose..."
-
-#
+msgstr "Valitse..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 646
+#: NEEDS WORK
 msgid "Choose Export Location"
-msgstr "Choose Export Location"
-
-#
+msgstr "Valitse vientipaikka"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 649
+#: NEEDS WORK
 msgid "Select"
-msgstr "Select"
-
-#
+msgstr "Valitse"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 669
+#: NEEDS WORK
 msgid "Exporting..."
-msgstr "Exporting..."
-
-#
+msgstr "Vientiin..."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
 msgid "Export Successful"
-msgstr "Export Successful"
-
-#
+msgstr "Vienti onnistui"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#: NEEDS WORK
 msgid ""
 "Project exported to:\n"
 "{}"
 msgstr ""
-"Project exported to:\n"
+"Projekti viety:  \n"
 "{}"
-
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 740
+#: NEEDS WORK
 msgid "An error occurred while exporting the project."
-msgstr "An error occurred while exporting the project."
-
-#
+msgstr "Virhe tapahtui projektin vientiä suoritettaessa."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 743
+#: NEEDS WORK
 msgid "Export Failed"
-msgstr "Export Failed"
-
-#
+msgstr "Vienti epäonnistui"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 758
 # File: usr/share/tac-writer/ui/main_window.py, line: 137
+#: NEEDS WORK
 msgid "Preferences"
-msgstr "Preferences"
-
-#
+msgstr "Asetukset"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
 msgid "General"
-msgstr "General"
-
-#
+msgstr "Yleinen"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 779
+#: NEEDS WORK
 msgid "Appearance"
-msgstr "Appearance"
-
-#
+msgstr "Ulkoasu"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 784
+#: NEEDS WORK
 msgid "Dark Theme"
-msgstr "Dark Theme"
-
-#
+msgstr "Tumma teema"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 785
+#: NEEDS WORK
 msgid "Use dark theme for the application"
-msgstr "Use dark theme for the application"
-
-#
+msgstr "Käytä tummia teemoja sovelluksessa"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 791
+#: NEEDS WORK
 msgid "Editor"
-msgstr "Editor"
-
-#
+msgstr "Muokkaaja"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 797
+#: NEEDS WORK
 msgid "Default Font"
-msgstr "Default Font"
-
-#
+msgstr "Oletusfontti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
+#: NEEDS WORK
 msgid "Behavior"
-msgstr "Behavior"
-
-#
+msgstr "Käyttäytyminen"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 873
+#: NEEDS WORK
 msgid "Auto Save"
-msgstr "Auto Save"
-
-#
+msgstr "Automaattinen tallennus"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 874
+#: NEEDS WORK
 msgid "Automatically save projects while editing"
-msgstr "Automatically save projects while editing"
-
-#
+msgstr "Tallenna projektit automaattisesti muokkaamisen aikana"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 880
+#: NEEDS WORK
 msgid "Word Wrap"
-msgstr "Word Wrap"
-
-#
+msgstr "Rivinvaihto"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 881
+#: NEEDS WORK
 msgid "Wrap text to fit the editor width"
-msgstr "Wrap text to fit the editor width"
-
-#
+msgstr "Kääri teksti editorin leveyteen sopivaksi"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 887
+#: NEEDS WORK
 msgid "Show Line Numbers"
-msgstr "Show Line Numbers"
-
-#
+msgstr "Näytä rivinumerot"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 888
+#: NEEDS WORK
 msgid "Display line numbers in the editor"
-msgstr "Display line numbers in the editor"
-
-#
+msgstr "Näytä rivinumerot editorissa"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1021
+#: NEEDS WORK
 msgid "What is TAC Writer?"
-msgstr "What is TAC Writer?"
-
-#
+msgstr "Mikä on TAC Writer?"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-
-#
+msgstr "Jatkuva argumentointitekniikka (CAT, TAC portugaliksi):"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+#: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that "
-"some topics, when explained, cannot be concluded with just one paragraph. "
-"This is a technique that aims to organize a text and make it easier to "
-"understand."
+"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
+"text and make it easier to understand."
 msgstr ""
-"CAT consists of paragraphs that interact with each other. The idea is that "
-"some topics, when explained, cannot be concluded with just one paragraph. "
-"This is a technique that aims to organize a text and make it easier to "
-"understand."
-
-#
+"CAT koostuu toisiinsa vuorovaikuttavista kappaleista. Ajatuksena on, että jotkin aiheet, kun ne "
+"selitetään, eivät voi päättyä vain yhteen kappaleeseen. Tämä on tekniikka, joka pyrkii järjestämään "
+"tekstiä ja tekemään siitä helpommin ymmärrettävää."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+#: NEEDS WORK
 msgid "This is the writing structure:"
-msgstr "This is the writing structure:"
-
-#
+msgstr "Tämä on kirjoitusrakenne:"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+#: NEEDS WORK
 msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
-"summarizes the topic that will be addressed.\n"
+"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
+"will be addressed.\n"
 "• <b>Argumentation:</b> development of the topic.\n"
 "• <b>Quote:</b> quote that supports the argument.\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
-"indicates a resumption of the argument from the previous paragraph.\n"
+"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
+"the argument from the previous paragraph.\n"
 "• <b>Conclusion:</b> closing of the idea presented."
 msgstr ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
-"summarizes the topic that will be addressed.\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that "
-"indicates a resumption of the argument from the previous paragraph.\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-
-#
+"• <b>Johdanto:</b> lause kappaleen alussa, joka tiivistää käsiteltävän aiheen.\n"
+"• <b>Argumentointi:</b> aiheen kehittäminen.\n"
+"• <b>Siteeraus:</b> lainaus, joka tukee argumenttia.\n"
+"• <b>Argumentatiivinen jatko:</b> seuraavan kappaleen alku, joka osoittaa edellisen kappaleen "
+"argumentin jatkumisen.\n"
+"• <b>Johtopäätös:</b> esitetyn ajatuksen päättäminen."
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
+#: NEEDS WORK
 msgid "Show this dialog on startup"
-msgstr "Show this dialog on startup"
-
-#
+msgstr "Näytä tämä valintaikkuna käynnistyksen yhteydessä"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+#: NEEDS WORK
 msgid "Let's Start"
-msgstr "Let's Start"
-
-#
+msgstr "Aloitetaan"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1126
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
 msgid "TAC Development Team"
-msgstr "TAC Development Team"
-
-#
+msgstr "TAC Kehitystiimi"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
-msgstr "Continuous Argumentation Technique - Academic Writing Assistant"
-
-#
+msgstr "Jatkuva Argumentointitekniikka - Akateeminen Kirjoitusavustaja"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+#: NEEDS WORK
 msgid "Main Developer"
-msgstr "Main Developer"
-
-#
+msgstr "Pääkehittäjä"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+#: NEEDS WORK
 msgid "Design Team"
-msgstr "Design Team"
-
-#
+msgstr "Suunnittelutiimi"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
+#: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
-msgstr "TAC - Continuous Argumentation Technique"
-
-#
+msgstr "TAC - Jatkuva Argumentointitekniikka"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 99
+#: NEEDS WORK
 msgid "New Project (Ctrl+N)"
-msgstr "New Project (Ctrl+N)"
-
-#
+msgstr "Uusi projekti (Ctrl+N)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 105
+#: NEEDS WORK
 msgid "Open Project (Ctrl+O)"
-msgstr "Open Project (Ctrl+O)"
-
-#
+msgstr "Avaa projekti (Ctrl+O)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 112
+#: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
-msgstr "Save Project (Ctrl+S)"
-
-#
+msgstr "Tallenna projekti (Ctrl+S)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 121
+#: NEEDS WORK
 msgid "Main Menu"
-msgstr "Main Menu"
-
-#
+msgstr "Päävalikko"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 131
+#: NEEDS WORK
 msgid "Export Project..."
-msgstr "Export Project..."
-
-#
+msgstr "Vie projekti..."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
 msgid "Recent Projects"
-msgstr "Recent Projects"
-
-#
+msgstr "Viimeisimmät projektit"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
 msgid "Welcome Guide"
-msgstr "Welcome Guide"
-
-#
+msgstr "Tervetuloa-opas"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
 msgid "About TAC"
-msgstr "About TAC"
-
-#
+msgstr "Tietoa TAC:sta"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 175
+#: NEEDS WORK
 msgid "Projects"
-msgstr "Projects"
-
-#
+msgstr "Projektit"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
 msgid "Add Paragraph"
-msgstr "Add Paragraph"
-
-#
+msgstr "Lisää kappale"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 283
 # File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
 msgid "Title 1"
-msgstr "Title 1"
-
-#
+msgstr "Otsikko 1"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 284
 # File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
 msgid "Title 2"
-msgstr "Title 2"
-
-#
+msgstr "Otsikko 2"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 285
 # File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
 msgid "Introduction"
-msgstr "Introduction"
-
-#
+msgstr "Johdanto"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 286
 # File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
 msgid "Argument"
-msgstr "Argument"
-
-#
+msgstr "Argumentti"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 287
 # File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
 msgid "Quote"
-msgstr "Quote"
-
-#
+msgstr "Lainaus"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 288
 # File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
 msgid "Conclusion"
-msgstr "Conclusion"
-
-#
+msgstr "Johtopäätös"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
 msgid "Format paragraphs"
-msgstr "Format paragraphs"
-
-#
+msgstr "Muotoile kappaleet"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 332
 # File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
 msgid "Continuous Argumentation Technique"
-msgstr "Continuous Argumentation Technique"
-
-#
+msgstr "Jatkuva Argumentointitekniikka"
+# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 340
 # File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
 msgid "{} words • {} paragraphs"
-msgstr "{} words • {} paragraphs"
-
-#
+msgstr "{} sanaa • {} kappaletta"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
 msgid "Paragraph reordered"
-msgstr "Paragraph reordered"
-
-#
+msgstr "Kappale järjestetty uudelleen"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
 msgid "Open Project"
-msgstr "Open Project"
-
-#
+msgstr "Avaa projekti"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
 msgid "Open"
-msgstr "Open"
-
-#
+msgstr "Avaa"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
 msgid "TAC Projects (*.json)"
-msgstr "TAC Projects (*.json)"
-
-#
+msgstr "TAC-projektit (*.json)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
 msgid "All Files"
-msgstr "All Files"
-
-#
+msgstr "Kaikki tiedostot"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
 msgid "Opened project: {}"
-msgstr "Opened project: {}"
-
-#
+msgstr "Avoin projekti: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 493
 # File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
 msgid "Failed to open project"
-msgstr "Failed to open project"
-
-#
+msgstr "Projektin avaaminen epäonnistui"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
 msgid "Project saved successfully"
-msgstr "Project saved successfully"
-
-#
+msgstr "Projekti tallennettiin onnistuneesti"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
 msgid "Failed to save project"
-msgstr "Failed to save project"
-
-#
+msgstr "Projektin tallentaminen epäonnistui"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
 msgid "No project to export"
-msgstr "No project to export"
-
-#
+msgstr "Ei vientiin sopivaa projektia"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
 msgid "Created project: {}"
-msgstr "Created project: {}"
-
-#
+msgstr "Luotu projekti: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
 msgid "No paragraphs to format"
-msgstr "No paragraphs to format"
-
-#
+msgstr "Ei muotoiltavia kappaleita"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
 msgid "Welcome to TAC"
-msgstr "Welcome to TAC"
-
-#
+msgstr "Tervetuloa TAC:iin"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
-msgstr "Create structured academic texts with guided paragraph types"
-
-#
+msgstr "Luo jäsenneltyjä akateemisia tekstejä ohjattujen kappaletyyppien avulla"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
 msgid "Note:"
-msgstr "Note:"
-
-#
+msgstr "Huom:"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
 msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "exporting to ODT might require some adjustment in your Office Suite."
-
-#
+msgstr "ODT-muotoon vienti saattaa vaatia joitakin säätöjä Office Suite -ohjelmistossasi."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
 msgid "Tip:"
-msgstr "Tip:"
-
-#
+msgstr "Vinkki:"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
 msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "for direct quotes with less than 4 lines, use argument box."
-
-#
+msgstr "suora lainaus, jossa on alle 4 riviä, käytä argumenttilaatikkoa."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
 msgid "Start Writing"
-msgstr "Start Writing"
-
-#
+msgstr "Aloita kirjoittaminen"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
 msgid "Choose a template to get started"
-msgstr "Choose a template to get started"
-
-#
+msgstr "Valitse malli aloittaaksesi"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
 msgid "Start"
-msgstr "Start"
-
-#
+msgstr "Aloita"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
 msgid "Search projects..."
-msgstr "Search projects..."
-
-#
+msgstr "Etsi projekteja..."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
 msgid "Rename project"
-msgstr "Rename project"
-
-#
+msgstr "Nimeä projekti"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
 msgid "Delete project"
-msgstr "Delete project"
-
-#
+msgstr "Poista projekti"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
 msgid "Rename Project"
-msgstr "Rename Project"
-
-#
+msgstr "Nimeä projekti"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
 msgid "Enter new name for '{}'"
-msgstr "Enter new name for '{}'"
-
-#
+msgstr "Syötä uusi nimi '{}' varten"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
 msgid "Rename"
-msgstr "Rename"
-
-#
+msgstr "Nimeä"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
 msgid "Delete '{}'?"
-msgstr "Delete '{}'?"
-
-#
+msgstr "Poista '{}' ?"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
 msgid "This project will be moved to trash and can be recovered."
-msgstr "This project will be moved to trash and can be recovered."
-
-#
+msgstr "Tämä projekti siirretään roskakoriin ja se voidaan palauttaa."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
 msgid "Delete"
-msgstr "Delete"
-
-#
+msgstr "Poista"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
 msgid "Remove paragraph"
-msgstr "Remove paragraph"
-
-#
+msgstr "Poista kappale"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
 msgid "Paragraph"
-msgstr "Paragraph"
-
-#
+msgstr "Kappale"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 633
+#: NEEDS WORK
 msgid "{} words"
-msgstr "{} words"
-
-#
+msgstr "Sure, please provide the string you would like to translate."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
 msgid "Remove Paragraph?"
-msgstr "Remove Paragraph?"
-
-#
+msgstr "Poista kappale?"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
 msgid "This action cannot be undone."
-msgstr "This action cannot be undone."
-
-#
+msgstr "Tätä toimintoa ei voi peruuttaa."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
 msgid "Remove"
-msgstr "Remove"
-
-#
+msgstr "Poista"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
 msgid "Unknown"
-msgstr "Unknown"
-
-#
+msgstr "Tuntematon"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
 msgid "0 minutes"
-msgstr "0 minutes"
-
-#
+msgstr "0 minuuttia"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
 msgid "< 1 minute"
-msgstr "< 1 minute"
-
-#
+msgstr "< 1 minuutti"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
 msgid "1 minute"
-msgstr "1 minute"
-
-#
+msgstr "1 minuutti"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
 msgid "{} minutes"
-msgstr "{} minutes"
-
-#
+msgstr "{} minuuttia"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
 msgid "{}h {}m"
 msgstr "{}h {}m"
-
-#
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
 msgid "Project name cannot be empty"
-msgstr "Project name cannot be empty"
-
-#
+msgstr "Projektin nimi ei voi olla tyhjää."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
 msgid "Project name must be at least 2 characters long"
-msgstr "Project name must be at least 2 characters long"
-
-#
+msgstr "Projektin nimen on oltava vähintään 2 merkkiä pitkä"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
 msgid "Project name cannot exceed 100 characters"
-msgstr "Project name cannot exceed 100 characters"
-
-#
+msgstr "Projektin nimi ei voi ylittää 100 merkkiä."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
 msgid "Project name contains invalid characters"
-msgstr "Project name contains invalid characters"
-
-#
+msgstr "Projektin nimi sisältää virheellisiä merkkejä"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
 msgid "Path cannot be empty"
-msgstr "Path cannot be empty"
-
-#
+msgstr "Polku ei voi olla tyhjää."
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
 msgid "Parent directory does not exist"
-msgstr "Parent directory does not exist"
-
-#
+msgstr "Ylätason hakemistoa ei ole olemassa"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
 msgid "Path is too long"
-msgstr "Path is too long"
-
-#
+msgstr "Polku on liian pitkä"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
 msgid "Invalid path: {}"
-msgstr "Invalid path: {}"
-
-#
+msgstr "Virheellinen polku: {}"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
 msgid "{:,} words"
-msgstr "{:,} words"
-
-#
+msgstr "{: ,} sanoja"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
 msgid "{:,} characters"
-msgstr "{:,} characters"
-
-#
+msgstr "{: ,} merkkiä"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 320
 # File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
 msgid "Info"
-msgstr "Info"
-
-#
+msgstr "Tietoa"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
 msgid "Type: {}"
-msgstr "Type: {}"
-
-#
+msgstr "Tyyppi: {}"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
 msgid "Module: {}"
-msgstr "Module: {}"
-
-#
+msgstr "Moduuli: {}"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
 msgid "Attributes:"
-msgstr "Attributes:"
-
-#
+msgstr "Ominaisuudet:"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
 msgid "Methods:"
-msgstr "Methods:"
-
-#
+msgstr "Menetelmät:"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
 msgid "  ... and {} more methods"
-msgstr "  ... and {} more methods"
-
-#
+msgstr "... ja {} lisää menetelmiä"
+# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
 msgid "Performance: {} took {:.3f} seconds"
-msgstr "Performance: {} took {:.3f} seconds"
+msgstr "Suorituskyky: {} kesti {:.3f} sekuntia"
