@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import List, Dict, Optional, Any
 from datetime import datetime
 
-# Imports condicionais para PDF
+# Conditional imports for PDF
 try:
     from reportlab.lib.pagesizes import A4
     from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
@@ -378,7 +378,7 @@ class ExportService:
             )
             story.append(RLParagraph(project.name, title_style))
             
-            # Content - SEM espaçamento entre parágrafos
+            # Content - WITHOUT spacing between paragraphs
             for paragraph in project.paragraphs:
                 # Create style based on paragraph type and formatting
                 style_name = f'Custom_{paragraph.type.value}'
@@ -422,7 +422,7 @@ class ExportService:
                         style_name,
                         parent=styles['Normal'],
                         fontSize=12,
-                        leading=18,  # 1.5x o tamanho da fonte (12 * 1.5 = 18)
+                        leading=18,  # 1.5x font size (12 * 1.5 = 18)
                         firstLineIndent=1.5*cm,
                         spaceBefore=0,
                         spaceAfter=0,
@@ -433,7 +433,7 @@ class ExportService:
                         style_name,
                         parent=styles['Normal'],
                         fontSize=12,
-                        leading=18,  # 1.5x o tamanho da fonte (12 * 1.5 = 18)
+                        leading=18,  # 1.5x font size (12 * 1.5 = 18)
                         spaceBefore=0,
                         spaceAfter=0,
                         alignment=4  # 0=Left, 1=Center, 2=Right, 4=Justify
@@ -452,7 +452,7 @@ class ExportService:
             return False
     
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate content.xml for ODT with proper formatting - SEM espaçamento entre parágrafos"""
+        """Generate content.xml for ODT with proper formatting - WITHOUT spacing between paragraphs"""
         content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
 <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
                         xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
@@ -544,4 +544,3 @@ class ExportService:
     <meta:creation-date>{creation_date}</meta:creation-date>
 </office:meta>
 </office:document-meta>'''
-

@@ -12,8 +12,10 @@ from core.models import Project, ParagraphType
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import TextHelper, ValidationHelper, FormatHelper
+from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
+
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -50,7 +52,7 @@ class MainWindow(Adw.ApplicationWindow):
     
     def _setup_window(self):
         """Setup basic window properties"""
-        self.set_title("TAC - Continuous Argumentation Technique")
+        self.set_title(_("TAC - Continuous Argumentation Technique"))
         self.set_icon_name("com.github.tac")
         
         # Set default size
@@ -94,20 +96,20 @@ class MainWindow(Adw.ApplicationWindow):
         # Left side buttons
         new_button = Gtk.Button()
         new_button.set_icon_name("document-new-symbolic")
-        new_button.set_tooltip_text("New Project (Ctrl+N)")
+        new_button.set_tooltip_text(_("New Project (Ctrl+N)"))
         new_button.set_action_name("app.new_project")
         self.header_bar.pack_start(new_button)
         
         open_button = Gtk.Button()
         open_button.set_icon_name("document-open-symbolic")
-        open_button.set_tooltip_text("Open Project (Ctrl+O)")
+        open_button.set_tooltip_text(_("Open Project (Ctrl+O)"))
         open_button.set_action_name("app.open_project")
         self.header_bar.pack_start(open_button)
         
         # Right side buttons
         save_button = Gtk.Button()
         save_button.set_icon_name("document-save-symbolic")
-        save_button.set_tooltip_text("Save Project (Ctrl+S)")
+        save_button.set_tooltip_text(_("Save Project (Ctrl+S)"))
         save_button.set_action_name("app.save_project")
         save_button.set_sensitive(False)  # Initially disabled
         self.header_bar.pack_end(save_button)
@@ -116,7 +118,7 @@ class MainWindow(Adw.ApplicationWindow):
         # Menu button
         menu_button = Gtk.MenuButton()
         menu_button.set_icon_name("open-menu-symbolic")
-        menu_button.set_tooltip_text("Main Menu")
+        menu_button.set_tooltip_text(_("Main Menu"))
         self._setup_menu(menu_button)
         self.header_bar.pack_end(menu_button)
     
@@ -126,19 +128,19 @@ class MainWindow(Adw.ApplicationWindow):
         
         # File section
         file_section = Gio.Menu()
-        file_section.append("Export Project...", "app.export_project")
-        file_section.append("Recent Projects", "win.show_recent")
+        file_section.append(_("Export Project..."), "app.export_project")
+        file_section.append(_("Recent Projects"), "win.show_recent")
         menu_model.append_section(None, file_section)
         
         # Edit section
         edit_section = Gio.Menu()
-        edit_section.append("Preferences", "app.preferences")
+        edit_section.append(_("Preferences"), "app.preferences")
         menu_model.append_section(None, edit_section)
         
         # Help section
         help_section = Gio.Menu()
-        help_section.append("Welcome Guide", "win.show_welcome")
-        help_section.append("About TAC", "app.about")
+        help_section.append(_("Welcome Guide"), "win.show_welcome")
+        help_section.append(_("About TAC"), "app.about")
         menu_model.append_section(None, help_section)
         
         menu_button.set_menu_model(menu_model)
@@ -170,7 +172,7 @@ class MainWindow(Adw.ApplicationWindow):
         sidebar_header = Adw.HeaderBar()
         sidebar_header.set_show_end_title_buttons(False)
         sidebar_title = Adw.WindowTitle()
-        sidebar_title.set_title("Projects")
+        sidebar_title.set_title(_("Projects"))
         sidebar_header.set_title_widget(sidebar_title)
         sidebar_box.append(sidebar_header)
         
@@ -271,19 +273,19 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Add paragraph menu button
         add_button = Gtk.MenuButton()
-        add_button.set_label("Add Paragraph")
+        add_button.set_label(_("Add Paragraph"))
         add_button.set_icon_name("list-add-symbolic")
         add_button.add_css_class("suggested-action")
         
         # Create menu model
         menu_model = Gio.Menu()
         paragraph_types = [
-            ("Title 1", ParagraphType.TITLE_1),
-            ("Title 2", ParagraphType.TITLE_2),
-            ("Introduction", ParagraphType.INTRODUCTION),
-            ("Argument", ParagraphType.ARGUMENT),
-            ("Quote", ParagraphType.QUOTE),
-            ("Conclusion", ParagraphType.CONCLUSION),
+            (_("Title 1"), ParagraphType.TITLE_1),
+            (_("Title 2"), ParagraphType.TITLE_2),
+            (_("Introduction"), ParagraphType.INTRODUCTION),
+            (_("Argument"), ParagraphType.ARGUMENT),
+            (_("Quote"), ParagraphType.QUOTE),
+            (_("Conclusion"), ParagraphType.CONCLUSION),
         ]
         
         for label, ptype in paragraph_types:
@@ -294,9 +296,9 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Add formatting button
         format_button = Gtk.Button()
-        format_button.set_label("Format")
+        format_button.set_label(_("Format"))
         format_button.set_icon_name("format-text-bold-symbolic")
-        format_button.set_tooltip_text("Format paragraphs")
+        format_button.set_tooltip_text(_("Format paragraphs"))
         format_button.connect('clicked', self._on_format_clicked)
         toolbar_box.append(format_button)
         
@@ -314,7 +316,7 @@ class MainWindow(Adw.ApplicationWindow):
             self.paragraphs_box.remove(child)
             child = next_child
         
-        # Adicionar parágrafos SINCRONAMENTE, sem delay
+        # Add paragraphs SYNCHRONOUSLY, without delay
         for paragraph in self.current_project.paragraphs:
             paragraph_editor = ParagraphEditor(paragraph)
             paragraph_editor.connect('content-changed', self._on_paragraph_changed)
@@ -327,7 +329,7 @@ class MainWindow(Adw.ApplicationWindow):
         if view_name == "welcome":
             title_widget = self.header_bar.get_title_widget()
             title_widget.set_title("TAC")
-            title_widget.set_subtitle("Continuous Argumentation Technique")
+            title_widget.set_subtitle(_("Continuous Argumentation Technique"))
             self.save_button.set_sensitive(False)
         elif view_name == "editor" and self.current_project:
             title_widget = self.header_bar.get_title_widget()
@@ -335,7 +337,7 @@ class MainWindow(Adw.ApplicationWindow):
             
             # Show project statistics in subtitle
             stats = self.current_project.get_statistics()
-            subtitle = f"{stats['total_words']} words • {stats['total_paragraphs']} paragraphs"
+            subtitle = _("{} words • {} paragraphs").format(stats['total_words'], stats['total_paragraphs'])
             title_widget.set_subtitle(subtitle)
             self.save_button.set_sensitive(True)
     
@@ -406,7 +408,7 @@ class MainWindow(Adw.ApplicationWindow):
         self._update_header_for_view("editor")
         
         # Show feedback
-        self._show_toast("Paragraph reordered")
+        self._show_toast(_("Paragraph reordered"))
     
     def _on_close_request(self, window):
         """Handle window close request"""
@@ -449,11 +451,11 @@ class MainWindow(Adw.ApplicationWindow):
     def show_open_project_dialog(self):
         """Show open project dialog"""
         file_chooser = Gtk.FileChooserNative.new(
-            "Open Project",
+            _("Open Project"),
             self,
             Gtk.FileChooserAction.OPEN,
-            "Open",
-            "Cancel"
+            _("Open"),
+            _("Cancel")
         )
         
         # Set initial folder to projects directory
@@ -463,12 +465,12 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Add file filter for JSON files
         filter_json = Gtk.FileFilter()
-        filter_json.set_name("TAC Projects (*.json)")
+        filter_json.set_name(_("TAC Projects (*.json)"))
         filter_json.add_pattern("*.json")
         file_chooser.add_filter(filter_json)
         
         filter_all = Gtk.FileFilter()
-        filter_all.set_name("All Files")
+        filter_all.set_name(_("All Files"))
         filter_all.add_pattern("*")
         file_chooser.add_filter(filter_all)
         
@@ -486,9 +488,9 @@ class MainWindow(Adw.ApplicationWindow):
                         
                         # Update sidebar to show all projects including this one
                         self.project_list.refresh_projects()
-                        self._show_toast(f"Opened project: {project.name}")
+                        self._show_toast(_("Opened project: {}").format(project.name))
                     else:
-                        self._show_toast("Failed to open project", Adw.ToastPriority.HIGH)
+                        self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
             
             dialog.destroy()
         
@@ -502,7 +504,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         success = self.project_manager.save_project(self.current_project)
         if success:
-            self._show_toast("Project saved successfully")
+            self._show_toast(_("Project saved successfully"))
             
             # Update sidebar to reflect changes
             self.project_list.refresh_projects()
@@ -511,14 +513,14 @@ class MainWindow(Adw.ApplicationWindow):
             project_path = str(self.project_manager.get_project_path(self.current_project))
             self.config.add_recent_project(project_path)
         else:
-            self._show_toast("Failed to save project", Adw.ToastPriority.HIGH)
+            self._show_toast(_("Failed to save project"), Adw.ToastPriority.HIGH)
         
         return success
     
     def show_export_dialog(self):
         """Show export dialog"""
         if not self.current_project:
-            self._show_toast("No project to export", Adw.ToastPriority.HIGH)
+            self._show_toast(_("No project to export"), Adw.ToastPriority.HIGH)
             return
         
         dialog = ExportDialog(self, self.current_project, self.export_service)
@@ -541,9 +543,9 @@ class MainWindow(Adw.ApplicationWindow):
         if project:
             self.current_project = project
             self._show_editor_view()
-            self._show_toast(f"Opened project: {project.name}")
+            self._show_toast(_("Opened project: {}").format(project.name))
         else:
-            self._show_toast(f"Failed to open project", Adw.ToastPriority.HIGH)
+            self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
     
     def _add_paragraph(self, paragraph_type: ParagraphType):
         """Add a new paragraph"""
@@ -552,7 +554,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         paragraph = self.current_project.add_paragraph(paragraph_type)
         
-        # Ao invés de _refresh_paragraphs(), apenas adicionar o novo:
+        # Instead of _refresh_paragraphs(), just add the new one:
         paragraph_editor = ParagraphEditor(paragraph)
         paragraph_editor.connect('content-changed', self._on_paragraph_changed)
         paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
@@ -568,7 +570,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Update sidebar to show new project
         self.project_list.refresh_projects()
-        self._show_toast(f"Created project: {project.name}")
+        self._show_toast(_("Created project: {}").format(project.name))
     
     def _show_toast(self, message: str, priority=Adw.ToastPriority.NORMAL):
         """Show a toast notification"""
@@ -593,17 +595,17 @@ class MainWindow(Adw.ApplicationWindow):
         if not self.current_project:
             return
         
-        # Coletar parágrafos não-Quote
+        # Collect non-Quote paragraphs
         non_quote_paragraphs = [
             p for p in self.current_project.paragraphs
             if p.type != ParagraphType.QUOTE
         ]
         
         if not non_quote_paragraphs:
-            self._show_toast("No paragraphs to format")
+            self._show_toast(_("No paragraphs to format"))
             return
         
-        # Abrir diálogo de formatação
+        # Open formatting dialog
         from .dialogs import FormatDialog
         dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
         dialog.present()
@@ -631,4 +633,3 @@ class MainWindow(Adw.ApplicationWindow):
                 if hasattr(child, 'refresh_formatting'):
                     child.refresh_formatting()
                 child = child.get_next_sibling()
-

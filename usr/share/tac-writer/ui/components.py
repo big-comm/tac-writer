@@ -11,6 +11,8 @@ from gi.repository import Gtk, Adw, GObject, Gdk, GLib
 from core.models import Paragraph, ParagraphType, DEFAULT_TEMPLATES
 from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper
+from utils.i18n import _
+
 
 class WelcomeView(Gtk.Box):
     """Welcome view shown when no project is open"""
@@ -53,20 +55,20 @@ class WelcomeView(Gtk.Box):
         
         # Title
         title = Gtk.Label()
-        title.set_markup("<span size='large' weight='bold'>Welcome to TAC</span>")
+        title.set_markup("<span size='large' weight='bold'>" + _("Welcome to TAC") + "</span>")
         title.set_halign(Gtk.Align.CENTER)
         content_box.append(title)
         
         # Subtitle
         subtitle = Gtk.Label()
-        subtitle.set_markup("<span size='medium'>Continuous Argumentation Technique</span>")
+        subtitle.set_markup("<span size='medium'>" + _("Continuous Argumentation Technique") + "</span>")
         subtitle.set_halign(Gtk.Align.CENTER)
         subtitle.add_css_class("dim-label")
         content_box.append(subtitle)
         
         # Description
         description = Gtk.Label()
-        description.set_text("Create structured academic texts with guided paragraph types")
+        description.set_text(_("Create structured academic texts with guided paragraph types"))
         description.set_halign(Gtk.Align.CENTER)
         description.set_wrap(True)
         description.set_max_width_chars(50)
@@ -74,23 +76,23 @@ class WelcomeView(Gtk.Box):
         
         self.append(content_box)
     
-        #Note
-        title = Gtk.Label()
-        title.set_markup("<span size='medium'><i><b>Note:</b> exporting to ODT might require some adjustment in your Office Suite.</i></span>")
-        title.set_halign(Gtk.Align.CENTER)
-        content_box.append(title)
+        # Note
+        note = Gtk.Label()
+        note.set_markup("<span size='medium'><i><b>" + _("Note:") + "</b> " + _("exporting to ODT might require some adjustment in your Office Suite.") + "</i></span>")
+        note.set_halign(Gtk.Align.CENTER)
+        content_box.append(note)
 
-        #Tips
-        title = Gtk.Label()
-        title.set_markup("<span size='medium'><i><b>Tip:</b> for directly quotes with less than 4 lines, use argument box.</i></span>")
-        title.set_halign(Gtk.Align.CENTER)
-        content_box.append(title)
+        # Tips
+        tips = Gtk.Label()
+        tips.set_markup("<span size='medium'><i><b>" + _("Tip:") + "</b> " + _("for direct quotes with less than 4 lines, use argument box.") + "</i></span>")
+        tips.set_halign(Gtk.Align.CENTER)
+        content_box.append(tips)
 
     def _create_template_section(self):
         """Create template selection section"""
         template_group = Adw.PreferencesGroup()
-        template_group.set_title("Start Writing")
-        template_group.set_description("Choose a template to get started")
+        template_group.set_title(_("Start Writing"))
+        template_group.set_description(_("Choose a template to get started"))
         
         # Template cards
         for template in DEFAULT_TEMPLATES:
@@ -100,7 +102,7 @@ class WelcomeView(Gtk.Box):
             
             # Start button
             start_button = Gtk.Button()
-            start_button.set_label("Start")
+            start_button.set_label(_("Start"))
             start_button.add_css_class("suggested-action")
             start_button.set_valign(Gtk.Align.CENTER)
             start_button.connect('clicked', lambda btn, tmpl=template.name: self.emit('create-project', tmpl))
@@ -109,9 +111,6 @@ class WelcomeView(Gtk.Box):
             template_group.add(row)
         
         self.append(template_group)
-    
-        
-
 
     def _create_recent_section(self):
         """Create recent projects section"""
@@ -135,7 +134,7 @@ class ProjectListWidget(Gtk.Box):
         
         # Search entry
         self.search_entry = Gtk.SearchEntry()
-        self.search_entry.set_placeholder_text("Search projects...")
+        self.search_entry.set_placeholder_text(_("Search projects..."))
         self.search_entry.connect('search-changed', self._on_search_changed)
         self.append(self.search_entry)
         
@@ -206,7 +205,7 @@ class ProjectListWidget(Gtk.Box):
         # Edit button (pencil)
         edit_button = Gtk.Button()
         edit_button.set_icon_name("edit-symbolic")
-        edit_button.set_tooltip_text("Rename project")
+        edit_button.set_tooltip_text(_("Rename project"))
         edit_button.add_css_class("flat")
         edit_button.add_css_class("circular")
         edit_button.connect('clicked', lambda b: self._on_edit_project(project_info))
@@ -215,7 +214,7 @@ class ProjectListWidget(Gtk.Box):
         # Delete button (trash)
         delete_button = Gtk.Button()
         delete_button.set_icon_name("user-trash-symbolic")
-        delete_button.set_tooltip_text("Delete project")
+        delete_button.set_tooltip_text(_("Delete project"))
         delete_button.add_css_class("flat")
         delete_button.add_css_class("circular")
         delete_button.connect('clicked', lambda b: self._on_delete_project(project_info))
@@ -244,7 +243,7 @@ class ProjectListWidget(Gtk.Box):
             stats_label = Gtk.Label()
             words = stats.get('total_words', 0)
             paragraphs = stats.get('total_paragraphs', 0)
-            stats_text = f"{words} words • {paragraphs} paragraphs"
+            stats_text = _("{} words • {} paragraphs").format(words, paragraphs)
             stats_label.set_text(stats_text)
             stats_label.set_halign(Gtk.Align.START)
             stats_label.add_css_class("caption")
@@ -286,8 +285,8 @@ class ProjectListWidget(Gtk.Box):
         """Handle project rename"""
         dialog = Adw.MessageDialog.new(
             self.get_root(),
-            "Rename Project",
-            f"Enter new name for '{project_info['name']}'"
+            _("Rename Project"),
+            _("Enter new name for '{}'").format(project_info['name'])
         )
         
         # Add entry for new name
@@ -303,8 +302,8 @@ class ProjectListWidget(Gtk.Box):
         entry.select_region(0, -1)
         
         dialog.set_extra_child(entry)
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("rename", "Rename")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("rename", _("Rename"))
         dialog.set_response_appearance("rename", Adw.ResponseAppearance.SUGGESTED)
         dialog.set_default_response("rename")
         
@@ -338,12 +337,12 @@ class ProjectListWidget(Gtk.Box):
         """Handle project deletion"""
         dialog = Adw.MessageDialog.new(
             self.get_root(),
-            f"Delete '{project_info['name']}'?",
-            "This project will be moved to trash and can be recovered."
+            _("Delete '{}'?").format(project_info['name']),
+            _("This project will be moved to trash and can be recovered.")
         )
         
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("delete", "Delete")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("delete", _("Delete"))
         dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         
@@ -425,7 +424,7 @@ class ParagraphEditor(Gtk.Box):
         # Remove button
         remove_button = Gtk.Button()
         remove_button.set_icon_name("edit-delete-symbolic")
-        remove_button.set_tooltip_text("Remove paragraph")
+        remove_button.set_tooltip_text(_("Remove paragraph"))
         remove_button.add_css_class("flat")
         remove_button.connect('clicked', self._on_remove_clicked)
         header_box.append(remove_button)
@@ -575,14 +574,14 @@ class ParagraphEditor(Gtk.Box):
     def _get_type_label(self) -> str:
         """Get display label for paragraph type"""
         type_labels = {
-            ParagraphType.TITLE_1: "Title 1",
-            ParagraphType.TITLE_2: "Title 2",
-            ParagraphType.INTRODUCTION: "Introduction",
-            ParagraphType.ARGUMENT: "Argument",
-            ParagraphType.QUOTE: "Quote",
-            ParagraphType.CONCLUSION: "Conclusion"
+            ParagraphType.TITLE_1: _("Title 1"),
+            ParagraphType.TITLE_2: _("Title 2"),
+            ParagraphType.INTRODUCTION: _("Introduction"),
+            ParagraphType.ARGUMENT: _("Argument"),
+            ParagraphType.QUOTE: _("Quote"),
+            ParagraphType.CONCLUSION: _("Conclusion")
         }
-        return type_labels.get(self.paragraph.type, "Paragraph")
+        return type_labels.get(self.paragraph.type, _("Paragraph"))
     
     def _apply_formatting(self):
         """Apply formatting using TextBuffer tags (GTK4 way)"""
@@ -631,7 +630,7 @@ class ParagraphEditor(Gtk.Box):
     def _update_word_count(self):
         """Update word count display"""
         word_count = self.paragraph.get_word_count()
-        self.word_count_label.set_text(f"{word_count} words")
+        self.word_count_label.set_text(_("{} words").format(word_count))
     
     def _on_text_changed(self, buffer):
         """Handle text changes"""
@@ -654,12 +653,12 @@ class ParagraphEditor(Gtk.Box):
         # Show confirmation dialog
         dialog = Adw.MessageDialog.new(
             self.get_root(),
-            "Remove Paragraph?",
-            "This action cannot be undone."
+            _("Remove Paragraph?"),
+            _("This action cannot be undone.")
         )
         
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("remove", "Remove")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("remove", _("Remove"))
         dialog.set_response_appearance("remove", Adw.ResponseAppearance.DESTRUCTIVE)
         dialog.set_default_response("cancel")
         dialog.set_close_response("cancel")
@@ -674,7 +673,7 @@ class ParagraphEditor(Gtk.Box):
         dialog.destroy()
     
     def refresh_formatting(self):
-        """Refresh visual formatting (chamado quando formatação é alterada externamente)"""
+        """Refresh visual formatting (called when formatting is changed externally)"""
         self._apply_formatting()
 
 class TextEditor(Gtk.Box):
@@ -759,21 +758,21 @@ class FormatToolbar(Gtk.Box):
         # Bold button
         self.bold_button = Gtk.ToggleButton()
         self.bold_button.set_icon_name("format-text-bold-symbolic")
-        self.bold_button.set_tooltip_text("Bold")
+        self.bold_button.set_tooltip_text(_("Bold"))
         self.bold_button.connect('toggled', lambda w: self.emit('format-changed', 'bold', w.get_active()))
         self.append(self.bold_button)
         
         # Italic button
         self.italic_button = Gtk.ToggleButton()
         self.italic_button.set_icon_name("format-text-italic-symbolic")
-        self.italic_button.set_tooltip_text("Italic")
+        self.italic_button.set_tooltip_text(_("Italic"))
         self.italic_button.connect('toggled', lambda w: self.emit('format-changed', 'italic', w.get_active()))
         self.append(self.italic_button)
         
         # Underline button
         self.underline_button = Gtk.ToggleButton()
         self.underline_button.set_icon_name("format-text-underline-symbolic")
-        self.underline_button.set_tooltip_text("Underline")
+        self.underline_button.set_tooltip_text(_("Underline"))
         self.underline_button.connect('toggled', lambda w: self.emit('format-changed', 'underline', w.get_active()))
         self.append(self.underline_button)
     
@@ -795,4 +794,3 @@ class FormatToolbar(Gtk.Box):
         self.bold_button.set_active(formatting.get('bold', False))
         self.italic_button.set_active(formatting.get('italic', False))
         self.underline_button.set_active(formatting.get('underline', False))
-

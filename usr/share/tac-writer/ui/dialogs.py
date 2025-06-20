@@ -1,9 +1,6 @@
 """
-
 TAC UI Dialogs
-
 Dialog windows for the TAC application using GTK4 and libadwaita
-
 """
 
 import gi
@@ -19,6 +16,8 @@ from core.models import Project, DEFAULT_TEMPLATES, Paragraph
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import ValidationHelper, FileHelper
+from utils.i18n import _
+
 
 class NewProjectDialog(Adw.Window):
     """Dialog for creating new projects"""
@@ -31,7 +30,7 @@ class NewProjectDialog(Adw.Window):
 
     def __init__(self, parent, **kwargs):
         super().__init__(**kwargs)
-        self.set_title("New Project")
+        self.set_title(_("New Project"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(600, 700) # Increased size significantly
@@ -55,13 +54,13 @@ class NewProjectDialog(Adw.Window):
 
         # Cancel button
         cancel_button = Gtk.Button()
-        cancel_button.set_label("Cancel")
+        cancel_button.set_label(_("Cancel"))
         cancel_button.connect('clicked', lambda x: self.destroy())
         header_bar.pack_start(cancel_button)
 
         # Create button
         self.create_button = Gtk.Button()
-        self.create_button.set_label("Create")
+        self.create_button.set_label(_("Create"))
         self.create_button.add_css_class("suggested-action")
         self.create_button.set_sensitive(False)
         self.create_button.connect('clicked', self._on_create_clicked)
@@ -93,14 +92,14 @@ class NewProjectDialog(Adw.Window):
     def _create_details_section(self, parent):
         """Create project details section"""
         details_group = Adw.PreferencesGroup()
-        details_group.set_title("Project Details")
+        details_group.set_title(_("Project Details"))
 
         # Project name row
         name_row = Adw.ActionRow()
-        name_row.set_title("Project Name")
+        name_row.set_title(_("Project Name"))
         self.name_entry = Gtk.Entry()
-        self.name_entry.set_placeholder_text("Enter project name...")
-        self.name_entry.set_text("My New Project") # Default name
+        self.name_entry.set_placeholder_text(_("Enter project name..."))
+        self.name_entry.set_text(_("My New Project")) # Default name
         self.name_entry.set_size_request(200, -1)
         self.name_entry.connect('changed', self._on_name_changed)
         self.name_entry.connect('activate', self._on_name_activate) # Enter key support
@@ -117,9 +116,9 @@ class NewProjectDialog(Adw.Window):
 
         # Author row
         author_row = Adw.ActionRow()
-        author_row.set_title("Author")
+        author_row.set_title(_("Author"))
         self.author_entry = Gtk.Entry()
-        self.author_entry.set_placeholder_text("Your name...")
+        self.author_entry.set_placeholder_text(_("Your name..."))
         self.author_entry.set_size_request(200, -1)
         author_row.add_suffix(self.author_entry)
         details_group.add(author_row)
@@ -128,7 +127,7 @@ class NewProjectDialog(Adw.Window):
 
         # Description section (separate)
         desc_group = Adw.PreferencesGroup()
-        desc_group.set_title("Description")
+        desc_group.set_title(_("Description"))
 
         # Description text view in a frame
         desc_frame = Gtk.Frame()
@@ -160,8 +159,8 @@ class NewProjectDialog(Adw.Window):
     def _create_template_section(self, parent):
         """Create template selection section"""
         template_group = Adw.PreferencesGroup()
-        template_group.set_title("Template")
-        template_group.set_description("Choose a template to start with")
+        template_group.set_title(_("Template"))
+        template_group.set_description(_("Choose a template to start with"))
 
         # Template selection
         self.template_combo = Gtk.ComboBoxText()
@@ -170,7 +169,7 @@ class NewProjectDialog(Adw.Window):
         self.template_combo.set_active(0) # Select first template by default
 
         template_row = Adw.ActionRow()
-        template_row.set_title("Document Template")
+        template_row.set_title(_("Document Template"))
         template_row.add_suffix(self.template_combo)
         template_group.add(template_row)
 
@@ -254,10 +253,10 @@ class NewProjectDialog(Adw.Window):
             # Show error
             error_dialog = Adw.MessageDialog.new(
                 self,
-                "Error Creating Project",
+                _("Error Creating Project"),
                 str(e)
             )
-            error_dialog.add_response("ok", "OK")
+            error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
 
 class FormatDialog(Adw.Window):
@@ -267,15 +266,15 @@ class FormatDialog(Adw.Window):
 
     def __init__(self, parent, paragraphs: list = None, **kwargs):
         super().__init__(**kwargs)
-        self.set_title("Format Text")
+        self.set_title(_("Format Text"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(500, 600) # Increased height
         self.set_resizable(True)
 
-        self.paragraphs = paragraphs or [] # Lista de parágrafos a serem formatados
+        self.paragraphs = paragraphs or [] # List of paragraphs to be formatted
 
-        # Se tivermos parágrafos, usamos a formatação do primeiro como padrão
+        # If we have paragraphs, use the first one's formatting as default
         if self.paragraphs:
             self.formatting = self.paragraphs[0].formatting.copy()
         else:
@@ -305,12 +304,12 @@ class FormatDialog(Adw.Window):
         header_bar = Adw.HeaderBar()
 
         cancel_button = Gtk.Button()
-        cancel_button.set_label("Cancel")
+        cancel_button.set_label(_("Cancel"))
         cancel_button.connect('clicked', lambda x: self.destroy())
         header_bar.pack_start(cancel_button)
 
         apply_button = Gtk.Button()
-        apply_button.set_label("Apply")
+        apply_button.set_label(_("Apply"))
         apply_button.add_css_class("suggested-action")
         apply_button.connect('clicked', self._on_apply_clicked)
         header_bar.pack_end(apply_button)
@@ -323,12 +322,12 @@ class FormatDialog(Adw.Window):
 
         # Font group
         font_group = Adw.PreferencesGroup()
-        font_group.set_title("Font")
+        font_group.set_title(_("Font"))
         prefs_page.add(font_group)
 
         # Font family
         self.font_row = Adw.ComboRow()
-        self.font_row.set_title("Font Family")
+        self.font_row.set_title(_("Font Family"))
         font_model = Gtk.StringList()
 
         # Get system fonts
@@ -386,40 +385,40 @@ class FormatDialog(Adw.Window):
         # Font size
         size_adjustment = Gtk.Adjustment(value=12, lower=8, upper=72, step_increment=1, page_increment=2)
         self.size_row = Adw.SpinRow()
-        self.size_row.set_title("Font Size")
+        self.size_row.set_title(_("Font Size"))
         self.size_row.set_adjustment(size_adjustment)
         font_group.add(self.size_row)
 
         # Style group
         style_group = Adw.PreferencesGroup()
-        style_group.set_title("Style")
+        style_group.set_title(_("Style"))
         prefs_page.add(style_group)
 
         # Bold
         self.bold_row = Adw.SwitchRow()
-        self.bold_row.set_title("Bold")
+        self.bold_row.set_title(_("Bold"))
         style_group.add(self.bold_row)
 
         # Italic
         self.italic_row = Adw.SwitchRow()
-        self.italic_row.set_title("Italic")
+        self.italic_row.set_title(_("Italic"))
         style_group.add(self.italic_row)
 
         # Underline
         self.underline_row = Adw.SwitchRow()
-        self.underline_row.set_title("Underline")
+        self.underline_row.set_title(_("Underline"))
         style_group.add(self.underline_row)
 
         # Spacing group
         spacing_group = Adw.PreferencesGroup()
-        spacing_group.set_title("Spacing &amp; Alignment")
+        spacing_group.set_title(_("Spacing & Alignment"))
         prefs_page.add(spacing_group)
 
         # Line spacing
         line_spacing_adj = Gtk.Adjustment(value=1.5, lower=1.0, upper=3.0, step_increment=0.1, page_increment=0.5)
         self.line_spacing_row = Adw.SpinRow()
-        self.line_spacing_row.set_title("Line Spacing")
-        self.line_spacing_row.set_subtitle("Space between lines")
+        self.line_spacing_row.set_title(_("Line Spacing"))
+        self.line_spacing_row.set_subtitle(_("Space between lines"))
         self.line_spacing_row.set_adjustment(line_spacing_adj)
         self.line_spacing_row.set_digits(1)
         spacing_group.add(self.line_spacing_row)
@@ -427,8 +426,8 @@ class FormatDialog(Adw.Window):
         # First line indent
         indent_adj = Gtk.Adjustment(value=1.25, lower=0.0, upper=5.0, step_increment=0.1, page_increment=0.5)
         self.indent_row = Adw.SpinRow()
-        self.indent_row.set_title("First Line Indent (cm)")
-        self.indent_row.set_subtitle("Indentation of the first line")
+        self.indent_row.set_title(_("First Line Indent (cm)"))
+        self.indent_row.set_subtitle(_("Indentation of the first line"))
         self.indent_row.set_adjustment(indent_adj)
         self.indent_row.set_digits(1)
         spacing_group.add(self.indent_row)
@@ -436,8 +435,8 @@ class FormatDialog(Adw.Window):
         # Left margin
         left_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
         self.left_margin_row = Adw.SpinRow()
-        self.left_margin_row.set_title("Left Margin (cm)")
-        self.left_margin_row.set_subtitle("Left side margin")
+        self.left_margin_row.set_title(_("Left Margin (cm)"))
+        self.left_margin_row.set_subtitle(_("Left side margin"))
         self.left_margin_row.set_adjustment(left_margin_adj)
         self.left_margin_row.set_digits(1)
         spacing_group.add(self.left_margin_row)
@@ -445,17 +444,17 @@ class FormatDialog(Adw.Window):
         # Right margin
         right_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
         self.right_margin_row = Adw.SpinRow()
-        self.right_margin_row.set_title("Right Margin (cm)")
-        self.right_margin_row.set_subtitle("Right side margin")
+        self.right_margin_row.set_title(_("Right Margin (cm)"))
+        self.right_margin_row.set_subtitle(_("Right side margin"))
         self.right_margin_row.set_adjustment(right_margin_adj)
         self.right_margin_row.set_digits(1)
         spacing_group.add(self.right_margin_row)
 
         # Text alignment
         self.alignment_row = Adw.ComboRow()
-        self.alignment_row.set_title("Text Alignment")
+        self.alignment_row.set_title(_("Text Alignment"))
         alignment_model = Gtk.StringList()
-        alignments = ["Left", "Center", "Right", "Justify"]
+        alignments = [_("Left"), _("Center"), _("Right"), _("Justify")]
         for alignment in alignments:
             alignment_model.append(alignment)
         self.alignment_row.set_model(alignment_model)
@@ -520,7 +519,7 @@ class FormatDialog(Adw.Window):
         for paragraph in self.paragraphs:
             paragraph.update_formatting(new_formatting)
 
-        # Notificar a janela principal para atualizar a visualização
+        # Notify main window to update view
         if hasattr(self.get_transient_for(), '_refresh_paragraph_formatting'):
             self.get_transient_for()._refresh_paragraph_formatting()
 
@@ -533,7 +532,7 @@ class ExportDialog(Adw.Window):
 
     def __init__(self, parent, project: Project, export_service: ExportService, **kwargs):
         super().__init__(**kwargs)
-        self.set_title("Export Project")
+        self.set_title(_("Export Project"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(550, 500) # Better proportions
@@ -553,12 +552,12 @@ class ExportDialog(Adw.Window):
         header_bar = Adw.HeaderBar()
 
         cancel_button = Gtk.Button()
-        cancel_button.set_label("Cancel")
+        cancel_button.set_label(_("Cancel"))
         cancel_button.connect('clicked', lambda x: self.destroy())
         header_bar.pack_start(cancel_button)
 
         export_button = Gtk.Button()
-        export_button.set_label("Export")
+        export_button.set_label(_("Export"))
         export_button.add_css_class("suggested-action")
         export_button.connect('clicked', self._on_export_clicked)
         header_bar.pack_end(export_button)
@@ -571,28 +570,28 @@ class ExportDialog(Adw.Window):
 
         # Project info
         info_group = Adw.PreferencesGroup()
-        info_group.set_title("Project Information")
+        info_group.set_title(_("Project Information"))
         prefs_page.add(info_group)
 
         name_row = Adw.ActionRow()
-        name_row.set_title("Project Name")
+        name_row.set_title(_("Project Name"))
         name_row.set_subtitle(self.project.name)
         info_group.add(name_row)
 
         stats = self.project.get_statistics()
         stats_row = Adw.ActionRow()
-        stats_row.set_title("Statistics")
-        stats_row.set_subtitle(f"{stats['total_words']} words, {stats['total_paragraphs']} paragraphs")
+        stats_row.set_title(_("Statistics"))
+        stats_row.set_subtitle(_("{} words, {} paragraphs").format(stats['total_words'], stats['total_paragraphs']))
         info_group.add(stats_row)
 
         # Export options
         export_group = Adw.PreferencesGroup()
-        export_group.set_title("Export Options")
+        export_group.set_title(_("Export Options"))
         prefs_page.add(export_group)
 
         # Format selection
         self.format_row = Adw.ComboRow()
-        self.format_row.set_title("Format")
+        self.format_row.set_title(_("Format"))
         format_model = Gtk.StringList()
 
         formats = [
@@ -607,27 +606,27 @@ class ExportDialog(Adw.Window):
             self.format_data.append(format_code)
 
         self.format_row.set_model(format_model)
-        self.format_row.set_selected(0) # ODT como padrão
+        self.format_row.set_selected(0) # ODT as default
         export_group.add(self.format_row)
 
         # Include metadata
         self.metadata_row = Adw.SwitchRow()
-        self.metadata_row.set_title("Include Metadata")
-        self.metadata_row.set_subtitle("Include author, creation date, and other project information")
+        self.metadata_row.set_title(_("Include Metadata"))
+        self.metadata_row.set_subtitle(_("Include author, creation date, and other project information"))
         self.metadata_row.set_active(True)
         export_group.add(self.metadata_row)
 
         # File location
         location_group = Adw.PreferencesGroup()
-        location_group.set_title("Output Location")
+        location_group.set_title(_("Output Location"))
         prefs_page.add(location_group)
 
         self.location_row = Adw.ActionRow()
-        self.location_row.set_title("Save Location")
-        self.location_row.set_subtitle("Click to choose location")
+        self.location_row.set_title(_("Save Location"))
+        self.location_row.set_subtitle(_("Click to choose location"))
 
         choose_button = Gtk.Button()
-        choose_button.set_label("Choose...")
+        choose_button.set_label(_("Choose..."))
         choose_button.set_valign(Gtk.Align.CENTER)
         choose_button.connect('clicked', self._on_choose_location)
         self.location_row.add_suffix(choose_button)
@@ -644,11 +643,11 @@ class ExportDialog(Adw.Window):
         """Handle location selection"""
         # Create file chooser dialog
         file_chooser = Gtk.FileChooserNative.new(
-            "Choose Export Location",
+            _("Choose Export Location"),
             self,
             Gtk.FileChooserAction.SELECT_FOLDER,
-            "Select",
-            "Cancel"
+            _("Select"),
+            _("Cancel")
         )
 
         file_chooser.set_current_folder(Gio.File.new_for_path(str(self.selected_location)))
@@ -665,9 +664,9 @@ class ExportDialog(Adw.Window):
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
-        # Desabilitar o botão para evitar cliques múltiplos
+        # Disable button to avoid multiple clicks
         button.set_sensitive(False)
-        button.set_label("Exporting...")
+        button.set_label(_("Exporting..."))
         
         # Get selected format
         selected_index = self.format_row.get_selected()
@@ -682,7 +681,7 @@ class ExportDialog(Adw.Window):
         # Ensure unique filename
         output_path = FileHelper.find_available_filename(output_path)
 
-        # Executar exportação em thread separada
+        # Execute export in separate thread
         def export_thread():
             try:
                 # Export project
@@ -692,29 +691,29 @@ class ExportDialog(Adw.Window):
                     format_code
                 )
                 
-                # Voltar para a thread principal para atualizar UI
+                # Return to main thread to update UI
                 GLib.idle_add(self._export_finished, success, str(output_path), None)
                 
             except Exception as e:
-                # Voltar para a thread principal para mostrar erro
+                # Return to main thread to show error
                 GLib.idle_add(self._export_finished, False, str(output_path), str(e))
         
-        # Iniciar thread de exportação
+        # Start export thread
         thread = threading.Thread(target=export_thread)
         thread.daemon = True
         thread.start()
     
     def _export_finished(self, success, output_path, error_message):
-        """Callback executado na thread principal quando exportação termina"""
-        # Re-habilitar botão primeiro (para ambos os casos)
+        """Callback executed in main thread when export finishes"""
+        # Re-enable button first (for both cases)
         header = self.get_titlebar()
         if header:
-            # Método mais simples: pegar o último botão do header (que é o export)
+            # Simple method: get the last button of the header (which is the export button)
             child = header.get_last_child()
             while child:
                 if isinstance(child, Gtk.Button):
                     child.set_sensitive(True)
-                    child.set_label("Export")
+                    child.set_label(_("Export"))
                     break
                 child = child.get_prev_sibling()
         
@@ -722,29 +721,29 @@ class ExportDialog(Adw.Window):
             # Show success message
             success_dialog = Adw.MessageDialog.new(
                 self,
-                "Export Successful",
-                f"Project exported to:\n{output_path}"
+                _("Export Successful"),
+                _("Project exported to:\n{}").format(output_path)
             )
-            success_dialog.add_response("ok", "OK")
+            success_dialog.add_response("ok", _("OK"))
             
-            # Conectar callback para só fechar DEPOIS que o usuário clicar OK
+            # Connect callback to only close AFTER user clicks OK
             def on_success_response(dialog, response):
                 dialog.destroy()
-                self.destroy()  # Só destroi DEPOIS da resposta do usuário
+                self.destroy()  # Only destroy AFTER user response
             
             success_dialog.connect('response', on_success_response)
             success_dialog.present()
             
-            # NÃO chamar self.destroy() aqui!
+            # DON'T call self.destroy() here!
         else:
             # Show error message
-            error_msg = error_message if error_message else "An error occurred while exporting the project."
+            error_msg = error_message if error_message else _("An error occurred while exporting the project.")
             error_dialog = Adw.MessageDialog.new(
                 self,
-                "Export Failed",
+                _("Export Failed"),
                 error_msg
             )
-            error_dialog.add_response("ok", "OK")
+            error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
         
         return False  # Remove from idle callbacks
@@ -756,7 +755,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
     def __init__(self, parent, config: Config, **kwargs):
         super().__init__(**kwargs)
-        self.set_title("Preferences")
+        self.set_title(_("Preferences"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(700, 600) # Larger for preferences
@@ -771,36 +770,36 @@ class PreferencesDialog(Adw.PreferencesWindow):
         """Create the preferences UI"""
         # General page
         general_page = Adw.PreferencesPage()
-        general_page.set_title("General")
+        general_page.set_title(_("General"))
         general_page.set_icon_name("preferences-system-symbolic")
         self.add(general_page)
 
         # Appearance group
         appearance_group = Adw.PreferencesGroup()
-        appearance_group.set_title("Appearance")
+        appearance_group.set_title(_("Appearance"))
         general_page.add(appearance_group)
 
         # Dark theme
         self.dark_theme_row = Adw.SwitchRow()
-        self.dark_theme_row.set_title("Dark Theme")
-        self.dark_theme_row.set_subtitle("Use dark theme for the application")
+        self.dark_theme_row.set_title(_("Dark Theme"))
+        self.dark_theme_row.set_subtitle(_("Use dark theme for the application"))
         self.dark_theme_row.connect('notify::active', self._on_dark_theme_changed)
         appearance_group.add(self.dark_theme_row)
 
         # Editor page
         editor_page = Adw.PreferencesPage()
-        editor_page.set_title("Editor")
+        editor_page.set_title(_("Editor"))
         editor_page.set_icon_name("accessories-text-editor-symbolic")
         self.add(editor_page)
 
         # Font group
         font_group = Adw.PreferencesGroup()
-        font_group.set_title("Default Font")
+        font_group.set_title(_("Default Font"))
         editor_page.add(font_group)
 
         # Font family
         self.font_family_row = Adw.ComboRow()
-        self.font_family_row.set_title("Font Family")
+        self.font_family_row.set_title(_("Font Family"))
         font_model = Gtk.StringList()
 
         # Get system fonts
@@ -859,34 +858,34 @@ class PreferencesDialog(Adw.PreferencesWindow):
         # Font size
         adjustment = Gtk.Adjustment(value=12, lower=8, upper=72, step_increment=1, page_increment=2)
         self.font_size_row = Adw.SpinRow()
-        self.font_size_row.set_title("Font Size")
+        self.font_size_row.set_title(_("Font Size"))
         self.font_size_row.set_adjustment(adjustment)
         self.font_size_row.connect('notify::value', self._on_font_size_changed)
         font_group.add(self.font_size_row)
 
         # Behavior group
         behavior_group = Adw.PreferencesGroup()
-        behavior_group.set_title("Behavior")
+        behavior_group.set_title(_("Behavior"))
         editor_page.add(behavior_group)
 
         # Auto save
         self.auto_save_row = Adw.SwitchRow()
-        self.auto_save_row.set_title("Auto Save")
-        self.auto_save_row.set_subtitle("Automatically save projects while editing")
+        self.auto_save_row.set_title(_("Auto Save"))
+        self.auto_save_row.set_subtitle(_("Automatically save projects while editing"))
         self.auto_save_row.connect('notify::active', self._on_auto_save_changed)
         behavior_group.add(self.auto_save_row)
 
         # Word wrap
         self.word_wrap_row = Adw.SwitchRow()
-        self.word_wrap_row.set_title("Word Wrap")
-        self.word_wrap_row.set_subtitle("Wrap text to fit the editor width")
+        self.word_wrap_row.set_title(_("Word Wrap"))
+        self.word_wrap_row.set_subtitle(_("Wrap text to fit the editor width"))
         self.word_wrap_row.connect('notify::active', self._on_word_wrap_changed)
         behavior_group.add(self.word_wrap_row)
 
         # Show line numbers
         self.line_numbers_row = Adw.SwitchRow()
-        self.line_numbers_row.set_title("Show Line Numbers")
-        self.line_numbers_row.set_subtitle("Display line numbers in the editor")
+        self.line_numbers_row.set_title(_("Show Line Numbers"))
+        self.line_numbers_row.set_subtitle(_("Display line numbers in the editor"))
         self.line_numbers_row.connect('notify::active', self._on_line_numbers_changed)
         behavior_group.add(self.line_numbers_row)
 
@@ -955,12 +954,12 @@ class WelcomeDialog(Adw.Window):
         self.set_resizable(True)
         self.config = config
 
-        # Calcular tamanho baseado na tela
+        # Calculate size based on screen
         display = Gdk.Display.get_default()
         monitor = display.get_monitors().get_item(0)
         geometry = monitor.get_geometry()
         
-        # Usar 70% da largura e 80% da altura da tela, com limites
+        # Use 70% of screen width and 80% of screen height, with limits
         width = min(800, int(geometry.width * 0.7))
         height = min(600, int(geometry.height * 0.8))
         
@@ -974,12 +973,12 @@ class WelcomeDialog(Adw.Window):
         # Main container
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
-        # HeaderBar com estilo customizado
+        # HeaderBar with custom style
         headerbar = Adw.HeaderBar()
         headerbar.set_show_title(False)
         headerbar.add_css_class("flat")
 
-        # Aplicar CSS customizado para reduzir padding do header
+        # Apply custom CSS to reduce header padding
         css_provider = Gtk.CssProvider()
         css_provider.load_from_data(b"""
         headerbar {
@@ -995,47 +994,47 @@ class WelcomeDialog(Adw.Window):
 
         main_box.append(headerbar)
 
-        # ScrolledWindow para o conteúdo
+        # ScrolledWindow for content
         scrolled_window = Gtk.ScrolledWindow()
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scrolled_window.set_vexpand(True)
 
-        # Content container (agora dentro do ScrolledWindow)
-        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)  # Reduzido de 12
-        content_box.set_margin_top(8)      # Reduzido de 12
-        content_box.set_margin_bottom(16)  # Reduzido de 24
-        content_box.set_margin_start(20)   # Reduzido de 24
-        content_box.set_margin_end(20)     # Reduzido de 24
+        # Content container (now inside ScrolledWindow)
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)  # Reduced from 12
+        content_box.set_margin_top(8)      # Reduced from 12
+        content_box.set_margin_bottom(16)  # Reduced from 24
+        content_box.set_margin_start(20)   # Reduced from 24
+        content_box.set_margin_end(20)     # Reduced from 24
 
         # Icon and title
-        title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)  # Reduzido de 8
+        title_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)  # Reduced from 8
         title_box.set_halign(Gtk.Align.CENTER)
 
         # App icon
         icon = Gtk.Image.new_from_icon_name("document-edit-symbolic")
-        icon.set_pixel_size(56)  # Reduzido de 64
+        icon.set_pixel_size(56)  # Reduced from 64
         icon.add_css_class("accent")
         title_box.append(icon)
 
         # Title
         title_label = Gtk.Label()
-        title_label.set_markup("<span size='large' weight='bold'>What is TAC Writer?</span>")
+        title_label.set_markup("<span size='large' weight='bold'>" + _("What is TAC Writer?") + "</span>")
         title_label.set_halign(Gtk.Align.CENTER)
         title_box.append(title_label)
 
         content_box.append(title_box)
 
         # Content text
-        content_text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)  # Reduzido de 16
+        content_text_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)  # Reduced from 16
 
         # CAT explanation
         cat_label = Gtk.Label()
-        cat_label.set_markup("<b>Continuous Argumentation Technique (CAT, TAC in portuguese):</b>")
+        cat_label.set_markup("<b>" + _("Continuous Argumentation Technique (CAT, TAC in Portuguese):") + "</b>")
         cat_label.set_halign(Gtk.Align.START)
         content_text_box.append(cat_label)
 
         cat_desc = Gtk.Label()
-        cat_desc.set_text("CAT consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand.")
+        cat_desc.set_text(_("CAT consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand."))
         cat_desc.set_wrap(True)
         cat_desc.set_halign(Gtk.Align.START)
         cat_desc.set_justify(Gtk.Justification.LEFT)
@@ -1044,17 +1043,13 @@ class WelcomeDialog(Adw.Window):
 
         # Structure explanation
         structure_label = Gtk.Label()
-        structure_label.set_markup("<b>This is the writing structure:</b>")
+        structure_label.set_markup("<b>" + _("This is the writing structure:") + "</b>")
         structure_label.set_halign(Gtk.Align.START)
         structure_label.set_margin_top(8)
         content_text_box.append(structure_label)
 
-        # Structure list - Layout mais compacto
-        structure_text = """• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.
-• <b>Argumentation:</b> development of the topic.
-• <b>Quote:</b> quote that supports the argument.
-• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.
-• <b>Conclusion:</b> closing of the idea presented."""
+        # Structure list - More compact layout
+        structure_text = _("• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.\n• <b>Argumentation:</b> development of the topic.\n• <b>Quote:</b> quote that supports the argument.\n• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.\n• <b>Conclusion:</b> closing of the idea presented.")
 
         structure_items_label = Gtk.Label()
         structure_items_label.set_markup(structure_text)
@@ -1068,15 +1063,15 @@ class WelcomeDialog(Adw.Window):
 
         # Separator before switch
         separator = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
-        separator.set_margin_top(8)  # Reduzido de 12
+        separator.set_margin_top(8)  # Reduced from 12
         content_box.append(separator)
 
         # Show on startup toggle
         toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
-        toggle_box.set_margin_top(8)  # Reduzido de 12
+        toggle_box.set_margin_top(8)  # Reduced from 12
 
         toggle_label = Gtk.Label()
-        toggle_label.set_text("Show this dialog on startup")
+        toggle_label.set_text(_("Show this dialog on startup"))
         toggle_label.set_hexpand(True)
         toggle_label.set_halign(Gtk.Align.START)
         toggle_box.append(toggle_label)
@@ -1092,17 +1087,17 @@ class WelcomeDialog(Adw.Window):
         # Let's Start button
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         button_box.set_halign(Gtk.Align.CENTER)
-        button_box.set_margin_top(16)  # Reduzido de 24
+        button_box.set_margin_top(16)  # Reduced from 24
 
         start_button = Gtk.Button()
-        start_button.set_label("Let's Start")
+        start_button.set_label(_("Let's Start"))
         start_button.add_css_class("suggested-action")
         start_button.connect('clicked', self._on_start_clicked)
         button_box.append(start_button)
 
         content_box.append(button_box)
 
-        # Adicionar content_box ao ScrolledWindow
+        # Add content_box to ScrolledWindow
         scrolled_window.set_child(content_box)
         main_box.append(scrolled_window)
 
@@ -1128,25 +1123,24 @@ def AboutDialog(parent):
     dialog.set_application_name("TAC")
     dialog.set_application_icon("com.github.tac")
     dialog.set_version("1.0.0")
-    dialog.set_developer_name("TAC Development Team")
-    dialog.set_website("https://github.com/user/tac")
-    dialog.set_issue_url("https://github.com/user/tac/issues")
+    dialog.set_developer_name(_("TAC Development Team"))
+    dialog.set_website("https://github.com/big-comm/comm-tac-writer")
+    # dialog.set_issue_url("https://github.com/big-comm/comm-tac-writer/issues")
 
     # Description
-    dialog.set_comments("Continuous Argumentation Technique - Academic Writing Assistant")
+    dialog.set_comments(_("Continuous Argumentation Technique - Academic Writing Assistant"))
 
     # License
     dialog.set_license_type(Gtk.License.GPL_3_0)
 
     # Credits
     dialog.set_developers([
-        "Main Developer https://github.com/user"
+        _("Main Developer") + " https://github.com/big-comm/comm-tac-writer"
     ])
     dialog.set_designers([
-        "Design Team"
+        _("Design Team")
     ])
 
-    dialog.set_copyright("© 2024 TAC Development Team")
+    dialog.set_copyright("© 2025 " + _("TAC Development Team"))
 
     return dialog
-

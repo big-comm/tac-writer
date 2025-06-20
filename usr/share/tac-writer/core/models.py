@@ -8,6 +8,9 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from enum import Enum
 
+from utils.i18n import _
+
+
 class ParagraphType(Enum):
     """Types of paragraphs in academic writing"""
     TITLE_1 = "title_1"           # Main title/chapter title (18pt)
@@ -29,13 +32,13 @@ class Paragraph:
         self.modified_at = self.created_at
         self.order = 0
         
-        # Formatting options (padrão sem recuo inicial)
+        # Formatting options (default without initial indent)
         self.formatting = {
             'font_family': 'Liberation Sans',
             'font_size': 12,
             'line_spacing': 1.5,
             'alignment': 'justify',
-            'indent_first_line': 0.0,  # Sem recuo por padrão
+            'indent_first_line': 0.0,  # No indent by default
             'indent_left': 0.0,  # cm
             'indent_right': 0.0,  # cm
             'bold': False,
@@ -43,36 +46,36 @@ class Paragraph:
             'underline': False,
         }
         
-        # Formatação especial para Title 1
+        # Special formatting for Title 1
         if paragraph_type == ParagraphType.TITLE_1:
             self.formatting.update({
-                'font_size': 18,  # 18pt para títulos principais
-                'bold': True,     # Negrito por padrão
+                'font_size': 18,  # 18pt for main titles
+                'bold': True,     # Bold by default
                 'alignment': 'left',
-                'line_spacing': 1.2,  # Espaçamento menor para títulos
+                'line_spacing': 1.2,  # Smaller spacing for titles
             })
         
-        # Formatação especial para Title 2
+        # Special formatting for Title 2
         elif paragraph_type == ParagraphType.TITLE_2:
             self.formatting.update({
-                'font_size': 16,  # 16pt para subtítulos
-                'bold': True,     # Negrito por padrão
+                'font_size': 16,  # 16pt for subtitles
+                'bold': True,     # Bold by default
                 'alignment': 'left',
-                'line_spacing': 1.2,  # Espaçamento menor para títulos
+                'line_spacing': 1.2,  # Smaller spacing for titles
             })
         
-        # Formatação especial para Introduction
+        # Special formatting for Introduction
         elif paragraph_type == ParagraphType.INTRODUCTION:
             self.formatting.update({
-                'indent_first_line': 1.5,  # 1,5cm de recuo na primeira linha
+                'indent_first_line': 1.5,  # 1.5cm first line indent
             })
         
-        # Formatação especial para Quote
+        # Special formatting for Quote
         elif paragraph_type == ParagraphType.QUOTE:
             self.formatting.update({
                 'font_size': 10,
                 'indent_left': 4.0,  # 4cm
-                'line_spacing': 1.0,  # espaçamento simples
+                'line_spacing': 1.0,  # single spacing
                 'italic': True
             })
     
@@ -83,16 +86,15 @@ class Paragraph:
     
     def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
         """Update paragraph formatting"""
-        # Para Title 1 e Title 2, preservar o tamanho da fonte se não for explicitamente alterado
+        # For Title 1 and Title 2, preserve font size if not explicitly changed
         if self.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
-            # Se o usuário não está explicitamente alterando o tamanho da fonte,
-            # preservar o tamanho padrão do tipo de título
+            # If user is not explicitly changing font size,
+            # preserve default size for title type
             if 'font_size' not in formatting_updates:
+                formatting_updates = formatting_updates.copy()
                 if self.type == ParagraphType.TITLE_1:
-                    formatting_updates = formatting_updates.copy()
                     formatting_updates['font_size'] = 18
                 elif self.type == ParagraphType.TITLE_2:
-                    formatting_updates = formatting_updates.copy()
                     formatting_updates['font_size'] = 16
         
         self.formatting.update(formatting_updates)
@@ -349,8 +351,8 @@ class DocumentTemplate:
 
 # Predefined templates
 ACADEMIC_ESSAY_TEMPLATE = DocumentTemplate(
-    name="Academic Essay",
-    description="Standard academic essay structure"
+    name=_("Academic Essay"),
+    description=_("Standard academic essay structure")
 )
 ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
     ParagraphType.INTRODUCTION  # Start with only Introduction
@@ -359,6 +361,4 @@ ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
 
 DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
-
 ]
-
