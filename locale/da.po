@@ -24,7 +24,7 @@ msgstr "Akademisk Essay"
 # File: usr/share/tac-writer/core/models.py, line: 355
 #: NEEDS WORK
 msgid "Standard academic essay structure"
-msgstr "Standard akademisk essaystruktur"
+msgstr "Standard akademisk essay struktur"
 # 
 # File: usr/share/tac-writer/tac.py, line: 46
 #: NEEDS WORK
@@ -855,7 +855,7 @@ msgstr "Afsnit"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Please provide the string you would like to translate."
+msgstr "{} ord"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

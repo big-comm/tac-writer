@@ -855,7 +855,7 @@ msgstr "Параграф"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Разбира се! Моля, предоставете текста, който искате да преведа."
+msgstr "{} думи"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

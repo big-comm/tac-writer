@@ -855,7 +855,7 @@ msgstr "Absatz"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Bitte geben Sie den zu übersetzenden Text ein."
+msgstr "{} Wörter"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

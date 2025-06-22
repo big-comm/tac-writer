@@ -854,7 +854,7 @@ msgstr "Kappale"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Sure, please provide the string you would like to translate."
+msgstr "{} sanat"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

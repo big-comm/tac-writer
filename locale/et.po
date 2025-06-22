@@ -853,7 +853,7 @@ msgstr "Lõik"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Understood. Please provide the string you would like to translate."
+msgstr "{} sõnad"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK
