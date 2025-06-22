@@ -854,7 +854,7 @@ msgstr "Paragraphe"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "D'accord. Veuillez fournir la chaîne à traduire."
+msgstr "{} mots"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

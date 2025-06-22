@@ -854,7 +854,7 @@ msgstr "Parágrafo"
 # File: usr/share/tac-writer/ui/components.py, line: 633
 #: NEEDS WORK
 msgid "{} words"
-msgstr "Palavras."
+msgstr "{} palavras."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK
