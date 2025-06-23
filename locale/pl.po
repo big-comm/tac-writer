@@ -595,11 +595,6 @@ msgstr "Menu Główny"
 msgid "Export Project..."
 msgstr "Eksportuj projekt..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Ostatnie projekty"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -851,10 +846,17 @@ msgstr "Usuń akapit"
 msgid "Paragraph"
 msgstr "Akapit"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "Understood. Please provide the string you would like to translate."
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} słowo"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} słów"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

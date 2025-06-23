@@ -596,11 +596,6 @@ msgstr "Hovedmenu"
 msgid "Export Project..."
 msgstr "Eksportér projekt..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Seneste projekter"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -852,10 +847,17 @@ msgstr "Fjern afsnit"
 msgid "Paragraph"
 msgstr "Afsnit"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "{} ord"
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} ord"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} ord"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

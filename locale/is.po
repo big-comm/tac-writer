@@ -595,11 +595,6 @@ msgstr "Aðalvalmynd"
 msgid "Export Project..."
 msgstr "Flytja út verkefni..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Nýleg verkefni"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -851,10 +846,17 @@ msgstr "Fjarlægðu málsgrein"
 msgid "Paragraph"
 msgstr "Málsgrein"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "Please provide the string you would like to translate."
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} orð"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} orð"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

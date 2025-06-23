@@ -593,11 +593,6 @@ msgstr "메인 메뉴"
 msgid "Export Project..."
 msgstr "프로젝트 내보내기..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "최근 프로젝트"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -849,10 +844,17 @@ msgstr "단락 제거"
 msgid "Paragraph"
 msgstr "단락"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "알겠습니다. 번역할 문자열을 제공해 주세요."
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} 단어"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} 단어"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

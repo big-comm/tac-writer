@@ -594,11 +594,6 @@ msgstr "Peamenüü"
 msgid "Export Project..."
 msgstr "Ekspordi projekt..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Viimased projektid"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -850,10 +845,17 @@ msgstr "Eemalda lõik"
 msgid "Paragraph"
 msgstr "Lõik"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "{} sõnad"
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} sõna"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} sõna"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

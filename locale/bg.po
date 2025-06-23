@@ -596,11 +596,6 @@ msgstr "Главно меню"
 msgid "Export Project..."
 msgstr "Експортиране на проект..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Наскоро проекти"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -852,10 +847,17 @@ msgstr "Премахни абзац"
 msgid "Paragraph"
 msgstr "Параграф"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "{} думи"
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} дума"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} думи"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

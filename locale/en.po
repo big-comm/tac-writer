@@ -104,7 +104,7 @@ msgstr "New Project"
 # File: usr/share/tac-writer/ui/main_window.py, line: 458
 # File: usr/share/tac-writer/ui/components.py, line: 305
 # File: usr/share/tac-writer/ui/components.py, line: 344
-# File: usr/share/tac-writer/ui/components.py, line: 660
+# File: usr/share/tac-writer/ui/components.py, line: 663
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -212,7 +212,7 @@ msgstr "Style"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
+# File: usr/share/tac-writer/ui/components.py, line: 764
 msgid "Bold"
 msgstr "Bold"
 
@@ -220,7 +220,7 @@ msgstr "Bold"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
+# File: usr/share/tac-writer/ui/components.py, line: 771
 msgid "Italic"
 msgstr "Italic"
 
@@ -228,7 +228,7 @@ msgstr "Italic"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
+# File: usr/share/tac-writer/ui/components.py, line: 778
 msgid "Underline"
 msgstr "Underline"
 
@@ -600,11 +600,6 @@ msgid "Export Project..."
 msgstr "Export Project..."
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-msgid "Recent Projects"
-msgstr "Recent Projects"
-
-#
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 msgid "Welcome Guide"
 msgstr "Welcome Guide"
@@ -856,22 +851,29 @@ msgid "Paragraph"
 msgstr "Paragraph"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 633
-msgid "{} words"
-msgstr "{} words"
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} word"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 656
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} words"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 659
 msgid "Remove Paragraph?"
 msgstr "Remove Paragraph?"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 657
+# File: usr/share/tac-writer/ui/components.py, line: 660
 msgid "This action cannot be undone."
 msgstr "This action cannot be undone."
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 661
+# File: usr/share/tac-writer/ui/components.py, line: 664
 msgid "Remove"
 msgstr "Remove"
 

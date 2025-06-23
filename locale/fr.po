@@ -595,11 +595,6 @@ msgstr "Menu Principal"
 msgid "Export Project..."
 msgstr "Exporter le projet..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Projets récents"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -851,10 +846,17 @@ msgstr "Supprimer le paragraphe"
 msgid "Paragraph"
 msgstr "Paragraphe"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "{} mots"
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} mot"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} mots"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK

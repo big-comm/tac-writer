@@ -595,11 +595,6 @@ msgstr "Ana Menü"
 msgid "Export Project..."
 msgstr "Projeyi Dışa Aktar..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Recent Projects"
-msgstr "Son Projeler"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -851,10 +846,17 @@ msgstr "Paragrafı kaldırın"
 msgid "Paragraph"
 msgstr "Paragraf"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 633
+# File: usr/share/tac-writer/ui/components.py, line: 634
 #: NEEDS WORK
-msgid "{} words"
-msgstr "Tamam, lütfen çevrilecek metni sağlayın."
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} kelime"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} kelime"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 656
 #: NEEDS WORK
