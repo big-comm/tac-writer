@@ -129,7 +129,7 @@ class MainWindow(Adw.ApplicationWindow):
         # File section
         file_section = Gio.Menu()
         file_section.append(_("Export Project..."), "app.export_project")
-        file_section.append(_("Recent Projects"), "win.show_recent")
+#        file_section.append(_("Recent Projects"), "win.show_recent")
         menu_model.append_section(None, file_section)
         
         # Edit section
@@ -187,7 +187,7 @@ class MainWindow(Adw.ApplicationWindow):
     def _setup_actions(self):
         """Setup window-specific actions"""
         actions = [
-            ('show_recent', self._action_show_recent),
+
             ('toggle_sidebar', self._action_toggle_sidebar),
             ('add_paragraph', self._action_add_paragraph, 's'),  # 's' = string parameter
             ('show_welcome', self._action_show_welcome),
@@ -425,10 +425,10 @@ class MainWindow(Adw.ApplicationWindow):
         self._save_window_state()
     
     # Action handlers
-    def _action_show_recent(self, action, param):
-        """Show recent projects"""
+#    def _action_show_recent(self, action, param):
+#        """Show recent projects"""
         # TODO: Implement recent projects view
-        pass
+#        pass
     
     def _action_toggle_sidebar(self, action, param):
         """Toggle sidebar visibility"""

@@ -630,7 +630,10 @@ class ParagraphEditor(Gtk.Box):
     def _update_word_count(self):
         """Update word count display"""
         word_count = self.paragraph.get_word_count()
-        self.word_count_label.set_text(_("{} words").format(word_count))
+        if word_count == 1:
+            self.word_count_label.set_text(_("{count} word").format(count=word_count))
+        else:
+            self.word_count_label.set_text(_("{count} words").format(count=word_count))
     
     def _on_text_changed(self, buffer):
         """Handle text changes"""

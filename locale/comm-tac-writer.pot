@@ -835,8 +835,8 @@ msgid   "Paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 633
-msgid   "{} words"
+# File: usr/share/tac-writer/ui/components.py, line: 634-636
+msgid   "{count} word, {count} words"
 msgstr  ""
 
 #
