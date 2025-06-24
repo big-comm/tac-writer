@@ -1,6 +1,6 @@
 # TAC - Text Analysis and Creation
 
-![TAC Logo](https://via.placeholder.com/128x128/4a90e2/ffffff?text=TAC)
+![TAC Logo]([https://github.com/big-comm/comm-tac-writer/blob/main/usr/share/icons/hicolor/scalable/apps/tac-writer.svg])
 
 **TAC** is a modern academic writing assistant built with GTK4 and libadwaita, designed specifically for creating structured academic texts with guided paragraph types.
 
