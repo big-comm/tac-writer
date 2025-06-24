@@ -8,12 +8,17 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 from enum import Enum
 
+from utils.i18n import _
+
+
 class ParagraphType(Enum):
     """Types of paragraphs in academic writing"""
+    TITLE_1 = "title_1"           # Main title/chapter title (18pt)
+    TITLE_2 = "title_2"           # Subtitle/section title (16pt)
     INTRODUCTION = "introduction"  # Introduction paragraph
-    ARGUMENT = "argument"  # Argumentation paragraph
-    QUOTE = "quote"  # Quote paragraph (renamed from argument_quote)
-    CONCLUSION = "conclusion"  # Conclusion paragraph
+    ARGUMENT = "argument"          # Argumentation paragraph
+    QUOTE = "quote"               # Quote paragraph (renamed from argument_quote)
+    CONCLUSION = "conclusion"      # Conclusion paragraph
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -27,13 +32,13 @@ class Paragraph:
         self.modified_at = self.created_at
         self.order = 0
         
-        # Formatting options (padrão sem recuo inicial)
+        # Formatting options (default without initial indent)
         self.formatting = {
             'font_family': 'Liberation Sans',
             'font_size': 12,
             'line_spacing': 1.5,
-            'alignment': 'left',
-            'indent_first_line': 0.0,  # Sem recuo por padrão
+            'alignment': 'justify',
+            'indent_first_line': 0.0,  # No indent by default
             'indent_left': 0.0,  # cm
             'indent_right': 0.0,  # cm
             'bold': False,
@@ -41,18 +46,36 @@ class Paragraph:
             'underline': False,
         }
         
-        # Formatação especial para Introduction
-        if paragraph_type == ParagraphType.INTRODUCTION:
+        # Special formatting for Title 1
+        if paragraph_type == ParagraphType.TITLE_1:
             self.formatting.update({
-                'indent_first_line': 1.5,  # 1,5cm de recuo na primeira linha
+                'font_size': 18,  # 18pt for main titles
+                'bold': True,     # Bold by default
+                'alignment': 'left',
+                'line_spacing': 1.2,  # Smaller spacing for titles
             })
         
-        # Formatação especial para Quote
+        # Special formatting for Title 2
+        elif paragraph_type == ParagraphType.TITLE_2:
+            self.formatting.update({
+                'font_size': 16,  # 16pt for subtitles
+                'bold': True,     # Bold by default
+                'alignment': 'left',
+                'line_spacing': 1.2,  # Smaller spacing for titles
+            })
+        
+        # Special formatting for Introduction
+        elif paragraph_type == ParagraphType.INTRODUCTION:
+            self.formatting.update({
+                'indent_first_line': 1.5,  # 1.5cm first line indent
+            })
+        
+        # Special formatting for Quote
         elif paragraph_type == ParagraphType.QUOTE:
             self.formatting.update({
                 'font_size': 10,
                 'indent_left': 4.0,  # 4cm
-                'line_spacing': 1.0,  # espaçamento simples
+                'line_spacing': 1.0,  # single spacing
                 'italic': True
             })
     
@@ -63,6 +86,17 @@ class Paragraph:
     
     def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
         """Update paragraph formatting"""
+        # For Title 1 and Title 2, preserve font size if not explicitly changed
+        if self.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+            # If user is not explicitly changing font size,
+            # preserve default size for title type
+            if 'font_size' not in formatting_updates:
+                formatting_updates = formatting_updates.copy()
+                if self.type == ParagraphType.TITLE_1:
+                    formatting_updates['font_size'] = 18
+                elif self.type == ParagraphType.TITLE_2:
+                    formatting_updates['font_size'] = 16
+        
         self.formatting.update(formatting_updates)
         self.modified_at = datetime.now()
     
@@ -317,23 +351,14 @@ class DocumentTemplate:
 
 # Predefined templates
 ACADEMIC_ESSAY_TEMPLATE = DocumentTemplate(
-    name="Academic Essay",
-    description="Standard academic essay structure"
+    name=_("Academic Essay"),
+    description=_("Standard academic essay structure")
 )
 ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
     ParagraphType.INTRODUCTION  # Start with only Introduction
 ]
 
-RESEARCH_PAPER_TEMPLATE = DocumentTemplate(
-    name="Research Paper",
-    description="Extended research paper structure"
-)
-RESEARCH_PAPER_TEMPLATE.paragraph_structure = [
-    ParagraphType.INTRODUCTION  # Start with only Introduction
-]
 
 DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
-    RESEARCH_PAPER_TEMPLATE
 ]
-

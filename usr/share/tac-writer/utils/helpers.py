@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Optional, List, Dict, Any, Tuple
 from datetime import datetime
 
+from utils.i18n import _
+
 
 class FileHelper:
     """Helper functions for file operations"""
@@ -53,7 +55,7 @@ class FileHelper:
                 size /= 1024.0
             return f"{size:.1f} TB"
         except:
-            return "Unknown"
+            return _("Unknown")
     
     @staticmethod
     def get_mime_type(file_path: Path) -> str:
@@ -162,18 +164,22 @@ class TextHelper:
     def format_reading_time(word_count: int, words_per_minute: int = 200) -> str:
         """Calculate estimated reading time"""
         if word_count == 0:
-            return "0 minutes"
+            return _("0 minutes")
         
         minutes = word_count / words_per_minute
         
         if minutes < 1:
-            return "< 1 minute"
+            return _("< 1 minute")
         elif minutes < 60:
-            return f"{int(minutes)} minute{'s' if int(minutes) != 1 else ''}"
+            minute_count = int(minutes)
+            if minute_count == 1:
+                return _("1 minute")
+            else:
+                return _("{} minutes").format(minute_count)
         else:
             hours = int(minutes // 60)
             mins = int(minutes % 60)
-            return f"{hours}h {mins}m"
+            return _("{}h {}m").format(hours, mins)
 
 
 class ValidationHelper:
@@ -207,18 +213,18 @@ class ValidationHelper:
     def is_valid_project_name(name: str) -> Tuple[bool, str]:
         """Validate project name and return (is_valid, error_message)"""
         if not name or name.strip() == '':
-            return False, "Project name cannot be empty"
+            return False, _("Project name cannot be empty")
         
         name = name.strip()
         
         if len(name) < 2:
-            return False, "Project name must be at least 2 characters long"
+            return False, _("Project name must be at least 2 characters long")
         
         if len(name) > 100:
-            return False, "Project name cannot exceed 100 characters"
+            return False, _("Project name cannot exceed 100 characters")
         
         if not ValidationHelper.is_valid_filename(name):
-            return False, "Project name contains invalid characters"
+            return False, _("Project name contains invalid characters")
         
         return True, ""
     
@@ -235,23 +241,23 @@ class ValidationHelper:
     def validate_path(path: str) -> Tuple[bool, str]:
         """Validate file/directory path"""
         if not path:
-            return False, "Path cannot be empty"
+            return False, _("Path cannot be empty")
         
         try:
             path_obj = Path(path)
             
             # Check if parent directory exists (for file paths)
             if not path_obj.parent.exists():
-                return False, "Parent directory does not exist"
+                return False, _("Parent directory does not exist")
             
             # Check if path is too long (Windows has 260 char limit)
             if len(str(path_obj.resolve())) > 250:
-                return False, "Path is too long"
+                return False, _("Path is too long")
             
             return True, ""
             
         except Exception as e:
-            return False, f"Invalid path: {str(e)}"
+            return False, _("Invalid path: {}").format(str(e))
 
 
 class FormatHelper:
@@ -293,9 +299,9 @@ class FormatHelper:
             if key.endswith('_count'):
                 formatted[key] = f"{value:,}"
             elif key == 'total_words':
-                formatted[key] = f"{value:,} words"
+                formatted[key] = _("{:,} words").format(value)
             elif key == 'total_characters':
-                formatted[key] = f"{value:,} characters"
+                formatted[key] = _("{:,} characters").format(value)
             elif isinstance(value, dict):
                 # Handle nested dictionaries
                 formatted[key] = {k: str(v) for k, v in value.items()}
@@ -311,27 +317,27 @@ class DebugHelper:
     @staticmethod
     def print_object_info(obj: Any, name: str = "Object") -> None:
         """Print detailed information about an object"""
-        print(f"\n=== {name} Info ===")
-        print(f"Type: {type(obj).__name__}")
-        print(f"Module: {type(obj).__module__}")
+        print(f"\n=== {name} " + _("Info") + " ===")
+        print(_("Type: {}").format(type(obj).__name__))
+        print(_("Module: {}").format(type(obj).__module__))
         
         if hasattr(obj, '__dict__'):
-            print("Attributes:")
+            print(_("Attributes:"))
             for attr, value in obj.__dict__.items():
                 print(f"  {attr}: {type(value).__name__} = {repr(value)[:100]}")
         
-        print("Methods:")
+        print(_("Methods:"))
         methods = [method for method in dir(obj) if callable(getattr(obj, method)) and not method.startswith('_')]
         for method in methods[:10]:  # Limit to first 10 methods
             print(f"  {method}()")
         
         if len(methods) > 10:
-            print(f"  ... and {len(methods) - 10} more methods")
+            print(_("  ... and {} more methods").format(len(methods) - 10))
         
-        print("=" * (len(name) + 10))
+        print("=" * (len(name) + len(_("Info")) + 4))
     
     @staticmethod
     def log_performance(func_name: str, start_time: datetime, end_time: datetime) -> None:
         """Log performance information"""
         duration = (end_time - start_time).total_seconds()
-        print(f"Performance: {func_name} took {duration:.3f} seconds")
+        print(_("Performance: {} took {:.3f} seconds").format(func_name, duration))

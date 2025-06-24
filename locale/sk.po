@@ -1,0 +1,990 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the comm-tac-writer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: comm-tac-writer\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akademická esej"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Štandardná štruktúra akademického eseje"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Chyba: Vyžaduje sa GTK 4.0 alebo vyššia verzia"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Chyba: Požadované závislosti neboli nájdené: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Prosím nainštalujte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Kontrola chýb závislostí: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Začiatok TAC - Kontinuálna argumentačná technika"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Adresár aplikácie: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Načítanie aplikačných modulov..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Vytváranie inštancie aplikácie..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Spúšťam aplikáciu TAC..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Aplikácia bola dokončená."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplikácia bola prerušená používateľom."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Kritická chyba počas spustenia: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Nový projekt"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 57
+# File: usr/share/tac-writer/ui/dialogs.py, line: 307
+# File: usr/share/tac-writer/ui/dialogs.py, line: 555
+# File: usr/share/tac-writer/ui/dialogs.py, line: 650
+# File: usr/share/tac-writer/ui/main_window.py, line: 458
+# File: usr/share/tac-writer/ui/components.py, line: 305
+# File: usr/share/tac-writer/ui/components.py, line: 344
+# File: usr/share/tac-writer/ui/components.py, line: 660
+#: NEEDS WORK
+msgid "Cancel"
+msgstr "Zrušiť"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 63
+#: NEEDS WORK
+msgid "Create"
+msgstr "Vytvoriť"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 95
+#: NEEDS WORK
+msgid "Project Details"
+msgstr "Podrobnosti projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 99
+# File: usr/share/tac-writer/ui/dialogs.py, line: 577
+#: NEEDS WORK
+msgid "Project Name"
+msgstr "Názov projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 101
+#: NEEDS WORK
+msgid "Enter project name..."
+msgstr "Zadajte názov projektu..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 102
+#: NEEDS WORK
+msgid "My New Project"
+msgstr "Môj nový projekt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 119
+#: NEEDS WORK
+msgid "Author"
+msgstr "Autor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 121
+#: NEEDS WORK
+msgid "Your name..."
+msgstr "Vaše meno..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 130
+#: NEEDS WORK
+msgid "Description"
+msgstr "Popis"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 162
+#: NEEDS WORK
+msgid "Template"
+msgstr "Šablóna"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
+msgid "Choose a template to start with"
+msgstr "Vyberte šablónu, s ktorou chcete začať"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 172
+#: NEEDS WORK
+msgid "Document Template"
+msgstr "Šablóna dokumentu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 256
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Chyba pri vytváraní projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 259
+# File: usr/share/tac-writer/ui/dialogs.py, line: 727
+# File: usr/share/tac-writer/ui/dialogs.py, line: 746
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 269
+#: NEEDS WORK
+msgid "Format Text"
+msgstr "Formátovať text"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 312
+#: NEEDS WORK
+msgid "Apply"
+msgstr "Použiť"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 325
+#: NEEDS WORK
+msgid "Font"
+msgstr "Písmo"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Rodina písma"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Veľkosť písma"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
+msgid "Style"
+msgstr "Štýl"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "Tučný"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "Kurzký"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "Podčiarknuť"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 414
+#: NEEDS WORK
+msgid "Spacing & Alignment"
+msgstr "Rozostupy a zarovnanie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 420
+#: NEEDS WORK
+msgid "Line Spacing"
+msgstr "Medzera medzi riadkami"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 421
+#: NEEDS WORK
+msgid "Space between lines"
+msgstr "Medzera medzi riadkami"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 429
+#: NEEDS WORK
+msgid "First Line Indent (cm)"
+msgstr "Základný odsadenie prvého riadku (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 430
+#: NEEDS WORK
+msgid "Indentation of the first line"
+msgstr "Zarovnanie prvej línie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 438
+#: NEEDS WORK
+msgid "Left Margin (cm)"
+msgstr "Ľavý okraj (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 439
+#: NEEDS WORK
+msgid "Left side margin"
+msgstr "Ľavý okraj"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 447
+#: NEEDS WORK
+msgid "Right Margin (cm)"
+msgstr "Pravý okraj (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 448
+#: NEEDS WORK
+msgid "Right side margin"
+msgstr "Pravý okraj"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 455
+#: NEEDS WORK
+msgid "Text Alignment"
+msgstr "Zarovnanie textu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Left"
+msgstr "Ľavý"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Center"
+msgstr "Stred"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Right"
+msgstr "Pravý"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Justify"
+msgstr "Zarovnať"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 535
+#: NEEDS WORK
+msgid "Export Project"
+msgstr "Exportovať projekt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 560
+# File: usr/share/tac-writer/ui/dialogs.py, line: 716
+#: NEEDS WORK
+msgid "Export"
+msgstr "Exportovať"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 573
+#: NEEDS WORK
+msgid "Project Information"
+msgstr "Informácie o projekte"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 583
+#: NEEDS WORK
+msgid "Statistics"
+msgstr "Štatistika"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#: NEEDS WORK
+msgid "{} words, {} paragraphs"
+msgstr "{} slová, {} odseky"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 589
+#: NEEDS WORK
+msgid "Export Options"
+msgstr "Možnosti exportu"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Formát"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 614
+#: NEEDS WORK
+msgid "Include Metadata"
+msgstr "Zahrnúť metadata"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
+msgid "Include author, creation date, and other project information"
+msgstr "Zahrnúť autora, dátum vytvorenia a ďalšie informácie o projekte"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
+msgid "Output Location"
+msgstr "Miesto výstupu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 625
+#: NEEDS WORK
+msgid "Save Location"
+msgstr "Uložiť umiestnenie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
+msgid "Click to choose location"
+msgstr "Kliknite pre výber umiestnenia"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 629
+#: NEEDS WORK
+msgid "Choose..."
+msgstr "Vyberte..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 646
+#: NEEDS WORK
+msgid "Choose Export Location"
+msgstr "Vyberte umiestnenie exportu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 649
+#: NEEDS WORK
+msgid "Select"
+msgstr "Vybrať"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 669
+#: NEEDS WORK
+msgid "Exporting..."
+msgstr "Exportovanie..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Export Successful"
+msgstr "Export úspešný"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#: NEEDS WORK
+msgid ""
+"Project exported to:\n"
+"{}"
+msgstr ""
+"Projekt exportovaný do:  \n"
+"{}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 740
+#: NEEDS WORK
+msgid "An error occurred while exporting the project."
+msgstr "Pri exporte projektu došlo k chybe."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 743
+#: NEEDS WORK
+msgid "Export Failed"
+msgstr "Export zlyhal"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
+#: NEEDS WORK
+msgid "Preferences"
+msgstr "Predvoľby"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "General"
+msgstr "Všeobecné"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 779
+#: NEEDS WORK
+msgid "Appearance"
+msgstr "Vzhľad"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 784
+#: NEEDS WORK
+msgid "Dark Theme"
+msgstr "Tmavá téma"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 785
+#: NEEDS WORK
+msgid "Use dark theme for the application"
+msgstr "Použiť tmavú tému pre aplikáciu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 791
+#: NEEDS WORK
+msgid "Editor"
+msgstr "Editor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 797
+#: NEEDS WORK
+msgid "Default Font"
+msgstr "Predvolený font"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 868
+#: NEEDS WORK
+msgid "Behavior"
+msgstr "Správanie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 873
+#: NEEDS WORK
+msgid "Auto Save"
+msgstr "Automatické ukladanie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 874
+#: NEEDS WORK
+msgid "Automatically save projects while editing"
+msgstr "Automaticky ukladajte projekty počas úprav"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 880
+#: NEEDS WORK
+msgid "Word Wrap"
+msgstr "Zalamovanie textu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 881
+#: NEEDS WORK
+msgid "Wrap text to fit the editor width"
+msgstr "Zalamovať text, aby sa prispôsobil šírke editora"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 887
+#: NEEDS WORK
+msgid "Show Line Numbers"
+msgstr "Zobraziť čísla riadkov"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 888
+#: NEEDS WORK
+msgid "Display line numbers in the editor"
+msgstr "Zobraziť čísla riadkov v editore"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1021
+#: NEEDS WORK
+msgid "What is TAC Writer?"
+msgstr "Čo je TAC Writer?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
+msgstr "Kontinuálna argumentačná technika (CAT, TAC v portugalčine):"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+#: NEEDS WORK
+msgid ""
+"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
+"text and make it easier to understand."
+msgstr ""
+"CAT pozostáva z odsekov, ktoré navzájom interagujú. Myšlienka je taká, že niektoré témy, keď sú "
+"vysvetlené, nemožno uzavrieť len jedným odsekom. Toto je technika, ktorá má za cieľ usporiadať text "
+"a uľahčiť jeho pochopenie."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+#: NEEDS WORK
+msgid "This is the writing structure:"
+msgstr "Toto je štruktúra písania:"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+#: NEEDS WORK
+msgid ""
+"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
+"will be addressed.\n"
+"\n"
+"• <b>Argumentation:</b> development of the topic.\n"
+"\n"
+"• <b>Quote:</b> quote that supports the argument.\n"
+"\n"
+"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
+"the argument from the previous paragraph.\n"
+"\n"
+"• <b>Conclusion:</b> closing of the idea presented."
+msgstr ""
+"• <b>Úvod:</b> veta na začiatku odseku, ktorá zhrňuje tému, ktorá bude preberaná.\n"
+"\n"
+"• <b>Argumentácia:</b> rozvoj témy.\n"
+"\n"
+"• <b>Citát:</b> citát, ktorý podporuje argument.\n"
+"\n"
+"• <b>Argumentatívne pokračovanie:</b> začiatok nasledujúceho odseku, ktorý naznačuje pokračovanie "
+"argumentu z predchádzajúceho odseku.\n"
+"\n"
+"• <b>Záver:</b> uzavretie predloženej myšlienky."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1074
+#: NEEDS WORK
+msgid "Show this dialog on startup"
+msgstr "Zobraziť tento dialóg pri spustení"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+#: NEEDS WORK
+msgid "Let's Start"
+msgstr "Začnime"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC vývojový tím"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1131
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique - Academic Writing Assistant"
+msgstr "Kontinuálna argumentačná technika - Asistent akademického písania"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+#: NEEDS WORK
+msgid "Main Developer"
+msgstr "Hlavný vývojár"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+#: NEEDS WORK
+msgid "Design Team"
+msgstr "Tím dizajnu"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
+#: NEEDS WORK
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Kontinuálna argumentačná technika"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
+#: NEEDS WORK
+msgid "New Project (Ctrl+N)"
+msgstr "Nový projekt (Ctrl+N)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
+#: NEEDS WORK
+msgid "Open Project (Ctrl+O)"
+msgstr "Otvor projekt (Ctrl+O)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
+#: NEEDS WORK
+msgid "Save Project (Ctrl+S)"
+msgstr "Uložiť projekt (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Hlavné menu"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
+#: NEEDS WORK
+msgid "Export Project..."
+msgstr "Exportovať projekt..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
+msgid "Welcome Guide"
+msgstr "Sprievodca uvítaním"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
+msgid "About TAC"
+msgstr "O TAC"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
+#: NEEDS WORK
+msgid "Projects"
+msgstr "Projekty"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Pridať odsek"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Názov 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Názov 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Úvod"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argument"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Citát"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Záver"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Formátovať odseky"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Kontinuálna argumentačná technika"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} slová • {} odsekov"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Odstavec preusporiadaný"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Otvor projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Otvoriť"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "TAC Projekty (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Všetky súbory"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Otvorený projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Nepodarilo sa otvoriť projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Projekt bol úspešne uložený"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Nepodarilo sa uložiť projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Žiadny projekt na export"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Vytvorený projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Žiadne odseky na formátovanie"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Vitajte v TAC"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Vytvorte štruktúrované akademické texty s usmernenými typmi odsekov"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Poznámka:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "Exportovanie do ODT môže vyžadovať niektoré úpravy vo vašej kancelárskej sade."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Tip:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "pre priame citáty s menej ako 4 riadkami použite argumentové okno."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Začnite písať"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Vyberte šablónu, aby ste mohli začať"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Štart"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Hľadať projekty..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Prezvaniť projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Vymazať projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Prezvaniť projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+msgid "Enter new name for '{}'"
+msgstr "Zadajte nové meno pre '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Premenovať"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+msgid "Delete '{}'?"
+msgstr "Vymazať '{}' ?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Tento projekt bude presunutý do koša a môže byť obnovený."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Odstrániť"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Odstrániť odsek"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Odsek"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} slovo"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} slová"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Odstrániť odsek?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Túto akciu nie je možné vrátiť späť."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Odstrániť"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Neznáme"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 minút"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 minúta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 minúta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+msgid "{} minutes"
+msgstr "{} minút"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+msgid "{}h {}m"
+msgstr "{}h {}m"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Názov projektu nemôže byť prázdny"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Názov projektu musí mať aspoň 2 znaky."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Názov projektu nemôže presiahnuť 100 znakov"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Názov projektu obsahuje neplatné znaky"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Cesta nemôže byť prázdna"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Rodičovský adresár neexistuje"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Cesta je príliš dlhá"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+msgid "Invalid path: {}"
+msgstr "Neplatná cesta: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} slová"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} znakov"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Informácie"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+msgid "Type: {}"
+msgstr "Typ: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+msgid "Module: {}"
+msgstr "Modul: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Atribúty:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Metódy:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+msgid "  ... and {} more methods"
+msgstr "... a {} ďalších metód"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Výkon: {} trval {:.3f} sekúnd"

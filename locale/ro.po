@@ -1,0 +1,991 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the comm-tac-writer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: comm-tac-writer\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Eseu academic"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Structura standard a unui eseu academic"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Eroare: Este necesară GTK 4.0 sau o versiune superioară"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Eroare: Dependențe necesare nu au fost găsite: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Vă rugăm să instalați: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Verificarea erorilor dependențelor: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Începerea TAC - Tehnica de Argumentare Continuă"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Directorul aplicației: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Încărcarea modulelor aplicației..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Crearea instanței aplicației..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Se rulează aplicația TAC..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Aplicația s-a încheiat."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplicație întreruptă de utilizator."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Eroare critică la pornire: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Proiect Nou"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 57
+# File: usr/share/tac-writer/ui/dialogs.py, line: 307
+# File: usr/share/tac-writer/ui/dialogs.py, line: 555
+# File: usr/share/tac-writer/ui/dialogs.py, line: 650
+# File: usr/share/tac-writer/ui/main_window.py, line: 458
+# File: usr/share/tac-writer/ui/components.py, line: 305
+# File: usr/share/tac-writer/ui/components.py, line: 344
+# File: usr/share/tac-writer/ui/components.py, line: 660
+#: NEEDS WORK
+msgid "Cancel"
+msgstr "Anulează"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 63
+#: NEEDS WORK
+msgid "Create"
+msgstr "Creează"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 95
+#: NEEDS WORK
+msgid "Project Details"
+msgstr "Detalii proiect"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 99
+# File: usr/share/tac-writer/ui/dialogs.py, line: 577
+#: NEEDS WORK
+msgid "Project Name"
+msgstr "Numele Proiectului"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 101
+#: NEEDS WORK
+msgid "Enter project name..."
+msgstr "Introduceți numele proiectului..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 102
+#: NEEDS WORK
+msgid "My New Project"
+msgstr "Proiectul Meu Nou"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 119
+#: NEEDS WORK
+msgid "Author"
+msgstr "Autor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 121
+#: NEEDS WORK
+msgid "Your name..."
+msgstr "Numele tău..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 130
+#: NEEDS WORK
+msgid "Description"
+msgstr "Descriere"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 162
+#: NEEDS WORK
+msgid "Template"
+msgstr "Șablon"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
+msgid "Choose a template to start with"
+msgstr "Alegeți un șablon pentru a începe."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 172
+#: NEEDS WORK
+msgid "Document Template"
+msgstr "Șablon de document"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 256
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Eroare la crearea proiectului"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 259
+# File: usr/share/tac-writer/ui/dialogs.py, line: 727
+# File: usr/share/tac-writer/ui/dialogs.py, line: 746
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 269
+#: NEEDS WORK
+msgid "Format Text"
+msgstr "Formatați textul"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 312
+#: NEEDS WORK
+msgid "Apply"
+msgstr "Aplică"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 325
+#: NEEDS WORK
+msgid "Font"
+msgstr "Font"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Familie de fonturi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Dimensiune font"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
+msgid "Style"
+msgstr "Stil"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "Îngroșat"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "Italic"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "Subliniază"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 414
+#: NEEDS WORK
+msgid "Spacing & Alignment"
+msgstr "Spațiere și Aliniere"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 420
+#: NEEDS WORK
+msgid "Line Spacing"
+msgstr "Spațiere între linii"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 421
+#: NEEDS WORK
+msgid "Space between lines"
+msgstr "Spațiu între linii"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 429
+#: NEEDS WORK
+msgid "First Line Indent (cm)"
+msgstr "Indentare Prima Linie (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 430
+#: NEEDS WORK
+msgid "Indentation of the first line"
+msgstr "Indentarea primei linii"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 438
+#: NEEDS WORK
+msgid "Left Margin (cm)"
+msgstr "Margine Stânga (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 439
+#: NEEDS WORK
+msgid "Left side margin"
+msgstr "Margine stânga"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 447
+#: NEEDS WORK
+msgid "Right Margin (cm)"
+msgstr "Margine Dreapta (cm)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 448
+#: NEEDS WORK
+msgid "Right side margin"
+msgstr "Margine dreapta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 455
+#: NEEDS WORK
+msgid "Text Alignment"
+msgstr "Alinierea textului"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Left"
+msgstr "Stânga"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Center"
+msgstr "Centru"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Right"
+msgstr "Dreapta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 457
+#: NEEDS WORK
+msgid "Justify"
+msgstr "Justificare"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 535
+#: NEEDS WORK
+msgid "Export Project"
+msgstr "Exportă proiectul"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 560
+# File: usr/share/tac-writer/ui/dialogs.py, line: 716
+#: NEEDS WORK
+msgid "Export"
+msgstr "Exporta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 573
+#: NEEDS WORK
+msgid "Project Information"
+msgstr "Informații despre proiect"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 583
+#: NEEDS WORK
+msgid "Statistics"
+msgstr "Statistici"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#: NEEDS WORK
+msgid "{} words, {} paragraphs"
+msgstr "{} cuvinte, {} paragrafe"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 589
+#: NEEDS WORK
+msgid "Export Options"
+msgstr "Opțiuni de export"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Format"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 614
+#: NEEDS WORK
+msgid "Include Metadata"
+msgstr "Include Metadata"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
+msgid "Include author, creation date, and other project information"
+msgstr "Include autor, data creării și alte informații despre proiect."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
+msgid "Output Location"
+msgstr "Locație de ieșire"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 625
+#: NEEDS WORK
+msgid "Save Location"
+msgstr "Locație de salvare"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
+msgid "Click to choose location"
+msgstr "Faceți clic pentru a alege locația"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 629
+#: NEEDS WORK
+msgid "Choose..."
+msgstr "Alege..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 646
+#: NEEDS WORK
+msgid "Choose Export Location"
+msgstr "Alegeți locația de export"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 649
+#: NEEDS WORK
+msgid "Select"
+msgstr "Selectați"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 669
+#: NEEDS WORK
+msgid "Exporting..."
+msgstr "Exportare..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Export Successful"
+msgstr "Exportare reușită"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#: NEEDS WORK
+msgid ""
+"Project exported to:\n"
+"{}"
+msgstr ""
+"Proiect exportat în:  \n"
+"{}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 740
+#: NEEDS WORK
+msgid "An error occurred while exporting the project."
+msgstr "A apărut o eroare în timpul exportării proiectului."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 743
+#: NEEDS WORK
+msgid "Export Failed"
+msgstr "Export eșuat"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
+#: NEEDS WORK
+msgid "Preferences"
+msgstr "Preferințe"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "General"
+msgstr "General"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 779
+#: NEEDS WORK
+msgid "Appearance"
+msgstr "Aspect."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 784
+#: NEEDS WORK
+msgid "Dark Theme"
+msgstr "Temă Întunecată"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 785
+#: NEEDS WORK
+msgid "Use dark theme for the application"
+msgstr "Folosește tema închisă pentru aplicație"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 791
+#: NEEDS WORK
+msgid "Editor"
+msgstr "Editor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 797
+#: NEEDS WORK
+msgid "Default Font"
+msgstr "Font implicit"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 868
+#: NEEDS WORK
+msgid "Behavior"
+msgstr "Comportament"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 873
+#: NEEDS WORK
+msgid "Auto Save"
+msgstr "Salvare automată"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 874
+#: NEEDS WORK
+msgid "Automatically save projects while editing"
+msgstr "Salvează automat proiectele în timp ce editezi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 880
+#: NEEDS WORK
+msgid "Word Wrap"
+msgstr "Împachetare cuvânt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 881
+#: NEEDS WORK
+msgid "Wrap text to fit the editor width"
+msgstr "Împachetează textul pentru a se potrivi lățimii editorului"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 887
+#: NEEDS WORK
+msgid "Show Line Numbers"
+msgstr "Afișează numerele de linie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 888
+#: NEEDS WORK
+msgid "Display line numbers in the editor"
+msgstr "Afișează numerele de linie în editor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1021
+#: NEEDS WORK
+msgid "What is TAC Writer?"
+msgstr "Ce este TAC Writer?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
+msgstr "Tehnica de Argumentare Continuă (CAT, TAC în portugheză):"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+#: NEEDS WORK
+msgid ""
+"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
+"text and make it easier to understand."
+msgstr ""
+"CAT constă din paragrafe care interacționează între ele. Ideea este că unele subiecte, atunci când "
+"sunt explicate, nu pot fi concluzionate cu un singur paragraf. Aceasta este o tehnică care are ca "
+"scop organizarea unui text și facilitarea înțelegerii acestuia."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+#: NEEDS WORK
+msgid "This is the writing structure:"
+msgstr "Aceasta este structura de scriere:"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+#: NEEDS WORK
+msgid ""
+"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
+"will be addressed.\n"
+"\n"
+"• <b>Argumentation:</b> development of the topic.\n"
+"\n"
+"• <b>Quote:</b> quote that supports the argument.\n"
+"\n"
+"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
+"the argument from the previous paragraph.\n"
+"\n"
+"• <b>Conclusion:</b> closing of the idea presented."
+msgstr ""
+"• <b>Introducere:</b> o propoziție la începutul paragrafului care rezumă subiectul care va fi "
+"abordat.\n"
+"\n"
+"• <b>Argumentare:</b> dezvoltarea subiectului.\n"
+"\n"
+"• <b>Citat:</b> citat care susține argumentul.\n"
+"\n"
+"• <b>Reluare Argumentativă:</b> începutul următorului paragraf care indică o reluare a argumentului "
+"din paragraful anterior.\n"
+"\n"
+"• <b>Concluzie:</b> încheierea ideii prezentate."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1074
+#: NEEDS WORK
+msgid "Show this dialog on startup"
+msgstr "Afișați acest dialog la pornire"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+#: NEEDS WORK
+msgid "Let's Start"
+msgstr "Să începem"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Echipa de Dezvoltare TAC"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1131
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique - Academic Writing Assistant"
+msgstr "Tehnica de Argumentare Continuă - Asistent pentru Scriere Academică"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+#: NEEDS WORK
+msgid "Main Developer"
+msgstr "Dezvoltator Principal"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+#: NEEDS WORK
+msgid "Design Team"
+msgstr "Echipa de Design"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
+#: NEEDS WORK
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Tehnica de Argumentare Continuă"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
+#: NEEDS WORK
+msgid "New Project (Ctrl+N)"
+msgstr "Proiect Nou (Ctrl+N)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
+#: NEEDS WORK
+msgid "Open Project (Ctrl+O)"
+msgstr "Deschide Proiect (Ctrl+O)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
+#: NEEDS WORK
+msgid "Save Project (Ctrl+S)"
+msgstr "Salvează Proiectul (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Meniu Principal"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
+#: NEEDS WORK
+msgid "Export Project..."
+msgstr "Exportă proiectul..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
+msgid "Welcome Guide"
+msgstr "Ghid de bun venit"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
+msgid "About TAC"
+msgstr "Despre TAC"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
+#: NEEDS WORK
+msgid "Projects"
+msgstr "Proiecte"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Adaugă paragraf"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Titlu 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Titlu 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Introducere"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argument"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Citat"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Concluzie"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Formatează paragrafele"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Tehnica Argumentării Continue"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} cuvinte • {} paragrafe"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Paragraf reordonat"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Deschide Proiectul"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Deschide"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "Proiecte TAC (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Toate fișierele"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Proiect deschis: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Eșec la deschiderea proiectului"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Proiect salvat cu succes"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Salvarea proiectului a eșuat"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Niciun proiect de exportat"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Proiect creat: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Nu sunt paragrafe de formatat"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Bine ați venit la TAC"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Creează texte academice structurate cu tipuri de paragraf ghidate"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Notă:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "exportarea în ODT ar putea necesita unele ajustări în suita ta Office."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Sugestie:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "pentru citate directe cu mai puțin de 4 rânduri, folosiți caseta de argumente."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Începeți să scrieți"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Alegeți un șablon pentru a începe"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Începe"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Caută proiecte..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Renumește proiectul"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Șterge proiectul"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Renumește Proiectul"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+msgid "Enter new name for '{}'"
+msgstr "Introduceți un nou nume pentru '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Renumește"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+msgid "Delete '{}'?"
+msgstr "Șterge '{}' ?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Acest proiect va fi mutat în coșul de gunoi și poate fi recuperat."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Șterge"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Elimină paragraful"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Paragraf"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} cuvânt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} cuvinte"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Șterge paragraful?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Această acțiune nu poate fi anulată."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Elimină"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Necunoscut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 minute"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+msgid "{} minutes"
+msgstr "{} minute"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+msgid "{}h {}m"
+msgstr "{}h {}m"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Numele proiectului nu poate fi gol"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Numele proiectului trebuie să aibă cel puțin 2 caractere."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Numele proiectului nu poate depăși 100 de caractere"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Numele proiectului conține caractere invalide"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Calea nu poate fi goală"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Directorul părinte nu există"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Calea este prea lungă"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+msgid "Invalid path: {}"
+msgstr "Cale invalidă: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} cuvinte"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} caractere"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Informații"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+msgid "Type: {}"
+msgstr "Tip: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+msgid "Module: {}"
+msgstr "Modul: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Atribute:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Metode:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+msgid "  ... and {} more methods"
+msgstr "... și {} metode suplimentare"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Performanță: {} a durat {:.3f} secunde"

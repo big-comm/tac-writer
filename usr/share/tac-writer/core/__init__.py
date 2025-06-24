@@ -10,7 +10,6 @@ from .models import (
     ParagraphType, 
     DocumentTemplate,
     ACADEMIC_ESSAY_TEMPLATE,
-    RESEARCH_PAPER_TEMPLATE,
     DEFAULT_TEMPLATES
 )
 from .services import ProjectManager, ExportService
@@ -25,7 +24,6 @@ __all__ = [
     'ParagraphType',
     'DocumentTemplate',
     'ACADEMIC_ESSAY_TEMPLATE',
-    'RESEARCH_PAPER_TEMPLATE', 
     'DEFAULT_TEMPLATES',
     
     # Services

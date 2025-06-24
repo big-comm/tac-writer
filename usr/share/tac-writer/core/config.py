@@ -81,6 +81,7 @@ class Config:
             'recent_files_limit': 10,
             'confirm_on_close': True,
             'restore_session': True,
+            'show_welcome_dialog': True,
             
             # Theme and appearance
             'use_dark_theme': False,

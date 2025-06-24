@@ -11,6 +11,7 @@ from gi.repository import Gtk, Adw, Gio, Gdk
 from core.config import Config
 from core.services import ProjectManager
 from ui.main_window import MainWindow
+from utils.i18n import _
 
 
 class TacApplication(Adw.Application):
