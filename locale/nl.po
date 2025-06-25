@@ -837,6 +837,11 @@ msgstr "Dit project wordt naar de prullenbak verplaatst en kan worden hersteld."
 msgid "Delete"
 msgstr "Verwijderen"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Schakel spellingscontrole in/uit"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

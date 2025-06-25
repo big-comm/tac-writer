@@ -836,6 +836,11 @@ msgstr "Este proyecto se moverá a la papelera y se puede recuperar."
 msgid "Delete"
 msgstr "Eliminar"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Alternar la corrección ortográfica"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

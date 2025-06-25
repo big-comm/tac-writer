@@ -836,6 +836,11 @@ msgstr "Tento projekt bude presunutý do koša a môže byť obnovený."
 msgid "Delete"
 msgstr "Odstrániť"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Prepnúť kontrolu pravopisu"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

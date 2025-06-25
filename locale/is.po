@@ -836,6 +836,11 @@ msgstr "Þetta verkefni verður flutt í ruslið og hægt er að endurheimta þa
 msgid "Delete"
 msgstr "Eyða"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Virkja stafsetningu"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

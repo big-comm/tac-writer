@@ -836,6 +836,11 @@ msgstr "Ce projet sera déplacé vers la corbeille et peut être récupéré."
 msgid "Delete"
 msgstr "Supprimer"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Activer/désactiver la vérification orthographique"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

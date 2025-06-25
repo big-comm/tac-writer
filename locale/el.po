@@ -836,6 +836,11 @@ msgstr "Αυτό το έργο θα μεταφερθεί στον κάδο απ�
 msgid "Delete"
 msgstr "Διαγραφή"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Εναλλαγή ορθογραφικού ελέγχου"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

@@ -837,6 +837,11 @@ msgstr "Questo progetto verrà spostato nel cestino e può essere recuperato."
 msgid "Delete"
 msgstr "Elimina"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Attiva/disattiva il controllo ortografico"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

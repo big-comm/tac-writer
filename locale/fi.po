@@ -836,6 +836,11 @@ msgstr "Tämä projekti siirretään roskakoriin ja se voidaan palauttaa."
 msgid "Delete"
 msgstr "Poista"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Ota oikeinkirjoituksen tarkistus käyttöön/pois käytöstä"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

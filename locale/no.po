@@ -837,6 +837,11 @@ msgstr "Dette prosjektet vil bli flyttet til søppel og kan gjenopprettes."
 msgid "Delete"
 msgstr "Slett"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Slå av/på stavekontroll"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

@@ -837,6 +837,11 @@ msgstr "Acest proiect va fi mutat în coșul de gunoi și poate fi recuperat."
 msgid "Delete"
 msgstr "Șterge"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Comutare verificarea ortografică"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

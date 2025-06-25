@@ -837,6 +837,11 @@ msgstr "Dieses Projekt wird in den Papierkorb verschoben und kann wiederhergeste
 msgid "Delete"
 msgstr "Löschen"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Rechtschreibprüfung umschalten"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

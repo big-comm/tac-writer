@@ -836,6 +836,11 @@ msgstr "Ten projekt zostanie przeniesiony do kosza i można go odzyskać."
 msgid "Delete"
 msgstr "Usuń"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Przełącz sprawdzanie pisowni"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

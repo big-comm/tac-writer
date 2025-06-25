@@ -837,6 +837,11 @@ msgstr "Detta projekt kommer att flyttas till papperskorgen och kan återställa
 msgid "Delete"
 msgstr "Ta bort"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Aktivera stavningskontroll"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

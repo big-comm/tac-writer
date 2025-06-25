@@ -834,6 +834,11 @@ msgstr "이 프로젝트는 휴지통으로 이동되며 복구할 수 있습니
 msgid "Delete"
 msgstr "삭제"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "맞춤법 검사 전환"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

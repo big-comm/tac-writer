@@ -837,6 +837,11 @@ msgstr "Dette projekt vil blive flyttet til papirkurven og kan gendannes."
 msgid "Delete"
 msgstr "Slet"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Skift stavningskontrol"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

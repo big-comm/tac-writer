@@ -835,6 +835,11 @@ msgstr "See projekt liigutatakse prügikasti ja seda saab taastada."
 msgid "Delete"
 msgstr "Kustuta"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Lülita õigekirjakontroll"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

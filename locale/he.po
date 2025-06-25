@@ -834,6 +834,11 @@ msgstr "הפרויקט הזה יועבר לפח וניתן לשחזר אותו."
 msgid "Delete"
 msgstr "מחק"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "הפעל/כבה בדיקת איות"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

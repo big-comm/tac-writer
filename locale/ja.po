@@ -832,6 +832,11 @@ msgstr "このプロジェクトはゴミ箱に移動され、復元可能です
 msgid "Delete"
 msgstr "削除"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "スペルチェックの切り替え"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

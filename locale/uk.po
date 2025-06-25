@@ -839,6 +839,11 @@ msgstr "Цей проєкт буде переміщено до кошика і �
 msgid "Delete"
 msgstr "Delete"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Перемикання перевірки правопису"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

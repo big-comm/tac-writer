@@ -836,6 +836,11 @@ msgstr "Ovaj projekt će biti premješten u smeće i može se oporaviti."
 msgid "Delete"
 msgstr "Izbriši"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Prebaci provjeru pravopisa"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"

@@ -836,6 +836,11 @@ msgstr "Este projeto será movido para a lixeira e pode ser recuperado."
 msgid "Delete"
 msgstr "Excluir"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Ativar verificação ortográfica"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
 msgid "Remove paragraph"
