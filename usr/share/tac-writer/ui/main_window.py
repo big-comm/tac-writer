@@ -318,7 +318,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         # Add paragraphs SYNCHRONOUSLY, without delay
         for paragraph in self.current_project.paragraphs:
-            paragraph_editor = ParagraphEditor(paragraph)
+            paragraph_editor = ParagraphEditor(paragraph, config=self.config)
             paragraph_editor.connect('content-changed', self._on_paragraph_changed)
             paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
             paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)

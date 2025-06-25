@@ -1,13 +1,9 @@
 """
-
 TAC UI Components
-
 Reusable UI components for the TAC application
-
 """
 
 import gi
-
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
@@ -28,118 +24,79 @@ from utils.i18n import _
 
 class SpellCheckHelper:
     """Helper class for spell checking functionality using PyGTKSpellcheck"""
-    
+
     def __init__(self, config=None):
         self.config = config
         self.available_languages = []
-        self.spell_checkers = {}  # Store spell checker instances
+        self.spell_checkers = {}
         self._load_available_languages()
-    
+
     def _load_available_languages(self):
         """Load available spell check languages"""
         if not SPELL_CHECK_AVAILABLE:
             return
-        
+
         try:
             import enchant
-            # Get available languages from enchant
             self.available_languages = []
-            for lang in ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT']:
+            for lang in ['pt_BR', 'en_US', 'en_GB', 'es_ES', 'fr_FR', 'de_DE', 'it_IT']:
                 try:
                     if enchant.dict_exists(lang):
                         self.available_languages.append(lang)
                 except:
                     pass
-            
+
             print(f"Available spell check languages: {self.available_languages}")
         except ImportError as e:
             print(f"Error loading spell check languages: {e}")
-            self.available_languages = ['pt_BR', 'en_US']  # Fallback
-    
+            self.available_languages = ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE']
+
     def setup_spell_check(self, text_view, language=None):
         """Setup spell checking for a TextView using PyGTKSpellcheck"""
         if not SPELL_CHECK_AVAILABLE:
             return None
-        
+
         try:
-            # Determine language to use
             if language:
                 spell_language = language
             elif self.config:
                 spell_language = self.config.get_spell_check_language()
             else:
                 spell_language = 'pt_BR'
-            
-            # Create spell checker instance
-            spell_checker = gtkspellcheck.SpellChecker(
-                text_view, 
-                language=spell_language,
-                prefix='gtkspellcheck'
-            )
-            
-            # Store reference
+
+            print(f"Setting up spell check with language: {spell_language}")
+
+            spell_checker = gtkspellcheck.SpellChecker(text_view, language=spell_language)
+
             checker_id = id(text_view)
             self.spell_checkers[checker_id] = spell_checker
-            
-            print(f"Spell check setup for TextView with language: {spell_language}")
+
+            print(f"✓ Spell check setup successful for TextView with language: {spell_language}")
             return spell_checker
-            
+
         except Exception as e:
-            print(f"Error setting up spell check: {e}")
+            print(f"✗ Error setting up spell check: {e}")
             return None
-    
-    def set_language(self, text_view, language_code):
-        """Set spell check language for a TextView"""
-        if not SPELL_CHECK_AVAILABLE:
-            return
-        
-        try:
-            checker_id = id(text_view)
-            spell_checker = self.spell_checkers.get(checker_id)
-            
-            if spell_checker:
-                spell_checker.set_language(language_code)
-                print(f"Spell check language set to: {language_code}")
-            else:
-                print("No spell checker found for this TextView")
-        except Exception as e:
-            print(f"Error setting spell check language: {e}")
-    
+
     def enable_spell_check(self, text_view, enabled=True):
         """Enable or disable spell checking for a TextView"""
         if not SPELL_CHECK_AVAILABLE:
             return
-        
+
         try:
             checker_id = id(text_view)
             spell_checker = self.spell_checkers.get(checker_id)
-            
+
             if spell_checker:
                 if enabled:
                     spell_checker.enable()
                 else:
                     spell_checker.disable()
-                print(f"Spell check {'enabled' if enabled else 'disabled'}")
-            else:
-                print("No spell checker found for this TextView")
+                print(f"✓ Spell check {'enabled' if enabled else 'disabled'}")
         except Exception as e:
-            print(f"Error toggling spell check: {e}")
-    
-    def remove_spell_check(self, text_view):
-        """Remove spell checking from a TextView"""
-        if not SPELL_CHECK_AVAILABLE:
-            return
-        
-        try:
-            checker_id = id(text_view)
-            spell_checker = self.spell_checkers.get(checker_id)
-            
-            if spell_checker:
-                spell_checker.disable()
-                del self.spell_checkers[checker_id]
-                print("Spell checker removed")
-        except Exception as e:
-            print(f"Error removing spell check: {e}")
+            print(f"✗ Error toggling spell check: {e}")
+
+        return
 
 class WelcomeView(Gtk.Box):
     """Welcome view shown when no project is open"""
@@ -483,7 +440,7 @@ class ProjectListWidget(Gtk.Box):
         dialog.present()
 
 class ParagraphEditor(Gtk.Box):
-    """Editor for individual paragraphs with spell checking support"""
+    """Editor for individual paragraphs"""
 
     __gtype_name__ = 'TacParagraphEditor'
 
@@ -496,13 +453,15 @@ class ParagraphEditor(Gtk.Box):
     def __init__(self, paragraph: Paragraph, config=None, **kwargs):
         super().__init__(orientation=Gtk.Orientation.VERTICAL, **kwargs)
         self.paragraph = paragraph
-        self.config = config
+        self.config = config  # ADD CONFIG PARAMETER
         self.text_view = None
         self.text_buffer = None
         self.is_dragging = False
-        self.spell_checker = None  # Store spell checker reference
+        
+        # ADD SPELL CHECK COMPONENTS
+        self.spell_checker = None
         self.spell_helper = SpellCheckHelper(config) if config else None
-
+        
         self.set_spacing(8)
         self.add_css_class("card")
         self.set_margin_start(4)
@@ -518,8 +477,24 @@ class ParagraphEditor(Gtk.Box):
         self._setup_drag_and_drop()
         # Apply initial formatting
         self._apply_formatting()
-        # Setup spell check
-        self._setup_spell_check()
+        
+        # ADD SPELL CHECK SETUP
+        GLib.idle_add(self._setup_spell_check_delayed)
+
+    def _setup_spell_check_delayed(self):
+        """Setup spell checking after widget is realized"""
+        if not self.spell_helper or not self.text_view:
+            return False
+        
+        if self.config and self.config.get_spell_check_enabled():
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Spell check enabled for paragraph: {self.paragraph.type.value}")
+            except Exception as e:
+                print(f"✗ Error setting up spell check: {e}")
+        
+        return False
 
     def _create_header(self):
         """Create paragraph header with type and controls"""
@@ -542,7 +517,7 @@ class ParagraphEditor(Gtk.Box):
         spacer.set_hexpand(True)
         header_box.append(spacer)
 
-        # Spell check toggle button (if available)
+        # ADD SPELL CHECK BUTTON
         if SPELL_CHECK_AVAILABLE and self.config:
             self.spell_button = Gtk.ToggleButton()
             self.spell_button.set_icon_name("tools-check-spelling-symbolic")
@@ -569,6 +544,30 @@ class ParagraphEditor(Gtk.Box):
 
         self.append(header_box)
 
+    def _on_spell_check_toggled(self, button):
+        """Handle spell check toggle"""
+        if not self.spell_helper:
+            return
+        
+        enabled = button.get_active()
+        
+        if enabled and not self.spell_checker:
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print("✓ Spell check enabled via button")
+            except Exception as e:
+                print(f"✗ Error enabling spell check: {e}")
+        elif self.spell_checker:
+            try:
+                self.spell_helper.enable_spell_check(self.text_view, enabled)
+                print(f"✓ Spell check {'enabled' if enabled else 'disabled'} via button")
+            except Exception as e:
+                print(f"✗ Error toggling spell check: {e}")
+        
+        if self.config:
+            self.config.set_spell_check_enabled(enabled)
+
     def _create_text_editor(self):
         """Create the text editing area"""
         # Text buffer
@@ -594,54 +593,6 @@ class ParagraphEditor(Gtk.Box):
         scrolled.set_child(self.text_view)
 
         self.append(scrolled)
-
-    def _setup_spell_check(self):
-        """Setup spell checking for this text view"""
-        if not self.spell_helper or not self.text_view:
-            return
-        
-        # Only setup spell checking if enabled in config
-        if self.config and self.config.get_spell_check_enabled():
-            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            if self.spell_checker:
-                print(f"Spell check setup for paragraph: {self.paragraph.type.value}")
-
-    def _on_spell_check_toggled(self, button):
-        """Handle spell check toggle"""
-        if not self.spell_helper:
-            return
-        
-        enabled = button.get_active()
-        
-        if enabled and not self.spell_checker:
-            # Enable spell checking
-            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-        elif self.spell_checker:
-            # Toggle existing spell checking
-            self.spell_helper.enable_spell_check(self.text_view, enabled)
-        
-        # Update config if available
-        if self.config:
-            self.config.set_spell_check_enabled(enabled)
-
-    def refresh_spell_check(self):
-        """Refresh spell check settings (called when config changes)"""
-        if not self.spell_helper or not self.text_view:
-            return
-        
-        enabled = self.config.get_spell_check_enabled() if self.config else True
-        language = self.config.get_spell_check_language() if self.config else 'pt_BR'
-        
-        if enabled and not self.spell_checker:
-            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-        elif self.spell_checker:
-            self.spell_helper.enable_spell_check(self.text_view, enabled)
-            if enabled:
-                self.spell_helper.set_language(self.text_view, language)
-        
-        # Update button state
-        if hasattr(self, 'spell_button'):
-            self.spell_button.set_active(enabled)
 
     def _setup_drag_and_drop(self):
         """Setup drag and drop functionality for reordering paragraphs"""
@@ -670,6 +621,31 @@ class ParagraphEditor(Gtk.Box):
 
         # Add drop target to the widget
         self.add_controller(drop_target)
+
+    def _setup_drag_indicator(self):
+        """Setup visual drag indicator"""
+        # Add motion controller for hover effects
+        motion_controller = Gtk.EventControllerMotion()
+        motion_controller.connect('enter', self._on_mouse_enter)
+        motion_controller.connect('leave', self._on_mouse_leave)
+
+        # Add to the text view area
+        self.text_view.add_controller(motion_controller)
+
+        # Set cursor to indicate draggable
+        self.set_cursor_from_name("grab")
+
+    def _on_mouse_enter(self, controller, x, y):
+        """Handle mouse enter"""
+        if not self.is_dragging:
+            self.add_css_class("draggable-hover")
+            self.set_cursor_from_name("grab")
+
+    def _on_mouse_leave(self, controller):
+        """Handle mouse leave"""
+        if not self.is_dragging:
+            self.remove_css_class("draggable-hover")
+            self.set_cursor_from_name("default")
 
     def _on_drag_prepare(self, drag_source, x, y):
         """Prepare drag operation"""
@@ -835,9 +811,6 @@ class ParagraphEditor(Gtk.Box):
     def _on_remove_confirmed(self, dialog, response):
         """Handle remove confirmation"""
         if response == "remove":
-            # Clean up spell checker before removing
-            if self.spell_helper and self.text_view:
-                self.spell_helper.remove_spell_check(self.text_view)
             self.emit('remove-requested', self.paragraph.id)
         dialog.destroy()
 
@@ -846,7 +819,7 @@ class ParagraphEditor(Gtk.Box):
         self._apply_formatting()
 
 class TextEditor(Gtk.Box):
-    """Advanced text editor component with spell checking"""
+    """Advanced text editor component"""
 
     __gtype_name__ = 'TacTextEditor'
 
@@ -854,9 +827,11 @@ class TextEditor(Gtk.Box):
         'content-changed': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
     }
 
-    def __init__(self, initial_text: str = "", config=None, **kwargs):
+    def __init__(self, initial_text: str = "", config=None, **kwargs):  # ADD CONFIG PARAMETER
         super().__init__(orientation=Gtk.Orientation.VERTICAL, **kwargs)
-        self.config = config
+        self.config = config  # ADD CONFIG
+        
+        # ADD SPELL CHECK COMPONENTS
         self.spell_checker = None
         self.spell_helper = SpellCheckHelper(config) if config else None
 
@@ -877,18 +852,24 @@ class TextEditor(Gtk.Box):
         scrolled.set_vexpand(True)
 
         self.append(scrolled)
-
-        # Setup spell check
-        self._setup_spell_check()
-
-    def _setup_spell_check(self):
-        """Setup spell checking for this text view"""
-        if not self.spell_helper or not self.text_view:
-            return
         
-        # Only setup spell checking if enabled in config
+        # ADD SPELL CHECK SETUP
+        GLib.idle_add(self._setup_spell_check_delayed)
+
+    def _setup_spell_check_delayed(self):
+        """Setup spell checking after widget is realized"""
+        if not self.spell_helper or not self.text_view:
+            return False
+        
         if self.config and self.config.get_spell_check_enabled():
-            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Spell check enabled for text editor")
+            except Exception as e:
+                print(f"✗ Error setting up spell check: {e}")
+        
+        return False
 
     def _on_text_changed(self, buffer):
         """Handle text buffer changes"""
