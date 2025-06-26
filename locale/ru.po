@@ -545,26 +545,31 @@ msgstr "Показывать этот диалог при запуске"
 msgid "Let's Start"
 msgstr "Давайте начнем"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "Команда разработки TAC"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Ассистент академического письма"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Непрерывная аргументационная техника - Ассистент академического письма"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Главный разработчик"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Талес Мендонаса, Нараян Силва"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Команда проектирования"
+msgid "Narayan Silva"
+msgstr "Нараян Силва"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Команда разработки TAC"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK

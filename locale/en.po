@@ -550,9 +550,8 @@ msgstr "Let's Start"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
-msgid "TAC Development Team"
-msgstr "TAC Development Team"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Academic Writing Assistant"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1130
@@ -561,13 +560,18 @@ msgstr "Continuous Argumentation Technique - Academic Writing Assistant"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-msgid "Main Developer"
-msgstr "Main Developer"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1140
-msgid "Design Team"
-msgstr "Design Team"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+msgid "TAC Development Team"
+msgstr "TAC Development Team"
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 55

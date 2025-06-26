@@ -546,10 +546,9 @@ msgid "Let's Start"
 msgstr "Låt oss börja"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Utvecklingsteam"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Akademiskt skrivhjälpmedel"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1130
 #: NEEDS WORK
@@ -558,13 +557,19 @@ msgstr "Kontinuerlig Argumentationsteknik - Akademisk Skrivarassistent"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Huvudutvecklare"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Designteam"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC Utvecklingsteam"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK

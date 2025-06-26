@@ -545,26 +545,31 @@ msgstr "Afișați acest dialog la pornire"
 msgid "Let's Start"
 msgstr "Să începem"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "Echipa de Dezvoltare TAC"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Asistent pentru Scriere Academică"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Tehnica de Argumentare Continuă - Asistent pentru Scriere Academică"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Dezvoltator Principal"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Echipa de Design"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Echipa de Dezvoltare TAC"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK

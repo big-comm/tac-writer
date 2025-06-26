@@ -548,10 +548,9 @@ msgid "Let's Start"
 msgstr "Давайте почнемо"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Розробницька Команда"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Академічний письменницький асистент"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1130
 #: NEEDS WORK
@@ -560,13 +559,19 @@ msgstr "Безперервна аргументаційна техніка - А�
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Головний розробник"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Дизайнерська команда"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC Розробницька Команда"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK

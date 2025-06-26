@@ -529,8 +529,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
-msgid   "TAC Development Team"
+msgid   "TAC Writer - Academic Writing Assistant"
 msgstr  ""
 
 #
@@ -540,12 +539,17 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-msgid   "Main Developer"
+msgid   "Tales Mendonça, Narayan Silva"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1140
-msgid   "Design Team"
+msgid   "Narayan Silva"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+msgid   "TAC Development Team"
 msgstr  ""
 
 #

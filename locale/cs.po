@@ -544,26 +544,31 @@ msgstr "Zobrazit tento dialog při spuštění"
 msgid "Let's Start"
 msgstr "Začněme"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC vývojový tým"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Asistent pro akademické psaní"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Kontinuální argumentační technika - Asistent akademického psaní"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Hlavní vývojář"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Tým designu"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC vývojový tým"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
