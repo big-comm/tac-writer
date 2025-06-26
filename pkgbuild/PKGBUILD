@@ -4,7 +4,7 @@
 pkgname=comm-tac-writer
 pkgdesc="Academic writing assistant using the Continuous Argumentation Technique (CAT)"
 # Uncomment and edit the following lines as needed
-#depends=('python-gtkspellcheck')
+depends=('python-gtkspellcheck')
 #makedepends=('')
 #optdepends=('')
 #conflicts=('')
