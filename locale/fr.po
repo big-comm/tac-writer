@@ -544,26 +544,31 @@ msgstr "Afficher cette boîte de dialogue au démarrage"
 msgid "Let's Start"
 msgstr "Commençons"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "Équipe de développement TAC"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Assistant à l'écriture académique"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Technique d'Argumentation Continue - Assistant à l'Écriture Académique"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Développeur principal"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Équipe de conception"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Équipe de développement TAC"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -835,6 +840,11 @@ msgstr "Ce projet sera déplacé vers la corbeille et peut être récupéré."
 #: NEEDS WORK
 msgid "Delete"
 msgstr "Supprimer"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Activer/désactiver la vérification orthographique"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

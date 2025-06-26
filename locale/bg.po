@@ -545,26 +545,31 @@ msgstr "Показвай този диалог при стартиране"
 msgid "Let's Start"
 msgstr "Нека започнем"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "Екип за разработка TAC"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Асистент за академично писане"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Непрекъсната аргументационна техника - Академичен помощник за писане"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Главен разработчик"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Талес Мендонаса, Нараян Силва"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Дизайнерски екип"
+msgid "Narayan Silva"
+msgstr "Нараян Силва"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Екип за разработка TAC"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -836,6 +841,11 @@ msgstr "Този проект ще бъде преместен в кошчето
 #: NEEDS WORK
 msgid "Delete"
 msgstr "Изтрий"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Превключване на проверка на правописа"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

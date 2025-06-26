@@ -545,26 +545,31 @@ msgstr "Toon deze dialoog bij het opstarten"
 msgid "Let's Start"
 msgstr "Laten we beginnen"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Ontwikkelteam"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Academische Schrijfhulp"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Continue Argumentatietechniek - Academische Schrijfhulp"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Hoofdontwikkelaar"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Tales Mendonça, Narayan Silva"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Ontwerpteam"
+msgid "Narayan Silva"
+msgstr "Narayan Silva"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC Ontwikkelteam"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -836,6 +841,11 @@ msgstr "Dit project wordt naar de prullenbak verplaatst en kan worden hersteld."
 #: NEEDS WORK
 msgid "Delete"
 msgstr "Verwijderen"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Schakel spellingscontrole in/uit"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

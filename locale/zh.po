@@ -541,10 +541,9 @@ msgid "Let's Start"
 msgstr "让我们开始"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC开发团队"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - 学术写作助手"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1130
 #: NEEDS WORK
@@ -553,13 +552,19 @@ msgstr "持续论证技术 - 学术写作助手"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "主要开发者"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "塔莱斯·门东萨，纳拉扬·席尔瓦"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "设计团队"
+msgid "Narayan Silva"
+msgstr "纳拉扬·西尔瓦"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC开发团队"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -831,6 +836,11 @@ msgstr "该项目将被移至垃圾箱，并可以恢复。"
 #: NEEDS WORK
 msgid "Delete"
 msgstr "删除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "切换拼写检查"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

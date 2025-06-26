@@ -540,26 +540,31 @@ msgstr "起動時にこのダイアログを表示"
 msgid "Let's Start"
 msgstr "始めましょう"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC開発チーム"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - アカデミックライティングアシスタント"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "継続的議論技術 - アカデミックライティングアシスタント"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "メイン開発者"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "タレス・メンドンサ、ナラヤン・シルバ"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "デザインチーム"
+msgid "Narayan Silva"
+msgstr "ナラヤン・シルバ"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC開発チーム"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -831,6 +836,11 @@ msgstr "このプロジェクトはゴミ箱に移動され、復元可能です
 #: NEEDS WORK
 msgid "Delete"
 msgstr "削除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "スペルチェックの切り替え"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

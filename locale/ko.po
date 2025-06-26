@@ -542,26 +542,31 @@ msgstr "시작할 때 이 대화상자 표시"
 msgid "Let's Start"
 msgstr "시작하겠습니다"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC 개발 팀"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC 작가 - 학술 작문 도우미"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "지속적 논증 기법 - 학술 작문 도우미"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "주 개발자"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "탈레스 멘돈사, 나라얀 실바"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "디자인 팀"
+msgid "Narayan Silva"
+msgstr "나라얀 실바"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "TAC 개발 팀"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -833,6 +838,11 @@ msgstr "이 프로젝트는 휴지통으로 이동되며 복구할 수 있습니
 #: NEEDS WORK
 msgid "Delete"
 msgstr "삭제"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "맞춤법 검사 전환"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK

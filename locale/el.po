@@ -544,26 +544,31 @@ msgstr "Εμφάνιση αυτού του διαλόγου κατά την εκ
 msgid "Let's Start"
 msgstr "Ας Ξεκινήσουμε"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
 #: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "Ομάδα Ανάπτυξης TAC"
+msgid "TAC Writer - Academic Writing Assistant"
+msgstr "TAC Writer - Βοηθός Ακαδημαϊκής Συγγραφής"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1131
 #: NEEDS WORK
 msgid "Continuous Argumentation Technique - Academic Writing Assistant"
 msgstr "Συνεχής Τεχνική Επιχειρηματολογίας - Βοηθός Ακαδημαϊκής Συγγραφής"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1138
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 #: NEEDS WORK
-msgid "Main Developer"
-msgstr "Κύριος Προγραμματιστής"
+msgid "Tales Mendonça, Narayan Silva"
+msgstr "Τέιλις Μεντόνσα, Ναραγιάν Σίλβα"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1141
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
 #: NEEDS WORK
-msgid "Design Team"
-msgstr "Ομάδα Σχεδίασης"
+msgid "Narayan Silva"
+msgstr "Ναραγιάν Σίλβα"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+#: NEEDS WORK
+msgid "TAC Development Team"
+msgstr "Ομάδα Ανάπτυξης TAC"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -835,6 +840,11 @@ msgstr "Αυτό το έργο θα μεταφερθεί στον κάδο απ�
 #: NEEDS WORK
 msgid "Delete"
 msgstr "Διαγραφή"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Εναλλαγή ορθογραφικού ελέγχου"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 427
 #: NEEDS WORK
