@@ -1120,9 +1120,9 @@ def AboutDialog(parent):
 
     # Application information
     dialog.set_application_name("TAC")
-    dialog.set_application_icon("com.github.tac")
+    dialog.set_application_icon("tac-writer")
     dialog.set_version("1.0.0")
-    dialog.set_developer_name(_("TAC Development Team"))
+    dialog.set_developer_name(_("TAC Writer - Academic Writing Assistant"))
     dialog.set_website("https://github.com/big-comm/comm-tac-writer")
     # dialog.set_issue_url("https://github.com/big-comm/comm-tac-writer/issues")
 
@@ -1134,10 +1134,10 @@ def AboutDialog(parent):
 
     # Credits
     dialog.set_developers([
-        _("Main Developer") + " https://github.com/big-comm/comm-tac-writer"
+        _("Tales Mendonça, Narayan Silva") + " https://github.com/big-comm/comm-tac-writer"
     ])
     dialog.set_designers([
-        _("Design Team")
+        _("Narayan Silva")
     ])
 
     dialog.set_copyright("© 2025 " + _("TAC Development Team"))
