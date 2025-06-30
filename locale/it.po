@@ -601,6 +601,16 @@ msgstr "Menu Principale"
 msgid "Export Project..."
 msgstr "Esporta progetto..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Annulla"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Ripeti"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -689,6 +699,16 @@ msgstr "Tecnica di Argomentazione Continua"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} parole • {} paragrafi"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Niente da annullare"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Niente da rifare"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

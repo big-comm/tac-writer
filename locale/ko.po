@@ -598,6 +598,16 @@ msgstr "메인 메뉴"
 msgid "Export Project..."
 msgstr "프로젝트 내보내기..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "실행 취소"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "다시 실행"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -686,6 +696,16 @@ msgstr "지속적인 논증 기법"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} 단어 • {} 문단"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "되돌릴 항목이 없습니다."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "다시 할 것이 없습니다"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

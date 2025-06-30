@@ -600,6 +600,16 @@ msgstr "Hlavní nabídka"
 msgid "Export Project..."
 msgstr "Exportovat projekt..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Zpět"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Znovu provést"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -688,6 +698,16 @@ msgstr "Kontinuální argumentační technika"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} slov • {} odstavců"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Není co vracet zpět"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Není co znovu dělat"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

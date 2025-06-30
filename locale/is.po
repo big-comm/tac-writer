@@ -600,6 +600,16 @@ msgstr "Aðalvalmynd"
 msgid "Export Project..."
 msgstr "Flytja út verkefni..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Afturkalla"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Endurtaka"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -688,6 +698,16 @@ msgstr "Samfelldar röksemdaraðferð"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} orð • {} málsgreinar"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Ekkert til að afturkalla"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Ekkert til að endurtaka"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

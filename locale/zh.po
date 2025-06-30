@@ -596,6 +596,16 @@ msgstr "主菜单"
 msgid "Export Project..."
 msgstr "导出项目..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "撤销"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "重做"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -684,6 +694,16 @@ msgstr "持续论证技术"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} 字 • {} 段落"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "没有可以撤销的内容"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "没有可以重做的内容"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

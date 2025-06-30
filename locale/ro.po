@@ -601,6 +601,16 @@ msgstr "Meniu Principal"
 msgid "Export Project..."
 msgstr "Exportă proiectul..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Anulează"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Refă"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -689,6 +699,16 @@ msgstr "Tehnica Argumentării Continue"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} cuvinte • {} paragrafe"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Nimic de desfăcut"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Nimic de refăcut"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

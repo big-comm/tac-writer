@@ -600,6 +600,16 @@ msgstr "Κύριο Μενού"
 msgid "Export Project..."
 msgstr "Εξαγωγή Έργου..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Αναίρεση"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Επαναφορά"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -688,6 +698,16 @@ msgstr "Συνεχής Τεχνική Επιχειρηματολογίας"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} λέξεις • {} παράγραφοι"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Δεν υπάρχει τίποτα για να αναιρεθεί"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Τίποτα προς επανάληψη"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

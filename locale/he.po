@@ -598,6 +598,16 @@ msgstr "תפריט ראשי"
 msgid "Export Project..."
 msgstr "ייצוא פרויקט..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "ביטול"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "שחזר"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -686,6 +696,16 @@ msgstr "טכניקת טיעון מתמשך"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} מילים • {} פסקאות"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "אין מה לבטל"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "אין מה לחזור עליו"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

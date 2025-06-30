@@ -599,6 +599,16 @@ msgstr "Peamenüü"
 msgid "Export Project..."
 msgstr "Ekspordi projekt..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Tagasi võtta"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Korda tagasi"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -687,6 +697,16 @@ msgstr "Jätkuv argumenteerimise tehnika"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} sõna • {} lõiku"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Pole midagi tagasi võtta"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Midagi ei ole uuesti teha"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

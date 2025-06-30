@@ -601,6 +601,16 @@ msgstr "Hovedmeny"
 msgid "Export Project..."
 msgstr "Eksporter prosjekt..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Angre"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Gjør om"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -689,6 +699,16 @@ msgstr "Kontinuerlig Argumentasjonsteknikk"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} ord • {} avsnitt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Ingenting å angre"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Ingenting å gjøre på nytt"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK

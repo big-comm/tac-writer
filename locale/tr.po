@@ -600,6 +600,16 @@ msgstr "Ana Menü"
 msgid "Export Project..."
 msgstr "Projeyi Dışa Aktar..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Geri Al"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Yeniden Yap"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
 msgid "Welcome Guide"
@@ -688,6 +698,16 @@ msgstr "Sürekli Argümantasyon Tekniği"
 #: NEEDS WORK
 msgid "{} words • {} paragraphs"
 msgstr "{} kelime • {} paragraf"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Geri alacak hiçbir şey yok"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Yeniden yapılacak hiçbir şey yok"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 411
 #: NEEDS WORK
