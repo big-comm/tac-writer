@@ -7,18 +7,16 @@ import uuid
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 from enum import Enum
-
 from utils.i18n import _
-
 
 class ParagraphType(Enum):
     """Types of paragraphs in academic writing"""
-    TITLE_1 = "title_1"           # Main title/chapter title (18pt)
-    TITLE_2 = "title_2"           # Subtitle/section title (16pt)
-    INTRODUCTION = "introduction"  # Introduction paragraph
-    ARGUMENT = "argument"          # Argumentation paragraph
-    QUOTE = "quote"               # Quote paragraph (renamed from argument_quote)
-    CONCLUSION = "conclusion"      # Conclusion paragraph
+    TITLE_1 = "title_1"          # Main title/chapter title (18pt)
+    TITLE_2 = "title_2"          # Subtitle/section title (16pt)
+    INTRODUCTION = "introduction" # Introduction paragraph
+    ARGUMENT = "argument"         # Argumentation paragraph
+    QUOTE = "quote"              # Quote paragraph (renamed from argument_quote)
+    CONCLUSION = "conclusion"     # Conclusion paragraph
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -39,8 +37,8 @@ class Paragraph:
             'line_spacing': 1.5,
             'alignment': 'justify',
             'indent_first_line': 0.0,  # No indent by default
-            'indent_left': 0.0,  # cm
-            'indent_right': 0.0,  # cm
+            'indent_left': 0.0,        # cm
+            'indent_right': 0.0,       # cm
             'bold': False,
             'italic': False,
             'underline': False,
@@ -49,19 +47,19 @@ class Paragraph:
         # Special formatting for Title 1
         if paragraph_type == ParagraphType.TITLE_1:
             self.formatting.update({
-                'font_size': 18,  # 18pt for main titles
-                'bold': True,     # Bold by default
+                'font_size': 18,        # 18pt for main titles
+                'bold': True,           # Bold by default
                 'alignment': 'left',
-                'line_spacing': 1.2,  # Smaller spacing for titles
+                'line_spacing': 1.2,    # Smaller spacing for titles
             })
         
         # Special formatting for Title 2
         elif paragraph_type == ParagraphType.TITLE_2:
             self.formatting.update({
-                'font_size': 16,  # 16pt for subtitles
-                'bold': True,     # Bold by default
+                'font_size': 16,        # 16pt for subtitles
+                'bold': True,           # Bold by default
                 'alignment': 'left',
-                'line_spacing': 1.2,  # Smaller spacing for titles
+                'line_spacing': 1.2,    # Smaller spacing for titles
             })
         
         # Special formatting for Introduction
@@ -74,16 +72,16 @@ class Paragraph:
         elif paragraph_type == ParagraphType.QUOTE:
             self.formatting.update({
                 'font_size': 10,
-                'indent_left': 4.0,  # 4cm
-                'line_spacing': 1.0,  # single spacing
+                'indent_left': 4.0,     # 4cm
+                'line_spacing': 1.0,    # single spacing
                 'italic': True
             })
-    
+
     def update_content(self, content: str) -> None:
         """Update paragraph content"""
         self.content = content
         self.modified_at = datetime.now()
-    
+
     def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
         """Update paragraph formatting"""
         # For Title 1 and Title 2, preserve font size if not explicitly changed
@@ -99,17 +97,17 @@ class Paragraph:
         
         self.formatting.update(formatting_updates)
         self.modified_at = datetime.now()
-    
+
     def get_word_count(self) -> int:
         """Get word count for this paragraph"""
         return len(self.content.split()) if self.content else 0
-    
+
     def get_character_count(self, include_spaces: bool = True) -> int:
         """Get character count for this paragraph"""
         if not self.content:
             return 0
         return len(self.content) if include_spaces else len(self.content.replace(' ', ''))
-    
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert paragraph to dictionary"""
         return {
@@ -121,7 +119,7 @@ class Paragraph:
             'order': self.order,
             'formatting': self.formatting.copy()
         }
-    
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Paragraph':
         """Create paragraph from dictionary"""
@@ -189,7 +187,7 @@ class Project:
                 'footer_text': ''
             }
         }
-    
+
     def add_paragraph(self, paragraph_type: ParagraphType, content: str = "",
                      position: Optional[int] = None) -> Paragraph:
         """Add a new paragraph to the project"""
@@ -205,7 +203,7 @@ class Project:
         
         self._update_modified_time()
         return paragraph
-    
+
     def remove_paragraph(self, paragraph_id: str) -> bool:
         """Remove a paragraph by ID"""
         original_count = len(self.paragraphs)
@@ -216,14 +214,14 @@ class Project:
             self._update_modified_time()
             return True
         return False
-    
+
     def get_paragraph(self, paragraph_id: str) -> Optional[Paragraph]:
         """Get a paragraph by ID"""
         for paragraph in self.paragraphs:
             if paragraph.id == paragraph_id:
                 return paragraph
         return None
-    
+
     def move_paragraph(self, paragraph_id: str, new_position: int) -> bool:
         """Move a paragraph to a new position"""
         paragraph = self.get_paragraph(paragraph_id)
@@ -240,7 +238,7 @@ class Project:
         self._reorder_paragraphs()
         self._update_modified_time()
         return True
-    
+
     def get_statistics(self) -> Dict[str, int]:
         """Get project statistics"""
         total_words = sum(p.get_word_count() for p in self.paragraphs)
@@ -254,33 +252,39 @@ class Project:
                 1 for p in self.paragraphs if p.type == paragraph_type
             )
         
+        # CORRIGIDO: Count only introduction paragraphs
+        introduction_count = sum(
+            1 for p in self.paragraphs 
+            if p.type == ParagraphType.INTRODUCTION
+        )
+        
         return {
-            'total_paragraphs': len(self.paragraphs),
+            'total_paragraphs': introduction_count,  # ← CORRIGIDO: apenas introduções
             'total_words': total_words,
             'total_characters': total_chars,
             'total_characters_no_spaces': total_chars_no_spaces,
             'paragraph_types': type_counts
         }
-    
+
     def update_metadata(self, metadata_updates: Dict[str, Any]) -> None:
         """Update project metadata"""
         self.metadata.update(metadata_updates)
         self._update_modified_time()
-    
+
     def update_document_formatting(self, formatting_updates: Dict[str, Any]) -> None:
         """Update document formatting"""
         self.document_formatting.update(formatting_updates)
         self._update_modified_time()
-    
+
     def _reorder_paragraphs(self) -> None:
         """Reorder paragraph numbers"""
         for i, paragraph in enumerate(self.paragraphs):
             paragraph.order = i
-    
+
     def _update_modified_time(self) -> None:
         """Update the modification timestamp"""
         self.modified_at = datetime.now()
-    
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert project to dictionary for serialization"""
         return {
@@ -293,7 +297,7 @@ class Project:
             'paragraphs': [p.to_dict() for p in self.paragraphs],
             'statistics': self.get_statistics()
         }
-    
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Project':
         """Create project from dictionary"""
@@ -331,7 +335,7 @@ class DocumentTemplate:
         self.paragraph_structure: List[ParagraphType] = []
         self.default_formatting = {}
         self.metadata_template = {}
-    
+
     def create_project(self, project_name: str) -> Project:
         """Create a new project based on this template"""
         project = Project(project_name)
@@ -354,11 +358,12 @@ ACADEMIC_ESSAY_TEMPLATE = DocumentTemplate(
     name=_("Academic Essay"),
     description=_("Standard academic essay structure")
 )
+
 ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
     ParagraphType.INTRODUCTION  # Start with only Introduction
 ]
 
-
 DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
 ]
+
