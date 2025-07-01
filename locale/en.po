@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/core/models.py, line: 358
 msgid "Academic Essay"
 msgstr "Academic Essay"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/core/models.py, line: 359
 msgid "Standard academic essay structure"
 msgstr "Standard academic essay structure"
 
