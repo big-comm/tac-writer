@@ -16,24 +16,6 @@ from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
 
-"""
-TAC Main Window
-Main application window using GTK4 and libadwaita
-"""
-
-import gi
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-
-from gi.repository import Gtk, Adw, Gio, GObject, GLib
-from core.models import Project, ParagraphType
-from core.services import ProjectManager, ExportService
-from core.config import Config
-from utils.helpers import TextHelper, ValidationHelper, FormatHelper
-from utils.i18n import _
-from .components import WelcomeView, ParagraphEditor, ProjectListWidget
-from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
-
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
 
@@ -231,24 +213,22 @@ class MainWindow(Adw.ApplicationWindow):
     def _setup_keyboard_shortcuts(self):
         """Setup window-specific shortcuts"""
         shortcut_controller = Gtk.ShortcutController()
-    
+        
         # Undo
         undo_shortcut = Gtk.Shortcut.new(
             Gtk.ShortcutTrigger.parse_string("<Ctrl>z"),
             Gtk.NamedAction.new("win.undo")
         )
         shortcut_controller.add_shortcut(undo_shortcut)
-    
+        
         # Redo
         redo_shortcut = Gtk.Shortcut.new(
             Gtk.ShortcutTrigger.parse_string("<Ctrl><Shift>z"),
             Gtk.NamedAction.new("win.redo")
         )
         shortcut_controller.add_shortcut(redo_shortcut)
-    
+        
         self.add_controller(shortcut_controller)
-
-
 
     def _show_welcome_view(self):
         """Show the welcome view"""
@@ -392,7 +372,7 @@ class MainWindow(Adw.ApplicationWindow):
         """Get the currently focused TextView widget"""
         focus_widget = self.get_focus()
         
-        # Percorrer a hierarquia de widgets procurando por TextView [6]
+        # Percorrer a hierarquia de widgets procurando por TextView
         current_widget = focus_widget
         while current_widget:
             if isinstance(current_widget, Gtk.TextView):
@@ -428,7 +408,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
-            # Encontrar o editor que contém este TextView [6]
+            # Encontrar o editor que contém este TextView
             paragraph_editor = self._get_paragraph_editor_from_text_view(focused_text_view)
             
             if paragraph_editor and hasattr(paragraph_editor, 'undo'):
@@ -436,7 +416,7 @@ class MainWindow(Adw.ApplicationWindow):
                 print("Debug: Undo executed on paragraph editor")
                 return
             
-            # Fallback: tentar undo direto no buffer se disponível [6]
+            # Fallback: tentar undo direto no buffer se disponível
             buffer = focused_text_view.get_buffer()
             if buffer and hasattr(buffer, 'get_can_undo') and buffer.get_can_undo():
                 buffer.undo()
@@ -453,7 +433,7 @@ class MainWindow(Adw.ApplicationWindow):
         
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
-            # Encontrar o editor que contém este TextView [6]
+            # Encontrar o editor que contém este TextView
             paragraph_editor = self._get_paragraph_editor_from_text_view(focused_text_view)
             
             if paragraph_editor and hasattr(paragraph_editor, 'redo'):
@@ -461,7 +441,7 @@ class MainWindow(Adw.ApplicationWindow):
                 print("Debug: Redo executed on paragraph editor")
                 return
             
-            # Fallback: tentar redo direto no buffer se disponível [6]
+            # Fallback: tentar redo direto no buffer se disponível
             buffer = focused_text_view.get_buffer()
             if buffer and hasattr(buffer, 'get_can_redo') and buffer.get_can_redo():
                 buffer.redo()
@@ -713,7 +693,7 @@ class MainWindow(Adw.ApplicationWindow):
             self.maximize()
 
     def _on_format_clicked(self, button):
-        """Handle format button click"""
+        """Handle format button click - MODIFICADO para salvar formatação preferida"""
         if not self.current_project:
             return
 
@@ -730,6 +710,26 @@ class MainWindow(Adw.ApplicationWindow):
         # Open formatting dialog
         from .dialogs import FormatDialog
         dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
+        
+        # NOVO: Conectar sinal para salvar formatação preferida
+        def on_dialog_destroy(dialog):
+            if non_quote_paragraphs:
+                # Salvar a formatação aplicada como preferida para novos parágrafos
+                sample_formatting = non_quote_paragraphs[0].formatting.copy()
+                # Remover formatações específicas que não devem ser herdadas
+                preferred = {
+                    'font_family': sample_formatting.get('font_family', 'Liberation Serif'),
+                    'font_size': sample_formatting.get('font_size', 12),
+                    'line_spacing': sample_formatting.get('line_spacing', 1.5),
+                    'alignment': sample_formatting.get('alignment', 'justify'),
+                    'bold': sample_formatting.get('bold', False),
+                    'italic': sample_formatting.get('italic', False),
+                    'underline': sample_formatting.get('underline', False),
+                }
+                self.current_project.update_preferred_formatting(preferred)
+                print(f"Debug: Saved preferred formatting after dialog close: {preferred}")
+        
+        dialog.connect('destroy', on_dialog_destroy)
         dialog.present()
 
     def _maybe_show_welcome_dialog(self):

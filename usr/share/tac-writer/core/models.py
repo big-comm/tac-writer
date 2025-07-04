@@ -32,7 +32,7 @@ class Paragraph:
         
         # Formatting options (default without initial indent)
         self.formatting = {
-            'font_family': 'Liberation Sans',
+            'font_family': 'Liberation Serif',
             'font_size': 12,
             'line_spacing': 1.5,
             'alignment': 'justify',
@@ -177,7 +177,7 @@ class Project:
                 'right': 3.0
             },
             'line_spacing': 1.5,
-            'font_family': 'Liberation Sans',
+            'font_family': 'Liberation Serif',
             'font_size': 12,
             'header_footer': {
                 'show_page_numbers': True,
@@ -189,9 +189,71 @@ class Project:
         }
 
     def add_paragraph(self, paragraph_type: ParagraphType, content: str = "",
-                     position: Optional[int] = None) -> Paragraph:
-        """Add a new paragraph to the project"""
+                     position: Optional[int] = None, inherit_formatting: bool = True) -> Paragraph:
+        """Add a new paragraph to the project - MODIFICADO para herdar formatação"""
         paragraph = Paragraph(paragraph_type, content)
+        
+        # NOVO: Herdar formatação preferida ou do último parágrafo
+        if inherit_formatting:
+            base_formatting = None
+            
+            # Primeiro, tentar usar formatação preferida salva
+            if 'preferred_formatting' in self.metadata:
+                base_formatting = self.metadata['preferred_formatting'].copy()
+                print(f"Debug: Using preferred formatting: {base_formatting}")
+            # Senão, herdar do último parágrafo de conteúdo
+            elif self.paragraphs:
+                last_content_paragraph = None
+                for p in reversed(self.paragraphs):
+                    if p.type not in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+                        last_content_paragraph = p
+                        break
+                
+                if last_content_paragraph:
+                    base_formatting = {
+                        'font_family': last_content_paragraph.formatting.get('font_family', 'Liberation Serif'),
+                        'font_size': last_content_paragraph.formatting.get('font_size', 12),
+                        'line_spacing': last_content_paragraph.formatting.get('line_spacing', 1.5),
+                        'alignment': last_content_paragraph.formatting.get('alignment', 'justify'),
+                        'bold': last_content_paragraph.formatting.get('bold', False),
+                        'italic': last_content_paragraph.formatting.get('italic', False),
+                        'underline': last_content_paragraph.formatting.get('underline', False),
+                    }
+                    print(f"Debug: Inheriting formatting from last paragraph")
+            
+            if base_formatting:
+                # Aplicar formatação herdada, preservando formatações específicas do tipo
+                current_formatting = paragraph.formatting.copy()
+                current_formatting.update(base_formatting)
+                
+                # Preservar formatações específicas do tipo de parágrafo
+                if paragraph_type == ParagraphType.INTRODUCTION:
+                    current_formatting['indent_first_line'] = 1.5
+                elif paragraph_type == ParagraphType.QUOTE:
+                    current_formatting.update({
+                        'font_size': 10,
+                        'indent_left': 4.0,
+                        'line_spacing': 1.0,
+                        'italic': True
+                    })
+                elif paragraph_type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+                    # Títulos mantêm suas formatações específicas
+                    if paragraph_type == ParagraphType.TITLE_1:
+                        current_formatting.update({
+                            'font_size': 18,
+                            'bold': True,
+                            'alignment': 'left',
+                            'line_spacing': 1.2,
+                        })
+                    elif paragraph_type == ParagraphType.TITLE_2:
+                        current_formatting.update({
+                            'font_size': 16,
+                            'bold': True,
+                            'alignment': 'left',
+                            'line_spacing': 1.2,
+                        })
+                
+                paragraph.formatting = current_formatting
         
         if position is None:
             paragraph.order = len(self.paragraphs)
@@ -203,6 +265,16 @@ class Project:
         
         self._update_modified_time()
         return paragraph
+
+    def update_preferred_formatting(self, formatting_updates: Dict[str, Any]) -> None:
+        """Update preferred formatting for new paragraphs - NOVO MÉTODO"""
+        # Salvar formatação preferida nos metadados do projeto
+        if 'preferred_formatting' not in self.metadata:
+            self.metadata['preferred_formatting'] = {}
+        
+        self.metadata['preferred_formatting'].update(formatting_updates)
+        self._update_modified_time()
+        print(f"Debug: Updated preferred formatting: {formatting_updates}")
 
     def remove_paragraph(self, paragraph_id: str) -> bool:
         """Remove a paragraph by ID"""

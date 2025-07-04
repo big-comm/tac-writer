@@ -478,8 +478,25 @@ class ParagraphEditor(Gtk.Box):
         # Apply initial formatting
         self._apply_formatting()
         
-        # ADD SPELL CHECK SETUP
-        GLib.idle_add(self._setup_spell_check_delayed)
+        # Aplicar tanto formatação quanto spell check com delay
+        GLib.idle_add(self._setup_delayed_initialization)
+
+    def _setup_delayed_initialization(self):
+        """Setup both formatting and spell check after widget is realized"""
+        # Aplicar formatação primeiro
+        self._apply_formatting()
+    
+        # Depois configurar spell check
+        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Spell check enabled for paragraph: {self.paragraph.type.value}")
+            except Exception as e:
+                print(f"✗ Error setting up spell check: {e}")
+    
+        return False
+
 
     def _setup_spell_check_delayed(self):
         """Setup spell checking after widget is realized"""
@@ -726,6 +743,11 @@ class ParagraphEditor(Gtk.Box):
         if not self.text_buffer or not self.text_view:
             return
 
+        # NOVO: Se widget não está realizado, aplicar com delay
+        if not self.text_view.get_realized():
+            GLib.idle_add(self._apply_formatting)
+            return        
+        
         formatting = self.paragraph.formatting
 
         # Create or get text tags
@@ -740,7 +762,7 @@ class ParagraphEditor(Gtk.Box):
         format_tag = self.text_buffer.create_tag("format")
 
         # Apply font family and size
-        font_family = formatting.get('font_family', 'Liberation Sans')
+        font_family = formatting.get('font_family', 'Liberation Serif')
         font_size = formatting.get('font_size', 12)
         format_tag.set_property("family", font_family)
         format_tag.set_property("size-points", float(font_size))
@@ -902,7 +924,7 @@ class FormatToolbar(Gtk.Box):
 
         # Font family
         self.font_combo = Gtk.ComboBoxText()
-        fonts = ["Liberation Sans", "Liberation Serif", "Times New Roman", "Arial", "Calibri"]
+        fonts = ["Liberation Serif", "Times New Roman", "Arial", "Calibri"]
         for font in fonts:
             self.font_combo.append_text(font)
         self.font_combo.set_active(0)
@@ -944,7 +966,7 @@ class FormatToolbar(Gtk.Box):
     def update_from_formatting(self, formatting: dict):
         """Update toolbar state from formatting dictionary"""
         # Update font family
-        font_family = formatting.get('font_family', 'Liberation Sans')
+        font_family = formatting.get('font_family', 'Liberation Serif')
         for i in range(self.font_combo.get_model().iter_n_children(None)):
             model = self.font_combo.get_model()
             iter_val = model.iter_nth_child(None, i)

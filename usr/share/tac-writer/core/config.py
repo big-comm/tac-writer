@@ -56,20 +56,20 @@ class Config:
             'window_position': None,
 
             # Editor settings
-            'font_family': 'Liberation Sans',
+            'font_family': 'Liberation Serif',
             'font_size': 12,
             'line_spacing': 1.5,
             'show_line_numbers': True,
             'word_wrap': True,
             'highlight_current_line': True,
             'auto_save': True,
-            'auto_save_interval': 300,  # 5 minutes
+            'auto_save_interval': 120,  # 2 minutes
 
             # Spell checking settings
             'spell_check_enabled': True,
             'spell_check_language': 'pt_BR',  # Default to Portuguese Brazil
             'spell_check_show_language_menu': True,
-            'spell_check_available_languages': ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT'],
+            'spell_check_available_languages': ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT', 'ru_RU', 'zh_CH'],
             'spell_check_personal_dictionary': str(self.config_dir / 'personal_dict.txt'),
 
             # Formatting defaults
