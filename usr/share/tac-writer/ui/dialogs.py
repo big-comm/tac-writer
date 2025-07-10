@@ -375,7 +375,7 @@ class FormatDialog(Adw.Window):
         # If still no fonts, use fallback
         if font_model.get_n_items() == 0:
             print("Using fallback fonts in FormatDialog")
-            basic_fonts = ["Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
+            basic_fonts = ["Liberation Serif"]# "DejaVu Sans", "Ubuntu", "Cantarell"]
             for font in basic_fonts:
                 font_model.append(font)
 
@@ -847,7 +847,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         # If still no fonts, use fallback
         if font_model.get_n_items() == 0:
             print("Using fallback fonts")
-            basic_fonts = ["Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
+            basic_fonts = ["Liberation Serif"]#, "DejaVu Sans", "Ubuntu", "Cantarell"]
             for font in basic_fonts:
                 font_model.append(font)
 

@@ -217,6 +217,11 @@ class ProjectListWidget(Gtk.Box):
         # Search entry
         self.search_entry = Gtk.SearchEntry()
         self.search_entry.set_placeholder_text(_("Search projects..."))
+        self.search_entry.set_hexpand(False)  # NOVO: Evita expansão horizontal
+        self.search_entry.set_margin_top(10)     # Superior
+        self.search_entry.set_margin_bottom(5)   # Inferior
+        self.search_entry.set_margin_start(25)   # Esquerda
+        self.search_entry.set_margin_end(25)     # Direita
         self.search_entry.connect('search-changed', self._on_search_changed)
         self.append(self.search_entry)
 
@@ -924,7 +929,7 @@ class FormatToolbar(Gtk.Box):
 
         # Font family
         self.font_combo = Gtk.ComboBoxText()
-        fonts = ["Liberation Serif", "Times New Roman", "Arial", "Calibri"]
+        fonts = ["Liberation Serif"] #"Times New Roman", "Arial", "Calibri"]
         for font in fonts:
             self.font_combo.append_text(font)
         self.font_combo.set_active(0)
