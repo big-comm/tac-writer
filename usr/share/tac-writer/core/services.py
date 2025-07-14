@@ -576,17 +576,17 @@ class ExportService:
   
   <style:style style:name="Introduction" style:family="paragraph">
     <style:text-properties fo:font-size="12pt"/>
-    <style:paragraph-properties fo:text-align="justify" fo:text-indent="1.5cm" fo:margin-bottom="0.3cm" fo:line-height="150%"/>
+    <style:paragraph-properties fo:text-align="justify" fo:text-indent="1.5cm" fo:margin-bottom="0.0cm" fo:line-height="150%"/>
   </style:style>
   
   <style:style style:name="Normal" style:family="paragraph">
     <style:text-properties fo:font-size="12pt"/>
-    <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.3cm" fo:line-height="150%"/>
+    <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.0cm" fo:line-height="150%"/>
   </style:style>
   
   <style:style style:name="Quote" style:family="paragraph">
     <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
-    <style:paragraph-properties fo:text-align="justify" fo:margin-left="4cm" fo:margin-bottom="0.3cm" fo:line-height="100%"/>
+    <style:paragraph-properties fo:text-align="justify" fo:margin-left="4cm" fo:margin-bottom="0.0cm" fo:line-height="100%"/>
   </style:style>
 </office:styles>
 </office:document-styles>'''
