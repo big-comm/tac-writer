@@ -16,97 +16,242 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 430
-msgid "Academic Essay"
-msgstr "Academic Essay"
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Continuous Argumentation Technique"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 431
-msgid "Standard academic essay structure"
-msgstr "Standard academic essay structure"
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
+msgid "New Project (Ctrl+N)"
+msgstr "New Project (Ctrl+N)"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 46
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Error: GTK 4.0 or higher is required"
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
+msgid "Open Project (Ctrl+O)"
+msgstr "Open Project (Ctrl+O)"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 52
-msgid "Error: Required dependencies not found: {}"
-msgstr "Error: Required dependencies not found: {}"
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
+msgid "Save Project (Ctrl+S)"
+msgstr "Save Project (Ctrl+S)"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 53
-msgid ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr ""
-"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
+msgid "Main Menu"
+msgstr "Main Menu"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 56
-msgid "Error checking dependencies: {}"
-msgstr "Error checking dependencies: {}"
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
+msgid "Export Project..."
+msgstr "Export Project..."
 
 #
-# File: usr/share/tac-writer/tac.py, line: 62
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Starting TAC - Continuous Argumentation Technique"
+# File: usr/share/tac-writer/ui/main_window.py, line: 136
+msgid "Undo"
+msgstr "Undo"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 69
-msgid "Application directory: {}"
-msgstr "Application directory: {}"
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
+msgid "Redo"
+msgstr "Redo"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 76
-msgid "Loading application modules..."
-msgstr "Loading application modules..."
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+msgid "Preferences"
+msgstr "Preferences"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 79
-msgid "Creating application instance..."
-msgstr "Creating application instance..."
+# File: usr/share/tac-writer/ui/main_window.py, line: 147
+msgid "Welcome Guide"
+msgstr "Welcome Guide"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 82
-msgid "Running TAC application..."
-msgstr "Running TAC application..."
+# File: usr/share/tac-writer/ui/main_window.py, line: 148
+msgid "About TAC"
+msgstr "About TAC"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 85
-msgid "Application finished."
-msgstr "Application finished."
+# File: usr/share/tac-writer/ui/main_window.py, line: 180
+msgid "Projects"
+msgstr "Projects"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 89
-msgid "Application interrupted by user."
-msgstr "Application interrupted by user."
+# File: usr/share/tac-writer/ui/main_window.py, line: 302
+msgid "Add Paragraph"
+msgstr "Add Paragraph"
 
 #
-# File: usr/share/tac-writer/tac.py, line: 92
-msgid "Critical error during startup: {}"
-msgstr "Critical error during startup: {}"
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 309
+# File: usr/share/tac-writer/ui/components.py, line: 736
+msgid "Title 1"
+msgstr "Title 1"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 33
-msgid "New Project"
-msgstr "New Project"
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 310
+# File: usr/share/tac-writer/ui/components.py, line: 737
+msgid "Title 2"
+msgstr "Title 2"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 311
+# File: usr/share/tac-writer/ui/components.py, line: 738
+msgid "Introduction"
+msgstr "Introduction"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 312
+# File: usr/share/tac-writer/ui/components.py, line: 739
+msgid "Argument"
+msgstr "Argument"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 313
+# File: usr/share/tac-writer/ui/components.py, line: 740
+msgid "Quote"
+msgstr "Quote"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 314
+# File: usr/share/tac-writer/ui/components.py, line: 741
+msgid "Conclusion"
+msgstr "Conclusion"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 325
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+msgid "Format"
+msgstr "Format"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 327
+msgid "Format paragraphs"
+msgstr "Format paragraphs"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 358
+# File: usr/share/tac-writer/ui/components.py, line: 146
+msgid "Continuous Argumentation Technique"
+msgstr "Continuous Argumentation Technique"
+
+#
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 366
+# File: usr/share/tac-writer/ui/components.py, line: 334
+msgid "{} words • {} paragraphs"
+msgstr "{} words • {} paragraphs"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 427
+msgid "Nothing to undo"
+msgstr "Nothing to undo"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 452
+msgid "Nothing to redo"
+msgstr "Nothing to redo"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+msgid "Paragraph reordered"
+msgstr "Paragraph reordered"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 561
+msgid "Open Project"
+msgstr "Open Project"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 564
+msgid "Open"
+msgstr "Open"
 
 #
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
 # File: usr/share/tac-writer/ui/dialogs.py, line: 57
 # File: usr/share/tac-writer/ui/dialogs.py, line: 307
 # File: usr/share/tac-writer/ui/dialogs.py, line: 555
 # File: usr/share/tac-writer/ui/dialogs.py, line: 650
-# File: usr/share/tac-writer/ui/main_window.py, line: 565
 # File: usr/share/tac-writer/ui/components.py, line: 393
 # File: usr/share/tac-writer/ui/components.py, line: 432
 # File: usr/share/tac-writer/ui/components.py, line: 829
 msgid "Cancel"
 msgstr "Cancel"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 575
+msgid "TAC Projects (*.json)"
+msgstr "TAC Projects (*.json)"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+msgid "All Files"
+msgstr "All Files"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 596
+# File: usr/share/tac-writer/ui/main_window.py, line: 648
+msgid "Opened project: {}"
+msgstr "Opened project: {}"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 598
+# File: usr/share/tac-writer/ui/main_window.py, line: 650
+msgid "Failed to open project"
+msgstr "Failed to open project"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 611
+msgid "Project saved successfully"
+msgstr "Project saved successfully"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 618
+msgid "Failed to save project"
+msgstr "Failed to save project"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 625
+msgid "No project to export"
+msgstr "No project to export"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 675
+msgid "Created project: {}"
+msgstr "Created project: {}"
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 707
+msgid "No paragraphs to format"
+msgstr "No paragraphs to format"
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+msgid "New Project"
+msgstr "New Project"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
@@ -334,14 +479,6 @@ msgid "Export Options"
 msgstr "Export Options"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 325
-msgid "Format"
-msgstr "Format"
-
-#
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 msgid "Include Metadata"
 msgstr "Include Metadata"
@@ -409,14 +546,6 @@ msgstr "An error occurred while exporting the project."
 # File: usr/share/tac-writer/ui/dialogs.py, line: 743
 msgid "Export Failed"
 msgstr "Export Failed"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/dialogs.py, line: 758
-# File: usr/share/tac-writer/ui/main_window.py, line: 142
-msgid "Preferences"
-msgstr "Preferences"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
@@ -574,207 +703,6 @@ msgid "TAC Development Team"
 msgstr "TAC Development Team"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 55
-msgid "TAC - Continuous Argumentation Technique"
-msgstr "TAC - Continuous Argumentation Technique"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 99
-msgid "New Project (Ctrl+N)"
-msgstr "New Project (Ctrl+N)"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
-msgid "Open Project (Ctrl+O)"
-msgstr "Open Project (Ctrl+O)"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 112
-msgid "Save Project (Ctrl+S)"
-msgstr "Save Project (Ctrl+S)"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 121
-msgid "Main Menu"
-msgstr "Main Menu"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 131
-msgid "Export Project..."
-msgstr "Export Project..."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 136
-msgid "Undo"
-msgstr "Undo"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 137
-msgid "Redo"
-msgstr "Redo"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 147
-msgid "Welcome Guide"
-msgstr "Welcome Guide"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 148
-msgid "About TAC"
-msgstr "About TAC"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 180
-msgid "Projects"
-msgstr "Projects"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 302
-msgid "Add Paragraph"
-msgstr "Add Paragraph"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 309
-# File: usr/share/tac-writer/ui/components.py, line: 736
-msgid "Title 1"
-msgstr "Title 1"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 310
-# File: usr/share/tac-writer/ui/components.py, line: 737
-msgid "Title 2"
-msgstr "Title 2"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 311
-# File: usr/share/tac-writer/ui/components.py, line: 738
-msgid "Introduction"
-msgstr "Introduction"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 312
-# File: usr/share/tac-writer/ui/components.py, line: 739
-msgid "Argument"
-msgstr "Argument"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 313
-# File: usr/share/tac-writer/ui/components.py, line: 740
-msgid "Quote"
-msgstr "Quote"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 314
-# File: usr/share/tac-writer/ui/components.py, line: 741
-msgid "Conclusion"
-msgstr "Conclusion"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 327
-msgid "Format paragraphs"
-msgstr "Format paragraphs"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 358
-# File: usr/share/tac-writer/ui/components.py, line: 146
-msgid "Continuous Argumentation Technique"
-msgstr "Continuous Argumentation Technique"
-
-#
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 366
-# File: usr/share/tac-writer/ui/components.py, line: 334
-msgid "{} words • {} paragraphs"
-msgstr "{} words • {} paragraphs"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 427
-msgid "Nothing to undo"
-msgstr "Nothing to undo"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 452
-msgid "Nothing to redo"
-msgstr "Nothing to redo"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 523
-msgid "Paragraph reordered"
-msgstr "Paragraph reordered"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 561
-msgid "Open Project"
-msgstr "Open Project"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 564
-msgid "Open"
-msgstr "Open"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 575
-msgid "TAC Projects (*.json)"
-msgstr "TAC Projects (*.json)"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 580
-msgid "All Files"
-msgstr "All Files"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 596
-# File: usr/share/tac-writer/ui/main_window.py, line: 648
-msgid "Opened project: {}"
-msgstr "Opened project: {}"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 598
-# File: usr/share/tac-writer/ui/main_window.py, line: 650
-msgid "Failed to open project"
-msgstr "Failed to open project"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 611
-msgid "Project saved successfully"
-msgstr "Project saved successfully"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 618
-msgid "Failed to save project"
-msgstr "Failed to save project"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 625
-msgid "No project to export"
-msgstr "No project to export"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 675
-msgid "Created project: {}"
-msgstr "Created project: {}"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 707
-msgid "No paragraphs to format"
-msgstr "No paragraphs to format"
-
-#
 # File: usr/share/tac-writer/ui/components.py, line: 140
 msgid "Welcome to TAC"
 msgstr "Welcome to TAC"
@@ -905,6 +833,78 @@ msgstr "This action cannot be undone."
 # File: usr/share/tac-writer/ui/components.py, line: 830
 msgid "Remove"
 msgstr "Remove"
+
+#
+# File: usr/share/tac-writer/core/models.py, line: 430
+msgid "Academic Essay"
+msgstr "Academic Essay"
+
+#
+# File: usr/share/tac-writer/core/models.py, line: 431
+msgid "Standard academic essay structure"
+msgstr "Standard academic essay structure"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 46
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Error: GTK 4.0 or higher is required"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 52
+msgid "Error: Required dependencies not found: {}"
+msgstr "Error: Required dependencies not found: {}"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 53
+msgid ""
+"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr ""
+"Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 56
+msgid "Error checking dependencies: {}"
+msgstr "Error checking dependencies: {}"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 62
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Starting TAC - Continuous Argumentation Technique"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 69
+msgid "Application directory: {}"
+msgstr "Application directory: {}"
+
+#
+# File: usr/share/tac-writer/tac.py, line: 76
+msgid "Loading application modules..."
+msgstr "Loading application modules..."
+
+#
+# File: usr/share/tac-writer/tac.py, line: 79
+msgid "Creating application instance..."
+msgstr "Creating application instance..."
+
+#
+# File: usr/share/tac-writer/tac.py, line: 82
+msgid "Running TAC application..."
+msgstr "Running TAC application..."
+
+#
+# File: usr/share/tac-writer/tac.py, line: 85
+msgid "Application finished."
+msgstr "Application finished."
+
+#
+# File: usr/share/tac-writer/tac.py, line: 89
+msgid "Application interrupted by user."
+msgstr "Application interrupted by user."
+
+#
+# File: usr/share/tac-writer/tac.py, line: 92
+msgid "Critical error during startup: {}"
+msgstr "Critical error during startup: {}"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
