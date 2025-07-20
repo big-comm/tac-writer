@@ -16,80 +16,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Академично есе"
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "ТАК - Непрекъсната аргументационна техника"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
 #: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Стандартна академична структура на есе"
+msgid "New Project (Ctrl+N)"
+msgstr "Нов проект (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
 #: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Грешка: Изисква се GTK 4.0 или по-висока версия"
+msgid "Open Project (Ctrl+O)"
+msgstr "Отвори проект (Ctrl+O)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "Грешка: Изискваните зависимости не са намерени: {}"
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 53
+# File: usr/share/tac-writer/ui/main_window.py, line: 115
+# File: usr/share/tac-writer/ui/components.py, line: 174
 #: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Моля, инсталирайте: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgid "Pomodoro Timer"
+msgstr "Помодоро Таймер"
 # 
-# File: usr/share/tac-writer/tac.py, line: 56
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
 #: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "Проверка на грешки в зависимостите: {}"
+msgid "Save Project (Ctrl+S)"
+msgstr "Запази проекта (Ctrl+S)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 62
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
 #: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Започване на TAC - Непрекъсната аргументационна техника"
+msgid "Main Menu"
+msgstr "Главно меню"
 # 
-# File: usr/share/tac-writer/tac.py, line: 69
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
 #: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "Директория на приложението: {}"
+msgid "Export Project..."
+msgstr "Експортиране на проект..."
 # 
-# File: usr/share/tac-writer/tac.py, line: 76
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
 #: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Зареждане на модули на приложението..."
+msgid "Undo"
+msgstr "Отмяна"
 # 
-# File: usr/share/tac-writer/tac.py, line: 79
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
 #: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Създаване на инстанция на приложението..."
+msgid "Redo"
+msgstr "Повтори"
 # 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Стартиране на TAC приложението..."
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 85
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
 #: NEEDS WORK
-msgid "Application finished."
-msgstr "Приложението е завършено."
+msgid "Preferences"
+msgstr "Настройки"
 # 
-# File: usr/share/tac-writer/tac.py, line: 89
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Приложението е прекратено от потребителя."
+msgid "Welcome Guide"
+msgstr "Ръководство за добре дошли"
 # 
-# File: usr/share/tac-writer/tac.py, line: 92
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
 #: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "Критична грешка по време на стартиране: {}"
+msgid "About TAC"
+msgstr "За TAC"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
 #: NEEDS WORK
-msgid "New Project"
-msgstr "Нов проект"
+msgid "Projects"
+msgstr "Проекти"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Добави параграф"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Заглавие 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Заглавие 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Въведение"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Аргумент"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Цитат"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Заключение"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Формат"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Форматирай абзаци"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Непрекъсната аргументационна техника"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} думи • {} абзаци"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Няма какво да се върне назад"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Няма какво да се повтори"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Параграфът е пренареден"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Отвори проект"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Отвори"
 # 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
@@ -106,6 +209,58 @@ msgstr "Нов проект"
 #: NEEDS WORK
 msgid "Cancel"
 msgstr "Отмяна"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "TAC проекти (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Всички файлове"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Отворен проект: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Неуспешно отваряне на проекта"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Проектът беше успешно запазен"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Неуспешно запазване на проекта"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Няма проект за експортиране"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Създаден проект: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Няма абзаци за форматиране"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Нов проект"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
 #: NEEDS WORK
@@ -332,14 +487,6 @@ msgstr "{} думи, {} абзаци"
 msgid "Export Options"
 msgstr "Опции за експортиране"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Формат"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
 msgid "Include Metadata"
@@ -408,14 +555,6 @@ msgstr "Възникна грешка при експортиране на пр�
 #: NEEDS WORK
 msgid "Export Failed"
 msgstr "Експортът неуспешен"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 758
-# File: usr/share/tac-writer/ui/main_window.py, line: 137
-#: NEEDS WORK
-msgid "Preferences"
-msgstr "Настройки"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
 #: NEEDS WORK
@@ -571,206 +710,51 @@ msgstr "Нараян Силва"
 msgid "TAC Development Team"
 msgstr "Екип за разработка TAC"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 55
+# File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
-msgid "TAC - Continuous Argumentation Technique"
-msgstr "ТАК - Непрекъсната аргументационна техника"
+msgid "Session {}"
+msgstr "Сесия {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 99
+# File: usr/share/tac-writer/ui/components.py, line: 152
 #: NEEDS WORK
-msgid "New Project (Ctrl+N)"
-msgstr "Нов проект (Ctrl+N)"
+msgid "Long Break"
+msgstr "Дълга почивка"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
+# File: usr/share/tac-writer/ui/components.py, line: 158
 #: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Отвори проект (Ctrl+O)"
+msgid "Rest Time"
+msgstr "Време за почивка"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 112
+# File: usr/share/tac-writer/ui/components.py, line: 205
 #: NEEDS WORK
-msgid "Save Project (Ctrl+S)"
-msgstr "Запази проекта (Ctrl+S)"
+msgid "Session 1"
+msgstr "Сесия 1"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 121
+# File: usr/share/tac-writer/ui/components.py, line: 224
+# File: usr/share/tac-writer/ui/components.py, line: 299
 #: NEEDS WORK
-msgid "Main Menu"
-msgstr "Главно меню"
+msgid "Start timer"
+msgstr "Стартиране на таймер"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 131
+# File: usr/share/tac-writer/ui/components.py, line: 234
 #: NEEDS WORK
-msgid "Export Project..."
-msgstr "Експортиране на проект..."
+msgid "Stop timer"
+msgstr "Спри таймера"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 154
+# File: usr/share/tac-writer/ui/components.py, line: 245
 #: NEEDS WORK
-msgid "Undo"
-msgstr "Отмяна"
+msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
+msgstr "Сесия на фокус: 25 мин • Кратка почивка: 5 мин • Дълга почивка: 15 мин"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 155
+# File: usr/share/tac-writer/ui/components.py, line: 257
 #: NEEDS WORK
-msgid "Redo"
-msgstr "Повтори"
+msgid "Minimize timer"
+msgstr "Минимизиране на таймер"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 142
+# File: usr/share/tac-writer/ui/components.py, line: 296
 #: NEEDS WORK
-msgid "Welcome Guide"
-msgstr "Ръководство за добре дошли"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 143
-#: NEEDS WORK
-msgid "About TAC"
-msgstr "За TAC"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 175
-#: NEEDS WORK
-msgid "Projects"
-msgstr "Проекти"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 276
-#: NEEDS WORK
-msgid "Add Paragraph"
-msgstr "Добави параграф"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 283
-# File: usr/share/tac-writer/ui/components.py, line: 577
-#: NEEDS WORK
-msgid "Title 1"
-msgstr "Заглавие 1"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 284
-# File: usr/share/tac-writer/ui/components.py, line: 578
-#: NEEDS WORK
-msgid "Title 2"
-msgstr "Заглавие 2"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 285
-# File: usr/share/tac-writer/ui/components.py, line: 579
-#: NEEDS WORK
-msgid "Introduction"
-msgstr "Въведение"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 286
-# File: usr/share/tac-writer/ui/components.py, line: 580
-#: NEEDS WORK
-msgid "Argument"
-msgstr "Аргумент"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 287
-# File: usr/share/tac-writer/ui/components.py, line: 581
-#: NEEDS WORK
-msgid "Quote"
-msgstr "Цитат"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 288
-# File: usr/share/tac-writer/ui/components.py, line: 582
-#: NEEDS WORK
-msgid "Conclusion"
-msgstr "Заключение"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Форматирай абзаци"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Непрекъсната аргументационна техника"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} думи • {} абзаци"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 447
-#: NEEDS WORK
-msgid "Nothing to undo"
-msgstr "Няма какво да се върне назад"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 472
-#: NEEDS WORK
-msgid "Nothing to redo"
-msgstr "Няма какво да се повтори"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 411
-#: NEEDS WORK
-msgid "Paragraph reordered"
-msgstr "Параграфът е пренареден"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 454
-#: NEEDS WORK
-msgid "Open Project"
-msgstr "Отвори проект"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 457
-#: NEEDS WORK
-msgid "Open"
-msgstr "Отвори"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 468
-#: NEEDS WORK
-msgid "TAC Projects (*.json)"
-msgstr "TAC проекти (*.json)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 473
-#: NEEDS WORK
-msgid "All Files"
-msgstr "Всички файлове"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 491
-# File: usr/share/tac-writer/ui/main_window.py, line: 546
-#: NEEDS WORK
-msgid "Opened project: {}"
-msgstr "Отворен проект: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 493
-# File: usr/share/tac-writer/ui/main_window.py, line: 548
-#: NEEDS WORK
-msgid "Failed to open project"
-msgstr "Неуспешно отваряне на проекта"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 507
-#: NEEDS WORK
-msgid "Project saved successfully"
-msgstr "Проектът беше успешно запазен"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 516
-#: NEEDS WORK
-msgid "Failed to save project"
-msgstr "Неуспешно запазване на проекта"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 523
-#: NEEDS WORK
-msgid "No project to export"
-msgstr "Няма проект за експортиране"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 573
-#: NEEDS WORK
-msgid "Created project: {}"
-msgstr "Създаден проект: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
-#: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "Няма абзаци за форматиране"
+msgid "Pause timer"
+msgstr "Пауза на таймера"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK
@@ -903,6 +887,76 @@ msgstr "Тази операция не може да бъде отменена."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Премахни"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Академично есе"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Стандартна академична структура на есе"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Грешка: Изисква се GTK 4.0 или по-висока версия"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Грешка: Изискваните зависимости не са намерени: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Моля, инсталирайте: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Проверка на грешки в зависимостите: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Започване на TAC - Непрекъсната аргументационна техника"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Директория на приложението: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Зареждане на модули на приложението..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Създаване на инстанция на приложението..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Стартиране на TAC приложението..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Приложението е завършено."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Приложението е прекратено от потребителя."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Критична грешка по време на стартиране: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK

@@ -16,80 +16,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akadémiai Esszé"
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Folyamatos Érvelési Technika"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
 #: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Szabványos akadémiai esszé struktúra"
+msgid "New Project (Ctrl+N)"
+msgstr "Új projekt (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
 #: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Hiba: A GTK 4.0 vagy újabb verzió szükséges"
+msgid "Open Project (Ctrl+O)"
+msgstr "Projekt megnyitása (Ctrl+O)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "Hiba: A szükséges függőségek nem találhatók: {}"
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 53
+# File: usr/share/tac-writer/ui/main_window.py, line: 115
+# File: usr/share/tac-writer/ui/components.py, line: 174
 #: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Kérjük, telepítse: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgid "Pomodoro Timer"
+msgstr "Pomodoro Időzítő"
 # 
-# File: usr/share/tac-writer/tac.py, line: 56
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
 #: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "Hibaellenőrzési függőségek: {}"
+msgid "Save Project (Ctrl+S)"
+msgstr "Projekt mentése (Ctrl+S)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 62
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
 #: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "TAC indítása - Folyamatos Érvelési Technika"
+msgid "Main Menu"
+msgstr "Főmenü"
 # 
-# File: usr/share/tac-writer/tac.py, line: 69
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
 #: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "Alkalmazás könyvtár: {}"
+msgid "Export Project..."
+msgstr "Projekt exportálása..."
 # 
-# File: usr/share/tac-writer/tac.py, line: 76
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
 #: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Alkalmazás modulok betöltése..."
+msgid "Undo"
+msgstr "Visszavonás"
 # 
-# File: usr/share/tac-writer/tac.py, line: 79
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
 #: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Alkalmazáspéldány létrehozása..."
+msgid "Redo"
+msgstr "Újra végrehajtás"
 # 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "TAC alkalmazás futtatása..."
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 85
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
 #: NEEDS WORK
-msgid "Application finished."
-msgstr "Alkalmazás befejeződött."
+msgid "Preferences"
+msgstr "Beállítások"
 # 
-# File: usr/share/tac-writer/tac.py, line: 89
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Alkalmazás megszakítva a felhasználó által."
+msgid "Welcome Guide"
+msgstr "Üdvözlő Útmutató"
 # 
-# File: usr/share/tac-writer/tac.py, line: 92
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
 #: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "Kritikus hiba a rendszerindítás során: {}"
+msgid "About TAC"
+msgstr "A TAC-ról"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
 #: NEEDS WORK
-msgid "New Project"
-msgstr "Új projekt"
+msgid "Projects"
+msgstr "Projektek"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Bejegyzés hozzáadása"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Cím 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Cím 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Bevezetés"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argumentum"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Idézet"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Következtetés"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Formátum"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Bekezdések formázása"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Folyamatos Érvelési Technika"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} szó • {} bekezdés"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Nincs mit visszavonni"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Nincs mit újra csinálni"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Bekezdés átrendezve"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Projekt megnyitása"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Megnyitás"
 # 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
@@ -106,6 +209,58 @@ msgstr "Új projekt"
 #: NEEDS WORK
 msgid "Cancel"
 msgstr "Mégsem"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "TAC Projektek (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Összes fájl"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Megnyitott projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "A projekt megnyitása nem sikerült"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "A projekt sikeresen mentve."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "A projekt mentése nem sikerült"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Nincs exportálható projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Létrehozott projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Nincsenek formázandó bekezdések"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Új projekt"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
 #: NEEDS WORK
@@ -332,14 +487,6 @@ msgstr "{} szónak, {} bekezdésnek"
 msgid "Export Options"
 msgstr "Exportálási lehetőségek"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Formátum"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
 msgid "Include Metadata"
@@ -408,14 +555,6 @@ msgstr "Hiba történt a projekt exportálása közben."
 #: NEEDS WORK
 msgid "Export Failed"
 msgstr "Exportálás sikertelen"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 758
-# File: usr/share/tac-writer/ui/main_window.py, line: 137
-#: NEEDS WORK
-msgid "Preferences"
-msgstr "Beállítások"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
 #: NEEDS WORK
@@ -570,206 +709,51 @@ msgstr "Narayan Silva"
 msgid "TAC Development Team"
 msgstr "TAC Fejlesztő Csapat"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 55
+# File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
-msgid "TAC - Continuous Argumentation Technique"
-msgstr "TAC - Folyamatos Érvelési Technika"
+msgid "Session {}"
+msgstr "Munkamenet {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 99
+# File: usr/share/tac-writer/ui/components.py, line: 152
 #: NEEDS WORK
-msgid "New Project (Ctrl+N)"
-msgstr "Új projekt (Ctrl+N)"
+msgid "Long Break"
+msgstr "Hosszú szünet"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
+# File: usr/share/tac-writer/ui/components.py, line: 158
 #: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Projekt megnyitása (Ctrl+O)"
+msgid "Rest Time"
+msgstr "Pihenőidő"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 112
+# File: usr/share/tac-writer/ui/components.py, line: 205
 #: NEEDS WORK
-msgid "Save Project (Ctrl+S)"
-msgstr "Projekt mentése (Ctrl+S)"
+msgid "Session 1"
+msgstr "1. session"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 121
+# File: usr/share/tac-writer/ui/components.py, line: 224
+# File: usr/share/tac-writer/ui/components.py, line: 299
 #: NEEDS WORK
-msgid "Main Menu"
-msgstr "Főmenü"
+msgid "Start timer"
+msgstr "Időzítő indítása"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 131
+# File: usr/share/tac-writer/ui/components.py, line: 234
 #: NEEDS WORK
-msgid "Export Project..."
-msgstr "Projekt exportálása..."
+msgid "Stop timer"
+msgstr "Időzítő leállítása"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 154
+# File: usr/share/tac-writer/ui/components.py, line: 245
 #: NEEDS WORK
-msgid "Undo"
-msgstr "Visszavonás"
+msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
+msgstr "Fókusz ülés: 25 perc • Rövid szünet: 5 perc • Hosszú szünet: 15 perc"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 155
+# File: usr/share/tac-writer/ui/components.py, line: 257
 #: NEEDS WORK
-msgid "Redo"
-msgstr "Újra végrehajtás"
+msgid "Minimize timer"
+msgstr "Időzítő minimalizálása"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 142
+# File: usr/share/tac-writer/ui/components.py, line: 296
 #: NEEDS WORK
-msgid "Welcome Guide"
-msgstr "Üdvözlő Útmutató"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 143
-#: NEEDS WORK
-msgid "About TAC"
-msgstr "A TAC-ról"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 175
-#: NEEDS WORK
-msgid "Projects"
-msgstr "Projektek"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 276
-#: NEEDS WORK
-msgid "Add Paragraph"
-msgstr "Bejegyzés hozzáadása"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 283
-# File: usr/share/tac-writer/ui/components.py, line: 577
-#: NEEDS WORK
-msgid "Title 1"
-msgstr "Cím 1"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 284
-# File: usr/share/tac-writer/ui/components.py, line: 578
-#: NEEDS WORK
-msgid "Title 2"
-msgstr "Cím 2"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 285
-# File: usr/share/tac-writer/ui/components.py, line: 579
-#: NEEDS WORK
-msgid "Introduction"
-msgstr "Bevezetés"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 286
-# File: usr/share/tac-writer/ui/components.py, line: 580
-#: NEEDS WORK
-msgid "Argument"
-msgstr "Argumentum"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 287
-# File: usr/share/tac-writer/ui/components.py, line: 581
-#: NEEDS WORK
-msgid "Quote"
-msgstr "Idézet"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 288
-# File: usr/share/tac-writer/ui/components.py, line: 582
-#: NEEDS WORK
-msgid "Conclusion"
-msgstr "Következtetés"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Bekezdések formázása"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Folyamatos Érvelési Technika"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} szó • {} bekezdés"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 447
-#: NEEDS WORK
-msgid "Nothing to undo"
-msgstr "Nincs mit visszavonni"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 472
-#: NEEDS WORK
-msgid "Nothing to redo"
-msgstr "Nincs mit újra csinálni"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 411
-#: NEEDS WORK
-msgid "Paragraph reordered"
-msgstr "Bekezdés átrendezve"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 454
-#: NEEDS WORK
-msgid "Open Project"
-msgstr "Projekt megnyitása"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 457
-#: NEEDS WORK
-msgid "Open"
-msgstr "Megnyitás"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 468
-#: NEEDS WORK
-msgid "TAC Projects (*.json)"
-msgstr "TAC Projektek (*.json)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 473
-#: NEEDS WORK
-msgid "All Files"
-msgstr "Összes fájl"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 491
-# File: usr/share/tac-writer/ui/main_window.py, line: 546
-#: NEEDS WORK
-msgid "Opened project: {}"
-msgstr "Megnyitott projekt: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 493
-# File: usr/share/tac-writer/ui/main_window.py, line: 548
-#: NEEDS WORK
-msgid "Failed to open project"
-msgstr "A projekt megnyitása nem sikerült"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 507
-#: NEEDS WORK
-msgid "Project saved successfully"
-msgstr "A projekt sikeresen mentve."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 516
-#: NEEDS WORK
-msgid "Failed to save project"
-msgstr "A projekt mentése nem sikerült"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 523
-#: NEEDS WORK
-msgid "No project to export"
-msgstr "Nincs exportálható projekt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 573
-#: NEEDS WORK
-msgid "Created project: {}"
-msgstr "Létrehozott projekt: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
-#: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "Nincsenek formázandó bekezdések"
+msgid "Pause timer"
+msgstr "Szüneteltető időzítő"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK
@@ -902,6 +886,76 @@ msgstr "Ez a művelet nem vonható vissza."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Eltávolítás"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akadémiai Esszé"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Szabványos akadémiai esszé struktúra"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Hiba: A GTK 4.0 vagy újabb verzió szükséges"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Hiba: A szükséges függőségek nem találhatók: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Kérjük, telepítse: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Hibaellenőrzési függőségek: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "TAC indítása - Folyamatos Érvelési Technika"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Alkalmazás könyvtár: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Alkalmazás modulok betöltése..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Alkalmazáspéldány létrehozása..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "TAC alkalmazás futtatása..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Alkalmazás befejeződött."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Alkalmazás megszakítva a felhasználó által."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Kritikus hiba a rendszerindítás során: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK

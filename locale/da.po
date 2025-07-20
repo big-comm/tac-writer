@@ -16,80 +16,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akademisk Essay"
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Kontinuerlig Argumentationsteknik"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/ui/main_window.py, line: 99
 #: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Standard akademisk essay struktur"
+msgid "New Project (Ctrl+N)"
+msgstr "Nyt projekt (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
+# File: usr/share/tac-writer/ui/main_window.py, line: 105
 #: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Fejl: GTK 4.0 eller højere er påkrævet"
+msgid "Open Project (Ctrl+O)"
+msgstr "Åbn projekt (Ctrl+O)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "Fejl: Nødvendige afhængigheder ikke fundet: {}"
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 53
+# File: usr/share/tac-writer/ui/main_window.py, line: 115
+# File: usr/share/tac-writer/ui/components.py, line: 174
 #: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Installer venligst: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgid "Pomodoro Timer"
+msgstr "Pomodoro Timer"
 # 
-# File: usr/share/tac-writer/tac.py, line: 56
+# File: usr/share/tac-writer/ui/main_window.py, line: 112
 #: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "Fejlkontrol af afhængigheder: {}"
+msgid "Save Project (Ctrl+S)"
+msgstr "Gem projekt (Ctrl+S)"
 # 
-# File: usr/share/tac-writer/tac.py, line: 62
+# File: usr/share/tac-writer/ui/main_window.py, line: 121
 #: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Startende TAC - Kontinuerlig Argumentationsteknik"
+msgid "Main Menu"
+msgstr "Hovedmenu"
 # 
-# File: usr/share/tac-writer/tac.py, line: 69
+# File: usr/share/tac-writer/ui/main_window.py, line: 131
 #: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "Applikationsmappe: {}"
+msgid "Export Project..."
+msgstr "Eksportér projekt..."
 # 
-# File: usr/share/tac-writer/tac.py, line: 76
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
 #: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Indlæser applikationsmoduler..."
+msgid "Undo"
+msgstr "Fortryd"
 # 
-# File: usr/share/tac-writer/tac.py, line: 79
+# File: usr/share/tac-writer/ui/main_window.py, line: 155
 #: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Opretter applikationsinstans..."
+msgid "Redo"
+msgstr "Gendan"
 # 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Kører TAC-applikation..."
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/tac.py, line: 85
+# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/main_window.py, line: 137
 #: NEEDS WORK
-msgid "Application finished."
-msgstr "Applikationen er færdig."
+msgid "Preferences"
+msgstr "Indstillinger"
 # 
-# File: usr/share/tac-writer/tac.py, line: 89
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Applikationen blev afbrudt af brugeren."
+msgid "Welcome Guide"
+msgstr "Velkomstguide"
 # 
-# File: usr/share/tac-writer/tac.py, line: 92
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
 #: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "Kritisk fejl under opstart: {}"
+msgid "About TAC"
+msgstr "Om TAC"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+# File: usr/share/tac-writer/ui/main_window.py, line: 175
 #: NEEDS WORK
-msgid "New Project"
-msgstr "Nyt projekt"
+msgid "Projects"
+msgstr "Projekter"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 276
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Tilføj afsnit"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 283
+# File: usr/share/tac-writer/ui/components.py, line: 577
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Titel 1"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 284
+# File: usr/share/tac-writer/ui/components.py, line: 578
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Titel 2"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 579
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Introduktion"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 286
+# File: usr/share/tac-writer/ui/components.py, line: 580
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argument"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 287
+# File: usr/share/tac-writer/ui/components.py, line: 581
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Citat"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 288
+# File: usr/share/tac-writer/ui/components.py, line: 582
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Konklusion"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Format"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 301
+#: NEEDS WORK
+msgid "Format paragraphs"
+msgstr "Formater afsnit"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Kontinuerlig Argumentationsteknik"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+msgid "{} words • {} paragraphs"
+msgstr "{} ord • {} afsnit"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 447
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Intet at fortryde"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 472
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Intet at gøre om"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 411
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Afsnit omarrangeret"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 454
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Åbn projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 457
+#: NEEDS WORK
+msgid "Open"
+msgstr "Åbn"
 # 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
@@ -106,6 +209,58 @@ msgstr "Nyt projekt"
 #: NEEDS WORK
 msgid "Cancel"
 msgstr "Annuller"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 468
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "TAC Projekter (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 473
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Alle filer"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 546
+#: NEEDS WORK
+msgid "Opened project: {}"
+msgstr "Åbnet projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 493
+# File: usr/share/tac-writer/ui/main_window.py, line: 548
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Mislykkedes at åbne projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Projekt gemt med succes"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Fejl ved gemme projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 523
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Ingen projekt at eksportere"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 573
+#: NEEDS WORK
+msgid "Created project: {}"
+msgstr "Oprettet projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 605
+#: NEEDS WORK
+msgid "No paragraphs to format"
+msgstr "Ingen afsnit at formatere"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 33
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Nyt projekt"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 63
 #: NEEDS WORK
@@ -332,14 +487,6 @@ msgstr "{} ord, {} afsnit"
 msgid "Export Options"
 msgstr "Eksportmuligheder"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Format"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
 msgid "Include Metadata"
@@ -408,14 +555,6 @@ msgstr "Der opstod en fejl under eksport af projektet."
 #: NEEDS WORK
 msgid "Export Failed"
 msgstr "Eksport mislykkedes"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 758
-# File: usr/share/tac-writer/ui/main_window.py, line: 137
-#: NEEDS WORK
-msgid "Preferences"
-msgstr "Indstillinger"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 773
 #: NEEDS WORK
@@ -571,206 +710,51 @@ msgstr "Narayan Silva"
 msgid "TAC Development Team"
 msgstr "TAC Udviklingsteam"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 55
+# File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
-msgid "TAC - Continuous Argumentation Technique"
-msgstr "TAC - Kontinuerlig Argumentationsteknik"
+msgid "Session {}"
+msgstr "Session {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 99
+# File: usr/share/tac-writer/ui/components.py, line: 152
 #: NEEDS WORK
-msgid "New Project (Ctrl+N)"
-msgstr "Nyt projekt (Ctrl+N)"
+msgid "Long Break"
+msgstr "Lang Pause"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
+# File: usr/share/tac-writer/ui/components.py, line: 158
 #: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Åbn projekt (Ctrl+O)"
+msgid "Rest Time"
+msgstr "Hviletid"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 112
+# File: usr/share/tac-writer/ui/components.py, line: 205
 #: NEEDS WORK
-msgid "Save Project (Ctrl+S)"
-msgstr "Gem projekt (Ctrl+S)"
+msgid "Session 1"
+msgstr "Session 1"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 121
+# File: usr/share/tac-writer/ui/components.py, line: 224
+# File: usr/share/tac-writer/ui/components.py, line: 299
 #: NEEDS WORK
-msgid "Main Menu"
-msgstr "Hovedmenu"
+msgid "Start timer"
+msgstr "Start tidtager"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 131
+# File: usr/share/tac-writer/ui/components.py, line: 234
 #: NEEDS WORK
-msgid "Export Project..."
-msgstr "Eksportér projekt..."
+msgid "Stop timer"
+msgstr "Stop timer"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 154
+# File: usr/share/tac-writer/ui/components.py, line: 245
 #: NEEDS WORK
-msgid "Undo"
-msgstr "Fortryd"
+msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
+msgstr "Fokus session: 25 min • Kort pause: 5 min • Lang pause: 15 min"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 155
+# File: usr/share/tac-writer/ui/components.py, line: 257
 #: NEEDS WORK
-msgid "Redo"
-msgstr "Gendan"
+msgid "Minimize timer"
+msgstr "Minimer timer"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 142
+# File: usr/share/tac-writer/ui/components.py, line: 296
 #: NEEDS WORK
-msgid "Welcome Guide"
-msgstr "Velkomstguide"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 143
-#: NEEDS WORK
-msgid "About TAC"
-msgstr "Om TAC"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 175
-#: NEEDS WORK
-msgid "Projects"
-msgstr "Projekter"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 276
-#: NEEDS WORK
-msgid "Add Paragraph"
-msgstr "Tilføj afsnit"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 283
-# File: usr/share/tac-writer/ui/components.py, line: 577
-#: NEEDS WORK
-msgid "Title 1"
-msgstr "Titel 1"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 284
-# File: usr/share/tac-writer/ui/components.py, line: 578
-#: NEEDS WORK
-msgid "Title 2"
-msgstr "Titel 2"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 285
-# File: usr/share/tac-writer/ui/components.py, line: 579
-#: NEEDS WORK
-msgid "Introduction"
-msgstr "Introduktion"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 286
-# File: usr/share/tac-writer/ui/components.py, line: 580
-#: NEEDS WORK
-msgid "Argument"
-msgstr "Argument"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 287
-# File: usr/share/tac-writer/ui/components.py, line: 581
-#: NEEDS WORK
-msgid "Quote"
-msgstr "Citat"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 288
-# File: usr/share/tac-writer/ui/components.py, line: 582
-#: NEEDS WORK
-msgid "Conclusion"
-msgstr "Konklusion"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Formater afsnit"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Kontinuerlig Argumentationsteknik"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} ord • {} afsnit"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 447
-#: NEEDS WORK
-msgid "Nothing to undo"
-msgstr "Intet at fortryde"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 472
-#: NEEDS WORK
-msgid "Nothing to redo"
-msgstr "Intet at gøre om"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 411
-#: NEEDS WORK
-msgid "Paragraph reordered"
-msgstr "Afsnit omarrangeret"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 454
-#: NEEDS WORK
-msgid "Open Project"
-msgstr "Åbn projekt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 457
-#: NEEDS WORK
-msgid "Open"
-msgstr "Åbn"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 468
-#: NEEDS WORK
-msgid "TAC Projects (*.json)"
-msgstr "TAC Projekter (*.json)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 473
-#: NEEDS WORK
-msgid "All Files"
-msgstr "Alle filer"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 491
-# File: usr/share/tac-writer/ui/main_window.py, line: 546
-#: NEEDS WORK
-msgid "Opened project: {}"
-msgstr "Åbnet projekt: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 493
-# File: usr/share/tac-writer/ui/main_window.py, line: 548
-#: NEEDS WORK
-msgid "Failed to open project"
-msgstr "Mislykkedes at åbne projekt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 507
-#: NEEDS WORK
-msgid "Project saved successfully"
-msgstr "Projekt gemt med succes"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 516
-#: NEEDS WORK
-msgid "Failed to save project"
-msgstr "Fejl ved gemme projekt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 523
-#: NEEDS WORK
-msgid "No project to export"
-msgstr "Ingen projekt at eksportere"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 573
-#: NEEDS WORK
-msgid "Created project: {}"
-msgstr "Oprettet projekt: {}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
-#: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "Ingen afsnit at formatere"
+msgid "Pause timer"
+msgstr "Pause timer"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK
@@ -903,6 +887,76 @@ msgstr "Denne handling kan ikke fortrydes."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Fjern"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akademisk Essay"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Standard akademisk essay struktur"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Fejl: GTK 4.0 eller højere er påkrævet"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+msgid "Error: Required dependencies not found: {}"
+msgstr "Fejl: Nødvendige afhængigheder ikke fundet: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Installer venligst: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+msgid "Error checking dependencies: {}"
+msgstr "Fejlkontrol af afhængigheder: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Startende TAC - Kontinuerlig Argumentationsteknik"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+msgid "Application directory: {}"
+msgstr "Applikationsmappe: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Indlæser applikationsmoduler..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Opretter applikationsinstans..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Kører TAC-applikation..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Applikationen er færdig."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Applikationen blev afbrudt af brugeren."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+msgid "Critical error during startup: {}"
+msgstr "Kritisk fejl under opstart: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
