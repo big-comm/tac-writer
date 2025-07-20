@@ -30,6 +30,9 @@ class MainWindow(Adw.ApplicationWindow):
         self.export_service = ExportService()
         self.current_project: Project = None
 
+        # NOVO: Timer Pomodoro
+        self.pomodoro_dialog = None
+
         # UI components
         self.header_bar = None
         self.toast_overlay = None
@@ -105,6 +108,14 @@ class MainWindow(Adw.ApplicationWindow):
         open_button.set_tooltip_text(_("Open Project (Ctrl+O)"))
         open_button.set_action_name("app.open_project")
         self.header_bar.pack_start(open_button)
+
+        # NOVO: Botão Pomodoro Timer
+        self.pomodoro_button = Gtk.Button()
+        self.pomodoro_button.set_icon_name("alarm-symbolic")
+        self.pomodoro_button.set_tooltip_text(_("Pomodoro Timer"))
+        self.pomodoro_button.connect('clicked', self._on_pomodoro_clicked)
+        self.pomodoro_button.set_sensitive(False)  # Inicialmente desabilitado
+        self.header_bar.pack_start(self.pomodoro_button)
 
         # Right side buttons
         save_button = Gtk.Button()
@@ -756,3 +767,32 @@ class MainWindow(Adw.ApplicationWindow):
                     child.refresh_formatting()
                 child = child.get_next_sibling()
 
+    def _on_pomodoro_clicked(self, button):
+        """Handle Pomodoro timer button click"""
+        if not self.pomodoro_dialog:
+            # Importar o componente
+            from .components import PomodoroDialog
+            self.pomodoro_dialog = PomodoroDialog(self)
+    
+        self.pomodoro_dialog.show_timer()
+
+    def _update_header_for_view(self, view_name: str):
+        """Update header bar for current view"""
+        if view_name == "welcome":
+            title_widget = self.header_bar.get_title_widget()
+            title_widget.set_title("TAC")
+            title_widget.set_subtitle(_("Continuous Argumentation Technique"))
+            self.save_button.set_sensitive(False)
+            # NOVO: Desabilitar Pomodoro na tela de boas-vindas
+            self.pomodoro_button.set_sensitive(False)
+
+        elif view_name == "editor" and self.current_project:
+            title_widget = self.header_bar.get_title_widget()
+            title_widget.set_title(self.current_project.name)
+            # Show project statistics in subtitle
+            stats = self.current_project.get_statistics()
+            subtitle = _("{} words • {} paragraphs").format(stats['total_words'], stats['total_paragraphs'])
+            title_widget.set_subtitle(subtitle)
+            self.save_button.set_sensitive(True)
+            # NOVO: Habilitar Pomodoro quando há projeto
+            self.pomodoro_button.set_sensitive(True)

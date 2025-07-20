@@ -22,6 +22,343 @@ from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper
 from utils.i18n import _
 
+class PomodoroTimer(GObject.Object):
+    """Timer Pomodoro para ajudar na concentração durante a escrita"""
+    
+    __gtype_name__ = 'TacPomodoroTimer'
+    __gsignals__ = {
+        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)),  # Tipo: work/break
+        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)),      # Segundos restantes
+        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)),  # Sessão, tipo
+    }
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        
+        # Estado do timer
+        self.current_session = 1
+        self.is_running = False
+        self.is_work_time = True  # True = trabalho, False = descanso
+        self.timer_id = None
+        
+        # Tempos em segundos
+        self.work_duration = 25 * 60  # 25 minutos
+        self.short_break_duration = 5 * 60   # 5 minutos
+        self.long_break_duration = 15 * 60   # 15 minutos
+        self.max_sessions = 4
+        
+        # Tempo restante atual
+        self.time_remaining = self.work_duration
+        
+        print("PomodoroTimer inicializado")
+
+    def start_timer(self):
+        """Inicia o timer"""
+        if not self.is_running:
+            self.is_running = True
+            self._start_countdown()
+            print(f"Timer iniciado - Sessão {self.current_session}, {'Trabalho' if self.is_work_time else 'Descanso'}")
+
+    def stop_timer(self):
+        """Para o timer"""
+        if self.is_running:
+            self.is_running = False
+            if self.timer_id:
+                GLib.source_remove(self.timer_id)
+                self.timer_id = None
+            print("Timer parado")
+
+    def reset_timer(self):
+        """Reseta o timer para o estado inicial"""
+        self.stop_timer()
+        self.current_session = 1
+        self.is_work_time = True
+        self.time_remaining = self.work_duration
+        self.emit('session-changed', self.current_session, 'work')
+        print("Timer resetado")
+
+    def _start_countdown(self):
+        """Inicia a contagem regressiva"""
+        if self.timer_id:
+            GLib.source_remove(self.timer_id)
+        
+        self.timer_id = GLib.timeout_add(1000, self._countdown_tick)
+
+    def _countdown_tick(self):
+        """Executa a cada segundo da contagem regressiva"""
+        if not self.is_running:
+            return False
+            
+        self.time_remaining -= 1
+        self.emit('timer-tick', self.time_remaining)
+        
+        if self.time_remaining <= 0:
+            self._timer_finished()
+            return False
+            
+        return True
+
+    def _timer_finished(self):
+        """Chamado quando o timer termina"""
+        self.is_running = False
+        
+        if self.is_work_time:
+            # Acabou período de trabalho, iniciar descanso
+            self.emit('timer-finished', 'work')
+            self.is_work_time = False
+            
+            # Determinar duração do descanso
+            if self.current_session >= self.max_sessions:
+                # Descanso longo após 4ª sessão
+                self.time_remaining = self.long_break_duration
+            else:
+                # Descanso curto
+                self.time_remaining = self.short_break_duration
+                
+            self.emit('session-changed', self.current_session, 'break')
+            
+        else:
+            # Acabou período de descanso
+            self.emit('timer-finished', 'break')
+            
+            if self.current_session >= self.max_sessions:
+                # Completou todas as sessões
+                self.reset_timer()
+                print("Pomodoro completo! Todas as 4 sessões foram finalizadas.")
+            else:
+                # Próxima sessão de trabalho
+                self.current_session += 1
+                self.is_work_time = True
+                self.time_remaining = self.work_duration
+                self.emit('session-changed', self.current_session, 'work')
+
+    def get_time_string(self):
+        """Retorna o tempo formatado como string MM:SS"""
+        minutes = self.time_remaining // 60
+        seconds = self.time_remaining % 60
+        return f"{minutes:02d}:{seconds:02d}"
+
+    def get_session_info(self):
+        """Retorna informações da sessão atual"""
+        if self.is_work_time:
+            return {
+                'title': _("Session {}").format(self.current_session),
+                'type': 'work',
+                'session': self.current_session
+            }
+        else:
+            if self.current_session >= self.max_sessions:
+                return {
+                    'title': _("Long Break"),
+                    'type': 'long_break',
+                    'session': self.current_session
+                }
+            else:
+                return {
+                    'title': _("Rest Time"),
+                    'type': 'short_break',
+                    'session': self.current_session
+                }
+
+
+class PomodoroDialog(Adw.Window):
+    """Diálogo do timer Pomodoro"""
+    
+    __gtype_name__ = 'TacPomodoroDialog'
+
+    def __init__(self, parent_window, **kwargs):
+        super().__init__(**kwargs)
+        
+        self.set_transient_for(parent_window)
+        self.set_modal(True)
+        self.set_title(_("Pomodoro Timer"))
+        self.set_default_size(350, 250)
+        self.set_resizable(False)
+        
+        # Timer
+        self.timer = PomodoroTimer()
+        self.timer.connect('timer-finished', self._on_timer_finished)
+        self.timer.connect('timer-tick', self._on_timer_tick)
+        self.timer.connect('session-changed', self._on_session_changed)
+        
+        # Flag para controle de minimização
+        self.should_minimize = False
+        
+        self._setup_ui()
+        self._update_display()
+
+    def _setup_ui(self):
+        """Configura a interface do usuário"""
+        # Container principal com overlay para posicionamento absoluto
+        overlay = Gtk.Overlay()
+        
+        # Container do conteúdo principal
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        main_box.set_spacing(20)
+        main_box.set_margin_start(30)
+        main_box.set_margin_end(30)
+        main_box.set_margin_top(30)
+        main_box.set_margin_bottom(30)
+        
+        # Título da sessão
+        self.session_label = Gtk.Label()
+        self.session_label.set_markup(f"<span size='large' weight='bold'>{_('Session 1')}</span>")
+        self.session_label.set_halign(Gtk.Align.CENTER)
+        main_box.append(self.session_label)
+        
+        # Display do tempo
+        self.time_label = Gtk.Label()
+        self.time_label.set_markup(f"<span size='xx-large' weight='bold' font_family='monospace'>25:00</span>")
+        self.time_label.set_halign(Gtk.Align.CENTER)
+        self.time_label.add_css_class("timer-display")
+        main_box.append(self.time_label)
+        
+        # Container dos botões principais
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        button_box.set_spacing(12)
+        button_box.set_halign(Gtk.Align.CENTER)
+        
+        # Botão Play/Pause
+        self.play_button = Gtk.Button()
+        self.play_button.set_icon_name("media-playback-start-symbolic")
+        self.play_button.set_tooltip_text(_("Start timer"))
+        self.play_button.add_css_class("suggested-action")
+        self.play_button.add_css_class("circular")
+        self.play_button.set_size_request(50, 50)
+        self.play_button.connect('clicked', self._on_play_clicked)
+        button_box.append(self.play_button)
+        
+        # Botão Stop
+        self.stop_button = Gtk.Button()
+        self.stop_button.set_icon_name("media-playback-stop-symbolic")
+        self.stop_button.set_tooltip_text(_("Stop timer"))
+        self.stop_button.add_css_class("destructive-action")
+        self.stop_button.add_css_class("circular")
+        self.stop_button.set_size_request(50, 50)
+        self.stop_button.connect('clicked', self._on_stop_clicked)
+        button_box.append(self.stop_button)
+        
+        main_box.append(button_box)
+        
+        # Informações adicionais
+        info_label = Gtk.Label()
+        info_label.set_markup(f"<span size='small' alpha='70%'>{_('Focus session: 25 min • Short break: 5 min • Long break: 15 min')}</span>")
+        info_label.set_wrap(True)
+        info_label.set_justify(Gtk.Justification.CENTER)
+        info_label.set_halign(Gtk.Align.CENTER)
+        main_box.append(info_label)
+        
+        # Adicionar conteúdo principal ao overlay
+        overlay.set_child(main_box)
+        
+        # Botão Minimizar no canto superior direito
+        self.minimize_button = Gtk.Button()
+        self.minimize_button.set_icon_name("window-minimize-symbolic")
+        self.minimize_button.set_tooltip_text(_("Minimize timer"))
+        self.minimize_button.add_css_class("circular")
+        self.minimize_button.add_css_class("flat")
+        self.minimize_button.set_size_request(32, 32)  # Menor que os outros botões
+        self.minimize_button.set_halign(Gtk.Align.END)
+        self.minimize_button.set_valign(Gtk.Align.START)
+        self.minimize_button.set_margin_top(8)
+        self.minimize_button.set_margin_end(8)
+        self.minimize_button.connect('clicked', self._on_minimize_clicked)
+        
+        # Adicionar botão minimizar como overlay (sempre visível)
+        overlay.add_overlay(self.minimize_button)
+        
+        self.set_content(overlay)
+
+    def _update_display(self):
+        """Atualiza a exibição com as informações atuais"""
+        session_info = self.timer.get_session_info()
+        
+        # Atualizar título da sessão
+        title = session_info['title']
+        if session_info['type'] == 'work':
+            self.session_label.set_markup(f"<span size='large' weight='bold'>{title}</span>")
+        else:
+            # Para descanso, usar cor de destaque do tema
+            self.session_label.set_markup(f"<span size='large' weight='bold' color='@accent_color'>{title}</span>")
+        
+        # Atualizar tempo - usar cor padrão do tema
+        time_str = self.timer.get_time_string()
+        if self.timer.is_work_time:
+            # Sessão de trabalho - cor padrão do texto
+            self.time_label.set_markup(f"<span size='xx-large' weight='bold' font_family='monospace'>{time_str}</span>")
+        else:
+            # Descanso - usar cor de destaque do tema
+            self.time_label.set_markup(f"<span size='xx-large' weight='bold' font_family='monospace' color='@accent_color'>{time_str}</span>")
+        
+        # Atualizar botão play (botão minimizar agora está sempre visível)
+        if self.timer.is_running:
+            self.play_button.set_icon_name("media-playback-pause-symbolic")
+            self.play_button.set_tooltip_text(_("Pause timer"))
+        else:
+            self.play_button.set_icon_name("media-playback-start-symbolic")
+            self.play_button.set_tooltip_text(_("Start timer"))
+
+    def _on_play_clicked(self, button):
+        """Handle play/pause button click"""
+        if self.timer.is_running:
+            self.timer.stop_timer()
+        else:
+            self.timer.start_timer()
+            # Minimizar janela quando iniciar
+            self.set_visible(False)
+        
+        self._update_display()
+
+    def _on_stop_clicked(self, button):
+        """Handle stop button click"""
+        self.timer.stop_timer()
+        self.timer.reset_timer()
+        self._update_display()
+
+    def _on_minimize_clicked(self, button):
+        """Handle minimize button click"""
+        self.set_visible(False)
+
+    def _on_timer_tick(self, timer, time_remaining):
+        """Handle timer tick - atualiza o display a cada segundo"""
+        GLib.idle_add(self._update_time_display)
+
+    def _update_time_display(self):
+        """Atualiza apenas o display do tempo (chamado pelo timer tick)"""
+        time_str = self.timer.get_time_string()
+        if self.timer.is_work_time:
+            # Sessão de trabalho - cor padrão do texto
+            self.time_label.set_markup(f"<span size='xx-large' weight='bold' font_family='monospace'>{time_str}</span>")
+        else:
+            # Descanso - usar cor de destaque do tema
+            self.time_label.set_markup(f"<span size='xx-large' weight='bold' font_family='monospace' color='@accent_color'>{time_str}</span>")
+        return False
+
+    def _on_timer_finished(self, timer, timer_type):
+        """Handle timer finished - mostra a janela novamente"""
+        GLib.idle_add(self._show_timer_finished, timer_type)
+
+    def _show_timer_finished(self, timer_type):
+        """Mostra a janela quando o timer termina"""
+        self.set_visible(True)
+        self.present()
+        self._update_display()
+        
+        # Tocar som ou mostrar notificação seria interessante aqui
+        print(f"Timer finished: {timer_type}")
+        return False
+
+    def _on_session_changed(self, timer, session, session_type):
+        """Handle session change"""
+        GLib.idle_add(self._update_display)
+
+    def show_timer(self):
+        """Mostra o diálogo do timer"""
+        self.set_visible(True)
+        self.present()
+
+
+
 class SpellCheckHelper:
     """Helper class for spell checking functionality using PyGTKSpellcheck"""
 
