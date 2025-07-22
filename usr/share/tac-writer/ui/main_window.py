@@ -15,6 +15,7 @@ from utils.helpers import TextHelper, ValidationHelper, FormatHelper
 from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
+from ui.components import PomodoroTimer
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -32,6 +33,8 @@ class MainWindow(Adw.ApplicationWindow):
 
         # NOVO: Timer Pomodoro
         self.pomodoro_dialog = None
+        self.timer = PomodoroTimer()  # nova linha
+
 
         # UI components
         self.header_bar = None
@@ -768,13 +771,10 @@ class MainWindow(Adw.ApplicationWindow):
                 child = child.get_next_sibling()
 
     def _on_pomodoro_clicked(self, button):
-        """Handle Pomodoro timer button click"""
         if not self.pomodoro_dialog:
-            # Importar o componente
-            from .components import PomodoroDialog
-            self.pomodoro_dialog = PomodoroDialog(self)
-    
-        self.pomodoro_dialog.show_timer()
+            from ui.components import PomodoroDialog
+            self.pomodoro_dialog = PomodoroDialog(self, self.timer)
+        self.pomodoro_dialog.show_dialog()
 
     def _update_header_for_view(self, view_name: str):
         """Update header bar for current view"""
