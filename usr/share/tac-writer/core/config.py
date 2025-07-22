@@ -1,15 +1,12 @@
 """
-
 TAC Configuration Module
-
 Application configuration management following XDG standards
-
 """
 
 import os
 import json
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 class Config:
     """Application configuration manager"""
@@ -59,20 +56,20 @@ class Config:
             'window_position': None,
 
             # Editor settings
-            'font_family': 'Liberation Sans',
+            'font_family': 'Liberation Serif',
             'font_size': 12,
             'line_spacing': 1.5,
             'show_line_numbers': True,
             'word_wrap': True,
             'highlight_current_line': True,
             'auto_save': True,
-            'auto_save_interval': 300,  # 5 minutes
+            'auto_save_interval': 120,  # 2 minutes
 
             # Spell checking settings
             'spell_check_enabled': True,
             'spell_check_language': 'pt_BR',  # Default to Portuguese Brazil
             'spell_check_show_language_menu': True,
-            'spell_check_available_languages': ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT'],
+            'spell_check_available_languages': ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT', 'ru_RU', 'zh_CH'],
             'spell_check_personal_dictionary': str(self.config_dir / 'personal_dict.txt'),
 
             # Formatting defaults
@@ -105,6 +102,9 @@ class Config:
             'export_location': str(Path.home() / 'Documents'),
             'default_export_format': 'odt',
             'include_metadata': True,
+
+            # Recent projects list - CORRIGIDO: Adicionado campo ausente
+            'recent_projects': []
         }
 
     def get(self, key: str, default: Any = None) -> Any:
@@ -186,7 +186,7 @@ class Config:
         recent = self.get_recent_projects()
         if project_path in recent:
             recent.remove(project_path)
-        self.set('recent_projects', recent)
+            self.set('recent_projects', recent)  # CORRIGIDO: Salvar alteração
 
     def export_config(self, file_path: str) -> bool:
         """Export configuration to file"""
@@ -209,7 +209,7 @@ class Config:
             print(f"Error importing configuration: {e}")
             return False
 
-    # Spell checking convenience methods
+    # Spell checking convenience methods - CORRIGIDOS E MELHORADOS
     def get_spell_check_enabled(self) -> bool:
         """Get spell check enabled status"""
         return self.get('spell_check_enabled', True)
@@ -217,18 +217,27 @@ class Config:
     def set_spell_check_enabled(self, enabled: bool) -> None:
         """Set spell check enabled status"""
         self.set('spell_check_enabled', enabled)
+        print(f"Debug: Spell check {'enabled' if enabled else 'disabled'} globally")
 
     def get_spell_check_language(self) -> str:
         """Get current spell check language"""
         return self.get('spell_check_language', 'pt_BR')
 
     def set_spell_check_language(self, language: str) -> None:
-        """Set spell check language"""
-        self.set('spell_check_language', language)
+        """Set spell check language with validation"""
+        if self.is_spell_language_available(language):
+            self.set('spell_check_language', language)
+            print(f"Debug: Spell check language set to {language}")
+        else:
+            print(f"Warning: Language '{language}' is not available. Available languages: {self.get_available_spell_languages()}")
 
-    def get_available_spell_languages(self) -> list:
-        """Get list of available spell check languages"""
-        return self.get('spell_check_available_languages', ['pt_BR', 'en_US'])
+    def get_available_spell_languages(self) -> List[str]:
+        """Get list of available spell check languages - CORRIGIDO"""
+        return self.get('spell_check_available_languages', ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT'])
+
+    def is_spell_language_available(self, language: str) -> bool:
+        """Check if a spell check language is available - NOVO MÉTODO"""
+        return language in self.get_available_spell_languages()
 
     def get_spell_check_show_language_menu(self) -> bool:
         """Get whether to show language menu in spell check context"""
@@ -241,4 +250,20 @@ class Config:
     def get_personal_dictionary_path(self) -> str:
         """Get path to personal dictionary file"""
         return self.get('spell_check_personal_dictionary', str(self.config_dir / 'personal_dict.txt'))
+
+    def set_available_spell_languages(self, languages: List[str]) -> None:
+        """Set list of available spell check languages - NOVO MÉTODO"""
+        self.set('spell_check_available_languages', languages)
+        print(f"Debug: Available spell languages updated to: {languages}")
+
+    # NOVOS MÉTODOS DE DEBUG
+    def debug_spell_config(self) -> None:
+        """Print current spell check configuration for debugging"""
+        print("=== Spell Check Configuration Debug ===")
+        print(f"Enabled: {self.get_spell_check_enabled()}")
+        print(f"Language: {self.get_spell_check_language()}")
+        print(f"Available languages: {self.get_available_spell_languages()}")
+        print(f"Show language menu: {self.get_spell_check_show_language_menu()}")
+        print(f"Personal dictionary: {self.get_personal_dictionary_path()}")
+        print("======================================")
 

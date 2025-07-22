@@ -22,6 +22,367 @@ from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper
 from utils.i18n import _
 
+class PomodoroTimer(GObject.Object):
+    """Timer Pomodoro para ajudar na concentração durante a escrita"""
+    
+    __gtype_name__ = 'TacPomodoroTimer'
+    
+    __gsignals__ = {
+        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)), # Tipo: work/break
+        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)), # Segundos restantes
+        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)), # Sessão, tipo
+    }
+    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        
+        # Estado do timer
+        self.current_session = 1
+        self.is_running = False
+        self.is_work_time = True # True = trabalho, False = descanso
+        self.timer_id = None
+        
+        # Tempos em segundos
+        self.work_duration = 25 * 60 # 25 minutos
+        self.short_break_duration = 5 * 60 # 5 minutos
+        self.long_break_duration = 15 * 60 # 15 minutos
+        self.max_sessions = 4
+        
+        # Tempo restante atual
+        self.time_remaining = self.work_duration
+        
+        print("PomodoroTimer inicializado")
+    
+    def start_timer(self):
+        """Inicia o timer"""
+        if not self.is_running:
+            self.is_running = True
+            self._start_countdown()
+            print(f"Timer iniciado - Sessão {self.current_session}, {'Trabalho' if self.is_work_time else 'Descanso'}, Tempo: {self.time_remaining}")
+    
+    def stop_timer(self):
+        """Para o timer"""
+        if self.is_running:
+            self.is_running = False
+            if self.timer_id:
+                GLib.source_remove(self.timer_id)
+                self.timer_id = None
+            print("Timer parado")
+    
+    def reset_timer(self):
+        """Reseta o timer para o estado inicial"""
+        self.stop_timer()
+        self.current_session = 1
+        self.is_work_time = True
+        self.time_remaining = self.work_duration
+        self.emit('session-changed', self.current_session, 'work')
+        print("Timer resetado")
+    
+    def _start_countdown(self):
+        """Inicia a contagem regressiva"""
+        if self.timer_id:
+            GLib.source_remove(self.timer_id)
+        self.timer_id = GLib.timeout_add(1000, self._countdown_tick)
+    
+    def _countdown_tick(self):
+        """Executa a cada segundo da contagem regressiva"""
+        if not self.is_running:
+            return False
+        
+        self.time_remaining -= 1
+        
+        # Verificar se terminou ANTES de emitir timer-tick
+        if self.time_remaining <= 0:
+            # NÃO emitir timer-tick quando o timer termina
+            # Isso evita a race condition com _update_time_display
+            self._timer_finished()
+            return False
+        
+        # Só emitir timer-tick se o timer continuar rodando
+        self.emit('timer-tick', self.time_remaining)
+        return True
+    
+    def _timer_finished(self):
+        """Chamado quando o timer termina"""
+        # Parar o timer atual
+        self.is_running = False
+        if self.timer_id:
+            GLib.source_remove(self.timer_id)
+            self.timer_id = None
+        
+        if self.is_work_time:
+            # Acabou período de trabalho, configurar descanso
+            print(f"Trabalho da sessão {self.current_session} terminado")
+            self.is_work_time = False
+            
+            # Determinar duração do descanso
+            if self.current_session >= self.max_sessions:
+                # Descanso longo após 4ª sessão
+                self.time_remaining = self.long_break_duration
+                print(f"Configurando descanso longo: {self.long_break_duration} segundos")
+            else:
+                # Descanso curto
+                self.time_remaining = self.short_break_duration
+                print(f"Configurando descanso curto: {self.short_break_duration} segundos")
+            
+            # DEBUG: Imprimir estado após mudanças
+            print(f"Estado após transição: is_work_time={self.is_work_time}, time_remaining={self.time_remaining}")
+            
+            # Emitir sinais na ordem correta
+            self.emit('timer-finished', 'work')
+            self.emit('session-changed', self.current_session, 'break')
+            
+        else:
+            # Acabou período de descanso
+            print(f"Descanso da sessão {self.current_session} terminado")
+            self.emit('timer-finished', 'break')
+            
+            if self.current_session >= self.max_sessions:
+                # Completou todas as sessões - resetar tudo
+                print("Pomodoro completo! Todas as 4 sessões foram finalizadas.")
+                self.current_session = 1
+                self.is_work_time = True
+                self.time_remaining = self.work_duration
+                self.emit('session-changed', self.current_session, 'work')
+            else:
+                # Próxima sessão de trabalho
+                self.current_session += 1
+                self.is_work_time = True
+                self.time_remaining = self.work_duration
+                self.emit('session-changed', self.current_session, 'work')
+                print(f"Próxima sessão: {self.current_session}, tempo: {self.time_remaining}")
+    
+    def get_time_string(self):
+        """Retorna o tempo formatado como string MM:SS"""
+        # Garantir que nunca seja negativo
+        time_to_display = max(0, self.time_remaining)
+        minutes = time_to_display // 60
+        seconds = time_to_display % 60
+        return f"{minutes:02d}:{seconds:02d}"
+    
+    def get_session_info(self):
+        """Retorna informações da sessão atual"""
+        if self.is_work_time:
+            return {
+                'title': _("Session {}").format(self.current_session),
+                'type': 'work',
+                'session': self.current_session
+            }
+        else:
+            if self.current_session >= self.max_sessions:
+                return {
+                    'title': _("Long Break"),
+                    'type': 'long_break',
+                    'session': self.current_session
+                }
+            else:
+                return {
+                    'title': _("Rest Time"),
+                    'type': 'short_break',
+                    'session': self.current_session
+                }
+
+
+
+class PomodoroDialog(Adw.Window):
+    """Dialog do timer Pomodoro"""
+    
+    def __init__(self, parent, timer, **kwargs):
+        super().__init__(**kwargs)
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_title(_("Pomodoro Timer"))
+        self.set_default_size(400, 300)
+        self.set_resizable(False)
+        
+        self.timer = timer
+        self.parent_window = parent
+        
+        # Conectar sinais do timer
+        timer_id1 = self.timer.connect('timer-tick', self._on_timer_tick)
+        timer_id2 = self.timer.connect('timer-finished', self._on_timer_finished)
+        timer_id3 = self.timer.connect('session-changed', self._on_session_changed)
+        
+        print(f"DEBUG: Conectado aos sinais - IDs: {timer_id1}, {timer_id2}, {timer_id3}")
+        
+        self._setup_ui()
+        self._update_display()
+        
+        # Conectar sinal de fechamento
+        self.connect('close-request', self._on_close_request)
+    
+    def _setup_ui(self):
+        """Configura a interface do usuário"""
+        # Container principal
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
+        main_box.set_margin_top(20)
+        main_box.set_margin_bottom(20)
+        main_box.set_margin_start(20)
+        main_box.set_margin_end(20)
+        
+        # Header com título da sessão
+        self.session_label = Gtk.Label()
+        self.session_label.add_css_class('title-1')
+        self.session_label.set_halign(Gtk.Align.CENTER)
+        main_box.append(self.session_label)
+        
+        # Display do tempo
+        self.time_label = Gtk.Label()
+        self.time_label.add_css_class('display-1')
+        self.time_label.set_halign(Gtk.Align.CENTER)
+        main_box.append(self.time_label)
+        
+        # Botões de controle
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        button_box.set_halign(Gtk.Align.CENTER)
+        
+        # Botão Start/Stop
+        self.start_stop_button = Gtk.Button()
+        self.start_stop_button.add_css_class('suggested-action')
+        self.start_stop_button.connect('clicked', self._on_start_stop_clicked)
+        button_box.append(self.start_stop_button)
+        
+        # Botão Reset
+        self.reset_button = Gtk.Button(label=_("Reset"))
+        self.reset_button.add_css_class('destructive-action')
+        self.reset_button.connect('clicked', self._on_reset_clicked)
+        button_box.append(self.reset_button)
+        
+        # Botão Close (minimizar)
+        self.close_button = Gtk.Button(label=_("Minimize"))
+        self.close_button.connect('clicked', self._on_minimize_clicked)
+        button_box.append(self.close_button)
+        
+        main_box.append(button_box)
+        
+        # Adicionar ao window
+        self.set_content(main_box)
+        
+        # Atualizar estado inicial dos botões
+        self._update_buttons()
+    
+    def _update_display(self):
+        """Atualiza o display do dialog com informações atuais do timer"""
+        session_info = self.timer.get_session_info()
+        time_str = self.timer.get_time_string()
+        
+        print(f"DEBUG: _update_display chamado")
+        print(f"DEBUG: session_info = {session_info}")
+        print(f"DEBUG: time_str = {time_str}")
+        print(f"DEBUG: timer.is_work_time = {self.timer.is_work_time}")
+        print(f"DEBUG: timer.time_remaining = {self.timer.time_remaining}")
+        
+        self.session_label.set_text(session_info['title'])
+        self.time_label.set_text(time_str)
+    
+    def _force_display_update(self):
+        """Força atualização completa do display"""
+        print("DEBUG: Forçando atualização do display")
+        
+        # Obter informações atuais do timer
+        session_info = self.timer.get_session_info()
+        time_str = self.timer.get_time_string()
+        
+        print(f"DEBUG: session_info obtido: {session_info}")
+        print(f"DEBUG: time_str obtido: {time_str}")
+        
+        # Atualizar labels diretamente
+        self.session_label.set_text(session_info['title'])
+        self.time_label.set_text(time_str)
+        
+        # Forçar redesenho da interface
+        self.session_label.queue_draw()
+        self.time_label.queue_draw()
+        self.queue_draw()
+        
+        print(f"DEBUG: Labels atualizados - session: '{session_info['title']}', time: '{time_str}'")
+        
+        return False  # Remove from idle queue
+    
+    def _update_buttons(self):
+        """Atualiza o estado dos botões"""
+        if self.timer.is_running:
+            self.start_stop_button.set_label(_("Stop"))
+            self.start_stop_button.remove_css_class('suggested-action')
+            self.start_stop_button.add_css_class('destructive-action')
+        else:
+            self.start_stop_button.set_label(_("Start"))
+            self.start_stop_button.remove_css_class('destructive-action')
+            self.start_stop_button.add_css_class('suggested-action')
+    
+    def _on_timer_tick(self, timer, time_remaining):
+        """Atualiza apenas o tempo durante a execução"""
+        if time_remaining > 0:  # Só atualizar se ainda há tempo
+            time_str = self.timer.get_time_string()
+            self.time_label.set_text(time_str)
+    
+    def _on_timer_finished(self, timer, timer_type):
+        """Handle timer finished - mostra a janela novamente"""
+        print(f"DEBUG: Dialog received timer-finished signal: {timer_type}")
+        print(f"DEBUG: Timer state - is_work_time: {timer.is_work_time}, time_remaining: {timer.time_remaining}")
+        
+        # Forçar atualização imediata do display
+        GLib.idle_add(self._force_display_update)
+        GLib.idle_add(self._show_timer_finished, timer_type)
+    
+    def _on_session_changed(self, timer, session, session_type):
+        """Handle session change - ESTE É O MÉTODO CRÍTICO"""
+        print(f"DEBUG: Session changed - session: {session}, type: {session_type}")
+        print(f"DEBUG: Timer state na mudança - is_work_time: {timer.is_work_time}, time_remaining: {timer.time_remaining}")
+        
+        # FORÇAR atualização imediata do display
+        GLib.idle_add(self._force_display_update)
+        GLib.idle_add(self._update_buttons)
+    
+    def _show_timer_finished(self, timer_type):
+        """Mostra a janela quando o timer termina"""
+        print(f"DEBUG: Mostrando janela para timer tipo: {timer_type}")
+        
+        # Forçar atualização do display antes de mostrar
+        self._force_display_update()
+        self._update_buttons()
+        
+        # Mostrar a janela
+        self.present()
+        
+        # Opcional: Reproduzir som de notificação
+        # self._play_notification_sound()
+        
+        return False  # Remove from idle queue
+    
+    def _on_start_stop_clicked(self, button):
+        """Handle do botão Start/Stop"""
+        if self.timer.is_running:
+            self.timer.stop_timer()
+        else:
+            self.timer.start_timer()
+        
+        self._update_buttons()
+    
+    def _on_reset_clicked(self, button):
+        """Handle do botão Reset"""
+        self.timer.reset_timer()
+        self._force_display_update()
+        self._update_buttons()
+    
+    def _on_minimize_clicked(self, button):
+        """Handle do botão Minimize"""
+        self.set_visible(False)
+    
+    def _on_close_request(self, window):
+        """Handle do fechamento da janela"""
+        # Não destruir a janela, apenas esconder
+        self.set_visible(False)
+        return True  # Previne destruição da janela
+    
+    def show_dialog(self):
+        """Mostra o dialog"""
+        self._force_display_update()
+        self._update_buttons()
+        self.present()
+
+
+
 class SpellCheckHelper:
     """Helper class for spell checking functionality using PyGTKSpellcheck"""
 
@@ -217,6 +578,11 @@ class ProjectListWidget(Gtk.Box):
         # Search entry
         self.search_entry = Gtk.SearchEntry()
         self.search_entry.set_placeholder_text(_("Search projects..."))
+        self.search_entry.set_hexpand(False)  # NOVO: Evita expansão horizontal
+        self.search_entry.set_margin_top(10)     # Superior
+        self.search_entry.set_margin_bottom(5)   # Inferior
+        self.search_entry.set_margin_start(25)   # Esquerda
+        self.search_entry.set_margin_end(25)     # Direita
         self.search_entry.connect('search-changed', self._on_search_changed)
         self.append(self.search_entry)
 
@@ -478,8 +844,25 @@ class ParagraphEditor(Gtk.Box):
         # Apply initial formatting
         self._apply_formatting()
         
-        # ADD SPELL CHECK SETUP
-        GLib.idle_add(self._setup_spell_check_delayed)
+        # Aplicar tanto formatação quanto spell check com delay
+        GLib.idle_add(self._setup_delayed_initialization)
+
+    def _setup_delayed_initialization(self):
+        """Setup both formatting and spell check after widget is realized"""
+        # Aplicar formatação primeiro
+        self._apply_formatting()
+    
+        # Depois configurar spell check
+        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Spell check enabled for paragraph: {self.paragraph.type.value}")
+            except Exception as e:
+                print(f"✗ Error setting up spell check: {e}")
+    
+        return False
+
 
     def _setup_spell_check_delayed(self):
         """Setup spell checking after widget is realized"""
@@ -726,6 +1109,11 @@ class ParagraphEditor(Gtk.Box):
         if not self.text_buffer or not self.text_view:
             return
 
+        # NOVO: Se widget não está realizado, aplicar com delay
+        if not self.text_view.get_realized():
+            GLib.idle_add(self._apply_formatting)
+            return        
+        
         formatting = self.paragraph.formatting
 
         # Create or get text tags
@@ -740,7 +1128,7 @@ class ParagraphEditor(Gtk.Box):
         format_tag = self.text_buffer.create_tag("format")
 
         # Apply font family and size
-        font_family = formatting.get('font_family', 'Liberation Sans')
+        font_family = formatting.get('font_family', 'Liberation Serif')
         font_size = formatting.get('font_size', 12)
         format_tag.set_property("family", font_family)
         format_tag.set_property("size-points", float(font_size))
@@ -902,7 +1290,7 @@ class FormatToolbar(Gtk.Box):
 
         # Font family
         self.font_combo = Gtk.ComboBoxText()
-        fonts = ["Liberation Sans", "Liberation Serif", "Times New Roman", "Arial", "Calibri"]
+        fonts = ["Liberation Serif"] #"Times New Roman", "Arial", "Calibri"]
         for font in fonts:
             self.font_combo.append_text(font)
         self.font_combo.set_active(0)
@@ -944,7 +1332,7 @@ class FormatToolbar(Gtk.Box):
     def update_from_formatting(self, formatting: dict):
         """Update toolbar state from formatting dictionary"""
         # Update font family
-        font_family = formatting.get('font_family', 'Liberation Sans')
+        font_family = formatting.get('font_family', 'Liberation Serif')
         for i in range(self.font_combo.get_model().iter_n_children(None)):
             model = self.font_combo.get_model()
             iter_val = model.iter_nth_child(None, i)

@@ -1,607 +1,446 @@
 """
-
-TAC Services
-
-Business logic and service classes for project management and export
-
+TAC Core Services
+Business logic and data services for the TAC application
 """
 
 import json
+import shutil
 import zipfile
-import tempfile
 from pathlib import Path
-from typing import List, Dict, Optional, Any
+from typing import Dict, List, Optional, Any
 from datetime import datetime
 
-# Conditional imports for PDF
+# ODT export dependencies
+try:
+    from xml.etree import ElementTree as ET
+    ODT_AVAILABLE = True
+except ImportError:
+    ODT_AVAILABLE = False
+
+# PDF export dependencies
 try:
     from reportlab.lib.pagesizes import A4
-    from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.units import cm
-    REPORTLAB_AVAILABLE = True
+    from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
+    from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT, TA_JUSTIFY
+    PDF_AVAILABLE = True
 except ImportError:
-    REPORTLAB_AVAILABLE = False
+    PDF_AVAILABLE = False
 
-from .models import Project, Paragraph, ParagraphType, DEFAULT_TEMPLATES
+from .models import Project, Paragraph, ParagraphType
+from .config import Config
 
 class ProjectManager:
-    """Manages project creation, loading, saving and organization"""
-
-    def __init__(self, projects_directory: Optional[Path] = None):
-        if projects_directory:
-            self.projects_dir = Path(projects_directory)
-        else:
-            # Default to user's documents folder
-            self.projects_dir = Path.home() / 'Documents' / 'TAC Projects'
-
+    """Manages project operations"""
+    
+    def __init__(self):
+        self.config = Config()
+        self.projects_dir = self.config.projects_dir
+        
         # Ensure projects directory exists
         self.projects_dir.mkdir(parents=True, exist_ok=True)
+        
+        print(f"ProjectManager initialized with projects dir: {self.projects_dir}")
 
-        # Cache for loaded projects
-        self._project_cache: Dict[str, Project] = {}
-
-        print(f"ProjectManager initialized with directory: {self.projects_dir}")
-
-    def create_project(self, name: str, template_name: str = "Academic Essay") -> Project:
-        """Create a new project from template"""
-        if not name.strip():
-            raise ValueError("Project name cannot be empty")
-
-        # Find template
-        template = None
-        for tmpl in DEFAULT_TEMPLATES:
-            if tmpl.name == template_name:
-                template = tmpl
-                break
-
-        if template:
-            project = template.create_project(name.strip())
-        else:
-            # Create basic project if template not found
-            project = Project(name.strip())
-            project.add_paragraph(ParagraphType.INTRODUCTION)
-
-        # Save immediately
-        self.save_project(project)
-
-        # Add to cache
-        self._project_cache[project.id] = project
-
-        print(f"Created new project: {project.name}")
-        return project
-
-    def list_projects(self) -> List[Dict[str, Any]]:
-        """List all available projects with basic info"""
-        projects = []
-        try:
-            for file_path in self.projects_dir.glob("*.json"):
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-
-                    # Extract basic project info
-                    project_info = {
-                        'id': data.get('id', file_path.stem),
-                        'name': data.get('name', file_path.stem),
-                        'created_at': data.get('created_at', ''),
-                        'modified_at': data.get('modified_at', ''),
-                        'file_path': str(file_path),
-                        'author': data.get('metadata', {}).get('author', ''),
-                        'description': data.get('metadata', {}).get('description', ''),
-                        'statistics': data.get('statistics', {})
-                    }
-
-                    projects.append(project_info)
-
-                except (json.JSONDecodeError, KeyError) as e:
-                    print(f"Error reading project file {file_path.name}: {e}")
-                except Exception as e:
-                    print(f"Unexpected error reading {file_path.name}: {e}")
-
-        except Exception as e:
-            print(f"Error listing projects: {e}")
-
-        # Sort by modification date (newest first)
-        projects.sort(key=lambda x: x.get('modified_at', ''), reverse=True)
-
-        return projects
-
-    def load_project(self, project_identifier: str) -> Optional[Project]:
-        """Load a project by ID or file path"""
-        # Check cache first
-        if project_identifier in self._project_cache:
-            return self._project_cache[project_identifier]
-
-        try:
-            # Try to load by ID
-            file_path = self.projects_dir / f"{project_identifier}.json"
-
-            # If not found by ID, try as direct file path
-            if not file_path.exists():
-                file_path = Path(project_identifier)
-
-                if not file_path.exists():
-                    # Search by name
-                    for candidate in self.projects_dir.glob("*.json"):
-                        try:
-                            with open(candidate, 'r', encoding='utf-8') as f:
-                                data = json.load(f)
-                            if data.get('name') == project_identifier:
-                                file_path = candidate
-                                break
-                        except:
-                            continue
-                    else:
-                        print(f"Project not found: {project_identifier}")
-                        return None
-
-            # Load project data
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-
-            # Create project from data
-            project = Project.from_dict(data)
-
-            # Add to cache
-            self._project_cache[project.id] = project
-
-            print(f"Loaded project: {project.name}")
+    def create_project(self, name: str, template: str = "academic_essay") -> Project:
+        """Create a new project"""
+        project = Project(name)
+        
+        # Apply template if specified
+        if template == "academic_essay":
+            # Start with empty project - user will add paragraphs manually
+            pass
+        
+        # Save project
+        success = self.save_project(project)
+        if success:
+            print(f"Created project: {project.name} ({project.id})")
             return project
-
-        except Exception as e:
-            print(f"Error loading project '{project_identifier}': {e}")
-            return None
+        else:
+            raise Exception("Failed to save new project")
 
     def save_project(self, project: Project) -> bool:
-        """Save a project to disk"""
+        """Save project to file"""
         try:
-            file_path = self.projects_dir / f"{project.id}.json"
-
-            # Create backup if file exists
-            if file_path.exists():
-                backup_path = file_path.with_suffix('.json.bak')
-                file_path.replace(backup_path)
-
-            # Save project data
-            data = project.to_dict()
-            with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-
-            # Update cache
-            self._project_cache[project.id] = project
-
+            project_file = self.get_project_path(project)
+            
+            # Ensure project directory exists
+            project_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Convert to dict and save
+            project_data = project.to_dict()
+            with open(project_file, 'w', encoding='utf-8') as f:
+                json.dump(project_data, f, indent=2, ensure_ascii=False)
+            
             print(f"Saved project: {project.name}")
             return True
-
+            
         except Exception as e:
-            print(f"Error saving project '{project.name}': {e}")
+            print(f"Error saving project: {e}")
             return False
 
-    def delete_project(self, project_identifier: str) -> bool:
-        """Delete a project (moves to trash folder)"""
+    def load_project(self, project_id: str) -> Optional[Project]:
+        """Load project by ID or file path"""
         try:
-            # Load project to get correct ID
-            project = self.load_project(project_identifier)
-            if not project:
+            # Check if project_id is actually a file path
+            if project_id.endswith('.json'):
+                project_file = Path(project_id)
+            else:
+                project_file = self.projects_dir / f"{project_id}.json"
+            
+            if not project_file.exists():
+                print(f"Project file not found: {project_file}")
+                return None
+            
+            # Load project data
+            with open(project_file, 'r', encoding='utf-8') as f:
+                project_data = json.load(f)
+            
+            project = Project.from_dict(project_data)
+            print(f"Loaded project: {project.name}")
+            return project
+            
+        except Exception as e:
+            print(f"Error loading project: {e}")
+            return None
+
+    def delete_project(self, project_id: str) -> bool:
+        """Delete project (move to trash)"""
+        try:
+            project_file = self.projects_dir / f"{project_id}.json"
+            
+            if not project_file.exists():
                 return False
-
-            file_path = self.projects_dir / f"{project.id}.json"
-
-            if file_path.exists():
-                # Create trash directory
-                trash_dir = self.projects_dir / '.trash'
-                trash_dir.mkdir(exist_ok=True)
-
-                # Move to trash with timestamp
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                trash_path = trash_dir / f"{project.id}_{timestamp}.json"
-                file_path.replace(trash_path)
-
-                # Remove from cache
-                if project.id in self._project_cache:
-                    del self._project_cache[project.id]
-
-                print(f"Deleted project: {project.name}")
-                return True
-
-            return False
-
+            
+            # Move to trash folder (create if doesn't exist)
+            trash_dir = self.projects_dir / ".trash"
+            trash_dir.mkdir(exist_ok=True)
+            
+            trash_file = trash_dir / f"{project_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            shutil.move(str(project_file), str(trash_file))
+            
+            print(f"Moved project to trash: {project_id}")
+            return True
+            
         except Exception as e:
             print(f"Error deleting project: {e}")
             return False
 
-    def duplicate_project(self, project_identifier: str, new_name: str) -> Optional[Project]:
-        """Create a copy of an existing project"""
+    def list_projects(self) -> List[Dict[str, Any]]:
+        """List all projects"""
+        projects = []
+        
         try:
-            original = self.load_project(project_identifier)
-            if not original:
-                return None
-
-            # Create new project
-            duplicate = Project(new_name)
-
-            # Copy data (excluding ID and timestamps)
-            duplicate.metadata = original.metadata.copy()
-            duplicate.metadata['description'] = f"Copy of: {original.name}"
-            duplicate.document_formatting = original.document_formatting.copy()
-
-            # Copy paragraphs
-            for orig_paragraph in original.paragraphs:
-                new_paragraph = Paragraph(
-                    paragraph_type=orig_paragraph.type,
-                    content=orig_paragraph.content
-                )
-                new_paragraph.formatting = orig_paragraph.formatting.copy()
-                duplicate.paragraphs.append(new_paragraph)
-
-            duplicate._reorder_paragraphs()
-
-            # Save duplicate
-            if self.save_project(duplicate):
-                print(f"Duplicated project: {original.name} -> {new_name}")
-                return duplicate
-
-            return None
-
+            for project_file in self.projects_dir.glob("*.json"):
+                try:
+                    # Load basic project info
+                    with open(project_file, 'r', encoding='utf-8') as f:
+                        project_data = json.load(f)
+                    
+                    # Extract essential info
+                    project_info = {
+                        'id': project_data.get('id'),
+                        'name': project_data.get('name'),
+                        'created_at': project_data.get('created_at'),
+                        'modified_at': project_data.get('modified_at'),
+                        'statistics': project_data.get('statistics', {}),
+                        'file_path': str(project_file)
+                    }
+                    
+                    projects.append(project_info)
+                    
+                except Exception as e:
+                    print(f"Error reading project file {project_file}: {e}")
+                    continue
+            
+            # Sort by modification date (newest first)
+            projects.sort(key=lambda p: p.get('modified_at', ''), reverse=True)
+            
         except Exception as e:
-            print(f"Error duplicating project: {e}")
-            return None
+            print(f"Error listing projects: {e}")
+        
+        return projects
 
     def get_project_path(self, project: Project) -> Path:
-        """Get the file path for a project"""
+        """Get file path for a project"""
         return self.projects_dir / f"{project.id}.json"
 
-class ExportService:
-    """Service for exporting projects to various formats"""
-
-    def __init__(self):
-        self.supported_formats = ['odt', 'txt', 'pdf']
-
-    def export_project(self, project: Project, output_path: str, format_type: str = 'txt') -> bool:
-        """Export project to specified format"""
-        format_type = format_type.lower()
-
-        if format_type not in self.supported_formats:
-            print(f"Unsupported format: {format_type}")
-            return False
-
+    def import_project(self, file_path: str) -> Optional[Project]:
+        """Import project from file"""
         try:
-            if format_type == 'txt':
-                return self._export_txt(project, output_path)
-            elif format_type == 'odt':
-                return self._export_odt(project, output_path)
-            elif format_type == 'pdf':
-                return self._export_pdf(project, output_path)
-
-        except Exception as e:
-            print(f"Error exporting project to {format_type}: {e}")
-            return False
-
-        return False
-
-    def _export_txt(self, project: Project, output_path: str) -> bool:
-        """Export to plain text format"""
-        with open(output_path, 'w', encoding='utf-8') as f:
-            # Title
-            f.write(f"{project.name}\n")
-            f.write("=" * len(project.name) + "\n\n")
-
-            # Metadata
-            if project.metadata.get('author'):
-                f.write(f"Author: {project.metadata['author']}\n")
-            if project.metadata.get('date'):
-                f.write(f"Date: {project.metadata['date']}\n")
-            f.write("\n")
-
-            # Group content
-            current_paragraph_content = []
+            source_path = Path(file_path)
+            if not source_path.exists():
+                return None
             
-            for i, paragraph in enumerate(project.paragraphs):
-                if paragraph.type == ParagraphType.TITLE_1:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        f.write(" ".join(current_paragraph_content) + "\n\n")
-                        current_paragraph_content = []
-                    f.write(f"# {paragraph.content}\n\n")
-                    
-                elif paragraph.type == ParagraphType.TITLE_2:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        f.write(" ".join(current_paragraph_content) + "\n\n")
-                        current_paragraph_content = []
-                    f.write(f"## {paragraph.content}\n\n")
-                    
-                elif paragraph.type == ParagraphType.QUOTE:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        f.write(" ".join(current_paragraph_content) + "\n\n")
-                        current_paragraph_content = []
-                        
-                    # Write quote as separate paragraph with indentation
-                    f.write(f"[QUOTE]\n")
-                    lines = paragraph.content.split('\n')
-                    for line in lines:
-                        f.write(f"    {line}\n")
-                    f.write("\n")
-                    
-                elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                    # Accumulate content for same paragraph
-                    current_paragraph_content.append(paragraph.content.strip())
-                    
-                    # Check if next paragraph starts a new logical paragraph (next INTRODUCTION)
-                    next_is_new_paragraph = False
-                    if i + 1 < len(project.paragraphs):
-                        next_paragraph = project.paragraphs[i + 1]
-                        if (paragraph.type == ParagraphType.CONCLUSION and 
-                            next_paragraph.type == ParagraphType.INTRODUCTION):
-                            next_is_new_paragraph = True
-                    else:
-                        # Last paragraph
-                        next_is_new_paragraph = True
-                        
-                    if next_is_new_paragraph:
-                        f.write(" ".join(current_paragraph_content) + "\n\n")
-                        current_paragraph_content = []
-
-            # Write any remaining content
-            if current_paragraph_content:
-                f.write(" ".join(current_paragraph_content) + "\n\n")
-
-        return True
-
-    def _export_odt(self, project: Project, output_path: str) -> bool:
-        """Export to LibreOffice ODT format with preserved formatting"""
-        # Generate content XML with formatting
-        content_xml = self._generate_odt_content(project)
-
-        try:
-            with tempfile.TemporaryDirectory() as temp_dir:
-                temp_path = Path(temp_dir)
-
-                # Create ODT structure
-                (temp_path / 'META-INF').mkdir()
-
-                # Manifest file
-                with open(temp_path / 'META-INF' / 'manifest.xml', 'w', encoding='utf-8') as f:
-                    f.write('''<?xml version="1.0" encoding="UTF-8"?>
-<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2">
-  <manifest:file-entry manifest:full-path="/" manifest:version="1.2" manifest:media-type="application/vnd.oasis.opendocument.text"/>
-  <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
-  <manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
-  <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
-</manifest:manifest>
-''')
-
-                # Content file
-                with open(temp_path / 'content.xml', 'w', encoding='utf-8') as f:
-                    f.write(content_xml)
-
-                # Styles file
-                with open(temp_path / 'styles.xml', 'w', encoding='utf-8') as f:
-                    f.write(self._generate_odt_styles())
-
-                # Meta file
-                with open(temp_path / 'meta.xml', 'w', encoding='utf-8') as f:
-                    f.write(self._generate_odt_meta(project))
-
-                # Create ZIP file
-                with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zf:
-                    for file_path in temp_path.rglob('*'):
-                        if file_path.is_file():
-                            arcname = file_path.relative_to(temp_path)
-                            zf.write(file_path, arcname)
-
-            return True
-
+            # Load project
+            project = self.load_project(file_path)
+            if not project:
+                return None
+            
+            # Copy to projects directory if not already there
+            target_path = self.get_project_path(project)
+            if source_path != target_path:
+                shutil.copy2(source_path, target_path)
+            
+            return project
+            
         except Exception as e:
-            print(f"Error creating ODT: {e}")
-            return False
+            print(f"Error importing project: {e}")
+            return None
 
-    def _export_pdf(self, project: Project, output_path: str) -> bool:
-        """Export to PDF format"""
-        if not REPORTLAB_AVAILABLE:
-            print("ReportLab not installed. Install with: pip install reportlab")
-            return False
-
+    def export_project(self, project: Project, target_path: str) -> bool:
+        """Export project to file"""
         try:
-            # Create PDF document
-            doc = SimpleDocTemplate(output_path, pagesize=A4,
-                                    rightMargin=3*cm, leftMargin=3*cm,
-                                    topMargin=2.5*cm, bottomMargin=2.5*cm)
-            story = []
-            styles = getSampleStyleSheet()
+            source_path = self.get_project_path(project)
+            shutil.copy2(source_path, target_path)
+            return True
+        except Exception as e:
+            print(f"Error exporting project: {e}")
+            return False
 
-            # Title
-            title_style = ParagraphStyle(
-                'CustomTitle',
-                parent=styles['Heading1'],
-                fontSize=16,
-                spaceAfter=30,
-                alignment=1  # Center
-            )
-            story.append(RLParagraph(project.name, title_style))
+class ExportService:
+    """Handles document export operations"""
+    
+    def __init__(self):
+        self.odt_available = ODT_AVAILABLE
+        self.pdf_available = PDF_AVAILABLE
+        
+        if not self.odt_available:
+            print("Warning: ODT export not available (missing xml dependencies)")
+        if not self.pdf_available:
+            print("Warning: PDF export not available (missing reportlab)")
 
-            # Content - GROUP paragraphs except quotes
-            current_paragraph_content = []
-            current_paragraph_style = None
-            paragraph_starts_with_introduction = False
+    def get_available_formats(self) -> List[str]:
+        """Get list of available export formats"""
+        formats = ['txt']  # Text always available
+        
+        if self.odt_available:
+            formats.append('odt')
+        if self.pdf_available:
+            formats.append('pdf')
+            
+        return formats
 
-            for i, paragraph in enumerate(project.paragraphs):
-                if paragraph.type == ParagraphType.TITLE_1:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
-                        current_paragraph_content = []
+    def export_project(self, project: Project, file_path: str, format_type: str) -> bool:
+        """Export project to specified format"""
+        try:
+            if format_type.lower() == 'txt':
+                return self._export_txt(project, file_path)
+            elif format_type.lower() == 'odt' and self.odt_available:
+                return self._export_odt(project, file_path)
+            elif format_type.lower() == 'pdf' and self.pdf_available:
+                return self._export_pdf(project, file_path)
+            else:
+                print(f"Export format '{format_type}' not available")
+                return False
+                
+        except Exception as e:
+            print(f"Error exporting project: {e}")
+            return False
+
+    def _export_txt(self, project: Project, file_path: str) -> bool:
+        """Export to plain text format"""
+        try:
+            with open(file_path, 'w', encoding='utf-8') as f:
+                # Project title
+                f.write(f"{project.name}\n")
+                f.write("=" * len(project.name) + "\n\n")
+                
+                # Group and write content
+                current_paragraph_content = []
+                paragraph_starts_with_introduction = False
+                last_was_quote = False
+                
+                for i, paragraph in enumerate(project.paragraphs):
+                    content = paragraph.content.strip()
+                    
+                    if paragraph.type == ParagraphType.TITLE_1:
+                        # Write any accumulated content first
+                        if current_paragraph_content:
+                            combined_content = " ".join(current_paragraph_content)
+                            if paragraph_starts_with_introduction:
+                                f.write(f"    {combined_content}\n\n")  # Indented
+                            else:
+                                f.write(f"{combined_content}\n\n")  # Not indented
+                            current_paragraph_content = []
+                            paragraph_starts_with_introduction = False
                         
-                    # Title 1 style
-                    para_style = ParagraphStyle(
-                        'Title1',
-                        parent=styles['Normal'],
-                        fontSize=18,
-                        leading=27,  # 1.5 line spacing (18 * 1.5)
-                        fontName='Helvetica-Bold',
-                        spaceBefore=12,
-                        spaceAfter=12,
-                        alignment=0
-                    )
-                    story.append(RLParagraph(paragraph.content, para_style))
-                    
-                elif paragraph.type == ParagraphType.TITLE_2:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
-                        current_paragraph_content = []
+                        f.write(f"\n{content}\n")
+                        f.write("-" * len(content) + "\n\n")
+                        last_was_quote = False
                         
-                    # Title 2 style
-                    para_style = ParagraphStyle(
-                        'Title2',
-                        parent=styles['Normal'],
-                        fontSize=16,
-                        leading=24,  # 1.5 line spacing (16 * 1.5)
-                        fontName='Helvetica-Bold',
-                        spaceBefore=12,
-                        spaceAfter=12,
-                        alignment=0
-                    )
-                    story.append(RLParagraph(paragraph.content, para_style))
-                    
-                elif paragraph.type == ParagraphType.QUOTE:
-                    # Write any accumulated content first
-                    if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
-                        current_paragraph_content = []
+                    elif paragraph.type == ParagraphType.TITLE_2:
+                        # Write any accumulated content first
+                        if current_paragraph_content:
+                            combined_content = " ".join(current_paragraph_content)
+                            if paragraph_starts_with_introduction:
+                                f.write(f"    {combined_content}\n\n")  # Indented
+                            else:
+                                f.write(f"{combined_content}\n\n")  # Not indented
+                            current_paragraph_content = []
+                            paragraph_starts_with_introduction = False
                         
-                    # Quote style (separate paragraph with indentation)
-                    para_style = ParagraphStyle(
-                        'Quote',
-                        parent=styles['Normal'],
-                        fontSize=10,
-                        leading=15,  # 1.5 line spacing (10 * 1.5)
-                        leftIndent=4*cm,
-                        fontName='Helvetica-Oblique',
-                        spaceBefore=12,
-                        spaceAfter=12,
-                        alignment=4  # Justify
-                    )
-                    story.append(RLParagraph(paragraph.content, para_style))
-                    
-                elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                    # Check if this is the start of a new grouped paragraph
-                    if not current_paragraph_content:
-                        paragraph_starts_with_introduction = (paragraph.type == ParagraphType.INTRODUCTION)
-                    
-                    # Set style if not set (use Introduction style for the combined paragraph)
-                    if current_paragraph_style is None:
-                        if paragraph_starts_with_introduction:
-                            current_paragraph_style = ParagraphStyle(
-                                'Introduction',
-                                parent=styles['Normal'],
-                                fontSize=12,
-                                leading=18,  # 1.5 line spacing (12 * 1.5)
-                                firstLineIndent=1.5*cm,
-                                spaceBefore=12,
-                                spaceAfter=12,
-                                alignment=4  # Justify
-                            )
+                        f.write(f"\n{content}\n\n")
+                        last_was_quote = False
+                        
+                    elif paragraph.type == ParagraphType.QUOTE:
+                        # Write any accumulated content first
+                        if current_paragraph_content:
+                            combined_content = " ".join(current_paragraph_content)
+                            if paragraph_starts_with_introduction:
+                                f.write(f"    {combined_content}\n\n")  # Indented
+                            else:
+                                f.write(f"{combined_content}\n\n")  # Not indented
+                            current_paragraph_content = []
+                            paragraph_starts_with_introduction = False
+                        
+                        # Write quote indented
+                        f.write(f"        {content}\n\n")
+                        last_was_quote = True
+                        
+                    elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                        # Determine if should start new paragraph
+                        should_start_new_paragraph = False
+                        
+                        if paragraph.type == ParagraphType.INTRODUCTION:
+                            should_start_new_paragraph = True
+                        elif last_was_quote:
+                            should_start_new_paragraph = True
+                        elif not current_paragraph_content:
+                            should_start_new_paragraph = True
+                        
+                        # Write accumulated content if starting new paragraph
+                        if should_start_new_paragraph and current_paragraph_content:
+                            combined_content = " ".join(current_paragraph_content)
+                            if paragraph_starts_with_introduction:
+                                f.write(f"    {combined_content}\n\n")  # Indented
+                            else:
+                                f.write(f"{combined_content}\n\n")  # Not indented
+                            current_paragraph_content = []
+                            paragraph_starts_with_introduction = False
+                        
+                        # Determine paragraph style
+                        if not current_paragraph_content:
+                            if paragraph.type == ParagraphType.INTRODUCTION:
+                                paragraph_starts_with_introduction = True
+                            elif last_was_quote:
+                                paragraph_starts_with_introduction = False
+                            # If it's not INTRODUCTION and not after quote, keep current state
+                        
+                        # Accumulate content
+                        current_paragraph_content.append(content)
+                        
+                        # Check if should write now
+                        next_is_new_paragraph = False
+                        if i + 1 < len(project.paragraphs):
+                            next_paragraph = project.paragraphs[i + 1]
+                            if (next_paragraph.type == ParagraphType.INTRODUCTION or
+                                next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
+                                next_is_new_paragraph = True
                         else:
-                            current_paragraph_style = ParagraphStyle(
-                                'Normal',
-                                parent=styles['Normal'],
-                                fontSize=12,
-                                leading=18,  # 1.5 line spacing (12 * 1.5)
-                                spaceBefore=12,
-                                spaceAfter=12,
-                                alignment=4  # Justify
-                            )
-                    
-                    # Accumulate content
-                    current_paragraph_content.append(paragraph.content.strip())
-                    
-                    # Check if next paragraph starts a new logical paragraph
-                    next_is_new_paragraph = False
-                    if i + 1 < len(project.paragraphs):
-                        next_paragraph = project.paragraphs[i + 1]
-                        if (paragraph.type == ParagraphType.CONCLUSION and 
-                            next_paragraph.type == ParagraphType.INTRODUCTION):
                             next_is_new_paragraph = True
-                    else:
-                        # Last paragraph
-                        next_is_new_paragraph = True
                         
-                    if next_is_new_paragraph:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
-                        current_paragraph_content = []
-                        current_paragraph_style = None
-                        paragraph_starts_with_introduction = False
-
-            # Write any remaining content
-            if current_paragraph_content:
-                combined_content = " ".join(current_paragraph_content)
-                story.append(RLParagraph(combined_content, current_paragraph_style))
-
-            doc.build(story)
+                        if next_is_new_paragraph:
+                            combined_content = " ".join(current_paragraph_content)
+                            if paragraph_starts_with_introduction:
+                                f.write(f"    {combined_content}\n\n")  # Indented
+                            else:
+                                f.write(f"{combined_content}\n\n")  # Not indented
+                            current_paragraph_content = []
+                            paragraph_starts_with_introduction = False
+                        
+                        last_was_quote = False
+                
+                # Write any remaining content
+                if current_paragraph_content:
+                    combined_content = " ".join(current_paragraph_content)
+                    if paragraph_starts_with_introduction:
+                        f.write(f"    {combined_content}\n\n")  # Indented
+                    else:
+                        f.write(f"{combined_content}\n\n")  # Not indented
+            
             return True
-
-        except ImportError:
-            print("ReportLab not installed. Install with: pip install reportlab")
-            return False
+            
         except Exception as e:
-            print(f"Error creating PDF: {e}")
+            print(f"Error exporting to TXT: {e}")
+            return False
+
+    def _export_odt(self, project: Project, file_path: str) -> bool:
+        """Export to OpenDocument Text format"""
+        try:
+            # Create ODT structure
+            odt_path = Path(file_path)
+            
+            # Create temporary directory
+            temp_dir = odt_path.parent / f"temp_odt_{project.id}"
+            temp_dir.mkdir(exist_ok=True)
+            
+            try:
+                # Create ODT directory structure
+                (temp_dir / "META-INF").mkdir(exist_ok=True)
+                
+                # Create manifest.xml
+                self._create_manifest(temp_dir / "META-INF" / "manifest.xml")
+                
+                # Create styles.xml
+                self._create_styles(temp_dir / "styles.xml")
+                
+                # Create content.xml
+                content_xml = self._generate_odt_content(project)
+                with open(temp_dir / "content.xml", 'w', encoding='utf-8') as f:
+                    f.write(content_xml)
+                
+                # Create meta.xml
+                self._create_meta(temp_dir / "meta.xml", project)
+                
+                # Create ZIP archive
+                with zipfile.ZipFile(file_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+                    # Add mimetype first (uncompressed)
+                    zf.writestr("mimetype", "application/vnd.oasis.opendocument.text", 
+                              compress_type=zipfile.ZIP_STORED)
+                    
+                    # Add other files
+                    for root, dirs, files in temp_dir.walk():
+                        for file in files:
+                            file_path_obj = root / file
+                            arc_name = file_path_obj.relative_to(temp_dir)
+                            zf.write(file_path_obj, arc_name)
+                
+                return True
+                
+            finally:
+                # Clean up temp directory
+                shutil.rmtree(temp_dir, ignore_errors=True)
+                
+        except Exception as e:
+            print(f"Error exporting to ODT: {e}")
             return False
 
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate content.xml for ODT with proper formatting - Grouped paragraphs"""
+        """Generate content.xml for ODT with proper formatting - Fixed paragraph grouping"""
+        
         content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                        xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
-                        xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+                        xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+                        xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
                         xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
-<office:automatic-styles>
-  <style:style style:name="Title" style:family="paragraph">
-    <style:paragraph-properties fo:text-align="center" style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="18pt" fo:font-weight="bold" fo:color="#000000"/>
-  </style:style>
-  <style:style style:name="Title1" style:family="paragraph">
-    <style:paragraph-properties style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="16pt" fo:font-weight="bold" fo:color="#000000"/>
-  </style:style>
-  <style:style style:name="Title2" style:family="paragraph">
-    <style:paragraph-properties style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="14pt" fo:font-weight="bold" fo:color="#000000"/>
-  </style:style>
-  <style:style style:name="Introduction" style:family="paragraph">
-    <style:paragraph-properties fo:text-indent="1.5cm" fo:text-align="justify" fo:line-height="150%" />
-    <style:text-properties fo:font-size="12pt" fo:color="#000000"/>
-  </style:style>
-  <style:style style:name="Quote" style:family="paragraph">
-    <style:paragraph-properties fo:margin-left="4cm" fo:text-align="justify" style:line-spacing="150%" fo:margin-top="0.3cm" fo:margin-bottom="0.3cm"/>
-    <style:text-properties fo:font-size="10pt" fo:font-style="italic" fo:color="#000000"/>
-  </style:style>
-  <style:style style:name="Normal" style:family="paragraph">
-    <style:paragraph-properties fo:text-align="justify" fo:line-height="150%" />
-    <style:text-properties fo:font-size="12pt" fo:color="#000000"/>
-  </style:style>
-</office:automatic-styles>
+<office:automatic-styles/>
 <office:body>
-<office:text>
-'''
+<office:text>'''
 
         # Title
         content_xml += f'<text:p text:style-name="Title">{project.name}</text:p>\n'
 
-        # Group content
+        # Group content - CORRIGIDO
         current_paragraph_content = []
         paragraph_starts_with_introduction = False
-        
+        last_was_quote = False
+
         for i, paragraph in enumerate(project.paragraphs):
             # Escape XML special characters
             content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-            
+
             if paragraph.type == ParagraphType.TITLE_1:
                 # Write any accumulated content first
                 if current_paragraph_content:
@@ -610,8 +449,10 @@ class ExportService:
                     content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
+
                 content_xml += f'<text:p text:style-name="Title1">{content}</text:p>\n'
-                
+                last_was_quote = False
+
             elif paragraph.type == ParagraphType.TITLE_2:
                 # Write any accumulated content first
                 if current_paragraph_content:
@@ -620,8 +461,10 @@ class ExportService:
                     content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
+
                 content_xml += f'<text:p text:style-name="Title2">{content}</text:p>\n'
-                
+                last_was_quote = False
+
             elif paragraph.type == ParagraphType.QUOTE:
                 # Write any accumulated content first
                 if current_paragraph_content:
@@ -630,35 +473,59 @@ class ExportService:
                     content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-                    
+
                 # Write quote as separate paragraph
                 content_xml += f'<text:p text:style-name="Quote">{content}</text:p>\n'
-                
+                last_was_quote = True
+
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                # Check if this is the start of a new grouped paragraph
+                # Determine if should start new paragraph
+                should_start_new_paragraph = False
+                
+                if paragraph.type == ParagraphType.INTRODUCTION:
+                    should_start_new_paragraph = True
+                elif last_was_quote:
+                    should_start_new_paragraph = True
+                elif not current_paragraph_content:
+                    should_start_new_paragraph = True
+
+                # If should start new paragraph, write accumulated content first
+                if should_start_new_paragraph and current_paragraph_content:
+                    combined_content = " ".join(current_paragraph_content)
+                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+
+                # Determine if this paragraph should have indent
                 if not current_paragraph_content:
-                    paragraph_starts_with_introduction = (paragraph.type == ParagraphType.INTRODUCTION)
-                
-                # Accumulate content for same paragraph
+                    if paragraph.type == ParagraphType.INTRODUCTION:
+                        paragraph_starts_with_introduction = True
+                    elif last_was_quote:
+                        paragraph_starts_with_introduction = False
+                    # If it's ARGUMENT or CONCLUSION and not after quote, keep current state
+
+                # Accumulate content
                 current_paragraph_content.append(content.strip())
-                
-                # Check if next paragraph starts a new logical paragraph
+
+                # Determine when to write the grouped paragraph
                 next_is_new_paragraph = False
                 if i + 1 < len(project.paragraphs):
                     next_paragraph = project.paragraphs[i + 1]
-                    if (paragraph.type == ParagraphType.CONCLUSION and 
-                        next_paragraph.type == ParagraphType.INTRODUCTION):
+                    if (next_paragraph.type == ParagraphType.INTRODUCTION or
+                        next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
                         next_is_new_paragraph = True
                 else:
-                    # Last paragraph
                     next_is_new_paragraph = True
-                    
+
                 if next_is_new_paragraph:
                     combined_content = " ".join(current_paragraph_content)
                     style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
                     content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
+
+                last_was_quote = False
 
         # Write any remaining content
         if current_paragraph_content:
@@ -672,64 +539,273 @@ class ExportService:
 
         return content_xml
 
-    def _generate_odt_styles(self) -> str:
-        """Generate styles.xml for ODT"""
-        return '''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                       xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
-                       xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+    def _create_manifest(self, file_path: Path):
+        """Create manifest.xml for ODT"""
+        manifest_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0">
+  <manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.text"/>
+  <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
+  <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
+</manifest:manifest>'''
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(manifest_xml)
+
+    def _create_styles(self, file_path: Path):
+        """Create styles.xml for ODT"""
+        styles_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+                       xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
                        xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
 <office:styles>
   <style:style style:name="Title" style:family="paragraph">
-    <style:paragraph-properties fo:text-align="center" style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="18pt" fo:font-weight="bold" fo:color="#000000"/>
+    <style:text-properties fo:font-size="18pt" fo:font-weight="bold"/>
+    <style:paragraph-properties fo:text-align="center" fo:margin-bottom="0.5cm"/>
   </style:style>
+  
   <style:style style:name="Title1" style:family="paragraph">
-    <style:paragraph-properties style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="16pt" fo:font-weight="bold" fo:color="#000000"/>
+    <style:text-properties fo:font-size="16pt" fo:font-weight="bold"/>
+    <style:paragraph-properties fo:margin-top="0.5cm" fo:margin-bottom="0.3cm"/>
   </style:style>
+  
   <style:style style:name="Title2" style:family="paragraph">
-    <style:paragraph-properties style:line-height-at-least="0.5cm" fo:margin-top="0.5cm" fo:margin-bottom="0.5cm"/>
-    <style:text-properties fo:font-size="14pt" fo:font-weight="bold" fo:color="#000000"/>
+    <style:text-properties fo:font-size="14pt" fo:font-weight="bold"/>
+    <style:paragraph-properties fo:margin-top="0.4cm" fo:margin-bottom="0.2cm"/>
   </style:style>
+  
   <style:style style:name="Introduction" style:family="paragraph">
-    <style:paragraph-properties fo:text-indent="1.5cm" fo:text-align="justify" fo:line-height="150%" fo:margin-top="0.3cm" fo:margin-bottom="0.3cm"/>
-    <style:text-properties fo:font-size="12pt" fo:color="#000000"/>
+    <style:text-properties fo:font-size="12pt"/>
+    <style:paragraph-properties fo:text-align="justify" fo:text-indent="1.5cm" fo:margin-bottom="0.0cm" fo:line-height="150%"/>
   </style:style>
-  <style:style style:name="Quote" style:family="paragraph">
-    <style:paragraph-properties fo:margin-left="4cm" fo:text-align="justify" style:line-spacing="150%" fo:margin-top="0.3cm" fo:margin-bottom="0.3cm"/>
-    <style:text-properties fo:font-size="10pt" fo:font-style="italic" fo:color="#000000"/>
-  </style:style>
+  
   <style:style style:name="Normal" style:family="paragraph">
-    <style:paragraph-properties fo:text-align="justify" fo:margin-top="0.3cm" fo:line-height="150%" fo:margin-bottom="0.3cm"/>
-    <style:text-properties fo:font-size="12pt" fo:color="#000000"/>
+    <style:text-properties fo:font-size="12pt"/>
+    <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.0cm" fo:line-height="150%"/>
+  </style:style>
+  
+  <style:style style:name="Quote" style:family="paragraph">
+    <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
+    <style:paragraph-properties fo:text-align="justify" fo:margin-left="4cm" fo:margin-bottom="0.3cm" fo:line-height="100%"/>
   </style:style>
 </office:styles>
-<office:automatic-styles>
-  <style:page-layout style:name="pm1">
-    <style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" 
-                                 fo:margin-top="2.5cm" fo:margin-bottom="2.5cm" 
-                                 fo:margin-left="3cm" fo:margin-right="3cm"/>
-  </style:page-layout>
-</office:automatic-styles>
-<office:master-styles>
-  <style:master-page style:name="Standard" style:page-layout-name="pm1"/>
-</office:master-styles>
 </office:document-styles>'''
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(styles_xml)
 
-    def _generate_odt_meta(self, project: Project) -> str:
-        """Generate meta.xml for ODT"""
-        author = project.metadata.get('author', '')
-        creation_date = datetime.now().isoformat()
-
-        return f'''<?xml version="1.0" encoding="UTF-8"?>
+    def _create_meta(self, file_path: Path, project: Project):
+        """Create meta.xml for ODT"""
+        meta_xml = f'''<?xml version="1.0" encoding="UTF-8"?>
 <office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
-                     xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0">
+                     xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
+                     xmlns:dc="http://purl.org/dc/elements/1.1/">
 <office:meta>
   <meta:generator>TAC - Continuous Argumentation Technique</meta:generator>
-  <meta:title>{project.name}</meta:title>
-  <meta:initial-creator>{author}</meta:initial-creator>
-  <meta:creation-date>{creation_date}</meta:creation-date>
+  <dc:title>{project.name}</dc:title>
+  <dc:creator>{project.metadata.get('author', '')}</dc:creator>
+  <dc:description>{project.metadata.get('description', '')}</dc:description>
+  <meta:creation-date>{project.created_at.isoformat()}</meta:creation-date>
+  <dc:date>{project.modified_at.isoformat()}</dc:date>
 </office:meta>
 </office:document-meta>'''
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(meta_xml)
+
+    def _export_pdf(self, project: Project, file_path: str) -> bool:
+        """Export to PDF format"""
+        try:
+            # Create document
+            doc = SimpleDocTemplate(
+                file_path,
+                pagesize=A4,
+                rightMargin=3*cm,
+                leftMargin=3*cm,
+                topMargin=2.5*cm,
+                bottomMargin=2.5*cm
+            )
+            
+            # Get styles
+            styles = getSampleStyleSheet()
+            
+            # Create custom styles
+            title_style = ParagraphStyle(
+                'CustomTitle',
+                parent=styles['Title'],
+                fontSize=18,
+                spaceAfter=30,
+                alignment=TA_CENTER
+            )
+            
+            title1_style = ParagraphStyle(
+                'CustomTitle1',
+                parent=styles['Heading1'],
+                fontSize=16,
+                spaceBefore=24,
+                spaceAfter=12,
+                leftIndent=0
+            )
+            
+            title2_style = ParagraphStyle(
+                'CustomTitle2',
+                parent=styles['Heading2'],
+                fontSize=14,
+                spaceBefore=18,
+                spaceAfter=9,
+                leftIndent=0
+            )
+            
+            introduction_style = ParagraphStyle(
+                'Introduction',
+                parent=styles['Normal'],
+                fontSize=12,
+                leading=18,
+                firstLineIndent=1.5*cm,
+                spaceBefore=12,
+                spaceAfter=12,
+                alignment=TA_JUSTIFY
+            )
+            
+            normal_style = ParagraphStyle(
+                'Normal',
+                parent=styles['Normal'],
+                fontSize=12,
+                leading=18,
+                spaceBefore=12,
+                spaceAfter=12,
+                alignment=TA_JUSTIFY
+            )
+            
+            quote_style = ParagraphStyle(
+                'Quote',
+                parent=styles['Normal'],
+                fontSize=10,
+                leading=12,
+                leftIndent=4*cm,
+                spaceBefore=12,
+                spaceAfter=12,
+                fontName='Times-Italic',
+                alignment=TA_JUSTIFY
+            )
+            
+            # Build content
+            story = []
+            
+            # Add title
+            story.append(RLParagraph(project.name, title_style))
+            story.append(Spacer(1, 20))
+            
+            # Group content - CORRIGIDO
+            current_paragraph_content = []
+            current_paragraph_style = None
+            paragraph_starts_with_introduction = False
+            last_was_quote = False
+            
+            for i, paragraph in enumerate(project.paragraphs):
+                content = paragraph.content.strip()
+                
+                if paragraph.type == ParagraphType.TITLE_1:
+                    # Write any accumulated content first
+                    if current_paragraph_content:
+                        combined_content = " ".join(current_paragraph_content)
+                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        current_paragraph_content = []
+                        current_paragraph_style = None
+                        paragraph_starts_with_introduction = False
+                    
+                    story.append(RLParagraph(content, title1_style))
+                    last_was_quote = False
+                    
+                elif paragraph.type == ParagraphType.TITLE_2:
+                    # Write any accumulated content first
+                    if current_paragraph_content:
+                        combined_content = " ".join(current_paragraph_content)
+                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        current_paragraph_content = []
+                        current_paragraph_style = None
+                        paragraph_starts_with_introduction = False
+                    
+                    story.append(RLParagraph(content, title2_style))
+                    last_was_quote = False
+                    
+                elif paragraph.type == ParagraphType.QUOTE:
+                    # Write any accumulated content first
+                    if current_paragraph_content:
+                        combined_content = " ".join(current_paragraph_content)
+                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        current_paragraph_content = []
+                        current_paragraph_style = None
+                        paragraph_starts_with_introduction = False
+                    
+                    # Add quote
+                    story.append(RLParagraph(content, quote_style))
+                    last_was_quote = True
+                    
+                elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                    # Determine if should start new paragraph
+                    should_start_new_paragraph = False
+                    
+                    if paragraph.type == ParagraphType.INTRODUCTION:
+                        should_start_new_paragraph = True
+                    elif last_was_quote:
+                        should_start_new_paragraph = True
+                    elif not current_paragraph_content:
+                        should_start_new_paragraph = True
+
+                    # If should start new paragraph, write accumulated content first
+                    if should_start_new_paragraph and current_paragraph_content:
+                        combined_content = " ".join(current_paragraph_content)
+                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        current_paragraph_content = []
+                        current_paragraph_style = None
+                        paragraph_starts_with_introduction = False
+
+                    # Check if this is the start of a new grouped paragraph
+                    if not current_paragraph_content:
+                        if paragraph.type == ParagraphType.INTRODUCTION:
+                            paragraph_starts_with_introduction = True
+                            current_paragraph_style = introduction_style
+                        elif last_was_quote:
+                            paragraph_starts_with_introduction = False
+                            current_paragraph_style = normal_style
+                        else:
+                            # If it's ARGUMENT or CONCLUSION and not after quote, keep current state
+                            if current_paragraph_style is None:
+                                current_paragraph_style = normal_style
+
+                    # Accumulate content
+                    current_paragraph_content.append(content)
+
+                    # Check if next paragraph starts a new logical paragraph
+                    next_is_new_paragraph = False
+                    if i + 1 < len(project.paragraphs):
+                        next_paragraph = project.paragraphs[i + 1]
+                        if (next_paragraph.type == ParagraphType.INTRODUCTION or
+                            next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
+                            next_is_new_paragraph = True
+                    else:
+                        next_is_new_paragraph = True
+
+                    if next_is_new_paragraph:
+                        combined_content = " ".join(current_paragraph_content)
+                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        current_paragraph_content = []
+                        current_paragraph_style = None
+                        paragraph_starts_with_introduction = False
+
+                    last_was_quote = False
+            
+            # Write any remaining content
+            if current_paragraph_content:
+                combined_content = " ".join(current_paragraph_content)
+                story.append(RLParagraph(combined_content, current_paragraph_style))
+            
+            # Build PDF
+            doc.build(story)
+            return True
+            
+        except Exception as e:
+            print(f"Error exporting to PDF: {e}")
+            return False
 

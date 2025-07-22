@@ -279,7 +279,7 @@ class FormatDialog(Adw.Window):
             self.formatting = self.paragraphs[0].formatting.copy()
         else:
             self.formatting = {
-                'font_family': 'Liberation Sans',
+                'font_family': 'Liberation Serif',
                 'font_size': 12,
                 'bold': False,
                 'italic': False,
@@ -375,7 +375,7 @@ class FormatDialog(Adw.Window):
         # If still no fonts, use fallback
         if font_model.get_n_items() == 0:
             print("Using fallback fonts in FormatDialog")
-            basic_fonts = ["Liberation Sans", "Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
+            basic_fonts = ["Liberation Serif"]# "DejaVu Sans", "Ubuntu", "Cantarell"]
             for font in basic_fonts:
                 font_model.append(font)
 
@@ -466,7 +466,7 @@ class FormatDialog(Adw.Window):
             return
 
         # Font family
-        font_family = self.formatting.get('font_family', 'Liberation Sans')
+        font_family = self.formatting.get('font_family', 'Liberation Serif')
         model = self.font_row.get_model()
         for i in range(model.get_n_items()):
             if model.get_string(i) == font_family:
@@ -847,7 +847,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         # If still no fonts, use fallback
         if font_model.get_n_items() == 0:
             print("Using fallback fonts")
-            basic_fonts = ["Liberation Sans", "Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
+            basic_fonts = ["Liberation Serif"]#, "DejaVu Sans", "Ubuntu", "Cantarell"]
             for font in basic_fonts:
                 font_model.append(font)
 
@@ -895,7 +895,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.dark_theme_row.set_active(self.config.get('use_dark_theme', False))
 
         # Font
-        font_family = self.config.get('font_family', 'Liberation Sans')
+        font_family = self.config.get('font_family', 'Liberation Serif')
         model = self.font_family_row.get_model()
         for i in range(model.get_n_items()):
             if model.get_string(i) == font_family:
