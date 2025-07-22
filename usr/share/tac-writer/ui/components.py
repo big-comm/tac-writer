@@ -26,40 +26,39 @@ class PomodoroTimer(GObject.Object):
     """Timer Pomodoro para ajudar na concentração durante a escrita"""
     
     __gtype_name__ = 'TacPomodoroTimer'
-    
     __gsignals__ = {
-        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)), # Tipo: work/break
-        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)), # Segundos restantes
-        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)), # Sessão, tipo
+        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)),  # Tipo: work/break
+        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)),      # Segundos restantes
+        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)),  # Sessão, tipo
     }
-    
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
         # Estado do timer
         self.current_session = 1
         self.is_running = False
-        self.is_work_time = True # True = trabalho, False = descanso
+        self.is_work_time = True  # True = trabalho, False = descanso
         self.timer_id = None
         
         # Tempos em segundos
-        self.work_duration = 25 * 60 # 25 minutos
-        self.short_break_duration = 5 * 60 # 5 minutos
-        self.long_break_duration = 15 * 60 # 15 minutos
+        self.work_duration = 25 * 60  # 25 minutos
+        self.short_break_duration = 5 * 60   # 5 minutos
+        self.long_break_duration = 15 * 60   # 15 minutos
         self.max_sessions = 4
         
         # Tempo restante atual
         self.time_remaining = self.work_duration
         
         print("PomodoroTimer inicializado")
-    
+
     def start_timer(self):
         """Inicia o timer"""
         if not self.is_running:
             self.is_running = True
             self._start_countdown()
-            print(f"Timer iniciado - Sessão {self.current_session}, {'Trabalho' if self.is_work_time else 'Descanso'}, Tempo: {self.time_remaining}")
-    
+            print(f"Timer iniciado - Sessão {self.current_session}, {'Trabalho' if self.is_work_time else 'Descanso'}")
+
     def stop_timer(self):
         """Para o timer"""
         if self.is_running:
@@ -68,7 +67,7 @@ class PomodoroTimer(GObject.Object):
                 GLib.source_remove(self.timer_id)
                 self.timer_id = None
             print("Timer parado")
-    
+
     def reset_timer(self):
         """Reseta o timer para o estado inicial"""
         self.stop_timer()
@@ -77,89 +76,68 @@ class PomodoroTimer(GObject.Object):
         self.time_remaining = self.work_duration
         self.emit('session-changed', self.current_session, 'work')
         print("Timer resetado")
-    
+
     def _start_countdown(self):
         """Inicia a contagem regressiva"""
         if self.timer_id:
             GLib.source_remove(self.timer_id)
+        
         self.timer_id = GLib.timeout_add(1000, self._countdown_tick)
-    
+
     def _countdown_tick(self):
         """Executa a cada segundo da contagem regressiva"""
         if not self.is_running:
             return False
-        
+            
         self.time_remaining -= 1
+        self.emit('timer-tick', self.time_remaining)
         
-        # Verificar se terminou ANTES de emitir timer-tick
         if self.time_remaining <= 0:
-            # NÃO emitir timer-tick quando o timer termina
-            # Isso evita a race condition com _update_time_display
             self._timer_finished()
             return False
-        
-        # Só emitir timer-tick se o timer continuar rodando
-        self.emit('timer-tick', self.time_remaining)
+            
         return True
-    
+
     def _timer_finished(self):
         """Chamado quando o timer termina"""
-        # Parar o timer atual
         self.is_running = False
-        if self.timer_id:
-            GLib.source_remove(self.timer_id)
-            self.timer_id = None
         
         if self.is_work_time:
-            # Acabou período de trabalho, configurar descanso
-            print(f"Trabalho da sessão {self.current_session} terminado")
+            # Acabou período de trabalho, iniciar descanso
+            self.emit('timer-finished', 'work')
             self.is_work_time = False
             
             # Determinar duração do descanso
             if self.current_session >= self.max_sessions:
                 # Descanso longo após 4ª sessão
                 self.time_remaining = self.long_break_duration
-                print(f"Configurando descanso longo: {self.long_break_duration} segundos")
             else:
                 # Descanso curto
                 self.time_remaining = self.short_break_duration
-                print(f"Configurando descanso curto: {self.short_break_duration} segundos")
-            
-            # DEBUG: Imprimir estado após mudanças
-            print(f"Estado após transição: is_work_time={self.is_work_time}, time_remaining={self.time_remaining}")
-            
-            # Emitir sinais na ordem correta
-            self.emit('timer-finished', 'work')
+                
             self.emit('session-changed', self.current_session, 'break')
             
         else:
             # Acabou período de descanso
-            print(f"Descanso da sessão {self.current_session} terminado")
             self.emit('timer-finished', 'break')
             
             if self.current_session >= self.max_sessions:
-                # Completou todas as sessões - resetar tudo
+                # Completou todas as sessões
+                self.reset_timer()
                 print("Pomodoro completo! Todas as 4 sessões foram finalizadas.")
-                self.current_session = 1
-                self.is_work_time = True
-                self.time_remaining = self.work_duration
-                self.emit('session-changed', self.current_session, 'work')
             else:
                 # Próxima sessão de trabalho
                 self.current_session += 1
                 self.is_work_time = True
                 self.time_remaining = self.work_duration
                 self.emit('session-changed', self.current_session, 'work')
-                print(f"Próxima sessão: {self.current_session}, tempo: {self.time_remaining}")
-    
+
     def get_time_string(self):
         """Retorna o tempo formatado como string MM:SS"""
-        # Garantir que nunca seja negativo
-        time_to_display = max(0, self.time_remaining)
-        minutes = time_to_display // 60
-        seconds = time_to_display % 60
+        minutes = self.time_remaining // 60
+        seconds = self.time_remaining % 60
         return f"{minutes:02d}:{seconds:02d}"
-    
+
     def get_session_info(self):
         """Retorna informações da sessão atual"""
         if self.is_work_time:
@@ -183,16 +161,15 @@ class PomodoroTimer(GObject.Object):
                 }
 
 
-
 class PomodoroDialog(Adw.Window):
-    """Dialog do timer Pomodoro"""
+    """Dialog do timer Pomodoro com design aprimorado"""
     
     def __init__(self, parent, timer, **kwargs):
         super().__init__(**kwargs)
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_title(_("Pomodoro Timer"))
-        self.set_default_size(400, 300)
+        self.set_default_size(450, 350)
         self.set_resizable(False)
         
         self.timer = timer
@@ -206,60 +183,159 @@ class PomodoroDialog(Adw.Window):
         print(f"DEBUG: Conectado aos sinais - IDs: {timer_id1}, {timer_id2}, {timer_id3}")
         
         self._setup_ui()
+        self._setup_styles()
         self._update_display()
         
         # Conectar sinal de fechamento
         self.connect('close-request', self._on_close_request)
     
     def _setup_ui(self):
-        """Configura a interface do usuário"""
+        """Configura a interface do usuário com design melhorado"""
         # Container principal
-        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
-        main_box.set_margin_top(20)
-        main_box.set_margin_bottom(20)
-        main_box.set_margin_start(20)
-        main_box.set_margin_end(20)
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        
+        # Header personalizado com botão de minimizar
+        header_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        # CORREÇÃO: Usar set_size_request ao invés de set_height_request
+        header_box.set_size_request(-1, 50)  # largura automática, altura 50px
+        header_box.set_margin_start(20)
+        header_box.set_margin_end(15)
+        header_box.set_margin_top(15)
+        header_box.add_css_class("header-area")
+        
+        # Spacer para empurrar o botão para a direita
+        header_spacer = Gtk.Box()
+        header_spacer.set_hexpand(True)
+        header_box.append(header_spacer)
+        
+        # Botão minimizar no canto superior direito
+        self.minimize_button = Gtk.Button()
+        self.minimize_button.set_icon_name("window-minimize-symbolic")
+        self.minimize_button.set_tooltip_text(_("Minimize"))
+        self.minimize_button.add_css_class("flat")
+        self.minimize_button.add_css_class("circular")
+        self.minimize_button.set_size_request(32, 32)
+        self.minimize_button.connect('clicked', self._on_minimize_clicked)
+        header_box.append(self.minimize_button)
+        
+        main_box.append(header_box)
+        
+        # Área de conteúdo principal
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=30)
+        content_box.set_margin_start(40)
+        content_box.set_margin_end(40)
+        content_box.set_margin_top(10)
+        content_box.set_margin_bottom(40)
+        content_box.set_vexpand(True)
+        content_box.set_valign(Gtk.Align.CENTER)
         
         # Header com título da sessão
         self.session_label = Gtk.Label()
-        self.session_label.add_css_class('title-1')
+        self.session_label.add_css_class('title-2')
         self.session_label.set_halign(Gtk.Align.CENTER)
-        main_box.append(self.session_label)
+        content_box.append(self.session_label)
         
-        # Display do tempo
+        # Display do tempo com estilo aprimorado
+        time_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        time_container.set_halign(Gtk.Align.CENTER)
+        
         self.time_label = Gtk.Label()
-        self.time_label.add_css_class('display-1')
+        self.time_label.add_css_class('timer-display')
         self.time_label.set_halign(Gtk.Align.CENTER)
-        main_box.append(self.time_label)
+        time_container.append(self.time_label)
         
-        # Botões de controle
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        content_box.append(time_container)
+        
+        # Botões de controle com design circular
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=15)
         button_box.set_halign(Gtk.Align.CENTER)
+        button_box.set_margin_top(10)
         
-        # Botão Start/Stop
+        # Botão Start/Stop com design circular
         self.start_stop_button = Gtk.Button()
+        self.start_stop_button.add_css_class('pill')
         self.start_stop_button.add_css_class('suggested-action')
+        self.start_stop_button.set_size_request(120, 45)
         self.start_stop_button.connect('clicked', self._on_start_stop_clicked)
         button_box.append(self.start_stop_button)
         
-        # Botão Reset
+        # Botão Reset com design circular
         self.reset_button = Gtk.Button(label=_("Reset"))
+        self.reset_button.add_css_class('pill')
         self.reset_button.add_css_class('destructive-action')
+        self.reset_button.set_size_request(100, 45)
         self.reset_button.connect('clicked', self._on_reset_clicked)
         button_box.append(self.reset_button)
         
-        # Botão Close (minimizar)
-        self.close_button = Gtk.Button(label=_("Minimize"))
-        self.close_button.connect('clicked', self._on_minimize_clicked)
-        button_box.append(self.close_button)
+        content_box.append(button_box)
         
-        main_box.append(button_box)
+        main_box.append(content_box)
         
         # Adicionar ao window
         self.set_content(main_box)
         
         # Atualizar estado inicial dos botões
         self._update_buttons()
+    
+    def _setup_styles(self):
+        """Configura estilos CSS personalizados"""
+        css_provider = Gtk.CssProvider()
+        css_data = """
+        .timer-display {
+            font-size: 72px;
+            font-weight: bold;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            color: @accent_color;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-area {
+            background: transparent;
+        }
+        
+        .timer-container {
+            background: alpha(@accent_color, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        /* Botões arredondados personalizados */
+        button.pill {
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        button.pill:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        button.pill:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Estilo do botão de minimizar */
+        button.circular {
+            border-radius: 50%;
+            min-width: 32px;
+            min-height: 32px;
+        }
+        
+        button.circular:hover {
+            background: alpha(@accent_color, 0.1);
+        }
+        """
+        
+        css_provider.load_from_data(css_data.encode())
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(),
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
     
     def _update_display(self):
         """Atualiza o display do dialog com informações atuais do timer"""
@@ -302,11 +378,11 @@ class PomodoroDialog(Adw.Window):
     def _update_buttons(self):
         """Atualiza o estado dos botões"""
         if self.timer.is_running:
-            self.start_stop_button.set_label(_("Stop"))
+            self.start_stop_button.set_label(_("⏸ Pause"))
             self.start_stop_button.remove_css_class('suggested-action')
             self.start_stop_button.add_css_class('destructive-action')
         else:
-            self.start_stop_button.set_label(_("Start"))
+            self.start_stop_button.set_label(_("▶ Start"))
             self.start_stop_button.remove_css_class('destructive-action')
             self.start_stop_button.add_css_class('suggested-action')
     
@@ -345,10 +421,27 @@ class PomodoroDialog(Adw.Window):
         # Mostrar a janela
         self.present()
         
-        # Opcional: Reproduzir som de notificação
-        # self._play_notification_sound()
+        # Opcional: Adicionar efeito visual ou som
+        self._add_finish_animation()
         
         return False  # Remove from idle queue
+    
+    def _add_finish_animation(self):
+        """Adiciona um efeito visual quando o timer termina"""
+        # Piscar o tempo por alguns segundos para chamar atenção
+        def blink_effect(count=0):
+            if count < 6:  # Piscar 3 vezes (6 mudanças)
+                if count % 2 == 0:
+                    self.time_label.add_css_class('accent')
+                else:
+                    self.time_label.remove_css_class('accent')
+                
+                GLib.timeout_add(300, lambda: blink_effect(count + 1))
+            else:
+                # Remover classe accent no final
+                self.time_label.remove_css_class('accent')
+        
+        blink_effect()
     
     def _on_start_stop_clicked(self, button):
         """Handle do botão Start/Stop"""
