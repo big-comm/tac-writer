@@ -720,36 +720,25 @@ msgstr "ロングブレイク"
 msgid "Rest Time"
 msgstr "休憩時間"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 205
+# File: usr/share/tac-writer/ui/components.py, line: 214
 #: NEEDS WORK
-msgid "Session 1"
-msgstr "セッション 1"
+msgid "Minimize"
+msgstr "最小化"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
+# File: usr/share/tac-writer/ui/components.py, line: 263
 #: NEEDS WORK
-msgid "Start timer"
-msgstr "タイマーを開始"
+msgid "Reset"
+msgstr "リセット"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 234
+# File: usr/share/tac-writer/ui/components.py, line: 381
 #: NEEDS WORK
-msgid "Stop timer"
-msgstr "タイマーを停止"
+msgid "⏸ Pause"
+msgstr "⏸ 一時停止"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 245
+# File: usr/share/tac-writer/ui/components.py, line: 385
 #: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "集中セッション: 25分 • 短い休憩: 5分 • 長い休憩: 15分"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "タイマーを最小化"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "タイマーを一時停止"
+msgid "▶ Start"
+msgstr "▶ 開始"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK

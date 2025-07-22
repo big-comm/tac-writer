@@ -725,36 +725,25 @@ msgstr "Langt opphold"
 msgid "Rest Time"
 msgstr "Hviletid"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 205
+# File: usr/share/tac-writer/ui/components.py, line: 214
 #: NEEDS WORK
-msgid "Session 1"
-msgstr "Økt 1"
+msgid "Minimize"
+msgstr "Minimer"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
+# File: usr/share/tac-writer/ui/components.py, line: 263
 #: NEEDS WORK
-msgid "Start timer"
-msgstr "Start tidtaker"
+msgid "Reset"
+msgstr "Tilbakestill"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 234
+# File: usr/share/tac-writer/ui/components.py, line: 381
 #: NEEDS WORK
-msgid "Stop timer"
-msgstr "Stopp timer"
+msgid "⏸ Pause"
+msgstr "⏸ Pause"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 245
+# File: usr/share/tac-writer/ui/components.py, line: 385
 #: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "Fokusøkt: 25 min • Kort pause: 5 min • Lang pause: 15 min"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "Minimer timer"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "Pause timer"
+msgid "▶ Start"
+msgstr "▶ Start"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK

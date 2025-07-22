@@ -724,36 +724,25 @@ msgstr "Dlhá prestávka"
 msgid "Rest Time"
 msgstr "Čas odpočinku"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 205
+# File: usr/share/tac-writer/ui/components.py, line: 214
 #: NEEDS WORK
-msgid "Session 1"
-msgstr "Relácia 1"
+msgid "Minimize"
+msgstr "Minimalizovať"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
+# File: usr/share/tac-writer/ui/components.py, line: 263
 #: NEEDS WORK
-msgid "Start timer"
-msgstr "Spustiť časovač"
+msgid "Reset"
+msgstr "Obnoviť"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 234
+# File: usr/share/tac-writer/ui/components.py, line: 381
 #: NEEDS WORK
-msgid "Stop timer"
-msgstr "Zastaviť časovač"
+msgid "⏸ Pause"
+msgstr "⏸ Pozastaviť"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 245
+# File: usr/share/tac-writer/ui/components.py, line: 385
 #: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "Fokusová relácia: 25 min • Krátka prestávka: 5 min • Dlhá prestávka: 15 min"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "Minimalizovať časovač"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "Pozastavi časovač"
+msgid "▶ Start"
+msgstr "▶ Štart"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK

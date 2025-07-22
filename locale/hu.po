@@ -724,36 +724,25 @@ msgstr "Hosszú szünet"
 msgid "Rest Time"
 msgstr "Pihenőidő"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 205
+# File: usr/share/tac-writer/ui/components.py, line: 214
 #: NEEDS WORK
-msgid "Session 1"
-msgstr "1. session"
+msgid "Minimize"
+msgstr "Minimalizálás"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
+# File: usr/share/tac-writer/ui/components.py, line: 263
 #: NEEDS WORK
-msgid "Start timer"
-msgstr "Időzítő indítása"
+msgid "Reset"
+msgstr "Visszaállítás"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 234
+# File: usr/share/tac-writer/ui/components.py, line: 381
 #: NEEDS WORK
-msgid "Stop timer"
-msgstr "Időzítő leállítása"
+msgid "⏸ Pause"
+msgstr "⏸ Szünet"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 245
+# File: usr/share/tac-writer/ui/components.py, line: 385
 #: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "Fókusz ülés: 25 perc • Rövid szünet: 5 perc • Hosszú szünet: 15 perc"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "Időzítő minimalizálása"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "Szüneteltető időzítő"
+msgid "▶ Start"
+msgstr "▶ Indítás"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 58
 #: NEEDS WORK
