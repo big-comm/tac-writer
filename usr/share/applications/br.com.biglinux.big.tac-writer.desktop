@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Tac Writer - Academic Writing Guide
+Name[pt]=Tac Writer - Guia de Escrita Acadêmica
+GenericName=Academic Writing Guide
+GenericName[pt]=Guia de Escrita Acadêmica
+Comment=Tac Writer is a guide to help you to write organized and understandable academic papers
+Comment[pt]=Tac Writer é um guia para ajudá-lo a escrever artigos acadêmicos organizados e compreensíveis
+Exec=tac-writer %F
+Terminal=false
+Icon=tac-writer
+Type=Application
+Categories=Office;WordProcessor;Education;Writing;
+MimeType=text/plain;application/rtf;application/x-tex;text/x-tex;application/x-latex;text/x-markdown;
+Keywords=writing;academic;paper;research;guide;document;text;organize;
+Keywords[pt]=escrita;acadêmico;artigo;pesquisa;guia;documento;texto;organizar;
+StartupNotify=true
+StartupWMClass=tac-writer
+Name[pt_BR]=br.com.biglinux.big.tac-writer.desktop
