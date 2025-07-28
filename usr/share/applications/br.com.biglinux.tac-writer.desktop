@@ -15,4 +15,4 @@ Keywords=writing;academic;paper;research;guide;document;text;organize;
 Keywords[pt]=escrita;acadêmico;artigo;pesquisa;guia;documento;texto;organizar;
 StartupNotify=true
 StartupWMClass=tac-writer
-Name[pt_BR]=br.com.biglinux.big.tac-writer.desktop
+Name[pt_BR]=br.com.biglinux.tac-writer.desktop
