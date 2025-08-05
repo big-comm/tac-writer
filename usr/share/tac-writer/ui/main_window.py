@@ -59,7 +59,7 @@ class MainWindow(Adw.ApplicationWindow):
     def _setup_window(self):
         """Setup basic window properties"""
         self.set_title(_("TAC - Continuous Argumentation Technique"))
-        self.set_icon_name("com.github.tac")
+        self.set_icon_name("org.communitybig.tac")
 
         # Set default size
         default_width = self.config.get('window_width', 1200)

@@ -158,7 +158,7 @@ class TacApplication(Adw.Application):
     
     def __init__(self):
         super().__init__(
-            application_id='com.github.tac',
+            application_id='org.communitybig.tac',
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS
         )
         
