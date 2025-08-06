@@ -934,11 +934,42 @@ class ParagraphEditor(Gtk.Box):
         self._create_header()
         # Setup drag and drop
         self._setup_drag_and_drop()
-        # Apply initial formatting
-        self._apply_formatting()
-        
+        # Connect realize signal to apply initial formatting
+        self.connect('realize', self._on_realize)
+ 
         # Aplicar tanto formatação quanto spell check com delay
-        GLib.idle_add(self._setup_delayed_initialization)
+        #GLib.idle_add(self._setup_delayed_initialization)
+
+    # Apply realize signal
+    def _on_realize(self, widget):
+        """Called when widget is shown for the first time"""
+        print(f"Debug: Widget {self.paragraph.type.value} realizado. Aplicando formatação.")
+    
+        # CSS code
+        formatting = self.paragraph.formatting
+        font_family = formatting.get('font_family', 'Liberation Serif')
+        font_size = formatting.get('font_size', 12)
+        css_provider = Gtk.CssProvider()
+        css = f"""
+        .paragraph-text-view {{
+            font-family: '{font_family}';
+            font-size: {font_size}pt;
+        }}
+        """
+        css_provider.load_from_data(css.encode())
+        self.text_view.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self._apply_formatting()
+
+
+        # 2. Configura o corretor ortográfico
+        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Verificação ortográfica ativada para o parágrafo: {self.paragraph.type.value}")
+            except Exception as e:
+                print(f"✗ Erro ao configurar a verificação ortográfica: {e}")
 
     def _setup_delayed_initialization(self):
         """Setup both formatting and spell check after widget is realized"""
@@ -1053,6 +1084,7 @@ class ParagraphEditor(Gtk.Box):
 
         # Text view
         self.text_view = Gtk.TextView()
+        self.text_view.add_css_class("paragraph-text-view")
         self.text_view.set_buffer(self.text_buffer)
         self.text_view.set_wrap_mode(Gtk.WrapMode.WORD)
         self.text_view.set_accepts_tab(False)
@@ -1196,35 +1228,34 @@ class ParagraphEditor(Gtk.Box):
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
 
+    # CÓDIGO ATUALIZADO para _apply_formatting
+
     def _apply_formatting(self):
-        """Apply formatting using TextBuffer tags (GTK4 way)"""
-        # Guard clause: ensure text_buffer is initialized
+        """Aplica a formatação usando tags do TextBuffer (modo GTK4)"""
+        # Cláusula de guarda: garante que o text_buffer foi inicializado
         if not self.text_buffer or not self.text_view:
             return
-
-        # NOVO: Se widget não está realizado, aplicar com delay
-        if not self.text_view.get_realized():
-            GLib.idle_add(self._apply_formatting)
-            return        
-        
+    
         formatting = self.paragraph.formatting
 
-        # Create or get text tags
+        # Create text tags
         tag_table = self.text_buffer.get_tag_table()
 
-        # Remove existing "format" tag if it exists
+        # Remove "format" tag if exist
         existing_tag = tag_table.lookup("format")
         if existing_tag:
             tag_table.remove(existing_tag)
 
-        # Create new formatting tag
+        # Cria uma nova tag de formatação
         format_tag = self.text_buffer.create_tag("format")
 
-        # Apply font family and size
-        font_family = formatting.get('font_family', 'Liberation Serif')
-        font_size = formatting.get('font_size', 12)
-        format_tag.set_property("family", font_family)
-        format_tag.set_property("size-points", float(font_size))
+        # Apply stiles only
+        if formatting.get('bold', False):
+            format_tag.set_property("weight", 700)
+        if formatting.get('italic', False):
+            format_tag.set_property("style", 2)
+        if formatting.get('underline', False):
+            format_tag.set_property("underline", 1)
 
         # Apply bold/italic/underline
         if formatting.get('bold', False):
@@ -1236,12 +1267,12 @@ class ParagraphEditor(Gtk.Box):
         if formatting.get('underline', False):
             format_tag.set_property("underline", 1)  # Pango.Underline.SINGLE
 
-        # Apply tag to all text
+        # Aplica a tag a todo o texto
         start_iter = self.text_buffer.get_start_iter()
         end_iter = self.text_buffer.get_end_iter()
         self.text_buffer.apply_tag(format_tag, start_iter, end_iter)
 
-        # Apply margins
+        # Aplica margens
         left_margin = formatting.get('indent_left', 0.0)
         right_margin = formatting.get('indent_right', 0.0)
         self.text_view.set_left_margin(int(left_margin * 28))

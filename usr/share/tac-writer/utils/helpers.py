@@ -29,8 +29,7 @@ class FileHelper:
     @staticmethod
     def get_safe_filename(filename: str) -> str:
         """Convert filename to safe version (remove invalid characters)"""
-        # Remove invalid characters for filenames
-        safe_chars = re.sub(r'[<>:"/\\|*]', '_', filename)
+        safe_chars = re.sub(r'[<>:"/\\|?*]', '_', filename)
         
         # Remove multiple spaces and underscores
         safe_chars = re.sub(r'[ _]+', '_', safe_chars)
@@ -63,12 +62,18 @@ class FileHelper:
         mime_type, _ = mimetypes.guess_type(str(file_path))
         return mime_type or 'application/octet-stream'
     
+    
     @staticmethod
-    def create_backup_filename(original_path: Path) -> Path:
-        """Create backup filename with timestamp"""
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        backup_name = f"{original_path.stem}_{timestamp}_backup{original_path.suffix}"
-        return original_path.parent / backup_name
+    def create_backup_filename(original_path: Path, project_name: str) -> Path:
+         """Cria um nome de arquivo de backup com base no nome do projeto e timestamp."""
+         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+         # Usa o nome do projeto (limpo de caracteres inválidos) em vez do UUID
+         safe_project_name = FileHelper.get_safe_filename(project_name)
+    
+         backup_name = f"{safe_project_name}_{timestamp}_backup{original_path.suffix}"
+         # Retorna um objeto Path completo, não apenas o nome do arquivo
+         return original_path.parent / backup_name
     
     @staticmethod
     def find_available_filename(file_path: Path) -> Path:
@@ -192,7 +197,7 @@ class ValidationHelper:
             return False
         
         # Check for invalid characters
-        invalid_chars = '<>:"/\\|?*'
+        invalid_chars = '<>:"/\\|*'
         if any(char in filename for char in invalid_chars):
             return False
         

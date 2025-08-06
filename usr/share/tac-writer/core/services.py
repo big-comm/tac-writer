@@ -9,6 +9,9 @@ import zipfile
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
+import shutil
+from .config import Config
+from utils.helpers import FileHelper
 
 # ODT export dependencies
 try:
@@ -67,6 +70,20 @@ class ProjectManager:
             
             # Ensure project directory exists
             project_file.parent.mkdir(parents=True, exist_ok=True)
+
+            # Backup logic
+            if self.config.get('backup_files', False) and project_file.exists():
+                try:
+                    #backup_path = FileHelper.create_backup_filename(project_file)
+                    backup_filename = FileHelper.create_backup_filename(project_file, project.name).name
+                    backup_dir = Path.home() / "Documents" / "TAC Projects" / "backups"
+                    backup_dir.mkdir(parents=True, exist_ok=True)
+                    final_backup_path = backup_dir / backup_filename
+                    
+                    shutil.copy2(project_file, final_backup_path)
+                    print(f"Backup created in: {final_backup_path}")
+                except Exception as backup_error:
+                    print(f"Warning: It was not possible to create backup file: {backup_error}")
             
             # Convert to dict and save
             project_data = project.to_dict()
