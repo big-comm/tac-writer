@@ -4,9 +4,37 @@
 pkgname=comm-tac-writer
 pkgdesc="Academic writing assistant using the Continuous Argumentation Technique (CAT)"
 # Uncomment and edit the following lines as needed
-depends=('python-gtkspellcheck')
-#makedepends=('')
-#optdepends=('')
+depends=(
+    'gtk4'
+    'libadwaita'
+    'python'
+    'python-gobject'
+    'python-reportlab'
+    'python-gtkspellcheck'
+    'python-pyenchant'
+    'gettext'
+)
+makedepends=('gettext')
+optdepends=(
+    'hunspell-bg: For Bulgarian spell checking'
+    'hunspell-de: For German spell checking'
+    'hunspell-el: For Greek spell checking'
+    'hunspell-en_us: For US English spell checking'
+    'hunspell-en_gb: For British English spell checking'
+    'hunspell-en_ca: For Canadian English spell checking'
+    'hunspell-es_es: For Spanish (Spain) spell checking'
+    'hunspell-es_any: For Spanish (generic) spell checking'
+    'hunspell-fr: For French spell checking'
+    'hunspell-he: For Hebrew spell checking'
+    'hunspell-hu: For Hungarian spell checking'
+    'hunspell-it: For Italian spell checking'
+    'hunspell-nl: For Dutch spell checking'
+    'hunspell-pl: For Polish spell checking'
+    'hunspell-pt-br: For Brazilian Portuguese spell checking'
+    'hunspell-ro: For Romanian spell checking'
+    'hunspell-ru: For Russian spell checking'
+    'hunspell-sk: For Slovak spell checking'
+)
 #conflicts=('')
 #provides=('')
 #replaces=('')
