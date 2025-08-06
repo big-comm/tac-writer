@@ -13,6 +13,7 @@ depends=(
     'python-gtkspellcheck'
     'python-pyenchant'
     'gettext'
+    'ttf-liberation'
 )
 makedepends=('gettext')
 optdepends=(
