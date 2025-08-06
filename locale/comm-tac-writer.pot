@@ -94,7 +94,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 323
-# File: usr/share/tac-writer/ui/components.py, line: 1190
+# File: usr/share/tac-writer/ui/components.py, line: 1222
 msgid   "Title 1"
 msgstr  ""
 
@@ -102,7 +102,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 324
-# File: usr/share/tac-writer/ui/components.py, line: 1191
+# File: usr/share/tac-writer/ui/components.py, line: 1223
 msgid   "Title 2"
 msgstr  ""
 
@@ -110,7 +110,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 325
-# File: usr/share/tac-writer/ui/components.py, line: 1192
+# File: usr/share/tac-writer/ui/components.py, line: 1224
 msgid   "Introduction"
 msgstr  ""
 
@@ -118,7 +118,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 326
-# File: usr/share/tac-writer/ui/components.py, line: 1193
+# File: usr/share/tac-writer/ui/components.py, line: 1225
 msgid   "Argument"
 msgstr  ""
 
@@ -126,7 +126,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 327
-# File: usr/share/tac-writer/ui/components.py, line: 1194
+# File: usr/share/tac-writer/ui/components.py, line: 1226
 msgid   "Quote"
 msgstr  ""
 
@@ -134,7 +134,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 328
-# File: usr/share/tac-writer/ui/components.py, line: 1195
+# File: usr/share/tac-writer/ui/components.py, line: 1227
 msgid   "Conclusion"
 msgstr  ""
 
@@ -206,7 +206,7 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/dialogs.py, line: 650
 # File: usr/share/tac-writer/ui/components.py, line: 847
 # File: usr/share/tac-writer/ui/components.py, line: 886
-# File: usr/share/tac-writer/ui/components.py, line: 1283
+# File: usr/share/tac-writer/ui/components.py, line: 1314
 msgid   "Cancel"
 msgstr  ""
 
@@ -366,7 +366,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 1407
+# File: usr/share/tac-writer/ui/components.py, line: 1438
 msgid   "Bold"
 msgstr  ""
 
@@ -374,7 +374,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 1414
+# File: usr/share/tac-writer/ui/components.py, line: 1445
 msgid   "Italic"
 msgstr  ""
 
@@ -382,7 +382,7 @@ msgstr  ""
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 1421
+# File: usr/share/tac-writer/ui/components.py, line: 1452
 msgid   "Underline"
 msgstr  ""
 
@@ -818,44 +818,44 @@ msgid   "Delete"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1000
+# File: usr/share/tac-writer/ui/components.py, line: 1031
 msgid   "Toggle spell checking"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1016
+# File: usr/share/tac-writer/ui/components.py, line: 1047
 msgid   "Remove paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1197
+# File: usr/share/tac-writer/ui/components.py, line: 1229
 msgid   "Paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1254
+# File: usr/share/tac-writer/ui/components.py, line: 1285
 #, python-brace-format
 msgid   "{count} word"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1256
+# File: usr/share/tac-writer/ui/components.py, line: 1287
 #, python-brace-format
 msgid   "{count} words"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1279
+# File: usr/share/tac-writer/ui/components.py, line: 1310
 msgid   "Remove Paragraph?"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1280
+# File: usr/share/tac-writer/ui/components.py, line: 1311
 msgid   "This action cannot be undone."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1284
+# File: usr/share/tac-writer/ui/components.py, line: 1315
 msgid   "Remove"
 msgstr  ""
 
@@ -931,117 +931,117 @@ msgid   "Critical error during startup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
+# File: usr/share/tac-writer/utils/helpers.py, line: 57
 msgid   "Unknown"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
 msgid   "0 minutes"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
+# File: usr/share/tac-writer/utils/helpers.py, line: 177
 msgid   "< 1 minute"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
+# File: usr/share/tac-writer/utils/helpers.py, line: 181
 msgid   "1 minute"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
+# File: usr/share/tac-writer/utils/helpers.py, line: 183
 msgid   "{} minutes"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
+# File: usr/share/tac-writer/utils/helpers.py, line: 187
 msgid   "{}h {}m"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
 msgid   "Project name cannot be empty"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
+# File: usr/share/tac-writer/utils/helpers.py, line: 226
 msgid   "Project name must be at least 2 characters long"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
+# File: usr/share/tac-writer/utils/helpers.py, line: 229
 msgid   "Project name cannot exceed 100 characters"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
+# File: usr/share/tac-writer/utils/helpers.py, line: 232
 msgid   "Project name contains invalid characters"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
+# File: usr/share/tac-writer/utils/helpers.py, line: 249
 msgid   "Path cannot be empty"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
+# File: usr/share/tac-writer/utils/helpers.py, line: 256
 msgid   "Parent directory does not exist"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
 msgid   "Path is too long"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
+# File: usr/share/tac-writer/utils/helpers.py, line: 265
 msgid   "Invalid path: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
+# File: usr/share/tac-writer/utils/helpers.py, line: 307
 msgid   "{:,} words"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
+# File: usr/share/tac-writer/utils/helpers.py, line: 309
 msgid   "{:,} characters"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+# File: usr/share/tac-writer/utils/helpers.py, line: 342
 msgid   "Info"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
+# File: usr/share/tac-writer/utils/helpers.py, line: 326
 msgid   "Type: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
+# File: usr/share/tac-writer/utils/helpers.py, line: 327
 msgid   "Module: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
+# File: usr/share/tac-writer/utils/helpers.py, line: 330
 msgid   "Attributes:"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
+# File: usr/share/tac-writer/utils/helpers.py, line: 334
 msgid   "Methods:"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
+# File: usr/share/tac-writer/utils/helpers.py, line: 340
 msgid   "  ... and {} more methods"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
+# File: usr/share/tac-writer/utils/helpers.py, line: 348
 msgid   "Performance: {} took {:.3f} seconds"
 msgstr  ""
