@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #
+# File: usr/share/tac-writer/core/models.py, line: 430
+msgid "Academic Essay"
+msgstr "Academic Essay"
+
+#
+# File: usr/share/tac-writer/core/models.py, line: 431
+msgid "Standard academic essay structure"
+msgstr "Standard academic essay structure"
+
+#
 # File: usr/share/tac-writer/ui/main_window.py, line: 61
 msgid "TAC - Continuous Argumentation Technique"
 msgstr "TAC - Continuous Argumentation Technique"
@@ -878,16 +888,6 @@ msgstr "This action cannot be undone."
 # File: usr/share/tac-writer/ui/components.py, line: 1315
 msgid "Remove"
 msgstr "Remove"
-
-#
-# File: usr/share/tac-writer/core/models.py, line: 430
-msgid "Academic Essay"
-msgstr "Academic Essay"
-
-#
-# File: usr/share/tac-writer/core/models.py, line: 431
-msgid "Standard academic essay structure"
-msgstr "Standard academic essay structure"
 
 #
 # File: usr/share/tac-writer/tac.py, line: 46
