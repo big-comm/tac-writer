@@ -176,6 +176,7 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/main_window.py, line: 380
 # File: usr/share/tac-writer/ui/main_window.py, line: 794
 # File: usr/share/tac-writer/ui/components.py, line: 788
+#, python-brace-format
 msgid   "{} words • {} paragraphs"
 msgstr  ""
 
@@ -233,6 +234,7 @@ msgstr  ""
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 610
 # File: usr/share/tac-writer/ui/main_window.py, line: 662
+#, python-brace-format
 msgid   "Opened project: {}"
 msgstr  ""
 
@@ -259,6 +261,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 689
+#, python-brace-format
 msgid   "Created project: {}"
 msgstr  ""
 
@@ -489,6 +492,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#, python-brace-format
 msgid   "{} words, {} paragraphs"
 msgstr  ""
 
@@ -549,6 +553,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#, python-brace-format
 msgid   "Project exported to:\n"
         "{}"
 msgstr  ""
@@ -704,6 +709,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 145
+#, python-brace-format
 msgid   "Session {}"
 msgstr  ""
 
@@ -804,6 +810,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 831
+#, python-brace-format
 msgid   "Enter new name for '{}'"
 msgstr  ""
 
@@ -814,6 +821,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 882
+#, python-brace-format
 msgid   "Delete '{}'?"
 msgstr  ""
 
@@ -876,6 +884,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/tac.py, line: 52
+#, python-brace-format
 msgid   "Error: Required dependencies not found: {}"
 msgstr  ""
 
@@ -887,6 +896,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/tac.py, line: 56
+#, python-brace-format
 msgid   "Error checking dependencies: {}"
 msgstr  ""
 
@@ -897,6 +907,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/tac.py, line: 69
+#, python-brace-format
 msgid   "Application directory: {}"
 msgstr  ""
 
@@ -927,6 +938,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/tac.py, line: 92
+#, python-brace-format
 msgid   "Critical error during startup: {}"
 msgstr  ""
 
@@ -952,11 +964,13 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 183
+#, python-brace-format
 msgid   "{} minutes"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 187
+#, python-brace-format
 msgid   "{}h {}m"
 msgstr  ""
 
@@ -997,6 +1011,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 265
+#, python-brace-format
 msgid   "Invalid path: {}"
 msgstr  ""
 
@@ -1018,11 +1033,13 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 326
+#, python-brace-format
 msgid   "Type: {}"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 327
+#, python-brace-format
 msgid   "Module: {}"
 msgstr  ""
 
@@ -1038,10 +1055,12 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 340
+#, python-brace-format
 msgid   "  ... and {} more methods"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 348
+#, python-brace-format
 msgid   "Performance: {} took {:.3f} seconds"
 msgstr  ""

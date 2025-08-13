@@ -177,6 +177,7 @@ msgstr "Continuous Argumentation Technique"
 # File: usr/share/tac-writer/ui/main_window.py, line: 380
 # File: usr/share/tac-writer/ui/main_window.py, line: 794
 # File: usr/share/tac-writer/ui/components.py, line: 788
+#, python-brace-format
 msgid "{} words • {} paragraphs"
 msgstr "{} words • {} paragraphs"
 
@@ -234,6 +235,7 @@ msgstr "All Files"
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 610
 # File: usr/share/tac-writer/ui/main_window.py, line: 662
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Opened project: {}"
 
@@ -260,6 +262,7 @@ msgstr "No project to export"
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 689
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Created project: {}"
 
@@ -490,6 +493,7 @@ msgstr "Statistics"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} words, {} paragraphs"
 
@@ -550,6 +554,7 @@ msgstr "Export Successful"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -724,6 +729,7 @@ msgstr "TAC Development Team"
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 145
+#, python-brace-format
 msgid "Session {}"
 msgstr "Session {}"
 
@@ -824,6 +830,7 @@ msgstr "Rename Project"
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 831
+#, python-brace-format
 msgid "Enter new name for '{}'"
 msgstr "Enter new name for '{}'"
 
@@ -834,6 +841,7 @@ msgstr "Rename"
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 882
+#, python-brace-format
 msgid "Delete '{}'?"
 msgstr "Delete '{}'?"
 
@@ -896,6 +904,7 @@ msgstr "Error: GTK 4.0 or higher is required"
 
 #
 # File: usr/share/tac-writer/tac.py, line: 52
+#, python-brace-format
 msgid "Error: Required dependencies not found: {}"
 msgstr "Error: Required dependencies not found: {}"
 
@@ -908,6 +917,7 @@ msgstr ""
 
 #
 # File: usr/share/tac-writer/tac.py, line: 56
+#, python-brace-format
 msgid "Error checking dependencies: {}"
 msgstr "Error checking dependencies: {}"
 
@@ -918,6 +928,7 @@ msgstr "Starting TAC - Continuous Argumentation Technique"
 
 #
 # File: usr/share/tac-writer/tac.py, line: 69
+#, python-brace-format
 msgid "Application directory: {}"
 msgstr "Application directory: {}"
 
@@ -948,6 +959,7 @@ msgstr "Application interrupted by user."
 
 #
 # File: usr/share/tac-writer/tac.py, line: 92
+#, python-brace-format
 msgid "Critical error during startup: {}"
 msgstr "Critical error during startup: {}"
 
@@ -973,11 +985,13 @@ msgstr "1 minute"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 183
+#, python-brace-format
 msgid "{} minutes"
 msgstr "{} minutes"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 187
+#, python-brace-format
 msgid "{}h {}m"
 msgstr "{}h {}m"
 
@@ -1018,6 +1032,7 @@ msgstr "Path is too long"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 265
+#, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Invalid path: {}"
 
@@ -1039,11 +1054,13 @@ msgstr "Info"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 326
+#, python-brace-format
 msgid "Type: {}"
 msgstr "Type: {}"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 327
+#, python-brace-format
 msgid "Module: {}"
 msgstr "Module: {}"
 
@@ -1059,10 +1076,12 @@ msgstr "Methods:"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 340
+#, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "  ... and {} more methods"
 
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 348
+#, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Performance: {} took {:.3f} seconds"
