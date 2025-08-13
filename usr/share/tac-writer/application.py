@@ -8,7 +8,7 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Adw, Gio, Gdk
+from gi.repository import Gtk, Adw, Gio, Gdk, GLib
 from core.config import Config
 from core.services import ProjectManager
 from ui.main_window import MainWindow
@@ -161,6 +161,7 @@ class TacApplication(Adw.Application):
             application_id='org.communitybig.tac',
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS
         )
+        GLib.set_prgname('org.communitybig.tac')
         
         # Application components
         self.config = Config()
