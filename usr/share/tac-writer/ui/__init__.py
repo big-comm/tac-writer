@@ -7,13 +7,11 @@ from .main_window import MainWindow
 from .components import (
     ParagraphEditor,
     TextEditor,
-    FormatToolbar,
     ProjectListWidget,
     WelcomeView
 )
 from .dialogs import (
     NewProjectDialog,
-    FormatDialog,
     ExportDialog,
     PreferencesDialog,
     AboutDialog
@@ -26,13 +24,11 @@ __all__ = [
     # Components
     'ParagraphEditor',
     'TextEditor', 
-    'FormatToolbar',
     'ProjectListWidget',
     'WelcomeView',
     
     # Dialogs
     'NewProjectDialog',
-    'FormatDialog',
     'ExportDialog', 
     'PreferencesDialog',
     'AboutDialog'

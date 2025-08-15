@@ -82,22 +82,6 @@ class Paragraph:
         self.content = content
         self.modified_at = datetime.now()
 
-    def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
-        """Update paragraph formatting"""
-        # For Title 1 and Title 2, preserve font size if not explicitly changed
-        if self.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
-            # If user is not explicitly changing font size,
-            # preserve default size for title type
-            if 'font_size' not in formatting_updates:
-                formatting_updates = formatting_updates.copy()
-                if self.type == ParagraphType.TITLE_1:
-                    formatting_updates['font_size'] = 18
-                elif self.type == ParagraphType.TITLE_2:
-                    formatting_updates['font_size'] = 16
-        
-        self.formatting.update(formatting_updates)
-        self.modified_at = datetime.now()
-
     def get_word_count(self) -> int:
         """Get word count for this paragraph"""
         return len(self.content.split()) if self.content else 0
@@ -189,71 +173,9 @@ class Project:
         }
 
     def add_paragraph(self, paragraph_type: ParagraphType, content: str = "",
-                     position: Optional[int] = None, inherit_formatting: bool = True) -> Paragraph:
-        """Add a new paragraph to the project - MODIFICADO para herdar formatação"""
+                     position: Optional[int] = None) -> Paragraph:
+        """Add a new paragraph to the project"""
         paragraph = Paragraph(paragraph_type, content)
-        
-        # NOVO: Herdar formatação preferida ou do último parágrafo
-        if inherit_formatting:
-            base_formatting = None
-            
-            # Primeiro, tentar usar formatação preferida salva
-            if 'preferred_formatting' in self.metadata:
-                base_formatting = self.metadata['preferred_formatting'].copy()
-                print(f"Debug: Using preferred formatting: {base_formatting}")
-            # Senão, herdar do último parágrafo de conteúdo
-            elif self.paragraphs:
-                last_content_paragraph = None
-                for p in reversed(self.paragraphs):
-                    if p.type not in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
-                        last_content_paragraph = p
-                        break
-                
-                if last_content_paragraph:
-                    base_formatting = {
-                        'font_family': last_content_paragraph.formatting.get('font_family', 'Liberation Serif'),
-                        'font_size': last_content_paragraph.formatting.get('font_size', 12),
-                        'line_spacing': last_content_paragraph.formatting.get('line_spacing', 1.5),
-                        'alignment': last_content_paragraph.formatting.get('alignment', 'justify'),
-                        'bold': last_content_paragraph.formatting.get('bold', False),
-                        'italic': last_content_paragraph.formatting.get('italic', False),
-                        'underline': last_content_paragraph.formatting.get('underline', False),
-                    }
-                    print(f"Debug: Inheriting formatting from last paragraph")
-            
-            if base_formatting:
-                # Aplicar formatação herdada, preservando formatações específicas do tipo
-                current_formatting = paragraph.formatting.copy()
-                current_formatting.update(base_formatting)
-                
-                # Preservar formatações específicas do tipo de parágrafo
-                if paragraph_type == ParagraphType.INTRODUCTION:
-                    current_formatting['indent_first_line'] = 1.5
-                elif paragraph_type == ParagraphType.QUOTE:
-                    current_formatting.update({
-                        'font_size': 10,
-                        'indent_left': 4.0,
-                        'line_spacing': 1.0,
-                        'italic': True
-                    })
-                elif paragraph_type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
-                    # Títulos mantêm suas formatações específicas
-                    if paragraph_type == ParagraphType.TITLE_1:
-                        current_formatting.update({
-                            'font_size': 18,
-                            'bold': True,
-                            'alignment': 'left',
-                            'line_spacing': 1.2,
-                        })
-                    elif paragraph_type == ParagraphType.TITLE_2:
-                        current_formatting.update({
-                            'font_size': 16,
-                            'bold': True,
-                            'alignment': 'left',
-                            'line_spacing': 1.2,
-                        })
-                
-                paragraph.formatting = current_formatting
         
         if position is None:
             paragraph.order = len(self.paragraphs)
@@ -265,16 +187,6 @@ class Project:
         
         self._update_modified_time()
         return paragraph
-
-    def update_preferred_formatting(self, formatting_updates: Dict[str, Any]) -> None:
-        """Update preferred formatting for new paragraphs - NOVO MÉTODO"""
-        # Salvar formatação preferida nos metadados do projeto
-        if 'preferred_formatting' not in self.metadata:
-            self.metadata['preferred_formatting'] = {}
-        
-        self.metadata['preferred_formatting'].update(formatting_updates)
-        self._update_modified_time()
-        print(f"Debug: Updated preferred formatting: {formatting_updates}")
 
     def remove_paragraph(self, paragraph_id: str) -> bool:
         """Remove a paragraph by ID"""
@@ -324,14 +236,11 @@ class Project:
                 1 for p in self.paragraphs if p.type == paragraph_type
             )
         
-        # CORRIGIDO: Count only introduction paragraphs
-        introduction_count = sum(
-            1 for p in self.paragraphs 
-            if p.type == ParagraphType.INTRODUCTION
-        )
+        # Count total paragraphs (all types)
+        total_paragraphs = len(self.paragraphs)
         
         return {
-            'total_paragraphs': introduction_count,  # ← CORRIGIDO: apenas introduções
+            'total_paragraphs': total_paragraphs,
             'total_words': total_words,
             'total_characters': total_chars,
             'total_characters_no_spaces': total_chars_no_spaces,
@@ -438,4 +347,3 @@ ACADEMIC_ESSAY_TEMPLATE.paragraph_structure = [
 DEFAULT_TEMPLATES = [
     ACADEMIC_ESSAY_TEMPLATE,
 ]
-
