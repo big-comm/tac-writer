@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Академічна стаття"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Стандартна структура академічного есе"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -140,35 +150,6 @@ msgstr "Цитата"
 msgid "Conclusion"
 msgstr "Висновок"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Формат"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Форматувати абзаци"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Безперервна аргументаційна техніка"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} слів • {} абзаців"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -223,6 +204,7 @@ msgstr "Усі файли"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Відкритий проєкт: {}"
 # 
@@ -249,13 +231,26 @@ msgstr "Немає проекту для експорту"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Створено проєкт: {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
 #: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "No paragraphs to format"
+msgid "Continuous Argumentation Technique"
+msgstr "Безперервна аргументаційна техніка"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} words • {} paragraphs"
+msgstr "{} слів • {} абзаців"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -330,132 +325,6 @@ msgstr "Помилка створення проєкту"
 msgid "OK"
 msgstr "ОК"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 269
-#: NEEDS WORK
-msgid "Format Text"
-msgstr "Форматувати текст"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 312
-#: NEEDS WORK
-msgid "Apply"
-msgstr "Застосувати"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 325
-#: NEEDS WORK
-msgid "Font"
-msgstr "Шрифт"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 330
-# File: usr/share/tac-writer/ui/dialogs.py, line: 802
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Шрифт"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 388
-# File: usr/share/tac-writer/ui/dialogs.py, line: 861
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Розмір шрифту"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 394
-#: NEEDS WORK
-msgid "Style"
-msgstr "Стиль"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "Gras"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "Italic"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "Underline"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 414
-#: NEEDS WORK
-msgid "Spacing & Alignment"
-msgstr "Spacing та Вирівнювання"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 420
-#: NEEDS WORK
-msgid "Line Spacing"
-msgstr "Міжрядковий інтервал"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 421
-#: NEEDS WORK
-msgid "Space between lines"
-msgstr "Проміжок між рядками"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 429
-#: NEEDS WORK
-msgid "First Line Indent (cm)"
-msgstr "Перший відступ рядка (см)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 430
-#: NEEDS WORK
-msgid "Indentation of the first line"
-msgstr "Відступ першого рядка"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 438
-#: NEEDS WORK
-msgid "Left Margin (cm)"
-msgstr "Лівий відступ (см)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 439
-#: NEEDS WORK
-msgid "Left side margin"
-msgstr "Лівий відступ"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 447
-#: NEEDS WORK
-msgid "Right Margin (cm)"
-msgstr "Правий відступ (см)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 448
-#: NEEDS WORK
-msgid "Right side margin"
-msgstr "Правий відступ"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 455
-#: NEEDS WORK
-msgid "Text Alignment"
-msgstr "Текстове подравняване"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Left"
-msgstr "Left"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Center"
-msgstr "Centre"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Right"
-msgstr "Право"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Justify"
-msgstr "Justify"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
 #: NEEDS WORK
 msgid "Export Project"
@@ -479,6 +348,7 @@ msgstr "Статистика"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} слів, {} абзаців"
 # 
@@ -486,6 +356,14 @@ msgstr "{} слів, {} абзаців"
 #: NEEDS WORK
 msgid "Export Options"
 msgstr "Експортні параметри"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Формат"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
@@ -539,6 +417,7 @@ msgstr "Експорт успішний"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -585,6 +464,18 @@ msgstr "Редактор"
 #: NEEDS WORK
 msgid "Default Font"
 msgstr "Шрифт за замовчуванням"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Шрифт"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Розмір шрифту"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
 #: NEEDS WORK
@@ -714,6 +605,7 @@ msgstr "TAC Розробницька Команда"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
+#, python-brace-format
 msgid "Session {}"
 msgstr "Сесія {}"
 # 
@@ -814,6 +706,7 @@ msgstr "Rename Project"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 289
 #: NEEDS WORK
+#, python-brace-format
 msgid "Enter new name for '{}'"
 msgstr "Введіть нове ім'я для '{}'"
 # 
@@ -824,6 +717,7 @@ msgstr "Rename"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 340
 #: NEEDS WORK
+#, python-brace-format
 msgid "Delete '{}'?"
 msgstr "Delete '{}' ?"
 # 
@@ -852,12 +746,6 @@ msgstr "Видалити абзац"
 msgid "Paragraph"
 msgstr "Параграф"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} word"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 636
 #: NEEDS WORK
 #, python-brace-format
@@ -879,16 +767,6 @@ msgstr "Цю дію не можна скасувати."
 msgid "Remove"
 msgstr "Видалити"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
-#: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Академічна стаття"
-# 
-# File: usr/share/tac-writer/core/models.py, line: 355
-#: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Стандартна структура академічного есе"
-# 
 # File: usr/share/tac-writer/tac.py, line: 46
 #: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
@@ -896,6 +774,7 @@ msgstr "Помилка: потрібен GTK 4.0 або новіша версі�
 # 
 # File: usr/share/tac-writer/tac.py, line: 52
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error: Required dependencies not found: {}"
 msgstr "Помилка: Відсутні необхідні залежності: {}"
 # 
@@ -906,6 +785,7 @@ msgstr "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwait
 # 
 # File: usr/share/tac-writer/tac.py, line: 56
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error checking dependencies: {}"
 msgstr "Помилка перевірки залежностей: {}"
 # 
@@ -916,6 +796,7 @@ msgstr "Початок TAC - Безперервна аргументаційна
 # 
 # File: usr/share/tac-writer/tac.py, line: 69
 #: NEEDS WORK
+#, python-brace-format
 msgid "Application directory: {}"
 msgstr "Директорія програми: {}"
 # 
@@ -946,6 +827,7 @@ msgstr "Застосунок перервано користувачем."
 # 
 # File: usr/share/tac-writer/tac.py, line: 92
 #: NEEDS WORK
+#, python-brace-format
 msgid "Critical error during startup: {}"
 msgstr "Критична помилка під час запуску: {}"
 # 
@@ -971,11 +853,13 @@ msgstr "1 хвилина"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} minutes"
 msgstr "{} хвилин"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
 #: NEEDS WORK
+#, python-brace-format
 msgid "{}h {}m"
 msgstr "{}г {}х"
 # 
@@ -1016,6 +900,7 @@ msgstr "Шлях занадто довгий"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
 #: NEEDS WORK
+#, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Неправильний шлях: {}"
 # 
@@ -1037,11 +922,13 @@ msgstr "Інформація"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
 #: NEEDS WORK
+#, python-brace-format
 msgid "Type: {}"
 msgstr "Тип: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
 #: NEEDS WORK
+#, python-brace-format
 msgid "Module: {}"
 msgstr "Модуль: {}"
 # 
@@ -1057,10 +944,12 @@ msgstr "Методи:"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
 #: NEEDS WORK
+#, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "... та {} інших методів"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
 #: NEEDS WORK
+#, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Performance: {} took {:.3f} seconds"

@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "学術論文"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "標準的な学術論文の構成"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -140,35 +150,6 @@ msgstr "引用"
 msgid "Conclusion"
 msgstr "結論"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "フォーマット"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "段落をフォーマット"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "継続的議論技術"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} ワード • {} 段落"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -223,6 +204,7 @@ msgstr "すべてのファイル"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "開いたプロジェクト: {}"
 # 
@@ -249,13 +231,26 @@ msgstr "エクスポートするプロジェクトはありません"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "作成したプロジェクト: {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
 #: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "フォーマットする段落はありません"
+msgid "Continuous Argumentation Technique"
+msgstr "継続的議論技術"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} words • {} paragraphs"
+msgstr "{} ワード • {} 段落"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -330,132 +325,6 @@ msgstr "プロジェクトの作成エラー"
 msgid "OK"
 msgstr "OK"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 269
-#: NEEDS WORK
-msgid "Format Text"
-msgstr "テキストのフォーマット"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 312
-#: NEEDS WORK
-msgid "Apply"
-msgstr "適用"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 325
-#: NEEDS WORK
-msgid "Font"
-msgstr "フォント"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 330
-# File: usr/share/tac-writer/ui/dialogs.py, line: 802
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "フォントファミリー"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 388
-# File: usr/share/tac-writer/ui/dialogs.py, line: 861
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "フォントサイズ"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 394
-#: NEEDS WORK
-msgid "Style"
-msgstr "スタイル"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "太字"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "イタリック"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "下線"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 414
-#: NEEDS WORK
-msgid "Spacing & Alignment"
-msgstr "間隔と整列"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 420
-#: NEEDS WORK
-msgid "Line Spacing"
-msgstr "行間隔"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 421
-#: NEEDS WORK
-msgid "Space between lines"
-msgstr "行間のスペース"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 429
-#: NEEDS WORK
-msgid "First Line Indent (cm)"
-msgstr "最初の行のインデント (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 430
-#: NEEDS WORK
-msgid "Indentation of the first line"
-msgstr "最初の行のインデント"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 438
-#: NEEDS WORK
-msgid "Left Margin (cm)"
-msgstr "左マージン (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 439
-#: NEEDS WORK
-msgid "Left side margin"
-msgstr "左側の余白"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 447
-#: NEEDS WORK
-msgid "Right Margin (cm)"
-msgstr "右マージン (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 448
-#: NEEDS WORK
-msgid "Right side margin"
-msgstr "右側の余白"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 455
-#: NEEDS WORK
-msgid "Text Alignment"
-msgstr "テキストの配置"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Left"
-msgstr "左"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Center"
-msgstr "センター"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Right"
-msgstr "右"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Justify"
-msgstr "整列"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
 #: NEEDS WORK
 msgid "Export Project"
@@ -479,6 +348,7 @@ msgstr "統計情報"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} ワード、{} パラグラフ"
 # 
@@ -486,6 +356,14 @@ msgstr "{} ワード、{} パラグラフ"
 #: NEEDS WORK
 msgid "Export Options"
 msgstr "エクスポートオプション"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "フォーマット"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
@@ -539,6 +417,7 @@ msgstr "エクスポート成功"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -585,6 +464,18 @@ msgstr "エディタ"
 #: NEEDS WORK
 msgid "Default Font"
 msgstr "デフォルトフォント"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "フォントファミリー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "フォントサイズ"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
 #: NEEDS WORK
@@ -707,6 +598,7 @@ msgstr "TAC開発チーム"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
+#, python-brace-format
 msgid "Session {}"
 msgstr "セッション {}"
 # 
@@ -807,6 +699,7 @@ msgstr "プロジェクトの名前を変更"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 289
 #: NEEDS WORK
+#, python-brace-format
 msgid "Enter new name for '{}'"
 msgstr "'{}'の新しい名前を入力してください"
 # 
@@ -817,6 +710,7 @@ msgstr "名前を変更"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 340
 #: NEEDS WORK
+#, python-brace-format
 msgid "Delete '{}'?"
 msgstr "'{}'を削除しますか？"
 # 
@@ -845,12 +739,6 @@ msgstr "段落を削除"
 msgid "Paragraph"
 msgstr "段落"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} ワード"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 636
 #: NEEDS WORK
 #, python-brace-format
@@ -872,16 +760,6 @@ msgstr "この操作は元に戻せません。"
 msgid "Remove"
 msgstr "削除"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
-#: NEEDS WORK
-msgid "Academic Essay"
-msgstr "学術論文"
-# 
-# File: usr/share/tac-writer/core/models.py, line: 355
-#: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "標準的な学術論文の構成"
-# 
 # File: usr/share/tac-writer/tac.py, line: 46
 #: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
@@ -889,6 +767,7 @@ msgstr "エラー: GTK 4.0 以上が必要です"
 # 
 # File: usr/share/tac-writer/tac.py, line: 52
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error: Required dependencies not found: {}"
 msgstr "エラー: 必要な依存関係が見つかりません: {}"
 # 
@@ -899,6 +778,7 @@ msgstr "インストールしてください: python3-gi python3-gi-cairo gir1.2
 # 
 # File: usr/share/tac-writer/tac.py, line: 56
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error checking dependencies: {}"
 msgstr "依存関係のエラー確認: {}"
 # 
@@ -909,6 +789,7 @@ msgstr "TACの開始 - 継続的議論技法"
 # 
 # File: usr/share/tac-writer/tac.py, line: 69
 #: NEEDS WORK
+#, python-brace-format
 msgid "Application directory: {}"
 msgstr "アプリケーションディレクトリ: {}"
 # 
@@ -939,6 +820,7 @@ msgstr "ユーザーによってアプリケーションが中断されました
 # 
 # File: usr/share/tac-writer/tac.py, line: 92
 #: NEEDS WORK
+#, python-brace-format
 msgid "Critical error during startup: {}"
 msgstr "起動中の重大なエラー: {}"
 # 
@@ -964,11 +846,13 @@ msgstr "1分"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} minutes"
 msgstr "{} 分"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
 #: NEEDS WORK
+#, python-brace-format
 msgid "{}h {}m"
 msgstr "{}時間 {}分"
 # 
@@ -1009,6 +893,7 @@ msgstr "パスが長すぎます"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
 #: NEEDS WORK
+#, python-brace-format
 msgid "Invalid path: {}"
 msgstr "無効なパス: {}"
 # 
@@ -1030,11 +915,13 @@ msgstr "情報"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
 #: NEEDS WORK
+#, python-brace-format
 msgid "Type: {}"
 msgstr "タイプ: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
 #: NEEDS WORK
+#, python-brace-format
 msgid "Module: {}"
 msgstr "モジュール: {}"
 # 
@@ -1050,10 +937,12 @@ msgstr "メソッド:"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
 #: NEEDS WORK
+#, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "... と {} のその他のメソッド"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
 #: NEEDS WORK
+#, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "パフォーマンス: {} は {:.3f} 秒かかりました"

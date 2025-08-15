@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akademisk essay"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Standard akademisk essaystruktur"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -140,35 +150,6 @@ msgstr "Sitat"
 msgid "Conclusion"
 msgstr "Konklusjon"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Format"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Formater avsnitt"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Kontinuerlig Argumentasjonsteknikk"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} ord • {} avsnitt"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -223,6 +204,7 @@ msgstr "Alle filer"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Åpnet prosjekt: {}"
 # 
@@ -249,13 +231,26 @@ msgstr "Ingen prosjekt å eksportere"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Opprettet prosjekt: {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
 #: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "Ingen avsnitt å formatere"
+msgid "Continuous Argumentation Technique"
+msgstr "Kontinuerlig Argumentasjonsteknikk"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} words • {} paragraphs"
+msgstr "{} ord • {} avsnitt"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -330,132 +325,6 @@ msgstr "Feil ved oppretting av prosjekt"
 msgid "OK"
 msgstr "OK"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 269
-#: NEEDS WORK
-msgid "Format Text"
-msgstr "Formater tekst"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 312
-#: NEEDS WORK
-msgid "Apply"
-msgstr "Bruk"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 325
-#: NEEDS WORK
-msgid "Font"
-msgstr "Skrift"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 330
-# File: usr/share/tac-writer/ui/dialogs.py, line: 802
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Skrifttype"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 388
-# File: usr/share/tac-writer/ui/dialogs.py, line: 861
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Skriftstørrelse"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 394
-#: NEEDS WORK
-msgid "Style"
-msgstr "Stil"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "Fet"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "Kursiv"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "Understrek"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 414
-#: NEEDS WORK
-msgid "Spacing & Alignment"
-msgstr "Avstand og justering"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 420
-#: NEEDS WORK
-msgid "Line Spacing"
-msgstr "Linjeavstand"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 421
-#: NEEDS WORK
-msgid "Space between lines"
-msgstr "Avstand mellom linjer"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 429
-#: NEEDS WORK
-msgid "First Line Indent (cm)"
-msgstr "Første linje innrykk (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 430
-#: NEEDS WORK
-msgid "Indentation of the first line"
-msgstr "Innrykk av første linje"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 438
-#: NEEDS WORK
-msgid "Left Margin (cm)"
-msgstr "Venstre marg (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 439
-#: NEEDS WORK
-msgid "Left side margin"
-msgstr "Venstre marg"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 447
-#: NEEDS WORK
-msgid "Right Margin (cm)"
-msgstr "Høyre marg (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 448
-#: NEEDS WORK
-msgid "Right side margin"
-msgstr "Høyre marg"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 455
-#: NEEDS WORK
-msgid "Text Alignment"
-msgstr "Tekstjustering"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Left"
-msgstr "Venstre"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Center"
-msgstr "Senter"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Right"
-msgstr "Høyre"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Justify"
-msgstr "Juster"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
 #: NEEDS WORK
 msgid "Export Project"
@@ -479,6 +348,7 @@ msgstr "Statistikk"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} ord, {} avsnitt"
 # 
@@ -486,6 +356,14 @@ msgstr "{} ord, {} avsnitt"
 #: NEEDS WORK
 msgid "Export Options"
 msgstr "Eksportalternativer"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Format"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
@@ -539,6 +417,7 @@ msgstr "Eksport vellykket"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -585,6 +464,18 @@ msgstr "Redigerer"
 #: NEEDS WORK
 msgid "Default Font"
 msgstr "Standard skrifttype"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Skrifttype"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Skriftstørrelse"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
 #: NEEDS WORK
@@ -712,6 +603,7 @@ msgstr "TAC Utviklingsteam"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
+#, python-brace-format
 msgid "Session {}"
 msgstr "Økt {}"
 # 
@@ -812,6 +704,7 @@ msgstr "Gi nytt navn til prosjekt"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 289
 #: NEEDS WORK
+#, python-brace-format
 msgid "Enter new name for '{}'"
 msgstr "Skriv inn nytt navn for '{}'"
 # 
@@ -822,6 +715,7 @@ msgstr "Gi nytt navn"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 340
 #: NEEDS WORK
+#, python-brace-format
 msgid "Delete '{}'?"
 msgstr "Slett '{}' ?"
 # 
@@ -850,12 +744,6 @@ msgstr "Fjern avsnitt"
 msgid "Paragraph"
 msgstr "Avsnitt"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} ord"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 636
 #: NEEDS WORK
 #, python-brace-format
@@ -877,16 +765,6 @@ msgstr "Denne handlingen kan ikke angres."
 msgid "Remove"
 msgstr "Fjern"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
-#: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akademisk essay"
-# 
-# File: usr/share/tac-writer/core/models.py, line: 355
-#: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Standard akademisk essaystruktur"
-# 
 # File: usr/share/tac-writer/tac.py, line: 46
 #: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
@@ -894,6 +772,7 @@ msgstr "Feil: GTK 4.0 eller høyere er påkrevd"
 # 
 # File: usr/share/tac-writer/tac.py, line: 52
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error: Required dependencies not found: {}"
 msgstr "Feil: Nødvendige avhengigheter ble ikke funnet: {}"
 # 
@@ -904,6 +783,7 @@ msgstr "Vennligst installer: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-a
 # 
 # File: usr/share/tac-writer/tac.py, line: 56
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error checking dependencies: {}"
 msgstr "Feilmelding ved sjekking av avhengigheter: {}"
 # 
@@ -914,6 +794,7 @@ msgstr "Starter TAC - Kontinuerlig Argumentasjonsteknikk"
 # 
 # File: usr/share/tac-writer/tac.py, line: 69
 #: NEEDS WORK
+#, python-brace-format
 msgid "Application directory: {}"
 msgstr "Applikasjonskatalog: {}"
 # 
@@ -944,6 +825,7 @@ msgstr "Applikasjonen ble avbrutt av brukeren."
 # 
 # File: usr/share/tac-writer/tac.py, line: 92
 #: NEEDS WORK
+#, python-brace-format
 msgid "Critical error during startup: {}"
 msgstr "Kritisk feil under oppstart: {}"
 # 
@@ -969,11 +851,13 @@ msgstr "1 minutt"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} minutes"
 msgstr "{} minutter"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
 #: NEEDS WORK
+#, python-brace-format
 msgid "{}h {}m"
 msgstr "{}t {}m"
 # 
@@ -1014,6 +898,7 @@ msgstr "Stien er for lang"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
 #: NEEDS WORK
+#, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Ugyldig sti: {}"
 # 
@@ -1035,11 +920,13 @@ msgstr "Info"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
 #: NEEDS WORK
+#, python-brace-format
 msgid "Type: {}"
 msgstr "Type: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
 #: NEEDS WORK
+#, python-brace-format
 msgid "Module: {}"
 msgstr "Modul: {}"
 # 
@@ -1055,10 +942,12 @@ msgstr "Metoder:"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
 #: NEEDS WORK
+#, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "... og {} flere metoder"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
 #: NEEDS WORK
+#, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Ytelse: {} tok {:.3f} sekunder"

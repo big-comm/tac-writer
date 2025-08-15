@@ -16,6 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/core/models.py, line: 354
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Akademski esej"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 355
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Standardna struktura akademskog eseja"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -140,35 +150,6 @@ msgstr "Citat"
 msgid "Conclusion"
 msgstr "Zaključak"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
-# File: usr/share/tac-writer/ui/main_window.py, line: 299
-#: NEEDS WORK
-msgid "Format"
-msgstr "Formatiranje"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 301
-#: NEEDS WORK
-msgid "Format paragraphs"
-msgstr "Formatiraj odlomke"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
-# File: usr/share/tac-writer/ui/components.py, line: 64
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique"
-msgstr "Kontinuirana tehnika argumentacije"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-msgid "{} words • {} paragraphs"
-msgstr "{} riječi • {} odlomaka"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -223,6 +204,7 @@ msgstr "Svi datoteke"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Otvoreni projekt: {}"
 # 
@@ -249,13 +231,26 @@ msgstr "Nema projekta za izvoz"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Stvoren projekt: {}"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 605
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 64
 #: NEEDS WORK
-msgid "No paragraphs to format"
-msgstr "Nema odlomaka za formatiranje"
+msgid "Continuous Argumentation Technique"
+msgstr "Kontinuirana tehnika argumentacije"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
+# File: usr/share/tac-writer/ui/components.py, line: 246
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} words • {} paragraphs"
+msgstr "{} riječi • {} odlomaka"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -330,132 +325,6 @@ msgstr "Greška prilikom kreiranja projekta"
 msgid "OK"
 msgstr "U redu"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 269
-#: NEEDS WORK
-msgid "Format Text"
-msgstr "Formatiraj tekst"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 312
-#: NEEDS WORK
-msgid "Apply"
-msgstr "Primijeni"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 325
-#: NEEDS WORK
-msgid "Font"
-msgstr "Font"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 330
-# File: usr/share/tac-writer/ui/dialogs.py, line: 802
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Obitelj fonta"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 388
-# File: usr/share/tac-writer/ui/dialogs.py, line: 861
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Veličina fonta"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 394
-#: NEEDS WORK
-msgid "Style"
-msgstr "Stil"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "Podebljano"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "Kurzica"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "Podcrtaj"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 414
-#: NEEDS WORK
-msgid "Spacing & Alignment"
-msgstr "Razmak i poravnanje"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 420
-#: NEEDS WORK
-msgid "Line Spacing"
-msgstr "Razmak između redova"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 421
-#: NEEDS WORK
-msgid "Space between lines"
-msgstr "Razmak između redova"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 429
-#: NEEDS WORK
-msgid "First Line Indent (cm)"
-msgstr "Povlačenje prve linije (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 430
-#: NEEDS WORK
-msgid "Indentation of the first line"
-msgstr "Uvlaka prvog retka"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 438
-#: NEEDS WORK
-msgid "Left Margin (cm)"
-msgstr "Lijevi Margina (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 439
-#: NEEDS WORK
-msgid "Left side margin"
-msgstr "Lijevi bočni margina"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 447
-#: NEEDS WORK
-msgid "Right Margin (cm)"
-msgstr "Desni margina (cm)"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 448
-#: NEEDS WORK
-msgid "Right side margin"
-msgstr "Desni rub margine"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 455
-#: NEEDS WORK
-msgid "Text Alignment"
-msgstr "Poravnanje teksta"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Left"
-msgstr "Lijevo"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Center"
-msgstr "Središte"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Right"
-msgstr "Desno"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 457
-#: NEEDS WORK
-msgid "Justify"
-msgstr "Poravnati"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 535
 #: NEEDS WORK
 msgid "Export Project"
@@ -479,6 +348,7 @@ msgstr "Statistika"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} riječi, {} odlomaka"
 # 
@@ -486,6 +356,14 @@ msgstr "{} riječi, {} odlomaka"
 #: NEEDS WORK
 msgid "Export Options"
 msgstr "Opcije izvoza"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/main_window.py, line: 299
+#: NEEDS WORK
+msgid "Format"
+msgstr "Formatiranje"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 614
 #: NEEDS WORK
@@ -539,6 +417,7 @@ msgstr "Izvoz uspješan"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -585,6 +464,18 @@ msgstr "Uređivač"
 #: NEEDS WORK
 msgid "Default Font"
 msgstr "Zadani font"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 330
+# File: usr/share/tac-writer/ui/dialogs.py, line: 802
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Obitelj fonta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 388
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Veličina fonta"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 868
 #: NEEDS WORK
@@ -711,6 +602,7 @@ msgstr "TAC Razvojni Tim"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
+#, python-brace-format
 msgid "Session {}"
 msgstr "Sesija {}"
 # 
@@ -811,6 +703,7 @@ msgstr "Preimenuj projekt"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 289
 #: NEEDS WORK
+#, python-brace-format
 msgid "Enter new name for '{}'"
 msgstr "Unesite novo ime za '{}'"
 # 
@@ -821,6 +714,7 @@ msgstr "Preimenuj"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 340
 #: NEEDS WORK
+#, python-brace-format
 msgid "Delete '{}'?"
 msgstr "Izbriši '{}' ?"
 # 
@@ -849,12 +743,6 @@ msgstr "Ukloni odlomak"
 msgid "Paragraph"
 msgstr "Odjeljak"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} riječ"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 636
 #: NEEDS WORK
 #, python-brace-format
@@ -876,16 +764,6 @@ msgstr "Ova radnja se ne može poništiti."
 msgid "Remove"
 msgstr "Ukloni"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
-#: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akademski esej"
-# 
-# File: usr/share/tac-writer/core/models.py, line: 355
-#: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Standardna struktura akademskog eseja"
-# 
 # File: usr/share/tac-writer/tac.py, line: 46
 #: NEEDS WORK
 msgid "Error: GTK 4.0 or higher is required"
@@ -893,6 +771,7 @@ msgstr "Greška: Potreban je GTK 4.0 ili noviji"
 # 
 # File: usr/share/tac-writer/tac.py, line: 52
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error: Required dependencies not found: {}"
 msgstr "Greška: Nedostaju potrebne ovisnosti: {}"
 # 
@@ -903,6 +782,7 @@ msgstr "Molimo instalirajte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-a
 # 
 # File: usr/share/tac-writer/tac.py, line: 56
 #: NEEDS WORK
+#, python-brace-format
 msgid "Error checking dependencies: {}"
 msgstr "Provjera grešaka ovisnosti: {}"
 # 
@@ -913,6 +793,7 @@ msgstr "Pokretanje TAC - Kontinuirana tehnika argumentacije"
 # 
 # File: usr/share/tac-writer/tac.py, line: 69
 #: NEEDS WORK
+#, python-brace-format
 msgid "Application directory: {}"
 msgstr "Direktorij aplikacije: {}"
 # 
@@ -943,6 +824,7 @@ msgstr "Aplikacija prekinuta od strane korisnika."
 # 
 # File: usr/share/tac-writer/tac.py, line: 92
 #: NEEDS WORK
+#, python-brace-format
 msgid "Critical error during startup: {}"
 msgstr "Kritična greška tijekom pokretanja: {}"
 # 
@@ -968,11 +850,13 @@ msgstr "1 minuta"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 178
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} minutes"
 msgstr "{} minuta"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 182
 #: NEEDS WORK
+#, python-brace-format
 msgid "{}h {}m"
 msgstr "{}h {}m"
 # 
@@ -1013,6 +897,7 @@ msgstr "Putanja je predugačka"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 260
 #: NEEDS WORK
+#, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Nevažeća putanja: {}"
 # 
@@ -1034,11 +919,13 @@ msgstr "Informacije"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 321
 #: NEEDS WORK
+#, python-brace-format
 msgid "Type: {}"
 msgstr "Tip: {}"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 322
 #: NEEDS WORK
+#, python-brace-format
 msgid "Module: {}"
 msgstr "Modul: {}"
 # 
@@ -1054,10 +941,12 @@ msgstr "Metode:"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 335
 #: NEEDS WORK
+#, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "... i {} više metoda"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 343
 #: NEEDS WORK
+#, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Izvedba: {} trajalo {:.3f} sekundi"
