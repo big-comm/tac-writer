@@ -16,7 +16,7 @@ except ImportError:
     SPELL_CHECK_AVAILABLE = False
     print("PyGTKSpellcheck not available - spell checking disabled")
 
-from gi.repository import Gtk, Adw, GObject, Gdk, GLib
+from gi.repository import Gtk, Adw, GObject, Gdk, GLib, Pango
 from core.models import Paragraph, ParagraphType, DEFAULT_TEMPLATES
 from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper

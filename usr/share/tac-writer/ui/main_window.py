@@ -331,8 +331,6 @@ class MainWindow(Adw.ApplicationWindow):
         add_button.set_menu_model(menu_model)
         toolbar_box.append(add_button)
 
-<<<<<<< Updated upstream
-=======
         # Add formatting button
         #format_button = Gtk.Button()
         #format_button.set_label(_("Format"))
@@ -341,7 +339,6 @@ class MainWindow(Adw.ApplicationWindow):
         #format_button.connect('clicked', self._on_format_clicked)
         #toolbar_box.append(format_button)
 
->>>>>>> Stashed changes
         return toolbar_box
 
     def _refresh_paragraphs(self):
@@ -628,8 +625,6 @@ class MainWindow(Adw.ApplicationWindow):
         if self.config.get('window_maximized', False):
             self.maximize()
 
-<<<<<<< Updated upstream
-=======
     '''def _on_format_clicked(self, button):
         """Handle format button click - MODIFICADO para salvar formatação preferida"""
         if not self.current_project:
@@ -670,7 +665,6 @@ class MainWindow(Adw.ApplicationWindow):
         dialog.connect('destroy', on_dialog_destroy)
         dialog.present()'''
 
->>>>>>> Stashed changes
     def _maybe_show_welcome_dialog(self):
         """Show welcome dialog if enabled in config"""
         if self.config.get('show_welcome_dialog', True):
@@ -686,8 +680,6 @@ class MainWindow(Adw.ApplicationWindow):
         """Handle show welcome action"""
         self.show_welcome_dialog()
 
-<<<<<<< Updated upstream
-=======
     '''def _refresh_paragraph_formatting(self):
         """Refresh formatting display for all paragraph editors"""
         if hasattr(self, 'paragraphs_box'):
@@ -697,7 +689,6 @@ class MainWindow(Adw.ApplicationWindow):
                     child.refresh_formatting()
                 child = child.get_next_sibling()'''
 
->>>>>>> Stashed changes
     def _on_pomodoro_clicked(self, button):
         if not self.pomodoro_dialog:
             from ui.components import PomodoroDialog

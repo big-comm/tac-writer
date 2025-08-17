@@ -32,7 +32,7 @@ class Paragraph:
         
         # Formatting options (default without initial indent)
         self.formatting = {
-            'font_family': 'Liberation Serif',
+            'font_family': 'Adwaita sans',
             'font_size': 12,
             'line_spacing': 1.5,
             'alignment': 'justify',
@@ -161,7 +161,7 @@ class Project:
                 'right': 3.0
             },
             'line_spacing': 1.5,
-            'font_family': 'Liberation Serif',
+            'font_family': 'Adwaita Sans',
             'font_size': 12,
             'header_footer': {
                 'show_page_numbers': True,

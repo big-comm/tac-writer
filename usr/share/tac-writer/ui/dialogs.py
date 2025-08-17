@@ -259,8 +259,6 @@ class NewProjectDialog(Adw.Window):
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
 
-<<<<<<< Updated upstream
-=======
 '''class FormatDialog(Adw.Window):
     """Dialog for text formatting options"""
 
@@ -527,7 +525,6 @@ class NewProjectDialog(Adw.Window):
 
         self.destroy()'''
 
->>>>>>> Stashed changes
 class ExportDialog(Adw.Window):
     """Dialog for exporting projects"""
 
