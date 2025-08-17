@@ -331,6 +331,17 @@ class MainWindow(Adw.ApplicationWindow):
         add_button.set_menu_model(menu_model)
         toolbar_box.append(add_button)
 
+<<<<<<< Updated upstream
+=======
+        # Add formatting button
+        #format_button = Gtk.Button()
+        #format_button.set_label(_("Format"))
+        #format_button.set_icon_name("format-text-bold-symbolic")
+        #format_button.set_tooltip_text(_("Format paragraphs"))
+        #format_button.connect('clicked', self._on_format_clicked)
+        #toolbar_box.append(format_button)
+
+>>>>>>> Stashed changes
         return toolbar_box
 
     def _refresh_paragraphs(self):
@@ -617,6 +628,49 @@ class MainWindow(Adw.ApplicationWindow):
         if self.config.get('window_maximized', False):
             self.maximize()
 
+<<<<<<< Updated upstream
+=======
+    '''def _on_format_clicked(self, button):
+        """Handle format button click - MODIFICADO para salvar formatação preferida"""
+        if not self.current_project:
+            return
+
+        # Collect non-Quote paragraphs
+        non_quote_paragraphs = [
+            p for p in self.current_project.paragraphs
+            if p.type != ParagraphType.QUOTE
+        ]
+
+        if not non_quote_paragraphs:
+            self._show_toast(_("No paragraphs to format"))
+            return
+
+        # Open formatting dialog
+        from .dialogs import FormatDialog
+        dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
+        
+        # NOVO: Conectar sinal para salvar formatação preferida
+        def on_dialog_destroy(dialog):
+            if non_quote_paragraphs:
+                # Salvar a formatação aplicada como preferida para novos parágrafos
+                sample_formatting = non_quote_paragraphs[0].formatting.copy()
+                # Remover formatações específicas que não devem ser herdadas
+                preferred = {
+                    'font_family': sample_formatting.get('font_family', 'Liberation Serif'),
+                    'font_size': sample_formatting.get('font_size', 12),
+                    'line_spacing': sample_formatting.get('line_spacing', 1.5),
+                    'alignment': sample_formatting.get('alignment', 'justify'),
+                    'bold': sample_formatting.get('bold', False),
+                    'italic': sample_formatting.get('italic', False),
+                    'underline': sample_formatting.get('underline', False),
+                }
+                self.current_project.update_preferred_formatting(preferred)
+                print(f"Debug: Saved preferred formatting after dialog close: {preferred}")
+        
+        dialog.connect('destroy', on_dialog_destroy)
+        dialog.present()'''
+
+>>>>>>> Stashed changes
     def _maybe_show_welcome_dialog(self):
         """Show welcome dialog if enabled in config"""
         if self.config.get('show_welcome_dialog', True):
@@ -632,6 +686,18 @@ class MainWindow(Adw.ApplicationWindow):
         """Handle show welcome action"""
         self.show_welcome_dialog()
 
+<<<<<<< Updated upstream
+=======
+    '''def _refresh_paragraph_formatting(self):
+        """Refresh formatting display for all paragraph editors"""
+        if hasattr(self, 'paragraphs_box'):
+            child = self.paragraphs_box.get_first_child()
+            while child:
+                if hasattr(child, 'refresh_formatting'):
+                    child.refresh_formatting()
+                child = child.get_next_sibling()'''
+
+>>>>>>> Stashed changes
     def _on_pomodoro_clicked(self, button):
         if not self.pomodoro_dialog:
             from ui.components import PomodoroDialog

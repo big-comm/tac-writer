@@ -259,6 +259,275 @@ class NewProjectDialog(Adw.Window):
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
 
+<<<<<<< Updated upstream
+=======
+'''class FormatDialog(Adw.Window):
+    """Dialog for text formatting options"""
+
+    __gtype_name__ = 'TacFormatDialog'
+
+    def __init__(self, parent, paragraphs: list = None, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Format Text"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(500, 600) # Increased height
+        self.set_resizable(True)
+
+        self.paragraphs = paragraphs or [] # List of paragraphs to be formatted
+
+        # If we have paragraphs, use the first one's formatting as default
+        if self.paragraphs:
+            self.formatting = self.paragraphs[0].formatting.copy()
+        else:
+            self.formatting = {
+                'font_family': 'Liberation Serif',
+                'font_size': 12,
+                'bold': False,
+                'italic': False,
+                'underline': False,
+                'line_spacing': 1.5,
+                'indent_first_line': 1.25,
+                'indent_left': 0.0,
+                'indent_right': 0.0,
+                'alignment': 'left'
+            }
+
+        # Create UI
+        self._create_ui()
+        self._load_current_formatting()
+
+    def _create_ui(self):
+        """Create the dialog UI"""
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(content_box)
+
+        # Header bar
+        header_bar = Adw.HeaderBar()
+
+        cancel_button = Gtk.Button()
+        cancel_button.set_label(_("Cancel"))
+        cancel_button.connect('clicked', lambda x: self.destroy())
+        header_bar.pack_start(cancel_button)
+
+        apply_button = Gtk.Button()
+        apply_button.set_label(_("Apply"))
+        apply_button.add_css_class("suggested-action")
+        apply_button.connect('clicked', self._on_apply_clicked)
+        header_bar.pack_end(apply_button)
+
+        content_box.append(header_bar)
+
+        # Preferences page
+        prefs_page = Adw.PreferencesPage()
+        content_box.append(prefs_page)
+
+        # Font group
+        font_group = Adw.PreferencesGroup()
+        font_group.set_title(_("Font"))
+        prefs_page.add(font_group)
+
+        # Font family
+        self.font_row = Adw.ComboRow()
+        self.font_row.set_title(_("Font Family"))
+        font_model = Gtk.StringList()
+
+        # Get system fonts
+        try:
+            # Method 1: Try PangoCairo
+            gi.require_version('PangoCairo', '1.0')
+            from gi.repository import PangoCairo
+            font_map = PangoCairo.font_map_get_default()
+            families = font_map.list_families()
+        except:
+            try:
+                # Method 2: Try Pango context
+                context = Pango.Context()
+                font_map = context.get_font_map()
+                families = font_map.list_families()
+            except:
+                try:
+                    # Method 3: Use fontconfig command
+                    import subprocess
+                    result = subprocess.run(['fc-list', ':', 'family'], capture_output=True, text=True)
+                    if result.returncode == 0:
+                        font_names = set()
+                        for line in result.stdout.strip().split('\n'):
+                            if line:
+                                family = line.split(',')[0].strip()
+                                font_names.add(family)
+                        font_names = sorted(list(font_names))
+                        for font_name in font_names:
+                            font_model.append(font_name)
+                        families = None # Skip the normal processing below
+                    else:
+                        families = []
+                except:
+                    families = []
+
+        # Process Pango families if we got them
+        if families is not None:
+            font_names = []
+            for family in families:
+                font_names.append(family.get_name())
+            font_names.sort()
+            for font_name in font_names:
+                font_model.append(font_name)
+
+        # If still no fonts, use fallback
+        if font_model.get_n_items() == 0:
+            print("Using fallback fonts in FormatDialog")
+            basic_fonts = ["Liberation Serif"]# "DejaVu Sans", "Ubuntu", "Cantarell"]
+            for font in basic_fonts:
+                font_model.append(font)
+
+        self.font_row.set_model(font_model)
+        font_group.add(self.font_row)
+
+        # Font size
+        size_adjustment = Gtk.Adjustment(value=12, lower=8, upper=72, step_increment=1, page_increment=2)
+        self.size_row = Adw.SpinRow()
+        self.size_row.set_title(_("Font Size"))
+        self.size_row.set_adjustment(size_adjustment)
+        font_group.add(self.size_row)
+
+        # Style group
+        style_group = Adw.PreferencesGroup()
+        style_group.set_title(_("Style"))
+        prefs_page.add(style_group)
+
+        # Bold
+        self.bold_row = Adw.SwitchRow()
+        self.bold_row.set_title(_("Bold"))
+        style_group.add(self.bold_row)
+
+        # Italic
+        self.italic_row = Adw.SwitchRow()
+        self.italic_row.set_title(_("Italic"))
+        style_group.add(self.italic_row)
+
+        # Underline
+        self.underline_row = Adw.SwitchRow()
+        self.underline_row.set_title(_("Underline"))
+        style_group.add(self.underline_row)
+
+        # Spacing group
+        spacing_group = Adw.PreferencesGroup()
+        spacing_group.set_title(_("Spacing & Alignment"))
+        prefs_page.add(spacing_group)
+
+        # Line spacing
+        line_spacing_adj = Gtk.Adjustment(value=1.5, lower=1.0, upper=3.0, step_increment=0.1, page_increment=0.5)
+        self.line_spacing_row = Adw.SpinRow()
+        self.line_spacing_row.set_title(_("Line Spacing"))
+        self.line_spacing_row.set_subtitle(_("Space between lines"))
+        self.line_spacing_row.set_adjustment(line_spacing_adj)
+        self.line_spacing_row.set_digits(1)
+        spacing_group.add(self.line_spacing_row)
+
+        # First line indent
+        indent_adj = Gtk.Adjustment(value=1.25, lower=0.0, upper=5.0, step_increment=0.1, page_increment=0.5)
+        self.indent_row = Adw.SpinRow()
+        self.indent_row.set_title(_("First Line Indent (cm)"))
+        self.indent_row.set_subtitle(_("Indentation of the first line"))
+        self.indent_row.set_adjustment(indent_adj)
+        self.indent_row.set_digits(1)
+        spacing_group.add(self.indent_row)
+
+        # Left margin
+        left_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
+        self.left_margin_row = Adw.SpinRow()
+        self.left_margin_row.set_title(_("Left Margin (cm)"))
+        self.left_margin_row.set_subtitle(_("Left side margin"))
+        self.left_margin_row.set_adjustment(left_margin_adj)
+        self.left_margin_row.set_digits(1)
+        spacing_group.add(self.left_margin_row)
+
+        # Right margin
+        right_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
+        self.right_margin_row = Adw.SpinRow()
+        self.right_margin_row.set_title(_("Right Margin (cm)"))
+        self.right_margin_row.set_subtitle(_("Right side margin"))
+        self.right_margin_row.set_adjustment(right_margin_adj)
+        self.right_margin_row.set_digits(1)
+        spacing_group.add(self.right_margin_row)
+
+        # Text alignment
+        self.alignment_row = Adw.ComboRow()
+        self.alignment_row.set_title(_("Text Alignment"))
+        alignment_model = Gtk.StringList()
+        alignments = [_("Left"), _("Center"), _("Right"), _("Justify")]
+        for alignment in alignments:
+            alignment_model.append(alignment)
+        self.alignment_row.set_model(alignment_model)
+        spacing_group.add(self.alignment_row)
+
+    def _load_current_formatting(self):
+        """Load current formatting into controls"""
+        if not self.formatting:
+            return
+
+        # Font family
+        font_family = self.formatting.get('font_family', 'Liberation Serif')
+        model = self.font_row.get_model()
+        for i in range(model.get_n_items()):
+            if model.get_string(i) == font_family:
+                self.font_row.set_selected(i)
+                break
+
+        # Font size
+        self.size_row.set_value(self.formatting.get('font_size', 12))
+
+        # Style
+        self.bold_row.set_active(self.formatting.get('bold', False))
+        self.italic_row.set_active(self.formatting.get('italic', False))
+        self.underline_row.set_active(self.formatting.get('underline', False))
+
+        # Spacing
+        self.line_spacing_row.set_value(self.formatting.get('line_spacing', 1.5))
+        self.indent_row.set_value(self.formatting.get('indent_first_line', 1.25))
+        self.left_margin_row.set_value(self.formatting.get('indent_left', 0.0))
+        self.right_margin_row.set_value(self.formatting.get('indent_right', 0.0))
+
+        # Alignment
+        alignment = self.formatting.get('alignment', 'left')
+        alignment_map = {'left': 0, 'center': 1, 'right': 2, 'justify': 3}
+        self.alignment_row.set_selected(alignment_map.get(alignment, 0))
+
+    def _on_apply_clicked(self, button):
+        """Apply formatting changes to all paragraphs"""
+        # Update formatting dictionary
+        model = self.font_row.get_model()
+        selected_font = model.get_string(self.font_row.get_selected())
+
+        # Map alignment
+        alignment_names = ['left', 'center', 'right', 'justify']
+        selected_alignment = alignment_names[self.alignment_row.get_selected()]
+
+        new_formatting = {
+            'font_family': selected_font,
+            'font_size': int(self.size_row.get_value()),
+            'bold': self.bold_row.get_active(),
+            'italic': self.italic_row.get_active(),
+            'underline': self.underline_row.get_active(),
+            'line_spacing': self.line_spacing_row.get_value(),
+            'indent_first_line': self.indent_row.get_value(),
+            'indent_left': self.left_margin_row.get_value(),
+            'indent_right': self.right_margin_row.get_value(),
+            'alignment': selected_alignment
+        }
+
+        # Apply to all paragraphs
+        for paragraph in self.paragraphs:
+            paragraph.update_formatting(new_formatting)
+
+        # Notify main window to update view
+        if hasattr(self.get_transient_for(), '_refresh_paragraph_formatting'):
+            self.get_transient_for()._refresh_paragraph_formatting()
+
+        self.destroy()'''
+
+>>>>>>> Stashed changes
 class ExportDialog(Adw.Window):
     """Dialog for exporting projects"""
 

@@ -12,6 +12,10 @@ from .components import (
 )
 from .dialogs import (
     NewProjectDialog,
+<<<<<<< Updated upstream
+=======
+    #FormatDialog,
+>>>>>>> Stashed changes
     ExportDialog,
     PreferencesDialog,
     AboutDialog
@@ -29,6 +33,10 @@ __all__ = [
     
     # Dialogs
     'NewProjectDialog',
+<<<<<<< Updated upstream
+=======
+    #'FormatDialog',
+>>>>>>> Stashed changes
     'ExportDialog', 
     'PreferencesDialog',
     'AboutDialog'
