@@ -940,7 +940,21 @@ class ParagraphEditor(Gtk.Box):
     def _on_realize(self, widget):
         """Called when widget is shown for the first time"""
         # Apply formatting defined in the model
+        # CSS code
+        formatting = self.paragraph.formatting
+        font_family = formatting.get('font_family', 'Adwaita Sans')
+        font_size = formatting.get('font_size', 12)
+        css_provider = Gtk.CssProvider()
+        css = f"""
+        .paragraph-text-view {{
+            font-family: '{font_family}';
+            font-size: {font_size}pt;
+        }}
+        """
+        css_provider.load_from_data(css.encode())
+        self.text_view.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         self._apply_formatting()
+        
 
         # Setup spell checker
         if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
@@ -948,6 +962,22 @@ class ParagraphEditor(Gtk.Box):
                 self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
             except Exception as e:
                 print(f"✗ Error setting up spell check: {e}")
+
+    def _setup_delayed_initialization(self):
+        """Setup both formatting and spell check after widget is realized"""
+        # Aplicar formatação primeiro
+        self._apply_formatting()
+    
+        # Depois configurar spell check
+        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
+            try:
+                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+                if self.spell_checker:
+                    print(f"✓ Spell check enabled for paragraph: {self.paragraph.type.value}")
+            except Exception as e:
+                print(f"✗ Error setting up spell check: {e}")
+    
+        return False
 
     def _create_header(self):
         """Create paragraph header with type and controls"""
@@ -1128,45 +1158,54 @@ class ParagraphEditor(Gtk.Box):
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
 
+    
     def _apply_formatting(self):
-        """Apply formatting using TextBuffer tags and TextView properties"""
+        """Aplica a formatação usando tags do TextBuffer (modo GTK4)"""
+        # Cláusula de guarda: garante que o text_buffer foi inicializado
         if not self.text_buffer or not self.text_view:
             return
     
         formatting = self.paragraph.formatting
+
+        # Create text tags
         tag_table = self.text_buffer.get_tag_table()
-        
-        # Use a unique tag name for this paragraph editor instance
-        tag_name = f"format_{self.paragraph.id}"
-        
-        format_tag = tag_table.lookup(tag_name)
-        if not format_tag:
-            format_tag = self.text_buffer.create_tag(tag_name)
 
-        # Apply styles via tag properties
-        if 'font_family' in formatting:
-            format_tag.set_property("family", formatting['font_family'])
-        if 'font_size' in formatting:
-            format_tag.set_property("size-points", formatting['font_size'])
+        # Remove "format" tag if exist
+        existing_tag = tag_table.lookup("format")
+        if existing_tag:
+            tag_table.remove(existing_tag)
+
+        # Cria uma nova tag de formatação
+        format_tag = self.text_buffer.create_tag("format")
+
+        # Apply stiles only
         if formatting.get('bold', False):
-            format_tag.set_property("weight", Pango.Weight.BOLD)
+            format_tag.set_property("weight", 700)
         if formatting.get('italic', False):
-            format_tag.set_property("style", Pango.Style.ITALIC)
+            format_tag.set_property("style", 2)
         if formatting.get('underline', False):
-            format_tag.set_property("underline", Pango.Underline.SINGLE)
+            format_tag.set_property("underline", 1)
 
+        # Apply bold/italic/underline
+        if formatting.get('bold', False):
+            format_tag.set_property("weight", 700)  # Pango.Weight.BOLD
+
+        if formatting.get('italic', False):
+            format_tag.set_property("style", 2)  # Pango.Style.ITALIC
+
+        if formatting.get('underline', False):
+            format_tag.set_property("underline", 1)  # Pango.Underline.SINGLE
+
+        # Aplica a tag a todo o texto
         start_iter = self.text_buffer.get_start_iter()
         end_iter = self.text_buffer.get_end_iter()
         self.text_buffer.apply_tag(format_tag, start_iter, end_iter)
 
-        # Apply properties directly to TextView
-        self.text_view.set_pixels_above_lines(formatting.get('line_spacing', 1.5) * 5)
-        self.text_view.set_left_margin(int(formatting.get('indent_left', 0.0) * 28))
-        self.text_view.set_right_margin(int(formatting.get('indent_right', 0.0) * 28))
-        self.text_view.set_indent(int(formatting.get('indent_first_line', 0.0) * 28))
-        
-        alignment_map = {'left': Gtk.Justification.LEFT, 'center': Gtk.Justification.CENTER, 'right': Gtk.Justification.RIGHT, 'justify': Gtk.Justification.FILL}
-        self.text_view.set_justification(alignment_map.get(formatting.get('alignment', 'left'), Gtk.Justification.LEFT))
+        # Aplica margens
+        left_margin = formatting.get('indent_left', 0.0)
+        right_margin = formatting.get('indent_right', 0.0)
+        self.text_view.set_left_margin(int(left_margin * 28))
+        self.text_view.set_right_margin(int(right_margin * 28))
 
 
     def _update_word_count(self):
@@ -1207,6 +1246,24 @@ class ParagraphEditor(Gtk.Box):
             self.emit('remove-requested', self.paragraph.id)
         dialog.destroy()
 
+    def update_from_formatting(self, formatting: dict):
+        """Update toolbar state from formatting dictionary"""
+        # Update font family
+        font_family = formatting.get('font_family', 'Liberation Serif')
+        for i in range(self.font_combo.get_model().iter_n_children(None)):
+            model = self.font_combo.get_model()
+            iter_val = model.iter_nth_child(None, i)
+            if model.get_value(iter_val, 0) == font_family:
+                self.font_combo.set_active(i)
+                break
+
+        # Update font size
+        self.size_spin.set_value(formatting.get('font_size', 12))
+
+        # Update toggle buttons
+        self.bold_button.set_active(formatting.get('bold', False))
+        self.italic_button.set_active(formatting.get('italic', False))
+        self.underline_button.set_active(formatting.get('underline', False))
 
 class TextEditor(Gtk.Box):
     """Advanced text editor component"""

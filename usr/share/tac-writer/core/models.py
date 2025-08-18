@@ -82,6 +82,22 @@ class Paragraph:
         self.content = content
         self.modified_at = datetime.now()
 
+    def update_formatting(self, formatting_updates: Dict[str, Any]) -> None:
+        """Update paragraph formatting"""
+        # For Title 1 and Title 2, preserve font size if not explicitly changed
+        if self.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+            # If user is not explicitly changing font size,
+            # preserve default size for title type
+            if 'font_size' not in formatting_updates:
+                formatting_updates = formatting_updates.copy()
+                if self.type == ParagraphType.TITLE_1:
+                    formatting_updates['font_size'] = 18
+            elif self.type == ParagraphType.TITLE_2:
+                formatting_updates['font_size'] = 16
+    
+        self.formatting.update(formatting_updates)
+        self.modified_at = self.created_at
+
     def get_word_count(self) -> int:
         """Get word count for this paragraph"""
         return len(self.content.split()) if self.content else 0
@@ -172,6 +188,7 @@ class Project:
             }
         }
 
+    
     def add_paragraph(self, paragraph_type: ParagraphType, content: str = "",
                      position: Optional[int] = None) -> Paragraph:
         """Add a new paragraph to the project"""
