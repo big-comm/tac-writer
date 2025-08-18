@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 339
+# File: usr/share/tac-writer/core/models.py, line: 356
 msgid "Academic Essay"
 msgstr "Academic Essay"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 340
+# File: usr/share/tac-writer/core/models.py, line: 357
 msgid "Standard academic essay structure"
 msgstr "Standard academic essay structure"
 
@@ -105,7 +105,7 @@ msgstr "Add Paragraph"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 320
-# File: usr/share/tac-writer/ui/components.py, line: 1122
+# File: usr/share/tac-writer/ui/components.py, line: 1152
 msgid "Title 1"
 msgstr "Title 1"
 
@@ -113,7 +113,7 @@ msgstr "Title 1"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 321
-# File: usr/share/tac-writer/ui/components.py, line: 1123
+# File: usr/share/tac-writer/ui/components.py, line: 1153
 msgid "Title 2"
 msgstr "Title 2"
 
@@ -121,7 +121,7 @@ msgstr "Title 2"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 322
-# File: usr/share/tac-writer/ui/components.py, line: 1124
+# File: usr/share/tac-writer/ui/components.py, line: 1154
 msgid "Introduction"
 msgstr "Introduction"
 
@@ -129,7 +129,7 @@ msgstr "Introduction"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 323
-# File: usr/share/tac-writer/ui/components.py, line: 1125
+# File: usr/share/tac-writer/ui/components.py, line: 1155
 msgid "Argument"
 msgstr "Argument"
 
@@ -137,7 +137,7 @@ msgstr "Argument"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 324
-# File: usr/share/tac-writer/ui/components.py, line: 1126
+# File: usr/share/tac-writer/ui/components.py, line: 1156
 msgid "Quote"
 msgstr "Quote"
 
@@ -145,7 +145,7 @@ msgstr "Quote"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 325
-# File: usr/share/tac-writer/ui/components.py, line: 1127
+# File: usr/share/tac-writer/ui/components.py, line: 1157
 msgid "Conclusion"
 msgstr "Conclusion"
 
@@ -185,7 +185,7 @@ msgstr "Open"
 # File: usr/share/tac-writer/ui/dialogs.py, line: 650
 # File: usr/share/tac-writer/ui/components.py, line: 847
 # File: usr/share/tac-writer/ui/components.py, line: 886
-# File: usr/share/tac-writer/ui/components.py, line: 1195
+# File: usr/share/tac-writer/ui/components.py, line: 1234
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -724,38 +724,38 @@ msgid "Delete"
 msgstr "Delete"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 977
+# File: usr/share/tac-writer/ui/components.py, line: 1007
 msgid "Toggle spell checking"
 msgstr "Toggle spell checking"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 993
+# File: usr/share/tac-writer/ui/components.py, line: 1023
 msgid "Remove paragraph"
 msgstr "Remove paragraph"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1129
+# File: usr/share/tac-writer/ui/components.py, line: 1159
 msgid "Paragraph"
 msgstr "Paragraph"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1175
+# File: usr/share/tac-writer/ui/components.py, line: 1214
 #, python-brace-format
 msgid "{count} words"
 msgstr "{count} words"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1191
+# File: usr/share/tac-writer/ui/components.py, line: 1230
 msgid "Remove Paragraph?"
 msgstr "Remove Paragraph?"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1192
+# File: usr/share/tac-writer/ui/components.py, line: 1231
 msgid "This action cannot be undone."
 msgstr "This action cannot be undone."
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1196
+# File: usr/share/tac-writer/ui/components.py, line: 1235
 msgid "Remove"
 msgstr "Remove"
 
