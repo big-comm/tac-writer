@@ -252,6 +252,17 @@ msgstr "Técnica de Argumentação Contínua"
 msgid "{} words • {} paragraphs"
 msgstr "{} palavras • {} parágrafos"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Carregando projeto..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Falha ao abrir o projeto: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

@@ -252,6 +252,17 @@ msgstr "持续论证技术"
 msgid "{} words • {} paragraphs"
 msgstr "{} 字 • {} 段落"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "加载项目..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "无法打开项目：{}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

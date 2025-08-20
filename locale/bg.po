@@ -252,6 +252,17 @@ msgstr "Непрекъсната аргументационна техника"
 msgid "{} words • {} paragraphs"
 msgstr "{} думи • {} абзаци"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Зареждане на проекта..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Неуспешно отваряне на проекта: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

@@ -252,6 +252,17 @@ msgstr "Kontinuální argumentační technika"
 msgid "{} words • {} paragraphs"
 msgstr "{} slov • {} odstavců"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Načítání projektu..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Nepodařilo se otevřít projekt: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

@@ -252,6 +252,17 @@ msgstr "지속적인 논증 기법"
 msgid "{} words • {} paragraphs"
 msgstr "{} 단어 • {} 문단"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "프로젝트 로딩 중..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "프로젝트를 열지 못했습니다: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

@@ -252,6 +252,17 @@ msgstr "Tehnica Argumentării Continue"
 msgid "{} words • {} paragraphs"
 msgstr "{} cuvinte • {} paragrafe"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Încărcare proiect..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Nu s-a putut deschide proiectul: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

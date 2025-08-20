@@ -252,6 +252,17 @@ msgstr "継続的議論技術"
 msgid "{} words • {} paragraphs"
 msgstr "{} ワード • {} 段落"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "プロジェクトを読み込み中..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "プロジェクトを開くことに失敗しました: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

@@ -252,6 +252,17 @@ msgstr "Kontinuerlig Argumentationsteknik"
 msgid "{} words • {} paragraphs"
 msgstr "{} ord • {} stycken"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Laddar projekt..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Misslyckades med att öppna projekt: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

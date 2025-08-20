@@ -252,6 +252,17 @@ msgstr "Kontinuirana tehnika argumentacije"
 msgid "{} words • {} paragraphs"
 msgstr "{} riječi • {} odlomaka"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Učitavanje projekta..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Neuspjeh pri otvaranju projekta: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"

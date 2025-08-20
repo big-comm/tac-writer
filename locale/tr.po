@@ -252,6 +252,17 @@ msgstr "Sürekli Argümantasyon Tekniği"
 msgid "{} words • {} paragraphs"
 msgstr "{} kelime • {} paragraf"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 762
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Proje yükleniyor..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 779
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Proje açılamadı: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
 msgid "New Project"
