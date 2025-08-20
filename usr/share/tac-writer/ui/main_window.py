@@ -605,26 +605,13 @@ class MainWindow(Adw.ApplicationWindow):
         dialog.present()
 
     def _load_project(self, project_id: str):
-        """Load a project asynchronously"""
-        
-        # Mostrar loading indicator
         self._show_loading_state()
-        
-        # Carregar em thread separada
-        def load_thread():
-            try:
-                project = self.project_manager.load_project(project_id)
-                # Retornar para main thread
-                GLib.idle_add(self._on_project_loaded, project, None)
-            except Exception as e:
-                # Retornar erro para main thread  
-                GLib.idle_add(self._on_project_loaded, None, str(e))
-        
-        # Executar em thread daemon
-        import threading
-        thread = threading.Thread(target=load_thread)
-        thread.daemon = True
-        thread.start()
+
+        try:
+            project = self.project_manager.load_project(project_id)
+            self._on_project_loaded(project, None)
+        except Exception as e:
+            self._on_project_loaded(None, str(e))
 
 
     def _add_paragraph(self, paragraph_type: ParagraphType):
