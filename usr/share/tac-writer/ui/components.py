@@ -22,6 +22,31 @@ from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper
 from utils.i18n import _
 
+
+# Cache global de CSS providers
+_css_cache = {}
+
+def get_cached_css_provider(font_family: str, font_size: int) -> dict:
+    """Get or create cached CSS provider"""
+    key = f"{font_family}_{font_size}"
+    
+    if key not in _css_cache:
+        css_provider = Gtk.CssProvider()
+        class_name = f'paragraph-text-view-{key.replace(" ", "_").replace("\'", "")}'
+        css = f"""
+        .{class_name} {{
+            font-family: '{font_family}';
+            font-size: {font_size}pt;
+        }}
+        """
+        css_provider.load_from_data(css.encode())
+        _css_cache[key] = {
+            'provider': css_provider,
+            'class_name': class_name
+        }
+    
+    return _css_cache[key]
+
 class PomodoroTimer(GObject.Object):
     """Timer Pomodoro para ajudar na concentração durante a escrita"""
     
@@ -938,30 +963,39 @@ class ParagraphEditor(Gtk.Box):
         self.connect('realize', self._on_realize)
 
     def _on_realize(self, widget):
-        """Called when widget is shown for the first time"""
-        # Apply formatting defined in the model
-        # CSS code
+        """Called when widget is shown for the first time - OTIMIZADO"""
         formatting = self.paragraph.formatting
         font_family = formatting.get('font_family', 'Adwaita Sans')
         font_size = formatting.get('font_size', 12)
-        css_provider = Gtk.CssProvider()
-        css = f"""
-        .paragraph-text-view {{
-            font-family: '{font_family}';
-            font-size: {font_size}pt;
-        }}
-        """
-        css_provider.load_from_data(css.encode())
-        self.text_view.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        
+        # ✅ Usar CSS cache em vez de criar provider individual
+        css_cache = get_cached_css_provider(font_family, font_size)
+        self.text_view.add_css_class(css_cache['class_name'])
+        
+        # Aplicar provider global apenas uma vez
+        if not hasattr(self.__class__, '_css_applied'):
+            display = Gdk.Display.get_default()
+            if display:
+                Gtk.StyleContext.add_provider_for_display(
+                    display,
+                    css_cache['provider'],
+                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                )
+            self.__class__._css_applied = True
+        
         self._apply_formatting()
         
+        # ✅ Spell check lazy loading  
+        GLib.idle_add(self._setup_spell_check_lazy)
 
-        # Setup spell checker
+    def _setup_spell_check_lazy(self):
+        """Setup spell check em idle para não travar UI"""
         if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
             try:
                 self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
             except Exception as e:
                 print(f"✗ Error setting up spell check: {e}")
+        return False  # Remove from idle
 
     def _setup_delayed_initialization(self):
         """Setup both formatting and spell check after widget is realized"""

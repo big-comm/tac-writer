@@ -207,7 +207,7 @@ class Project:
             elif self.paragraphs:
                 last_content_paragraph = None
                 for p in reversed(self.paragraphs):
-                    if p.type not in [ParagraphType.TITLE_1, ParagraphType.TITLE_2]:
+                    if p.type not in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]:
                         last_content_paragraph = p
                         break
                 

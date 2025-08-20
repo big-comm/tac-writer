@@ -342,24 +342,48 @@ class MainWindow(Adw.ApplicationWindow):
         return toolbar_box
 
     def _refresh_paragraphs(self):
-        """Refresh the paragraphs display"""
+        """Refresh paragraphs display with incremental updates - OTIMIZADO"""
         if not self.current_project:
             return
-
-        # Clear existing paragraphs
+        
+        # Mapear widgets existentes por ID do parágrafo
+        existing_widgets = {}
+        child = self.paragraphs_box.get_first_child()
+        while child:
+            if hasattr(child, 'paragraph') and hasattr(child.paragraph, 'id'):
+                existing_widgets[child.paragraph.id] = child
+            child = child.get_next_sibling()
+        
+        # IDs dos parágrafos atuais
+        current_paragraph_ids = {p.id for p in self.current_project.paragraphs}
+        
+        # Remover widgets órfãos (parágrafos deletados)
+        for paragraph_id, widget in list(existing_widgets.items()):
+            if paragraph_id not in current_paragraph_ids:
+                self.paragraphs_box.remove(widget)
+                del existing_widgets[paragraph_id]
+        
+        # Limpar container e reordenar
         child = self.paragraphs_box.get_first_child()
         while child:
             next_child = child.get_next_sibling()
             self.paragraphs_box.remove(child)
             child = next_child
-
-        # Add paragraphs
+        
+        # Adicionar widgets na ordem correta
         for paragraph in self.current_project.paragraphs:
-            paragraph_editor = ParagraphEditor(paragraph, config=self.config)
-            paragraph_editor.connect('content-changed', self._on_paragraph_changed)
-            paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
-            paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
-            self.paragraphs_box.append(paragraph_editor)
+            if paragraph.id in existing_widgets:
+                # Reutilizar widget existente
+                widget = existing_widgets[paragraph.id]
+                self.paragraphs_box.append(widget)
+            else:
+                # Criar novo widget apenas se necessário
+                paragraph_editor = ParagraphEditor(paragraph, config=self.config)
+                paragraph_editor.connect('content-changed', self._on_paragraph_changed)
+                paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
+                paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
+                self.paragraphs_box.append(paragraph_editor)
+                existing_widgets[paragraph.id] = paragraph_editor
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
@@ -573,16 +597,28 @@ class MainWindow(Adw.ApplicationWindow):
         dialog = AboutDialog(self)
         dialog.present()
 
-    # Helper methods
     def _load_project(self, project_id: str):
-        """Load a project"""
-        project = self.project_manager.load_project(project_id)
-        if project:
-            self.current_project = project
-            self._show_editor_view()
-            self._show_toast(_("Opened project: {}").format(project.name))
-        else:
-            self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
+        """Load a project asynchronously"""
+        
+        # Mostrar loading indicator
+        self._show_loading_state()
+        
+        # Carregar em thread separada
+        def load_thread():
+            try:
+                project = self.project_manager.load_project(project_id)
+                # Retornar para main thread
+                GLib.idle_add(self._on_project_loaded, project, None)
+            except Exception as e:
+                # Retornar erro para main thread  
+                GLib.idle_add(self._on_project_loaded, None, str(e))
+        
+        # Executar em thread daemon
+        import threading
+        thread = threading.Thread(target=load_thread)
+        thread.daemon = True
+        thread.start()
+
 
     def _add_paragraph(self, paragraph_type: ParagraphType):
         """Add a new paragraph"""
@@ -711,3 +747,73 @@ class MainWindow(Adw.ApplicationWindow):
             title_widget.set_subtitle(subtitle)
             self.save_button.set_sensitive(True)
             self.pomodoro_button.set_sensitive(True)
+
+    def _show_loading_state(self):
+        """Show loading indicator"""
+        # Criar loading spinner se não existir
+        if not hasattr(self, 'loading_spinner'):
+            self.loading_spinner = Gtk.Spinner()
+            self.loading_spinner.set_size_request(48, 48)
+            
+        # Adicionar à stack se não estiver lá
+        if not self.main_stack.get_child_by_name("loading"):
+            loading_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+            loading_box.set_valign(Gtk.Align.CENTER)
+            loading_box.set_halign(Gtk.Align.CENTER)
+            
+            self.loading_spinner.start()
+            loading_box.append(self.loading_spinner)
+            
+            loading_label = Gtk.Label()
+            loading_label.set_text(_("Loading project..."))
+            loading_label.add_css_class("dim-label")
+            loading_box.append(loading_label)
+            
+            self.main_stack.add_named(loading_box, "loading")
+        
+        # Mostrar loading
+        self.main_stack.set_visible_child_name("loading")
+        self._update_header_for_view("loading")
+
+    def _on_project_loaded(self, project, error):
+        """Callback when project finishes loading"""
+        # Parar loading spinner
+        if hasattr(self, 'loading_spinner'):
+            self.loading_spinner.stop()
+        
+        if error:
+            self._show_toast(_("Failed to open project: {}").format(error), Adw.ToastPriority.HIGH)
+            self._show_welcome_view()  # Voltar para welcome
+            return False
+        
+        if project:
+            self.current_project = project
+            # Mostrar editor de forma otimizada
+            self._show_editor_view_optimized()
+            self._show_toast(_("Opened project: {}").format(project.name))
+        else:
+            self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
+            self._show_welcome_view()
+        
+        return False 
+
+    def _show_editor_view_optimized(self):
+        """Show editor view with optimizations"""
+        if not self.current_project:
+            return
+        
+        # Verificar se já existe editor view
+        editor_page = self.main_stack.get_child_by_name("editor")
+        
+        if not editor_page:
+            # Criar editor view apenas se não existir
+            self.editor_view = self._create_editor_view()
+            self.main_stack.add_named(self.editor_view, "editor")
+        else:
+            # ✅ Reutilizar view existente e apenas fazer refresh incremental
+            self.editor_view = editor_page
+            self._refresh_paragraphs()  # Agora usa update incremental
+        
+        self.main_stack.set_visible_child_name("editor")
+        self._update_header_for_view("editor")
+ 
