@@ -16,6 +16,7 @@ from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
 from ui.components import PomodoroTimer
+from gi.repository import GLib
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -342,48 +343,54 @@ class MainWindow(Adw.ApplicationWindow):
         return toolbar_box
 
     def _refresh_paragraphs(self):
-        """Refresh paragraphs display with incremental updates - OTIMIZADO"""
+        """ACHO QUE NÃO TRAVA =D"""
         if not self.current_project:
             return
-        
-        # Mapear widgets existentes por ID do parágrafo
+    
         existing_widgets = {}
         child = self.paragraphs_box.get_first_child()
         while child:
             if hasattr(child, 'paragraph') and hasattr(child.paragraph, 'id'):
                 existing_widgets[child.paragraph.id] = child
             child = child.get_next_sibling()
-        
-        # IDs dos parágrafos atuais
+
         current_paragraph_ids = {p.id for p in self.current_project.paragraphs}
-        
-        # Remover widgets órfãos (parágrafos deletados)
+    
         for paragraph_id, widget in list(existing_widgets.items()):
             if paragraph_id not in current_paragraph_ids:
                 self.paragraphs_box.remove(widget)
                 del existing_widgets[paragraph_id]
-        
-        # Limpar container e reordenar
+    
         child = self.paragraphs_box.get_first_child()
         while child:
             next_child = child.get_next_sibling()
             self.paragraphs_box.remove(child)
             child = next_child
-        
-        # Adicionar widgets na ordem correta
-        for paragraph in self.current_project.paragraphs:
-            if paragraph.id in existing_widgets:
-                # Reutilizar widget existente
-                widget = existing_widgets[paragraph.id]
-                self.paragraphs_box.append(widget)
-            else:
-                # Criar novo widget apenas se necessário
-                paragraph_editor = ParagraphEditor(paragraph, config=self.config)
-                paragraph_editor.connect('content-changed', self._on_paragraph_changed)
-                paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
-                paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
-                self.paragraphs_box.append(paragraph_editor)
-                existing_widgets[paragraph.id] = paragraph_editor
+    
+        self._paragraphs_to_add = list(self.current_project.paragraphs)
+        self._existing_widgets = existing_widgets
+
+        GLib.idle_add(self._process_next_paragraph)
+
+    def _process_next_paragraph(self):
+        """Jibreel: Carregamento assíncrono"""
+        if not self._paragraphs_to_add:
+            return False
+
+        paragraph = self._paragraphs_to_add.pop(0)
+        if paragraph.id in self._existing_widgets:
+            widget = self._existing_widgets[paragraph.id]
+            self.paragraphs_box.append(widget)
+        else:
+            paragraph_editor = ParagraphEditor(paragraph, config=self.config)
+            paragraph_editor.connect('content-changed', self._on_paragraph_changed)
+            paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
+            paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
+            self.paragraphs_box.append(paragraph_editor)
+            self._existing_widgets[paragraph.id] = paragraph_editor
+
+        return True
+
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
