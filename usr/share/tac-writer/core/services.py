@@ -74,8 +74,9 @@ class ProjectManager:
             # Backup logic
             if self.config.get('backup_files', False) and project_file.exists():
                 try:
-                    #backup_path = FileHelper.create_backup_filename(project_file)
-                    backup_filename = FileHelper.create_backup_filename(project_file, project.name).name
+                    safe_project_name = "".join(c for c in project.name if c.isalnum() or c in (' ', '-', '_')).strip()
+                    safe_project_name = safe_project_name.replace(' ', '_')
+                    backup_filename = f"{safe_project_name}_backup.json"
                     backup_dir = Path.home() / "Documents" / "TAC Projects" / "backups"
                     backup_dir.mkdir(parents=True, exist_ok=True)
                     final_backup_path = backup_dir / backup_filename
