@@ -95,7 +95,7 @@ class Config:
             'enable_animations': True,
 
             # Project defaults
-            'default_project_location': str(self.data_dir / 'projects'),
+            'database_file': str(self.data_dir / 'projects.db'),
             'project_template': 'academic_essay',
 
             # Export settings
@@ -103,7 +103,7 @@ class Config:
             'default_export_format': 'odt',
             'include_metadata': True,
 
-            # Recent projects list - CORRIGIDO: Adicionado campo ausente
+            # Recent projects list
             'recent_projects': []
         }
 
@@ -136,11 +136,12 @@ class Config:
         return self.config_dir / 'config.json'
 
     @property
-    def projects_dir(self) -> Path:
-        """Path to the projects directory"""
-        projects_path = Path(self.get('default_project_location'))
-        projects_path.mkdir(parents=True, exist_ok=True)
-        return projects_path
+    def database_path(self) -> Path:
+        """Path to the SQLite database file"""
+        db_path = Path(self.get('database_file'))
+        # Ensure parent directory exists
+        db_path.parent.mkdir(parents=True, exist_ok=True)
+        return db_path
 
     def save(self) -> bool:
         """Save configuration to file"""
