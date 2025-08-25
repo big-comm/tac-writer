@@ -26,8 +26,6 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 
 ## Screenshots
 
-*Screenshot placeholders - Add your application screenshots here*
-
 <img width="1920" height="1042" alt="tac-writer" src="https://github.com/user-attachments/assets/79bf425c-a001-4f9c-a3cd-83b3c6d498bb" />
 *Main editing interface with paragraph structure*
 
