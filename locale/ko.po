@@ -243,15 +243,6 @@ msgstr "생성된 프로젝트: {}"
 msgid "Continuous Argumentation Technique"
 msgstr "지속적인 논증 기법"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-#, python-brace-format
-msgid "{} words • {} paragraphs"
-msgstr "{} 단어 • {} 문단"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 762
 #: NEEDS WORK
 msgid "Loading project..."
@@ -819,6 +810,22 @@ msgstr "경로가 너무 깁니다"
 #, python-brace-format
 msgid "Invalid path: {}"
 msgstr "잘못된 경로: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 단락"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} 단락"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "키"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
 #: NEEDS WORK

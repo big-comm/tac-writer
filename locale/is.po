@@ -243,15 +243,6 @@ msgstr "Skráður verkefni: {}"
 msgid "Continuous Argumentation Technique"
 msgstr "Samfelldar röksemdaraðferð"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-#, python-brace-format
-msgid "{} words • {} paragraphs"
-msgstr "{} orð • {} málsgreinar"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 762
 #: NEEDS WORK
 msgid "Loading project..."
@@ -821,6 +812,22 @@ msgstr "Slóðin er of löng"
 #, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Ógild leið: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 málsgrein"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} málsgreinar"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "lykill"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
 #: NEEDS WORK

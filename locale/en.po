@@ -244,16 +244,6 @@ msgid "Continuous Argumentation Technique"
 msgstr "Continuous Argumentation Technique"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 712
-# File: usr/share/tac-writer/ui/components.py, line: 701
-# File: usr/share/tac-writer/ui/components.py, line: 778
-#, python-brace-format
-msgid "{} words • {} paragraphs"
-msgstr "{} words • {} paragraphs"
-
-#
 # File: usr/share/tac-writer/ui/main_window.py, line: 734
 msgid "Loading project..."
 msgstr "Loading project..."
@@ -728,7 +718,10 @@ msgid "Paragraph"
 msgstr "Paragraph"
 
 #
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+#
 # File: usr/share/tac-writer/ui/components.py, line: 1195
+# File: usr/share/tac-writer/utils/helpers.py, line: 285
 #, python-brace-format
 msgid "{count} words"
 msgstr "{count} words"
@@ -822,51 +815,67 @@ msgid "Invalid path: {}"
 msgstr "Invalid path: {}"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 307
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+msgid "1 paragraph"
+msgstr "1 paragraph"
+
+#
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} paragraphs"
+
+#
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+msgid "1 word"
+msgstr "1 word"
+
+#
+# File: usr/share/tac-writer/utils/helpers.py, line: 330
 msgid "{:,} words"
 msgstr "{:,} words"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 309
+# File: usr/share/tac-writer/utils/helpers.py, line: 332
 msgid "{:,} characters"
 msgstr "{:,} characters"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-# File: usr/share/tac-writer/utils/helpers.py, line: 342
+# File: usr/share/tac-writer/utils/helpers.py, line: 348
+# File: usr/share/tac-writer/utils/helpers.py, line: 365
 msgid "Info"
 msgstr "Info"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 326
+# File: usr/share/tac-writer/utils/helpers.py, line: 349
 #, python-brace-format
 msgid "Type: {}"
 msgstr "Type: {}"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 327
+# File: usr/share/tac-writer/utils/helpers.py, line: 350
 #, python-brace-format
 msgid "Module: {}"
 msgstr "Module: {}"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 330
+# File: usr/share/tac-writer/utils/helpers.py, line: 353
 msgid "Attributes:"
 msgstr "Attributes:"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 334
+# File: usr/share/tac-writer/utils/helpers.py, line: 357
 msgid "Methods:"
 msgstr "Methods:"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 340
+# File: usr/share/tac-writer/utils/helpers.py, line: 363
 #, python-brace-format
 msgid "  ... and {} more methods"
 msgstr "  ... and {} more methods"
 
 #
-# File: usr/share/tac-writer/utils/helpers.py, line: 348
+# File: usr/share/tac-writer/utils/helpers.py, line: 371
 #, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Performance: {} took {:.3f} seconds"

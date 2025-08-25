@@ -243,15 +243,6 @@ msgstr "Створено проєкт: {}"
 msgid "Continuous Argumentation Technique"
 msgstr "Безперервна аргументаційна техніка"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-#, python-brace-format
-msgid "{} words • {} paragraphs"
-msgstr "{} слів • {} абзаців"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 762
 #: NEEDS WORK
 msgid "Loading project..."
@@ -824,6 +815,22 @@ msgstr "Шлях занадто довгий"
 #, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Неправильний шлях: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 абзац"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} абзаців"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "ключ"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
 #: NEEDS WORK

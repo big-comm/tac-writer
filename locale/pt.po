@@ -243,15 +243,6 @@ msgstr "Projeto criado: {}"
 msgid "Continuous Argumentation Technique"
 msgstr "Técnica de Argumentação Contínua"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 340
-# File: usr/share/tac-writer/ui/components.py, line: 246
-#: NEEDS WORK
-#, python-brace-format
-msgid "{} words • {} paragraphs"
-msgstr "{} palavras • {} parágrafos"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 762
 #: NEEDS WORK
 msgid "Loading project..."
@@ -821,6 +812,22 @@ msgstr "O caminho é muito longo"
 #, python-brace-format
 msgid "Invalid path: {}"
 msgstr "Caminho inválido: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 parágrafo"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} parágrafos"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "chave"
 # 
 # File: usr/share/tac-writer/utils/helpers.py, line: 302
 #: NEEDS WORK
