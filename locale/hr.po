@@ -585,32 +585,6 @@ msgstr "Prikaži ovaj dijalog pri pokretanju"
 msgid "Let's Start"
 msgstr "Započnimo"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-#: NEEDS WORK
-msgid "TAC Writer - Academic Writing Assistant"
-msgstr "TAC Writer - Asistent za akademsko pisanje"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1131
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique - Academic Writing Assistant"
-msgstr "Kontinuirana argumentacijska tehnika - Asistent za akademsko pisanje"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-#: NEEDS WORK
-msgid "Tales Mendonça, Narayan Silva"
-msgstr "Tales Mendonça, Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
-#: NEEDS WORK
-msgid "Narayan Silva"
-msgstr "Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
-#: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Razvojni Tim"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
 #, python-brace-format
@@ -775,70 +749,6 @@ msgstr "Ova radnja se ne može poništiti."
 msgid "Remove"
 msgstr "Ukloni"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Greška: Potreban je GTK 4.0 ili noviji"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error: Required dependencies not found: {}"
-msgstr "Greška: Nedostaju potrebne ovisnosti: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Molimo instalirajte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error checking dependencies: {}"
-msgstr "Provjera grešaka ovisnosti: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Pokretanje TAC - Kontinuirana tehnika argumentacije"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-#, python-brace-format
-msgid "Application directory: {}"
-msgstr "Direktorij aplikacije: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Učitavanje modula aplikacije..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Stvaranje instance aplikacije..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Pokreće se TAC aplikacija..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "Aplikacija završena."
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Aplikacija prekinuta od strane korisnika."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-#, python-brace-format
-msgid "Critical error during startup: {}"
-msgstr "Kritična greška tijekom pokretanja: {}"
-# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
 msgid "Unknown"
@@ -961,3 +871,36 @@ msgstr "... i {} više metoda"
 #, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Izvedba: {} trajalo {:.3f} sekundi"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Greška: Nedostaju potrebne ovisnosti: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Molimo instalirajte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Greška: Potreban je GTK 4.0 ili noviji"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Provjera grešaka ovisnosti: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplikacija prekinuta od strane korisnika."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritična greška tijekom pokretanja: {}"

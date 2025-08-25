@@ -586,32 +586,6 @@ msgstr "Vis denne dialog ved opstart"
 msgid "Let's Start"
 msgstr "Lad os begynde"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-#: NEEDS WORK
-msgid "TAC Writer - Academic Writing Assistant"
-msgstr "TAC Writer - Akademisk Skriveassistent"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1131
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique - Academic Writing Assistant"
-msgstr "Kontinuerlig Argumentationsteknik - Akademisk Skriveassistent"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-#: NEEDS WORK
-msgid "Tales Mendonça, Narayan Silva"
-msgstr "Tales Mendonça, Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
-#: NEEDS WORK
-msgid "Narayan Silva"
-msgstr "Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1126
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
-#: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Udviklingsteam"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
 #, python-brace-format
@@ -776,70 +750,6 @@ msgstr "Denne handling kan ikke fortrydes."
 msgid "Remove"
 msgstr "Fjern"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Fejl: GTK 4.0 eller højere er påkrævet"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error: Required dependencies not found: {}"
-msgstr "Fejl: Nødvendige afhængigheder ikke fundet: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Installer venligst: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error checking dependencies: {}"
-msgstr "Fejlkontrol af afhængigheder: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Startende TAC - Kontinuerlig Argumentationsteknik"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-#, python-brace-format
-msgid "Application directory: {}"
-msgstr "Applikationsmappe: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Indlæser applikationsmoduler..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Opretter applikationsinstans..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Kører TAC-applikation..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "Applikationen er færdig."
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Applikationen blev afbrudt af brugeren."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-#, python-brace-format
-msgid "Critical error during startup: {}"
-msgstr "Kritisk fejl under opstart: {}"
-# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
 msgid "Unknown"
@@ -962,3 +872,36 @@ msgstr "... og {} flere metoder"
 #, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Ydelse: {} tog {:.3f} sekunder"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Fejl: Nødvendige afhængigheder ikke fundet: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Installer venligst: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Fejl: GTK 4.0 eller højere er påkrævet"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Fejlkontrol af afhængigheder: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Applikationen blev afbrudt af brugeren."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritisk fejl under opstart: {}"

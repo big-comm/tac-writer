@@ -588,32 +588,6 @@ msgstr "Показувати цей діалог під час запуску"
 msgid "Let's Start"
 msgstr "Давайте почнемо"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-#: NEEDS WORK
-msgid "TAC Writer - Academic Writing Assistant"
-msgstr "TAC Writer - Академічний письменницький асистент"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
-#: NEEDS WORK
-msgid "Continuous Argumentation Technique - Academic Writing Assistant"
-msgstr "Безперервна аргументаційна техніка - Асистент академічного письма"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-#: NEEDS WORK
-msgid "Tales Mendonça, Narayan Silva"
-msgstr "Tales Mendonça, Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1140
-#: NEEDS WORK
-msgid "Narayan Silva"
-msgstr "Narayan Silva"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1125
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
-#: NEEDS WORK
-msgid "TAC Development Team"
-msgstr "TAC Розробницька Команда"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 145
 #: NEEDS WORK
 #, python-brace-format
@@ -778,70 +752,6 @@ msgstr "Цю дію не можна скасувати."
 msgid "Remove"
 msgstr "Видалити"
 # 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Помилка: потрібен GTK 4.0 або новіша версія"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error: Required dependencies not found: {}"
-msgstr "Помилка: Відсутні необхідні залежності: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error checking dependencies: {}"
-msgstr "Помилка перевірки залежностей: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Початок TAC - Безперервна аргументаційна техніка"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-#, python-brace-format
-msgid "Application directory: {}"
-msgstr "Директорія програми: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Завантаження модулів програми..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Створення екземпляра програми..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Запуск програми TAC..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "Застосунок завершено."
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Застосунок перервано користувачем."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-#, python-brace-format
-msgid "Critical error during startup: {}"
-msgstr "Критична помилка під час запуску: {}"
-# 
 # File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
 msgid "Unknown"
@@ -964,3 +874,36 @@ msgstr "... та {} інших методів"
 #, python-brace-format
 msgid "Performance: {} took {:.3f} seconds"
 msgstr "Performance: {} took {:.3f} seconds"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Помилка: Відсутні необхідні залежності: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Помилка: потрібен GTK 4.0 або новіша версія"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Помилка перевірки залежностей: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Застосунок перервано користувачем."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Критична помилка під час запуску: {}"
