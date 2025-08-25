@@ -8,6 +8,7 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from gi.repository import Gtk, Adw, Gio, GObject, GLib
+
 from core.models import Project, ParagraphType
 from core.services import ProjectManager, ExportService
 from core.config import Config
@@ -16,7 +17,7 @@ from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
 from ui.components import PomodoroTimer
-from gi.repository import GLib
+
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -32,10 +33,9 @@ class MainWindow(Adw.ApplicationWindow):
         self.export_service = ExportService()
         self.current_project: Project = None
 
-        # NOVO: Timer Pomodoro
+        # Pomodoro Timer
         self.pomodoro_dialog = None
         self.timer = PomodoroTimer()
-
 
         # UI components
         self.header_bar = None
@@ -54,8 +54,6 @@ class MainWindow(Adw.ApplicationWindow):
 
         # Show welcome dialog if enabled
         GLib.timeout_add(500, self._maybe_show_welcome_dialog)
-
-        print("MainWindow initialized")
 
     def _setup_window(self):
         """Setup basic window properties"""
@@ -332,18 +330,10 @@ class MainWindow(Adw.ApplicationWindow):
         add_button.set_menu_model(menu_model)
         toolbar_box.append(add_button)
 
-        # Add formatting button
-        #format_button = Gtk.Button()
-        #format_button.set_label(_("Format"))
-        #format_button.set_icon_name("format-text-bold-symbolic")
-        #format_button.set_tooltip_text(_("Format paragraphs"))
-        #format_button.connect('clicked', self._on_format_clicked)
-        #toolbar_box.append(format_button)
-
         return toolbar_box
 
     def _refresh_paragraphs(self):
-        """ACHO QUE NÃO TRAVA =D"""
+        """Refresh paragraphs display with optimized loading"""
         if not self.current_project:
             return
     
@@ -373,7 +363,7 @@ class MainWindow(Adw.ApplicationWindow):
         GLib.idle_add(self._process_next_paragraph)
 
     def _process_next_paragraph(self):
-        """Jibreel: Carregamento assíncrono"""
+        """Process next paragraph for asynchronous loading"""
         if not self._paragraphs_to_add:
             return False
 
@@ -390,7 +380,6 @@ class MainWindow(Adw.ApplicationWindow):
             self._existing_widgets[paragraph.id] = paragraph_editor
 
         return True
-
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
@@ -509,6 +498,13 @@ class MainWindow(Adw.ApplicationWindow):
         """Handle window state changes"""
         self._save_window_state()
 
+    def _on_pomodoro_clicked(self, button):
+        """Handle pomodoro button click"""
+        if not self.pomodoro_dialog:
+            from ui.components import PomodoroDialog
+            self.pomodoro_dialog = PomodoroDialog(self, self.timer)
+        self.pomodoro_dialog.show_dialog()
+
     # Action handlers
     def _action_toggle_sidebar(self, action, param):
         """Toggle sidebar visibility"""
@@ -519,6 +515,10 @@ class MainWindow(Adw.ApplicationWindow):
         if param:
             paragraph_type = ParagraphType(param.get_string())
             self._add_paragraph(paragraph_type)
+
+    def _action_show_welcome(self, action, param):
+        """Handle show welcome action"""
+        self.show_welcome_dialog()
 
     # Public methods called by application
     def show_new_project_dialog(self):
@@ -604,7 +604,13 @@ class MainWindow(Adw.ApplicationWindow):
         dialog = AboutDialog(self)
         dialog.present()
 
+    def show_welcome_dialog(self):
+        """Show the welcome dialog"""
+        dialog = WelcomeDialog(self, self.config)
+        dialog.present()
+
     def _load_project(self, project_id: str):
+        """Load a project by ID"""
         self._show_loading_state()
 
         try:
@@ -612,7 +618,6 @@ class MainWindow(Adw.ApplicationWindow):
             self._on_project_loaded(project, None)
         except Exception as e:
             self._on_project_loaded(None, str(e))
-
 
     def _add_paragraph(self, paragraph_type: ParagraphType):
         """Add a new paragraph"""
@@ -655,75 +660,11 @@ class MainWindow(Adw.ApplicationWindow):
         if self.config.get('window_maximized', False):
             self.maximize()
 
-    '''def _on_format_clicked(self, button):
-        """Handle format button click - MODIFICADO para salvar formatação preferida"""
-        if not self.current_project:
-            return
-
-        # Collect non-Quote paragraphs
-        non_quote_paragraphs = [
-            p for p in self.current_project.paragraphs
-            if p.type != ParagraphType.QUOTE
-        ]
-
-        if not non_quote_paragraphs:
-            self._show_toast(_("No paragraphs to format"))
-            return
-
-        # Open formatting dialog
-        from .dialogs import FormatDialog
-        dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
-        
-        # NOVO: Conectar sinal para salvar formatação preferida
-        def on_dialog_destroy(dialog):
-            if non_quote_paragraphs:
-                # Salvar a formatação aplicada como preferida para novos parágrafos
-                sample_formatting = non_quote_paragraphs[0].formatting.copy()
-                # Remover formatações específicas que não devem ser herdadas
-                preferred = {
-                    'font_family': sample_formatting.get('font_family', 'Liberation Serif'),
-                    'font_size': sample_formatting.get('font_size', 12),
-                    'line_spacing': sample_formatting.get('line_spacing', 1.5),
-                    'alignment': sample_formatting.get('alignment', 'justify'),
-                    'bold': sample_formatting.get('bold', False),
-                    'italic': sample_formatting.get('italic', False),
-                    'underline': sample_formatting.get('underline', False),
-                }
-                self.current_project.update_preferred_formatting(preferred)
-                print(f"Debug: Saved preferred formatting after dialog close: {preferred}")
-        
-        dialog.connect('destroy', on_dialog_destroy)
-        dialog.present()'''
-
     def _maybe_show_welcome_dialog(self):
         """Show welcome dialog if enabled in config"""
         if self.config.get('show_welcome_dialog', True):
             self.show_welcome_dialog()
         return False
-
-    def show_welcome_dialog(self):
-        """Show the welcome dialog"""
-        dialog = WelcomeDialog(self, self.config)
-        dialog.present()
-
-    def _action_show_welcome(self, action, param):
-        """Handle show welcome action"""
-        self.show_welcome_dialog()
-
-    '''def _refresh_paragraph_formatting(self):
-        """Refresh formatting display for all paragraph editors"""
-        if hasattr(self, 'paragraphs_box'):
-            child = self.paragraphs_box.get_first_child()
-            while child:
-                if hasattr(child, 'refresh_formatting'):
-                    child.refresh_formatting()
-                child = child.get_next_sibling()'''
-
-    def _on_pomodoro_clicked(self, button):
-        if not self.pomodoro_dialog:
-            from ui.components import PomodoroDialog
-            self.pomodoro_dialog = PomodoroDialog(self, self.timer)
-        self.pomodoro_dialog.show_dialog()
 
     def _update_header_for_view(self, view_name: str):
         """Update header bar for current view"""
@@ -744,12 +685,12 @@ class MainWindow(Adw.ApplicationWindow):
 
     def _show_loading_state(self):
         """Show loading indicator"""
-        # Criar loading spinner se não existir
+        # Create loading spinner if it doesn't exist
         if not hasattr(self, 'loading_spinner'):
             self.loading_spinner = Gtk.Spinner()
             self.loading_spinner.set_size_request(48, 48)
             
-        # Adicionar à stack se não estiver lá
+        # Add to stack if not there
         if not self.main_stack.get_child_by_name("loading"):
             loading_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
             loading_box.set_valign(Gtk.Align.CENTER)
@@ -765,24 +706,24 @@ class MainWindow(Adw.ApplicationWindow):
             
             self.main_stack.add_named(loading_box, "loading")
         
-        # Mostrar loading
+        # Show loading
         self.main_stack.set_visible_child_name("loading")
         self._update_header_for_view("loading")
 
     def _on_project_loaded(self, project, error):
         """Callback when project finishes loading"""
-        # Parar loading spinner
+        # Stop loading spinner
         if hasattr(self, 'loading_spinner'):
             self.loading_spinner.stop()
         
         if error:
             self._show_toast(_("Failed to open project: {}").format(error), Adw.ToastPriority.HIGH)
-            self._show_welcome_view()  # Voltar para welcome
+            self._show_welcome_view()
             return False
         
         if project:
             self.current_project = project
-            # Mostrar editor de forma otimizada
+            # Show editor optimized
             self._show_editor_view_optimized()
             self._show_toast(_("Opened project: {}").format(project.name))
         else:
@@ -796,18 +737,17 @@ class MainWindow(Adw.ApplicationWindow):
         if not self.current_project:
             return
         
-        # Verificar se já existe editor view
+        # Check if editor view already exists
         editor_page = self.main_stack.get_child_by_name("editor")
         
         if not editor_page:
-            # Criar editor view apenas se não existir
+            # Create editor view only if it doesn't exist
             self.editor_view = self._create_editor_view()
             self.main_stack.add_named(self.editor_view, "editor")
         else:
-            # ✅ Reutilizar view existente e apenas fazer refresh incremental
+            # Reuse existing view and only do incremental refresh
             self.editor_view = editor_page
-            self._refresh_paragraphs()  # Agora usa update incremental
+            self._refresh_paragraphs()  # Now uses incremental update
         
         self.main_stack.set_visible_child_name("editor")
         self._update_header_for_view("editor")
- 
