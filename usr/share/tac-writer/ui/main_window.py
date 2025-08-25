@@ -709,7 +709,7 @@ class MainWindow(Adw.ApplicationWindow):
             title_widget.set_title(self.current_project.name)
             # Force recalculation of statistics
             stats = self.current_project.get_statistics()
-            subtitle = _("{} words • {} paragraphs").format(stats['total_words'], stats['total_paragraphs'])
+            subtitle = FormatHelper.format_project_stats(stats['total_words'], stats['total_paragraphs'])
             title_widget.set_subtitle(subtitle)
             self.save_button.set_sensitive(True)
             self.pomodoro_button.set_sensitive(True)

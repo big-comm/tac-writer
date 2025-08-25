@@ -698,7 +698,7 @@ class ProjectListWidget(Gtk.Box):
                 if hasattr(child, 'stats_label'):
                     words = stats.get('total_words', 0)
                     paragraphs = stats.get('total_paragraphs', 0)
-                    stats_text = _("{} words • {} paragraphs").format(words, paragraphs)
+                    stats_text = FormatHelper.format_project_stats(words, paragraphs)
                     child.stats_label.set_text(stats_text)
                 break
             child = child.get_next_sibling()
@@ -775,7 +775,7 @@ class ProjectListWidget(Gtk.Box):
             stats_label = Gtk.Label()
             words = stats.get('total_words', 0)
             paragraphs = stats.get('total_paragraphs', 0)
-            stats_text = _("{} words • {} paragraphs").format(words, paragraphs)
+            stats_text = FormatHelper.format_project_stats(words, paragraphs)
             stats_label.set_text(stats_text)
             stats_label.set_halign(Gtk.Align.START)
             stats_label.add_css_class("caption")

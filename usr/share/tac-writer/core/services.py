@@ -393,33 +393,55 @@ class ProjectManager:
             with self._get_db_connection() as conn:
                 cursor = conn.cursor()
                 
-                # Get all project and paragraph data in single query
+                # Get all projects first
                 cursor.execute("""
-                    SELECT p.id, p.name, p.created_at, p.modified_at,
-                        COUNT(par.id) as paragraph_count,
-                        GROUP_CONCAT(par.content, ' ') as all_content
+                    SELECT p.id, p.name, p.created_at, p.modified_at
                     FROM projects p
-                    LEFT JOIN paragraphs par ON p.id = par.project_id
-                    GROUP BY p.id
                     ORDER BY p.modified_at DESC;
                 """)
-                rows = cursor.fetchall()
+                projects = cursor.fetchall()
                 
-                for row in rows:
-                    # Calculate word count from concatenated content
-                    all_content = row['all_content'] or ''
-                    total_words = self._calculate_word_count_python(all_content)
+                for project_row in projects:
+                    project_id = project_row['id']
+                    
+                    # Get paragraphs for this project in correct order
+                    cursor.execute("""
+                        SELECT type, content FROM paragraphs 
+                        WHERE project_id = ? ORDER BY "order" ASC
+                    """, (project_id,))
+                    paragraphs = cursor.fetchall()
+                    
+                    # Calculate statistics using same logic as Project.get_statistics()
+                    total_words = 0
+                    total_paragraphs = 0
+                    is_in_paragraph = False
+                    
+                    for p_row in paragraphs:
+                        content = p_row['content'] or ''
+                        total_words += self._calculate_word_count_python(content)
+                        
+                        p_type = p_row['type']
+                        
+                        # Count logical paragraphs following TAC technique
+                        if p_type == 'introduction':
+                            total_paragraphs += 1
+                            is_in_paragraph = True
+                        elif p_type in ['argument', 'conclusion']:
+                            if not is_in_paragraph:
+                                total_paragraphs += 1
+                                is_in_paragraph = False
+                        # title_1, title_2, quote don't affect main paragraph counting
                     
                     stats = {
-                        'total_paragraphs': row['paragraph_count'],
+                        'total_paragraphs': total_paragraphs,
                         'total_words': total_words,
                     }
                     
                     projects_info.append({
-                        'id': row['id'],
-                        'name': row['name'],
-                        'created_at': row['created_at'],
-                        'modified_at': row['modified_at'],
+                        'id': project_row['id'],
+                        'name': project_row['name'],
+                        'created_at': project_row['created_at'],
+                        'modified_at': project_row['modified_at'],
                         'statistics': stats,
                         'file_path': None
                     })

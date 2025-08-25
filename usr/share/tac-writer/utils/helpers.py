@@ -269,6 +269,29 @@ class FormatHelper:
     """Helper functions for formatting"""
     
     @staticmethod
+    def format_paragraph_count(count: int) -> str:
+        """Format paragraph count with proper pluralization"""
+        if count == 1:
+            return _("1 paragraph")
+        else:
+            return _("{count} paragraphs").format(count=count)
+    
+    @staticmethod
+    def format_word_count(count: int) -> str:
+        """Format word count with proper pluralization"""
+        if count == 1:
+            return _("1 word")
+        else:
+            return _("{count} words").format(count=count)
+    
+    @staticmethod
+    def format_project_stats(words: int, paragraphs: int) -> str:
+        """Format complete project statistics"""
+        word_text = FormatHelper.format_word_count(words)
+        paragraph_text = FormatHelper.format_paragraph_count(paragraphs)
+        return f"{word_text} • {paragraph_text}"
+    
+    @staticmethod
     def format_datetime(dt: datetime, format_type: str = 'default') -> str:
         """Format datetime for display"""
         if format_type == 'short':
