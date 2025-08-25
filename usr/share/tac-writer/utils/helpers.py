@@ -65,15 +65,15 @@ class FileHelper:
     
     @staticmethod
     def create_backup_filename(original_path: Path, project_name: str) -> Path:
-         """Cria um nome de arquivo de backup com base no nome do projeto e timestamp."""
-         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
-         # Usa o nome do projeto (limpo de caracteres inválidos) em vez do UUID
-         safe_project_name = FileHelper.get_safe_filename(project_name)
-    
-         backup_name = f"{safe_project_name}_{timestamp}_backup{original_path.suffix}"
-         # Retorna um objeto Path completo, não apenas o nome do arquivo
-         return original_path.parent / backup_name
+        """Create backup filename based on project name and timestamp."""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        # Use project name (cleaned of invalid characters) instead of UUID
+        safe_project_name = FileHelper.get_safe_filename(project_name)
+
+        backup_name = f"{safe_project_name}_{timestamp}_backup{original_path.suffix}"
+        # Return complete Path object, not just filename
+        return original_path.parent / backup_name
     
     @staticmethod
     def find_available_filename(file_path: Path) -> Path:

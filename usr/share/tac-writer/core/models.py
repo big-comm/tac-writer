@@ -315,8 +315,26 @@ class Project:
                 1 for p in self.paragraphs if p.type == paragraph_type
             )
         
+        # Count logical paragraphs following TAC technique
+        # Paragraphs that start with INTRODUCTION or are standalone titles/quotes
+        total_paragraphs = 0
+        is_in_paragraph = False
+        for p in self.paragraphs:
+            # Types that always start a new logical paragraph block
+            if p.type in [ParagraphType.INTRODUCTION]:
+                total_paragraphs += 1
+                is_in_paragraph = (p.type == ParagraphType.INTRODUCTION)
+            # Types that continue a paragraph, but only if one was already started
+            elif p.type in [ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                if not is_in_paragraph:
+                    # If we find an argument without an introduction before,
+                    # count it as a separate paragraph to not lose it.
+                    total_paragraphs += 1
+                    is_in_paragraph = False  # Reset for the next one
+            # Other types don't affect main paragraph counting
+        
         return {
-            'total_paragraphs': len(self.paragraphs),
+            'total_paragraphs': total_paragraphs,
             'total_words': total_words,
             'total_characters': total_chars,
             'total_characters_no_spaces': total_chars_no_spaces,

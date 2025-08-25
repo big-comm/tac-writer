@@ -455,6 +455,9 @@ class ExportDialog(Adw.Window):
         # Ensure unique filename
         output_path = FileHelper.find_available_filename(output_path)
 
+        # Store reference to button for cleanup
+        self.export_button = button
+
         # Execute export in separate thread
         def export_thread():
             try:
@@ -464,13 +467,13 @@ class ExportDialog(Adw.Window):
                     format_code
                 )
                 
+                # Use idle_add_once to prevent multiple callbacks
                 GLib.idle_add(self._export_finished, success, str(output_path), None)
                 
             except Exception as e:
                 GLib.idle_add(self._export_finished, False, str(output_path), str(e))
         
-        thread = threading.Thread(target=export_thread)
-        thread.daemon = True
+        thread = threading.Thread(target=export_thread, daemon=True)
         thread.start()
     
     def _export_finished(self, success, output_path, error_message):

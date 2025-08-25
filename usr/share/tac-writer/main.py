@@ -8,7 +8,21 @@ GTK4 + libadwaita academic text writing assistant
 import sys
 import os
 import traceback
+import warnings
 from pathlib import Path
+
+# Suppress various system warnings for cleaner output
+warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# Suppress GTK and enchant warnings via environment variables
+os.environ.setdefault('G_MESSAGES_DEBUG', '')
+os.environ.setdefault('MESA_GLTHREAD', 'false')
+
+# Suppress libenchant broker warnings
+import logging
+enchant_logger = logging.getLogger('enchant.broker')
+enchant_logger.setLevel(logging.ERROR)
 
 # Setup path for imports
 app_dir = Path(__file__).parent.resolve()

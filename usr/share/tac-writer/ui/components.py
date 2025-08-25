@@ -685,6 +685,23 @@ class ProjectListWidget(Gtk.Box):
         for project_info in projects:
             row = self._create_project_row(project_info)
             self.project_list.append(row)
+            
+    def update_project_statistics(self, project_id: str, stats: dict):
+        """Update statistics for a specific project without full refresh"""
+        child = self.project_list.get_first_child()
+        while child:
+            if hasattr(child, 'project_info') and child.project_info['id'] == project_id:
+                # Update the project info
+                child.project_info['statistics'] = stats
+                
+                # Update the stats label if it exists
+                if hasattr(child, 'stats_label'):
+                    words = stats.get('total_words', 0)
+                    paragraphs = stats.get('total_paragraphs', 0)
+                    stats_text = _("{} words • {} paragraphs").format(words, paragraphs)
+                    child.stats_label.set_text(stats_text)
+                break
+            child = child.get_next_sibling()
 
     def _create_project_row(self, project_info):
         """Create a row for a project"""
@@ -764,6 +781,9 @@ class ProjectListWidget(Gtk.Box):
             stats_label.add_css_class("caption")
             stats_label.add_css_class("dim-label")
             box.append(stats_label)
+            
+            # Store reference to stats label for easy updating
+            row.stats_label = stats_label
 
         # Setup hover effect
         hover_controller = Gtk.EventControllerMotion()
@@ -889,9 +909,10 @@ class ParagraphEditor(Gtk.Box):
         self.text_buffer = None
         self.is_dragging = False
         
-        # Spell check components
+        # Spell check components - initialize once
         self.spell_checker = None
-        self.spell_helper = SpellCheckHelper(config) if config else None
+        self.spell_helper = None
+        self._spell_check_setup = False
         
         self.set_spacing(8)
         self.add_css_class("card")
@@ -932,17 +953,28 @@ class ParagraphEditor(Gtk.Box):
         
         self._apply_formatting()
         
-        # Lazy spell check loading
-        GLib.idle_add(self._setup_spell_check_lazy)
+        # Setup spell check synchronously after text_view is ready
+        self._setup_spell_check()
 
-    def _setup_spell_check_lazy(self):
-        """Setup spell check in idle to not block UI"""
-        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
-            try:
-                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception:
-                pass
-        return False
+    def _setup_spell_check(self):
+        """Setup spell check once when text view is ready"""
+        if self._spell_check_setup or not self.text_view or not self.config:
+            return
+        
+        if not self.config.get_spell_check_enabled():
+            return
+        
+        try:
+            # Use shared spell helper from main window if available
+            if hasattr(self.get_root(), 'spell_helper'):
+                self.spell_helper = self.get_root().spell_helper
+            else:
+                self.spell_helper = SpellCheckHelper(self.config)
+            
+            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+            self._spell_check_setup = True
+        except Exception as e:
+            print(f"Spell check setup failed: {e}")
 
     def _create_header(self):
         """Create paragraph header with type and controls"""
@@ -994,16 +1026,13 @@ class ParagraphEditor(Gtk.Box):
 
     def _on_spell_check_toggled(self, button):
         """Handle spell check toggle"""
-        if not self.spell_helper:
+        if not self.spell_helper or not self.text_view:
             return
         
         enabled = button.get_active()
         
-        if enabled and not self.spell_checker:
-            try:
-                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception:
-                pass
+        if enabled and not self._spell_check_setup:
+            self._setup_spell_check()
         elif self.spell_checker:
             try:
                 self.spell_helper.enable_spell_check(self.text_view, enabled)

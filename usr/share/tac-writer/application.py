@@ -185,6 +185,13 @@ class TacApplication(Adw.Application):
         
         # Suppress GTK debug messages
         os.environ.setdefault('G_MESSAGES_DEBUG', '')
+        
+        # Suppress libenchant warnings about missing plugins
+        os.environ.setdefault('G_MESSAGES_DEBUG', '')
+        
+        # Redirect enchant warnings to null
+        import logging
+        logging.getLogger('enchant').setLevel(logging.ERROR)
     
     def _check_spell_dependencies(self):
         """Check and configure spell checking dependencies"""
@@ -274,9 +281,6 @@ class TacApplication(Adw.Application):
             ('preferences', self._action_preferences),
             ('about', self._action_about),
             ('quit', self._action_quit),
-            # Global undo/redo actions (optional)
-            ('undo', self._action_global_undo),
-            ('redo', self._action_global_redo),
         ]
         
         for action_name, callback in actions:
@@ -376,33 +380,6 @@ class TacApplication(Adw.Application):
         except Exception as e:
             if os.environ.get('TAC_DEBUG'):
                 print(f"Could not apply CSS: {e}")
-    
-    # Global undo/redo action methods
-    def _action_global_undo(self, action, param):
-        """Handle global undo action (backup method)"""
-        if os.environ.get('TAC_DEBUG'):
-            print("Global app-level undo action triggered")
-        # Delegate to main window if available
-        if self.main_window and hasattr(self.main_window, '_action_undo'):
-            # Create empty parameter for compatibility
-            dummy_action = Gio.SimpleAction.new("undo", None)
-            self.main_window._action_undo(dummy_action, None)
-        else:
-            if os.environ.get('TAC_DEBUG'):
-                print("No main window available for global undo")
-
-    def _action_global_redo(self, action, param):
-        """Handle global redo action (backup method)"""
-        if os.environ.get('TAC_DEBUG'):
-            print("Global app-level redo action triggered")
-        # Delegate to main window if available
-        if self.main_window and hasattr(self.main_window, '_action_redo'):
-            # Create empty parameter for compatibility
-            dummy_action = Gio.SimpleAction.new("redo", None)
-            self.main_window._action_redo(dummy_action, None)
-        else:
-            if os.environ.get('TAC_DEBUG'):
-                print("No main window available for global redo")
     
     # Existing action methods
     def _action_new_project(self, action, param):

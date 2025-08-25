@@ -62,6 +62,16 @@ class ProjectManager:
         conn.execute("PRAGMA foreign_keys = ON;")
         conn.execute("PRAGMA synchronous = NORMAL;")
         return conn
+    
+    def _project_exists(self, project_id: str) -> bool:
+        """Check if project exists in database"""
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT 1 FROM projects WHERE id = ? LIMIT 1", (project_id,))
+                return cursor.fetchone() is not None
+        except Exception:
+            return False
 
     def _validate_json_data(self, data: Dict[str, Any]) -> bool:
         """Validate that project data has required fields"""
@@ -258,8 +268,10 @@ class ProjectManager:
     def save_project(self, project: Project, is_migration: bool = False) -> bool:
         """Save project to the database (UPSERT)"""
         if is_migration:
-            # For migration, use the transaction-aware method
-            return True  # This will be handled by _run_migration_if_needed
+            return True
+        
+        # Create database backup before saving
+        self._create_database_backup()
             
         try:
             with self._get_db_connection() as conn:
@@ -270,8 +282,7 @@ class ProjectManager:
                     success = self._save_project_to_db(cursor, project)
                     if success:
                         conn.commit()
-                        if not is_migration:
-                            print(f"Saved project to database: {project.name}")
+                        print(f"Saved project to database: {project.name}")
                         return True
                     else:
                         conn.rollback()
@@ -283,6 +294,89 @@ class ProjectManager:
         except Exception as e:
             print(f"Error saving project to database: {e}")
             return False
+        
+    def _create_database_backup(self) -> bool:
+        """Create backup of database file maintaining only 3 most recent backups"""
+        if not self.config.get('backup_files', False):
+            return True  # Backup disabled, consider success
+        
+        try:
+            # Ensure database file exists
+            if not self.db_path.exists():
+                return False
+            
+            # Detect user's Documents directory (language-aware)
+            documents_dir = self._get_documents_directory()
+            backup_dir = documents_dir / "TAC Projects" / "database_backups"
+            backup_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Generate backup filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_filename = f"backup_{timestamp}.db"
+            backup_path = backup_dir / backup_filename
+            
+            # Copy database file
+            shutil.copy2(self.db_path, backup_path)
+            
+            # Clean old backups - keep only 3 most recent
+            self._cleanup_old_backups(backup_dir)
+            
+            print(f"Database backup created: {backup_path}")
+            return True
+            
+        except Exception as e:
+            print(f"Warning: Database backup failed: {e}")
+            return False
+
+    def _cleanup_old_backups(self, backup_dir: Path):
+        """Keep only 3 most recent database backups"""
+        try:
+            backup_files = list(backup_dir.glob("backup_*.db"))
+            
+            # Sort by modification time (most recent first)
+            backup_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+            
+            # Remove files beyond the 3 most recent
+            for old_backup in backup_files[3:]:
+                old_backup.unlink()
+                print(f"Removed old backup: {old_backup}")
+                
+        except Exception as e:
+            print(f"Warning: Cleanup of old backups failed: {e}")
+            
+    def _get_documents_directory(self) -> Path:
+        """Get user's Documents directory in a language-aware way"""
+        home = Path.home()
+        
+        # Try XDG user dirs first (Linux)
+        try:
+            import subprocess
+            result = subprocess.run(['xdg-user-dir', 'DOCUMENTS'], 
+                                capture_output=True, text=True, timeout=5)
+            if result.returncode == 0:
+                documents_path = Path(result.stdout.strip())
+                if documents_path.exists():
+                    return documents_path
+        except:
+            pass
+        
+        # Try common localized directory names
+        possible_names = [
+            'Documentos',  # Portuguese, Spanish
+            'Documents',   # English
+            'Dokumente',   # German
+            'Documenti',   # Italian
+            'Документы',   # Russian
+            'Documents',   # French (same as English)
+        ]
+        
+        for name in possible_names:
+            candidate = home / name
+            if candidate.exists() and candidate.is_dir():
+                return candidate
+        
+        # Fallback: use data directory
+        return self.config.data_dir
 
     def _calculate_word_count_python(self, content: str) -> int:
         """Calculate word count using Python (more accurate than SQL)"""
@@ -293,16 +387,17 @@ class ProjectManager:
         return len(words)
 
     def list_projects(self) -> List[Dict[str, Any]]:
-        """List all projects from the database with accurate statistics"""
+        """List all projects from the database with optimized statistics"""
         projects_info = []
         try:
             with self._get_db_connection() as conn:
                 cursor = conn.cursor()
                 
-                # Get basic project info first
+                # Get all project and paragraph data in single query
                 cursor.execute("""
                     SELECT p.id, p.name, p.created_at, p.modified_at,
-                           COUNT(par.id) as paragraph_count
+                        COUNT(par.id) as paragraph_count,
+                        GROUP_CONCAT(par.content, ' ') as all_content
                     FROM projects p
                     LEFT JOIN paragraphs par ON p.id = par.project_id
                     GROUP BY p.id
@@ -311,14 +406,9 @@ class ProjectManager:
                 rows = cursor.fetchall()
                 
                 for row in rows:
-                    # Calculate accurate word count by loading content
-                    cursor.execute("SELECT content FROM paragraphs WHERE project_id = ?", (row['id'],))
-                    paragraph_contents = cursor.fetchall()
-                    
-                    total_words = sum(
-                        self._calculate_word_count_python(content['content'] or '')
-                        for content in paragraph_contents
-                    )
+                    # Calculate word count from concatenated content
+                    all_content = row['all_content'] or ''
+                    total_words = self._calculate_word_count_python(all_content)
                     
                     stats = {
                         'total_paragraphs': row['paragraph_count'],
@@ -913,27 +1003,30 @@ class ExportService:
                 parent=styles['Title'],
                 fontSize=18,
                 spaceAfter=30,
-                alignment=TA_CENTER
+                alignment=TA_CENTER,
+                fontName='Times-Bold'
             )
-            
+
             title1_style = ParagraphStyle(
                 'CustomTitle1',
                 parent=styles['Heading1'],
                 fontSize=16,
                 spaceBefore=24,
                 spaceAfter=12,
-                leftIndent=0
+                leftIndent=0,
+                fontName='Times-Bold'
             )
-            
+
             title2_style = ParagraphStyle(
                 'CustomTitle2',
                 parent=styles['Heading2'],
                 fontSize=14,
                 spaceBefore=18,
                 spaceAfter=9,
-                leftIndent=0
+                leftIndent=0,
+                fontName='Times-Bold'
             )
-            
+
             introduction_style = ParagraphStyle(
                 'Introduction',
                 parent=styles['Normal'],
@@ -942,9 +1035,10 @@ class ExportService:
                 firstLineIndent=1.5*cm,
                 spaceBefore=12,
                 spaceAfter=12,
-                alignment=TA_JUSTIFY
+                alignment=TA_JUSTIFY,
+                fontName='Times-Roman'
             )
-            
+
             normal_style = ParagraphStyle(
                 'Normal',
                 parent=styles['Normal'],
@@ -952,9 +1046,10 @@ class ExportService:
                 leading=18,
                 spaceBefore=12,
                 spaceAfter=12,
-                alignment=TA_JUSTIFY
+                alignment=TA_JUSTIFY,
+                fontName='Times-Roman'
             )
-            
+
             quote_style = ParagraphStyle(
                 'Quote',
                 parent=styles['Normal'],

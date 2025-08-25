@@ -7,16 +7,16 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Adw, Gio, GObject, GLib
+from gi.repository import Gtk, Adw, Gio, GObject, GLib, Gdk
 
 from core.models import Project, ParagraphType
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import TextHelper, ValidationHelper, FormatHelper
 from utils.i18n import _
-from .components import WelcomeView, ParagraphEditor, ProjectListWidget
+from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
-from ui.components import PomodoroTimer
+from .components import PomodoroTimer
 
 
 class MainWindow(Adw.ApplicationWindow):
@@ -24,6 +24,7 @@ class MainWindow(Adw.ApplicationWindow):
 
     __gtype_name__ = 'TacMainWindow'
 
+    # File: ui/main_window.py (around line 35, in MainWindow.__init__)
     def __init__(self, application, project_manager: ProjectManager, config: Config, **kwargs):
         super().__init__(application=application, **kwargs)
 
@@ -32,6 +33,9 @@ class MainWindow(Adw.ApplicationWindow):
         self.config = config
         self.export_service = ExportService()
         self.current_project: Project = None
+
+        # Shared spell check helper
+        self.spell_helper = SpellCheckHelper(config) if config else None
 
         # Pomodoro Timer
         self.pomodoro_dialog = None
@@ -418,9 +422,18 @@ class MainWindow(Adw.ApplicationWindow):
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
             buffer = focused_text_view.get_buffer()
-            if buffer and hasattr(buffer, 'get_can_undo') and buffer.get_can_undo():
-                buffer.undo()
+            if buffer and hasattr(buffer, 'get_can_undo'):
+                if buffer.get_can_undo():
+                    buffer.undo()
+                    self._show_toast(_("Undo"))
+                    return
+            
+            # Fallback: Try Ctrl+Z key simulation
+            try:
+                focused_text_view.emit('key-pressed', Gdk.KEY_z, Gdk.ModifierType.CONTROL_MASK, 0)
                 return
+            except:
+                pass
         
         self._show_toast(_("Nothing to undo"))
 
@@ -429,9 +442,18 @@ class MainWindow(Adw.ApplicationWindow):
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
             buffer = focused_text_view.get_buffer()
-            if buffer and hasattr(buffer, 'get_can_redo') and buffer.get_can_redo():
-                buffer.redo()
+            if buffer and hasattr(buffer, 'get_can_redo'):
+                if buffer.get_can_redo():
+                    buffer.redo()
+                    self._show_toast(_("Redo"))
+                    return
+            
+            # Fallback: Try Ctrl+Shift+Z key simulation
+            try:
+                focused_text_view.emit('key-pressed', Gdk.KEY_z, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK, 0)
                 return
+            except:
+                pass
         
         self._show_toast(_("Nothing to redo"))
 
@@ -453,6 +475,9 @@ class MainWindow(Adw.ApplicationWindow):
         if self.current_project:
             self.current_project._update_modified_time()
             self._update_header_for_view("editor")
+            # Update sidebar project list in real-time with current statistics
+            current_stats = self.current_project.get_statistics()
+            self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_paragraph_remove_requested(self, paragraph_editor, paragraph_id):
         """Handle paragraph removal request"""
@@ -460,6 +485,9 @@ class MainWindow(Adw.ApplicationWindow):
             self.current_project.remove_paragraph(paragraph_id)
             self._refresh_paragraphs()
             self._update_header_for_view("editor")
+            # Update sidebar project list in real-time with current statistics
+            current_stats = self.current_project.get_statistics()
+            self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_paragraph_reorder(self, paragraph_editor, dragged_id, target_id, position):
         """Handle paragraph reordering"""
@@ -578,8 +606,7 @@ class MainWindow(Adw.ApplicationWindow):
         if success:
             self._show_toast(_("Project saved successfully"))
             self.project_list.refresh_projects()
-            project_path = str(self.project_manager.get_project_path(self.current_project))
-            self.config.add_recent_project(project_path)
+            self.config.add_recent_project(self.current_project.id)
         else:
             self._show_toast(_("Failed to save project"), Adw.ToastPriority.HIGH)
 
@@ -633,6 +660,9 @@ class MainWindow(Adw.ApplicationWindow):
         self.paragraphs_box.append(paragraph_editor)
 
         self._update_header_for_view("editor")
+        # Update sidebar project list in real-time with current statistics
+        current_stats = self.current_project.get_statistics()
+        self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_project_created(self, dialog, project):
         """Handle new project creation"""
@@ -677,6 +707,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         elif view_name == "editor" and self.current_project:
             title_widget.set_title(self.current_project.name)
+            # Force recalculation of statistics
             stats = self.current_project.get_statistics()
             subtitle = _("{} words • {} paragraphs").format(stats['total_words'], stats['total_paragraphs'])
             title_widget.set_subtitle(subtitle)
