@@ -28,10 +28,10 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 
 *Screenshot placeholders - Add your application screenshots here*
 
-![Main Interface](screenshots/main-interface.png)
+<img width="1920" height="1042" alt="tac-writer" src="https://github.com/user-attachments/assets/79bf425c-a001-4f9c-a3cd-83b3c6d498bb" />
 *Main editing interface with paragraph structure*
 
-![Welcome Dialog](screenshots/export-dialog.png) 
+<img width="922" height="762" alt="tac-welcome" src="https://github.com/user-attachments/assets/7b9f46c3-2326-41dd-89c4-18aec2bfbdf8" />
 *Welcome Tac Writer*
 
 ## Key Features
