@@ -7,85 +7,106 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-# Try to load PyGTKSpellcheck
-try:
-    import gtkspellcheck
-    SPELL_CHECK_AVAILABLE = True
-    print("PyGTKSpellcheck available - spell checking enabled")
-except ImportError:
-    SPELL_CHECK_AVAILABLE = False
-    print("PyGTKSpellcheck not available - spell checking disabled")
-
 from gi.repository import Gtk, Adw, GObject, Gdk, GLib, Pango
+from datetime import datetime
+
 from core.models import Paragraph, ParagraphType, DEFAULT_TEMPLATES
 from core.services import ProjectManager
 from utils.helpers import TextHelper, FormatHelper
 from utils.i18n import _
 
+# Try to load PyGTKSpellcheck
+try:
+    import gtkspellcheck
+    SPELL_CHECK_AVAILABLE = True
+except ImportError:
+    SPELL_CHECK_AVAILABLE = False
+
+# Global CSS provider cache
+_css_cache = {}
+
+
+def get_cached_css_provider(font_family: str, font_size: int) -> dict:
+    """Get or create cached CSS provider"""
+    key = f"{font_family}_{font_size}"
+    
+    if key not in _css_cache:
+        css_provider = Gtk.CssProvider()
+        class_name = f'paragraph-text-view-{key.replace(" ", "_").replace("\'", "")}'
+        css = f"""
+        .{class_name} {{
+            font-family: '{font_family}';
+            font-size: {font_size}pt;
+        }}
+        """
+        css_provider.load_from_data(css.encode())
+        _css_cache[key] = {
+            'provider': css_provider,
+            'class_name': class_name
+        }
+    
+    return _css_cache[key]
+
+
 class PomodoroTimer(GObject.Object):
-    """Timer Pomodoro para ajudar na concentração durante a escrita"""
+    """Pomodoro Timer to help with focus during writing sessions"""
     
     __gtype_name__ = 'TacPomodoroTimer'
     __gsignals__ = {
-        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)),  # Tipo: work/break
-        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)),      # Segundos restantes
-        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)),  # Sessão, tipo
+        'timer-finished': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
+        'timer-tick': (GObject.SIGNAL_RUN_FIRST, None, (int,)),
+        'session-changed': (GObject.SIGNAL_RUN_FIRST, None, (int, str)),
     }
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        # Estado do timer
+        # Timer state
         self.current_session = 1
         self.is_running = False
-        self.is_work_time = True  # True = trabalho, False = descanso
+        self.is_work_time = True
         self.timer_id = None
         
-        # Tempos em segundos
-        self.work_duration = 25 * 60  # 25 minutos
-        self.short_break_duration = 5 * 60   # 5 minutos
-        self.long_break_duration = 15 * 60   # 15 minutos
+        # Duration in seconds
+        self.work_duration = 25 * 60
+        self.short_break_duration = 5 * 60
+        self.long_break_duration = 15 * 60
         self.max_sessions = 4
         
-        # Tempo restante atual
+        # Current remaining time
         self.time_remaining = self.work_duration
-        
-        print("PomodoroTimer inicializado")
 
     def start_timer(self):
-        """Inicia o timer"""
+        """Start the timer"""
         if not self.is_running:
             self.is_running = True
             self._start_countdown()
-            print(f"Timer iniciado - Sessão {self.current_session}, {'Trabalho' if self.is_work_time else 'Descanso'}")
 
     def stop_timer(self):
-        """Para o timer"""
+        """Stop the timer"""
         if self.is_running:
             self.is_running = False
             if self.timer_id:
                 GLib.source_remove(self.timer_id)
                 self.timer_id = None
-            print("Timer parado")
 
     def reset_timer(self):
-        """Reseta o timer para o estado inicial"""
+        """Reset the timer to initial state"""
         self.stop_timer()
         self.current_session = 1
         self.is_work_time = True
         self.time_remaining = self.work_duration
         self.emit('session-changed', self.current_session, 'work')
-        print("Timer resetado")
 
     def _start_countdown(self):
-        """Inicia a contagem regressiva"""
+        """Start the countdown"""
         if self.timer_id:
             GLib.source_remove(self.timer_id)
         
         self.timer_id = GLib.timeout_add(1000, self._countdown_tick)
 
     def _countdown_tick(self):
-        """Executa a cada segundo da contagem regressiva"""
+        """Execute every second of countdown"""
         if not self.is_running:
             return False
             
@@ -99,47 +120,44 @@ class PomodoroTimer(GObject.Object):
         return True
 
     def _timer_finished(self):
-        """Chamado quando o timer termina"""
+        """Called when timer finishes"""
         self.is_running = False
         
         if self.is_work_time:
-            # Acabou período de trabalho, iniciar descanso
+            # Work period finished, start break
             self.emit('timer-finished', 'work')
             self.is_work_time = False
             
-            # Determinar duração do descanso
+            # Determine break duration
             if self.current_session >= self.max_sessions:
-                # Descanso longo após 4ª sessão
                 self.time_remaining = self.long_break_duration
             else:
-                # Descanso curto
                 self.time_remaining = self.short_break_duration
                 
             self.emit('session-changed', self.current_session, 'break')
             
         else:
-            # Acabou período de descanso
+            # Break period finished
             self.emit('timer-finished', 'break')
             
             if self.current_session >= self.max_sessions:
-                # Completou todas as sessões
+                # Completed all sessions
                 self.reset_timer()
-                print("Pomodoro completo! Todas as 4 sessões foram finalizadas.")
             else:
-                # Próxima sessão de trabalho
+                # Next work session
                 self.current_session += 1
                 self.is_work_time = True
                 self.time_remaining = self.work_duration
                 self.emit('session-changed', self.current_session, 'work')
 
     def get_time_string(self):
-        """Retorna o tempo formatado como string MM:SS"""
+        """Return formatted time as MM:SS string"""
         minutes = self.time_remaining // 60
         seconds = self.time_remaining % 60
         return f"{minutes:02d}:{seconds:02d}"
 
     def get_session_info(self):
-        """Retorna informações da sessão atual"""
+        """Return current session information"""
         if self.is_work_time:
             return {
                 'title': _("Session {}").format(self.current_session),
@@ -162,7 +180,7 @@ class PomodoroTimer(GObject.Object):
 
 
 class PomodoroDialog(Adw.Window):
-    """Dialog do timer Pomodoro com design aprimorado"""
+    """Pomodoro timer dialog with enhanced design"""
     
     def __init__(self, parent, timer, **kwargs):
         super().__init__(**kwargs)
@@ -175,40 +193,36 @@ class PomodoroDialog(Adw.Window):
         self.timer = timer
         self.parent_window = parent
         
-        # Conectar sinais do timer
-        timer_id1 = self.timer.connect('timer-tick', self._on_timer_tick)
-        timer_id2 = self.timer.connect('timer-finished', self._on_timer_finished)
-        timer_id3 = self.timer.connect('session-changed', self._on_session_changed)
-        
-        print(f"DEBUG: Conectado aos sinais - IDs: {timer_id1}, {timer_id2}, {timer_id3}")
+        # Connect timer signals
+        self.timer.connect('timer-tick', self._on_timer_tick)
+        self.timer.connect('timer-finished', self._on_timer_finished)
+        self.timer.connect('session-changed', self._on_session_changed)
         
         self._setup_ui()
         self._setup_styles()
         self._update_display()
         
-        # Conectar sinal de fechamento
+        # Connect close signal
         self.connect('close-request', self._on_close_request)
     
     def _setup_ui(self):
-        """Configura a interface do usuário com design melhorado"""
-        # Container principal
+        """Setup user interface with improved design"""
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         
-        # Header personalizado com botão de minimizar
+        # Custom header with minimize button
         header_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        # CORREÇÃO: Usar set_size_request ao invés de set_height_request
-        header_box.set_size_request(-1, 50)  # largura automática, altura 50px
+        header_box.set_size_request(-1, 50)
         header_box.set_margin_start(20)
         header_box.set_margin_end(15)
         header_box.set_margin_top(15)
         header_box.add_css_class("header-area")
         
-        # Spacer para empurrar o botão para a direita
+        # Spacer to push button to right
         header_spacer = Gtk.Box()
         header_spacer.set_hexpand(True)
         header_box.append(header_spacer)
         
-        # Botão minimizar no canto superior direito
+        # Minimize button in top right corner
         self.minimize_button = Gtk.Button()
         self.minimize_button.set_icon_name("window-minimize-symbolic")
         self.minimize_button.set_tooltip_text(_("Minimize"))
@@ -220,7 +234,7 @@ class PomodoroDialog(Adw.Window):
         
         main_box.append(header_box)
         
-        # Área de conteúdo principal
+        # Main content area
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=30)
         content_box.set_margin_start(40)
         content_box.set_margin_end(40)
@@ -229,13 +243,13 @@ class PomodoroDialog(Adw.Window):
         content_box.set_vexpand(True)
         content_box.set_valign(Gtk.Align.CENTER)
         
-        # Header com título da sessão
+        # Session title header
         self.session_label = Gtk.Label()
         self.session_label.add_css_class('title-2')
         self.session_label.set_halign(Gtk.Align.CENTER)
         content_box.append(self.session_label)
         
-        # Display do tempo com estilo aprimorado
+        # Time display with enhanced styling
         time_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         time_container.set_halign(Gtk.Align.CENTER)
         
@@ -246,12 +260,12 @@ class PomodoroDialog(Adw.Window):
         
         content_box.append(time_container)
         
-        # Botões de controle com design circular
+        # Control buttons with circular design
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=15)
         button_box.set_halign(Gtk.Align.CENTER)
         button_box.set_margin_top(10)
         
-        # Botão Start/Stop com design circular
+        # Start/Stop button with circular design
         self.start_stop_button = Gtk.Button()
         self.start_stop_button.add_css_class('pill')
         self.start_stop_button.add_css_class('suggested-action')
@@ -259,7 +273,7 @@ class PomodoroDialog(Adw.Window):
         self.start_stop_button.connect('clicked', self._on_start_stop_clicked)
         button_box.append(self.start_stop_button)
         
-        # Botão Reset com design circular
+        # Reset button with circular design
         self.reset_button = Gtk.Button(label=_("Reset"))
         self.reset_button.add_css_class('pill')
         self.reset_button.add_css_class('destructive-action')
@@ -271,14 +285,14 @@ class PomodoroDialog(Adw.Window):
         
         main_box.append(content_box)
         
-        # Adicionar ao window
+        # Add to window
         self.set_content(main_box)
         
-        # Atualizar estado inicial dos botões
+        # Update initial button state
         self._update_buttons()
     
     def _setup_styles(self):
-        """Configura estilos CSS personalizados"""
+        """Setup custom CSS styles"""
         css_provider = Gtk.CssProvider()
         css_data = """
         .timer-display {
@@ -300,7 +314,6 @@ class PomodoroDialog(Adw.Window):
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
         }
         
-        /* Botões arredondados personalizados */
         button.pill {
             border-radius: 25px;
             font-weight: 600;
@@ -318,7 +331,6 @@ class PomodoroDialog(Adw.Window):
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        /* Estilo do botão de minimizar */
         button.circular {
             border-radius: 50%;
             min-width: 32px;
@@ -338,45 +350,31 @@ class PomodoroDialog(Adw.Window):
         )
     
     def _update_display(self):
-        """Atualiza o display do dialog com informações atuais do timer"""
+        """Update dialog display with current timer information"""
         session_info = self.timer.get_session_info()
         time_str = self.timer.get_time_string()
-        
-        print(f"DEBUG: _update_display chamado")
-        print(f"DEBUG: session_info = {session_info}")
-        print(f"DEBUG: time_str = {time_str}")
-        print(f"DEBUG: timer.is_work_time = {self.timer.is_work_time}")
-        print(f"DEBUG: timer.time_remaining = {self.timer.time_remaining}")
         
         self.session_label.set_text(session_info['title'])
         self.time_label.set_text(time_str)
     
     def _force_display_update(self):
-        """Força atualização completa do display"""
-        print("DEBUG: Forçando atualização do display")
-        
-        # Obter informações atuais do timer
+        """Force complete display update"""
         session_info = self.timer.get_session_info()
         time_str = self.timer.get_time_string()
         
-        print(f"DEBUG: session_info obtido: {session_info}")
-        print(f"DEBUG: time_str obtido: {time_str}")
-        
-        # Atualizar labels diretamente
+        # Update labels directly
         self.session_label.set_text(session_info['title'])
         self.time_label.set_text(time_str)
         
-        # Forçar redesenho da interface
+        # Force interface redraw
         self.session_label.queue_draw()
         self.time_label.queue_draw()
         self.queue_draw()
         
-        print(f"DEBUG: Labels atualizados - session: '{session_info['title']}', time: '{time_str}'")
-        
-        return False  # Remove from idle queue
+        return False
     
     def _update_buttons(self):
-        """Atualiza o estado dos botões"""
+        """Update button states"""
         if self.timer.is_running:
             self.start_stop_button.set_label(_("⏸ Pause"))
             self.start_stop_button.remove_css_class('suggested-action')
@@ -387,50 +385,38 @@ class PomodoroDialog(Adw.Window):
             self.start_stop_button.add_css_class('suggested-action')
     
     def _on_timer_tick(self, timer, time_remaining):
-        """Atualiza apenas o tempo durante a execução"""
-        if time_remaining > 0:  # Só atualizar se ainda há tempo
+        """Update only time during execution"""
+        if time_remaining > 0:
             time_str = self.timer.get_time_string()
             self.time_label.set_text(time_str)
     
     def _on_timer_finished(self, timer, timer_type):
-        """Handle timer finished - mostra a janela novamente"""
-        print(f"DEBUG: Dialog received timer-finished signal: {timer_type}")
-        print(f"DEBUG: Timer state - is_work_time: {timer.is_work_time}, time_remaining: {timer.time_remaining}")
-        
-        # Forçar atualização imediata do display
+        """Handle timer finished - show window again"""
         GLib.idle_add(self._force_display_update)
         GLib.idle_add(self._show_timer_finished, timer_type)
     
     def _on_session_changed(self, timer, session, session_type):
-        """Handle session change - ESTE É O MÉTODO CRÍTICO"""
-        print(f"DEBUG: Session changed - session: {session}, type: {session_type}")
-        print(f"DEBUG: Timer state na mudança - is_work_time: {timer.is_work_time}, time_remaining: {timer.time_remaining}")
-        
-        # FORÇAR atualização imediata do display
+        """Handle session change"""
         GLib.idle_add(self._force_display_update)
         GLib.idle_add(self._update_buttons)
     
     def _show_timer_finished(self, timer_type):
-        """Mostra a janela quando o timer termina"""
-        print(f"DEBUG: Mostrando janela para timer tipo: {timer_type}")
-        
-        # Forçar atualização do display antes de mostrar
+        """Show window when timer finishes"""
         self._force_display_update()
         self._update_buttons()
         
-        # Mostrar a janela
+        # Show the window
         self.present()
         
-        # Opcional: Adicionar efeito visual ou som
+        # Add visual effect
         self._add_finish_animation()
         
-        return False  # Remove from idle queue
+        return False
     
     def _add_finish_animation(self):
-        """Adiciona um efeito visual quando o timer termina"""
-        # Piscar o tempo por alguns segundos para chamar atenção
+        """Add visual effect when timer finishes"""
         def blink_effect(count=0):
-            if count < 6:  # Piscar 3 vezes (6 mudanças)
+            if count < 6:
                 if count % 2 == 0:
                     self.time_label.add_css_class('accent')
                 else:
@@ -438,13 +424,12 @@ class PomodoroDialog(Adw.Window):
                 
                 GLib.timeout_add(300, lambda: blink_effect(count + 1))
             else:
-                # Remover classe accent no final
                 self.time_label.remove_css_class('accent')
         
         blink_effect()
     
     def _on_start_stop_clicked(self, button):
-        """Handle do botão Start/Stop"""
+        """Handle Start/Stop button"""
         if self.timer.is_running:
             self.timer.stop_timer()
         else:
@@ -453,27 +438,25 @@ class PomodoroDialog(Adw.Window):
         self._update_buttons()
     
     def _on_reset_clicked(self, button):
-        """Handle do botão Reset"""
+        """Handle Reset button"""
         self.timer.reset_timer()
         self._force_display_update()
         self._update_buttons()
     
     def _on_minimize_clicked(self, button):
-        """Handle do botão Minimize"""
+        """Handle Minimize button"""
         self.set_visible(False)
     
     def _on_close_request(self, window):
-        """Handle do fechamento da janela"""
-        # Não destruir a janela, apenas esconder
+        """Handle window close"""
         self.set_visible(False)
-        return True  # Previne destruição da janela
+        return True
     
     def show_dialog(self):
-        """Mostra o dialog"""
+        """Show the dialog"""
         self._force_display_update()
         self._update_buttons()
         self.present()
-
 
 
 class SpellCheckHelper:
@@ -500,9 +483,7 @@ class SpellCheckHelper:
                 except:
                     pass
 
-            print(f"Available spell check languages: {self.available_languages}")
-        except ImportError as e:
-            print(f"Error loading spell check languages: {e}")
+        except ImportError:
             self.available_languages = ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE']
 
     def setup_spell_check(self, text_view, language=None):
@@ -518,18 +499,14 @@ class SpellCheckHelper:
             else:
                 spell_language = 'pt_BR'
 
-            print(f"Setting up spell check with language: {spell_language}")
-
             spell_checker = gtkspellcheck.SpellChecker(text_view, language=spell_language)
 
             checker_id = id(text_view)
             self.spell_checkers[checker_id] = spell_checker
 
-            print(f"✓ Spell check setup successful for TextView with language: {spell_language}")
             return spell_checker
 
         except Exception as e:
-            print(f"✗ Error setting up spell check: {e}")
             return None
 
     def enable_spell_check(self, text_view, enabled=True):
@@ -546,11 +523,9 @@ class SpellCheckHelper:
                     spell_checker.enable()
                 else:
                     spell_checker.disable()
-                print(f"✓ Spell check {'enabled' if enabled else 'disabled'}")
-        except Exception as e:
-            print(f"✗ Error toggling spell check: {e}")
+        except Exception:
+            pass
 
-        return
 
 class WelcomeView(Gtk.Box):
     """Welcome view shown when no project is open"""
@@ -579,7 +554,6 @@ class WelcomeView(Gtk.Box):
 
     def _create_welcome_content(self):
         """Create main welcome content"""
-        # App icon and title
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         content_box.set_halign(Gtk.Align.CENTER)
 
@@ -651,8 +625,8 @@ class WelcomeView(Gtk.Box):
     def _create_recent_section(self):
         """Create recent projects section"""
         # TODO: Implement recent projects display
-        # This would show recently opened projects
         pass
+
 
 class ProjectListWidget(Gtk.Box):
     """Widget for displaying and selecting projects"""
@@ -671,11 +645,11 @@ class ProjectListWidget(Gtk.Box):
         # Search entry
         self.search_entry = Gtk.SearchEntry()
         self.search_entry.set_placeholder_text(_("Search projects..."))
-        self.search_entry.set_hexpand(False)  # NOVO: Evita expansão horizontal
-        self.search_entry.set_margin_top(10)     # Superior
-        self.search_entry.set_margin_bottom(5)   # Inferior
-        self.search_entry.set_margin_start(25)   # Esquerda
-        self.search_entry.set_margin_end(25)     # Direita
+        self.search_entry.set_hexpand(False)
+        self.search_entry.set_margin_top(10)
+        self.search_entry.set_margin_bottom(5)
+        self.search_entry.set_margin_start(25)
+        self.search_entry.set_margin_end(25)
         self.search_entry.connect('search-changed', self._on_search_changed)
         self.append(self.search_entry)
 
@@ -711,6 +685,23 @@ class ProjectListWidget(Gtk.Box):
         for project_info in projects:
             row = self._create_project_row(project_info)
             self.project_list.append(row)
+            
+    def update_project_statistics(self, project_id: str, stats: dict):
+        """Update statistics for a specific project without full refresh"""
+        child = self.project_list.get_first_child()
+        while child:
+            if hasattr(child, 'project_info') and child.project_info['id'] == project_id:
+                # Update the project info
+                child.project_info['statistics'] = stats
+                
+                # Update the stats label if it exists
+                if hasattr(child, 'stats_label'):
+                    words = stats.get('total_words', 0)
+                    paragraphs = stats.get('total_paragraphs', 0)
+                    stats_text = FormatHelper.format_project_stats(words, paragraphs)
+                    child.stats_label.set_text(stats_text)
+                break
+            child = child.get_next_sibling()
 
     def _create_project_row(self, project_info):
         """Create a row for a project"""
@@ -731,7 +722,7 @@ class ProjectListWidget(Gtk.Box):
         name_label = Gtk.Label()
         name_label.set_text(project_info['name'])
         name_label.set_halign(Gtk.Align.START)
-        name_label.set_ellipsize(3)  # PANGO_ELLIPSIZE_END = 3
+        name_label.set_ellipsize(3)
         name_label.add_css_class("heading")
         header_box.append(name_label)
 
@@ -744,7 +735,7 @@ class ProjectListWidget(Gtk.Box):
         actions_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
         actions_box.set_visible(False)
 
-        # Edit button (pencil)
+        # Edit button
         edit_button = Gtk.Button()
         edit_button.set_icon_name("edit-symbolic")
         edit_button.set_tooltip_text(_("Rename project"))
@@ -753,7 +744,7 @@ class ProjectListWidget(Gtk.Box):
         edit_button.connect('clicked', lambda b: self._on_edit_project(project_info))
         actions_box.append(edit_button)
 
-        # Delete button (trash)
+        # Delete button
         delete_button = Gtk.Button()
         delete_button.set_icon_name("user-trash-symbolic")
         delete_button.set_tooltip_text(_("Delete project"))
@@ -766,7 +757,6 @@ class ProjectListWidget(Gtk.Box):
 
         # Modification date
         if project_info.get('modified_at'):
-            from datetime import datetime
             try:
                 modified_dt = datetime.fromisoformat(project_info['modified_at'])
                 date_label = Gtk.Label()
@@ -785,12 +775,15 @@ class ProjectListWidget(Gtk.Box):
             stats_label = Gtk.Label()
             words = stats.get('total_words', 0)
             paragraphs = stats.get('total_paragraphs', 0)
-            stats_text = _("{} words • {} paragraphs").format(words, paragraphs)
+            stats_text = FormatHelper.format_project_stats(words, paragraphs)
             stats_label.set_text(stats_text)
             stats_label.set_halign(Gtk.Align.START)
             stats_label.add_css_class("caption")
             stats_label.add_css_class("dim-label")
             box.append(stats_label)
+            
+            # Store reference to stats label for easy updating
+            row.stats_label = stats_label
 
         # Setup hover effect
         hover_controller = Gtk.EventControllerMotion()
@@ -853,7 +846,6 @@ class ProjectListWidget(Gtk.Box):
             """Save the new name"""
             new_name = entry.get_text().strip()
             if new_name and new_name != project_info['name']:
-                # Load, rename and save project
                 project = self.project_manager.load_project(project_info['id'])
                 if project:
                     project.name = new_name
@@ -867,7 +859,6 @@ class ProjectListWidget(Gtk.Box):
             else:
                 dialog.destroy()
 
-        # Handle Enter key in entry
         def on_entry_activate(entry):
             save_name()
 
@@ -898,6 +889,7 @@ class ProjectListWidget(Gtk.Box):
         dialog.connect('response', on_response)
         dialog.present()
 
+
 class ParagraphEditor(Gtk.Box):
     """Editor for individual paragraphs"""
 
@@ -906,20 +898,21 @@ class ParagraphEditor(Gtk.Box):
     __gsignals__ = {
         'content-changed': (GObject.SIGNAL_RUN_FIRST, None, ()),
         'remove-requested': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
-        'paragraph-reorder': (GObject.SIGNAL_RUN_FIRST, None, (str, str, str)),  # (dragged_id, target_id, position)
+        'paragraph-reorder': (GObject.SIGNAL_RUN_FIRST, None, (str, str, str)),
     }
 
     def __init__(self, paragraph: Paragraph, config=None, **kwargs):
         super().__init__(orientation=Gtk.Orientation.VERTICAL, **kwargs)
         self.paragraph = paragraph
-        self.config = config  # ADD CONFIG PARAMETER
+        self.config = config
         self.text_view = None
         self.text_buffer = None
         self.is_dragging = False
         
-        # ADD SPELL CHECK COMPONENTS
+        # Spell check components - initialize once
         self.spell_checker = None
-        self.spell_helper = SpellCheckHelper(config) if config else None
+        self.spell_helper = None
+        self._spell_check_setup = False
         
         self.set_spacing(8)
         self.add_css_class("card")
@@ -939,45 +932,49 @@ class ParagraphEditor(Gtk.Box):
 
     def _on_realize(self, widget):
         """Called when widget is shown for the first time"""
-        # Apply formatting defined in the model
-        # CSS code
         formatting = self.paragraph.formatting
         font_family = formatting.get('font_family', 'Adwaita Sans')
         font_size = formatting.get('font_size', 12)
-        css_provider = Gtk.CssProvider()
-        css = f"""
-        .paragraph-text-view {{
-            font-family: '{font_family}';
-            font-size: {font_size}pt;
-        }}
-        """
-        css_provider.load_from_data(css.encode())
-        self.text_view.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        
+        # Use CSS cache instead of creating individual provider
+        css_cache = get_cached_css_provider(font_family, font_size)
+        self.text_view.add_css_class(css_cache['class_name'])
+        
+        # Apply provider globally only once
+        if not hasattr(self.__class__, '_css_applied'):
+            display = Gdk.Display.get_default()
+            if display:
+                Gtk.StyleContext.add_provider_for_display(
+                    display,
+                    css_cache['provider'],
+                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                )
+            self.__class__._css_applied = True
+        
         self._apply_formatting()
         
+        # Setup spell check synchronously after text_view is ready
+        self._setup_spell_check()
 
-        # Setup spell checker
-        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
-            try:
-                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception as e:
-                print(f"✗ Error setting up spell check: {e}")
-
-    def _setup_delayed_initialization(self):
-        """Setup both formatting and spell check after widget is realized"""
-        # Aplicar formatação primeiro
-        self._apply_formatting()
-    
-        # Depois configurar spell check
-        if self.spell_helper and self.text_view and self.config and self.config.get_spell_check_enabled():
-            try:
-                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-                if self.spell_checker:
-                    print(f"✓ Spell check enabled for paragraph: {self.paragraph.type.value}")
-            except Exception as e:
-                print(f"✗ Error setting up spell check: {e}")
-    
-        return False
+    def _setup_spell_check(self):
+        """Setup spell check once when text view is ready"""
+        if self._spell_check_setup or not self.text_view or not self.config:
+            return
+        
+        if not self.config.get_spell_check_enabled():
+            return
+        
+        try:
+            # Use shared spell helper from main window if available
+            if hasattr(self.get_root(), 'spell_helper'):
+                self.spell_helper = self.get_root().spell_helper
+            else:
+                self.spell_helper = SpellCheckHelper(self.config)
+            
+            self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
+            self._spell_check_setup = True
+        except Exception as e:
+            print(f"Spell check setup failed: {e}")
 
     def _create_header(self):
         """Create paragraph header with type and controls"""
@@ -1029,21 +1026,18 @@ class ParagraphEditor(Gtk.Box):
 
     def _on_spell_check_toggled(self, button):
         """Handle spell check toggle"""
-        if not self.spell_helper:
+        if not self.spell_helper or not self.text_view:
             return
         
         enabled = button.get_active()
         
-        if enabled and not self.spell_checker:
-            try:
-                self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception as e:
-                print(f"✗ Error enabling spell check: {e}")
+        if enabled and not self._spell_check_setup:
+            self._setup_spell_check()
         elif self.spell_checker:
             try:
                 self.spell_helper.enable_spell_check(self.text_view, enabled)
-            except Exception as e:
-                print(f"✗ Error toggling spell check: {e}")
+            except Exception:
+                pass
         
         if self.config:
             self.config.set_spell_check_enabled(enabled)
@@ -1158,10 +1152,8 @@ class ParagraphEditor(Gtk.Box):
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
 
-    
     def _apply_formatting(self):
-        """Aplica a formatação usando tags do TextBuffer (modo GTK4)"""
-        # Cláusula de guarda: garante que o text_buffer foi inicializado
+        """Apply formatting using TextBuffer tags (GTK4 mode)"""
         if not self.text_buffer or not self.text_view:
             return
     
@@ -1170,15 +1162,15 @@ class ParagraphEditor(Gtk.Box):
         # Create text tags
         tag_table = self.text_buffer.get_tag_table()
 
-        # Remove "format" tag if exist
+        # Remove existing format tag
         existing_tag = tag_table.lookup("format")
         if existing_tag:
             tag_table.remove(existing_tag)
 
-        # Cria uma nova tag de formatação
+        # Create new formatting tag
         format_tag = self.text_buffer.create_tag("format")
 
-        # Apply stiles only
+        # Apply styles
         if formatting.get('bold', False):
             format_tag.set_property("weight", 700)
         if formatting.get('italic', False):
@@ -1186,27 +1178,16 @@ class ParagraphEditor(Gtk.Box):
         if formatting.get('underline', False):
             format_tag.set_property("underline", 1)
 
-        # Apply bold/italic/underline
-        if formatting.get('bold', False):
-            format_tag.set_property("weight", 700)  # Pango.Weight.BOLD
-
-        if formatting.get('italic', False):
-            format_tag.set_property("style", 2)  # Pango.Style.ITALIC
-
-        if formatting.get('underline', False):
-            format_tag.set_property("underline", 1)  # Pango.Underline.SINGLE
-
-        # Aplica a tag a todo o texto
+        # Apply tag to all text
         start_iter = self.text_buffer.get_start_iter()
         end_iter = self.text_buffer.get_end_iter()
         self.text_buffer.apply_tag(format_tag, start_iter, end_iter)
 
-        # Aplica margens
+        # Apply margins
         left_margin = formatting.get('indent_left', 0.0)
         right_margin = formatting.get('indent_right', 0.0)
         self.text_view.set_left_margin(int(left_margin * 28))
         self.text_view.set_right_margin(int(right_margin * 28))
-
 
     def _update_word_count(self):
         """Update word count display"""
@@ -1246,24 +1227,6 @@ class ParagraphEditor(Gtk.Box):
             self.emit('remove-requested', self.paragraph.id)
         dialog.destroy()
 
-    def update_from_formatting(self, formatting: dict):
-        """Update toolbar state from formatting dictionary"""
-        # Update font family
-        font_family = formatting.get('font_family', 'Liberation Serif')
-        for i in range(self.font_combo.get_model().iter_n_children(None)):
-            model = self.font_combo.get_model()
-            iter_val = model.iter_nth_child(None, i)
-            if model.get_value(iter_val, 0) == font_family:
-                self.font_combo.set_active(i)
-                break
-
-        # Update font size
-        self.size_spin.set_value(formatting.get('font_size', 12))
-
-        # Update toggle buttons
-        self.bold_button.set_active(formatting.get('bold', False))
-        self.italic_button.set_active(formatting.get('italic', False))
-        self.underline_button.set_active(formatting.get('underline', False))
 
 class TextEditor(Gtk.Box):
     """Advanced text editor component"""
@@ -1307,8 +1270,8 @@ class TextEditor(Gtk.Box):
         if self.config and self.config.get_spell_check_enabled():
             try:
                 self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception as e:
-                print(f"✗ Error setting up spell check: {e}")
+            except Exception:
+                pass
         
         return False
 

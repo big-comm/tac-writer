@@ -31,4 +31,4 @@ __all__ = [
     'ExportService'
 ]
 
-__version__ = '1.0.0'
+__version__ = Config.APP_VERSION

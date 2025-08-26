@@ -65,15 +65,15 @@ class FileHelper:
     
     @staticmethod
     def create_backup_filename(original_path: Path, project_name: str) -> Path:
-         """Cria um nome de arquivo de backup com base no nome do projeto e timestamp."""
-         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
-         # Usa o nome do projeto (limpo de caracteres inválidos) em vez do UUID
-         safe_project_name = FileHelper.get_safe_filename(project_name)
-    
-         backup_name = f"{safe_project_name}_{timestamp}_backup{original_path.suffix}"
-         # Retorna um objeto Path completo, não apenas o nome do arquivo
-         return original_path.parent / backup_name
+        """Create backup filename based on project name and timestamp."""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        # Use project name (cleaned of invalid characters) instead of UUID
+        safe_project_name = FileHelper.get_safe_filename(project_name)
+
+        backup_name = f"{safe_project_name}_{timestamp}_backup{original_path.suffix}"
+        # Return complete Path object, not just filename
+        return original_path.parent / backup_name
     
     @staticmethod
     def find_available_filename(file_path: Path) -> Path:
@@ -267,6 +267,29 @@ class ValidationHelper:
 
 class FormatHelper:
     """Helper functions for formatting"""
+    
+    @staticmethod
+    def format_paragraph_count(count: int) -> str:
+        """Format paragraph count with proper pluralization"""
+        if count == 1:
+            return _("1 paragraph")
+        else:
+            return _("{count} paragraphs").format(count=count)
+    
+    @staticmethod
+    def format_word_count(count: int) -> str:
+        """Format word count with proper pluralization"""
+        if count == 1:
+            return _("1 word")
+        else:
+            return _("{count} words").format(count=count)
+    
+    @staticmethod
+    def format_project_stats(words: int, paragraphs: int) -> str:
+        """Format complete project statistics"""
+        word_text = FormatHelper.format_word_count(words)
+        paragraph_text = FormatHelper.format_paragraph_count(paragraphs)
+        return f"{word_text} • {paragraph_text}"
     
     @staticmethod
     def format_datetime(dt: datetime, format_type: str = 'default') -> str:

@@ -8,8 +8,19 @@ import json
 from pathlib import Path
 from typing import Dict, Any, Optional, List
 
+
 class Config:
     """Application configuration manager"""
+
+    # Application version and metadata
+    APP_VERSION = "1.0.0"
+    APP_NAME = "TAC"
+    APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
+    APP_DESCRIPTION = "Academic Writing Assistant"
+    APP_WEBSITE = "https://github.com/big-comm/comm-tac-writer"
+    APP_COPYRIGHT = "© 2025 TAC Development Team"
+    APP_DEVELOPERS = ["Tales Mendonça, Narayan Silva"]
+    APP_DESIGNERS = ["Narayan Silva"]
 
     def __init__(self):
         self._setup_directories()
@@ -18,7 +29,6 @@ class Config:
 
     def _setup_directories(self):
         """Setup application directories following XDG standards"""
-        # Get XDG directories or fallback to defaults
         home = Path.home()
 
         # Data directory
@@ -63,18 +73,18 @@ class Config:
             'word_wrap': True,
             'highlight_current_line': True,
             'auto_save': True,
-            'auto_save_interval': 120,  # 2 minutes
+            'auto_save_interval': 120,
 
             # Spell checking settings
             'spell_check_enabled': True,
-            'spell_check_language': 'pt_BR',  # Default to Portuguese Brazil
+            'spell_check_language': 'pt_BR',
             'spell_check_show_language_menu': True,
             'spell_check_available_languages': ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT', 'ru_RU', 'zh_CH'],
             'spell_check_personal_dictionary': str(self.config_dir / 'personal_dict.txt'),
 
             # Formatting defaults
-            'default_paragraph_indent': 1.25,  # cm
-            'quote_indent': 4.0,  # cm
+            'default_paragraph_indent': 1.25,
+            'quote_indent': 4.0,
             'page_margins': {
                 'top': 2.5,
                 'bottom': 2.5,
@@ -91,11 +101,11 @@ class Config:
 
             # Theme and appearance
             'use_dark_theme': False,
-            'adaptive_theme': True,  # Follow system theme
+            'adaptive_theme': True,
             'enable_animations': True,
 
             # Project defaults
-            'default_project_location': str(self.data_dir / 'projects'),
+            'database_file': str(self.data_dir / 'projects.db'),
             'project_template': 'academic_essay',
 
             # Export settings
@@ -103,7 +113,7 @@ class Config:
             'default_export_format': 'odt',
             'include_metadata': True,
 
-            # Recent projects list - CORRIGIDO: Adicionado campo ausente
+            # Recent projects list
             'recent_projects': []
         }
 
@@ -122,12 +132,10 @@ class Config:
     def reset(self, key: Optional[str] = None) -> None:
         """Reset configuration to defaults"""
         if key:
-            # Reset specific key
             defaults = Config()._config
             if key in defaults:
                 self._config[key] = defaults[key]
         else:
-            # Reset all
             self._load_defaults()
 
     @property
@@ -136,11 +144,11 @@ class Config:
         return self.config_dir / 'config.json'
 
     @property
-    def projects_dir(self) -> Path:
-        """Path to the projects directory"""
-        projects_path = Path(self.get('default_project_location'))
-        projects_path.mkdir(parents=True, exist_ok=True)
-        return projects_path
+    def database_path(self) -> Path:
+        """Path to the SQLite database file"""
+        db_path = Path(self.get('database_file'))
+        db_path.parent.mkdir(parents=True, exist_ok=True)
+        return db_path
 
     def save(self) -> bool:
         """Save configuration to file"""
@@ -171,12 +179,9 @@ class Config:
     def add_recent_project(self, project_path: str) -> None:
         """Add project to recent projects list"""
         recent = self.get_recent_projects()
-        # Remove if already exists
         if project_path in recent:
             recent.remove(project_path)
-        # Add to beginning
         recent.insert(0, project_path)
-        # Limit size
         limit = self.get('recent_files_limit', 10)
         recent = recent[:limit]
         self.set('recent_projects', recent)
@@ -186,7 +191,7 @@ class Config:
         recent = self.get_recent_projects()
         if project_path in recent:
             recent.remove(project_path)
-            self.set('recent_projects', recent)  # CORRIGIDO: Salvar alteração
+            self.set('recent_projects', recent)
 
     def export_config(self, file_path: str) -> bool:
         """Export configuration to file"""
@@ -209,7 +214,7 @@ class Config:
             print(f"Error importing configuration: {e}")
             return False
 
-    # Spell checking convenience methods - CORRIGIDOS E MELHORADOS
+    # Spell checking methods
     def get_spell_check_enabled(self) -> bool:
         """Get spell check enabled status"""
         return self.get('spell_check_enabled', True)
@@ -217,7 +222,6 @@ class Config:
     def set_spell_check_enabled(self, enabled: bool) -> None:
         """Set spell check enabled status"""
         self.set('spell_check_enabled', enabled)
-        print(f"Debug: Spell check {'enabled' if enabled else 'disabled'} globally")
 
     def get_spell_check_language(self) -> str:
         """Get current spell check language"""
@@ -227,16 +231,13 @@ class Config:
         """Set spell check language with validation"""
         if self.is_spell_language_available(language):
             self.set('spell_check_language', language)
-            print(f"Debug: Spell check language set to {language}")
-        else:
-            print(f"Warning: Language '{language}' is not available. Available languages: {self.get_available_spell_languages()}")
 
     def get_available_spell_languages(self) -> List[str]:
-        """Get list of available spell check languages - CORRIGIDO"""
+        """Get list of available spell check languages"""
         return self.get('spell_check_available_languages', ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE', 'it_IT'])
 
     def is_spell_language_available(self, language: str) -> bool:
-        """Check if a spell check language is available - NOVO MÉTODO"""
+        """Check if a spell check language is available"""
         return language in self.get_available_spell_languages()
 
     def get_spell_check_show_language_menu(self) -> bool:
@@ -252,18 +253,5 @@ class Config:
         return self.get('spell_check_personal_dictionary', str(self.config_dir / 'personal_dict.txt'))
 
     def set_available_spell_languages(self, languages: List[str]) -> None:
-        """Set list of available spell check languages - NOVO MÉTODO"""
+        """Set list of available spell check languages"""
         self.set('spell_check_available_languages', languages)
-        print(f"Debug: Available spell languages updated to: {languages}")
-
-    # NOVOS MÉTODOS DE DEBUG
-    def debug_spell_config(self) -> None:
-        """Print current spell check configuration for debugging"""
-        print("=== Spell Check Configuration Debug ===")
-        print(f"Enabled: {self.get_spell_check_enabled()}")
-        print(f"Language: {self.get_spell_check_language()}")
-        print(f"Available languages: {self.get_available_spell_languages()}")
-        print(f"Show language menu: {self.get_spell_check_show_language_menu()}")
-        print(f"Personal dictionary: {self.get_personal_dictionary_path()}")
-        print("======================================")
-

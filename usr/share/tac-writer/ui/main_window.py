@@ -7,21 +7,24 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Adw, Gio, GObject, GLib
+from gi.repository import Gtk, Adw, Gio, GObject, GLib, Gdk
+
 from core.models import Project, ParagraphType
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import TextHelper, ValidationHelper, FormatHelper
 from utils.i18n import _
-from .components import WelcomeView, ParagraphEditor, ProjectListWidget
+from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
-from ui.components import PomodoroTimer
+from .components import PomodoroTimer
+
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
 
     __gtype_name__ = 'TacMainWindow'
 
+    # File: ui/main_window.py (around line 35, in MainWindow.__init__)
     def __init__(self, application, project_manager: ProjectManager, config: Config, **kwargs):
         super().__init__(application=application, **kwargs)
 
@@ -31,10 +34,12 @@ class MainWindow(Adw.ApplicationWindow):
         self.export_service = ExportService()
         self.current_project: Project = None
 
-        # NOVO: Timer Pomodoro
+        # Shared spell check helper
+        self.spell_helper = SpellCheckHelper(config) if config else None
+
+        # Pomodoro Timer
         self.pomodoro_dialog = None
         self.timer = PomodoroTimer()
-
 
         # UI components
         self.header_bar = None
@@ -53,8 +58,6 @@ class MainWindow(Adw.ApplicationWindow):
 
         # Show welcome dialog if enabled
         GLib.timeout_add(500, self._maybe_show_welcome_dialog)
-
-        print("MainWindow initialized")
 
     def _setup_window(self):
         """Setup basic window properties"""
@@ -331,35 +334,56 @@ class MainWindow(Adw.ApplicationWindow):
         add_button.set_menu_model(menu_model)
         toolbar_box.append(add_button)
 
-        # Add formatting button
-        #format_button = Gtk.Button()
-        #format_button.set_label(_("Format"))
-        #format_button.set_icon_name("format-text-bold-symbolic")
-        #format_button.set_tooltip_text(_("Format paragraphs"))
-        #format_button.connect('clicked', self._on_format_clicked)
-        #toolbar_box.append(format_button)
-
         return toolbar_box
 
     def _refresh_paragraphs(self):
-        """Refresh the paragraphs display"""
+        """Refresh paragraphs display with optimized loading"""
         if not self.current_project:
             return
+    
+        existing_widgets = {}
+        child = self.paragraphs_box.get_first_child()
+        while child:
+            if hasattr(child, 'paragraph') and hasattr(child.paragraph, 'id'):
+                existing_widgets[child.paragraph.id] = child
+            child = child.get_next_sibling()
 
-        # Clear existing paragraphs
+        current_paragraph_ids = {p.id for p in self.current_project.paragraphs}
+    
+        for paragraph_id, widget in list(existing_widgets.items()):
+            if paragraph_id not in current_paragraph_ids:
+                self.paragraphs_box.remove(widget)
+                del existing_widgets[paragraph_id]
+    
         child = self.paragraphs_box.get_first_child()
         while child:
             next_child = child.get_next_sibling()
             self.paragraphs_box.remove(child)
             child = next_child
+    
+        self._paragraphs_to_add = list(self.current_project.paragraphs)
+        self._existing_widgets = existing_widgets
 
-        # Add paragraphs
-        for paragraph in self.current_project.paragraphs:
+        GLib.idle_add(self._process_next_paragraph)
+
+    def _process_next_paragraph(self):
+        """Process next paragraph for asynchronous loading"""
+        if not self._paragraphs_to_add:
+            return False
+
+        paragraph = self._paragraphs_to_add.pop(0)
+        if paragraph.id in self._existing_widgets:
+            widget = self._existing_widgets[paragraph.id]
+            self.paragraphs_box.append(widget)
+        else:
             paragraph_editor = ParagraphEditor(paragraph, config=self.config)
             paragraph_editor.connect('content-changed', self._on_paragraph_changed)
             paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
             paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
             self.paragraphs_box.append(paragraph_editor)
+            self._existing_widgets[paragraph.id] = paragraph_editor
+
+        return True
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
@@ -398,9 +422,18 @@ class MainWindow(Adw.ApplicationWindow):
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
             buffer = focused_text_view.get_buffer()
-            if buffer and hasattr(buffer, 'get_can_undo') and buffer.get_can_undo():
-                buffer.undo()
+            if buffer and hasattr(buffer, 'get_can_undo'):
+                if buffer.get_can_undo():
+                    buffer.undo()
+                    self._show_toast(_("Undo"))
+                    return
+            
+            # Fallback: Try Ctrl+Z key simulation
+            try:
+                focused_text_view.emit('key-pressed', Gdk.KEY_z, Gdk.ModifierType.CONTROL_MASK, 0)
                 return
+            except:
+                pass
         
         self._show_toast(_("Nothing to undo"))
 
@@ -409,9 +442,18 @@ class MainWindow(Adw.ApplicationWindow):
         focused_text_view = self._get_focused_text_view()
         if focused_text_view:
             buffer = focused_text_view.get_buffer()
-            if buffer and hasattr(buffer, 'get_can_redo') and buffer.get_can_redo():
-                buffer.redo()
+            if buffer and hasattr(buffer, 'get_can_redo'):
+                if buffer.get_can_redo():
+                    buffer.redo()
+                    self._show_toast(_("Redo"))
+                    return
+            
+            # Fallback: Try Ctrl+Shift+Z key simulation
+            try:
+                focused_text_view.emit('key-pressed', Gdk.KEY_z, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK, 0)
                 return
+            except:
+                pass
         
         self._show_toast(_("Nothing to redo"))
 
@@ -433,6 +475,9 @@ class MainWindow(Adw.ApplicationWindow):
         if self.current_project:
             self.current_project._update_modified_time()
             self._update_header_for_view("editor")
+            # Update sidebar project list in real-time with current statistics
+            current_stats = self.current_project.get_statistics()
+            self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_paragraph_remove_requested(self, paragraph_editor, paragraph_id):
         """Handle paragraph removal request"""
@@ -440,6 +485,9 @@ class MainWindow(Adw.ApplicationWindow):
             self.current_project.remove_paragraph(paragraph_id)
             self._refresh_paragraphs()
             self._update_header_for_view("editor")
+            # Update sidebar project list in real-time with current statistics
+            current_stats = self.current_project.get_statistics()
+            self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_paragraph_reorder(self, paragraph_editor, dragged_id, target_id, position):
         """Handle paragraph reordering"""
@@ -478,6 +526,13 @@ class MainWindow(Adw.ApplicationWindow):
         """Handle window state changes"""
         self._save_window_state()
 
+    def _on_pomodoro_clicked(self, button):
+        """Handle pomodoro button click"""
+        if not self.pomodoro_dialog:
+            from ui.components import PomodoroDialog
+            self.pomodoro_dialog = PomodoroDialog(self, self.timer)
+        self.pomodoro_dialog.show_dialog()
+
     # Action handlers
     def _action_toggle_sidebar(self, action, param):
         """Toggle sidebar visibility"""
@@ -488,6 +543,10 @@ class MainWindow(Adw.ApplicationWindow):
         if param:
             paragraph_type = ParagraphType(param.get_string())
             self._add_paragraph(paragraph_type)
+
+    def _action_show_welcome(self, action, param):
+        """Handle show welcome action"""
+        self.show_welcome_dialog()
 
     # Public methods called by application
     def show_new_project_dialog(self):
@@ -547,8 +606,7 @@ class MainWindow(Adw.ApplicationWindow):
         if success:
             self._show_toast(_("Project saved successfully"))
             self.project_list.refresh_projects()
-            project_path = str(self.project_manager.get_project_path(self.current_project))
-            self.config.add_recent_project(project_path)
+            self.config.add_recent_project(self.current_project.id)
         else:
             self._show_toast(_("Failed to save project"), Adw.ToastPriority.HIGH)
 
@@ -573,16 +631,20 @@ class MainWindow(Adw.ApplicationWindow):
         dialog = AboutDialog(self)
         dialog.present()
 
-    # Helper methods
+    def show_welcome_dialog(self):
+        """Show the welcome dialog"""
+        dialog = WelcomeDialog(self, self.config)
+        dialog.present()
+
     def _load_project(self, project_id: str):
-        """Load a project"""
-        project = self.project_manager.load_project(project_id)
-        if project:
-            self.current_project = project
-            self._show_editor_view()
-            self._show_toast(_("Opened project: {}").format(project.name))
-        else:
-            self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
+        """Load a project by ID"""
+        self._show_loading_state()
+
+        try:
+            project = self.project_manager.load_project(project_id)
+            self._on_project_loaded(project, None)
+        except Exception as e:
+            self._on_project_loaded(None, str(e))
 
     def _add_paragraph(self, paragraph_type: ParagraphType):
         """Add a new paragraph"""
@@ -598,6 +660,9 @@ class MainWindow(Adw.ApplicationWindow):
         self.paragraphs_box.append(paragraph_editor)
 
         self._update_header_for_view("editor")
+        # Update sidebar project list in real-time with current statistics
+        current_stats = self.current_project.get_statistics()
+        self.project_list.update_project_statistics(self.current_project.id, current_stats)
 
     def _on_project_created(self, dialog, project):
         """Handle new project creation"""
@@ -625,75 +690,11 @@ class MainWindow(Adw.ApplicationWindow):
         if self.config.get('window_maximized', False):
             self.maximize()
 
-    '''def _on_format_clicked(self, button):
-        """Handle format button click - MODIFICADO para salvar formatação preferida"""
-        if not self.current_project:
-            return
-
-        # Collect non-Quote paragraphs
-        non_quote_paragraphs = [
-            p for p in self.current_project.paragraphs
-            if p.type != ParagraphType.QUOTE
-        ]
-
-        if not non_quote_paragraphs:
-            self._show_toast(_("No paragraphs to format"))
-            return
-
-        # Open formatting dialog
-        from .dialogs import FormatDialog
-        dialog = FormatDialog(self, paragraphs=non_quote_paragraphs)
-        
-        # NOVO: Conectar sinal para salvar formatação preferida
-        def on_dialog_destroy(dialog):
-            if non_quote_paragraphs:
-                # Salvar a formatação aplicada como preferida para novos parágrafos
-                sample_formatting = non_quote_paragraphs[0].formatting.copy()
-                # Remover formatações específicas que não devem ser herdadas
-                preferred = {
-                    'font_family': sample_formatting.get('font_family', 'Liberation Serif'),
-                    'font_size': sample_formatting.get('font_size', 12),
-                    'line_spacing': sample_formatting.get('line_spacing', 1.5),
-                    'alignment': sample_formatting.get('alignment', 'justify'),
-                    'bold': sample_formatting.get('bold', False),
-                    'italic': sample_formatting.get('italic', False),
-                    'underline': sample_formatting.get('underline', False),
-                }
-                self.current_project.update_preferred_formatting(preferred)
-                print(f"Debug: Saved preferred formatting after dialog close: {preferred}")
-        
-        dialog.connect('destroy', on_dialog_destroy)
-        dialog.present()'''
-
     def _maybe_show_welcome_dialog(self):
         """Show welcome dialog if enabled in config"""
         if self.config.get('show_welcome_dialog', True):
             self.show_welcome_dialog()
         return False
-
-    def show_welcome_dialog(self):
-        """Show the welcome dialog"""
-        dialog = WelcomeDialog(self, self.config)
-        dialog.present()
-
-    def _action_show_welcome(self, action, param):
-        """Handle show welcome action"""
-        self.show_welcome_dialog()
-
-    '''def _refresh_paragraph_formatting(self):
-        """Refresh formatting display for all paragraph editors"""
-        if hasattr(self, 'paragraphs_box'):
-            child = self.paragraphs_box.get_first_child()
-            while child:
-                if hasattr(child, 'refresh_formatting'):
-                    child.refresh_formatting()
-                child = child.get_next_sibling()'''
-
-    def _on_pomodoro_clicked(self, button):
-        if not self.pomodoro_dialog:
-            from ui.components import PomodoroDialog
-            self.pomodoro_dialog = PomodoroDialog(self, self.timer)
-        self.pomodoro_dialog.show_dialog()
 
     def _update_header_for_view(self, view_name: str):
         """Update header bar for current view"""
@@ -706,8 +707,78 @@ class MainWindow(Adw.ApplicationWindow):
 
         elif view_name == "editor" and self.current_project:
             title_widget.set_title(self.current_project.name)
+            # Force recalculation of statistics
             stats = self.current_project.get_statistics()
-            subtitle = _("{} words • {} paragraphs").format(stats['total_words'], stats['total_paragraphs'])
+            subtitle = FormatHelper.format_project_stats(stats['total_words'], stats['total_paragraphs'])
             title_widget.set_subtitle(subtitle)
             self.save_button.set_sensitive(True)
             self.pomodoro_button.set_sensitive(True)
+
+    def _show_loading_state(self):
+        """Show loading indicator"""
+        # Create loading spinner if it doesn't exist
+        if not hasattr(self, 'loading_spinner'):
+            self.loading_spinner = Gtk.Spinner()
+            self.loading_spinner.set_size_request(48, 48)
+            
+        # Add to stack if not there
+        if not self.main_stack.get_child_by_name("loading"):
+            loading_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+            loading_box.set_valign(Gtk.Align.CENTER)
+            loading_box.set_halign(Gtk.Align.CENTER)
+            
+            self.loading_spinner.start()
+            loading_box.append(self.loading_spinner)
+            
+            loading_label = Gtk.Label()
+            loading_label.set_text(_("Loading project..."))
+            loading_label.add_css_class("dim-label")
+            loading_box.append(loading_label)
+            
+            self.main_stack.add_named(loading_box, "loading")
+        
+        # Show loading
+        self.main_stack.set_visible_child_name("loading")
+        self._update_header_for_view("loading")
+
+    def _on_project_loaded(self, project, error):
+        """Callback when project finishes loading"""
+        # Stop loading spinner
+        if hasattr(self, 'loading_spinner'):
+            self.loading_spinner.stop()
+        
+        if error:
+            self._show_toast(_("Failed to open project: {}").format(error), Adw.ToastPriority.HIGH)
+            self._show_welcome_view()
+            return False
+        
+        if project:
+            self.current_project = project
+            # Show editor optimized
+            self._show_editor_view_optimized()
+            self._show_toast(_("Opened project: {}").format(project.name))
+        else:
+            self._show_toast(_("Failed to open project"), Adw.ToastPriority.HIGH)
+            self._show_welcome_view()
+        
+        return False 
+
+    def _show_editor_view_optimized(self):
+        """Show editor view with optimizations"""
+        if not self.current_project:
+            return
+        
+        # Check if editor view already exists
+        editor_page = self.main_stack.get_child_by_name("editor")
+        
+        if not editor_page:
+            # Create editor view only if it doesn't exist
+            self.editor_view = self._create_editor_view()
+            self.main_stack.add_named(self.editor_view, "editor")
+        else:
+            # Reuse existing view and only do incremental refresh
+            self.editor_view = editor_page
+            self._refresh_paragraphs()  # Now uses incremental update
+        
+        self.main_stack.set_visible_child_name("editor")
+        self._update_header_for_view("editor")

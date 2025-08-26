@@ -1,261 +1,354 @@
-# TAC - Text Analysis and Creation
+# TAC Writer
 
-![TAC Logo]([https://github.com/big-comm/comm-tac-writer/blob/main/usr/share/icons/hicolor/scalable/apps/tac-writer.svg])
+<p align="center">
+  <img src="https://github.com/big-comm/comm-tac-writer/blob/main/usr/share/icons/hicolor/scalable/apps/tac-writer.svg" alt="TAC Writer Logo" width="128" height="128">
+</p>
 
-**TAC** is a modern academic writing assistant built with GTK4 and libadwaita, designed specifically for creating structured academic texts with guided paragraph types.
+<p align="center">
+  <strong>Academic Writing Assistant for Continuous Argumentation Technique</strong>
+</p>
 
-## ✨ Features
+<p align="center">
+  <a href="https://github.com/big-comm/comm-tac-writer/releases"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"/></a>
+  <a href="https://bigcommunity.com"><img src="https://img.shields.io/badge/BigCommunity-Platform-blue" alt="BigCommunity Platform"/></a>
+  <a href="https://github.com/big-comm/comm-tac-writer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-green.svg" alt="License"/></a>
+  <a href="https://www.gtk.org/"><img src="https://img.shields.io/badge/GTK-4.0+-orange.svg" alt="GTK Version"/></a>
+  <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/"><img src="https://img.shields.io/badge/libadwaita-1.0+-purple.svg" alt="libadwaita Version"/></a>
+</p>
 
-- **🎯 Structured Writing**: Guided paragraph types (Introduction, Topic Sentence, Argument, Quote, Conclusion)
-- **📝 Modern Interface**: Clean, responsive design using GTK4 + libadwaita
-- **📊 Real-time Statistics**: Word count, character count, reading time estimation
-- **💾 Project Management**: Save, load, and organize multiple writing projects
-- **📤 Multiple Export Formats**: TXT, HTML, ODT (LibreOffice), RTF
-- **🎨 Customizable Formatting**: Font selection, sizing, and paragraph styling
-- **🌙 Dark Mode Support**: Automatic theme switching with system preferences
-- **⚡ Auto-save**: Never lose your work with automatic project saving
+---
 
-## 🖥️ System Requirements
+## Overview
 
-- **Operating System**: Arch Linux, Manjaro, BigCommunity, or other Arch-based distributions
-- **Desktop Environment**: Any modern DE with GTK4 support (GNOME, KDE, Cinnamon, etc.)
-- **Python**: 3.9 or higher
-- **GTK**: 4.0 or higher
-- **libadwaita**: 1.0 or higher
+**TAC Writer** is a modern academic writing assistant designed to help students and researchers create structured academic texts using the **Continuous Argumentation Technique (CAT)**. Built with GTK4 and libadwaita, TAC provides an intuitive interface for organizing thoughts, managing document structure, and producing high-quality academic content.
 
-## 📦 Installation
+The Continuous Argumentation Technique emphasizes interconnected paragraphs that build upon each other, making complex topics easier to understand and arguments more compelling.
 
-### Prerequisites (Arch/Manjaro/BigCommunity)
+## Screenshots
 
-First, install the required system packages:
+<img width="1920" height="1042" alt="tac-writer" src="https://github.com/user-attachments/assets/79bf425c-a001-4f9c-a3cd-83b3c6d498bb" />
+*Main editing interface with paragraph structure*
 
+<img width="922" height="762" alt="tac-welcome" src="https://github.com/user-attachments/assets/7b9f46c3-2326-41dd-89c4-18aec2bfbdf8" />
+*Welcome Tac Writer*
+
+## Key Features
+
+### 📝 **Structured Writing**
+- **Guided Paragraph Types**: Introduction, Argument, Quote, Conclusion
+- **Drag-and-Drop Reordering**: Easily reorganize your document structure
+- **Type-Specific Formatting**: Automatic formatting based on paragraph type
+- **Template System**: Start with pre-configured academic structures
+
+### 🎨 **Modern Interface**
+- **GTK4 + libadwaita**: Native Linux desktop integration
+- **Adaptive Design**: Responsive layout that works on various screen sizes
+- **Dark Mode Support**: Automatic theme switching with system preferences
+- **Accessibility**: Full keyboard navigation and screen reader support
+
+### 📊 **Real-Time Analytics**
+- **Live Statistics**: Word count, character count, paragraph count
+- **Progress Tracking**: Monitor your writing progress in real-time
+- **Reading Time**: Estimated reading time calculation
+
+### 💾 **Project Management**
+- **Auto-Save**: Never lose your work with automatic saving
+- **Project Library**: Organize and manage multiple writing projects
+- **Search & Filter**: Quickly find specific projects
+- **Backup System**: Automatic backup creation
+
+### 📤 **Export Options**
+- **Multiple Formats**: TXT, HTML, ODT, PDF
+- **Customizable Output**: Control formatting and metadata
+- **Academic Standards**: Export formats suitable for academic submission
+
+### ⚡ **Productivity Features**
+- **Pomodoro Timer**: Built-in focus timer for writing sessions
+- **Spell Checking**: Real-time spell checking support
+- **Keyboard Shortcuts**: Efficient workflow with customizable shortcuts
+- **Distraction-Free Mode**: Focus on writing with minimal UI
+
+## System Requirements
+
+### Minimum Requirements
+- **OS**: Arch Linux, Manjaro, BigCommunity, or Arch-based distributions
+- **Python**: 3.9+
+- **GTK**: 4.0+
+- **libadwaita**: 1.0+
+- **Memory**: 512MB RAM
+- **Storage**: 100MB available space
+
+### Recommended
+- **Memory**: 1GB+ RAM for large documents
+- **Display**: 1920x1080 or higher resolution
+- **Storage**: 1GB+ for project storage and backups
+
+## Installation
+
+### Option 1: Package Manager (Recommended)
+
+For Arch-based distributions, add the BigCommunity repository and install via pacman:
+
+#### 1. Add Repository Key
 ```bash
-# Update system
-sudo pacman -Syu
+sudo pacman-key --recv-keys 1EA0CEEEB09B44A3
+sudo pacman-key --lsign-key 1EA0CEEEB09B44A3
+```
 
-# Install core dependencies
-sudo pacman -S python gtk4 libadwaita python-gobject python-cairo
+#### 2. Add Repository
+Edit `/etc/pacman.conf` and add:
+```ini
+[community-stable]
+SigLevel = PackageRequired
+Server = https://repo.communitybig.org/stable/$arch
+```
 
-# Optional: Install development tools
+#### 3. Install Package
+```bash
+sudo pacman -Sy comm-tac-writer
+```
+
+### Option 2: Manual Installation
+
+#### Prerequisites
+```bash
+# Install system dependencies
+sudo pacman -Sy python gtk4 libadwaita python-gobject python-cairo
+
+# Optional: Development tools
 sudo pacman -S python-pip git base-devel
 ```
 
-### Install TAC
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/user/tac.git
-   cd tac
-   ```
-
-2. **Install Python dependencies**:
-   ```bash
-   pip install --user -r requirements.txt
-   ```
-
-3. **Make executable**:
-   ```bash
-   chmod +x tac.py
-   ```
-
-### Optional: System Installation
-
-To install TAC system-wide:
-
+#### Install from Source
 ```bash
-# Copy to system applications
-sudo cp -r tac/ /opt/tac/
+# Clone repository
+git clone https://github.com/big-comm/comm-tac-writer.git
+cd comm-tac-writer
 
-# Create desktop entry
-sudo tee /usr/share/applications/tac.desktop << EOF
-[Desktop Entry]
-Name=TAC
-Comment=Text Analysis and Creation
-Exec=/opt/tac/tac.py
-Icon=document-edit-symbolic
-Type=Application
-Categories=Office;WordProcessor;Education;
-Keywords=writing;academic;text;analysis;creation;
-StartupNotify=true
-EOF
+# Install Python dependencies
+pip install --user -r requirements.txt
 
-# Create system launcher
-sudo tee /usr/local/bin/tac << 'EOF'
-#!/bin/bash
-cd /opt/tac
-python3 tac.py "$@"
-EOF
-sudo chmod +x /usr/local/bin/tac
+# Run application
+python main.py
 ```
 
-## 🚀 Usage
+## Usage
 
-### Running TAC
+### Getting Started
 
-From the project directory:
-```bash
-python3 tac.py
-```
+1. **Launch TAC Writer**
+   ```bash
+   tac-writer  # If installed via package manager
+   # OR
+   python main.py  # If running from source
+   ```
 
-Or if installed system-wide:
-```bash
-tac
-```
+2. **Create Your First Project**
+   - Click "Start" on the Academic Essay template
+   - Enter your project name and details
+   - Begin writing with guided paragraph types
 
-### Basic Workflow
-
-1. **Create a New Project**:
-   - Click "Start" on a template or use Ctrl+N
-   - Enter project name and details
-   - Choose from academic templates
-
-2. **Write Your Content**:
+3. **Structure Your Document**
    - Add different paragraph types using the toolbar
-   - Use the guided structure for academic writing
-   - Format text with the built-in tools
+   - Use drag-and-drop to reorder paragraphs
+   - Apply consistent formatting across your document
 
-3. **Save and Export**:
-   - Projects auto-save as you work
-   - Export to various formats (TXT, HTML, ODT, RTF)
-   - Share or submit your completed work
+4. **Export and Share**
+   - Use Ctrl+E to open export dialog
+   - Choose your preferred format (ODT, PDF, TXT, HTML)
+   - Configure export settings and metadata
+
+### Writing with CAT Methodology
+
+The **Continuous Argumentation Technique** follows this structure:
+
+- **Introduction**: Summarizes the topic to be addressed
+- **Argumentation**: Develops the main points and evidence
+- **Quote**: Supports arguments with relevant citations
+- **Argumentative Resumption**: Links back to previous arguments
+- **Conclusion**: Synthesizes and closes the presented ideas
 
 ### Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+N` | New Project |
-| `Ctrl+O` | Open Project |
-| `Ctrl+S` | Save Project |
-| `Ctrl+E` | Export Project |
-| `Ctrl+,` | Preferences |
-| `Ctrl+Q` | Quit Application |
+| Shortcut | Action | Description |
+|----------|--------|-------------|
+| `Ctrl+N` | New Project | Create a new writing project |
+| `Ctrl+O` | Open Project | Open an existing project |
+| `Ctrl+S` | Save Project | Save current project |
+| `Ctrl+E` | Export Project | Export to various formats |
+| `Ctrl+,` | Preferences | Open application settings |
+| `Ctrl+Z` | Undo | Undo last action |
+| `Ctrl+Shift+Z` | Redo | Redo last undone action |
+| `Ctrl+Q` | Quit | Exit application |
+| `F11` | Focus Mode | Toggle distraction-free writing |
 
-## 🏗️ Project Structure
+## Configuration
+
+TAC Writer follows XDG Base Directory specification:
+
+- **Configuration**: `~/.config/tac/`
+- **User Data**: `~/.local/share/tac/`
+- **Cache**: `~/.cache/tac/`
+- **Projects**: `~/.local/share/tac/projects/`
+
+### Customization Options
+
+- **Themes**: Light, dark, or system preference
+- **Fonts**: Choose from installed system fonts
+- **Templates**: Create custom document templates
+- **Export Settings**: Configure default export formats
+- **Shortcuts**: Customize keyboard shortcuts
+
+## Architecture
 
 ```
 tac/
-├── tac.py              # Main entry point
-├── application.py      # Application class
-├── requirements.txt    # Python dependencies
-├── README.md          # This file
-├── core/              # Core functionality
-│   ├── __init__.py
-│   ├── config.py      # Configuration management
-│   ├── models.py      # Data models
-│   └── services.py    # Business logic
-├── ui/                # User interface
-│   ├── __init__.py
-│   ├── main_window.py # Main window
-│   ├── components.py  # UI components
-│   └── dialogs.py     # Dialog windows
-└── utils/             # Utilities
-    ├── __init__.py
-    └── helpers.py     # Helper functions
+├── main.py              # Application entry point
+├── application.py       # Main application controller
+├── requirements.txt     # Python dependencies
+├── core/               # Core business logic
+│   ├── models.py       # Data models (Project, Paragraph)
+│   ├── services.py     # Business services (ProjectManager, ExportService)
+│   └── config.py       # Configuration management
+├── ui/                 # User interface components
+│   ├── main_window.py  # Primary application window
+│   ├── components.py   # Reusable UI components
+│   └── dialogs.py      # Dialog windows and forms
+├── utils/              # Utility functions
+│   ├── helpers.py      # Text processing, validation
+│   └── i18n.py         # Internationalization support
+└── data/               # Application data
+    ├── templates/      # Document templates
+    └── icons/          # Application icons
 ```
 
-## 🎨 Themes and Customization
+## Development
 
-TAC follows your system theme automatically and supports:
-
-- **Light/Dark Mode**: Switches with system preference
-- **Accent Colors**: Uses system accent colors
-- **Font Customization**: Choose from system fonts
-- **Custom Templates**: Create your own document templates
-
-## 🔧 Configuration
-
-TAC stores configuration in XDG-compliant directories:
-
-- **Config**: `~/.config/tac/`
-- **Data**: `~/.local/share/tac/`
-- **Cache**: `~/.cache/tac/`
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how to get started:
-
-### Development Setup
+### Setting Up Development Environment
 
 ```bash
 # Clone repository
-git clone https://github.com/user/tac.git
-cd tac
+git clone https://github.com/big-comm/comm-tac-writer.git
+cd comm-tac-writer
 
 # Install development dependencies
 sudo pacman -S python-pytest python-black python-flake8 python-mypy
 
-# Install pre-commit hooks (optional)
-pip install --user pre-commit
+# Install Python development packages
+pip install --user pre-commit black flake8 mypy pytest
+
+# Set up pre-commit hooks
 pre-commit install
 ```
 
-### Code Style
+### Code Standards
 
-- **Python**: Follow PEP 8, use `black` for formatting
-- **Comments**: English only, clear and concise
-- **UI Strings**: Translatable (future i18n support)
-- **Git Commits**: Conventional commits format
+- **Python Style**: PEP 8 compliance, formatted with Black
+- **Type Hints**: Use type annotations for better code clarity
+- **Documentation**: Docstrings for all public functions and classes
+- **Testing**: Unit tests for core functionality
+- **Commits**: Follow Conventional Commits specification
 
-### Testing
+### Running Tests
 
 ```bash
-# Run tests
+# Run all tests
 python -m pytest
 
-# Type checking
-mypy tac/
+# Run with coverage
+python -m pytest --cov=src
 
-# Code formatting
-black tac/
-
-# Linting
-flake8 tac/
+# Run specific test file
+python -m pytest tests/test_models.py
 ```
 
-## 🐛 Bug Reports
+## Contributing
 
-Found a bug? Please report it on our [GitHub Issues](https://github.com/user/tac/issues) with:
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-- **System info**: OS, DE, GTK version
-- **Steps to reproduce**: Clear, numbered steps
-- **Expected vs actual behavior**
-- **Screenshots** (if applicable)
+### How to Contribute
 
-## 📋 Roadmap
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-- [ ] **Internationalization** (i18n) support
-- [ ] **Plugin system** for custom paragraph types
-- [ ] **Collaborative editing** features
-- [ ] **Advanced formatting** (tables, images, citations)
-- [ ] **Integration** with reference managers
-- [ ] **Export to LaTeX** and academic formats
-- [ ] **Grammar and style checking**
+### Areas for Contribution
 
-## 📄 License
+- **Bug Fixes**: Help improve stability and user experience
+- **Feature Development**: Implement items from our roadmap
+- **Documentation**: Improve user guides and developer docs
+- **Translations**: Add support for additional languages
+- **Testing**: Expand test coverage and add integration tests
 
-This project is licensed under the **GNU General Public License v3.0**.
+## Roadmap
 
-See the [LICENSE](LICENSE) file for details.
+### Version 1.1 (Q2 2024)
+- [ ] Plugin system for custom paragraph types
+- [ ] Advanced formatting options (tables, lists)
+- [ ] Integration with reference managers (Zotero, Mendeley)
+- [ ] Collaborative editing features
 
-## 🙏 Acknowledgments
+### Version 1.2 (Q3 2024)
+- [ ] LaTeX export support
+- [ ] Grammar and style checking
+- [ ] Document comparison and version control
+- [ ] Mobile companion app
 
-- **GNOME Team** for GTK4 and libadwaita
-- **Python GObject** community
-- **Arch Linux** and **Manjaro** communities
-- **BigCommunity** for inspiration and support
+### Version 2.0 (Q4 2024)
+- [ ] AI-powered writing assistance
+- [ ] Cloud synchronization
+- [ ] Advanced analytics and insights
+- [ ] Multi-language support (i18n)
 
-## 📞 Support
+## Support
 
-- **Documentation**: [GitHub Wiki](https://github.com/user/tac/wiki)
-- **Community**: [Discussions](https://github.com/user/tac/discussions)
-- **Issues**: [Bug Tracker](https://github.com/user/tac/issues)
+### Getting Help
+
+- **Documentation**: [GitHub Wiki](https://github.com/big-comm/comm-tac-writer/wiki)
+- **Community**: [BigCommunity Forums](https://community.communitybig.org/c/tac-writer)
+- **Issues**: [GitHub Issues](https://github.com/big-comm/comm-tac-writer/issues)
+
+### Reporting Bugs
+
+When reporting bugs, please include:
+
+- **System Information**: OS version, desktop environment, GTK version
+- **Reproduction Steps**: Clear steps to reproduce the issue
+- **Expected vs Actual Behavior**: What should happen vs what actually happens
+- **Screenshots/Logs**: Visual aids or relevant log files
+- **Project Files**: Sample projects that demonstrate the issue (if applicable)
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **GNOME Project** for GTK4 and libadwaita framework
+- **Python GObject** community for excellent Python bindings
+- **BigCommunity** platform for hosting and support
+- **Academic Community** for feedback and testing
+- **Contributors** who help improve TAC Writer
+
+## Citation
+
+If you use TAC Writer in academic work, please cite:
+
+```bibtex
+@software{tac_writer,
+  title = {TAC Writer: Academic Writing Assistant for Continuous Argumentation Technique},
+  author = {BigCommunity Development Team},
+  year = {2024},
+  url = {https://github.com/big-comm/comm-tac-writer},
+  version = {1.0.0}
+}
+```
 
 ---
 
-<div align="center">
-
-**Made with ❤️ for the academic writing community**
-
-[Website](https://github.com/user/tac) • [Issues](https://github.com/user/tac/issues) • [Discussions](https://github.com/user/tac/discussions)
-
-</div>  
+<p align="center">
+  <strong>Made with ❤️ by the BigCommunity Team</strong><br>
+  <a href="https://bigcommunity.com">BigCommunity.com</a> • <a href="https://github.com/big-comm">GitHub</a>
+</p>

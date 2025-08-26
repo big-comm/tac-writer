@@ -9,6 +9,7 @@ gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, GObject, Gio, Gdk, Pango, GLib
 
 import threading
+import subprocess
 from pathlib import Path
 from datetime import datetime
 
@@ -17,6 +18,47 @@ from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import ValidationHelper, FileHelper
 from utils.i18n import _
+
+
+def get_system_fonts():
+    """Get list of system fonts using multiple fallback methods"""
+    font_names = []
+    
+    try:
+        # Method 1: Try PangoCairo
+        gi.require_version('PangoCairo', '1.0')
+        from gi.repository import PangoCairo
+        font_map = PangoCairo.font_map_get_default()
+        families = font_map.list_families()
+        for family in families:
+            font_names.append(family.get_name())
+    except:
+        try:
+            # Method 2: Try Pango context
+            context = Pango.Context()
+            font_map = context.get_font_map()
+            families = font_map.list_families()
+            for family in families:
+                font_names.append(family.get_name())
+        except:
+            try:
+                # Method 3: Use fontconfig command
+                result = subprocess.run(['fc-list', ':', 'family'], capture_output=True, text=True)
+                if result.returncode == 0:
+                    font_names = set()
+                    for line in result.stdout.strip().split('\n'):
+                        if line:
+                            family = line.split(',')[0].strip()
+                            font_names.add(family)
+                    font_names = sorted(list(font_names))
+            except:
+                # Fallback fonts
+                font_names = ["Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
+    
+    if not font_names:
+        font_names = ["Liberation Serif"]
+    
+    return sorted(font_names)
 
 
 class NewProjectDialog(Adw.Window):
@@ -33,8 +75,8 @@ class NewProjectDialog(Adw.Window):
         self.set_title(_("New Project"))
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(600, 700) # Increased size significantly
-        self.set_resizable(True) # Allow resizing
+        self.set_default_size(600, 700)
+        self.set_resizable(True)
 
         # Get project manager from parent
         self.project_manager = parent.project_manager
@@ -71,7 +113,7 @@ class NewProjectDialog(Adw.Window):
         # Scrolled window for content
         scrolled = Gtk.ScrolledWindow()
         scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scrolled.set_min_content_height(600) # Ensure minimum height
+        scrolled.set_min_content_height(600)
         content_box.append(scrolled)
 
         # Main content
@@ -80,7 +122,7 @@ class NewProjectDialog(Adw.Window):
         main_box.set_margin_end(24)
         main_box.set_margin_top(24)
         main_box.set_margin_bottom(24)
-        main_box.set_spacing(32) # Increased spacing between sections
+        main_box.set_spacing(32)
         scrolled.set_child(main_box)
 
         # Project details section
@@ -99,10 +141,10 @@ class NewProjectDialog(Adw.Window):
         name_row.set_title(_("Project Name"))
         self.name_entry = Gtk.Entry()
         self.name_entry.set_placeholder_text(_("Enter project name..."))
-        self.name_entry.set_text(_("My New Project")) # Default name
+        self.name_entry.set_text(_("My New Project"))
         self.name_entry.set_size_request(200, -1)
         self.name_entry.connect('changed', self._on_name_changed)
-        self.name_entry.connect('activate', self._on_name_activate) # Enter key support
+        self.name_entry.connect('activate', self._on_name_activate)
 
         # Initial validation check
         self._on_name_changed(self.name_entry)
@@ -125,7 +167,7 @@ class NewProjectDialog(Adw.Window):
 
         parent.append(details_group)
 
-        # Description section (separate)
+        # Description section
         desc_group = Adw.PreferencesGroup()
         desc_group.set_title(_("Description"))
 
@@ -138,7 +180,7 @@ class NewProjectDialog(Adw.Window):
 
         desc_scrolled = Gtk.ScrolledWindow()
         desc_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        desc_scrolled.set_size_request(-1, 120) # Increased height for description
+        desc_scrolled.set_size_request(-1, 120)
 
         self.description_view = Gtk.TextView()
         self.description_view.set_wrap_mode(Gtk.WrapMode.WORD)
@@ -166,7 +208,7 @@ class NewProjectDialog(Adw.Window):
         self.template_combo = Gtk.ComboBoxText()
         for template in DEFAULT_TEMPLATES:
             self.template_combo.append(template.name, template.name)
-        self.template_combo.set_active(0) # Select first template by default
+        self.template_combo.set_active(0)
 
         template_row = Adw.ActionRow()
         template_row.set_title(_("Document Template"))
@@ -259,271 +301,6 @@ class NewProjectDialog(Adw.Window):
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
 
-'''class FormatDialog(Adw.Window):
-    """Dialog for text formatting options"""
-
-    __gtype_name__ = 'TacFormatDialog'
-
-    def __init__(self, parent, paragraphs: list = None, **kwargs):
-        super().__init__(**kwargs)
-        self.set_title(_("Format Text"))
-        self.set_transient_for(parent)
-        self.set_modal(True)
-        self.set_default_size(500, 600) # Increased height
-        self.set_resizable(True)
-
-        self.paragraphs = paragraphs or [] # List of paragraphs to be formatted
-
-        # If we have paragraphs, use the first one's formatting as default
-        if self.paragraphs:
-            self.formatting = self.paragraphs[0].formatting.copy()
-        else:
-            self.formatting = {
-                'font_family': 'Liberation Serif',
-                'font_size': 12,
-                'bold': False,
-                'italic': False,
-                'underline': False,
-                'line_spacing': 1.5,
-                'indent_first_line': 1.25,
-                'indent_left': 0.0,
-                'indent_right': 0.0,
-                'alignment': 'left'
-            }
-
-        # Create UI
-        self._create_ui()
-        self._load_current_formatting()
-
-    def _create_ui(self):
-        """Create the dialog UI"""
-        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.set_content(content_box)
-
-        # Header bar
-        header_bar = Adw.HeaderBar()
-
-        cancel_button = Gtk.Button()
-        cancel_button.set_label(_("Cancel"))
-        cancel_button.connect('clicked', lambda x: self.destroy())
-        header_bar.pack_start(cancel_button)
-
-        apply_button = Gtk.Button()
-        apply_button.set_label(_("Apply"))
-        apply_button.add_css_class("suggested-action")
-        apply_button.connect('clicked', self._on_apply_clicked)
-        header_bar.pack_end(apply_button)
-
-        content_box.append(header_bar)
-
-        # Preferences page
-        prefs_page = Adw.PreferencesPage()
-        content_box.append(prefs_page)
-
-        # Font group
-        font_group = Adw.PreferencesGroup()
-        font_group.set_title(_("Font"))
-        prefs_page.add(font_group)
-
-        # Font family
-        self.font_row = Adw.ComboRow()
-        self.font_row.set_title(_("Font Family"))
-        font_model = Gtk.StringList()
-
-        # Get system fonts
-        try:
-            # Method 1: Try PangoCairo
-            gi.require_version('PangoCairo', '1.0')
-            from gi.repository import PangoCairo
-            font_map = PangoCairo.font_map_get_default()
-            families = font_map.list_families()
-        except:
-            try:
-                # Method 2: Try Pango context
-                context = Pango.Context()
-                font_map = context.get_font_map()
-                families = font_map.list_families()
-            except:
-                try:
-                    # Method 3: Use fontconfig command
-                    import subprocess
-                    result = subprocess.run(['fc-list', ':', 'family'], capture_output=True, text=True)
-                    if result.returncode == 0:
-                        font_names = set()
-                        for line in result.stdout.strip().split('\n'):
-                            if line:
-                                family = line.split(',')[0].strip()
-                                font_names.add(family)
-                        font_names = sorted(list(font_names))
-                        for font_name in font_names:
-                            font_model.append(font_name)
-                        families = None # Skip the normal processing below
-                    else:
-                        families = []
-                except:
-                    families = []
-
-        # Process Pango families if we got them
-        if families is not None:
-            font_names = []
-            for family in families:
-                font_names.append(family.get_name())
-            font_names.sort()
-            for font_name in font_names:
-                font_model.append(font_name)
-
-        # If still no fonts, use fallback
-        if font_model.get_n_items() == 0:
-            print("Using fallback fonts in FormatDialog")
-            basic_fonts = ["Liberation Serif"]# "DejaVu Sans", "Ubuntu", "Cantarell"]
-            for font in basic_fonts:
-                font_model.append(font)
-
-        self.font_row.set_model(font_model)
-        font_group.add(self.font_row)
-
-        # Font size
-        size_adjustment = Gtk.Adjustment(value=12, lower=8, upper=72, step_increment=1, page_increment=2)
-        self.size_row = Adw.SpinRow()
-        self.size_row.set_title(_("Font Size"))
-        self.size_row.set_adjustment(size_adjustment)
-        font_group.add(self.size_row)
-
-        # Style group
-        style_group = Adw.PreferencesGroup()
-        style_group.set_title(_("Style"))
-        prefs_page.add(style_group)
-
-        # Bold
-        self.bold_row = Adw.SwitchRow()
-        self.bold_row.set_title(_("Bold"))
-        style_group.add(self.bold_row)
-
-        # Italic
-        self.italic_row = Adw.SwitchRow()
-        self.italic_row.set_title(_("Italic"))
-        style_group.add(self.italic_row)
-
-        # Underline
-        self.underline_row = Adw.SwitchRow()
-        self.underline_row.set_title(_("Underline"))
-        style_group.add(self.underline_row)
-
-        # Spacing group
-        spacing_group = Adw.PreferencesGroup()
-        spacing_group.set_title(_("Spacing & Alignment"))
-        prefs_page.add(spacing_group)
-
-        # Line spacing
-        line_spacing_adj = Gtk.Adjustment(value=1.5, lower=1.0, upper=3.0, step_increment=0.1, page_increment=0.5)
-        self.line_spacing_row = Adw.SpinRow()
-        self.line_spacing_row.set_title(_("Line Spacing"))
-        self.line_spacing_row.set_subtitle(_("Space between lines"))
-        self.line_spacing_row.set_adjustment(line_spacing_adj)
-        self.line_spacing_row.set_digits(1)
-        spacing_group.add(self.line_spacing_row)
-
-        # First line indent
-        indent_adj = Gtk.Adjustment(value=1.25, lower=0.0, upper=5.0, step_increment=0.1, page_increment=0.5)
-        self.indent_row = Adw.SpinRow()
-        self.indent_row.set_title(_("First Line Indent (cm)"))
-        self.indent_row.set_subtitle(_("Indentation of the first line"))
-        self.indent_row.set_adjustment(indent_adj)
-        self.indent_row.set_digits(1)
-        spacing_group.add(self.indent_row)
-
-        # Left margin
-        left_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
-        self.left_margin_row = Adw.SpinRow()
-        self.left_margin_row.set_title(_("Left Margin (cm)"))
-        self.left_margin_row.set_subtitle(_("Left side margin"))
-        self.left_margin_row.set_adjustment(left_margin_adj)
-        self.left_margin_row.set_digits(1)
-        spacing_group.add(self.left_margin_row)
-
-        # Right margin
-        right_margin_adj = Gtk.Adjustment(value=0.0, lower=0.0, upper=10.0, step_increment=0.1, page_increment=0.5)
-        self.right_margin_row = Adw.SpinRow()
-        self.right_margin_row.set_title(_("Right Margin (cm)"))
-        self.right_margin_row.set_subtitle(_("Right side margin"))
-        self.right_margin_row.set_adjustment(right_margin_adj)
-        self.right_margin_row.set_digits(1)
-        spacing_group.add(self.right_margin_row)
-
-        # Text alignment
-        self.alignment_row = Adw.ComboRow()
-        self.alignment_row.set_title(_("Text Alignment"))
-        alignment_model = Gtk.StringList()
-        alignments = [_("Left"), _("Center"), _("Right"), _("Justify")]
-        for alignment in alignments:
-            alignment_model.append(alignment)
-        self.alignment_row.set_model(alignment_model)
-        spacing_group.add(self.alignment_row)
-
-    def _load_current_formatting(self):
-        """Load current formatting into controls"""
-        if not self.formatting:
-            return
-
-        # Font family
-        font_family = self.formatting.get('font_family', 'Liberation Serif')
-        model = self.font_row.get_model()
-        for i in range(model.get_n_items()):
-            if model.get_string(i) == font_family:
-                self.font_row.set_selected(i)
-                break
-
-        # Font size
-        self.size_row.set_value(self.formatting.get('font_size', 12))
-
-        # Style
-        self.bold_row.set_active(self.formatting.get('bold', False))
-        self.italic_row.set_active(self.formatting.get('italic', False))
-        self.underline_row.set_active(self.formatting.get('underline', False))
-
-        # Spacing
-        self.line_spacing_row.set_value(self.formatting.get('line_spacing', 1.5))
-        self.indent_row.set_value(self.formatting.get('indent_first_line', 1.25))
-        self.left_margin_row.set_value(self.formatting.get('indent_left', 0.0))
-        self.right_margin_row.set_value(self.formatting.get('indent_right', 0.0))
-
-        # Alignment
-        alignment = self.formatting.get('alignment', 'left')
-        alignment_map = {'left': 0, 'center': 1, 'right': 2, 'justify': 3}
-        self.alignment_row.set_selected(alignment_map.get(alignment, 0))
-
-    def _on_apply_clicked(self, button):
-        """Apply formatting changes to all paragraphs"""
-        # Update formatting dictionary
-        model = self.font_row.get_model()
-        selected_font = model.get_string(self.font_row.get_selected())
-
-        # Map alignment
-        alignment_names = ['left', 'center', 'right', 'justify']
-        selected_alignment = alignment_names[self.alignment_row.get_selected()]
-
-        new_formatting = {
-            'font_family': selected_font,
-            'font_size': int(self.size_row.get_value()),
-            'bold': self.bold_row.get_active(),
-            'italic': self.italic_row.get_active(),
-            'underline': self.underline_row.get_active(),
-            'line_spacing': self.line_spacing_row.get_value(),
-            'indent_first_line': self.indent_row.get_value(),
-            'indent_left': self.left_margin_row.get_value(),
-            'indent_right': self.right_margin_row.get_value(),
-            'alignment': selected_alignment
-        }
-
-        # Apply to all paragraphs
-        for paragraph in self.paragraphs:
-            paragraph.update_formatting(new_formatting)
-
-        # Notify main window to update view
-        if hasattr(self.get_transient_for(), '_refresh_paragraph_formatting'):
-            self.get_transient_for()._refresh_paragraph_formatting()
-
-        self.destroy()'''
 
 class ExportDialog(Adw.Window):
     """Dialog for exporting projects"""
@@ -535,7 +312,7 @@ class ExportDialog(Adw.Window):
         self.set_title(_("Export Project"))
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(550, 500) # Better proportions
+        self.set_default_size(550, 500)
         self.set_resizable(True)
 
         self.project = project
@@ -606,7 +383,7 @@ class ExportDialog(Adw.Window):
             self.format_data.append(format_code)
 
         self.format_row.set_model(format_model)
-        self.format_row.set_selected(0) # ODT as default
+        self.format_row.set_selected(0)
         export_group.add(self.format_row)
 
         # Include metadata
@@ -634,14 +411,12 @@ class ExportDialog(Adw.Window):
         location_group.add(self.location_row)
 
         # Initialize with default location
-        from pathlib import Path
         default_location = Path.home() / 'Documents'
         self.selected_location = default_location
         self.location_row.set_subtitle(str(default_location))
 
     def _on_choose_location(self, button):
         """Handle location selection"""
-        # Create file chooser dialog
         file_chooser = Gtk.FileChooserNative.new(
             _("Choose Export Location"),
             self,
@@ -664,7 +439,6 @@ class ExportDialog(Adw.Window):
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
-        # Disable button to avoid multiple clicks
         button.set_sensitive(False)
         button.set_label(_("Exporting..."))
         
@@ -681,34 +455,31 @@ class ExportDialog(Adw.Window):
         # Ensure unique filename
         output_path = FileHelper.find_available_filename(output_path)
 
+        # Store reference to button for cleanup
+        self.export_button = button
+
         # Execute export in separate thread
         def export_thread():
             try:
-                # Export project
                 success = self.export_service.export_project(
                     self.project,
                     str(output_path),
                     format_code
                 )
                 
-                # Return to main thread to update UI
+                # Use idle_add_once to prevent multiple callbacks
                 GLib.idle_add(self._export_finished, success, str(output_path), None)
                 
             except Exception as e:
-                # Return to main thread to show error
                 GLib.idle_add(self._export_finished, False, str(output_path), str(e))
         
-        # Start export thread
-        thread = threading.Thread(target=export_thread)
-        thread.daemon = True
+        thread = threading.Thread(target=export_thread, daemon=True)
         thread.start()
     
     def _export_finished(self, success, output_path, error_message):
         """Callback executed in main thread when export finishes"""
-        # Re-enable button first (for both cases)
         header = self.get_titlebar()
         if header:
-            # Simple method: get the last button of the header (which is the export button)
             child = header.get_last_child()
             while child:
                 if isinstance(child, Gtk.Button):
@@ -718,7 +489,6 @@ class ExportDialog(Adw.Window):
                 child = child.get_prev_sibling()
         
         if success:
-            # Show success message
             success_dialog = Adw.MessageDialog.new(
                 self,
                 _("Export Successful"),
@@ -726,16 +496,14 @@ class ExportDialog(Adw.Window):
             )
             success_dialog.add_response("ok", _("OK"))
             
-            # Connect callback to only close AFTER user clicks OK
             def on_success_response(dialog, response):
                 dialog.destroy()
-                self.destroy()  # Only destroy AFTER user response
+                self.destroy()
             
             success_dialog.connect('response', on_success_response)
             success_dialog.present()
             
         else:
-            # Show error message
             error_msg = error_message if error_message else _("An error occurred while exporting the project.")
             error_dialog = Adw.MessageDialog.new(
                 self,
@@ -745,7 +513,8 @@ class ExportDialog(Adw.Window):
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
         
-        return False  # Remove from idle callbacks
+        return False
+
 
 class PreferencesDialog(Adw.PreferencesWindow):
     """Preferences dialog"""
@@ -757,7 +526,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.set_title(_("Preferences"))
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(700, 600) # Larger for preferences
+        self.set_default_size(700, 600)
         self.set_resizable(True)
 
         self.config = config
@@ -802,53 +571,9 @@ class PreferencesDialog(Adw.PreferencesWindow):
         font_model = Gtk.StringList()
 
         # Get system fonts
-        try:
-            # Method 1: Try PangoCairo
-            gi.require_version('PangoCairo', '1.0')
-            from gi.repository import PangoCairo
-            font_map = PangoCairo.font_map_get_default()
-            families = font_map.list_families()
-        except:
-            try:
-                # Method 2: Try Pango context
-                context = Pango.Context()
-                font_map = context.get_font_map()
-                families = font_map.list_families()
-            except:
-                try:
-                    # Method 3: Use fontconfig command
-                    import subprocess
-                    result = subprocess.run(['fc-list', ':', 'family'], capture_output=True, text=True)
-                    if result.returncode == 0:
-                        font_names = set()
-                        for line in result.stdout.strip().split('\n'):
-                            if line:
-                                family = line.split(',')[0].strip()
-                                font_names.add(family)
-                        font_names = sorted(list(font_names))
-                        for font_name in font_names:
-                            font_model.append(font_name)
-                        families = None # Skip the normal processing below
-                    else:
-                        families = []
-                except:
-                    families = []
-
-        # Process Pango families if we got them
-        if families is not None:
-            font_names = []
-            for family in families:
-                font_names.append(family.get_name())
-            font_names.sort()
-            for font_name in font_names:
-                font_model.append(font_name)
-
-        # If still no fonts, use fallback
-        if font_model.get_n_items() == 0:
-            print("Using fallback fonts")
-            basic_fonts = ["Liberation Serif"]
-            for font in basic_fonts:
-                font_model.append(font)
+        font_names = get_system_fonts()
+        for font_name in font_names:
+            font_model.append(font_name)
 
         self.font_family_row.set_model(font_model)
         self.font_family_row.connect('notify::selected', self._on_font_family_changed)
@@ -941,6 +666,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         """Handle line numbers toggle"""
         self.config.set('show_line_numbers', switch.get_active())
 
+
 class WelcomeDialog(Adw.Window):
     """Welcome dialog explaining TAC Writer and CAT technique"""
 
@@ -969,7 +695,6 @@ class WelcomeDialog(Adw.Window):
 
     def _create_ui(self):
         """Create the welcome dialog UI"""
-        # Main container
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         # HeaderBar with custom style
@@ -998,7 +723,7 @@ class WelcomeDialog(Adw.Window):
         scrolled_window.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scrolled_window.set_vexpand(True)
 
-        # Content container (now inside ScrolledWindow)
+        # Content container
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
         content_box.set_margin_top(8)
         content_box.set_margin_bottom(16)
@@ -1047,7 +772,7 @@ class WelcomeDialog(Adw.Window):
         structure_label.set_margin_top(8)
         content_text_box.append(structure_label)
 
-        # Structure list - More compact layout
+        # Structure list
         structure_text = _("• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.\n\n• <b>Argumentation:</b> development of the topic.\n\n• <b>Quote:</b> quote that supports the argument.\n\n• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.\n\n• <b>Conclusion:</b> closing of the idea presented.")
 
         structure_items_label = Gtk.Label()
@@ -1082,7 +807,7 @@ class WelcomeDialog(Adw.Window):
         toggle_box.append(self.show_switch)
         content_box.append(toggle_box)
 
-        # Let's Start button
+        # Start button
         button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         button_box.set_halign(Gtk.Align.CENTER)
         button_box.set_margin_top(16)
@@ -1111,33 +836,35 @@ class WelcomeDialog(Adw.Window):
         """Handle start button click"""
         self.destroy()
 
+
 def AboutDialog(parent):
     """Create and show about dialog"""
     dialog = Adw.AboutWindow()
     dialog.set_transient_for(parent)
     dialog.set_modal(True)
 
+    # Get config instance to access version info
+    config = Config()
+
     # Application information
-    dialog.set_application_name("TAC")
+    dialog.set_application_name(config.APP_NAME)
     dialog.set_application_icon("tac-writer")
-    dialog.set_version("1.0.0")
-    dialog.set_developer_name(_("TAC Writer - Academic Writing Assistant"))
-    dialog.set_website("https://github.com/big-comm/comm-tac-writer")
+    dialog.set_version(config.APP_VERSION)
+    dialog.set_developer_name(_(config.APP_DESCRIPTION))
+    dialog.set_website(config.APP_WEBSITE)
 
     # Description
-    dialog.set_comments(_("Continuous Argumentation Technique - Academic Writing Assistant"))
+    dialog.set_comments(_(config.APP_DESCRIPTION))
 
     # License
     dialog.set_license_type(Gtk.License.GPL_3_0)
 
     # Credits
     dialog.set_developers([
-        _("Tales Mendonça, Narayan Silva") + " https://github.com/big-comm/comm-tac-writer"
+        f"{', '.join(config.APP_DEVELOPERS)} {config.APP_WEBSITE}"
     ])
-    dialog.set_designers([
-        _("Narayan Silva")
-    ])
+    dialog.set_designers(config.APP_DESIGNERS)
 
-    dialog.set_copyright("© 2025 " + _("TAC Development Team"))
+    dialog.set_copyright(config.APP_COPYRIGHT)
 
     return dialog

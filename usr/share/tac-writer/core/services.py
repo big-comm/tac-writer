@@ -6,10 +6,12 @@ Business logic and data services for the TAC application
 import json
 import shutil
 import zipfile
+import sqlite3
+import threading
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
-import shutil
+# 'shutil' é usado no ExportService
 from .config import Config
 from utils.helpers import FileHelper
 
@@ -34,187 +36,558 @@ except ImportError:
 from .models import Project, Paragraph, ParagraphType
 from .config import Config
 
+
 class ProjectManager:
-    """Manages project operations"""
+    """Manages project operations using a SQLite database"""
     
     def __init__(self):
         self.config = Config()
-        self.projects_dir = self.config.projects_dir
+        self.db_path = self.config.database_path
+        self._migration_lock = threading.Lock()
+        self._init_db()
+        self._run_migration_if_needed()
         
-        # Ensure projects directory exists
-        self.projects_dir.mkdir(parents=True, exist_ok=True)
+        print(f"ProjectManager initialized with database: {self.db_path}")
+
+    def _get_db_connection(self):
+        """Get a new database connection with optimized settings"""
+        conn = sqlite3.connect(
+            self.db_path, 
+            timeout=30.0,  # 30 second timeout
+            check_same_thread=False
+        )
+        conn.row_factory = sqlite3.Row
+        # Enable WAL mode for better concurrency
+        conn.execute("PRAGMA journal_mode = WAL;")
+        conn.execute("PRAGMA foreign_keys = ON;")
+        conn.execute("PRAGMA synchronous = NORMAL;")
+        return conn
+    
+    def _project_exists(self, project_id: str) -> bool:
+        """Check if project exists in database"""
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT 1 FROM projects WHERE id = ? LIMIT 1", (project_id,))
+                return cursor.fetchone() is not None
+        except Exception:
+            return False
+
+    def _validate_json_data(self, data: Dict[str, Any]) -> bool:
+        """Validate that project data has required fields"""
+        required_fields = ['id', 'name', 'created_at', 'modified_at']
         
-        print(f"ProjectManager initialized with projects dir: {self.projects_dir}")
+        for field in required_fields:
+            if field not in data:
+                print(f"Invalid project data: missing field '{field}'")
+                return False
+        
+        # Validate paragraphs if present
+        if 'paragraphs' in data:
+            for i, para_data in enumerate(data['paragraphs']):
+                required_para_fields = ['id', 'type', 'content', 'order']
+                for field in required_para_fields:
+                    if field not in para_data:
+                        print(f"Invalid paragraph {i}: missing field '{field}'")
+                        return False
+        
+        return True
+
+    def _create_migration_backup(self, json_files: List[Path]) -> Optional[Path]:
+        """Create a backup of JSON files before migration"""
+        try:
+            backup_dir = self.config.data_dir / 'migration_backup'
+            backup_dir.mkdir(exist_ok=True)
+            
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_file = backup_dir / f"projects_backup_{timestamp}.zip"
+            
+            with zipfile.ZipFile(backup_file, 'w', zipfile.ZIP_DEFLATED) as zf:
+                for json_file in json_files:
+                    zf.write(json_file, json_file.name)
+            
+            print(f"Created migration backup: {backup_file}")
+            return backup_file
+            
+        except Exception as e:
+            print(f"Failed to create migration backup: {e}")
+            return None
+
+    def _run_migration_if_needed(self):
+        """Check for old JSON files and migrate them to SQLite with full transaction support"""
+        with self._migration_lock:
+            old_projects_dir = self.config.data_dir / 'projects'
+            if not old_projects_dir.exists():
+                return
+
+            json_files = list(old_projects_dir.glob("*.json"))
+            if not json_files:
+                return
+
+            print(f"Found {len(json_files)} old JSON projects. Starting migration...")
+            
+            # Create backup first
+            backup_file = self._create_migration_backup(json_files)
+            if not backup_file:
+                print("Migration aborted: Could not create backup")
+                return
+            
+            # Load and validate all projects before migration
+            projects_to_migrate = []
+            invalid_files = []
+            
+            for project_file in json_files:
+                try:
+                    with open(project_file, 'r', encoding='utf-8') as f:
+                        project_data = json.load(f)
+                    
+                    if not self._validate_json_data(project_data):
+                        invalid_files.append(project_file)
+                        continue
+                        
+                    project = Project.from_dict(project_data)
+                    projects_to_migrate.append((project, project_file))
+                    
+                except Exception as e:
+                    print(f"Error loading {project_file.name}: {e}")
+                    invalid_files.append(project_file)
+            
+            if invalid_files:
+                print(f"Warning: {len(invalid_files)} files have validation errors and will be skipped")
+            
+            if not projects_to_migrate:
+                print("No valid projects to migrate")
+                return
+            
+            # Perform migration in single transaction
+            migrated_count = 0
+            failed_projects = []
+            
+            try:
+                with self._get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    
+                    # Begin transaction
+                    cursor.execute("BEGIN IMMEDIATE;")
+                    
+                    try:
+                        for project, project_file in projects_to_migrate:
+                            if self._save_project_to_db(cursor, project):
+                                migrated_count += 1
+                            else:
+                                failed_projects.append(project_file)
+                        
+                        if failed_projects:
+                            raise Exception(f"Failed to migrate {len(failed_projects)} projects")
+                        
+                        # Commit transaction
+                        conn.commit()
+                        print(f"Migration transaction committed successfully")
+                        
+                        # Mark files as migrated only after successful DB commit
+                        for project, project_file in projects_to_migrate:
+                            try:
+                                migrated_file = project_file.with_suffix('.json.migrated')
+                                project_file.rename(migrated_file)
+                            except Exception as e:
+                                print(f"Warning: Could not rename {project_file.name}: {e}")
+                        
+                    except Exception as e:
+                        # Rollback transaction
+                        conn.rollback()
+                        print(f"Migration failed, transaction rolled back: {e}")
+                        return
+                        
+            except Exception as e:
+                print(f"Migration failed with database error: {e}")
+                return
+            
+            print(f"Migration complete. {migrated_count} projects successfully migrated.")
+            
+            # Run database maintenance after migration
+            self._vacuum_database()
+
+    def _save_project_to_db(self, cursor: sqlite3.Cursor, project: Project) -> bool:
+        """Save project using provided cursor (for transaction support)"""
+        try:
+            # Validate JSON serialization
+            try:
+                metadata_json = json.dumps(project.metadata)
+                formatting_json = json.dumps(project.document_formatting)
+            except Exception as e:
+                print(f"JSON serialization error for project {project.name}: {e}")
+                return False
+            
+            cursor.execute("""
+                INSERT INTO projects (id, name, created_at, modified_at, metadata, document_formatting)
+                VALUES (?, ?, ?, ?, ?, ?)
+                ON CONFLICT(id) DO UPDATE SET
+                    name=excluded.name,
+                    modified_at=excluded.modified_at,
+                    metadata=excluded.metadata,
+                    document_formatting=excluded.document_formatting;
+            """, (
+                project.id,
+                project.name,
+                project.created_at.isoformat(),
+                datetime.now().isoformat(),
+                metadata_json,
+                formatting_json
+            ))
+
+            # Delete existing paragraphs for this project
+            cursor.execute("DELETE FROM paragraphs WHERE project_id = ?", (project.id,))
+
+            # Insert paragraphs
+            paragraphs_data = []
+            for p in project.paragraphs:
+                try:
+                    formatting_json = json.dumps(p.formatting)
+                except Exception as e:
+                    print(f"JSON serialization error for paragraph {p.id}: {e}")
+                    return False
+                    
+                paragraphs_data.append((
+                    p.id, project.id, p.type.value, p.content,
+                    p.created_at.isoformat(), p.modified_at.isoformat(),
+                    p.order, formatting_json
+                ))
+            
+            if paragraphs_data:
+                cursor.executemany("""
+                    INSERT INTO paragraphs (id, project_id, type, content, created_at, modified_at, "order", formatting)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+                """, paragraphs_data)
+            
+            return True
+            
+        except Exception as e:
+            print(f"Error saving project {project.name} to database: {e}")
+            return False
+
+    def save_project(self, project: Project, is_migration: bool = False) -> bool:
+        """Save project to the database (UPSERT)"""
+        if is_migration:
+            return True
+        
+        # Create database backup before saving
+        self._create_database_backup()
+            
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("BEGIN IMMEDIATE;")
+                
+                try:
+                    success = self._save_project_to_db(cursor, project)
+                    if success:
+                        conn.commit()
+                        print(f"Saved project to database: {project.name}")
+                        return True
+                    else:
+                        conn.rollback()
+                        return False
+                except Exception:
+                    conn.rollback()
+                    raise
+                    
+        except Exception as e:
+            print(f"Error saving project to database: {e}")
+            return False
+        
+    def _create_database_backup(self) -> bool:
+        """Create backup of database file maintaining only 3 most recent backups"""
+        if not self.config.get('backup_files', False):
+            return True  # Backup disabled, consider success
+        
+        try:
+            # Ensure database file exists
+            if not self.db_path.exists():
+                return False
+            
+            # Detect user's Documents directory (language-aware)
+            documents_dir = self._get_documents_directory()
+            backup_dir = documents_dir / "TAC Projects" / "database_backups"
+            backup_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Generate backup filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_filename = f"backup_{timestamp}.db"
+            backup_path = backup_dir / backup_filename
+            
+            # Copy database file
+            shutil.copy2(self.db_path, backup_path)
+            
+            # Clean old backups - keep only 3 most recent
+            self._cleanup_old_backups(backup_dir)
+            
+            print(f"Database backup created: {backup_path}")
+            return True
+            
+        except Exception as e:
+            print(f"Warning: Database backup failed: {e}")
+            return False
+
+    def _cleanup_old_backups(self, backup_dir: Path):
+        """Keep only 3 most recent database backups"""
+        try:
+            backup_files = list(backup_dir.glob("backup_*.db"))
+            
+            # Sort by modification time (most recent first)
+            backup_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+            
+            # Remove files beyond the 3 most recent
+            for old_backup in backup_files[3:]:
+                old_backup.unlink()
+                print(f"Removed old backup: {old_backup}")
+                
+        except Exception as e:
+            print(f"Warning: Cleanup of old backups failed: {e}")
+            
+    def _get_documents_directory(self) -> Path:
+        """Get user's Documents directory in a language-aware way"""
+        home = Path.home()
+        
+        # Try XDG user dirs first (Linux)
+        try:
+            import subprocess
+            result = subprocess.run(['xdg-user-dir', 'DOCUMENTS'], 
+                                capture_output=True, text=True, timeout=5)
+            if result.returncode == 0:
+                documents_path = Path(result.stdout.strip())
+                if documents_path.exists():
+                    return documents_path
+        except:
+            pass
+        
+        # Try common localized directory names
+        possible_names = [
+            'Documentos',  # Portuguese, Spanish
+            'Documents',   # English
+            'Dokumente',   # German
+            'Documenti',   # Italian
+            'Документы',   # Russian
+            'Documents',   # French (same as English)
+        ]
+        
+        for name in possible_names:
+            candidate = home / name
+            if candidate.exists() and candidate.is_dir():
+                return candidate
+        
+        # Fallback: use data directory
+        return self.config.data_dir
+
+    def _calculate_word_count_python(self, content: str) -> int:
+        """Calculate word count using Python (more accurate than SQL)"""
+        if not content or not content.strip():
+            return 0
+        # Split on whitespace and filter empty strings
+        words = [word for word in content.split() if word.strip()]
+        return len(words)
+
+    def list_projects(self) -> List[Dict[str, Any]]:
+        """List all projects from the database with optimized statistics"""
+        projects_info = []
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                
+                # Get all projects first
+                cursor.execute("""
+                    SELECT p.id, p.name, p.created_at, p.modified_at
+                    FROM projects p
+                    ORDER BY p.modified_at DESC;
+                """)
+                projects = cursor.fetchall()
+                
+                for project_row in projects:
+                    project_id = project_row['id']
+                    
+                    # Get paragraphs for this project in correct order
+                    cursor.execute("""
+                        SELECT type, content FROM paragraphs 
+                        WHERE project_id = ? ORDER BY "order" ASC
+                    """, (project_id,))
+                    paragraphs = cursor.fetchall()
+                    
+                    # Calculate statistics using same logic as Project.get_statistics()
+                    total_words = 0
+                    total_paragraphs = 0
+                    is_in_paragraph = False
+                    
+                    for p_row in paragraphs:
+                        content = p_row['content'] or ''
+                        total_words += self._calculate_word_count_python(content)
+                        
+                        p_type = p_row['type']
+                        
+                        # Count logical paragraphs following TAC technique
+                        if p_type == 'introduction':
+                            total_paragraphs += 1
+                            is_in_paragraph = True
+                        elif p_type in ['argument', 'conclusion']:
+                            if not is_in_paragraph:
+                                total_paragraphs += 1
+                                is_in_paragraph = False
+                        # title_1, title_2, quote don't affect main paragraph counting
+                    
+                    stats = {
+                        'total_paragraphs': total_paragraphs,
+                        'total_words': total_words,
+                    }
+                    
+                    projects_info.append({
+                        'id': project_row['id'],
+                        'name': project_row['name'],
+                        'created_at': project_row['created_at'],
+                        'modified_at': project_row['modified_at'],
+                        'statistics': stats,
+                        'file_path': None
+                    })
+                    
+        except Exception as e:
+            print(f"Error listing projects from database: {e}")
+        
+        return projects_info
+
+    def _vacuum_database(self):
+        """Perform database maintenance"""
+        try:
+            with self._get_db_connection() as conn:
+                conn.execute("VACUUM;")
+                conn.execute("ANALYZE;")
+                print("Database maintenance completed")
+        except Exception as e:
+            print(f"Database maintenance failed: {e}")
+
+    def get_database_info(self) -> Dict[str, Any]:
+        """Get database statistics and health information"""
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                
+                # Get table sizes
+                cursor.execute("SELECT COUNT(*) as project_count FROM projects;")
+                project_count = cursor.fetchone()['project_count']
+                
+                cursor.execute("SELECT COUNT(*) as paragraph_count FROM paragraphs;")
+                paragraph_count = cursor.fetchone()['paragraph_count']
+                
+                # Get database file size
+                db_size = self.db_path.stat().st_size if self.db_path.exists() else 0
+                
+                return {
+                    'database_path': str(self.db_path),
+                    'database_size_bytes': db_size,
+                    'project_count': project_count,
+                    'paragraph_count': paragraph_count,
+                    'health_status': 'healthy'
+                }
+                
+        except Exception as e:
+            return {
+                'database_path': str(self.db_path),
+                'health_status': f'error: {e}',
+                'project_count': 0,
+                'paragraph_count': 0
+            }
+    
+    def _init_db(self):
+        """Initialize the database and create tables if they don't exist"""
+        with self._get_db_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS projects (
+                    id TEXT PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    created_at TEXT NOT NULL,
+                    modified_at TEXT NOT NULL,
+                    metadata TEXT,
+                    document_formatting TEXT
+                );
+            """)
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS paragraphs (
+                    id TEXT PRIMARY KEY,
+                    project_id TEXT NOT NULL,
+                    type TEXT NOT NULL,
+                    content TEXT,
+                    created_at TEXT NOT NULL,
+                    modified_at TEXT NOT NULL,
+                    "order" INTEGER NOT NULL,
+                    formatting TEXT,
+                    FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE
+                );
+            """)
+            conn.commit()
 
     def create_project(self, name: str, template: str = "academic_essay") -> Project:
         """Create a new project"""
         project = Project(name)
         
-        # Apply template if specified
         if template == "academic_essay":
-            # Start with empty project - user will add paragraphs manually
             pass
         
-        # Save project
-        success = self.save_project(project)
-        if success:
+        if self.save_project(project):
             print(f"Created project: {project.name} ({project.id})")
             return project
         else:
-            raise Exception("Failed to save new project")
-
-    def save_project(self, project: Project) -> bool:
-        """Save project to file"""
-        try:
-            project_file = self.get_project_path(project)
-            
-            # Ensure project directory exists
-            project_file.parent.mkdir(parents=True, exist_ok=True)
-
-            # Backup logic
-            if self.config.get('backup_files', False) and project_file.exists():
-                try:
-                    #backup_path = FileHelper.create_backup_filename(project_file)
-                    backup_filename = FileHelper.create_backup_filename(project_file, project.name).name
-                    backup_dir = Path.home() / "Documents" / "TAC Projects" / "backups"
-                    backup_dir.mkdir(parents=True, exist_ok=True)
-                    final_backup_path = backup_dir / backup_filename
-                    
-                    shutil.copy2(project_file, final_backup_path)
-                    print(f"Backup created in: {final_backup_path}")
-                except Exception as backup_error:
-                    print(f"Warning: It was not possible to create backup file: {backup_error}")
-            
-            # Convert to dict and save
-            project_data = project.to_dict()
-            with open(project_file, 'w', encoding='utf-8') as f:
-                json.dump(project_data, f, indent=2, ensure_ascii=False)
-            
-            print(f"Saved project: {project.name}")
-            return True
-            
-        except Exception as e:
-            print(f"Error saving project: {e}")
-            return False
+            raise Exception("Failed to save new project to database")
 
     def load_project(self, project_id: str) -> Optional[Project]:
-        """Load project by ID or file path"""
+        """Load project by ID from the database"""
         try:
-            # Check if project_id is actually a file path
-            if project_id.endswith('.json'):
-                project_file = Path(project_id)
-            else:
-                project_file = self.projects_dir / f"{project_id}.json"
-            
-            if not project_file.exists():
-                print(f"Project file not found: {project_file}")
-                return None
-            
-            # Load project data
-            with open(project_file, 'r', encoding='utf-8') as f:
-                project_data = json.load(f)
-            
-            project = Project.from_dict(project_data)
-            print(f"Loaded project: {project.name}")
-            return project
-            
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                
+                cursor.execute("SELECT * FROM projects WHERE id = ?", (project_id,))
+                project_row = cursor.fetchone()
+                
+                if not project_row:
+                    print(f"Project with ID {project_id} not found in database.")
+                    return None
+                
+                project_data = dict(project_row)
+                project_data['metadata'] = json.loads(project_data['metadata'])
+                project_data['document_formatting'] = json.loads(project_data['document_formatting'])
+                
+                cursor.execute("SELECT * FROM paragraphs WHERE project_id = ? ORDER BY \"order\" ASC", (project_id,))
+                paragraphs_rows = cursor.fetchall()
+                
+                paragraphs_data = []
+                for p_row in paragraphs_rows:
+                    p_data = dict(p_row)
+                    p_data['formatting'] = json.loads(p_data['formatting'])
+                    paragraphs_data.append(p_data)
+                
+                project_data['paragraphs'] = paragraphs_data
+                
+                project = Project.from_dict(project_data)
+                print(f"Loaded project from database: {project.name}")
+                return project
         except Exception as e:
-            print(f"Error loading project: {e}")
+            print(f"Error loading project from database: {e}")
             return None
 
     def delete_project(self, project_id: str) -> bool:
-        """Delete project (move to trash)"""
+        """Delete project from the database"""
         try:
-            project_file = self.projects_dir / f"{project_id}.json"
-            
-            if not project_file.exists():
-                return False
-            
-            # Move to trash folder (create if doesn't exist)
-            trash_dir = self.projects_dir / ".trash"
-            trash_dir.mkdir(exist_ok=True)
-            
-            trash_file = trash_dir / f"{project_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-            shutil.move(str(project_file), str(trash_file))
-            
-            print(f"Moved project to trash: {project_id}")
-            return True
-            
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM projects WHERE id = ?", (project_id,))
+                conn.commit()
+                
+                print(f"Deleted project from database: {project_id}")
+                return True
         except Exception as e:
-            print(f"Error deleting project: {e}")
+            print(f"Error deleting project from database: {e}")
             return False
 
-    def list_projects(self) -> List[Dict[str, Any]]:
-        """List all projects"""
-        projects = []
-        
-        try:
-            for project_file in self.projects_dir.glob("*.json"):
-                try:
-                    # Load basic project info
-                    with open(project_file, 'r', encoding='utf-8') as f:
-                        project_data = json.load(f)
-                    
-                    # Extract essential info
-                    project_info = {
-                        'id': project_data.get('id'),
-                        'name': project_data.get('name'),
-                        'created_at': project_data.get('created_at'),
-                        'modified_at': project_data.get('modified_at'),
-                        'statistics': project_data.get('statistics', {}),
-                        'file_path': str(project_file)
-                    }
-                    
-                    projects.append(project_info)
-                    
-                except Exception as e:
-                    print(f"Error reading project file {project_file}: {e}")
-                    continue
-            
-            # Sort by modification date (newest first)
-            projects.sort(key=lambda p: p.get('modified_at', ''), reverse=True)
-            
-        except Exception as e:
-            print(f"Error listing projects: {e}")
-        
-        return projects
-
-    def get_project_path(self, project: Project) -> Path:
-        """Get file path for a project"""
-        return self.projects_dir / f"{project.id}.json"
-
-    def import_project(self, file_path: str) -> Optional[Project]:
-        """Import project from file"""
-        try:
-            source_path = Path(file_path)
-            if not source_path.exists():
-                return None
-            
-            # Load project
-            project = self.load_project(file_path)
-            if not project:
-                return None
-            
-            # Copy to projects directory if not already there
-            target_path = self.get_project_path(project)
-            if source_path != target_path:
-                shutil.copy2(source_path, target_path)
-            
-            return project
-            
-        except Exception as e:
-            print(f"Error importing project: {e}")
-            return None
-
-    def export_project(self, project: Project, target_path: str) -> bool:
-        """Export project to file"""
-        try:
-            source_path = self.get_project_path(project)
-            shutil.copy2(source_path, target_path)
-            return True
-        except Exception as e:
-            print(f"Error exporting project: {e}")
-            return False
+    @property
+    def projects_dir(self) -> Path:
+        """Get projects directory for compatibility"""
+        return self.config.data_dir / 'projects'
 
 class ExportService:
     """Handles document export operations"""
@@ -230,7 +603,7 @@ class ExportService:
 
     def get_available_formats(self) -> List[str]:
         """Get list of available export formats"""
-        formats = ['txt']  # Text always available
+        formats = ['txt']
         
         if self.odt_available:
             formats.append('odt')
@@ -652,27 +1025,30 @@ class ExportService:
                 parent=styles['Title'],
                 fontSize=18,
                 spaceAfter=30,
-                alignment=TA_CENTER
+                alignment=TA_CENTER,
+                fontName='Times-Bold'
             )
-            
+
             title1_style = ParagraphStyle(
                 'CustomTitle1',
                 parent=styles['Heading1'],
                 fontSize=16,
                 spaceBefore=24,
                 spaceAfter=12,
-                leftIndent=0
+                leftIndent=0,
+                fontName='Times-Bold'
             )
-            
+
             title2_style = ParagraphStyle(
                 'CustomTitle2',
                 parent=styles['Heading2'],
                 fontSize=14,
                 spaceBefore=18,
                 spaceAfter=9,
-                leftIndent=0
+                leftIndent=0,
+                fontName='Times-Bold'
             )
-            
+
             introduction_style = ParagraphStyle(
                 'Introduction',
                 parent=styles['Normal'],
@@ -681,9 +1057,10 @@ class ExportService:
                 firstLineIndent=1.5*cm,
                 spaceBefore=12,
                 spaceAfter=12,
-                alignment=TA_JUSTIFY
+                alignment=TA_JUSTIFY,
+                fontName='Times-Roman'
             )
-            
+
             normal_style = ParagraphStyle(
                 'Normal',
                 parent=styles['Normal'],
@@ -691,9 +1068,10 @@ class ExportService:
                 leading=18,
                 spaceBefore=12,
                 spaceAfter=12,
-                alignment=TA_JUSTIFY
+                alignment=TA_JUSTIFY,
+                fontName='Times-Roman'
             )
-            
+
             quote_style = ParagraphStyle(
                 'Quote',
                 parent=styles['Normal'],

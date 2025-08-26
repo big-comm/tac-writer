@@ -18,6 +18,8 @@ from .dialogs import (
     AboutDialog
 )
 
+from core.config import Config
+
 __all__ = [
     # Main window
     'MainWindow',
@@ -36,4 +38,4 @@ __all__ = [
     'AboutDialog'
 ]
 
-__version__ = '1.0.0'
+__version__ = Config.APP_VERSION
