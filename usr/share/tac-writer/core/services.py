@@ -584,6 +584,186 @@ class ProjectManager:
             print(f"Error deleting project from database: {e}")
             return False
 
+    def create_manual_backup(self) -> Optional[Path]:
+        """Create a manual backup of the database"""
+        try:
+            if not self.db_path.exists():
+                return None
+                
+            # Get backup directory
+            documents_dir = self._get_documents_directory()
+            backup_dir = documents_dir / "TAC Projects" / "database_backups"
+            backup_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Generate backup filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_filename = f"manual_backup_{timestamp}.db"
+            backup_path = backup_dir / backup_filename
+            
+            # Copy database file
+            shutil.copy2(self.db_path, backup_path)
+            
+            # Clean old backups - keep only 10 most recent
+            self._cleanup_old_backups(backup_dir, max_backups=10)
+            
+            print(f"Manual backup created: {backup_path}")
+            return backup_path
+            
+        except Exception as e:
+            print(f"Error creating manual backup: {e}")
+            return None
+
+    def list_available_backups(self) -> List[Dict[str, Any]]:
+        """List available backup files with metadata"""
+        backups = []
+        try:
+            documents_dir = self._get_documents_directory()
+            backup_dir = documents_dir / "TAC Projects" / "database_backups"
+            
+            if not backup_dir.exists():
+                return backups
+                
+            # Find all backup files
+            backup_files = list(backup_dir.glob("*.db"))
+            
+            for backup_file in backup_files:
+                try:
+                    # Get file stats
+                    stat = backup_file.stat()
+                    
+                    # Try to get project count from backup
+                    project_count = 0
+                    try:
+                        with sqlite3.connect(backup_file) as conn:
+                            cursor = conn.cursor()
+                            cursor.execute("SELECT COUNT(*) FROM projects")
+                            project_count = cursor.fetchone()[0]
+                    except:
+                        pass
+                    
+                    backups.append({
+                        'path': backup_file,
+                        'name': backup_file.name,
+                        'size': stat.st_size,
+                        'created_at': datetime.fromtimestamp(stat.st_mtime),
+                        'project_count': project_count,
+                        'is_valid': self._validate_backup_file(backup_file)
+                    })
+                except Exception as e:
+                    print(f"Error reading backup file {backup_file}: {e}")
+                    continue
+            
+            # Sort by creation date (newest first)
+            backups.sort(key=lambda x: x['created_at'], reverse=True)
+            
+        except Exception as e:
+            print(f"Error listing backups: {e}")
+            
+        return backups
+
+    def _validate_backup_file(self, backup_path: Path) -> bool:
+        """Validate if backup file is a valid TAC database"""
+        try:
+            with sqlite3.connect(backup_path) as conn:
+                cursor = conn.cursor()
+                
+                # Check if required tables exist
+                cursor.execute("""
+                    SELECT name FROM sqlite_master 
+                    WHERE type='table' AND name IN ('projects', 'paragraphs')
+                """)
+                tables = cursor.fetchall()
+                
+                if len(tables) != 2:
+                    return False
+                
+                # Check table structure
+                cursor.execute("PRAGMA table_info(projects)")
+                project_columns = [row[1] for row in cursor.fetchall()]
+                required_project_columns = ['id', 'name', 'created_at', 'modified_at']
+                
+                for col in required_project_columns:
+                    if col not in project_columns:
+                        return False
+                
+                return True
+                
+        except Exception as e:
+            print(f"Backup validation error: {e}")
+            return False
+
+    def import_database(self, backup_path: Path) -> bool:
+        """Import database from backup file"""
+        try:
+            # Validate backup file
+            if not self._validate_backup_file(backup_path):
+                print("Invalid backup file")
+                return False
+            
+            # Close all current connections
+            # Note: In a real implementation, you'd want to notify all components
+            # to close their connections first
+            
+            # Create backup of current database
+            current_backup_path = None
+            if self.db_path.exists():
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                current_backup_path = self.db_path.with_suffix(f'.backup_{timestamp}.db')
+                shutil.copy2(self.db_path, current_backup_path)
+                print(f"Current database backed up to: {current_backup_path}")
+            
+            try:
+                # Replace current database
+                shutil.copy2(backup_path, self.db_path)
+                
+                # Test the imported database
+                with self._get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute("SELECT COUNT(*) FROM projects")
+                    project_count = cursor.fetchone()[0]
+                    print(f"Successfully imported database with {project_count} projects")
+                
+                return True
+                
+            except Exception as e:
+                # Restore backup if import failed
+                if current_backup_path and current_backup_path.exists():
+                    shutil.copy2(current_backup_path, self.db_path)
+                    print("Import failed, restored previous database")
+                raise e
+                
+        except Exception as e:
+            print(f"Error importing database: {e}")
+            return False
+
+    def delete_backup(self, backup_path: Path) -> bool:
+        """Delete a backup file"""
+        try:
+            if backup_path.exists():
+                backup_path.unlink()
+                print(f"Deleted backup: {backup_path}")
+                return True
+            return False
+        except Exception as e:
+            print(f"Error deleting backup: {e}")
+            return False
+
+    def _cleanup_old_backups(self, backup_dir: Path, max_backups: int = 3):
+        """Keep only the most recent backups"""
+        try:
+            backup_files = list(backup_dir.glob("*.db"))
+            
+            # Sort by modification time (most recent first)
+            backup_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+            
+            # Remove files beyond the limit
+            for old_backup in backup_files[max_backups:]:
+                old_backup.unlink()
+                print(f"Removed old backup: {old_backup}")
+                
+        except Exception as e:
+            print(f"Warning: Cleanup of old backups failed: {e}")
+
     @property
     def projects_dir(self) -> Path:
         """Get projects directory for compatibility"""

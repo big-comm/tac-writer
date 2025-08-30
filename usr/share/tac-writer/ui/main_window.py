@@ -15,7 +15,7 @@ from core.config import Config
 from utils.helpers import TextHelper, ValidationHelper, FormatHelper
 from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper
-from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog
+from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog
 from .components import PomodoroTimer
 
 
@@ -146,6 +146,7 @@ class MainWindow(Adw.ApplicationWindow):
         # File section
         file_section = Gio.Menu()
         file_section.append(_("Export Project..."), "app.export_project")
+        file_section.append(_("Backup Manager..."), "win.backup_manager")
         menu_model.append_section(None, file_section)
 
         # Edit section
@@ -214,6 +215,7 @@ class MainWindow(Adw.ApplicationWindow):
             ('show_welcome', self._action_show_welcome),
             ('undo', self._action_undo),
             ('redo', self._action_redo),
+            ('backup_manager', self._action_backup_manager),
         ]
 
         for action_data in actions:
@@ -547,6 +549,10 @@ class MainWindow(Adw.ApplicationWindow):
     def _action_show_welcome(self, action, param):
         """Handle show welcome action"""
         self.show_welcome_dialog()
+        
+    def _action_backup_manager(self, action, param):
+        """Handle backup manager action"""
+        self.show_backup_manager_dialog()
 
     # Public methods called by application
     def show_new_project_dialog(self):
@@ -635,6 +641,26 @@ class MainWindow(Adw.ApplicationWindow):
         """Show the welcome dialog"""
         dialog = WelcomeDialog(self, self.config)
         dialog.present()
+
+    def show_backup_manager_dialog(self):
+        """Show the backup manager dialog"""
+        dialog = BackupManagerDialog(self, self.project_manager)
+        dialog.connect('database-imported', self._on_database_imported)
+        dialog.present()
+
+    def _on_database_imported(self, dialog):
+        """Handle database import completion"""
+        # Refresh project list
+        self.project_list.refresh_projects()
+        
+        # Clear current project if one is open
+        self.current_project = None
+        
+        # Show welcome view
+        self._show_welcome_view()
+        
+        # Show success toast
+        self._show_toast(_("Database imported successfully"), Adw.ToastPriority.HIGH)
 
     def _load_project(self, project_id: str):
         """Load a project by ID"""

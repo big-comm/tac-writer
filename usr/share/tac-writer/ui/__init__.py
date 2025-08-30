@@ -15,7 +15,8 @@ from .dialogs import (
     #FormatDialog,
     ExportDialog,
     PreferencesDialog,
-    AboutDialog
+    AboutDialog,
+    BackupManagerDialog
 )
 
 from core.config import Config
@@ -36,6 +37,7 @@ __all__ = [
     'ExportDialog', 
     'PreferencesDialog',
     'AboutDialog'
+    'BackupManagerDialog'
 ]
 
 __version__ = Config.APP_VERSION

@@ -8,10 +8,12 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, GObject, Gio, Gdk, Pango, GLib
 
+import sqlite3
 import threading
 import subprocess
 from pathlib import Path
 from datetime import datetime
+from typing import Dict, List, Any
 
 from core.models import Project, DEFAULT_TEMPLATES, Paragraph
 from core.services import ProjectManager, ExportService
@@ -868,3 +870,412 @@ def AboutDialog(parent):
     dialog.set_copyright(config.APP_COPYRIGHT)
 
     return dialog
+
+def AboutDialog(parent):
+    """Create and show about dialog"""
+    dialog = Adw.AboutWindow()
+    dialog.set_transient_for(parent)
+    dialog.set_modal(True)
+
+    # Get config instance to access version info
+    config = Config()
+
+    # Application information
+    dialog.set_application_name(config.APP_NAME)
+    dialog.set_application_icon("tac-writer")
+    dialog.set_version(config.APP_VERSION)
+    dialog.set_developer_name(_(config.APP_DESCRIPTION))
+    dialog.set_website(config.APP_WEBSITE)
+
+    # Description
+    dialog.set_comments(_(config.APP_DESCRIPTION))
+
+    # License
+    dialog.set_license_type(Gtk.License.GPL_3_0)
+
+    # Credits
+    dialog.set_developers([
+        f"{', '.join(config.APP_DEVELOPERS)} {config.APP_WEBSITE}"
+    ])
+    dialog.set_designers(config.APP_DESIGNERS)
+
+    dialog.set_copyright(config.APP_COPYRIGHT)
+
+    return dialog
+
+
+class BackupManagerDialog(Adw.Window):
+    """Dialog for managing database backups"""
+
+    __gtype_name__ = 'TacBackupManagerDialog'
+
+    __gsignals__ = {
+        'database-imported': (GObject.SIGNAL_RUN_FIRST, None, ()),
+    }
+
+    def __init__(self, parent, project_manager: ProjectManager, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Backup Manager"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(700, 500)
+        self.set_resizable(True)
+
+        self.project_manager = project_manager
+        self.backups_list = []
+
+        self._create_ui()
+        self._refresh_backups()
+
+    def _create_ui(self):
+        """Create the backup manager UI"""
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(content_box)
+
+        # Header bar
+        header_bar = Adw.HeaderBar()
+        
+        # Close button
+        close_button = Gtk.Button()
+        close_button.set_label(_("Close"))
+        close_button.connect('clicked', lambda x: self.destroy())
+        header_bar.pack_start(close_button)
+
+        # Create backup button
+        create_backup_button = Gtk.Button()
+        create_backup_button.set_label(_("Create Backup"))
+        create_backup_button.add_css_class("suggested-action")
+        create_backup_button.connect('clicked', self._on_create_backup)
+        header_bar.pack_end(create_backup_button)
+
+        # Import button
+        import_button = Gtk.Button()
+        import_button.set_label(_("Import Database"))
+        import_button.connect('clicked', self._on_import_database)
+        header_bar.pack_end(import_button)
+
+        content_box.append(header_bar)
+
+        # Main content
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        main_box.set_margin_start(24)
+        main_box.set_margin_end(24)
+        main_box.set_margin_top(24)
+        main_box.set_margin_bottom(24)
+        main_box.set_spacing(16)
+
+        # Status group
+        status_group = Adw.PreferencesGroup()
+        status_group.set_title(_("Current Database"))
+        
+        db_info = self.project_manager.get_database_info()
+        
+        # Database path
+        path_row = Adw.ActionRow()
+        path_row.set_title(_("Database Location"))
+        path_row.set_subtitle(db_info['database_path'])
+        status_group.add(path_row)
+
+        # Database stats
+        stats_row = Adw.ActionRow()
+        stats_row.set_title(_("Statistics"))
+        stats_text = _("{} projects, {} MB").format(
+            db_info['project_count'],
+            round(db_info['database_size_bytes'] / (1024*1024), 2)
+        )
+        stats_row.set_subtitle(stats_text)
+        status_group.add(stats_row)
+
+        main_box.append(status_group)
+
+        # Backups list
+        backups_group = Adw.PreferencesGroup()
+        backups_group.set_title(_("Available Backups"))
+        backups_group.set_description(_("Backups are stored in Documents/TAC Projects/database_backups"))
+
+        # Scrolled window for backups
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scrolled.set_min_content_height(200)
+
+        self.backups_listbox = Gtk.ListBox()
+        self.backups_listbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        self.backups_listbox.add_css_class("boxed-list")
+
+        scrolled.set_child(self.backups_listbox)
+        
+        backups_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        backups_box.append(backups_group)
+        backups_box.append(scrolled)
+        
+        main_box.append(backups_box)
+        
+        scrolled_main = Gtk.ScrolledWindow()
+        scrolled_main.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scrolled_main.set_child(main_box)
+        content_box.append(scrolled_main)
+
+    def _refresh_backups(self):
+        """Refresh the backups list"""
+        # Clear existing items
+        child = self.backups_listbox.get_first_child()
+        while child:
+            next_child = child.get_next_sibling()
+            self.backups_listbox.remove(child)
+            child = next_child
+
+        # Load backups
+        self.backups_list = self.project_manager.list_available_backups()
+
+        if not self.backups_list:
+            # Show empty state
+            empty_row = Adw.ActionRow()
+            empty_row.set_title(_("No backups found"))
+            empty_row.set_subtitle(_("Create a backup or import an existing database file"))
+            self.backups_listbox.append(empty_row)
+            return
+
+        # Add backup rows
+        for backup in self.backups_list:
+            row = self._create_backup_row(backup)
+            self.backups_listbox.append(row)
+
+    def _create_backup_row(self, backup: Dict[str, Any]):
+        """Create a row for a backup"""
+        row = Adw.ActionRow()
+        
+        # Title and subtitle
+        row.set_title(backup['name'])
+        
+        size_mb = backup['size'] / (1024 * 1024)
+        created_str = backup['created_at'].strftime('%Y-%m-%d %H:%M')
+        subtitle = _("{:.1f} MB • {} projects • {}").format(
+            size_mb, backup['project_count'], created_str
+        )
+        row.set_subtitle(subtitle)
+
+        # Status indicator
+        if backup['is_valid']:
+            status_icon = Gtk.Image.new_from_icon_name("emblem-ok-symbolic")
+            status_icon.set_tooltip_text(_("Valid backup"))
+        else:
+            status_icon = Gtk.Image.new_from_icon_name("dialog-warning-symbolic")
+            status_icon.set_tooltip_text(_("Invalid or corrupted backup"))
+            status_icon.add_css_class("warning")
+            
+        row.add_prefix(status_icon)
+
+        # Action buttons
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+
+        # Restore button
+        if backup['is_valid']:
+            restore_button = Gtk.Button()
+            restore_button.set_icon_name("document-revert-symbolic")
+            restore_button.set_tooltip_text(_("Import this backup"))
+            restore_button.add_css_class("flat")
+            restore_button.connect('clicked', lambda btn, b=backup: self._on_restore_backup(b))
+            button_box.append(restore_button)
+
+        # Delete button
+        delete_button = Gtk.Button()
+        delete_button.set_icon_name("user-trash-symbolic")
+        delete_button.set_tooltip_text(_("Delete backup"))
+        delete_button.add_css_class("flat")
+        delete_button.add_css_class("destructive-action")
+        delete_button.connect('clicked', lambda btn, b=backup: self._on_delete_backup(b))
+        button_box.append(delete_button)
+
+        row.add_suffix(button_box)
+        return row
+
+    def _on_create_backup(self, button):
+        """Handle create backup button"""
+        button.set_sensitive(False)
+        button.set_label(_("Creating..."))
+
+        def backup_thread():
+            backup_path = self.project_manager.create_manual_backup()
+            GLib.idle_add(self._backup_created, backup_path, button)
+
+        thread = threading.Thread(target=backup_thread, daemon=True)
+        thread.start()
+
+    def _backup_created(self, backup_path, button):
+        """Callback when backup is created"""
+        button.set_sensitive(True)
+        button.set_label(_("Create Backup"))
+
+        if backup_path:
+            # Show success toast in parent window
+            parent_window = self.get_transient_for()
+            if parent_window and hasattr(parent_window, '_show_toast'):
+                parent_window._show_toast(_("Backup created successfully"))
+            self._refresh_backups()
+        else:
+            # Show error dialog
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Backup Failed"),
+                _("Could not create backup. Check the console for details.")
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+
+        return False
+
+    def _on_import_database(self, button):
+        """Handle import database button"""
+        file_chooser = Gtk.FileChooserNative.new(
+            _("Import Database"),
+            self,
+            Gtk.FileChooserAction.OPEN,
+            _("Import"),
+            _("Cancel")
+        )
+
+        # Set filter for database files
+        filter_db = Gtk.FileFilter()
+        filter_db.set_name(_("Database files (*.db)"))
+        filter_db.add_pattern("*.db")
+        file_chooser.add_filter(filter_db)
+
+        filter_all = Gtk.FileFilter()
+        filter_all.set_name(_("All files"))
+        filter_all.add_pattern("*")
+        file_chooser.add_filter(filter_all)
+
+        file_chooser.connect('response', self._on_import_file_selected)
+        file_chooser.show()
+
+    def _on_import_file_selected(self, dialog, response):
+        """Handle file selection for import"""
+        if response == Gtk.ResponseType.ACCEPT:
+            file = dialog.get_file()
+            if file:
+                backup_path = Path(file.get_path())
+                self._confirm_import(backup_path)
+        dialog.destroy()
+
+    def _on_restore_backup(self, backup):
+        """Handle restore backup button"""
+        self._confirm_import(backup['path'])
+
+    def _confirm_import(self, backup_path: Path):
+        """Show confirmation dialog for import"""
+        # Validate backup first
+        if not self.project_manager._validate_backup_file(backup_path):
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Invalid Backup"),
+                _("The selected file is not a valid TAC database backup.")
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+            return
+
+        # Get backup info
+        try:
+            with sqlite3.connect(backup_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT COUNT(*) FROM projects")
+                project_count = cursor.fetchone()[0]
+        except:
+            project_count = 0
+
+        # Show confirmation
+        dialog = Adw.MessageDialog.new(
+            self,
+            _("Import Database?"),
+            _("This will replace your current database with the selected backup.\n\n"
+              "The backup contains {} projects.\n\n"
+              "Your current database will be backed up before importing.").format(project_count)
+        )
+
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("import", _("Import"))
+        dialog.set_response_appearance("import", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+
+        dialog.connect('response', lambda d, r, path=backup_path: self._import_confirmed(d, r, path))
+        dialog.present()
+
+    def _import_confirmed(self, dialog, response, backup_path):
+        """Handle import confirmation"""
+        dialog.destroy()
+        
+        if response == "import":
+            self._perform_import(backup_path)
+
+    def _perform_import(self, backup_path: Path):
+        """Perform the database import"""
+        # Show loading state
+        loading_dialog = Adw.MessageDialog.new(
+            self,
+            _("Importing Database"),
+            _("Please wait while the database is being imported...")
+        )
+        loading_dialog.present()
+
+        def import_thread():
+            success = self.project_manager.import_database(backup_path)
+            GLib.idle_add(self._import_finished, success, loading_dialog)
+
+        thread = threading.Thread(target=import_thread, daemon=True)
+        thread.start()
+
+    def _import_finished(self, success, loading_dialog):
+        """Callback when import is finished"""
+        loading_dialog.destroy()
+
+        if success:
+            # Show success and emit signal
+            success_dialog = Adw.MessageDialog.new(
+                self,
+                _("Import Successful"),
+                _("Database imported successfully. The application will refresh to show the imported projects.")
+            )
+            success_dialog.add_response("ok", _("OK"))
+            
+            def on_success_response(dialog, response):
+                dialog.destroy()
+                self.emit('database-imported')
+                self.destroy()
+            
+            success_dialog.connect('response', on_success_response)
+            success_dialog.present()
+        else:
+            # Show error
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Import Failed"),
+                _("Could not import the database. Your current database remains unchanged.")
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+
+        return False
+
+    def _on_delete_backup(self, backup):
+        """Handle delete backup button"""
+        dialog = Adw.MessageDialog.new(
+            self,
+            _("Delete Backup?"),
+            _("Are you sure you want to delete '{}'?\n\nThis action cannot be undone.").format(backup['name'])
+        )
+
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("delete", _("Delete"))
+        dialog.set_response_appearance("delete", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+
+        dialog.connect('response', lambda d, r, b=backup: self._delete_confirmed(d, r, b))
+        dialog.present()
+
+    def _delete_confirmed(self, dialog, response, backup):
+        """Handle delete confirmation"""
+        if response == "delete":
+            success = self.project_manager.delete_backup(backup['path'])
+            if success:
+                self._refresh_backups()
+        dialog.destroy()
