@@ -16,15 +16,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akadémiai Esszé"
+msgid "Unknown"
+msgstr "Ismeretlen"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
 #: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Szabványos akadémiai esszé struktúra"
+msgid "0 minutes"
+msgstr "0 perc"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 perc"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 perc"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} perc"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}ó {}p"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "A projekt neve nem lehet üres."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "A projekt neve legalább 2 karakter hosszú kell, hogy legyen."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "A projekt neve nem haladhatja meg a 100 karaktert."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "A projekt neve érvénytelen karaktereket tartalmaz"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Az útvonal nem lehet üres."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "A szülőkönyvtár nem létezik"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Az útvonal túl hosszú"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "Érvénytelen útvonal: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 bekezdés"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} bekezdés"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "kulcs"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} szó"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} szót"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} karakter"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Információ"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "Típus: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "Modul: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Attribútumok:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Módszerek:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... és {} további módszer"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Teljesítmény: {} eltartott {:.3f} másodpercig"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Hiba: A szükséges függőségek nem találhatók: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Kérjük, telepítse: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Hiba: A GTK 4.0 vagy újabb verzió szükséges"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Hibaellenőrzési függőségek: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Alkalmazás megszakítva a felhasználó által."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritikus hiba a rendszerindítás során: {}"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -63,6 +231,11 @@ msgstr "Főmenü"
 #: NEEDS WORK
 msgid "Export Project..."
 msgstr "Projekt exportálása..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Backup Manager..."
+msgstr "Biztonsági mentés kezelő..."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 154
 #: NEEDS WORK
@@ -229,6 +402,11 @@ msgstr "A projekt mentése nem sikerült"
 msgid "No project to export"
 msgstr "Nincs exportálható projekt"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 663
+#: NEEDS WORK
+msgid "Database imported successfully"
+msgstr "Az adatbázis sikeresen importálva."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
 #, python-brace-format
@@ -253,6 +431,164 @@ msgstr "Projekt betöltése..."
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "A projekt megnyitása nem sikerült: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 145
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "Munkamenet {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 152
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "Hosszú szünet"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 158
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "Pihenőidő"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 214
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "Minimalizálás"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 263
+#: NEEDS WORK
+msgid "Reset"
+msgstr "Visszaállítás"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 381
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ Szünet"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 385
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ Indítás"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Üdvözöljük a TAC-nál"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Hozzon létre strukturált akadémiai szövegeket irányított bekezdéstípusokkal"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Megjegyzés:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "Az ODT-be történő exportálás némi beállítást igényelhet az Office Suite-ban."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Tipp:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "a közvetlen idézetekhez, amelyek kevesebb mint 4 sorból állnak, használja az argumentum dobozt."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Kezdj el írni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Válasszon egy sablont a kezdéshez"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Kezdés"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Keresés projektek..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Projekt átnevezése"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Projekt törlése"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Projekt átnevezése"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "Írja be az új nevet a(z) '{}' számára"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Átnevezés"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "Törölni '{}'?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Ez a projekt a kukába lesz helyezve, és visszaállítható."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Törlés"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Helyesírás-ellenőrzés váltása"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Bekezdés eltávolítása"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Bekezdés"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Bejegyzés eltávolítása?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Ez a művelet nem vonható vissza."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Eltávolítás"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -576,338 +912,212 @@ msgstr "Indítsa el ezt a párbeszédpanelt a rendszerindításkor"
 msgid "Let's Start"
 msgstr "Kezdjük el"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 145
+# File: usr/share/tac-writer/ui/dialogs.py, line: 918
+#: NEEDS WORK
+msgid "Backup Manager"
+msgstr "Biztonsági mentés kezelő"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Close"
+msgstr "Bezárás"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1107
+#: NEEDS WORK
+msgid "Create Backup"
+msgstr "Biztonsági mentés készítése"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 953
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
+#: NEEDS WORK
+msgid "Import Database"
+msgstr "Adatbázis importálása"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+#: NEEDS WORK
+msgid "Current Database"
+msgstr "Jelenlegi adatbázis"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 975
+#: NEEDS WORK
+msgid "Database Location"
+msgstr "Adatbázis helye"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 982
 #: NEEDS WORK
 #, python-brace-format
-msgid "Session {}"
-msgstr "Munkamenet {}"
+msgid "{} projects, {} MB"
+msgstr "{} projekt, {} MB"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 152
+# File: usr/share/tac-writer/ui/dialogs.py, line: 993
 #: NEEDS WORK
-msgid "Long Break"
-msgstr "Hosszú szünet"
+msgid "Available Backups"
+msgstr "Elérhető biztonsági mentések"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 158
+# File: usr/share/tac-writer/ui/dialogs.py, line: 994
 #: NEEDS WORK
-msgid "Rest Time"
-msgstr "Pihenőidő"
+msgid "Backups are stored in Documents/TAC Projects/database_backups"
+msgstr "A biztonsági mentések a Documents/TAC Projects/database_backups mappában vannak tárolva."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 214
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1033
 #: NEEDS WORK
-msgid "Minimize"
-msgstr "Minimalizálás"
+msgid "No backups found"
+msgstr "Nincsenek biztonsági másolatok."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 263
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1034
 #: NEEDS WORK
-msgid "Reset"
-msgstr "Visszaállítás"
+msgid "Create a backup or import an existing database file"
+msgstr "Készítsen biztonsági másolatot, vagy importáljon egy meglévő adatbázis fájlt"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 381
-#: NEEDS WORK
-msgid "⏸ Pause"
-msgstr "⏸ Szünet"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 385
-#: NEEDS WORK
-msgid "▶ Start"
-msgstr "▶ Indítás"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 58
-#: NEEDS WORK
-msgid "Welcome to TAC"
-msgstr "Üdvözöljük a TAC-nál"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 71
-#: NEEDS WORK
-msgid "Create structured academic texts with guided paragraph types"
-msgstr "Hozzon létre strukturált akadémiai szövegeket irányított bekezdéstípusokkal"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "Note:"
-msgstr "Megjegyzés:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "Az ODT-be történő exportálás némi beállítást igényelhet az Office Suite-ban."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Tipp:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "a közvetlen idézetekhez, amelyek kevesebb mint 4 sorból állnak, használja az argumentum dobozt."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 94
-#: NEEDS WORK
-msgid "Start Writing"
-msgstr "Kezdj el írni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 95
-#: NEEDS WORK
-msgid "Choose a template to get started"
-msgstr "Válasszon egy sablont a kezdéshez"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 105
-#: NEEDS WORK
-msgid "Start"
-msgstr "Kezdés"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 137
-#: NEEDS WORK
-msgid "Search projects..."
-msgstr "Keresés projektek..."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 208
-#: NEEDS WORK
-msgid "Rename project"
-msgstr "Projekt átnevezése"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 217
-#: NEEDS WORK
-msgid "Delete project"
-msgstr "Projekt törlése"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 288
-#: NEEDS WORK
-msgid "Rename Project"
-msgstr "Projekt átnevezése"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 289
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
 #: NEEDS WORK
 #, python-brace-format
-msgid "Enter new name for '{}'"
-msgstr "Írja be az új nevet a(z) '{}' számára"
+msgid "{:.1f} MB • {} projects • {}"
+msgstr "{:.1f} MB • {} projekt • {}"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 306
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1060
 #: NEEDS WORK
-msgid "Rename"
-msgstr "Átnevezés"
+msgid "Valid backup"
+msgstr "Érvényes biztonsági másolat"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 340
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1063
 #: NEEDS WORK
-#, python-brace-format
-msgid "Delete '{}'?"
-msgstr "Törölni '{}'?"
+msgid "Invalid or corrupted backup"
+msgstr "Érvénytelen vagy sérült biztonsági másolat"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 341
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1075
 #: NEEDS WORK
-msgid "This project will be moved to trash and can be recovered."
-msgstr "Ez a projekt a kukába lesz helyezve, és visszaállítható."
+msgid "Import this backup"
+msgstr "Importáld ezt a biztonsági másolatot"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 345
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1083
 #: NEEDS WORK
-msgid "Delete"
-msgstr "Törlés"
+msgid "Delete backup"
+msgstr "Biztonsági másolat törlése"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 524
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1095
 #: NEEDS WORK
-msgid "Toggle spell checking"
-msgstr "Helyesírás-ellenőrzés váltása"
+msgid "Creating..."
+msgstr "Létrehozás..."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 427
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1113
 #: NEEDS WORK
-msgid "Remove paragraph"
-msgstr "Bekezdés eltávolítása"
+msgid "Backup created successfully"
+msgstr "A biztonsági másolat sikeresen létrejött"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 584
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1119
 #: NEEDS WORK
-msgid "Paragraph"
-msgstr "Bekezdés"
+msgid "Backup Failed"
+msgstr "Biztonsági mentés sikertelen"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 636
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1120
 #: NEEDS WORK
-#, python-brace-format
-msgid "{count} words"
-msgstr "{count} szó"
+msgid "Could not create backup. Check the console for details."
+msgstr "Nem sikerült biztonsági másolatot készíteni. Ellenőrizze a konzolt a részletekért."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 656
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1133
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1196
 #: NEEDS WORK
-msgid "Remove Paragraph?"
-msgstr "Bejegyzés eltávolítása?"
+msgid "Import"
+msgstr "Importálás"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 657
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1139
 #: NEEDS WORK
-msgid "This action cannot be undone."
-msgstr "Ez a művelet nem vonható vissza."
+msgid "Database files (*.db)"
+msgstr "Adatbázis fájlok (*.db)"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 661
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
 #: NEEDS WORK
-msgid "Remove"
-msgstr "Eltávolítás"
+msgid "All files"
+msgstr "Összes fájl"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1170
 #: NEEDS WORK
-msgid "Unknown"
-msgstr "Ismeretlen"
+msgid "Invalid Backup"
+msgstr "Érvénytelen biztonsági másolat"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1171
 #: NEEDS WORK
-msgid "0 minutes"
-msgstr "0 perc"
+msgid "The selected file is not a valid TAC database backup."
+msgstr "A kiválasztott fájl nem érvényes TAC adatbázis biztonsági másolat."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1189
 #: NEEDS WORK
-msgid "< 1 minute"
-msgstr "< 1 perc"
+msgid "Import Database?"
+msgstr "Adatbázis importálása?"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
-#: NEEDS WORK
-msgid "1 minute"
-msgstr "1 perc"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1190
 #: NEEDS WORK
 #, python-brace-format
-msgid "{} minutes"
-msgstr "{} perc"
+msgid ""
+"This will replace your current database with the selected backup.\n"
+"\n"
+"The backup contains {} projects.\n"
+"\n"
+"Your current database will be backed up before importing."
+msgstr ""
+"Ez felülírja a jelenlegi adatbázisát a kiválasztott biztonsági másolattal.\n"
+"\n"
+"A biztonsági másolat {} projektet tartalmaz.\n"
+"\n"
+"A jelenlegi adatbázisát biztonsági másolat készül, mielőtt importálná."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1215
+#: NEEDS WORK
+msgid "Importing Database"
+msgstr "Adatbázis importálása"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1216
+#: NEEDS WORK
+msgid "Please wait while the database is being imported..."
+msgstr "Kérjük, várjon, amíg az adatbázis importálása folyamatban van..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1235
+#: NEEDS WORK
+msgid "Import Successful"
+msgstr "Importálás sikeres"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1236
+#: NEEDS WORK
+msgid "Database imported successfully. The application will refresh to show the imported projects."
+msgstr ""
+"Az adatbázis sikeresen importálva. Az alkalmazás frissül, hogy megjelenítse az importált "
+"projekteket."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1251
+#: NEEDS WORK
+msgid "Import Failed"
+msgstr "Importálás sikertelen"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1252
+#: NEEDS WORK
+msgid "Could not import the database. Your current database remains unchanged."
+msgstr "Nem sikerült importálni az adatbázist. A jelenlegi adatbázisa változatlan marad."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1263
+#: NEEDS WORK
+msgid "Delete Backup?"
+msgstr "Biztonsági másolat törlése?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1264
 #: NEEDS WORK
 #, python-brace-format
-msgid "{}h {}m"
-msgstr "{}ó {}p"
+msgid ""
+"Are you sure you want to delete '{}'?\n"
+"\n"
+"This action cannot be undone."
+msgstr ""
+"Biztos benne, hogy törölni szeretné a '{}' elemet?\n"
+"\n"
+"Ez a művelet nem vonható vissza."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
+# File: usr/share/tac-writer/core/models.py, line: 354
 #: NEEDS WORK
-msgid "Project name cannot be empty"
-msgstr "A projekt neve nem lehet üres."
+msgid "Academic Essay"
+msgstr "Akadémiai Esszé"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
+# File: usr/share/tac-writer/core/models.py, line: 355
 #: NEEDS WORK
-msgid "Project name must be at least 2 characters long"
-msgstr "A projekt neve legalább 2 karakter hosszú kell, hogy legyen."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
-#: NEEDS WORK
-msgid "Project name cannot exceed 100 characters"
-msgstr "A projekt neve nem haladhatja meg a 100 karaktert."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
-#: NEEDS WORK
-msgid "Project name contains invalid characters"
-msgstr "A projekt neve érvénytelen karaktereket tartalmaz"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
-#: NEEDS WORK
-msgid "Path cannot be empty"
-msgstr "Az útvonal nem lehet üres."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
-#: NEEDS WORK
-msgid "Parent directory does not exist"
-msgstr "A szülőkönyvtár nem létezik"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
-#: NEEDS WORK
-msgid "Path is too long"
-msgstr "Az útvonal túl hosszú"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
-#: NEEDS WORK
-#, python-brace-format
-msgid "Invalid path: {}"
-msgstr "Érvénytelen útvonal: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 275
-#: NEEDS WORK
-msgid "1 paragraph"
-msgstr "1 bekezdés"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 277
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} paragraphs"
-msgstr "{count} bekezdés"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 283
-#: NEEDS WORK
-msgid "1 word"
-msgstr "kulcs"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
-#: NEEDS WORK
-msgid "{:,} words"
-msgstr "{:,} szót"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
-#: NEEDS WORK
-msgid "{:,} characters"
-msgstr "{:,} karakter"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
-#: NEEDS WORK
-msgid "Info"
-msgstr "Információ"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
-#: NEEDS WORK
-#, python-brace-format
-msgid "Type: {}"
-msgstr "Típus: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
-#: NEEDS WORK
-#, python-brace-format
-msgid "Module: {}"
-msgstr "Modul: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-#: NEEDS WORK
-msgid "Attributes:"
-msgstr "Attribútumok:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
-#: NEEDS WORK
-msgid "Methods:"
-msgstr "Módszerek:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
-#: NEEDS WORK
-#, python-brace-format
-msgid "  ... and {} more methods"
-msgstr "... és {} további módszer"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
-#: NEEDS WORK
-#, python-brace-format
-msgid "Performance: {} took {:.3f} seconds"
-msgstr "Teljesítmény: {} eltartott {:.3f} másodpercig"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error: Required dependencies not found: {}"
-msgstr "Hiba: A szükséges függőségek nem találhatók: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Kérjük, telepítse: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Hiba: A GTK 4.0 vagy újabb verzió szükséges"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error checking dependencies: {}"
-msgstr "Hibaellenőrzési függőségek: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Alkalmazás megszakítva a felhasználó által."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-#, python-brace-format
-msgid "Critical error during startup: {}"
-msgstr "Kritikus hiba a rendszerindítás során: {}"
+msgid "Standard academic essay structure"
+msgstr "Szabványos akadémiai esszé struktúra"

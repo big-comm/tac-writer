@@ -16,15 +16,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 354
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
 #: NEEDS WORK
-msgid "Academic Essay"
-msgstr "Akademski esej"
+msgid "Unknown"
+msgstr "Nepoznato"
 # 
-# File: usr/share/tac-writer/core/models.py, line: 355
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
 #: NEEDS WORK
-msgid "Standard academic essay structure"
-msgstr "Standardna struktura akademskog eseja"
+msgid "0 minutes"
+msgstr "0 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}h {}m"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Naziv projekta ne može biti prazan"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Naziv projekta mora imati najmanje 2 znaka."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Naziv projekta ne može biti duži od 100 znakova"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Naziv projekta sadrži nevažeće znakove"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Putanja ne može biti prazna"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Roditeljski direktorij ne postoji"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Putanja je predugačka"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "Nevažeća putanja: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 odlomak"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} odlomaka"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "ključ"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} riječi"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{: ,} riječi"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{: ,} znakova"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Informacije"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "Tip: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "Modul: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Atributi:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Metode:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... i {} više metoda"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Izvedba: {} trajalo {:.3f} sekundi"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Greška: Nedostaju potrebne ovisnosti: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Molimo instalirajte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Greška: Potreban je GTK 4.0 ili noviji"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Provjera grešaka ovisnosti: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplikacija prekinuta od strane korisnika."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritična greška tijekom pokretanja: {}"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
@@ -63,6 +231,11 @@ msgstr "Glavni izbornik"
 #: NEEDS WORK
 msgid "Export Project..."
 msgstr "Izvezi projekt..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Backup Manager..."
+msgstr "Upravitelj sigurnosnih kopija..."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 154
 #: NEEDS WORK
@@ -229,6 +402,11 @@ msgstr "Neuspjelo spremanje projekta"
 msgid "No project to export"
 msgstr "Nema projekta za izvoz"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 663
+#: NEEDS WORK
+msgid "Database imported successfully"
+msgstr "Baza podataka uspješno uvezena"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
 #, python-brace-format
@@ -253,6 +431,164 @@ msgstr "Učitavanje projekta..."
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "Neuspjeh pri otvaranju projekta: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 145
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "Sesija {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 152
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "Duga pauza"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 158
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "Vrijeme odmora"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 214
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "Smanji"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 263
+#: NEEDS WORK
+msgid "Reset"
+msgstr "Ponovno postavi"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 381
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ Pauza"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 385
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ Pokreni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Dobrodošli u TAC"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Kreirajte strukturirane akademske tekstove s vođenim tipovima odlomaka"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Napomena:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "izvoz u ODT može zahtijevati određene prilagodbe u vašem Office paketu."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Savjet:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "za izravne citate s manje od 4 retka, upotrijebite argumentni okvir."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Započni pisanje"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Odaberite predložak za početak"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Započni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Pretraži projekte..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Preimenuj projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Izbriši projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Preimenuj projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "Unesite novo ime za '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Preimenuj"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "Izbriši '{}' ?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Ovaj projekt će biti premješten u smeće i može se oporaviti."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Izbriši"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Prebaci provjeru pravopisa"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Ukloni odlomak"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Odjeljak"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Ukloni odlomak?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Ova radnja se ne može poništiti."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Ukloni"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -576,338 +912,210 @@ msgstr "Prikaži ovaj dijalog pri pokretanju"
 msgid "Let's Start"
 msgstr "Započnimo"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 145
+# File: usr/share/tac-writer/ui/dialogs.py, line: 918
+#: NEEDS WORK
+msgid "Backup Manager"
+msgstr "Upravitelj sigurnosnih kopija"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Close"
+msgstr "Zatvori"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1107
+#: NEEDS WORK
+msgid "Create Backup"
+msgstr "Izradi sigurnosnu kopiju"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 953
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
+#: NEEDS WORK
+msgid "Import Database"
+msgstr "Uvezi bazu podataka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+#: NEEDS WORK
+msgid "Current Database"
+msgstr "Trenutna baza podataka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 975
+#: NEEDS WORK
+msgid "Database Location"
+msgstr "Lokacija baze podataka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 982
 #: NEEDS WORK
 #, python-brace-format
-msgid "Session {}"
-msgstr "Sesija {}"
+msgid "{} projects, {} MB"
+msgstr "{} projekata, {} MB"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 152
+# File: usr/share/tac-writer/ui/dialogs.py, line: 993
 #: NEEDS WORK
-msgid "Long Break"
-msgstr "Duga pauza"
+msgid "Available Backups"
+msgstr "Dostupne sigurnosne kopije"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 158
+# File: usr/share/tac-writer/ui/dialogs.py, line: 994
 #: NEEDS WORK
-msgid "Rest Time"
-msgstr "Vrijeme odmora"
+msgid "Backups are stored in Documents/TAC Projects/database_backups"
+msgstr "Sigurnosne kopije pohranjene su u Dokumenti/TAC Projekti/baza_podataka_sigurnosne_kopije"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 214
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1033
 #: NEEDS WORK
-msgid "Minimize"
-msgstr "Smanji"
+msgid "No backups found"
+msgstr "Nema pronađenih sigurnosnih kopija"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 263
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1034
 #: NEEDS WORK
-msgid "Reset"
-msgstr "Ponovno postavi"
+msgid "Create a backup or import an existing database file"
+msgstr "Izradite sigurnosnu kopiju ili uvezite postojeću datoteku baze podataka"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 381
-#: NEEDS WORK
-msgid "⏸ Pause"
-msgstr "⏸ Pauza"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 385
-#: NEEDS WORK
-msgid "▶ Start"
-msgstr "▶ Pokreni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 58
-#: NEEDS WORK
-msgid "Welcome to TAC"
-msgstr "Dobrodošli u TAC"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 71
-#: NEEDS WORK
-msgid "Create structured academic texts with guided paragraph types"
-msgstr "Kreirajte strukturirane akademske tekstove s vođenim tipovima odlomaka"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "Note:"
-msgstr "Napomena:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "izvoz u ODT može zahtijevati određene prilagodbe u vašem Office paketu."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Savjet:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "za izravne citate s manje od 4 retka, upotrijebite argumentni okvir."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 94
-#: NEEDS WORK
-msgid "Start Writing"
-msgstr "Započni pisanje"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 95
-#: NEEDS WORK
-msgid "Choose a template to get started"
-msgstr "Odaberite predložak za početak"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 105
-#: NEEDS WORK
-msgid "Start"
-msgstr "Započni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 137
-#: NEEDS WORK
-msgid "Search projects..."
-msgstr "Pretraži projekte..."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 208
-#: NEEDS WORK
-msgid "Rename project"
-msgstr "Preimenuj projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 217
-#: NEEDS WORK
-msgid "Delete project"
-msgstr "Izbriši projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 288
-#: NEEDS WORK
-msgid "Rename Project"
-msgstr "Preimenuj projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 289
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
 #: NEEDS WORK
 #, python-brace-format
-msgid "Enter new name for '{}'"
-msgstr "Unesite novo ime za '{}'"
+msgid "{:.1f} MB • {} projects • {}"
+msgstr "{:.1f} MB • {} projekata • {}"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 306
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1060
 #: NEEDS WORK
-msgid "Rename"
-msgstr "Preimenuj"
+msgid "Valid backup"
+msgstr "Valjana sigurnosna kopija"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 340
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1063
 #: NEEDS WORK
-#, python-brace-format
-msgid "Delete '{}'?"
-msgstr "Izbriši '{}' ?"
+msgid "Invalid or corrupted backup"
+msgstr "Nevažeća ili oštećena sigurnosna kopija"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 341
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1075
 #: NEEDS WORK
-msgid "This project will be moved to trash and can be recovered."
-msgstr "Ovaj projekt će biti premješten u smeće i može se oporaviti."
+msgid "Import this backup"
+msgstr "Uvezi ovu sigurnosnu kopiju"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 345
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1083
 #: NEEDS WORK
-msgid "Delete"
-msgstr "Izbriši"
+msgid "Delete backup"
+msgstr "Izbriši sigurnosnu kopiju"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 524
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1095
 #: NEEDS WORK
-msgid "Toggle spell checking"
-msgstr "Prebaci provjeru pravopisa"
+msgid "Creating..."
+msgstr "Stvaranje..."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 427
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1113
 #: NEEDS WORK
-msgid "Remove paragraph"
-msgstr "Ukloni odlomak"
+msgid "Backup created successfully"
+msgstr "Sigurnosna kopija je uspješno kreirana"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 584
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1119
 #: NEEDS WORK
-msgid "Paragraph"
-msgstr "Odjeljak"
+msgid "Backup Failed"
+msgstr "Backup nije uspio"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 636
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1120
 #: NEEDS WORK
-#, python-brace-format
-msgid "{count} words"
-msgstr "{count} riječi"
+msgid "Could not create backup. Check the console for details."
+msgstr "Nije moguće stvoriti sigurnosnu kopiju. Provjerite konzolu za detalje."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 656
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1133
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1196
 #: NEEDS WORK
-msgid "Remove Paragraph?"
-msgstr "Ukloni odlomak?"
+msgid "Import"
+msgstr "Uvezi"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 657
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1139
 #: NEEDS WORK
-msgid "This action cannot be undone."
-msgstr "Ova radnja se ne može poništiti."
+msgid "Database files (*.db)"
+msgstr "Datoteke baze podataka (*.db)"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 661
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
 #: NEEDS WORK
-msgid "Remove"
-msgstr "Ukloni"
+msgid "All files"
+msgstr "Sve datoteke"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1170
 #: NEEDS WORK
-msgid "Unknown"
-msgstr "Nepoznato"
+msgid "Invalid Backup"
+msgstr "Nevažeća sigurnosna kopija"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1171
 #: NEEDS WORK
-msgid "0 minutes"
-msgstr "0 minuta"
+msgid "The selected file is not a valid TAC database backup."
+msgstr "Odabrana datoteka nije važeća TAC baza podataka."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1189
 #: NEEDS WORK
-msgid "< 1 minute"
-msgstr "< 1 minuta"
+msgid "Import Database?"
+msgstr "Uvezi bazu podataka?"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
-#: NEEDS WORK
-msgid "1 minute"
-msgstr "1 minuta"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1190
 #: NEEDS WORK
 #, python-brace-format
-msgid "{} minutes"
-msgstr "{} minuta"
+msgid ""
+"This will replace your current database with the selected backup.\n"
+"\n"
+"The backup contains {} projects.\n"
+"\n"
+"Your current database will be backed up before importing."
+msgstr ""
+"Ovo će zamijeniti vašu trenutnu bazu podataka s odabranom sigurnosnom kopijom.\n"
+"\n"
+"Sigurnosna kopija sadrži {} projekata.\n"
+"\n"
+"Vaša trenutna baza podataka bit će sigurnosno kopirana prije uvoza."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1215
+#: NEEDS WORK
+msgid "Importing Database"
+msgstr "Učitavanje baze podataka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1216
+#: NEEDS WORK
+msgid "Please wait while the database is being imported..."
+msgstr "Molimo pričekajte dok se baza podataka uvozi..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1235
+#: NEEDS WORK
+msgid "Import Successful"
+msgstr "Uvoz uspješan"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1236
+#: NEEDS WORK
+msgid "Database imported successfully. The application will refresh to show the imported projects."
+msgstr "Baza podataka uspješno je uvezena. Aplikacija će se osvježiti kako bi prikazala uvezene projekte."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1251
+#: NEEDS WORK
+msgid "Import Failed"
+msgstr "Uvoz neuspješan"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1252
+#: NEEDS WORK
+msgid "Could not import the database. Your current database remains unchanged."
+msgstr "Nije moguće uvesti bazu podataka. Vaša trenutna baza podataka ostaje nepromijenjena."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1263
+#: NEEDS WORK
+msgid "Delete Backup?"
+msgstr "Izbriši sigurnosnu kopiju?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1264
 #: NEEDS WORK
 #, python-brace-format
-msgid "{}h {}m"
-msgstr "{}h {}m"
+msgid ""
+"Are you sure you want to delete '{}'?\n"
+"\n"
+"This action cannot be undone."
+msgstr ""
+"Jeste li sigurni da želite izbrisati '{}'?\n"
+"\n"
+"Ova radnja se ne može poništiti."
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
+# File: usr/share/tac-writer/core/models.py, line: 354
 #: NEEDS WORK
-msgid "Project name cannot be empty"
-msgstr "Naziv projekta ne može biti prazan"
+msgid "Academic Essay"
+msgstr "Akademski esej"
 # 
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
+# File: usr/share/tac-writer/core/models.py, line: 355
 #: NEEDS WORK
-msgid "Project name must be at least 2 characters long"
-msgstr "Naziv projekta mora imati najmanje 2 znaka."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
-#: NEEDS WORK
-msgid "Project name cannot exceed 100 characters"
-msgstr "Naziv projekta ne može biti duži od 100 znakova"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
-#: NEEDS WORK
-msgid "Project name contains invalid characters"
-msgstr "Naziv projekta sadrži nevažeće znakove"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
-#: NEEDS WORK
-msgid "Path cannot be empty"
-msgstr "Putanja ne može biti prazna"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
-#: NEEDS WORK
-msgid "Parent directory does not exist"
-msgstr "Roditeljski direktorij ne postoji"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
-#: NEEDS WORK
-msgid "Path is too long"
-msgstr "Putanja je predugačka"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
-#: NEEDS WORK
-#, python-brace-format
-msgid "Invalid path: {}"
-msgstr "Nevažeća putanja: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 275
-#: NEEDS WORK
-msgid "1 paragraph"
-msgstr "1 odlomak"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 277
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} paragraphs"
-msgstr "{count} odlomaka"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 283
-#: NEEDS WORK
-msgid "1 word"
-msgstr "ključ"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
-#: NEEDS WORK
-msgid "{:,} words"
-msgstr "{: ,} riječi"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
-#: NEEDS WORK
-msgid "{:,} characters"
-msgstr "{: ,} znakova"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
-#: NEEDS WORK
-msgid "Info"
-msgstr "Informacije"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
-#: NEEDS WORK
-#, python-brace-format
-msgid "Type: {}"
-msgstr "Tip: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
-#: NEEDS WORK
-#, python-brace-format
-msgid "Module: {}"
-msgstr "Modul: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-#: NEEDS WORK
-msgid "Attributes:"
-msgstr "Atributi:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
-#: NEEDS WORK
-msgid "Methods:"
-msgstr "Metode:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
-#: NEEDS WORK
-#, python-brace-format
-msgid "  ... and {} more methods"
-msgstr "... i {} više metoda"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
-#: NEEDS WORK
-#, python-brace-format
-msgid "Performance: {} took {:.3f} seconds"
-msgstr "Izvedba: {} trajalo {:.3f} sekundi"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error: Required dependencies not found: {}"
-msgstr "Greška: Nedostaju potrebne ovisnosti: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Molimo instalirajte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Greška: Potreban je GTK 4.0 ili noviji"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error checking dependencies: {}"
-msgstr "Provjera grešaka ovisnosti: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Aplikacija prekinuta od strane korisnika."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-#, python-brace-format
-msgid "Critical error during startup: {}"
-msgstr "Kritična greška tijekom pokretanja: {}"
+msgid "Standard academic essay structure"
+msgstr "Standardna struktura akademskog eseja"
