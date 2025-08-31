@@ -204,11 +204,6 @@ msgstr "TAC - Kontinuirana tehnika argumentacije"
 msgid "New Project (Ctrl+N)"
 msgstr "Novi projekt (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
-#: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Otvorite projekt (Ctrl+O)"
-# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 115
@@ -322,6 +317,14 @@ msgstr "Citat"
 #: NEEDS WORK
 msgid "Conclusion"
 msgstr "Zaključak"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/components.py, line: 1159
+#: NEEDS WORK
+msgid "Footnote"
+msgstr "Bilješka pod crtom"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK

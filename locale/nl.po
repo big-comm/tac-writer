@@ -204,11 +204,6 @@ msgstr "TAC - Continue Argumentatietechniek"
 msgid "New Project (Ctrl+N)"
 msgstr "Nieuw Project (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
-#: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Project openen (Ctrl+O)"
-# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 115
@@ -322,6 +317,14 @@ msgstr "Cita"
 #: NEEDS WORK
 msgid "Conclusion"
 msgstr "Conclusie"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/components.py, line: 1159
+#: NEEDS WORK
+msgid "Footnote"
+msgstr "Voetnoot"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK

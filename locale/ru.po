@@ -204,11 +204,6 @@ msgstr "ТАК - Непрерывная аргументационная тех�
 msgid "New Project (Ctrl+N)"
 msgstr "Новый проект (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
-#: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Открыть проект (Ctrl+O)"
-# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 115
@@ -322,6 +317,14 @@ msgstr "Цитата"
 #: NEEDS WORK
 msgid "Conclusion"
 msgstr "Заключение"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/components.py, line: 1159
+#: NEEDS WORK
+msgid "Footnote"
+msgstr "Сноска"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK

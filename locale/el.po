@@ -204,11 +204,6 @@ msgstr "TAC - Συνεχής Τεχνική Επιχειρηματολογίας
 msgid "New Project (Ctrl+N)"
 msgstr "Νέο Έργο (Ctrl+N)"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 105
-#: NEEDS WORK
-msgid "Open Project (Ctrl+O)"
-msgstr "Άνοιγμα Έργου (Ctrl+O)"
-# 
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 115
@@ -322,6 +317,14 @@ msgstr "Παράθεση"
 #: NEEDS WORK
 msgid "Conclusion"
 msgstr "Συμπέρασμα"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/components.py, line: 1159
+#: NEEDS WORK
+msgid "Footnote"
+msgstr "Υποσημείωση"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
