@@ -314,7 +314,7 @@ class ExportDialog(Adw.Window):
         self.set_title(_("Export Project"))
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(550, 500)
+        self.set_default_size(550, 550)
         self.set_resizable(True)
 
         self.project = project

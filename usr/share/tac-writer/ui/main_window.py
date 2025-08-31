@@ -109,11 +109,11 @@ class MainWindow(Adw.ApplicationWindow):
         new_button.set_action_name("app.new_project")
         self.header_bar.pack_start(new_button)
 
-        open_button = Gtk.Button()
-        open_button.set_icon_name("document-open-symbolic")
-        open_button.set_tooltip_text(_("Open Project (Ctrl+O)"))
-        open_button.set_action_name("app.open_project")
-        self.header_bar.pack_start(open_button)
+        # open_button = Gtk.Button()
+        # open_button.set_icon_name("document-open-symbolic")
+        # open_button.set_tooltip_text(_("Open Project (Ctrl+O)"))
+        # open_button.set_action_name("app.open_project")
+        # self.header_bar.pack_start(open_button)
 
         # Pomodoro Timer Button
         self.pomodoro_button = Gtk.Button()
@@ -328,6 +328,7 @@ class MainWindow(Adw.ApplicationWindow):
             (_("Argument"), ParagraphType.ARGUMENT),
             (_("Quote"), ParagraphType.QUOTE),
             (_("Conclusion"), ParagraphType.CONCLUSION),
+            (_("Footnote"), ParagraphType.FOOTNOTE),
         ]
 
         for label, ptype in paragraph_types:

@@ -228,7 +228,11 @@ class PomodoroDialog(Adw.Window):
         self.minimize_button.set_tooltip_text(_("Minimize"))
         self.minimize_button.add_css_class("flat")
         self.minimize_button.add_css_class("circular")
-        self.minimize_button.set_size_request(32, 32)
+        self.minimize_button.set_size_request(30, 30)
+        self.minimize_button.set_hexpand(False)
+        self.minimize_button.set_vexpand(False)
+        self.minimize_button.set_halign(Gtk.Align.CENTER)
+        self.minimize_button.set_valign(Gtk.Align.CENTER)
         self.minimize_button.connect('clicked', self._on_minimize_clicked)
         header_box.append(self.minimize_button)
         
@@ -332,9 +336,12 @@ class PomodoroDialog(Adw.Window):
         }
         
         button.circular {
-            border-radius: 50%;
-            min-width: 32px;
-            min-height: 32px;
+            border-radius: 15px;
+            min-width: 30px;
+            min-height: 30px;
+            max-width: 30px;
+            max-height: 30px;
+            padding: 0;
         }
         
         button.circular:hover {
@@ -1148,7 +1155,8 @@ class ParagraphEditor(Gtk.Box):
             ParagraphType.INTRODUCTION: _("Introduction"),
             ParagraphType.ARGUMENT: _("Argument"),
             ParagraphType.QUOTE: _("Quote"),
-            ParagraphType.CONCLUSION: _("Conclusion")
+            ParagraphType.CONCLUSION: _("Conclusion"),
+            ParagraphType.FOOTNOTE: _("Footnote")
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
 

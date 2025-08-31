@@ -769,6 +769,7 @@ class ProjectManager:
         """Get projects directory for compatibility"""
         return self.config.data_dir / 'projects'
 
+
 class ExportService:
     """Handles document export operations"""
     
@@ -818,6 +819,7 @@ class ExportService:
                 f.write("=" * len(project.name) + "\n\n")
                 
                 # Group and write content
+                footnotes = []
                 current_paragraph_content = []
                 paragraph_starts_with_introduction = False
                 last_was_quote = False
@@ -868,6 +870,12 @@ class ExportService:
                         # Write quote indented
                         f.write(f"        {content}\n\n")
                         last_was_quote = True
+                        
+                    elif paragraph.type == ParagraphType.FOOTNOTE:
+                        # Collect footnotes for the end
+                        footnote_num = len(footnotes) + 1
+                        footnotes.append(f"{footnote_num}. {content}")
+                        continue  # Don't process as regular content
                         
                     elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                         # Determine if should start new paragraph
@@ -929,6 +937,13 @@ class ExportService:
                         f.write(f"    {combined_content}\n\n")  # Indented
                     else:
                         f.write(f"{combined_content}\n\n")  # Not indented
+                
+                # Write footnotes at the end if any exist
+                if footnotes:
+                    f.write("\n" + "=" * 20 + "\n")
+                    f.write("Footnotes:\n\n")
+                    for footnote in footnotes:
+                        f.write(f"{footnote}\n\n")
             
             return True
             
@@ -1047,6 +1062,19 @@ class ExportService:
                 # Write quote as separate paragraph
                 content_xml += f'<text:p text:style-name="Quote">{content}</text:p>\n'
                 last_was_quote = True
+                
+            elif paragraph.type == ParagraphType.FOOTNOTE:
+                # Write any accumulated content first
+                if current_paragraph_content:
+                    combined_content = " ".join(current_paragraph_content)
+                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+
+                # Write footnote as separate paragraph
+                content_xml += f'<text:p text:style-name="Footnote">{content}</text:p>\n'
+                continue  # Don't process as regular content
 
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                 # Determine if should start new paragraph
@@ -1158,6 +1186,11 @@ class ExportService:
     <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
     <style:paragraph-properties fo:text-align="justify" fo:margin-left="4cm" fo:margin-bottom="0.3cm" fo:line-height="100%"/>
   </style:style>
+  
+  <style:style style:name="Footnote" style:family="paragraph">
+    <style:text-properties fo:font-size="9pt"/>
+    <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.2cm" fo:line-height="100%"/>
+  </style:style>
 </office:styles>
 </office:document-styles>'''
         
@@ -1264,6 +1297,17 @@ class ExportService:
                 alignment=TA_JUSTIFY
             )
             
+            footnote_style = ParagraphStyle(
+                'Footnote',
+                parent=styles['Normal'],
+                fontSize=9,
+                leading=11,
+                spaceBefore=6,
+                spaceAfter=6,
+                fontName='Times-Roman',
+                alignment=TA_JUSTIFY
+            )
+            
             # Build content
             story = []
             
@@ -1316,6 +1360,11 @@ class ExportService:
                     # Add quote
                     story.append(RLParagraph(content, quote_style))
                     last_was_quote = True
+                    
+                elif paragraph.type == ParagraphType.FOOTNOTE:
+                    # Add footnote
+                    story.append(RLParagraph(content, footnote_style))
+                    continue  # Don't process as regular content
                     
                 elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                     # Determine if should start new paragraph
@@ -1383,4 +1432,3 @@ class ExportService:
         except Exception as e:
             print(f"Error exporting to PDF: {e}")
             return False
-

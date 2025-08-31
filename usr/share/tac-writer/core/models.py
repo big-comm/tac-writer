@@ -19,7 +19,7 @@ class ParagraphType(Enum):
     ARGUMENT = "argument"
     QUOTE = "quote"
     CONCLUSION = "conclusion"
-
+    FOOTNOTE = "footnote"
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -76,6 +76,12 @@ class Paragraph:
                 'indent_left': 4.0,
                 'line_spacing': 1.0,
                 'italic': True
+            })
+        elif self.type == ParagraphType.FOOTNOTE:
+            self.formatting.update({
+                'font_size': 9,
+                'line_spacing': 1.0,
+                'alignment': 'justify'
             })
 
     def update_content(self, content: str) -> None:
