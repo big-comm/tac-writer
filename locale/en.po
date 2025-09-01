@@ -625,7 +625,7 @@ msgid "Add Footnote"
 msgstr "Add Footnote"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1435
+# File: usr/share/tac-writer/ui/components.py, line: 1465
 msgid "Enter footnote text..."
 msgstr "Enter footnote text..."
 
@@ -1158,11 +1158,11 @@ msgstr ""
 "This action cannot be undone."
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 435
+# File: usr/share/tac-writer/core/models.py, line: 440
 msgid "Academic Essay"
 msgstr "Academic Essay"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 436
+# File: usr/share/tac-writer/core/models.py, line: 441
 msgid "Standard academic essay structure"
 msgstr "Standard academic essay structure"

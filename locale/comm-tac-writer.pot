@@ -622,7 +622,7 @@ msgid   "Add Footnote"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1435
+# File: usr/share/tac-writer/ui/components.py, line: 1465
 msgid   "Enter footnote text..."
 msgstr  ""
 
@@ -1123,11 +1123,11 @@ msgid   "Are you sure you want to delete '{}'?\n"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 435
+# File: usr/share/tac-writer/core/models.py, line: 440
 msgid   "Academic Essay"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 436
+# File: usr/share/tac-writer/core/models.py, line: 441
 msgid   "Standard academic essay structure"
 msgstr  ""
