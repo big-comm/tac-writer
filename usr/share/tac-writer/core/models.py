@@ -113,7 +113,8 @@ class Paragraph:
             'created_at': self.created_at.isoformat(),
             'modified_at': self.modified_at.isoformat(),
             'order': self.order,
-            'formatting': self.formatting.copy()
+            'formatting': self.formatting.copy(),
+            'footnotes': self.footnotes.copy()
         }
 
     @classmethod
@@ -136,6 +137,10 @@ class Paragraph:
         
         if 'formatting' in data:
             paragraph.formatting.update(data['formatting'])
+        
+        # Load footnotes from saved data
+        if 'footnotes' in data:
+            paragraph.footnotes = data['footnotes'].copy()
         
         return paragraph
 

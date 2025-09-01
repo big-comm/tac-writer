@@ -1401,8 +1401,37 @@ class FootnoteDialog(Adw.Window):
 
     def _load_footnotes(self):
         """Load existing footnotes"""
+        # Calculate global footnote offset based on previous paragraphs
+        global_offset = self._calculate_global_footnote_offset()
+        
         for i, footnote_text in enumerate(self.paragraph.footnotes):
-            self._add_footnote_row(footnote_text, i)
+            self._add_footnote_row(footnote_text, global_offset + i)
+
+    def _calculate_global_footnote_offset(self) -> int:
+        """Calculate how many footnotes exist before this paragraph"""
+        if not hasattr(self, 'paragraph') or not hasattr(self.paragraph, 'id'):
+            return 0
+        
+        # Find the project that contains this paragraph
+        # We need to traverse up to get the project reference
+        try:
+            # Try to get project from parent window
+            parent = self.get_transient_for()
+            if hasattr(parent, 'current_project') and parent.current_project:
+                project = parent.current_project
+                total_footnotes = 0
+                
+                for p in project.paragraphs:
+                    if p.id == self.paragraph.id:
+                        break
+                    if hasattr(p, 'footnotes') and p.footnotes:
+                        total_footnotes += len(p.footnotes)
+                
+                return total_footnotes
+        except:
+            pass
+        
+        return 0
 
     def _add_footnote_row(self, text="", index=None):
         """Add a footnote row"""
@@ -1416,13 +1445,14 @@ class FootnoteDialog(Adw.Window):
         if index is not None:
             num_label.set_text(f"{index + 1}.")
         else:
-            # Count children by iterating
+            # Calculate global offset + current children count
+            global_offset = self._calculate_global_footnote_offset()
             child_count = 0
             child = self.footnotes_box.get_first_child()
             while child:
                 child_count += 1
                 child = child.get_next_sibling()
-            num_label.set_text(f"{child_count + 1}.")
+            num_label.set_text(f"{global_offset + child_count + 1}.")
         
         num_label.set_halign(Gtk.Align.START)
         num_label.set_size_request(30, -1)
@@ -1455,13 +1485,14 @@ class FootnoteDialog(Adw.Window):
 
     def _renumber_footnotes(self):
         """Renumber footnote labels"""
+        global_offset = self._calculate_global_footnote_offset()
         child = self.footnotes_box.get_first_child()
         index = 1
         while child:
             # Get the first child (number label)
             label = child.get_first_child()
             if isinstance(label, Gtk.Label):
-                label.set_text(f"{index}.")
+                label.set_text(f"{global_offset + index}.")
             child = child.get_next_sibling()
             index += 1
 

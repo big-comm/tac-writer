@@ -243,6 +243,7 @@ class ProjectManager:
             for p in project.paragraphs:
                 try:
                     formatting_json = json.dumps(p.formatting)
+                    footnotes_json = json.dumps(p.footnotes if hasattr(p, 'footnotes') else [])
                 except Exception as e:
                     print(f"JSON serialization error for paragraph {p.id}: {e}")
                     return False
@@ -250,13 +251,13 @@ class ProjectManager:
                 paragraphs_data.append((
                     p.id, project.id, p.type.value, p.content,
                     p.created_at.isoformat(), p.modified_at.isoformat(),
-                    p.order, formatting_json
+                    p.order, formatting_json, footnotes_json
                 ))
-            
+
             if paragraphs_data:
                 cursor.executemany("""
-                    INSERT INTO paragraphs (id, project_id, type, content, created_at, modified_at, "order", formatting)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+                    INSERT INTO paragraphs (id, project_id, type, content, created_at, modified_at, "order", formatting, footnotes)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
                 """, paragraphs_data)
             
             return True
@@ -533,9 +534,18 @@ class ProjectManager:
                     modified_at TEXT NOT NULL,
                     "order" INTEGER NOT NULL,
                     formatting TEXT,
+                    footnotes TEXT,
                     FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE
                 );
             """)
+            
+            # Add footnotes column if it doesn't exist (migration)
+            try:
+                cursor.execute("ALTER TABLE paragraphs ADD COLUMN footnotes TEXT")
+            except sqlite3.OperationalError:
+                # Column already exists
+                pass
+                
             conn.commit()
 
     def create_project(self, name: str, template: str = "academic_essay") -> Project:
@@ -570,11 +580,21 @@ class ProjectManager:
                 
                 cursor.execute("SELECT * FROM paragraphs WHERE project_id = ? ORDER BY \"order\" ASC", (project_id,))
                 paragraphs_rows = cursor.fetchall()
-                
+
                 paragraphs_data = []
                 for p_row in paragraphs_rows:
                     p_data = dict(p_row)
                     p_data['formatting'] = json.loads(p_data['formatting'])
+                    
+                    # Handle footnotes (with backward compatibility)
+                    if p_data.get('footnotes'):
+                        try:
+                            p_data['footnotes'] = json.loads(p_data['footnotes'])
+                        except:
+                            p_data['footnotes'] = []
+                    else:
+                        p_data['footnotes'] = []
+                        
                     paragraphs_data.append(p_data)
                 
                 project_data['paragraphs'] = paragraphs_data
