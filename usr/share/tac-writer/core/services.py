@@ -362,12 +362,28 @@ class ProjectManager:
         
         # Try common localized directory names
         possible_names = [
-            'Documentos',  # Portuguese, Spanish
-            'Documents',   # English
-            'Dokumente',   # German
-            'Documenti',   # Italian
-            'Документы',   # Russian
-            'Documents',   # French (same as English)
+            'Documents',    # English, French
+            'Documentos',   # Portuguese, Spanish
+            'Dokumente',    # German
+            'Documenti',    # Italian
+            'Документы',    # Russian
+            'Документи',    # Bulgarian, Ukrainian
+            'Dokumenty',    # Czech, Polish, Slovak
+            'Dokumenter',   # Danish, Norwegian
+            'Έγγραφα',      # Greek
+            'Dokumendid',   # Estonian
+            'Asiakirjat',   # Finnish
+            'מסמכים',       # Hebrew
+            'Dokumenti',    # Croatian
+            'Dokumentumok', # Hungarian
+            'Skjöl',        # Icelandic
+            'ドキュメント',     # Japanese
+            '문서',          # Korean
+            'Documenten',   # Dutch
+            'Documente',    # Romanian
+            'Dokument',     # Swedish
+            'Belgeler',     # Turkish
+            '文档',          # Chinese
         ]
         
         for name in possible_names:
@@ -813,13 +829,42 @@ class ExportService:
     def _export_txt(self, project: Project, file_path: str) -> bool:
         """Export to plain text format"""
         try:
+            # Ensure parent directory exists
+            file_path_obj = Path(file_path)
+            file_path_obj.parent.mkdir(parents=True, exist_ok=True)
+            
             with open(file_path, 'w', encoding='utf-8') as f:
                 # Project title
                 f.write(f"{project.name}\n")
                 f.write("=" * len(project.name) + "\n\n")
                 
+                # Collect ALL footnotes first to avoid duplicates
+                all_footnotes = []
+                footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
+                
+                for paragraph in project.paragraphs:
+                    if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
+                        paragraph_footnotes = []
+                        for footnote_text in paragraph.footnotes:
+                            # Check if this footnote already exists
+                            existing_num = None
+                            for i, existing_footnote in enumerate(all_footnotes):
+                                if footnote_text in existing_footnote:
+                                    existing_num = i + 1
+                                    break
+                            
+                            if existing_num is None:
+                                # New footnote
+                                footnote_num = len(all_footnotes) + 1
+                                all_footnotes.append(f"{footnote_num}. {footnote_text}")
+                                paragraph_footnotes.append(footnote_num)
+                            else:
+                                # Reuse existing footnote
+                                paragraph_footnotes.append(existing_num)
+                        
+                        footnote_map[paragraph.id] = paragraph_footnotes
+                
                 # Group and write content
-                footnotes = []
                 current_paragraph_content = []
                 paragraph_starts_with_introduction = False
                 last_was_quote = False
@@ -871,12 +916,6 @@ class ExportService:
                         f.write(f"        {content}\n\n")
                         last_was_quote = True
                         
-                    elif paragraph.type == ParagraphType.FOOTNOTE:
-                        # Collect footnotes for the end
-                        footnote_num = len(footnotes) + 1
-                        footnotes.append(f"{footnote_num}. {content}")
-                        continue  # Don't process as regular content
-                        
                     elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                         # Determine if should start new paragraph
                         should_start_new_paragraph = False
@@ -905,6 +944,11 @@ class ExportService:
                             elif last_was_quote:
                                 paragraph_starts_with_introduction = False
                             # If it's not INTRODUCTION and not after quote, keep current state
+                        
+                        # Add footnote references to content using pre-collected footnotes
+                        if paragraph.id in footnote_map:
+                            for footnote_num in footnote_map[paragraph.id]:
+                                content += f"^{footnote_num}"
                         
                         # Accumulate content
                         current_paragraph_content.append(content)
@@ -939,10 +983,10 @@ class ExportService:
                         f.write(f"{combined_content}\n\n")  # Not indented
                 
                 # Write footnotes at the end if any exist
-                if footnotes:
+                if all_footnotes:
                     f.write("\n" + "=" * 20 + "\n")
                     f.write("Footnotes:\n\n")
-                    for footnote in footnotes:
+                    for footnote in all_footnotes:
                         f.write(f"{footnote}\n\n")
             
             return True
@@ -954,8 +998,9 @@ class ExportService:
     def _export_odt(self, project: Project, file_path: str) -> bool:
         """Export to OpenDocument Text format"""
         try:
-            # Create ODT structure
+            # Ensure parent directory exists
             odt_path = Path(file_path)
+            odt_path.parent.mkdir(parents=True, exist_ok=True)
             
             # Create temporary directory
             temp_dir = odt_path.parent / f"temp_odt_{project.id}"
@@ -983,7 +1028,7 @@ class ExportService:
                 with zipfile.ZipFile(file_path, 'w', zipfile.ZIP_DEFLATED) as zf:
                     # Add mimetype first (uncompressed)
                     zf.writestr("mimetype", "application/vnd.oasis.opendocument.text", 
-                              compress_type=zipfile.ZIP_STORED)
+                            compress_type=zipfile.ZIP_STORED)
                     
                     # Add other files
                     for root, dirs, files in temp_dir.walk():
@@ -1003,21 +1048,47 @@ class ExportService:
             return False
 
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate content.xml for ODT with proper formatting - Fixed paragraph grouping"""
+        """Generate content.xml for ODT with proper formatting - Fixed footnote duplication"""
+        
+        # Collect ALL footnotes first to avoid duplicates
+        all_footnotes = []
+        footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
+        
+        for paragraph in project.paragraphs:
+            if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
+                paragraph_footnotes = []
+                for footnote_text in paragraph.footnotes:
+                    # Check if this footnote already exists
+                    existing_num = None
+                    for i, existing_footnote in enumerate(all_footnotes):
+                        if footnote_text == existing_footnote:
+                            existing_num = i + 1
+                            break
+                    
+                    if existing_num is None:
+                        # New footnote
+                        footnote_num = len(all_footnotes) + 1
+                        all_footnotes.append(footnote_text)
+                        paragraph_footnotes.append(footnote_num)
+                    else:
+                        # Reuse existing footnote
+                        paragraph_footnotes.append(existing_num)
+                
+                footnote_map[paragraph.id] = paragraph_footnotes
         
         content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
-<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
-                        xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
-                        xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
-                        xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
-<office:automatic-styles/>
-<office:body>
-<office:text>'''
+    <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+                            xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+                            xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+                            xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
+    <office:automatic-styles/>
+    <office:body>
+    <office:text>'''
 
         # Title
         content_xml += f'<text:p text:style-name="Title">{project.name}</text:p>\n'
 
-        # Group content - CORRIGIDO
+        # Group content
         current_paragraph_content = []
         paragraph_starts_with_introduction = False
         last_was_quote = False
@@ -1063,19 +1134,6 @@ class ExportService:
                 content_xml += f'<text:p text:style-name="Quote">{content}</text:p>\n'
                 last_was_quote = True
                 
-            elif paragraph.type == ParagraphType.FOOTNOTE:
-                # Write any accumulated content first
-                if current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
-                    current_paragraph_content = []
-                    paragraph_starts_with_introduction = False
-
-                # Write footnote as separate paragraph
-                content_xml += f'<text:p text:style-name="Footnote">{content}</text:p>\n'
-                continue  # Don't process as regular content
-
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                 # Determine if should start new paragraph
                 should_start_new_paragraph = False
@@ -1102,6 +1160,12 @@ class ExportService:
                     elif last_was_quote:
                         paragraph_starts_with_introduction = False
                     # If it's ARGUMENT or CONCLUSION and not after quote, keep current state
+
+                # Add footnote references to content using pre-collected footnotes
+                if paragraph.id in footnote_map:
+                    for footnote_num in footnote_map[paragraph.id]:
+                        footnote_text = all_footnotes[footnote_num - 1]
+                        content += f'<text:note text:id="ftn{footnote_num}" text:note-class="footnote"><text:note-citation>{footnote_num}</text:note-citation><text:note-body><text:p text:style-name="Footnote">{footnote_text}</text:p></text:note-body></text:note>'
 
                 # Accumulate content
                 current_paragraph_content.append(content.strip())
@@ -1132,8 +1196,8 @@ class ExportService:
             content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
 
         content_xml += '''</office:text>
-</office:body>
-</office:document-content>'''
+    </office:body>
+    </office:document-content>'''
 
         return content_xml
 
@@ -1219,6 +1283,10 @@ class ExportService:
     def _export_pdf(self, project: Project, file_path: str) -> bool:
         """Export to PDF format"""
         try:
+            # Ensure parent directory exists
+            file_path_obj = Path(file_path)
+            file_path_obj.parent.mkdir(parents=True, exist_ok=True)
+            
             # Create document
             doc = SimpleDocTemplate(
                 file_path,
@@ -1308,6 +1376,32 @@ class ExportService:
                 alignment=TA_JUSTIFY
             )
             
+            # Collect ALL footnotes first to avoid duplicates
+            all_footnotes = []
+            footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
+            
+            for paragraph in project.paragraphs:
+                if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
+                    paragraph_footnotes = []
+                    for footnote_text in paragraph.footnotes:
+                        # Check if this footnote already exists
+                        existing_num = None
+                        for i, existing_footnote in enumerate(all_footnotes):
+                            if footnote_text == existing_footnote:
+                                existing_num = i + 1
+                                break
+                        
+                        if existing_num is None:
+                            # New footnote
+                            footnote_num = len(all_footnotes) + 1
+                            all_footnotes.append(footnote_text)
+                            paragraph_footnotes.append(footnote_num)
+                        else:
+                            # Reuse existing footnote
+                            paragraph_footnotes.append(existing_num)
+                    
+                    footnote_map[paragraph.id] = paragraph_footnotes
+            
             # Build content
             story = []
             
@@ -1315,7 +1409,7 @@ class ExportService:
             story.append(RLParagraph(project.name, title_style))
             story.append(Spacer(1, 20))
             
-            # Group content - CORRIGIDO
+            # Group content
             current_paragraph_content = []
             current_paragraph_style = None
             paragraph_starts_with_introduction = False
@@ -1361,11 +1455,6 @@ class ExportService:
                     story.append(RLParagraph(content, quote_style))
                     last_was_quote = True
                     
-                elif paragraph.type == ParagraphType.FOOTNOTE:
-                    # Add footnote
-                    story.append(RLParagraph(content, footnote_style))
-                    continue  # Don't process as regular content
-                    
                 elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
                     # Determine if should start new paragraph
                     should_start_new_paragraph = False
@@ -1398,6 +1487,11 @@ class ExportService:
                             if current_paragraph_style is None:
                                 current_paragraph_style = normal_style
 
+                    # Add footnote references to content using pre-collected footnotes
+                    if paragraph.id in footnote_map:
+                        for footnote_num in footnote_map[paragraph.id]:
+                            content += f"<sup>{footnote_num}</sup>"
+
                     # Accumulate content
                     current_paragraph_content.append(content)
 
@@ -1424,7 +1518,15 @@ class ExportService:
             if current_paragraph_content:
                 combined_content = " ".join(current_paragraph_content)
                 story.append(RLParagraph(combined_content, current_paragraph_style))
-            
+
+            # Add footnotes at the end if any exist
+            if all_footnotes:
+                story.append(Spacer(1, 20))
+                story.append(RLParagraph("Footnotes:", title2_style))
+                for i, footnote_text in enumerate(all_footnotes):
+                    footnote_content = f"{i + 1}. {footnote_text}"
+                    story.append(RLParagraph(footnote_content, footnote_style))
+
             # Build PDF
             doc.build(story)
             return True

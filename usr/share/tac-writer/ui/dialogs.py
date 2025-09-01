@@ -412,10 +412,64 @@ class ExportDialog(Adw.Window):
 
         location_group.add(self.location_row)
 
-        # Initialize with default location
-        default_location = Path.home() / 'Documents'
+        # Initialize with default location - TAC Projects subfolder
+        documents_dir = self._get_documents_directory()
+        default_location = documents_dir / "TAC Projects"
+        default_location.mkdir(parents=True, exist_ok=True)  # Create if doesn't exist
         self.selected_location = default_location
         self.location_row.set_subtitle(str(default_location))
+
+    def _get_documents_directory(self) -> Path:
+        """Get user's Documents directory in a language-aware way"""
+        home = Path.home()
+        
+        # Try XDG user dirs first (Linux)
+        try:
+            import subprocess
+            result = subprocess.run(['xdg-user-dir', 'DOCUMENTS'], 
+                                capture_output=True, text=True, timeout=5)
+            if result.returncode == 0:
+                documents_path = Path(result.stdout.strip())
+                if documents_path.exists():
+                    return documents_path
+        except:
+            pass
+        
+        # Try common localized directory names
+        possible_names = [
+            'Documents',    # English, French
+            'Documentos',   # Portuguese, Spanish
+            'Dokumente',    # German
+            'Documenti',    # Italian
+            'Документы',    # Russian
+            'Документи',    # Bulgarian, Ukrainian
+            'Dokumenty',    # Czech, Polish, Slovak
+            'Dokumenter',   # Danish, Norwegian
+            'Έγγραφα',      # Greek
+            'Dokumendid',   # Estonian
+            'Asiakirjat',   # Finnish
+            'מסמכים',       # Hebrew
+            'Dokumenti',    # Croatian
+            'Dokumentumok', # Hungarian
+            'Skjöl',        # Icelandic
+            'ドキュメント',     # Japanese
+            '문서',          # Korean
+            'Documenten',   # Dutch
+            'Documente',    # Romanian
+            'Dokument',     # Swedish
+            'Belgeler',     # Turkish
+            '文档',          # Chinese
+        ]
+        
+        for name in possible_names:
+            candidate = home / name
+            if candidate.exists() and candidate.is_dir():
+                return candidate
+        
+        # Fallback: create Documents if none exist
+        documents_dir = home / 'Documentos'  # Default to Portuguese
+        documents_dir.mkdir(exist_ok=True)
+        return documents_dir
 
     def _on_choose_location(self, button):
         """Handle location selection"""

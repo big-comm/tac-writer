@@ -1004,6 +1004,15 @@ class ParagraphEditor(Gtk.Box):
         spacer.set_hexpand(True)
         header_box.append(spacer)
 
+        # Footnote button (only for Introduction, Argument, Conclusion)
+        if self.paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+            footnote_button = Gtk.Button()
+            footnote_button.set_icon_name("text-x-generic-symbolic")
+            footnote_button.set_tooltip_text(_("Manage footnotes"))
+            footnote_button.add_css_class("flat")
+            footnote_button.connect('clicked', self._on_footnote_clicked)
+            header_box.append(footnote_button)
+
         # Spell check toggle button
         if SPELL_CHECK_AVAILABLE and self.config:
             self.spell_button = Gtk.ToggleButton()
@@ -1155,8 +1164,7 @@ class ParagraphEditor(Gtk.Box):
             ParagraphType.INTRODUCTION: _("Introduction"),
             ParagraphType.ARGUMENT: _("Argument"),
             ParagraphType.QUOTE: _("Quote"),
-            ParagraphType.CONCLUSION: _("Conclusion"),
-            ParagraphType.FOOTNOTE: _("Footnote")
+            ParagraphType.CONCLUSION: _("Conclusion")
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
 
@@ -1234,6 +1242,16 @@ class ParagraphEditor(Gtk.Box):
         if response == "remove":
             self.emit('remove-requested', self.paragraph.id)
         dialog.destroy()
+        
+    def _on_footnote_clicked(self, button):
+        """Handle footnote button click"""
+        dialog = FootnoteDialog(self.get_root(), self.paragraph)
+        dialog.connect('footnotes-updated', self._on_footnotes_updated)
+        dialog.present()
+
+    def _on_footnotes_updated(self, dialog):
+        """Handle footnotes update"""
+        self.emit('content-changed')
 
 
 class TextEditor(Gtk.Box):
@@ -1297,3 +1315,170 @@ class TextEditor(Gtk.Box):
     def set_text(self, text: str):
         """Set text content"""
         self.text_buffer.set_text(text)
+
+        
+class FootnoteDialog(Adw.Window):
+    """Dialog for managing footnotes"""
+
+    __gtype_name__ = 'TacFootnoteDialog'
+
+    __gsignals__ = {
+        'footnotes-updated': (GObject.SIGNAL_RUN_FIRST, None, ()),
+    }
+
+    def __init__(self, parent, paragraph, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Manage Footnotes"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(500, 400)
+        
+        self.paragraph = paragraph
+        
+        # Initialize footnotes list if it doesn't exist
+        if not hasattr(self.paragraph, 'footnotes'):
+            self.paragraph.footnotes = []
+        
+        self._create_ui()
+
+    def _create_ui(self):
+        """Create the footnote dialog UI"""
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(content_box)
+
+        # Header bar
+        header_bar = Adw.HeaderBar()
+        
+        cancel_button = Gtk.Button()
+        cancel_button.set_label(_("Cancel"))
+        cancel_button.connect('clicked', lambda x: self.destroy())
+        header_bar.pack_start(cancel_button)
+
+        save_button = Gtk.Button()
+        save_button.set_label(_("Save"))
+        save_button.add_css_class("suggested-action")
+        save_button.connect('clicked', self._on_save_clicked)
+        header_bar.pack_end(save_button)
+
+        content_box.append(header_bar)
+
+        # Main content
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        main_box.set_margin_start(20)
+        main_box.set_margin_end(20)
+        main_box.set_margin_top(20)
+        main_box.set_margin_bottom(20)
+        main_box.set_spacing(16)
+
+        # Instructions
+        instruction_label = Gtk.Label()
+        instruction_label.set_text(_("Add footnotes that will appear as numbered references in your paragraph:"))
+        instruction_label.set_wrap(True)
+        instruction_label.set_halign(Gtk.Align.START)
+        main_box.append(instruction_label)
+
+        # Footnotes list
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scrolled.set_min_content_height(200)
+
+        self.footnotes_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        scrolled.set_child(self.footnotes_box)
+        main_box.append(scrolled)
+
+        # Add footnote button
+        add_button = Gtk.Button()
+        add_button.set_label(_("Add Footnote"))
+        add_button.set_icon_name("list-add-symbolic")
+        add_button.add_css_class("suggested-action")
+        add_button.connect('clicked', self._on_add_footnote)
+        main_box.append(add_button)
+
+        content_box.append(main_box)
+
+        # Load existing footnotes
+        self._load_footnotes()
+
+    def _load_footnotes(self):
+        """Load existing footnotes"""
+        for i, footnote_text in enumerate(self.paragraph.footnotes):
+            self._add_footnote_row(footnote_text, i)
+
+    def _add_footnote_row(self, text="", index=None):
+        """Add a footnote row"""
+        row_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        row_box.set_margin_bottom(4)
+
+        # Number label
+        num_label = Gtk.Label()
+        
+        # Count current children correctly
+        if index is not None:
+            num_label.set_text(f"{index + 1}.")
+        else:
+            # Count children by iterating
+            child_count = 0
+            child = self.footnotes_box.get_first_child()
+            while child:
+                child_count += 1
+                child = child.get_next_sibling()
+            num_label.set_text(f"{child_count + 1}.")
+        
+        num_label.set_halign(Gtk.Align.START)
+        num_label.set_size_request(30, -1)
+        row_box.append(num_label)
+
+        # Text entry
+        entry = Gtk.Entry()
+        entry.set_text(text)
+        entry.set_hexpand(True)
+        entry.set_placeholder_text(_("Enter footnote text..."))
+        row_box.append(entry)
+
+        # Remove button
+        remove_button = Gtk.Button()
+        remove_button.set_icon_name("edit-delete-symbolic")
+        remove_button.add_css_class("flat")
+        remove_button.connect('clicked', lambda btn: self._remove_footnote_row(row_box))
+        row_box.append(remove_button)
+
+        self.footnotes_box.append(row_box)
+
+    def _on_add_footnote(self, button):
+        """Add a new footnote"""
+        self._add_footnote_row()
+
+    def _remove_footnote_row(self, row_box):
+        """Remove a footnote row"""
+        self.footnotes_box.remove(row_box)
+        self._renumber_footnotes()
+
+    def _renumber_footnotes(self):
+        """Renumber footnote labels"""
+        child = self.footnotes_box.get_first_child()
+        index = 1
+        while child:
+            # Get the first child (number label)
+            label = child.get_first_child()
+            if isinstance(label, Gtk.Label):
+                label.set_text(f"{index}.")
+            child = child.get_next_sibling()
+            index += 1
+
+    def _on_save_clicked(self, button):
+        """Save footnotes"""
+        footnotes = []
+        
+        child = self.footnotes_box.get_first_child()
+        while child:
+            # Get the entry (second child)
+            entry_child = child.get_first_child().get_next_sibling()
+            if isinstance(entry_child, Gtk.Entry):
+                text = entry_child.get_text().strip()
+                if text:  # Only add non-empty footnotes
+                    footnotes.append(text)
+            child = child.get_next_sibling()
+
+        self.paragraph.footnotes = footnotes
+        self.emit('footnotes-updated')
+        self.destroy()

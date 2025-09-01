@@ -19,7 +19,6 @@ class ParagraphType(Enum):
     ARGUMENT = "argument"
     QUOTE = "quote"
     CONCLUSION = "conclusion"
-    FOOTNOTE = "footnote"
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -29,6 +28,7 @@ class Paragraph:
         self.id = paragraph_id or str(uuid.uuid4())
         self.type = paragraph_type
         self.content = content
+        self.footnotes = []  # List of footnote texts
         self.created_at = datetime.now()
         self.modified_at = self.created_at
         self.order = 0
@@ -76,12 +76,6 @@ class Paragraph:
                 'indent_left': 4.0,
                 'line_spacing': 1.0,
                 'italic': True
-            })
-        elif self.type == ParagraphType.FOOTNOTE:
-            self.formatting.update({
-                'font_size': 9,
-                'line_spacing': 1.0,
-                'alignment': 'justify'
             })
 
     def update_content(self, content: str) -> None:

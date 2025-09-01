@@ -328,7 +328,6 @@ class MainWindow(Adw.ApplicationWindow):
             (_("Argument"), ParagraphType.ARGUMENT),
             (_("Quote"), ParagraphType.QUOTE),
             (_("Conclusion"), ParagraphType.CONCLUSION),
-            (_("Footnote"), ParagraphType.FOOTNOTE),
         ]
 
         for label, ptype in paragraph_types:
