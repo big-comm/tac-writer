@@ -318,6 +318,16 @@ msgstr "Lainaus"
 msgid "Conclusion"
 msgstr "Johtopäätös"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 363
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "Siirry alkuun"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 373
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "Siirry loppuun"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -472,6 +482,16 @@ msgstr "Tervetuloa TAC:iin"
 #: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
 msgstr "Luo jäsenneltyjä akateemisia tekstejä ohjattujen kappaletyyppien avulla"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "Kuinka Tehdä Wiki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 603
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "Pääsy verkko-oppaisiin ja -tutorialeihin"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 81
 #: NEEDS WORK

@@ -318,6 +318,16 @@ msgstr "인용문"
 msgid "Conclusion"
 msgstr "결론"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 363
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "시작으로 가기"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 373
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "끝으로 이동"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -472,6 +482,16 @@ msgstr "TAC에 오신 것을 환영합니다"
 #: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
 msgstr "구성된 학술 텍스트를 안내된 단락 유형으로 작성하십시오."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "사용 방법 위키"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 603
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "온라인 문서 및 튜토리얼에 액세스하십시오."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 81
 #: NEEDS WORK

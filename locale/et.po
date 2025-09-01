@@ -318,6 +318,16 @@ msgstr "Tsitaat"
 msgid "Conclusion"
 msgstr "Järeldus"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 363
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "Mine algusesse"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 373
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "Mine lõpuni"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -472,6 +482,16 @@ msgstr "Tere tulemast TAC-i"
 #: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
 msgstr "Loo struktureeritud akadeemilisi tekste juhendatud lõikede tüüpidega"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "Kuidas teha Wiki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 603
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "Juurdepääs veebidokumendile ja õpetustele"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 81
 #: NEEDS WORK

@@ -318,6 +318,16 @@ msgstr "Citação"
 msgid "Conclusion"
 msgstr "Conclusão"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 363
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "Ir para o início"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 373
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "Ir para o final"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -472,6 +482,16 @@ msgstr "Bem-vindo ao TAC"
 #: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
 msgstr "Crie textos acadêmicos estruturados com tipos de parágrafo guiados"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "Como Fazer Wiki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 603
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "Acesse a documentação online e os tutoriais"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 81
 #: NEEDS WORK

@@ -318,6 +318,16 @@ msgstr "Idézet"
 msgid "Conclusion"
 msgstr "Következtetés"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 363
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "Ugrás a kezdethez"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 373
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "Ugrás a végére"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -472,6 +482,16 @@ msgstr "Üdvözöljük a TAC-nál"
 #: NEEDS WORK
 msgid "Create structured academic texts with guided paragraph types"
 msgstr "Hozzon létre strukturált akadémiai szövegeket irányított bekezdéstípusokkal"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "Hogyan kell Wiki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 603
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "Hozzáférés az online dokumentációhoz és oktatóanyagokhoz"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 81
 #: NEEDS WORK
