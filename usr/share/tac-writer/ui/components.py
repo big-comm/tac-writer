@@ -591,6 +591,21 @@ class WelcomeView(Gtk.Box):
         description.set_max_width_chars(50)
         content_box.append(description)
 
+        # Help link section
+        help_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        help_box.set_halign(Gtk.Align.CENTER)
+        help_box.set_margin_top(16)
+        
+        wiki_button = Gtk.Button()
+        wiki_button.set_label(_("How To Wiki"))
+        wiki_button.set_icon_name("help-browser-symbolic")
+        wiki_button.add_css_class("flat")
+        wiki_button.set_tooltip_text(_("Access the online documentation and tutorials"))
+        wiki_button.connect('clicked', self._on_wiki_clicked)
+        help_box.append(wiki_button)
+        
+        content_box.append(help_box)
+
         self.append(content_box)
 
         # Note
@@ -628,6 +643,23 @@ class WelcomeView(Gtk.Box):
             template_group.add(row)
 
         self.append(template_group)
+
+    def _on_wiki_clicked(self, button):
+        """Handle wiki button click - open external browser"""
+        import subprocess
+        import webbrowser
+        
+        wiki_url = "https://github.com/big-comm/comm-tac-writer/wiki"
+        
+        try:
+            # Try to open with default browser
+            webbrowser.open(wiki_url)
+        except Exception:
+            # Fallback: try xdg-open on Linux
+            try:
+                subprocess.run(['xdg-open', wiki_url], check=False)
+            except Exception as e:
+                print(f"Could not open wiki URL: {e}")
 
     def _create_recent_section(self):
         """Create recent projects section"""

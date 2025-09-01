@@ -275,13 +275,16 @@ class MainWindow(Adw.ApplicationWindow):
 
     def _create_editor_view(self) -> Gtk.Widget:
         """Create the editor view for current project"""
+        # Main editor container with overlay for floating buttons
+        overlay = Gtk.Overlay()
+
         # Main editor container
         editor_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         # Scrolled window for paragraphs
-        scrolled = Gtk.ScrolledWindow()
-        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
-        scrolled.set_vexpand(True)
+        self.editor_scrolled = Gtk.ScrolledWindow()
+        self.editor_scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.editor_scrolled.set_vexpand(True)
 
         # Paragraphs container
         self.paragraphs_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -291,8 +294,8 @@ class MainWindow(Adw.ApplicationWindow):
         self.paragraphs_box.set_margin_top(20)
         self.paragraphs_box.set_margin_bottom(20)
 
-        scrolled.set_child(self.paragraphs_box)
-        editor_box.append(scrolled)
+        self.editor_scrolled.set_child(self.paragraphs_box)
+        editor_box.append(self.editor_scrolled)
 
         # Add existing paragraphs
         self._refresh_paragraphs()
@@ -301,7 +304,14 @@ class MainWindow(Adw.ApplicationWindow):
         toolbar = self._create_paragraph_toolbar()
         editor_box.append(toolbar)
 
-        return editor_box
+        # Set main editor as overlay child
+        overlay.set_child(editor_box)
+
+        # Create floating navigation buttons
+        nav_buttons = self._create_navigation_buttons()
+        overlay.add_overlay(nav_buttons)
+
+        return overlay
 
     def _create_paragraph_toolbar(self) -> Gtk.Widget:
         """Create toolbar for adding paragraphs"""
@@ -337,6 +347,49 @@ class MainWindow(Adw.ApplicationWindow):
         toolbar_box.append(add_button)
 
         return toolbar_box
+    
+    def _create_navigation_buttons(self) -> Gtk.Widget:
+        """Create floating navigation buttons for quick scrolling"""
+        # Container for buttons positioned at bottom right
+        nav_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8)
+        nav_container.set_halign(Gtk.Align.END)
+        nav_container.set_valign(Gtk.Align.END)
+        nav_container.set_margin_end(20)
+        nav_container.set_margin_bottom(20)
+
+        # Go to top button
+        top_button = Gtk.Button()
+        top_button.set_icon_name("go-up-symbolic")
+        top_button.set_tooltip_text(_("Go to beginning"))
+        top_button.add_css_class("circular")
+        top_button.add_css_class("flat")
+        top_button.set_size_request(40, 40)
+        top_button.connect('clicked', self._on_scroll_to_top)
+        nav_container.append(top_button)
+
+        # Go to bottom button  
+        bottom_button = Gtk.Button()
+        bottom_button.set_icon_name("go-down-symbolic")
+        bottom_button.set_tooltip_text(_("Go to end"))
+        bottom_button.add_css_class("circular")
+        bottom_button.add_css_class("flat")
+        bottom_button.set_size_request(40, 40)
+        bottom_button.connect('clicked', self._on_scroll_to_bottom)
+        nav_container.append(bottom_button)
+
+        return nav_container
+
+    def _on_scroll_to_top(self, button):
+        """Scroll to the top of the project"""
+        if hasattr(self, 'editor_scrolled'):
+            adjustment = self.editor_scrolled.get_vadjustment()
+            adjustment.set_value(adjustment.get_lower())
+
+    def _on_scroll_to_bottom(self, button):
+        """Scroll to the bottom of the project"""
+        if hasattr(self, 'editor_scrolled'):
+            adjustment = self.editor_scrolled.get_vadjustment()
+            adjustment.set_value(adjustment.get_upper() - adjustment.get_page_size())
 
     def _refresh_paragraphs(self):
         """Refresh paragraphs display with optimized loading"""
