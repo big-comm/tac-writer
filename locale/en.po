@@ -108,7 +108,7 @@ msgstr "1 word"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 285
-# File: usr/share/tac-writer/ui/components.py, line: 1203
+# File: usr/share/tac-writer/ui/components.py, line: 1211
 #, python-brace-format
 msgid "{count} words"
 msgstr "{count} words"
@@ -238,13 +238,13 @@ msgstr "Backup Manager..."
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 154
-# File: usr/share/tac-writer/ui/main_window.py, line: 431
+# File: usr/share/tac-writer/ui/main_window.py, line: 430
 msgid "Undo"
 msgstr "Undo"
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 155
-# File: usr/share/tac-writer/ui/main_window.py, line: 451
+# File: usr/share/tac-writer/ui/main_window.py, line: 450
 msgid "Redo"
 msgstr "Redo"
 
@@ -252,7 +252,7 @@ msgstr "Redo"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
-# File: usr/share/tac-writer/ui/dialogs.py, line: 528
+# File: usr/share/tac-writer/ui/dialogs.py, line: 582
 msgid "Preferences"
 msgstr "Preferences"
 
@@ -280,7 +280,7 @@ msgstr "Add Paragraph"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 325
-# File: usr/share/tac-writer/ui/components.py, line: 1153
+# File: usr/share/tac-writer/ui/components.py, line: 1162
 msgid "Title 1"
 msgstr "Title 1"
 
@@ -288,7 +288,7 @@ msgstr "Title 1"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 326
-# File: usr/share/tac-writer/ui/components.py, line: 1154
+# File: usr/share/tac-writer/ui/components.py, line: 1163
 msgid "Title 2"
 msgstr "Title 2"
 
@@ -296,7 +296,7 @@ msgstr "Title 2"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 327
-# File: usr/share/tac-writer/ui/components.py, line: 1155
+# File: usr/share/tac-writer/ui/components.py, line: 1164
 msgid "Introduction"
 msgstr "Introduction"
 
@@ -304,7 +304,7 @@ msgstr "Introduction"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 328
-# File: usr/share/tac-writer/ui/components.py, line: 1156
+# File: usr/share/tac-writer/ui/components.py, line: 1165
 msgid "Argument"
 msgstr "Argument"
 
@@ -312,7 +312,7 @@ msgstr "Argument"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 329
-# File: usr/share/tac-writer/ui/components.py, line: 1157
+# File: usr/share/tac-writer/ui/components.py, line: 1166
 msgid "Quote"
 msgstr "Quote"
 
@@ -320,40 +320,32 @@ msgstr "Quote"
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 330
-# File: usr/share/tac-writer/ui/components.py, line: 1158
+# File: usr/share/tac-writer/ui/components.py, line: 1167
 msgid "Conclusion"
 msgstr "Conclusion"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-msgid "Footnote"
-msgstr "Footnote"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 441
+# File: usr/share/tac-writer/ui/main_window.py, line: 440
 msgid "Nothing to undo"
 msgstr "Nothing to undo"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 461
+# File: usr/share/tac-writer/ui/main_window.py, line: 460
 msgid "Nothing to redo"
 msgstr "Nothing to redo"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 517
+# File: usr/share/tac-writer/ui/main_window.py, line: 516
 msgid "Paragraph reordered"
 msgstr "Paragraph reordered"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 568
+# File: usr/share/tac-writer/ui/main_window.py, line: 567
 msgid "Open Project"
 msgstr "Open Project"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 571
+# File: usr/share/tac-writer/ui/main_window.py, line: 570
 msgid "Open"
 msgstr "Open"
 
@@ -362,64 +354,65 @@ msgstr "Open"
 #
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 572
+# File: usr/share/tac-writer/ui/main_window.py, line: 571
 # File: usr/share/tac-writer/ui/components.py, line: 847
 # File: usr/share/tac-writer/ui/components.py, line: 884
-# File: usr/share/tac-writer/ui/components.py, line: 1223
+# File: usr/share/tac-writer/ui/components.py, line: 1231
+# File: usr/share/tac-writer/ui/components.py, line: 1353
 # File: usr/share/tac-writer/ui/dialogs.py, line: 101
 # File: usr/share/tac-writer/ui/dialogs.py, line: 334
-# File: usr/share/tac-writer/ui/dialogs.py, line: 427
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1134
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1195
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1267
+# File: usr/share/tac-writer/ui/dialogs.py, line: 481
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1188
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1249
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1321
 msgid "Cancel"
 msgstr "Cancel"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 580
+# File: usr/share/tac-writer/ui/main_window.py, line: 579
 msgid "TAC Projects (*.json)"
 msgstr "TAC Projects (*.json)"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 585
+# File: usr/share/tac-writer/ui/main_window.py, line: 584
 msgid "All Files"
 msgstr "All Files"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 599
-# File: usr/share/tac-writer/ui/main_window.py, line: 786
+# File: usr/share/tac-writer/ui/main_window.py, line: 598
+# File: usr/share/tac-writer/ui/main_window.py, line: 785
 #, python-brace-format
 msgid "Opened project: {}"
 msgstr "Opened project: {}"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 601
-# File: usr/share/tac-writer/ui/main_window.py, line: 788
+# File: usr/share/tac-writer/ui/main_window.py, line: 600
+# File: usr/share/tac-writer/ui/main_window.py, line: 787
 msgid "Failed to open project"
 msgstr "Failed to open project"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 614
+# File: usr/share/tac-writer/ui/main_window.py, line: 613
 msgid "Project saved successfully"
 msgstr "Project saved successfully"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 618
+# File: usr/share/tac-writer/ui/main_window.py, line: 617
 msgid "Failed to save project"
 msgstr "Failed to save project"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 625
+# File: usr/share/tac-writer/ui/main_window.py, line: 624
 msgid "No project to export"
 msgstr "No project to export"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 664
+# File: usr/share/tac-writer/ui/main_window.py, line: 663
 msgid "Database imported successfully"
 msgstr "Database imported successfully"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 700
+# File: usr/share/tac-writer/ui/main_window.py, line: 699
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "Created project: {}"
@@ -427,18 +420,18 @@ msgstr "Created project: {}"
 #
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 731
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
 # File: usr/share/tac-writer/ui/components.py, line: 581
 msgid "Continuous Argumentation Technique"
 msgstr "Continuous Argumentation Technique"
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 761
+# File: usr/share/tac-writer/ui/main_window.py, line: 760
 msgid "Loading project..."
 msgstr "Loading project..."
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 778
+# File: usr/share/tac-writer/ui/main_window.py, line: 777
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "Failed to open project: {}"
@@ -570,39 +563,71 @@ msgstr "This project will be moved to trash and can be recovered."
 # #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 885
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1268
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1322
 msgid "Delete"
 msgstr "Delete"
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1011
+msgid "Manage footnotes"
+msgstr "Manage footnotes"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1020
 msgid "Toggle spell checking"
 msgstr "Toggle spell checking"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1027
+# File: usr/share/tac-writer/ui/components.py, line: 1036
 msgid "Remove paragraph"
 msgstr "Remove paragraph"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1161
+# File: usr/share/tac-writer/ui/components.py, line: 1169
 msgid "Paragraph"
 msgstr "Paragraph"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1219
+# File: usr/share/tac-writer/ui/components.py, line: 1227
 msgid "Remove Paragraph?"
 msgstr "Remove Paragraph?"
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1220
+# File: usr/share/tac-writer/ui/components.py, line: 1228
 msgid "This action cannot be undone."
 msgstr "This action cannot be undone."
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1224
+# File: usr/share/tac-writer/ui/components.py, line: 1232
 msgid "Remove"
 msgstr "Remove"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+msgid "Manage Footnotes"
+msgstr "Manage Footnotes"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+msgid "Save"
+msgstr "Save"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+msgid ""
+"Add footnotes that will appear as numbered references in your paragraph:"
+msgstr ""
+"Add footnotes that will appear as numbered references in your paragraph:"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+msgid "Add Footnote"
+msgstr "Add Footnote"
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+msgid "Enter footnote text..."
+msgstr "Enter footnote text..."
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 77
@@ -672,12 +697,12 @@ msgstr "Error Creating Project"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 303
-# File: usr/share/tac-writer/ui/dialogs.py, line: 499
-# File: usr/share/tac-writer/ui/dialogs.py, line: 515
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1122
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1173
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1238
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1254
+# File: usr/share/tac-writer/ui/dialogs.py, line: 553
+# File: usr/share/tac-writer/ui/dialogs.py, line: 569
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1176
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1227
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1292
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1308
 msgid "OK"
 msgstr "OK"
 
@@ -688,7 +713,7 @@ msgstr "Export Project"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 339
-# File: usr/share/tac-writer/ui/dialogs.py, line: 489
+# File: usr/share/tac-writer/ui/dialogs.py, line: 543
 msgid "Export"
 msgstr "Export"
 
@@ -699,7 +724,7 @@ msgstr "Project Information"
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 362
-# File: usr/share/tac-writer/ui/dialogs.py, line: 981
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1035
 msgid "Statistics"
 msgstr "Statistics"
 
@@ -750,27 +775,27 @@ msgid "Choose..."
 msgstr "Choose..."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 423
+# File: usr/share/tac-writer/ui/dialogs.py, line: 477
 msgid "Choose Export Location"
 msgstr "Choose Export Location"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 426
+# File: usr/share/tac-writer/ui/dialogs.py, line: 480
 msgid "Select"
 msgstr "Select"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 445
+# File: usr/share/tac-writer/ui/dialogs.py, line: 499
 msgid "Exporting..."
 msgstr "Exporting..."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 496
+# File: usr/share/tac-writer/ui/dialogs.py, line: 550
 msgid "Export Successful"
 msgstr "Export Successful"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 497
+# File: usr/share/tac-writer/ui/dialogs.py, line: 551
 #, python-brace-format
 msgid ""
 "Project exported to:\n"
@@ -780,102 +805,102 @@ msgstr ""
 "{}"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 509
+# File: usr/share/tac-writer/ui/dialogs.py, line: 563
 msgid "An error occurred while exporting the project."
 msgstr "An error occurred while exporting the project."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 512
+# File: usr/share/tac-writer/ui/dialogs.py, line: 566
 msgid "Export Failed"
 msgstr "Export Failed"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 543
+# File: usr/share/tac-writer/ui/dialogs.py, line: 597
 msgid "General"
 msgstr "General"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 549
+# File: usr/share/tac-writer/ui/dialogs.py, line: 603
 msgid "Appearance"
 msgstr "Appearance"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 554
+# File: usr/share/tac-writer/ui/dialogs.py, line: 608
 msgid "Dark Theme"
 msgstr "Dark Theme"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 555
+# File: usr/share/tac-writer/ui/dialogs.py, line: 609
 msgid "Use dark theme for the application"
 msgstr "Use dark theme for the application"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 561
+# File: usr/share/tac-writer/ui/dialogs.py, line: 615
 msgid "Editor"
 msgstr "Editor"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 567
+# File: usr/share/tac-writer/ui/dialogs.py, line: 621
 msgid "Default Font"
 msgstr "Default Font"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 572
+# File: usr/share/tac-writer/ui/dialogs.py, line: 626
 msgid "Font Family"
 msgstr "Font Family"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 587
+# File: usr/share/tac-writer/ui/dialogs.py, line: 641
 msgid "Font Size"
 msgstr "Font Size"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 594
+# File: usr/share/tac-writer/ui/dialogs.py, line: 648
 msgid "Behavior"
 msgstr "Behavior"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 599
+# File: usr/share/tac-writer/ui/dialogs.py, line: 653
 msgid "Auto Save"
 msgstr "Auto Save"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 600
+# File: usr/share/tac-writer/ui/dialogs.py, line: 654
 msgid "Automatically save projects while editing"
 msgstr "Automatically save projects while editing"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 606
+# File: usr/share/tac-writer/ui/dialogs.py, line: 660
 msgid "Word Wrap"
 msgstr "Word Wrap"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 607
+# File: usr/share/tac-writer/ui/dialogs.py, line: 661
 msgid "Wrap text to fit the editor width"
 msgstr "Wrap text to fit the editor width"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 613
+# File: usr/share/tac-writer/ui/dialogs.py, line: 667
 msgid "Show Line Numbers"
 msgstr "Show Line Numbers"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 614
+# File: usr/share/tac-writer/ui/dialogs.py, line: 668
 msgid "Display line numbers in the editor"
 msgstr "Display line numbers in the editor"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 747
+# File: usr/share/tac-writer/ui/dialogs.py, line: 801
 msgid "What is TAC Writer?"
 msgstr "What is TAC Writer?"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 758
+# File: usr/share/tac-writer/ui/dialogs.py, line: 812
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+# File: usr/share/tac-writer/ui/dialogs.py, line: 817
 msgid ""
 "CAT consists of paragraphs that interact with each other. The idea is that "
 "some topics, when explained, cannot be concluded with just one paragraph. "
@@ -888,12 +913,12 @@ msgstr ""
 "understand."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 772
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 msgid "This is the writing structure:"
 msgstr "This is the writing structure:"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 778
+# File: usr/share/tac-writer/ui/dialogs.py, line: 832
 msgid ""
 "• <b>Introduction:</b> a sentence at the beginning of the paragraph that "
 "summarizes the topic that will be addressed.\n"
@@ -920,152 +945,152 @@ msgstr ""
 "• <b>Conclusion:</b> closing of the idea presented."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 800
+# File: usr/share/tac-writer/ui/dialogs.py, line: 854
 msgid "Show this dialog on startup"
 msgstr "Show this dialog on startup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 818
+# File: usr/share/tac-writer/ui/dialogs.py, line: 872
 msgid "Let's Start"
 msgstr "Let's Start"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 918
+# File: usr/share/tac-writer/ui/dialogs.py, line: 972
 msgid "Backup Manager"
 msgstr "Backup Manager"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+# File: usr/share/tac-writer/ui/dialogs.py, line: 994
 msgid "Close"
 msgstr "Close"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 946
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1107
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1000
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1161
 msgid "Create Backup"
 msgstr "Create Backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 953
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1130
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1007
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1184
 msgid "Import Database"
 msgstr "Import Database"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1023
 msgid "Current Database"
 msgstr "Current Database"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 975
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1029
 msgid "Database Location"
 msgstr "Database Location"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 982
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1036
 #, python-brace-format
 msgid "{} projects, {} MB"
 msgstr "{} projects, {} MB"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 993
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1047
 msgid "Available Backups"
 msgstr "Available Backups"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 994
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1048
 msgid "Backups are stored in Documents/TAC Projects/database_backups"
 msgstr "Backups are stored in Documents/TAC Projects/database_backups"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1033
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1087
 msgid "No backups found"
 msgstr "No backups found"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1034
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1088
 msgid "Create a backup or import an existing database file"
 msgstr "Create a backup or import an existing database file"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1106
 #, python-brace-format
 msgid "{:.1f} MB • {} projects • {}"
 msgstr "{:.1f} MB • {} projects • {}"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1060
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1114
 msgid "Valid backup"
 msgstr "Valid backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1063
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1117
 msgid "Invalid or corrupted backup"
 msgstr "Invalid or corrupted backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1075
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1129
 msgid "Import this backup"
 msgstr "Import this backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1083
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
 msgid "Delete backup"
 msgstr "Delete backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1095
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1149
 msgid "Creating..."
 msgstr "Creating..."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1113
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1167
 msgid "Backup created successfully"
 msgstr "Backup created successfully"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1119
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1173
 msgid "Backup Failed"
 msgstr "Backup Failed"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1120
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1174
 msgid "Could not create backup. Check the console for details."
 msgstr "Could not create backup. Check the console for details."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1133
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1196
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1187
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1250
 msgid "Import"
 msgstr "Import"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1139
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1193
 msgid "Database files (*.db)"
 msgstr "Database files (*.db)"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1144
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1198
 msgid "All files"
 msgstr "All files"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1170
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1224
 msgid "Invalid Backup"
 msgstr "Invalid Backup"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1171
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1225
 msgid "The selected file is not a valid TAC database backup."
 msgstr "The selected file is not a valid TAC database backup."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1189
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1243
 msgid "Import Database?"
 msgstr "Import Database?"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1190
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1244
 #, python-brace-format
 msgid ""
 "This will replace your current database with the selected backup.\n"
@@ -1081,22 +1106,22 @@ msgstr ""
 "Your current database will be backed up before importing."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1215
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1269
 msgid "Importing Database"
 msgstr "Importing Database"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1216
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1270
 msgid "Please wait while the database is being imported..."
 msgstr "Please wait while the database is being imported..."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1235
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1289
 msgid "Import Successful"
 msgstr "Import Successful"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1236
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1290
 msgid ""
 "Database imported successfully. The application will refresh to show the "
 "imported projects."
@@ -1105,23 +1130,23 @@ msgstr ""
 "imported projects."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1251
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1305
 msgid "Import Failed"
 msgstr "Import Failed"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1252
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1306
 msgid "Could not import the database. Your current database remains unchanged."
 msgstr ""
 "Could not import the database. Your current database remains unchanged."
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1263
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1317
 msgid "Delete Backup?"
 msgstr "Delete Backup?"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1264
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1318
 #, python-brace-format
 msgid ""
 "Are you sure you want to delete '{}'?\n"
@@ -1133,11 +1158,11 @@ msgstr ""
 "This action cannot be undone."
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 441
+# File: usr/share/tac-writer/core/models.py, line: 435
 msgid "Academic Essay"
 msgstr "Academic Essay"
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 442
+# File: usr/share/tac-writer/core/models.py, line: 436
 msgid "Standard academic essay structure"
 msgstr "Standard academic essay structure"

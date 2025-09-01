@@ -318,14 +318,6 @@ msgstr "Цитат"
 msgid "Conclusion"
 msgstr "Заключение"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-#: NEEDS WORK
-msgid "Footnote"
-msgstr "Бележка под линия"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -563,6 +555,11 @@ msgstr "Този проект ще бъде преместен в кошчето
 msgid "Delete"
 msgstr "Изтрий"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1011
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "Управление на бележки под линия"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 524
 #: NEEDS WORK
 msgid "Toggle spell checking"
@@ -592,6 +589,31 @@ msgstr "Тази операция не може да бъде отменена."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Премахни"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "Управление на бележки под линия"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+#: NEEDS WORK
+msgid "Save"
+msgstr "Запази"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr "Добавете бележки под линия, които ще се появят като номерирани препратки в параграфа ви:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "Добави бележка под линия"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "Въведете текст на бележка под линия..."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK

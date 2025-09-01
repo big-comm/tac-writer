@@ -318,14 +318,6 @@ msgstr "Citation"
 msgid "Conclusion"
 msgstr "Conclusion"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-#: NEEDS WORK
-msgid "Footnote"
-msgstr "Note de bas de page"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -563,6 +555,11 @@ msgstr "Ce projet sera déplacé vers la corbeille et peut être récupéré."
 msgid "Delete"
 msgstr "Supprimer"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1011
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "Gérer les notes de bas de page"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 524
 #: NEEDS WORK
 msgid "Toggle spell checking"
@@ -592,6 +589,33 @@ msgstr "Cette action ne peut pas être annulée."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Supprimer"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "Gérer les notes de bas de page"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+#: NEEDS WORK
+msgid "Save"
+msgstr "Enregistrer"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr ""
+"Ajoutez des notes de bas de page qui apparaîtront comme des références numérotées dans votre "
+"paragraphe :"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "Ajouter une note de bas de page"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "Entrez le texte de la note de bas de page..."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK

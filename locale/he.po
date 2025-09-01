@@ -318,14 +318,6 @@ msgstr "ציטוט"
 msgid "Conclusion"
 msgstr "מסקנה"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-#: NEEDS WORK
-msgid "Footnote"
-msgstr "הערת שוליים"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -563,6 +555,11 @@ msgstr "הפרויקט הזה יועבר לפח וניתן לשחזר אותו."
 msgid "Delete"
 msgstr "מחק"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1011
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "נהל הערות שוליים"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 524
 #: NEEDS WORK
 msgid "Toggle spell checking"
@@ -592,6 +589,31 @@ msgstr "פעולה זו אינה ניתנת לביטול."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "הסר"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "נהל הערות שוליים"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+#: NEEDS WORK
+msgid "Save"
+msgstr "שמור"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr "הוסף הערות שוליים שיתופיעו כהפניות ממוספרות בפסקה שלך:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "הוסף הערת שוליים"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "הזן טקסט הערה שוליים..."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK

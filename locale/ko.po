@@ -318,14 +318,6 @@ msgstr "인용문"
 msgid "Conclusion"
 msgstr "결론"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-#: NEEDS WORK
-msgid "Footnote"
-msgstr "각주"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -563,6 +555,11 @@ msgstr "이 프로젝트는 휴지통으로 이동되며 복구할 수 있습니
 msgid "Delete"
 msgstr "삭제"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1011
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "각주 관리"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 524
 #: NEEDS WORK
 msgid "Toggle spell checking"
@@ -592,6 +589,31 @@ msgstr "이 작업은 실행 취소할 수 없습니다."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "제거"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "각주 관리"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+#: NEEDS WORK
+msgid "Save"
+msgstr "저장"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr "단락에 번호가 매겨진 참조로 나타나는 각주 추가:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "각주 추가"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "각주 텍스트 입력..."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK

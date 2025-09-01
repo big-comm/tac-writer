@@ -318,14 +318,6 @@ msgstr "引用"
 msgid "Conclusion"
 msgstr "结论"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
-# File: usr/share/tac-writer/ui/components.py, line: 1159
-#: NEEDS WORK
-msgid "Footnote"
-msgstr "脚注"
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 447
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -563,6 +555,11 @@ msgstr "该项目将被移至垃圾箱，并可以恢复。"
 msgid "Delete"
 msgstr "删除"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1011
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "管理脚注"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 524
 #: NEEDS WORK
 msgid "Toggle spell checking"
@@ -592,6 +589,31 @@ msgstr "此操作无法撤销。"
 #: NEEDS WORK
 msgid "Remove"
 msgstr "移除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1331
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "管理脚注"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1358
+#: NEEDS WORK
+msgid "Save"
+msgstr "保存"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1375
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr "添加脚注，这些脚注将作为编号引用出现在您的段落中："
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "添加脚注"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1435
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "输入脚注文本..."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
