@@ -332,37 +332,50 @@ class TacApplication(Adw.Application):
             border: 1px solid alpha(@accent_color, 0.3);
             transition: all 200ms ease;
         }
-        
+
         .card.dragging {
             opacity: 0.6;
             transform: scale(0.98);
             transition: all 150ms ease;
         }
-        
+
         .card.drop-target {
             background: alpha(@accent_color, 0.1);
             border: 2px solid @accent_color;
             transition: all 200ms ease;
         }
-        
+
         /* Spell check styles */
         .spell-error {
             text-decoration: underline;
             text-decoration-color: red;
             text-decoration-style: wavy;
         }
-        
+
         /* Undo/redo feedback styles */
         .undo-feedback {
             background: alpha(@success_color, 0.1);
             border: 1px solid alpha(@success_color, 0.3);
             transition: all 300ms ease;
         }
-        
+
         .redo-feedback {
             background: alpha(@warning_color, 0.1);
             border: 1px solid alpha(@warning_color, 0.3);
             transition: all 300ms ease;
+        }
+
+        /* Wiki help button highlight */
+        .wiki-help-button {
+            background: alpha(@warning_color, 0.35);
+            border: 1px solid alpha(@warning_color, 0.5);
+            border-radius: 6px;
+            transition: all 200ms ease;
+        }
+
+        .wiki-help-button:hover {
+            background: alpha(@warning_color, 0.45);
+            border: 1px solid alpha(@warning_color, 0.6);
         }
         '''
         

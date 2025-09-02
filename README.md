@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/big-comm/comm-tac-writer/releases"><img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" alt="Version"/></a>
+  <a href="https://github.com/big-comm/comm-tac-writer/releases"><img src="https://img.shields.io/badge/Version-1.1.0-blue.svg" alt="Version"/></a>
   <a href="https://bigcommunity.com"><img src="https://img.shields.io/badge/BigCommunity-Platform-blue" alt="BigCommunity Platform"/></a>
   <a href="https://github.com/big-comm/comm-tac-writer/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-green.svg" alt="License"/></a>
   <a href="https://www.gtk.org/"><img src="https://img.shields.io/badge/GTK-4.0+-orange.svg" alt="GTK Version"/></a>
@@ -342,7 +342,7 @@ If you use TAC Writer in academic work, please cite:
   author = {BigCommunity Development Team},
   year = {2024},
   url = {https://github.com/big-comm/comm-tac-writer},
-  version = {1.0.0}
+  version = {1.1.0}
 }
 ```
 

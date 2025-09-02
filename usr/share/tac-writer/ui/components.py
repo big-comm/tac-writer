@@ -600,6 +600,7 @@ class WelcomeView(Gtk.Box):
         wiki_button.set_label(_("How To Wiki"))
         wiki_button.set_icon_name("help-browser-symbolic")
         wiki_button.add_css_class("flat")
+        wiki_button.add_css_class("wiki-help-button")
         wiki_button.set_tooltip_text(_("Access the online documentation and tutorials"))
         wiki_button.connect('clicked', self._on_wiki_clicked)
         help_box.append(wiki_button)

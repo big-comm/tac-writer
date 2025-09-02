@@ -12,6 +12,13 @@ from .helpers import (
 )
 from .i18n import _
 
+# Import version from config to avoid duplication
+try:
+    from core.config import Config
+    __version__ = Config.APP_VERSION
+except ImportError:
+    __version__ = 'unknown'
+
 __all__ = [
     'FileHelper',
     'TextHelper',
@@ -20,5 +27,3 @@ __all__ = [
     'DebugHelper',
     '_'
 ]
-
-__version__ = '1.0.0'
