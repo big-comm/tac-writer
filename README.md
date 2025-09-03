@@ -20,7 +20,7 @@
 
 ## Overview
 
-**TAC Writer** is a modern academic writing assistant designed to help students and researchers create structured academic texts using the **Continuous Argumentation Technique (CAT)**. Built with GTK4 and libadwaita, TAC provides an intuitive interface for organizing thoughts, managing document structure, and producing high-quality academic content.
+**TAC Writer** is a modern academic writing assistant designed to help students and researchers create structured academic texts using the **Continuous Argumentation Technique (TAC in portuguese)**. Built with GTK4 and libadwaita, TAC provides an intuitive interface for organizing thoughts, managing document structure, and producing high-quality academic content.
 
 The Continuous Argumentation Technique emphasizes interconnected paragraphs that build upon each other, making complex topics easier to understand and arguments more compelling.
 
