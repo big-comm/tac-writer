@@ -735,16 +735,8 @@ class WelcomeDialog(Adw.Window):
         self.set_resizable(True)
         self.config = config
 
-        # Calculate size based on screen
-        display = Gdk.Display.get_default()
-        monitor = display.get_monitors().get_item(0)
-        geometry = monitor.get_geometry()
-        
-        # Use 70% of screen width and 80% of screen height, with limits
-        width = min(800, int(geometry.width * 0.7))
-        height = min(640, int(geometry.height * 0.8))
-        
-        self.set_default_size(width, height)
+        # Smaller window size since we removed content
+        self.set_default_size(600, 450)
 
         # Create UI
         self._create_ui()
@@ -814,31 +806,28 @@ class WelcomeDialog(Adw.Window):
         content_text_box.append(cat_label)
 
         cat_desc = Gtk.Label()
-        cat_desc.set_text(_("CAT consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand."))
+        cat_desc.set_text(_("TAC consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand."))
         cat_desc.set_wrap(True)
         cat_desc.set_halign(Gtk.Align.START)
         cat_desc.set_justify(Gtk.Justification.LEFT)
         cat_desc.set_max_width_chars(60)
         content_text_box.append(cat_desc)
 
-        # Structure explanation
-        structure_label = Gtk.Label()
-        structure_label.set_markup("<b>" + _("This is the writing structure:") + "</b>")
-        structure_label.set_halign(Gtk.Align.START)
-        structure_label.set_margin_top(8)
-        content_text_box.append(structure_label)
+        # Wiki link section
+        wiki_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        wiki_box.set_halign(Gtk.Align.CENTER)
+        wiki_box.set_margin_top(16)
 
-        # Structure list
-        structure_text = _("• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that will be addressed.\n\n• <b>Argumentation:</b> development of the topic.\n\n• <b>Quote:</b> quote that supports the argument.\n\n• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of the argument from the previous paragraph.\n\n• <b>Conclusion:</b> closing of the idea presented.")
+        wiki_button = Gtk.Button()
+        wiki_button.set_label(_("Learn More - Online Documentation"))
+        wiki_button.set_icon_name("help-browser-symbolic")
+        wiki_button.add_css_class("suggested-action")
+        wiki_button.add_css_class("wiki-help-button")
+        wiki_button.set_tooltip_text(_("Access the complete guide and tutorials"))
+        wiki_button.connect('clicked', self._on_wiki_clicked)
+        wiki_box.append(wiki_button)
 
-        structure_items_label = Gtk.Label()
-        structure_items_label.set_markup(structure_text)
-        structure_items_label.set_wrap(True)
-        structure_items_label.set_halign(Gtk.Align.START)
-        structure_items_label.set_justify(Gtk.Justification.LEFT)
-        structure_items_label.set_margin_start(12)
-        content_text_box.append(structure_items_label)
-
+        content_text_box.append(wiki_box)
         content_box.append(content_text_box)
 
         # Separator before switch
@@ -891,6 +880,23 @@ class WelcomeDialog(Adw.Window):
     def _on_start_clicked(self, button):
         """Handle start button click"""
         self.destroy()
+        
+    def _on_wiki_clicked(self, button):
+        """Handle wiki button click - open external browser"""
+        import subprocess
+        import webbrowser
+        
+        wiki_url = "https://github.com/big-comm/comm-tac-writer/wiki"
+        
+        try:
+            # Try to open with default browser
+            webbrowser.open(wiki_url)
+        except Exception:
+            # Fallback: try xdg-open on Linux
+            try:
+                subprocess.run(['xdg-open', wiki_url], check=False)
+            except Exception as e:
+                print(f"Could not open wiki URL: {e}")
 
 
 def AboutDialog(parent):
