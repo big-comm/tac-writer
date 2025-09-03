@@ -16,6 +16,193 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "不明"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0分"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "1分未満"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1分"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} 分"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}時間 {}分"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "プロジェクト名は空にできません"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "プロジェクト名は2文字以上でなければなりません"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "プロジェクト名は100文字を超えてはいけません"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "プロジェクト名に無効な文字が含まれています"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "パスは空にできません"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "親ディレクトリが存在しません"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "パスが長すぎます"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "無効なパス: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} ワード"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} 文字"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "情報"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "タイプ: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "モジュール: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "属性:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "メソッド:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... と {} のその他のメソッド"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "パフォーマンス: {} は {:.3f} 秒かかりました"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "エラー: GTK 4.0 以上が必要です"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "エラー: 必要な依存関係が見つかりません: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "インストールしてください: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "依存関係のエラー確認: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "TACの開始 - 継続的議論技法"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+#, python-brace-format
+msgid "Application directory: {}"
+msgstr "アプリケーションディレクトリ: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "アプリケーションモジュールを読み込んでいます..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "アプリケーションインスタンスを作成中..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "TACアプリケーションを実行中..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "アプリケーションが終了しました。"
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "ユーザーによってアプリケーションが中断されました。"
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "起動中の重大なエラー: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -166,6 +353,7 @@ msgstr "継続的議論技術"
 # File: usr/share/tac-writer/ui/main_window.py, line: 340
 # File: usr/share/tac-writer/ui/components.py, line: 246
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words • {} paragraphs"
 msgstr "{} ワード • {} 段落"
 # 
@@ -223,6 +411,7 @@ msgstr "すべてのファイル"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "開いたプロジェクト: {}"
 # 
@@ -249,6 +438,7 @@ msgstr "エクスポートするプロジェクトはありません"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "作成したプロジェクト: {}"
 # 
@@ -256,6 +446,200 @@ msgstr "作成したプロジェクト: {}"
 #: NEEDS WORK
 msgid "No paragraphs to format"
 msgstr "フォーマットする段落はありません"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 145
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "セッション {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 152
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "ロングブレイク"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 158
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "休憩時間"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 214
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "最小化"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 263
+#: NEEDS WORK
+msgid "Reset"
+msgstr "リセット"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 381
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ 一時停止"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 385
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ 開始"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "TACへようこそ"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "構造化された学術テキストをガイド付き段落タイプで作成する"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "ノート:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "ODTへのエクスポートには、Office Suiteでのいくつかの調整が必要な場合があります。"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "ヒント:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "4行未満の直接引用には、引数ボックスを使用してください。"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "書き始める"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "テンプレートを選択して開始します"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "開始"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "プロジェクトを検索..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "プロジェクトの名前を変更"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "プロジェクトを削除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "プロジェクトの名前を変更"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "'{}'の新しい名前を入力してください"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "名前を変更"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "'{}'を削除しますか？"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "このプロジェクトはゴミ箱に移動され、復元可能です。"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "削除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "スペルチェックの切り替え"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "段落を削除"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "段落"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} ワード"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} 語"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "段落を削除しますか？"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "この操作は元に戻せません。"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "削除"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "太字"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "イタリック"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "下線"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -362,30 +746,6 @@ msgstr "フォントサイズ"
 msgid "Style"
 msgstr "スタイル"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "太字"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "イタリック"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "下線"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 414
 #: NEEDS WORK
 msgid "Spacing & Alignment"
@@ -479,6 +839,7 @@ msgstr "統計情報"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} ワード、{} パラグラフ"
 # 
@@ -539,6 +900,7 @@ msgstr "エクスポート成功"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -705,184 +1067,6 @@ msgstr "ナラヤン・シルバ"
 msgid "TAC Development Team"
 msgstr "TAC開発チーム"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 145
-#: NEEDS WORK
-msgid "Session {}"
-msgstr "セッション {}"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 152
-#: NEEDS WORK
-msgid "Long Break"
-msgstr "ロングブレイク"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 158
-#: NEEDS WORK
-msgid "Rest Time"
-msgstr "休憩時間"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 205
-#: NEEDS WORK
-msgid "Session 1"
-msgstr "セッション 1"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
-#: NEEDS WORK
-msgid "Start timer"
-msgstr "タイマーを開始"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 234
-#: NEEDS WORK
-msgid "Stop timer"
-msgstr "タイマーを停止"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 245
-#: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "集中セッション: 25分 • 短い休憩: 5分 • 長い休憩: 15分"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "タイマーを最小化"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "タイマーを一時停止"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 58
-#: NEEDS WORK
-msgid "Welcome to TAC"
-msgstr "TACへようこそ"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 71
-#: NEEDS WORK
-msgid "Create structured academic texts with guided paragraph types"
-msgstr "構造化された学術テキストをガイド付き段落タイプで作成する"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "Note:"
-msgstr "ノート:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "ODTへのエクスポートには、Office Suiteでのいくつかの調整が必要な場合があります。"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "ヒント:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "4行未満の直接引用には、引数ボックスを使用してください。"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 94
-#: NEEDS WORK
-msgid "Start Writing"
-msgstr "書き始める"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 95
-#: NEEDS WORK
-msgid "Choose a template to get started"
-msgstr "テンプレートを選択して開始します"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 105
-#: NEEDS WORK
-msgid "Start"
-msgstr "開始"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 137
-#: NEEDS WORK
-msgid "Search projects..."
-msgstr "プロジェクトを検索..."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 208
-#: NEEDS WORK
-msgid "Rename project"
-msgstr "プロジェクトの名前を変更"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 217
-#: NEEDS WORK
-msgid "Delete project"
-msgstr "プロジェクトを削除"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 288
-#: NEEDS WORK
-msgid "Rename Project"
-msgstr "プロジェクトの名前を変更"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 289
-#: NEEDS WORK
-msgid "Enter new name for '{}'"
-msgstr "'{}'の新しい名前を入力してください"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 306
-#: NEEDS WORK
-msgid "Rename"
-msgstr "名前を変更"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 340
-#: NEEDS WORK
-msgid "Delete '{}'?"
-msgstr "'{}'を削除しますか？"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 341
-#: NEEDS WORK
-msgid "This project will be moved to trash and can be recovered."
-msgstr "このプロジェクトはゴミ箱に移動され、復元可能です。"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 345
-#: NEEDS WORK
-msgid "Delete"
-msgstr "削除"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 524
-#: NEEDS WORK
-msgid "Toggle spell checking"
-msgstr "スペルチェックの切り替え"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 427
-#: NEEDS WORK
-msgid "Remove paragraph"
-msgstr "段落を削除"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 584
-#: NEEDS WORK
-msgid "Paragraph"
-msgstr "段落"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} ワード"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 636
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} words"
-msgstr "{count} 語"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 656
-#: NEEDS WORK
-msgid "Remove Paragraph?"
-msgstr "段落を削除しますか？"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 657
-#: NEEDS WORK
-msgid "This action cannot be undone."
-msgstr "この操作は元に戻せません。"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 661
-#: NEEDS WORK
-msgid "Remove"
-msgstr "削除"
-# 
 # File: usr/share/tac-writer/core/models.py, line: 354
 #: NEEDS WORK
 msgid "Academic Essay"
@@ -892,179 +1076,3 @@ msgstr "学術論文"
 #: NEEDS WORK
 msgid "Standard academic essay structure"
 msgstr "標準的な学術論文の構成"
-# 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "エラー: GTK 4.0 以上が必要です"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "エラー: 必要な依存関係が見つかりません: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "インストールしてください: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "依存関係のエラー確認: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "TACの開始 - 継続的議論技法"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "アプリケーションディレクトリ: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "アプリケーションモジュールを読み込んでいます..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "アプリケーションインスタンスを作成中..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "TACアプリケーションを実行中..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "アプリケーションが終了しました。"
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "ユーザーによってアプリケーションが中断されました。"
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "起動中の重大なエラー: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
-#: NEEDS WORK
-msgid "Unknown"
-msgstr "不明"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
-#: NEEDS WORK
-msgid "0 minutes"
-msgstr "0分"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
-#: NEEDS WORK
-msgid "< 1 minute"
-msgstr "1分未満"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
-#: NEEDS WORK
-msgid "1 minute"
-msgstr "1分"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
-#: NEEDS WORK
-msgid "{} minutes"
-msgstr "{} 分"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
-#: NEEDS WORK
-msgid "{}h {}m"
-msgstr "{}時間 {}分"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
-#: NEEDS WORK
-msgid "Project name cannot be empty"
-msgstr "プロジェクト名は空にできません"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
-#: NEEDS WORK
-msgid "Project name must be at least 2 characters long"
-msgstr "プロジェクト名は2文字以上でなければなりません"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
-#: NEEDS WORK
-msgid "Project name cannot exceed 100 characters"
-msgstr "プロジェクト名は100文字を超えてはいけません"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
-#: NEEDS WORK
-msgid "Project name contains invalid characters"
-msgstr "プロジェクト名に無効な文字が含まれています"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
-#: NEEDS WORK
-msgid "Path cannot be empty"
-msgstr "パスは空にできません"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
-#: NEEDS WORK
-msgid "Parent directory does not exist"
-msgstr "親ディレクトリが存在しません"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
-#: NEEDS WORK
-msgid "Path is too long"
-msgstr "パスが長すぎます"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
-#: NEEDS WORK
-msgid "Invalid path: {}"
-msgstr "無効なパス: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
-#: NEEDS WORK
-msgid "{:,} words"
-msgstr "{:,} ワード"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
-#: NEEDS WORK
-msgid "{:,} characters"
-msgstr "{:,} 文字"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
-#: NEEDS WORK
-msgid "Info"
-msgstr "情報"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
-#: NEEDS WORK
-msgid "Type: {}"
-msgstr "タイプ: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
-#: NEEDS WORK
-msgid "Module: {}"
-msgstr "モジュール: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-#: NEEDS WORK
-msgid "Attributes:"
-msgstr "属性:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
-#: NEEDS WORK
-msgid "Methods:"
-msgstr "メソッド:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
-#: NEEDS WORK
-msgid "  ... and {} more methods"
-msgstr "... と {} のその他のメソッド"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
-#: NEEDS WORK
-msgid "Performance: {} took {:.3f} seconds"
-msgstr "パフォーマンス: {} は {:.3f} 秒かかりました"

@@ -16,6 +16,193 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Ókunnugt"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 mínútur"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 mínúta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 mínúta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} mínútur"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}klst {}mín"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Nafn verkefnis má ekki vera tómt"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Nafn verkefnis verður að vera að minnsta kosti 2 stafir að lengd."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Nafn verkefnis má ekki fara yfir 100 stafi"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Nafn verkefnis inniheldur ógild tákn."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Slóð getur ekki verið tóm."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Foreldra skrá er ekki til."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Slóðin er of löng"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "Ógild leið: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} orð"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} stafir"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Upplýsingar"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "Tegund: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "Module: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Eiginleikar:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Aðferðir:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... og {} fleiri aðferðir"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Frammista: {} tók {:.3f} sekúndur"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Villa: GTK 4.0 eða hærra er nauðsynlegt"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Villa: Nauðsynlegar háðingar fundust ekki: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Vinsamlegast settu upp: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Villa að athuga háð: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Byrjun TAC - Samfelldar Röksemdaraðferðir"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+#, python-brace-format
+msgid "Application directory: {}"
+msgstr "Skráarsafn forrits: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Hlaða forritsmóduleum..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Búið til forritsinstans..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Keyrði TAC forritið..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Forrit lokið."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Forrit rofið af notanda."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritísk villa við ræsingu: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -166,6 +353,7 @@ msgstr "Samfelldar röksemdaraðferð"
 # File: usr/share/tac-writer/ui/main_window.py, line: 340
 # File: usr/share/tac-writer/ui/components.py, line: 246
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words • {} paragraphs"
 msgstr "{} orð • {} málsgreinar"
 # 
@@ -223,6 +411,7 @@ msgstr "Öll skrár"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Opnað verkefni: {}"
 # 
@@ -249,6 +438,7 @@ msgstr "Engin til að flytja út"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Skráður verkefni: {}"
 # 
@@ -256,6 +446,200 @@ msgstr "Skráður verkefni: {}"
 #: NEEDS WORK
 msgid "No paragraphs to format"
 msgstr "Engin ekki málsgreinar til að sniðganga."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 145
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "Session {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 152
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "Langt hlé"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 158
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "Hvíldartími"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 214
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "Minimera"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 263
+#: NEEDS WORK
+msgid "Reset"
+msgstr "Endurstilla"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 381
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ Pása"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 385
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ Byrja"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Velkomin í TAC"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Búðu til uppbyggð fræðileg texta með leiðbeiningum um málsgreinar."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Athugasemd:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "útflutningur í ODT gæti krafist nokkurra aðlögunar í Office Suite þínum."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Tipp:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "fyrir beinar tilvitnanir með færri en 4 línur, notaðu rökbox."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Byrjaðu að skrifa"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Veldu sniðmát til að byrja."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Byrjun"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Leita að verkefnum..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Endurnefna verkefni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Eyða verkefni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Endurnefna verkefni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "Sláðu inn nýtt nafn fyrir '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Endurnefna"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "Eyða '{}'?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Þetta verkefni verður flutt í ruslið og hægt er að endurheimta það."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Eyða"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Virkja stafsetningu"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Fjarlægðu málsgrein"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Málsgrein"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} orð"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} orð"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Fjarlægja málsgrein?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Þessi aðgerð er ekki hægt að afturkalla."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Fjarlægja"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "Feitletra"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "Kursiv"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "Undirstrika"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -362,30 +746,6 @@ msgstr "Leturstærð"
 msgid "Style"
 msgstr "Stíll"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "Feitletra"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "Kursiv"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "Undirstrika"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 414
 #: NEEDS WORK
 msgid "Spacing & Alignment"
@@ -479,6 +839,7 @@ msgstr "Stærðfræði"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} orð, {} málsgreinar"
 # 
@@ -539,6 +900,7 @@ msgstr "Útflutningur árangursríkur"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -709,184 +1071,6 @@ msgstr "Narayan Silva"
 msgid "TAC Development Team"
 msgstr "TAC þróunarteymi"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 145
-#: NEEDS WORK
-msgid "Session {}"
-msgstr "Session {}"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 152
-#: NEEDS WORK
-msgid "Long Break"
-msgstr "Langt hlé"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 158
-#: NEEDS WORK
-msgid "Rest Time"
-msgstr "Hvíldartími"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 205
-#: NEEDS WORK
-msgid "Session 1"
-msgstr "Snið 1"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
-#: NEEDS WORK
-msgid "Start timer"
-msgstr "Byrja tímara"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 234
-#: NEEDS WORK
-msgid "Stop timer"
-msgstr "Stoppa timer"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 245
-#: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "Fókusstund: 25 mín • Stutt hlé: 5 mín • Langt hlé: 15 mín"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "Minna tímann"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "Pausa tímans"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 58
-#: NEEDS WORK
-msgid "Welcome to TAC"
-msgstr "Velkomin í TAC"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 71
-#: NEEDS WORK
-msgid "Create structured academic texts with guided paragraph types"
-msgstr "Búðu til uppbyggð fræðileg texta með leiðbeiningum um málsgreinar."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "Note:"
-msgstr "Athugasemd:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "útflutningur í ODT gæti krafist nokkurra aðlögunar í Office Suite þínum."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Tipp:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "fyrir beinar tilvitnanir með færri en 4 línur, notaðu rökbox."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 94
-#: NEEDS WORK
-msgid "Start Writing"
-msgstr "Byrjaðu að skrifa"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 95
-#: NEEDS WORK
-msgid "Choose a template to get started"
-msgstr "Veldu sniðmát til að byrja."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 105
-#: NEEDS WORK
-msgid "Start"
-msgstr "Byrjun"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 137
-#: NEEDS WORK
-msgid "Search projects..."
-msgstr "Leita að verkefnum..."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 208
-#: NEEDS WORK
-msgid "Rename project"
-msgstr "Endurnefna verkefni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 217
-#: NEEDS WORK
-msgid "Delete project"
-msgstr "Eyða verkefni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 288
-#: NEEDS WORK
-msgid "Rename Project"
-msgstr "Endurnefna verkefni"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 289
-#: NEEDS WORK
-msgid "Enter new name for '{}'"
-msgstr "Sláðu inn nýtt nafn fyrir '{}'"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 306
-#: NEEDS WORK
-msgid "Rename"
-msgstr "Endurnefna"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 340
-#: NEEDS WORK
-msgid "Delete '{}'?"
-msgstr "Eyða '{}'?"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 341
-#: NEEDS WORK
-msgid "This project will be moved to trash and can be recovered."
-msgstr "Þetta verkefni verður flutt í ruslið og hægt er að endurheimta það."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 345
-#: NEEDS WORK
-msgid "Delete"
-msgstr "Eyða"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 524
-#: NEEDS WORK
-msgid "Toggle spell checking"
-msgstr "Virkja stafsetningu"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 427
-#: NEEDS WORK
-msgid "Remove paragraph"
-msgstr "Fjarlægðu málsgrein"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 584
-#: NEEDS WORK
-msgid "Paragraph"
-msgstr "Málsgrein"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} orð"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 636
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} words"
-msgstr "{count} orð"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 656
-#: NEEDS WORK
-msgid "Remove Paragraph?"
-msgstr "Fjarlægja málsgrein?"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 657
-#: NEEDS WORK
-msgid "This action cannot be undone."
-msgstr "Þessi aðgerð er ekki hægt að afturkalla."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 661
-#: NEEDS WORK
-msgid "Remove"
-msgstr "Fjarlægja"
-# 
 # File: usr/share/tac-writer/core/models.py, line: 354
 #: NEEDS WORK
 msgid "Academic Essay"
@@ -896,179 +1080,3 @@ msgstr "Akademísk ritgerð"
 #: NEEDS WORK
 msgid "Standard academic essay structure"
 msgstr "Vönduð fræðileg ritgerðaskipulag"
-# 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Villa: GTK 4.0 eða hærra er nauðsynlegt"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "Villa: Nauðsynlegar háðingar fundust ekki: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Vinsamlegast settu upp: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "Villa að athuga háð: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Byrjun TAC - Samfelldar Röksemdaraðferðir"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "Skráarsafn forrits: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Hlaða forritsmóduleum..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Búið til forritsinstans..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Keyrði TAC forritið..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "Forrit lokið."
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Forrit rofið af notanda."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "Kritísk villa við ræsingu: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
-#: NEEDS WORK
-msgid "Unknown"
-msgstr "Ókunnugt"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
-#: NEEDS WORK
-msgid "0 minutes"
-msgstr "0 mínútur"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
-#: NEEDS WORK
-msgid "< 1 minute"
-msgstr "< 1 mínúta"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
-#: NEEDS WORK
-msgid "1 minute"
-msgstr "1 mínúta"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
-#: NEEDS WORK
-msgid "{} minutes"
-msgstr "{} mínútur"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
-#: NEEDS WORK
-msgid "{}h {}m"
-msgstr "{}klst {}mín"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
-#: NEEDS WORK
-msgid "Project name cannot be empty"
-msgstr "Nafn verkefnis má ekki vera tómt"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
-#: NEEDS WORK
-msgid "Project name must be at least 2 characters long"
-msgstr "Nafn verkefnis verður að vera að minnsta kosti 2 stafir að lengd."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
-#: NEEDS WORK
-msgid "Project name cannot exceed 100 characters"
-msgstr "Nafn verkefnis má ekki fara yfir 100 stafi"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
-#: NEEDS WORK
-msgid "Project name contains invalid characters"
-msgstr "Nafn verkefnis inniheldur ógild tákn."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
-#: NEEDS WORK
-msgid "Path cannot be empty"
-msgstr "Slóð getur ekki verið tóm."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
-#: NEEDS WORK
-msgid "Parent directory does not exist"
-msgstr "Foreldra skrá er ekki til."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
-#: NEEDS WORK
-msgid "Path is too long"
-msgstr "Slóðin er of löng"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
-#: NEEDS WORK
-msgid "Invalid path: {}"
-msgstr "Ógild leið: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
-#: NEEDS WORK
-msgid "{:,} words"
-msgstr "{:,} orð"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
-#: NEEDS WORK
-msgid "{:,} characters"
-msgstr "{:,} stafir"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
-#: NEEDS WORK
-msgid "Info"
-msgstr "Upplýsingar"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
-#: NEEDS WORK
-msgid "Type: {}"
-msgstr "Tegund: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
-#: NEEDS WORK
-msgid "Module: {}"
-msgstr "Module: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-#: NEEDS WORK
-msgid "Attributes:"
-msgstr "Eiginleikar:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
-#: NEEDS WORK
-msgid "Methods:"
-msgstr "Aðferðir:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
-#: NEEDS WORK
-msgid "  ... and {} more methods"
-msgstr "... og {} fleiri aðferðir"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
-#: NEEDS WORK
-msgid "Performance: {} took {:.3f} seconds"
-msgstr "Frammista: {} tók {:.3f} sekúndur"

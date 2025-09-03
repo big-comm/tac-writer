@@ -16,6 +16,193 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
+# File: usr/share/tac-writer/utils/helpers.py, line: 58
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Neznámý"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 167
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 176
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 178
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 182
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}h {}m"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 216
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Název projektu nemůže být prázdný"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Název projektu musí mít alespoň 2 znaky."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 224
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Název projektu nesmí překročit 100 znaků"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 227
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Název projektu obsahuje neplatné znaky"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 244
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Cesta nemůže být prázdná"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 251
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Nadřazený adresář neexistuje"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 255
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Cesta je příliš dlouhá"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "Neplatná cesta: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 302
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} slova"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 304
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{: ,} znaků"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 320
+# File: usr/share/tac-writer/utils/helpers.py, line: 337
+#: NEEDS WORK
+msgid "Info"
+msgstr "Info"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 321
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "Typ: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 322
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "Modul: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 325
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Atributy:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 329
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Metody:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 335
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... a {} dalších metod"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Výkon: {} trvalo {:.3f} sekundy"
+# 
+# File: usr/share/tac-writer/tac.py, line: 46
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Chyba: Je vyžadována verze GTK 4.0 nebo vyšší"
+# 
+# File: usr/share/tac-writer/tac.py, line: 52
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Chyba: Požadované závislosti nebyly nalezeny: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 53
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Prosím nainstalujte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/tac.py, line: 56
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Chyba při kontrole závislostí: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 62
+#: NEEDS WORK
+msgid "Starting TAC - Continuous Argumentation Technique"
+msgstr "Zahájení TAC - Kontinuální argumentační technika"
+# 
+# File: usr/share/tac-writer/tac.py, line: 69
+#: NEEDS WORK
+#, python-brace-format
+msgid "Application directory: {}"
+msgstr "Adresář aplikace: {}"
+# 
+# File: usr/share/tac-writer/tac.py, line: 76
+#: NEEDS WORK
+msgid "Loading application modules..."
+msgstr "Načítání modulů aplikace..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 79
+#: NEEDS WORK
+msgid "Creating application instance..."
+msgstr "Vytváření instance aplikace..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 82
+#: NEEDS WORK
+msgid "Running TAC application..."
+msgstr "Spuštění aplikace TAC..."
+# 
+# File: usr/share/tac-writer/tac.py, line: 85
+#: NEEDS WORK
+msgid "Application finished."
+msgstr "Aplikace byla dokončena."
+# 
+# File: usr/share/tac-writer/tac.py, line: 89
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplikace byla přerušena uživatelem."
+# 
+# File: usr/share/tac-writer/tac.py, line: 92
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Kritická chyba během spuštění: {}"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 55
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -166,6 +353,7 @@ msgstr "Kontinuální argumentační technika"
 # File: usr/share/tac-writer/ui/main_window.py, line: 340
 # File: usr/share/tac-writer/ui/components.py, line: 246
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words • {} paragraphs"
 msgstr "{} slov • {} odstavců"
 # 
@@ -223,6 +411,7 @@ msgstr "Všechny soubory"
 # File: usr/share/tac-writer/ui/main_window.py, line: 491
 # File: usr/share/tac-writer/ui/main_window.py, line: 546
 #: NEEDS WORK
+#, python-brace-format
 msgid "Opened project: {}"
 msgstr "Otevřený projekt: {}"
 # 
@@ -249,6 +438,7 @@ msgstr "Žádný projekt k exportu"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 573
 #: NEEDS WORK
+#, python-brace-format
 msgid "Created project: {}"
 msgstr "Vytvořený projekt: {}"
 # 
@@ -256,6 +446,200 @@ msgstr "Vytvořený projekt: {}"
 #: NEEDS WORK
 msgid "No paragraphs to format"
 msgstr "Žádné odstavce k formátování"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 145
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "Relace {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 152
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "Dlouhá přestávka"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 158
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "Čas odpočinku"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 214
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "Minimalizovat"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 263
+#: NEEDS WORK
+msgid "Reset"
+msgstr "Obnovit"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 381
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ Pozastavit"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 385
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ Spustit"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 58
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Vítejte v TAC"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 71
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Vytvořte strukturované akademické texty s řízenými typy odstavců"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Poznámka:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 81
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "Export do ODT může vyžadovat určité úpravy ve vaší kancelářské sadě."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "Tip:"
+msgstr "Tip:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 87
+#: NEEDS WORK
+msgid "for direct quotes with less than 4 lines, use argument box."
+msgstr "pro přímé citace s méně než 4 řádky použijte argumentové okno."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 94
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Začít psát"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 95
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Vyberte šablonu, se kterou začnete"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 105
+#: NEEDS WORK
+msgid "Start"
+msgstr "Start"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 137
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Hledat projekty..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 208
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Přejmenovat projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 217
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Smazat projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 288
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Přejmenovat projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 289
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "Zadejte nové jméno pro '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 306
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Přejmenovat"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 340
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "Smazat '{}' ?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 341
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Tento projekt bude přesunut do koše a lze jej obnovit."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 345
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Smazat"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 524
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Přepnout kontrolu pravopisu"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 427
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Odstranit odstavec"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 584
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Odstavec"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 634
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} word"
+msgstr "{count} slovo"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 636
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} slov{\"a\"}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 656
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Odstranit odstavec?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 657
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Tuto akci nelze vrátit zpět."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 661
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Odstranit"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 399
+# File: usr/share/tac-writer/ui/components.py, line: 761
+#: NEEDS WORK
+msgid "Bold"
+msgstr "Tučný"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+# File: usr/share/tac-writer/ui/components.py, line: 768
+#: NEEDS WORK
+msgid "Italic"
+msgstr "Kurzkýl"
+# 
+# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 409
+# File: usr/share/tac-writer/ui/components.py, line: 775
+#: NEEDS WORK
+msgid "Underline"
+msgstr "Podtržení"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 33
 #: NEEDS WORK
@@ -362,30 +746,6 @@ msgstr "Velikost písma"
 msgid "Style"
 msgstr "Styl"
 # 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 399
-# File: usr/share/tac-writer/ui/components.py, line: 761
-#: NEEDS WORK
-msgid "Bold"
-msgstr "Tučný"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 404
-# File: usr/share/tac-writer/ui/components.py, line: 768
-#: NEEDS WORK
-msgid "Italic"
-msgstr "Kurzkýl"
-# 
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 409
-# File: usr/share/tac-writer/ui/components.py, line: 775
-#: NEEDS WORK
-msgid "Underline"
-msgstr "Podtržení"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 414
 #: NEEDS WORK
 msgid "Spacing & Alignment"
@@ -479,6 +839,7 @@ msgstr "Statistika"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 584
 #: NEEDS WORK
+#, python-brace-format
 msgid "{} words, {} paragraphs"
 msgstr "{} slov, {} odstavců"
 # 
@@ -539,6 +900,7 @@ msgstr "Export úspěšný"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 725
 #: NEEDS WORK
+#, python-brace-format
 msgid ""
 "Project exported to:\n"
 "{}"
@@ -709,184 +1071,6 @@ msgstr "Narayan Silva"
 msgid "TAC Development Team"
 msgstr "TAC vývojový tým"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 145
-#: NEEDS WORK
-msgid "Session {}"
-msgstr "Relace {}"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 152
-#: NEEDS WORK
-msgid "Long Break"
-msgstr "Dlouhá přestávka"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 158
-#: NEEDS WORK
-msgid "Rest Time"
-msgstr "Čas odpočinku"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 205
-#: NEEDS WORK
-msgid "Session 1"
-msgstr "Sezení 1"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 224
-# File: usr/share/tac-writer/ui/components.py, line: 299
-#: NEEDS WORK
-msgid "Start timer"
-msgstr "Spustit časovač"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 234
-#: NEEDS WORK
-msgid "Stop timer"
-msgstr "Zastavit časovač"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 245
-#: NEEDS WORK
-msgid "Focus session: 25 min • Short break: 5 min • Long break: 15 min"
-msgstr "Fokusová relace: 25 min • Krátká přestávka: 5 min • Dlouhá přestávka: 15 min"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 257
-#: NEEDS WORK
-msgid "Minimize timer"
-msgstr "Minimalizovat časovač"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 296
-#: NEEDS WORK
-msgid "Pause timer"
-msgstr "Pozastavit časovač"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 58
-#: NEEDS WORK
-msgid "Welcome to TAC"
-msgstr "Vítejte v TAC"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 71
-#: NEEDS WORK
-msgid "Create structured academic texts with guided paragraph types"
-msgstr "Vytvořte strukturované akademické texty s řízenými typy odstavců"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "Note:"
-msgstr "Poznámka:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 81
-#: NEEDS WORK
-msgid "exporting to ODT might require some adjustment in your Office Suite."
-msgstr "Export do ODT může vyžadovat určité úpravy ve vaší kancelářské sadě."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Tip:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "pro přímé citace s méně než 4 řádky použijte argumentové okno."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 94
-#: NEEDS WORK
-msgid "Start Writing"
-msgstr "Začít psát"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 95
-#: NEEDS WORK
-msgid "Choose a template to get started"
-msgstr "Vyberte šablonu, se kterou začnete"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 105
-#: NEEDS WORK
-msgid "Start"
-msgstr "Start"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 137
-#: NEEDS WORK
-msgid "Search projects..."
-msgstr "Hledat projekty..."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 208
-#: NEEDS WORK
-msgid "Rename project"
-msgstr "Přejmenovat projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 217
-#: NEEDS WORK
-msgid "Delete project"
-msgstr "Smazat projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 288
-#: NEEDS WORK
-msgid "Rename Project"
-msgstr "Přejmenovat projekt"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 289
-#: NEEDS WORK
-msgid "Enter new name for '{}'"
-msgstr "Zadejte nové jméno pro '{}'"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 306
-#: NEEDS WORK
-msgid "Rename"
-msgstr "Přejmenovat"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 340
-#: NEEDS WORK
-msgid "Delete '{}'?"
-msgstr "Smazat '{}' ?"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 341
-#: NEEDS WORK
-msgid "This project will be moved to trash and can be recovered."
-msgstr "Tento projekt bude přesunut do koše a lze jej obnovit."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 345
-#: NEEDS WORK
-msgid "Delete"
-msgstr "Smazat"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 524
-#: NEEDS WORK
-msgid "Toggle spell checking"
-msgstr "Přepnout kontrolu pravopisu"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 427
-#: NEEDS WORK
-msgid "Remove paragraph"
-msgstr "Odstranit odstavec"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 584
-#: NEEDS WORK
-msgid "Paragraph"
-msgstr "Odstavec"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 634
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} word"
-msgstr "{count} slovo"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 636
-#: NEEDS WORK
-#, python-brace-format
-msgid "{count} words"
-msgstr "{count} slov{\"a\"}"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 656
-#: NEEDS WORK
-msgid "Remove Paragraph?"
-msgstr "Odstranit odstavec?"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 657
-#: NEEDS WORK
-msgid "This action cannot be undone."
-msgstr "Tuto akci nelze vrátit zpět."
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 661
-#: NEEDS WORK
-msgid "Remove"
-msgstr "Odstranit"
-# 
 # File: usr/share/tac-writer/core/models.py, line: 354
 #: NEEDS WORK
 msgid "Academic Essay"
@@ -896,179 +1080,3 @@ msgstr "Akademická esej"
 #: NEEDS WORK
 msgid "Standard academic essay structure"
 msgstr "Standardní struktura akademického eseje"
-# 
-# File: usr/share/tac-writer/tac.py, line: 46
-#: NEEDS WORK
-msgid "Error: GTK 4.0 or higher is required"
-msgstr "Chyba: Je vyžadována verze GTK 4.0 nebo vyšší"
-# 
-# File: usr/share/tac-writer/tac.py, line: 52
-#: NEEDS WORK
-msgid "Error: Required dependencies not found: {}"
-msgstr "Chyba: Požadované závislosti nebyly nalezeny: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 53
-#: NEEDS WORK
-msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-msgstr "Prosím nainstalujte: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
-# 
-# File: usr/share/tac-writer/tac.py, line: 56
-#: NEEDS WORK
-msgid "Error checking dependencies: {}"
-msgstr "Chyba při kontrole závislostí: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 62
-#: NEEDS WORK
-msgid "Starting TAC - Continuous Argumentation Technique"
-msgstr "Zahájení TAC - Kontinuální argumentační technika"
-# 
-# File: usr/share/tac-writer/tac.py, line: 69
-#: NEEDS WORK
-msgid "Application directory: {}"
-msgstr "Adresář aplikace: {}"
-# 
-# File: usr/share/tac-writer/tac.py, line: 76
-#: NEEDS WORK
-msgid "Loading application modules..."
-msgstr "Načítání modulů aplikace..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 79
-#: NEEDS WORK
-msgid "Creating application instance..."
-msgstr "Vytváření instance aplikace..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 82
-#: NEEDS WORK
-msgid "Running TAC application..."
-msgstr "Spuštění aplikace TAC..."
-# 
-# File: usr/share/tac-writer/tac.py, line: 85
-#: NEEDS WORK
-msgid "Application finished."
-msgstr "Aplikace byla dokončena."
-# 
-# File: usr/share/tac-writer/tac.py, line: 89
-#: NEEDS WORK
-msgid "Application interrupted by user."
-msgstr "Aplikace byla přerušena uživatelem."
-# 
-# File: usr/share/tac-writer/tac.py, line: 92
-#: NEEDS WORK
-msgid "Critical error during startup: {}"
-msgstr "Kritická chyba během spuštění: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 58
-#: NEEDS WORK
-msgid "Unknown"
-msgstr "Neznámý"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 167
-#: NEEDS WORK
-msgid "0 minutes"
-msgstr "0 minut"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 172
-#: NEEDS WORK
-msgid "< 1 minute"
-msgstr "< 1 minuta"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 176
-#: NEEDS WORK
-msgid "1 minute"
-msgstr "1 minuta"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 178
-#: NEEDS WORK
-msgid "{} minutes"
-msgstr "{} minut"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 182
-#: NEEDS WORK
-msgid "{}h {}m"
-msgstr "{}h {}m"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 216
-#: NEEDS WORK
-msgid "Project name cannot be empty"
-msgstr "Název projektu nemůže být prázdný"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 221
-#: NEEDS WORK
-msgid "Project name must be at least 2 characters long"
-msgstr "Název projektu musí mít alespoň 2 znaky."
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 224
-#: NEEDS WORK
-msgid "Project name cannot exceed 100 characters"
-msgstr "Název projektu nesmí překročit 100 znaků"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 227
-#: NEEDS WORK
-msgid "Project name contains invalid characters"
-msgstr "Název projektu obsahuje neplatné znaky"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 244
-#: NEEDS WORK
-msgid "Path cannot be empty"
-msgstr "Cesta nemůže být prázdná"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 251
-#: NEEDS WORK
-msgid "Parent directory does not exist"
-msgstr "Nadřazený adresář neexistuje"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 255
-#: NEEDS WORK
-msgid "Path is too long"
-msgstr "Cesta je příliš dlouhá"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 260
-#: NEEDS WORK
-msgid "Invalid path: {}"
-msgstr "Neplatná cesta: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 302
-#: NEEDS WORK
-msgid "{:,} words"
-msgstr "{:,} slova"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 304
-#: NEEDS WORK
-msgid "{:,} characters"
-msgstr "{: ,} znaků"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 320
-# File: usr/share/tac-writer/utils/helpers.py, line: 337
-#: NEEDS WORK
-msgid "Info"
-msgstr "Info"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 321
-#: NEEDS WORK
-msgid "Type: {}"
-msgstr "Typ: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 322
-#: NEEDS WORK
-msgid "Module: {}"
-msgstr "Modul: {}"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 325
-#: NEEDS WORK
-msgid "Attributes:"
-msgstr "Atributy:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 329
-#: NEEDS WORK
-msgid "Methods:"
-msgstr "Metody:"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 335
-#: NEEDS WORK
-msgid "  ... and {} more methods"
-msgstr "... a {} dalších metod"
-# 
-# File: usr/share/tac-writer/utils/helpers.py, line: 343
-#: NEEDS WORK
-msgid "Performance: {} took {:.3f} seconds"
-msgstr "Výkon: {} trvalo {:.3f} sekundy"
