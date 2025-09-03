@@ -35,7 +35,7 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 ## Key Features
 
 ### 📝 **Structured Writing**
-- **Guided Paragraph Types**: Introduction, Argument, Quote, Conclusion
+- **Guided Dialog Boxes Types for a better Paragraph**: Introduction, Argument, Quote, Conclusion
 - **Drag-and-Drop Reordering**: Easily reorganize your document structure
 - **Type-Specific Formatting**: Automatic formatting based on paragraph type
 - **Template System**: Start with pre-configured academic structures
@@ -47,7 +47,7 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 - **Accessibility**: Full keyboard navigation and screen reader support
 
 ### 📊 **Real-Time Analytics**
-- **Live Statistics**: Word count, character count, paragraph count
+- **Live Statistics**: Word count, paragraph count
 - **Progress Tracking**: Monitor your writing progress in real-time
 - **Reading Time**: Estimated reading time calculation
 
@@ -58,8 +58,7 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 - **Backup System**: Automatic backup creation
 
 ### 📤 **Export Options**
-- **Multiple Formats**: TXT, HTML, ODT, PDF
-- **Customizable Output**: Control formatting and metadata
+- **Multiple Formats**: TXT, ODT, PDF
 - **Academic Standards**: Export formats suitable for academic submission
 
 ### ⚡ **Productivity Features**
@@ -75,11 +74,11 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 - **Python**: 3.9+
 - **GTK**: 4.0+
 - **libadwaita**: 1.0+
-- **Memory**: 512MB RAM
+- **Memory**: 2GB RAM
 - **Storage**: 100MB available space
 
 ### Recommended
-- **Memory**: 1GB+ RAM for large documents
+- **Memory**: 4GB+ RAM for large documents
 - **Display**: 1920x1080 or higher resolution
 - **Storage**: 1GB+ for project storage and backups
 
@@ -158,7 +157,7 @@ python main.py
    - Choose your preferred format (ODT, PDF, TXT, HTML)
    - Configure export settings and metadata
 
-### Writing with CAT Methodology
+### Writing with TAC Methodology
 
 The **Continuous Argumentation Technique** follows this structure:
 
@@ -282,32 +281,10 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - **Translations**: Add support for additional languages
 - **Testing**: Expand test coverage and add integration tests
 
-## Roadmap
-
-### Version 1.1 (Q2 2024)
-- [ ] Plugin system for custom paragraph types
-- [ ] Advanced formatting options (tables, lists)
-- [ ] Integration with reference managers (Zotero, Mendeley)
-- [ ] Collaborative editing features
-
-### Version 1.2 (Q3 2024)
-- [ ] LaTeX export support
-- [ ] Grammar and style checking
-- [ ] Document comparison and version control
-- [ ] Mobile companion app
-
-### Version 2.0 (Q4 2024)
-- [ ] AI-powered writing assistance
-- [ ] Cloud synchronization
-- [ ] Advanced analytics and insights
-- [ ] Multi-language support (i18n)
-
-## Support
-
 ### Getting Help
 
 - **Documentation**: [GitHub Wiki](https://github.com/big-comm/comm-tac-writer/wiki)
-- **Community**: [BigCommunity Forums](https://community.communitybig.org/c/tac-writer)
+- **Community**: [BigCommunity Telegram](https://t.me/+kmobYSt2PMhhZTFh)
 - **Issues**: [GitHub Issues](https://github.com/big-comm/comm-tac-writer/issues)
 
 ### Reporting Bugs
