@@ -905,47 +905,26 @@ msgstr "Mi az a TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Folyamatos Érvelési Technika (CAT, TAC portugálul):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"A CAT bekezdésekből áll, amelyek kölcsönhatásban állnak egymással. Az ötlet az, hogy egyes témák, "
-"amikor magyarázzák őket, nem zárhatók le csupán egy bekezdéssel. Ez egy olyan technika, amelynek "
+"A TAC bekezdésekből áll, amelyek kölcsönhatásban állnak egymással. Az ötlet az, hogy egyes témák, "
+"amikor magyarázzák őket, nem zárhatók le egyetlen bekezdéssel. Ez egy olyan technika, amelynek "
 "célja a szöveg rendszerezése és a megértés megkönnyítése."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Ez az írási struktúra:"
+msgid "Learn More - Online Documentation"
+msgstr "Tudj meg többet - Online dokumentáció"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Bevezetés:</b> egy mondat a bekezdés elején, amely összefoglalja a tárgyalt témát.\n"
-"\n"
-"• <b>Érv:</b> a téma kifejtése.\n"
-"\n"
-"• <b>Idézet:</b> idézet, amely alátámasztja az érvet.\n"
-"\n"
-"• <b>Érvelés folytatása:</b> a következő bekezdés kezdete, amely jelzi az előző bekezdés "
-"érvelésének folytatását.\n"
-"\n"
-"• <b>Összegzés:</b> a bemutatott ötlet zárása."
+msgid "Access the complete guide and tutorials"
+msgstr "Hozzáférés a teljes útmutatóhoz és oktatóanyagokhoz"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

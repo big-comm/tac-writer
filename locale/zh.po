@@ -905,43 +905,23 @@ msgstr "TAC Writer 是什么？"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "持续论证技术 (CAT，葡萄牙语中的TAC)"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
-msgstr "CAT由相互作用的段落组成。其理念是某些主题在解释时无法仅用一个段落来结束。这是一种旨在组织文本并使其更易于理解的技术。"
+msgstr "TAC由相互作用的段落组成。其理念是某些主题在解释时无法仅用一个段落来结束。这是一种旨在组织文本并使其更易于理解的技术。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "这是写作结构："
+msgid "Learn More - Online Documentation"
+msgstr "了解更多 - 在线文档"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>引言：</b> 段落开头的一句话，总结将要讨论的主题。\n"
-"\n"
-"• <b>论证：</b> 主题的发展。\n"
-"\n"
-"• <b>引用：</b> 支持论点的引用。\n"
-"\n"
-"• <b>论证的恢复：</b> 下一段的开头，表明对上一段论点的恢复。\n"
-"\n"
-"• <b>结论：</b> 提出的观点的结束。"
+msgid "Access the complete guide and tutorials"
+msgstr "访问完整的指南和教程"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

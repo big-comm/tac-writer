@@ -905,48 +905,26 @@ msgstr "Wat is TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Continue Argumentatietechniek (CAT, TAC in het Portugees):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT bestaat uit paragrafen die met elkaar interageren. Het idee is dat sommige onderwerpen, wanneer "
-"ze worden uitgelegd, niet met slechts één paragraaf kunnen worden afgesloten. Dit is een techniek "
+"TAC bestaat uit paragrafen die met elkaar interageren. Het idee is dat sommige onderwerpen, wanneer "
+"ze worden uitgelegd, niet kunnen worden afgesloten met slechts één paragraaf. Dit is een techniek "
 "die erop gericht is een tekst te organiseren en het gemakkelijker te maken om te begrijpen."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Dit is de schrijfstijl:"
+msgid "Learn More - Online Documentation"
+msgstr "Meer leren - Online documentatie"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Inleiding:</b> een zin aan het begin van de alinea die het onderwerp samenvat dat aan de orde "
-"zal komen.\n"
-"\n"
-"• <b>Argumentatie:</b> ontwikkeling van het onderwerp.\n"
-"\n"
-"• <b>Citaat:</b> citaat dat het argument ondersteunt.\n"
-"\n"
-"• <b>Argumentatieve Herhaling:</b> begin van de volgende alinea die een herhaling van het argument "
-"uit de vorige alinea aangeeft.\n"
-"\n"
-"• <b>Conclusie:</b> afsluiting van het gepresenteerde idee."
+msgid "Access the complete guide and tutorials"
+msgstr "Toegang tot de complete gids en tutorials"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

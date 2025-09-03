@@ -905,47 +905,26 @@ msgstr "Mikä on TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Jatkuva argumentointitekniikka (CAT, TAC portugaliksi):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT koostuu toisiinsa vuorovaikuttavista kappaleista. Ajatuksena on, että jotkin aiheet, kun ne "
+"TAC koostuu toisiinsa vuorovaikuttavista kappaleista. Ajatuksena on, että jotkin aiheet, kun ne "
 "selitetään, eivät voi päättyä vain yhteen kappaleeseen. Tämä on tekniikka, joka pyrkii järjestämään "
 "tekstiä ja tekemään siitä helpommin ymmärrettävää."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Tämä on kirjoitusrakenne:"
+msgid "Learn More - Online Documentation"
+msgstr "Lisää tietoa - Verkkodokumentaatio"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Johdanto:</b> lause kappaleen alussa, joka tiivistää käsiteltävän aiheen.\n"
-"\n"
-"• <b>Argumentointi:</b> aiheen kehittäminen.\n"
-"\n"
-"• <b>Siteeraus:</b> lainaus, joka tukee argumenttia.\n"
-"\n"
-"• <b>Argumentatiivinen jatko:</b> seuraavan kappaleen alku, joka osoittaa edellisen kappaleen "
-"argumentin jatkumisen.\n"
-"\n"
-"• <b>Johtopäätös:</b> esitetyn ajatuksen päättäminen."
+msgid "Access the complete guide and tutorials"
+msgstr "Pääsy täydelliseen oppaaseen ja opetusohjelmiin"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

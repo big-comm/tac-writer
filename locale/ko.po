@@ -905,45 +905,25 @@ msgstr "TAC Writer란 무엇인가요?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "지속적 논증 기법 (CAT, 포르투갈어로 TAC):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT은 서로 상호작용하는 단락으로 구성됩니다. 어떤 주제는 설명할 때 단 하나의 단락으로 결론지을 수 없다는 아이디어입니다. 이는 텍스트를 구성하고 이해하기 쉽게 만드는 것을 "
-"목표로 하는 기법입니다."
+"TAC는 서로 상호작용하는 단락으로 구성됩니다. 어떤 주제는 설명할 때 단 하나의 단락으로 결론지을 수 없다는 것이 아이디어입니다. 이는 텍스트를 구성하고 이해하기 쉽게 만드는 "
+"것을 목표로 하는 기법입니다."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "이것은 작성 구조입니다:"
+msgid "Learn More - Online Documentation"
+msgstr "자세히 알아보기 - 온라인 문서"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>소개:</b> 다룰 주제를 요약한 문장입니다.\n"
-"\n"
-"• <b>주장:</b> 주제의 전개입니다.\n"
-"\n"
-"• <b>인용:</b> 주장을 뒷받침하는 인용입니다.\n"
-"\n"
-"• <b>주장 재개:</b> 이전 단락의 주장을 재개하는 다음 단락의 시작입니다.\n"
-"\n"
-"• <b>결론:</b> 제시된 아이디어의 마무리입니다."
+msgid "Access the complete guide and tutorials"
+msgstr "전체 가이드 및 튜토리얼에 액세스하십시오."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

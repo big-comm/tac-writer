@@ -905,48 +905,26 @@ msgstr "Ce este TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Tehnica de Argumentare Continuă (CAT, TAC în portugheză):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT constă din paragrafe care interacționează între ele. Ideea este că unele subiecte, atunci când "
+"TAC constă din paragrafe care interacționează între ele. Ideea este că unele subiecte, atunci când "
 "sunt explicate, nu pot fi concluzionate cu un singur paragraf. Aceasta este o tehnică care are ca "
 "scop organizarea unui text și facilitarea înțelegerii acestuia."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Aceasta este structura de scriere:"
+msgid "Learn More - Online Documentation"
+msgstr "Aflați mai multe - Documentație online"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Introducere:</b> o propoziție la începutul paragrafului care rezumă subiectul care va fi "
-"abordat.\n"
-"\n"
-"• <b>Argumentare:</b> dezvoltarea subiectului.\n"
-"\n"
-"• <b>Citat:</b> citat care susține argumentul.\n"
-"\n"
-"• <b>Reluare Argumentativă:</b> începutul următorului paragraf care indică o reluare a argumentului "
-"din paragraful anterior.\n"
-"\n"
-"• <b>Concluzie:</b> încheierea ideii prezentate."
+msgid "Access the complete guide and tutorials"
+msgstr "Accesați ghidul complet și tutorialele"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

@@ -905,47 +905,26 @@ msgstr "Čo je TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Kontinuálna argumentačná technika (CAT, TAC v portugalčine):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT pozostáva z odsekov, ktoré navzájom interagujú. Myšlienka je taká, že niektoré témy, keď sú "
+"TAC pozostáva z odsekov, ktoré navzájom interagujú. Myšlienka je taká, že niektoré témy, keď sú "
 "vysvetlené, nemožno uzavrieť len jedným odsekom. Toto je technika, ktorá má za cieľ usporiadať text "
 "a uľahčiť jeho pochopenie."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Toto je štruktúra písania:"
+msgid "Learn More - Online Documentation"
+msgstr "Zistite viac - Online dokumentácia"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Úvod:</b> veta na začiatku odseku, ktorá zhrňuje tému, ktorá bude preberaná.\n"
-"\n"
-"• <b>Argumentácia:</b> rozvoj témy.\n"
-"\n"
-"• <b>Citát:</b> citát, ktorý podporuje argument.\n"
-"\n"
-"• <b>Argumentatívne pokračovanie:</b> začiatok nasledujúceho odseku, ktorý naznačuje pokračovanie "
-"argumentu z predchádzajúceho odseku.\n"
-"\n"
-"• <b>Záver:</b> uzavretie predloženej myšlienky."
+msgid "Access the complete guide and tutorials"
+msgstr "Získajte prístup k úplnému sprievodcovi a tutoriálom"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK
