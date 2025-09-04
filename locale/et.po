@@ -905,46 +905,26 @@ msgstr "Mis on TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Jätkuv Argumenteerimise Tehnika (CAT, TAC portugali keeles):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT koosneb omavahel suhtlevatest lõikudest. Idee on see, et mõned teemad, kui neid selgitatakse, "
-"ei saa piirduda vaid ühe lõiguga. See on tehnika, mille eesmärk on korraldada teksti ja muuta see "
+"TAC koosneb omavahel suhtlevatest lõikudest. Idee on, et mõned teemad, kui neid selgitatakse, ei "
+"saa piirduda vaid ühe lõiguga. See on tehnika, mille eesmärk on organiseerida teksti ja muuta see "
 "arusaadavamaks."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "See on kirjutamise struktuur:"
+msgid "Learn More - Online Documentation"
+msgstr "Loe rohkem - Veebidokumendid"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Sissejuhatus:</b> lause lõigu alguses, mis kokkuvõtab teema, mida käsitletakse.\n"
-"\n"
-"• <b>Argumentatsioon:</b> teema arendamine.\n"
-"\n"
-"• <b>Tsitaat:</b> tsitaat, mis toetab argumenti.\n"
-"\n"
-"• <b>Argumentatiivne jätk:</b> järgmise lõigu algus, mis näitab eelneva lõigu argumendi jätkamist.\n"
-"\n"
-"• <b>Järeldus:</b> esitatud idee lõpetamine."
+msgid "Access the complete guide and tutorials"
+msgstr "Juurdepääs täielikule juhendile ja õpetustele"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

@@ -905,48 +905,26 @@ msgstr "Какво е TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Непрекъсната аргументационна техника (CAT, TAC на португалски):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT се състои от абзаци, които взаимодействат помежду си. Идеята е, че някои теми, когато се "
+"TAC се състои от абзаци, които взаимодействат помежду си. Идеята е, че някои теми, когато се "
 "обясняват, не могат да бъдат заключени само с един абзац. Това е техника, която цели да организира "
 "текст и да го направи по-лесен за разбиране."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Това е структурата на писането:"
+msgid "Learn More - Online Documentation"
+msgstr "Научете повече - Онлайн документация"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Въведение:</b> изречение в началото на абзаца, което обобщава темата, която ще бъде "
-"разгледана.\n"
-"\n"
-"• <b>Аргументация:</b> развитие на темата.\n"
-"\n"
-"• <b>Цитат:</b> цитат, който подкрепя аргумента.\n"
-"\n"
-"• <b>Аргументативно възобновяване:</b> начало на следващия абзац, което указва възобновяване на "
-"аргумента от предишния абзац.\n"
-"\n"
-"• <b>Заключение:</b> затваряне на представената идея."
+msgid "Access the complete guide and tutorials"
+msgstr "Достъп до пълното ръководство и уроци"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

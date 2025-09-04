@@ -905,45 +905,25 @@ msgstr "מהו TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "טכניקת טיעון מתמשך (CAT, TAC בפורטוגזית):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT מורכב מפסקאות שמתקשרות זו עם זו. הרעיון הוא שכמה נושאים, כאשר הם מוסברים, לא ניתן לסיים בפסקה "
+"TAC מורכב מפסקאות שמתקשרות זו עם זו. הרעיון הוא שכמה נושאים, כאשר הם מוסברים, לא ניתן לסיים בפסקה "
 "אחת בלבד. זו טכניקה שמטרתה לארגן טקסט ולהקל על ההבנה."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "זו מבנה הכתיבה:"
+msgid "Learn More - Online Documentation"
+msgstr "למד עוד - תיעוד מקוון"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>מבוא:</b> משפט בתחילת הפסקה המסכם את הנושא שיידון.\n"
-"\n"
-"• <b>טיעון:</b> פיתוח הנושא.\n"
-"\n"
-"• <b>ציטוט:</b> ציטוט התומך בטיעון.\n"
-"\n"
-"• <b>חידוש טיעוני:</b> תחילת הפסקה הבאה המצביעה על חידוש הטיעון מהפסקה הקודמת.\n"
-"\n"
-"• <b>סיכום:</b> סגירת הרעיון המוצג."
+msgid "Access the complete guide and tutorials"
+msgstr "גשת למדריך המלא ולמדריכים"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

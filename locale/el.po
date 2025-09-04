@@ -905,47 +905,26 @@ msgstr "Τι είναι το TAC Writer;"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Συνεχής Τεχνική Επιχειρηματολογίας (CAT, TAC στα Πορτογαλικά):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"Η CAT αποτελείται από παραγράφους που αλληλεπιδρούν μεταξύ τους. Η ιδέα είναι ότι ορισμένα θέματα, "
+"Το TAC αποτελείται από παραγράφους που αλληλεπιδρούν μεταξύ τους. Η ιδέα είναι ότι ορισμένα θέματα, "
 "όταν εξηγούνται, δεν μπορούν να ολοκληρωθούν με μόνο μία παράγραφο. Αυτή είναι μια τεχνική που "
 "στοχεύει στην οργάνωση ενός κειμένου και στη διευκόλυνση της κατανόησής του."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Αυτή είναι η δομή γραφής:"
+msgid "Learn More - Online Documentation"
+msgstr "Μάθετε περισσότερα - Διαδικτυακή τεκμηρίωση"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Εισαγωγή:</b> μια πρόταση στην αρχή της παραγράφου που συνοψίζει το θέμα που θα εξεταστεί.\n"
-"\n"
-"• <b>Επιχειρηματολογία:</b> ανάπτυξη του θέματος.\n"
-"\n"
-"• <b>Παράθεση:</b> παράθεση που υποστηρίζει το επιχείρημα.\n"
-"\n"
-"• <b>Επιχειρηματική Επανέναρξη:</b> αρχή της επόμενης παραγράφου που υποδεικνύει μια επανέναρξη του "
-"επιχειρήματος από την προηγούμενη παράγραφο.\n"
-"\n"
-"• <b>Συμπέρασμα:</b> κλείσιμο της ιδέας που παρουσιάστηκε."
+msgid "Access the complete guide and tutorials"
+msgstr "Πρόσβαση στον πλήρη οδηγό και τα σεμινάρια"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

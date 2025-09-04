@@ -905,48 +905,26 @@ msgstr "Che cos'è TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Tecnica di Argomentazione Continua (CAT, TAC in portoghese):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT consiste in paragrafi che interagiscono tra loro. L'idea è che alcuni argomenti, quando "
+"TAC consiste in paragrafi che interagiscono tra loro. L'idea è che alcuni argomenti, quando "
 "spiegati, non possono essere conclusi con un solo paragrafo. Questa è una tecnica che mira a "
 "organizzare un testo e renderlo più facile da comprendere."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Questa è la struttura di scrittura:"
+msgid "Learn More - Online Documentation"
+msgstr "Scopri di più - Documentazione online"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Introduzione:</b> una frase all'inizio del paragrafo che riassume l'argomento che verrà "
-"trattato.\n"
-"\n"
-"• <b>Argomentazione:</b> sviluppo dell'argomento.\n"
-"\n"
-"• <b>Citazione:</b> citazione che supporta l'argomento.\n"
-"\n"
-"• <b>Ripresa Argomentativa:</b> inizio del paragrafo successivo che indica una ripresa "
-"dell'argomento dal paragrafo precedente.\n"
-"\n"
-"• <b>Conclusione:</b> chiusura dell'idea presentata."
+msgid "Access the complete guide and tutorials"
+msgstr "Accedi alla guida completa e ai tutorial"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

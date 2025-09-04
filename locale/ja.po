@@ -905,43 +905,23 @@ msgstr "TAC Writerとは何ですか？"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "継続的議論技術 (CAT、ポルトガル語ではTAC)"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
-msgstr "CATは相互に作用する段落で構成されています。いくつかのトピックは、説明されるときに1つの段落だけでは結論を出せないという考えです。これは、テキストを整理し、理解しやすくすることを目的とした技術です。"
+msgstr "TACは相互に作用する段落で構成されています。いくつかのトピックは、説明されるときに1つの段落だけでは結論を出せないという考えです。これは、テキストを整理し、理解しやすくすることを目的とした技法です。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "これは書き込み構造です："
+msgid "Learn More - Online Documentation"
+msgstr "詳細情報 - オンラインドキュメント"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>イントロダクション:</b> 対応するトピックを要約した段落の冒頭の文。\n"
-"\n"
-"• <b>論証:</b> トピックの展開。\n"
-"\n"
-"• <b>引用:</b> 論点を支持する引用。\n"
-"\n"
-"• <b>論証の再開:</b> 前の段落からの論点の再開を示す次の段落の冒頭。\n"
-"\n"
-"• <b>結論:</b> 提示されたアイデアの締めくくり。"
+msgid "Access the complete guide and tutorials"
+msgstr "完全なガイドとチュートリアルにアクセスする"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK

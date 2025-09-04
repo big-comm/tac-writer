@@ -905,47 +905,26 @@ msgstr "Hvað er TAC Writer?"
 msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
 msgstr "Samfelldar röksemdartækni (CAT, TAC á portúgölsku):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1037
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"CAT consists of paragraphs that interact with each other. The idea is that some topics, when "
+"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
 "explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
 "text and make it easier to understand."
 msgstr ""
-"CAT samanstendur af málsgreinum sem hafa samskipti sín á milli. Hugmyndin er sú að sum efni, þegar "
-"þau eru útskýrð, er ekki hægt að ljúka með einni málsgrein. Þetta er tækni sem miðar að því að "
-"skipuleggja texta og gera hann auðveldari að skilja."
+"TAC samanstendur af málsgreinum sem hafa samskipti sín á milli. Hugmyndin er sú að sum efni, þegar "
+"þau eru útskýrð, er ekki hægt að ljúka með aðeins einni málsgrein. Þetta er tækni sem miðar að því "
+"að skipuleggja texta og gera hann auðveldari að skilja."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1046
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
-msgid "This is the writing structure:"
-msgstr "Þetta er skrifgerðin:"
+msgid "Learn More - Online Documentation"
+msgstr "Lærðu meira - Vefgagnasafn"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1052
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
 #: NEEDS WORK
-msgid ""
-"• <b>Introduction:</b> a sentence at the beginning of the paragraph that summarizes the topic that "
-"will be addressed.\n"
-"\n"
-"• <b>Argumentation:</b> development of the topic.\n"
-"\n"
-"• <b>Quote:</b> quote that supports the argument.\n"
-"\n"
-"• <b>Argumentative Resumption:</b> beginning of the next paragraph that indicates a resumption of "
-"the argument from the previous paragraph.\n"
-"\n"
-"• <b>Conclusion:</b> closing of the idea presented."
-msgstr ""
-"• <b>Inngangur:</b> setning í upphafi málsgreinar sem samantekur efnið sem verður fjallað um.\n"
-"\n"
-"• <b>Röksemdarfærsla:</b> þróun efnisins.\n"
-"\n"
-"• <b>Tilvitnun:</b> tilvitnun sem styður röksemdina.\n"
-"\n"
-"• <b>Röksemdarendurskoðun:</b> upphaf næstu málsgreinar sem bendir til endurtekningar á röksemdinni "
-"frá fyrri málsgrein.\n"
-"\n"
-"• <b>Samantekt:</b> lokin á hugmyndinni sem kynnt var."
+msgid "Access the complete guide and tutorials"
+msgstr "Aðgangur að heildarhandbókinni og kennsluefnum"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1074
 #: NEEDS WORK
