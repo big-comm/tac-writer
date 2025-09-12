@@ -503,16 +503,6 @@ msgstr "Забележка:"
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "експортирането в ODT може да изисква някои настройки във вашия офис пакет."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Съвет:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "за директни цитати с по-малко от 4 реда, използвайте аргументен прозорец."
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"

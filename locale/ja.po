@@ -503,16 +503,6 @@ msgstr "ノート:"
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "ODTへのエクスポートには、Office Suiteでのいくつかの調整が必要な場合があります。"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "ヒント:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "4行未満の直接引用には、引数ボックスを使用してください。"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"

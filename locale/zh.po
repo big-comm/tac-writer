@@ -503,16 +503,6 @@ msgstr "注意："
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "导出到ODT可能需要在您的办公套件中进行一些调整。"
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "提示："
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "对于少于4行的直接引用，请使用参数框。"
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"

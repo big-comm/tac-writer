@@ -511,16 +511,6 @@ msgid   "exporting to ODT might require some adjustment in your Office Suite."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 620
-msgid   "Tip:"
-msgstr  ""
-
-#
-# File: usr/share/tac-writer/ui/components.py, line: 620
-msgid   "for direct quotes with less than 4 lines, use argument box."
-msgstr  ""
-
-#
 # File: usr/share/tac-writer/ui/components.py, line: 627
 msgid   "Start Writing"
 msgstr  ""

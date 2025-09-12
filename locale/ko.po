@@ -503,16 +503,6 @@ msgstr "노트:"
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "ODT로 내보내기는 Office Suite에서 약간의 조정이 필요할 수 있습니다."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "팁:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "인용문이 4줄 미만인 경우 인수 상자를 사용하십시오."
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"

@@ -503,16 +503,6 @@ msgstr "Megjegyzés:"
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "Az ODT-be történő exportálás némi beállítást igényelhet az Office Suite-ban."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "Tipp:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "a közvetlen idézetekhez, amelyek kevesebb mint 4 sorból állnak, használja az argumentum dobozt."
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"
