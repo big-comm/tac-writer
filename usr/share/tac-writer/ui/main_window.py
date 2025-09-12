@@ -109,12 +109,6 @@ class MainWindow(Adw.ApplicationWindow):
         new_button.set_action_name("app.new_project")
         self.header_bar.pack_start(new_button)
 
-        # open_button = Gtk.Button()
-        # open_button.set_icon_name("document-open-symbolic")
-        # open_button.set_tooltip_text(_("Open Project (Ctrl+O)"))
-        # open_button.set_action_name("app.open_project")
-        # self.header_bar.pack_start(open_button)
-
         # Pomodoro Timer Button
         self.pomodoro_button = Gtk.Button()
         self.pomodoro_button.set_icon_name("alarm-symbolic")

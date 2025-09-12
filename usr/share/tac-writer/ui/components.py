@@ -616,10 +616,10 @@ class WelcomeView(Gtk.Box):
         content_box.append(note)
 
         # Tips
-        tips = Gtk.Label()
-        tips.set_markup("<span size='small'><i>" + _("Tip:") + " " + _("for direct quotes with less than 4 lines, use argument box.") + "</i></span>")
-        tips.set_halign(Gtk.Align.CENTER)
-        content_box.append(tips)
+        #tips = Gtk.Label()
+        #tips.set_markup("<span size='small'><i>" + _("Tip:") + " " + _("for direct quotes with less than 4 lines, use argument box.") + "</i></span>")
+        #tips.set_halign(Gtk.Align.CENTER)
+        #content_box.append(tips)
 
     def _create_template_section(self):
         """Create template selection section"""

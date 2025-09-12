@@ -503,16 +503,6 @@ msgstr "Not:"
 msgid "exporting to ODT might require some adjustment in your Office Suite."
 msgstr "ODT'ye aktarma, Ofis Paketinizi ayarlamanızı gerektirebilir."
 # 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "Tip:"
-msgstr "İpucu:"
-# 
-# File: usr/share/tac-writer/ui/components.py, line: 87
-#: NEEDS WORK
-msgid "for direct quotes with less than 4 lines, use argument box."
-msgstr "doğrudan alıntılar için 4 satırdan azsa, argüman kutusunu kullanın."
-# 
 # File: usr/share/tac-writer/ui/components.py, line: 94
 #: NEEDS WORK
 msgid "Start Writing"
