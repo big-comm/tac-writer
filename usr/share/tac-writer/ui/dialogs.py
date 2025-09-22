@@ -801,12 +801,12 @@ class WelcomeDialog(Adw.Window):
 
         # CAT explanation
         cat_label = Gtk.Label()
-        cat_label.set_markup("<b>" + _("Continuous Argumentation Technique (CAT, TAC in Portuguese):") + "</b>")
+        cat_label.set_markup("<b>" + _("Continuous Argumentation Technique (TAC in Portuguese):") + "</b>")
         cat_label.set_halign(Gtk.Align.START)
         content_text_box.append(cat_label)
 
         cat_desc = Gtk.Label()
-        cat_desc.set_text(_("TAC consists of paragraphs that interact with each other. The idea is that some topics, when explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a text and make it easier to understand."))
+        cat_desc.set_text(_("Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or explain a concept in an organized manner, separating the paragraph into different stages: introduction, argument, citation, and conclusion."))
         cat_desc.set_wrap(True)
         cat_desc.set_halign(Gtk.Align.START)
         cat_desc.set_justify(Gtk.Justification.LEFT)
