@@ -1,7 +1,7 @@
 # Maintainer: Tales A. Mendonça <talesam@gmail.com>
 # Maintainer: Narayan Lima da Silva <narayan.song@gmail.com>
 
-pkgname=comm-tac-writer
+pkgname=tac-writer
 pkgdesc="Academic writing assistant using the Continuous Argumentation Technique (CAT)"
 # Uncomment and edit the following lines as needed
 depends=(
@@ -36,9 +36,9 @@ optdepends=(
     'hunspell-ru: For Russian spell checking'
     'hunspell-sk: For Slovak spell checking'
 )
-#conflicts=('')
-#provides=('')
-#replaces=('')
+conflicts=('comm-tac-writer')
+provides=('comm-tac-writer')
+replaces=('comm-tac-writer')
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
 arch=('any')
