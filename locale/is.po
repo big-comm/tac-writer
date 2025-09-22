@@ -890,21 +890,22 @@ msgstr "Sýna línunúmer í ritlinunni"
 msgid "What is TAC Writer?"
 msgstr "Hvað er TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Samfelldar röksemdartækni (CAT, TAC á portúgölsku):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Samfelldar röksemdartækni (TAC á portúgölsku):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC samanstendur af málsgreinum sem hafa samskipti sín á milli. Hugmyndin er sú að sum efni, þegar "
-"þau eru útskýrð, er ekki hægt að ljúka með aðeins einni málsgrein. Þetta er tækni sem miðar að því "
-"að skipuleggja texta og gera hann auðveldari að skilja."
+"Tac Writer er verkfæri sem byggir á TAC tækni (Samfelldar röksemdartækni) og Pomodoro aðferðinni. "
+"Þróað af Narayan Silva, hjálpar TAC tækni rithöfundum að þróa hugmynd eða útskýra hugtak á "
+"skipulagðan hátt, aðskilja málsgreinina í mismunandi stig: kynning, rök, tilvísun og niðurstaða."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

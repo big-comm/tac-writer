@@ -890,20 +890,22 @@ msgstr "הצג מספרי שורות בעורך"
 msgid "What is TAC Writer?"
 msgstr "מהו TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "טכניקת טיעון מתמשך (CAT, TAC בפורטוגזית):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "טכניקת טיעון מתמשך (TAC בפורטוגזית):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC מורכב מפסקאות שמתקשרות זו עם זו. הרעיון הוא שכמה נושאים, כאשר הם מוסברים, לא ניתן לסיים בפסקה "
-"אחת בלבד. זו טכניקה שמטרתה לארגן טקסט ולהקל על ההבנה."
+"טק רייטר הוא כלי המבוסס על טכניקת TAC (טכניקת טיעון מתמשך) ושיטת פומודורו. פותח על ידי נריאן סילבה, "
+"טכניקת TAC מסייעת לכותבים לפתח רעיון או להסביר מושג בצורה מאורגנת, תוך הפרדת הפסקה לשלבים שונים: "
+"הקדמה, טיעון, ציטוט, וסיכום."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

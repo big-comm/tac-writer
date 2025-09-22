@@ -890,21 +890,23 @@ msgstr "Visa radnummer i redigeraren"
 msgid "What is TAC Writer?"
 msgstr "Vad är TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Kontinuerlig Argumentationsteknik (CAT, TAC på portugisiska):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Kontinuerlig Argumentationsteknik (TAC på portugisiska):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC består av stycken som interagerar med varandra. Idén är att vissa ämnen, när de förklaras, inte "
-"kan avslutas med bara ett stycke. Detta är en teknik som syftar till att organisera en text och "
-"göra den lättare att förstå."
+"Tac Writer är ett verktyg baserat på TAC-tekniken (Continued Argumentation Technique) och "
+"Pomodoro-metoden. Utvecklad av Narayan Silva, hjälper TAC-tekniken skribenter att utveckla en idé "
+"eller förklara ett koncept på ett organiserat sätt, genom att separera stycket i olika faser: "
+"introduktion, argument, citat och slutsats."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

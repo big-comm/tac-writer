@@ -890,21 +890,23 @@ msgstr "Εμφάνιση αριθμών γραμμών στον επεξεργα
 msgid "What is TAC Writer?"
 msgstr "Τι είναι το TAC Writer;"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Συνεχής Τεχνική Επιχειρηματολογίας (CAT, TAC στα Πορτογαλικά):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Συνεχής Τεχνική Επιχειρηματολογίας (TAC στα Πορτογαλικά):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"Το TAC αποτελείται από παραγράφους που αλληλεπιδρούν μεταξύ τους. Η ιδέα είναι ότι ορισμένα θέματα, "
-"όταν εξηγούνται, δεν μπορούν να ολοκληρωθούν με μόνο μία παράγραφο. Αυτή είναι μια τεχνική που "
-"στοχεύει στην οργάνωση ενός κειμένου και στη διευκόλυνση της κατανόησής του."
+"Το Tac Writer είναι ένα εργαλείο βασισμένο στην τεχνική TAC (Τεχνική Συνεχιζόμενης "
+"Επιχειρηματολογίας) και στη μέθοδο Pomodoro. Αναπτυγμένο από τον Narayan Silva, η τεχνική TAC βοηθά "
+"τους συγγραφείς να αναπτύξουν μια ιδέα ή να εξηγήσουν μια έννοια με οργανωμένο τρόπο, χωρίζοντας "
+"την παράγραφο σε διαφορετικά στάδια: εισαγωγή, επιχείρημα, παράθεση και συμπέρασμα."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

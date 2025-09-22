@@ -890,21 +890,23 @@ msgstr "A szerkesztőben a sorok számának megjelenítése"
 msgid "What is TAC Writer?"
 msgstr "Mi az a TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Folyamatos Érvelési Technika (CAT, TAC portugálul):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Folyamatos Érvelési Technika (TAC portugálul):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"A TAC bekezdésekből áll, amelyek kölcsönhatásban állnak egymással. Az ötlet az, hogy egyes témák, "
-"amikor magyarázzák őket, nem zárhatók le egyetlen bekezdéssel. Ez egy olyan technika, amelynek "
-"célja a szöveg rendszerezése és a megértés megkönnyítése."
+"A Tac Writer egy eszköz, amely a TAC technikán (Folyamatos Érvelési Technika) és a Pomodoro "
+"módszeren alapul. Narayan Silva fejlesztette ki, a TAC technika segít a szerzőknek egy ötlet "
+"kidolgozásában vagy egy fogalom magyarázatában szervezett módon, a bekezdést különböző szakaszokra "
+"bontva: bevezetés, érvelés, idézet és következtetés."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

@@ -890,21 +890,23 @@ msgstr "Näytä rivinumerot editorissa"
 msgid "What is TAC Writer?"
 msgstr "Mikä on TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Jatkuva argumentointitekniikka (CAT, TAC portugaliksi):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Jatkuva argumentointitekniikka (TAC portugaliksi):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC koostuu toisiinsa vuorovaikuttavista kappaleista. Ajatuksena on, että jotkin aiheet, kun ne "
-"selitetään, eivät voi päättyä vain yhteen kappaleeseen. Tämä on tekniikka, joka pyrkii järjestämään "
-"tekstiä ja tekemään siitä helpommin ymmärrettävää."
+"Tac Writer on työkalu, joka perustuu TAC-tekniikkaan (jatkuva argumentointitekniikka) ja "
+"Pomodoro-menetelmään. Narayan Silvan kehittämä TAC-tekniikka auttaa kirjoittajia kehittämään idean "
+"tai selittämään käsitteen järjestelmällisesti, jakamalla kappale eri vaiheisiin: johdanto, "
+"argumentti, viittaus ja johtopäätös."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

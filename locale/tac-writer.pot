@@ -900,15 +900,17 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 804
-msgid   "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
+msgid   "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
-msgid   "TAC consists of paragraphs that interact with each other. The idea "
-        "is that some topics, when explained, cannot be concluded with just "
-        "one paragraph. This is a technique that aims to organize a text and "
-        "make it easier to understand."
+msgid   "Tac Writer is a tool based on the TAC technique (Continued "
+        "Argumentation Technique) and the Pomodoro method. Developed by "
+        "Narayan Silva, the TAC technique helps writers develop an idea or "
+        "explain a concept in an organized manner, separating the paragraph "
+        "into different stages: introduction, argument, citation, and "
+        "conclusion."
 msgstr  ""
 
 #

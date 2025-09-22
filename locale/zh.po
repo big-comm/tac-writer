@@ -890,18 +890,21 @@ msgstr "在编辑器中显示行号"
 msgid "What is TAC Writer?"
 msgstr "TAC Writer 是什么？"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "持续论证技术 (CAT，葡萄牙语中的TAC)"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "持续论证技术 (葡萄牙语中的 TAC)"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
-msgstr "TAC由相互作用的段落组成。其理念是某些主题在解释时无法仅用一个段落来结束。这是一种旨在组织文本并使其更易于理解的技术。"
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
+msgstr ""
+"Tac Writer 是一款基于 TAC 技术（持续论证技术）和番茄工作法的工具。由 Narayan Silva 开发，TAC "
+"技术帮助写作者以有组织的方式发展一个想法或解释一个概念，将段落分为不同的阶段：引言、论点、引用和结论。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

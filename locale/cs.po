@@ -890,21 +890,23 @@ msgstr "Zobrazit čísla řádků v editoru"
 msgid "What is TAC Writer?"
 msgstr "Co je TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Kontinuální argumentační technika (CAT, TAC v portugalštině):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Kontinuální argumentační technika (TAC v portugalštině):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC se skládá z odstavců, které spolu vzájemně interagují. Myšlenka je taková, že některá témata, "
-"když jsou vysvětlena, nelze uzavřít pouze jedním odstavcem. To je technika, jejímž cílem je "
-"uspořádat text a usnadnit jeho pochopení."
+"Tac Writer je nástroj založený na technice TAC (Technika pokračující argumentace) a metodě "
+"Pomodoro. Vyvinul ji Narayan Silva, technika TAC pomáhá autorům rozvíjet myšlenku nebo vysvětlit "
+"koncept organizovaným způsobem, přičemž rozděluje odstavec do různých fází: úvod, argument, citace "
+"a závěr."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK

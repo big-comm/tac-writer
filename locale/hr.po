@@ -890,21 +890,22 @@ msgstr "Prikaži brojeve redaka u uređivaču"
 msgid "What is TAC Writer?"
 msgstr "Što je TAC Writer?"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1032
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
 #: NEEDS WORK
-msgid "Continuous Argumentation Technique (CAT, TAC in Portuguese):"
-msgstr "Kontinuirana tehnika argumentacije (CAT, TAC na portugalskom):"
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Kontinuirana tehnika argumentacije (TAC na portugalskom):"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 809
 #: NEEDS WORK
 msgid ""
-"TAC consists of paragraphs that interact with each other. The idea is that some topics, when "
-"explained, cannot be concluded with just one paragraph. This is a technique that aims to organize a "
-"text and make it easier to understand."
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
 msgstr ""
-"TAC se sastoji od odlomaka koji međusobno djeluju. Ideja je da se neki teme, kada se objasne, ne "
-"mogu zaključiti samo jednim odlomkom. Ovo je tehnika koja ima za cilj organizirati tekst i olakšati "
-"njegovo razumijevanje."
+"Tac Writer je alat temeljen na TAC tehnici (Tehnika kontinuirane argumentacije) i Pomodoro metodi. "
+"Razvijen od strane Narayana Silve, TAC tehnika pomaže piscima da razviju ideju ili objasne koncept "
+"na organiziran način, dijeleći odlomak na različite faze: uvod, argument, citat i zaključak."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
