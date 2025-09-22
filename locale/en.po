@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the comm-tac-writer package.
+# This file is distributed under the same license as the tac-writer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: comm-tac-writer\n"
+"Project-Id-Version: tac-writer\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,7 +105,7 @@ msgid "1 word"
 msgstr "1 word"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 285
 # File: usr/share/tac-writer/ui/components.py, line: 1244
@@ -209,7 +209,7 @@ msgid "New Project (Ctrl+N)"
 msgstr "New Project (Ctrl+N)"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 115
 # File: usr/share/tac-writer/ui/components.py, line: 189
@@ -249,7 +249,7 @@ msgid "Redo"
 msgstr "Redo"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 154
 # File: usr/share/tac-writer/ui/dialogs.py, line: 582
@@ -277,7 +277,7 @@ msgid "Add Paragraph"
 msgstr "Add Paragraph"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 329
 # File: usr/share/tac-writer/ui/components.py, line: 1195
@@ -285,7 +285,7 @@ msgid "Title 1"
 msgstr "Title 1"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 330
 # File: usr/share/tac-writer/ui/components.py, line: 1196
@@ -293,7 +293,7 @@ msgid "Title 2"
 msgstr "Title 2"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 331
 # File: usr/share/tac-writer/ui/components.py, line: 1197
@@ -301,7 +301,7 @@ msgid "Introduction"
 msgstr "Introduction"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 332
 # File: usr/share/tac-writer/ui/components.py, line: 1198
@@ -309,7 +309,7 @@ msgid "Argument"
 msgstr "Argument"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 333
 # File: usr/share/tac-writer/ui/components.py, line: 1199
@@ -317,7 +317,7 @@ msgid "Quote"
 msgstr "Quote"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 334
 # File: usr/share/tac-writer/ui/components.py, line: 1200
@@ -360,9 +360,9 @@ msgid "Open"
 msgstr "Open"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 618
 # File: usr/share/tac-writer/ui/components.py, line: 880
@@ -428,7 +428,7 @@ msgid "Created project: {}"
 msgstr "Created project: {}"
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 777
 # File: usr/share/tac-writer/ui/components.py, line: 581
@@ -570,7 +570,7 @@ msgid "This project will be moved to trash and can be recovered."
 msgstr "This project will be moved to trash and can be recovered."
 
 #
-# #-#-#-#-#  comm-tac-writer.pot (comm-tac-writer)  #-#-#-#-#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 918
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1328
