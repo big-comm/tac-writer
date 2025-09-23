@@ -8,7 +8,7 @@ Utilities for translation support using gettext
 import gettext
 
 # Configure the translation domain/name
-gettext.textdomain("comm-tac-writer")
+gettext.textdomain("tac-writer")
 
 # Export _ directly as the translation function
 _ = gettext.gettext
