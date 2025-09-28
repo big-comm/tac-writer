@@ -1,0 +1,1150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the tac-writer package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tac-writer\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 57
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Nieznany"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 172
+#: NEEDS WORK
+msgid "0 minutes"
+msgstr "0 minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 177
+#: NEEDS WORK
+msgid "< 1 minute"
+msgstr "< 1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 181
+#: NEEDS WORK
+msgid "1 minute"
+msgstr "1 minuta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 183
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} minutes"
+msgstr "{} minut"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 187
+#: NEEDS WORK
+#, python-brace-format
+msgid "{}h {}m"
+msgstr "{}h {}m"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 221
+#: NEEDS WORK
+msgid "Project name cannot be empty"
+msgstr "Nazwa projektu nie może być pusta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 226
+#: NEEDS WORK
+msgid "Project name must be at least 2 characters long"
+msgstr "Nazwa projektu musi mieć co najmniej 2 znaki."
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 229
+#: NEEDS WORK
+msgid "Project name cannot exceed 100 characters"
+msgstr "Nazwa projektu nie może przekraczać 100 znaków"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 232
+#: NEEDS WORK
+msgid "Project name contains invalid characters"
+msgstr "Nazwa projektu zawiera nieprawidłowe znaki"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 249
+#: NEEDS WORK
+msgid "Path cannot be empty"
+msgstr "Ścieżka nie może być pusta"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 256
+#: NEEDS WORK
+msgid "Parent directory does not exist"
+msgstr "Katalog nadrzędny nie istnieje"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 260
+#: NEEDS WORK
+msgid "Path is too long"
+msgstr "Ścieżka jest zbyt długa"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 265
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid path: {}"
+msgstr "Nieprawidłowa ścieżka: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 275
+#: NEEDS WORK
+msgid "1 paragraph"
+msgstr "1 akapit"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 277
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} paragraphs"
+msgstr "{count} akapitów"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 283
+#: NEEDS WORK
+msgid "1 word"
+msgstr "klucz"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 285
+# File: usr/share/tac-writer/ui/components.py, line: 1244
+#: NEEDS WORK
+#, python-brace-format
+msgid "{count} words"
+msgstr "{count} słów"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 330
+#: NEEDS WORK
+msgid "{:,} words"
+msgstr "{:,} słów"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 332
+#: NEEDS WORK
+msgid "{:,} characters"
+msgstr "{:,} znaków"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 348
+# File: usr/share/tac-writer/utils/helpers.py, line: 365
+#: NEEDS WORK
+msgid "Info"
+msgstr "Informacje"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 349
+#: NEEDS WORK
+#, python-brace-format
+msgid "Type: {}"
+msgstr "Typ: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 350
+#: NEEDS WORK
+#, python-brace-format
+msgid "Module: {}"
+msgstr "Moduł: {}"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 353
+#: NEEDS WORK
+msgid "Attributes:"
+msgstr "Atrybuty:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 357
+#: NEEDS WORK
+msgid "Methods:"
+msgstr "Metody:"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 363
+#: NEEDS WORK
+#, python-brace-format
+msgid "  ... and {} more methods"
+msgstr "... i {} więcej metod"
+# 
+# File: usr/share/tac-writer/utils/helpers.py, line: 371
+#: NEEDS WORK
+#, python-brace-format
+msgid "Performance: {} took {:.3f} seconds"
+msgstr "Wydajność: {} zajęło {:.3f} sekundy"
+# 
+# File: usr/share/tac-writer/main.py, line: 41
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error: Required dependencies not found: {}"
+msgstr "Błąd: Wymagane zależności nie zostały znalezione: {}"
+# 
+# File: usr/share/tac-writer/main.py, line: 42
+#: NEEDS WORK
+msgid "Please install: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+msgstr "Proszę zainstalować: python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adwaita-1"
+# 
+# File: usr/share/tac-writer/main.py, line: 50
+#: NEEDS WORK
+msgid "Error: GTK 4.0 or higher is required"
+msgstr "Błąd: Wymagana jest wersja GTK 4.0 lub wyższa"
+# 
+# File: usr/share/tac-writer/main.py, line: 55
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dependencies: {}"
+msgstr "Błąd podczas sprawdzania zależności: {}"
+# 
+# File: usr/share/tac-writer/main.py, line: 73
+#: NEEDS WORK
+msgid "Application interrupted by user."
+msgstr "Aplikacja przerwana przez użytkownika."
+# 
+# File: usr/share/tac-writer/main.py, line: 76
+#: NEEDS WORK
+#, python-brace-format
+msgid "Critical error during startup: {}"
+msgstr "Krytyczny błąd podczas uruchamiania: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 77
+#: NEEDS WORK
+msgid "New Project"
+msgstr "Nowy projekt"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 101
+# File: usr/share/tac-writer/ui/dialogs.py, line: 334
+# File: usr/share/tac-writer/ui/dialogs.py, line: 481
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1194
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1255
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1327
+# File: usr/share/tac-writer/ui/components.py, line: 880
+# File: usr/share/tac-writer/ui/components.py, line: 917
+# File: usr/share/tac-writer/ui/components.py, line: 1264
+# File: usr/share/tac-writer/ui/components.py, line: 1386
+# File: usr/share/tac-writer/ui/main_window.py, line: 618
+#: NEEDS WORK
+msgid "Cancel"
+msgstr "Anuluj"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 107
+#: NEEDS WORK
+msgid "Create"
+msgstr "Utwórz"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 139
+#: NEEDS WORK
+msgid "Project Details"
+msgstr "Szczegóły projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 143
+# File: usr/share/tac-writer/ui/dialogs.py, line: 356
+#: NEEDS WORK
+msgid "Project Name"
+msgstr "Nazwa projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 145
+#: NEEDS WORK
+msgid "Enter project name..."
+msgstr "Wprowadź nazwę projektu..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 146
+#: NEEDS WORK
+msgid "My New Project"
+msgstr "Mój Nowy Projekt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 163
+#: NEEDS WORK
+msgid "Author"
+msgstr "Autor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 165
+#: NEEDS WORK
+msgid "Your name..."
+msgstr "Twoje imię..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 174
+#: NEEDS WORK
+msgid "Description"
+msgstr "Opis"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 206
+#: NEEDS WORK
+msgid "Template"
+msgstr "Szablon"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 207
+#: NEEDS WORK
+msgid "Choose a template to start with"
+msgstr "Wybierz szablon, aby rozpocząć"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 216
+#: NEEDS WORK
+msgid "Document Template"
+msgstr "Szablon dokumentu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Błąd podczas tworzenia projektu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 303
+# File: usr/share/tac-writer/ui/dialogs.py, line: 553
+# File: usr/share/tac-writer/ui/dialogs.py, line: 569
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1182
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1233
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1298
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1314
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 314
+#: NEEDS WORK
+msgid "Export Project"
+msgstr "Eksportuj projekt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 339
+# File: usr/share/tac-writer/ui/dialogs.py, line: 543
+#: NEEDS WORK
+msgid "Export"
+msgstr "Eksportuj"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 352
+#: NEEDS WORK
+msgid "Project Information"
+msgstr "Informacje o projekcie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 362
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1041
+#: NEEDS WORK
+msgid "Statistics"
+msgstr "Statystyka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 363
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} words, {} paragraphs"
+msgstr "{} słów, {} akapitów"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 368
+#: NEEDS WORK
+msgid "Export Options"
+msgstr "Opcje eksportu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 373
+#: NEEDS WORK
+msgid "Format"
+msgstr "Format"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 393
+#: NEEDS WORK
+msgid "Include Metadata"
+msgstr "Dołącz metadane"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 394
+#: NEEDS WORK
+msgid "Include author, creation date, and other project information"
+msgstr "Uwzględnij autora, datę utworzenia i inne informacje o projekcie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 400
+#: NEEDS WORK
+msgid "Output Location"
+msgstr "Lokalizacja wyjścia"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 404
+#: NEEDS WORK
+msgid "Save Location"
+msgstr "Lokalizacja zapisu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 405
+#: NEEDS WORK
+msgid "Click to choose location"
+msgstr "Kliknij, aby wybrać lokalizację"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 408
+#: NEEDS WORK
+msgid "Choose..."
+msgstr "Wybierz..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 477
+#: NEEDS WORK
+msgid "Choose Export Location"
+msgstr "Wybierz lokalizację eksportu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 480
+#: NEEDS WORK
+msgid "Select"
+msgstr "Wybierz"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 499
+#: NEEDS WORK
+msgid "Exporting..."
+msgstr "Eksportowanie..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 550
+#: NEEDS WORK
+msgid "Export Successful"
+msgstr "Eksport zakończony pomyślnie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 551
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Project exported to:\n"
+"{}"
+msgstr ""
+"Projekt wyeksportowany do:\n"
+"{}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 563
+#: NEEDS WORK
+msgid "An error occurred while exporting the project."
+msgstr "Wystąpił błąd podczas eksportowania projektu."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 566
+#: NEEDS WORK
+msgid "Export Failed"
+msgstr "Eksport nie powiódł się"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 582
+# File: usr/share/tac-writer/ui/main_window.py, line: 154
+#: NEEDS WORK
+msgid "Preferences"
+msgstr "Preferencje"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 597
+#: NEEDS WORK
+msgid "General"
+msgstr "Ogólny"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 603
+#: NEEDS WORK
+msgid "Appearance"
+msgstr "Wygląd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 608
+#: NEEDS WORK
+msgid "Dark Theme"
+msgstr "Ciemny motyw"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 609
+#: NEEDS WORK
+msgid "Use dark theme for the application"
+msgstr "Użyj ciemnego motywu dla aplikacji"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 615
+#: NEEDS WORK
+msgid "Editor"
+msgstr "Edytor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 621
+#: NEEDS WORK
+msgid "Default Font"
+msgstr "Domyślny krój pisma"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 626
+#: NEEDS WORK
+msgid "Font Family"
+msgstr "Rodzina czcionek"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 641
+#: NEEDS WORK
+msgid "Font Size"
+msgstr "Rozmiar czcionki"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 648
+#: NEEDS WORK
+msgid "Behavior"
+msgstr "Zachowanie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 653
+#: NEEDS WORK
+msgid "Auto Save"
+msgstr "Automatyczne zapisywanie"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 654
+#: NEEDS WORK
+msgid "Automatically save projects while editing"
+msgstr "Automatycznie zapisuj projekty podczas edytowania"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 660
+#: NEEDS WORK
+msgid "Word Wrap"
+msgstr "Zawijanie wierszy"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 661
+#: NEEDS WORK
+msgid "Wrap text to fit the editor width"
+msgstr "Zawijaj tekst, aby dopasować go do szerokości edytora"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 667
+#: NEEDS WORK
+msgid "Show Line Numbers"
+msgstr "Pokaż numery linii"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 668
+#: NEEDS WORK
+msgid "Display line numbers in the editor"
+msgstr "Wyświetl numery linii w edytorze"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "What is TAC Writer?"
+msgstr "Czym jest TAC Writer?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 804
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique (TAC in Portuguese):"
+msgstr "Ciągła Technika Argumentacji (TAC w języku portugalskim):"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+#: NEEDS WORK
+msgid ""
+"Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
+"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
+"explain a concept in an organized manner, separating the paragraph into different stages: "
+"introduction, argument, citation, and conclusion."
+msgstr ""
+"Tac Writer to narzędzie oparte na technice TAC (Technika Ciągłej Argumentacji) oraz metodzie "
+"Pomodoro. Opracowane przez Narayana Silvę, technika TAC pomaga pisarzom rozwijać pomysł lub "
+"wyjaśniać koncepcję w zorganizowany sposób, dzieląc akapit na różne etapy: wprowadzenie, argument, "
+"cytat i wnioski."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 822
+#: NEEDS WORK
+msgid "Learn More - Online Documentation"
+msgstr "Dowiedz się więcej - Dokumentacja online"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 826
+#: NEEDS WORK
+msgid "Access the complete guide and tutorials"
+msgstr "Uzyskaj dostęp do pełnego przewodnika i samouczków"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 843
+#: NEEDS WORK
+msgid "Show this dialog on startup"
+msgstr "Pokaż ten dialog przy uruchamianiu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 861
+#: NEEDS WORK
+msgid "Let's Start"
+msgstr "Zacznijmy"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 978
+#: NEEDS WORK
+msgid "Backup Manager"
+msgstr "Menedżer kopii zapasowych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1000
+#: NEEDS WORK
+msgid "Close"
+msgstr "Zamknij"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1006
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1167
+#: NEEDS WORK
+msgid "Create Backup"
+msgstr "Utwórz kopię zapasową"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1013
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1190
+#: NEEDS WORK
+msgid "Import Database"
+msgstr "Importuj bazę danych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1029
+#: NEEDS WORK
+msgid "Current Database"
+msgstr "Bieżąca baza danych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1035
+#: NEEDS WORK
+msgid "Database Location"
+msgstr "Lokalizacja bazy danych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1042
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} projects, {} MB"
+msgstr "{} projekty, {} MB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1053
+#: NEEDS WORK
+msgid "Available Backups"
+msgstr "Dostępne kopie zapasowe"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1054
+#: NEEDS WORK
+msgid "Backups are stored in Documents/TAC Projects/database_backups"
+msgstr "Kopie zapasowe są przechowywane w Dokumenty/TAC Projekty/bazy_danych_zapasowych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1093
+#: NEEDS WORK
+msgid "No backups found"
+msgstr "Nie znaleziono kopii zapasowych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1094
+#: NEEDS WORK
+msgid "Create a backup or import an existing database file"
+msgstr "Utwórz kopię zapasową lub zaimportuj istniejący plik bazy danych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1112
+#: NEEDS WORK
+#, python-brace-format
+msgid "{:.1f} MB • {} projects • {}"
+msgstr "{:.1f} MB • {} projektów • {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1120
+#: NEEDS WORK
+msgid "Valid backup"
+msgstr "Ważna kopia zapasowa"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1123
+#: NEEDS WORK
+msgid "Invalid or corrupted backup"
+msgstr "Nieprawidłowa lub uszkodzona kopia zapasowa"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1135
+#: NEEDS WORK
+msgid "Import this backup"
+msgstr "Importuj tę kopię zapasową"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1143
+#: NEEDS WORK
+msgid "Delete backup"
+msgstr "Usuń kopię zapasową"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1155
+#: NEEDS WORK
+msgid "Creating..."
+msgstr "Tworzenie..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1173
+#: NEEDS WORK
+msgid "Backup created successfully"
+msgstr "Kopia zapasowa została pomyślnie utworzona"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1179
+#: NEEDS WORK
+msgid "Backup Failed"
+msgstr "Kopia zapasowa nie powiodła się"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1180
+#: NEEDS WORK
+msgid "Could not create backup. Check the console for details."
+msgstr "Nie można utworzyć kopii zapasowej. Sprawdź konsolę, aby uzyskać szczegóły."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1193
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1256
+#: NEEDS WORK
+msgid "Import"
+msgstr "Importuj"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1199
+#: NEEDS WORK
+msgid "Database files (*.db)"
+msgstr "Pliki bazy danych (*.db)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1204
+#: NEEDS WORK
+msgid "All files"
+msgstr "Wszystkie pliki"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1230
+#: NEEDS WORK
+msgid "Invalid Backup"
+msgstr "Nieprawidłowa kopia zapasowa"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1231
+#: NEEDS WORK
+msgid "The selected file is not a valid TAC database backup."
+msgstr "Wybrany plik nie jest prawidłowym kopią zapasową bazy danych TAC."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1249
+#: NEEDS WORK
+msgid "Import Database?"
+msgstr "Importuj bazę danych?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1250
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This will replace your current database with the selected backup.\n"
+"\n"
+"The backup contains {} projects.\n"
+"\n"
+"Your current database will be backed up before importing."
+msgstr ""
+"To zastąpi obecną bazę danych wybraną kopią zapasową.\n"
+"\n"
+"Kopia zapasowa zawiera {} projektów.\n"
+"\n"
+"Twoja obecna baza danych zostanie zarchiwizowana przed importem."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1275
+#: NEEDS WORK
+msgid "Importing Database"
+msgstr "Importowanie bazy danych"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1276
+#: NEEDS WORK
+msgid "Please wait while the database is being imported..."
+msgstr "Proszę czekać, podczas gdy baza danych jest importowana..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1295
+#: NEEDS WORK
+msgid "Import Successful"
+msgstr "Importowanie zakończone sukcesem"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1296
+#: NEEDS WORK
+msgid "Database imported successfully. The application will refresh to show the imported projects."
+msgstr ""
+"Baza danych została pomyślnie zaimportowana. Aplikacja odświeży się, aby wyświetlić zaimportowane "
+"projekty."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1311
+#: NEEDS WORK
+msgid "Import Failed"
+msgstr "Importowanie nie powiodło się"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1312
+#: NEEDS WORK
+msgid "Could not import the database. Your current database remains unchanged."
+msgstr "Nie można zaimportować bazy danych. Twoja obecna baza danych pozostaje niezmieniona."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1323
+#: NEEDS WORK
+msgid "Delete Backup?"
+msgstr "Usuń kopię zapasową?"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1324
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Are you sure you want to delete '{}'?\n"
+"\n"
+"This action cannot be undone."
+msgstr ""
+"Czy na pewno chcesz usunąć '{}'?\n"
+"\n"
+"Tej akcji nie można cofnąć."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1328
+# File: usr/share/tac-writer/ui/components.py, line: 918
+#: NEEDS WORK
+msgid "Delete"
+msgstr "Usuń"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 163
+#: NEEDS WORK
+#, python-brace-format
+msgid "Session {}"
+msgstr "Sesja {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 170
+#: NEEDS WORK
+msgid "Long Break"
+msgstr "Długa przerwa"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 176
+#: NEEDS WORK
+msgid "Rest Time"
+msgstr "Czas odpoczynku"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 189
+# File: usr/share/tac-writer/ui/main_window.py, line: 115
+#: NEEDS WORK
+msgid "Pomodoro Timer"
+msgstr "Timer Pomodoro"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 228
+#: NEEDS WORK
+msgid "Minimize"
+msgstr "Zminimalizuj"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 281
+#: NEEDS WORK
+msgid "Reset"
+msgstr "Resetuj"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 386
+#: NEEDS WORK
+msgid "⏸ Pause"
+msgstr "⏸ Wstrzymaj"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 390
+#: NEEDS WORK
+msgid "▶ Start"
+msgstr "▶ Rozpocznij"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 575
+#: NEEDS WORK
+msgid "Welcome to TAC"
+msgstr "Witamy w TAC"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 581
+# File: usr/share/tac-writer/ui/main_window.py, line: 777
+#: NEEDS WORK
+msgid "Continuous Argumentation Technique"
+msgstr "Ciągła Technika Argumentacji"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 588
+#: NEEDS WORK
+msgid "Create structured academic texts with guided paragraph types"
+msgstr "Twórz strukturalne teksty akademickie z kierowanymi typami akapitów"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 600
+#: NEEDS WORK
+msgid "How To Wiki"
+msgstr "Jak To Wiki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 604
+#: NEEDS WORK
+msgid "Access the online documentation and tutorials"
+msgstr "Uzyskaj dostęp do dokumentacji online i samouczków"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 614
+#: NEEDS WORK
+msgid "Note:"
+msgstr "Uwaga:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 614
+#: NEEDS WORK
+msgid "exporting to ODT might require some adjustment in your Office Suite."
+msgstr "eksportowanie do ODT może wymagać pewnych dostosowań w Twoim pakiecie biurowym."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 627
+#: NEEDS WORK
+msgid "Start Writing"
+msgstr "Zacznij pisać"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 628
+#: NEEDS WORK
+msgid "Choose a template to get started"
+msgstr "Wybierz szablon, aby rozpocząć"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 638
+#: NEEDS WORK
+msgid "Start"
+msgstr "Start"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 687
+#: NEEDS WORK
+msgid "Search projects..."
+msgstr "Szukaj projektów..."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 781
+#: NEEDS WORK
+msgid "Rename project"
+msgstr "Zmień nazwę projektu"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 790
+#: NEEDS WORK
+msgid "Delete project"
+msgstr "Usuń projekt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 863
+#: NEEDS WORK
+msgid "Rename Project"
+msgstr "Zmień nazwę projektu"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 864
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enter new name for '{}'"
+msgstr "Wprowadź nową nazwę dla '{}'"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 881
+#: NEEDS WORK
+msgid "Rename"
+msgstr "Zmień nazwę"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 913
+#: NEEDS WORK
+#, python-brace-format
+msgid "Delete '{}'?"
+msgstr "Usuń '{}' ?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 914
+#: NEEDS WORK
+msgid "This project will be moved to trash and can be recovered."
+msgstr "Ten projekt zostanie przeniesiony do kosza i można go odzyskać."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1044
+#: NEEDS WORK
+msgid "Manage footnotes"
+msgstr "Zarządzaj przypisami"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1053
+#: NEEDS WORK
+msgid "Toggle spell checking"
+msgstr "Przełącz sprawdzanie pisowni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1069
+#: NEEDS WORK
+msgid "Remove paragraph"
+msgstr "Usuń akapit"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1195
+# File: usr/share/tac-writer/ui/main_window.py, line: 329
+#: NEEDS WORK
+msgid "Title 1"
+msgstr "Tytuł 1"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1196
+# File: usr/share/tac-writer/ui/main_window.py, line: 330
+#: NEEDS WORK
+msgid "Title 2"
+msgstr "Tytuł 2"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1197
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
+#: NEEDS WORK
+msgid "Introduction"
+msgstr "Wprowadzenie"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1198
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+#: NEEDS WORK
+msgid "Argument"
+msgstr "Argumenty"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1199
+# File: usr/share/tac-writer/ui/main_window.py, line: 333
+#: NEEDS WORK
+msgid "Quote"
+msgstr "Cytat"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1200
+# File: usr/share/tac-writer/ui/main_window.py, line: 334
+#: NEEDS WORK
+msgid "Conclusion"
+msgstr "Wniosek"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1202
+#: NEEDS WORK
+msgid "Paragraph"
+msgstr "Akapit"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1260
+#: NEEDS WORK
+msgid "Remove Paragraph?"
+msgstr "Usuń akapit?"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1261
+#: NEEDS WORK
+msgid "This action cannot be undone."
+msgstr "Ta akcja nie może być cofnięta."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1265
+#: NEEDS WORK
+msgid "Remove"
+msgstr "Usuń"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1364
+#: NEEDS WORK
+msgid "Manage Footnotes"
+msgstr "Zarządzaj przypisami"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1391
+#: NEEDS WORK
+msgid "Save"
+msgstr "Zapisz"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1408
+#: NEEDS WORK
+msgid "Add footnotes that will appear as numbered references in your paragraph:"
+msgstr "Dodaj przypisy, które będą się pojawiać jako numerowane odnośniki w twoim akapicie:"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1424
+#: NEEDS WORK
+msgid "Add Footnote"
+msgstr "Dodaj przypis"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1498
+#: NEEDS WORK
+msgid "Enter footnote text..."
+msgstr "Wprowadź tekst przypisu..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 64
+#: NEEDS WORK
+msgid "TAC - Continuous Argumentation Technique"
+msgstr "TAC - Ciągła Technika Argumentacji"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 108
+#: NEEDS WORK
+msgid "New Project (Ctrl+N)"
+msgstr "Nowy projekt (Ctrl+N)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 123
+#: NEEDS WORK
+msgid "Save Project (Ctrl+S)"
+msgstr "Zapisz projekt (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Menu Główny"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 142
+#: NEEDS WORK
+msgid "Export Project..."
+msgstr "Eksportuj projekt..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 143
+#: NEEDS WORK
+msgid "Backup Manager..."
+msgstr "Menedżer kopii zapasowych..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 148
+# File: usr/share/tac-writer/ui/main_window.py, line: 477
+#: NEEDS WORK
+msgid "Undo"
+msgstr "Cofnij"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+# File: usr/share/tac-writer/ui/main_window.py, line: 497
+#: NEEDS WORK
+msgid "Redo"
+msgstr "Ponów"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 159
+#: NEEDS WORK
+msgid "Welcome Guide"
+msgstr "Przewodnik powitalny"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 160
+#: NEEDS WORK
+msgid "About TAC"
+msgstr "O TAC"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 192
+#: NEEDS WORK
+msgid "Projects"
+msgstr "Projekty"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 322
+#: NEEDS WORK
+msgid "Add Paragraph"
+msgstr "Dodaj akapit"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Go to beginning"
+msgstr "Przejdź do początku"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 367
+#: NEEDS WORK
+msgid "Go to end"
+msgstr "Przejdź do końca"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 487
+#: NEEDS WORK
+msgid "Nothing to undo"
+msgstr "Nie ma nic do cofnięcia"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 507
+#: NEEDS WORK
+msgid "Nothing to redo"
+msgstr "Nic do powtórzenia"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 563
+#: NEEDS WORK
+msgid "Paragraph reordered"
+msgstr "Akapit przestawiony"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 614
+#: NEEDS WORK
+msgid "Open Project"
+msgstr "Otwórz projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 617
+#: NEEDS WORK
+msgid "Open"
+msgstr "Otwórz"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 626
+#: NEEDS WORK
+msgid "TAC Projects (*.json)"
+msgstr "Projekty TAC (*.json)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 631
+#: NEEDS WORK
+msgid "All Files"
+msgstr "Wszystkie pliki"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 645
+# File: usr/share/tac-writer/ui/main_window.py, line: 832
+#: NEEDS WORK
+#, python-brace-format
+msgid "Opened project: {}"
+msgstr "Otwarty projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 647
+# File: usr/share/tac-writer/ui/main_window.py, line: 834
+#: NEEDS WORK
+msgid "Failed to open project"
+msgstr "Nie udało się otworzyć projektu"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 660
+#: NEEDS WORK
+msgid "Project saved successfully"
+msgstr "Projekt zapisany pomyślnie"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 664
+#: NEEDS WORK
+msgid "Failed to save project"
+msgstr "Nie udało się zapisać projektu"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 671
+#: NEEDS WORK
+msgid "No project to export"
+msgstr "Brak projektu do wyeksportowania"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 710
+#: NEEDS WORK
+msgid "Database imported successfully"
+msgstr "Baza danych została pomyślnie zaimportowana"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 746
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created project: {}"
+msgstr "Utworzony projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 807
+#: NEEDS WORK
+msgid "Loading project..."
+msgstr "Ładowanie projektu..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 824
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to open project: {}"
+msgstr "Nie udało się otworzyć projektu: {}"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 440
+#: NEEDS WORK
+msgid "Academic Essay"
+msgstr "Esej akademicki"
+# 
+# File: usr/share/tac-writer/core/models.py, line: 441
+#: NEEDS WORK
+msgid "Standard academic essay structure"
+msgstr "Standardowa struktura eseju akademickiego"
