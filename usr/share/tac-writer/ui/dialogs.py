@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any
 
-from core.models import Project, DEFAULT_TEMPLATES, Paragraph
+from core.models import Project, DEFAULT_TEMPLATES
 from core.services import ProjectManager, ExportService
 from core.config import Config
 from utils.helpers import ValidationHelper, FileHelper
@@ -34,7 +34,7 @@ def get_system_fonts():
         families = font_map.list_families()
         for family in families:
             font_names.append(family.get_name())
-    except:
+    except (ImportError, ValueError) as e:
         try:
             # Method 2: Try Pango context
             context = Pango.Context()
@@ -42,10 +42,11 @@ def get_system_fonts():
             families = font_map.list_families()
             for family in families:
                 font_names.append(family.get_name())
-        except:
+        except Exception as e2:
             try:
                 # Method 3: Use fontconfig command
-                result = subprocess.run(['fc-list', ':', 'family'], capture_output=True, text=True)
+                result = subprocess.run(['fc-list', ':', 'family'], 
+                                      capture_output=True, text=True, timeout=5)
                 if result.returncode == 0:
                     font_names = set()
                     for line in result.stdout.strip().split('\n'):
@@ -53,7 +54,7 @@ def get_system_fonts():
                             family = line.split(',')[0].strip()
                             font_names.add(family)
                     font_names = sorted(list(font_names))
-            except:
+            except (subprocess.SubprocessError, subprocess.TimeoutExpired, FileNotFoundError) as e3:
                 # Fallback fonts
                 font_names = ["Liberation Serif", "DejaVu Sans", "Ubuntu", "Cantarell"]
     
@@ -277,6 +278,13 @@ class NewProjectDialog(Adw.Window):
         description = desc_buffer.get_text(start_iter, end_iter, False).strip()
 
         try:
+            # Validate inputs
+            if not name:
+                raise ValueError(_("Project name cannot be empty"))
+            
+            if len(name) > 100:
+                raise ValueError(_("Project name is too long (max 100 characters)"))
+            
             # Create project
             project = self.project_manager.create_project(name, template_name)
             
@@ -287,18 +295,41 @@ class NewProjectDialog(Adw.Window):
             })
             
             # Save project
-            self.project_manager.save_project(project)
+            if not self.project_manager.save_project(project):
+                raise RuntimeError(_("Failed to save project to database"))
             
             # Emit signal and close
             self.emit('project-created', project)
             self.destroy()
             
-        except Exception as e:
-            # Show error
+        except ValueError as validation_error:
+            # Validation error - user input problem
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Invalid Input"),
+                str(validation_error)
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+        
+        except RuntimeError as runtime_error:
+            # Runtime error - operation failed
             error_dialog = Adw.MessageDialog.new(
                 self,
                 _("Error Creating Project"),
-                str(e)
+                str(runtime_error)
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+        
+        except Exception as e:
+            # Unexpected error - show technical details
+            import traceback
+            error_msg = f"{type(e).__name__}: {str(e)}\n\n{traceback.format_exc()}"
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Unexpected Error"),
+                _("An unexpected error occurred. Please report this issue:\n\n") + error_msg
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
@@ -415,7 +446,12 @@ class ExportDialog(Adw.Window):
         # Initialize with default location - TAC Projects subfolder
         documents_dir = self._get_documents_directory()
         default_location = documents_dir / "TAC Projects"
-        default_location.mkdir(parents=True, exist_ok=True)  # Create if doesn't exist
+        try:
+            default_location.mkdir(parents=True, exist_ok=True)
+        except OSError as e:
+            print(_("Warning: Could not create default export directory: {}").format(e))
+            default_location = documents_dir
+        
         self.selected_location = default_location
         self.location_row.set_subtitle(str(default_location))
 
@@ -425,14 +461,13 @@ class ExportDialog(Adw.Window):
         
         # Try XDG user dirs first (Linux)
         try:
-            import subprocess
             result = subprocess.run(['xdg-user-dir', 'DOCUMENTS'], 
                                 capture_output=True, text=True, timeout=5)
             if result.returncode == 0:
                 documents_path = Path(result.stdout.strip())
                 if documents_path.exists():
                     return documents_path
-        except:
+        except (subprocess.SubprocessError, subprocess.TimeoutExpired, FileNotFoundError):
             pass
         
         # Try common localized directory names
@@ -468,7 +503,10 @@ class ExportDialog(Adw.Window):
         
         # Fallback: create Documents if none exist
         documents_dir = home / 'Documentos'  # Default to Portuguese
-        documents_dir.mkdir(exist_ok=True)
+        try:
+            documents_dir.mkdir(exist_ok=True)
+        except OSError:
+            pass
         return documents_dir
 
     def _on_choose_location(self, button):
@@ -627,7 +665,12 @@ class PreferencesDialog(Adw.PreferencesWindow):
         font_model = Gtk.StringList()
 
         # Get system fonts
-        font_names = get_system_fonts()
+        try:
+            font_names = get_system_fonts()
+        except Exception as e:
+            print(_("Error loading system fonts: {}").format(e))
+            font_names = ["Liberation Serif", "DejaVu Sans", "Ubuntu"]
+        
         for font_name in font_names:
             font_model.append(font_name)
 
@@ -671,56 +714,78 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
     def _load_preferences(self):
         """Load preferences from config"""
-        # Appearance
-        self.dark_theme_row.set_active(self.config.get('use_dark_theme', False))
+        try:
+            # Appearance
+            self.dark_theme_row.set_active(self.config.get('use_dark_theme', False))
 
-        # Font
-        font_family = self.config.get('font_family', 'Liberation Serif')
-        model = self.font_family_row.get_model()
-        for i in range(model.get_n_items()):
-            if model.get_string(i) == font_family:
-                self.font_family_row.set_selected(i)
-                break
+            # Font
+            font_family = self.config.get('font_family', 'Liberation Serif')
+            model = self.font_family_row.get_model()
+            for i in range(model.get_n_items()):
+                if model.get_string(i) == font_family:
+                    self.font_family_row.set_selected(i)
+                    break
 
-        self.font_size_row.set_value(self.config.get('font_size', 12))
+            self.font_size_row.set_value(self.config.get('font_size', 12))
 
-        # Behavior
-        self.auto_save_row.set_active(self.config.get('auto_save', True))
-        self.word_wrap_row.set_active(self.config.get('word_wrap', True))
-        self.line_numbers_row.set_active(self.config.get('show_line_numbers', True))
+            # Behavior
+            self.auto_save_row.set_active(self.config.get('auto_save', True))
+            self.word_wrap_row.set_active(self.config.get('word_wrap', True))
+            self.line_numbers_row.set_active(self.config.get('show_line_numbers', True))
+            
+        except Exception as e:
+            print(_("Error loading preferences: {}").format(e))
 
     def _on_dark_theme_changed(self, switch, pspec):
         """Handle dark theme toggle"""
-        self.config.set('use_dark_theme', switch.get_active())
+        try:
+            self.config.set('use_dark_theme', switch.get_active())
 
-        # Apply theme immediately
-        style_manager = Adw.StyleManager.get_default()
-        if switch.get_active():
-            style_manager.set_color_scheme(Adw.ColorScheme.FORCE_DARK)
-        else:
-            style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
+            # Apply theme immediately
+            style_manager = Adw.StyleManager.get_default()
+            if switch.get_active():
+                style_manager.set_color_scheme(Adw.ColorScheme.FORCE_DARK)
+            else:
+                style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
+        except Exception as e:
+            print(_("Error changing theme: {}").format(e))
 
     def _on_font_family_changed(self, combo, pspec):
         """Handle font family change"""
-        model = combo.get_model()
-        selected_font = model.get_string(combo.get_selected())
-        self.config.set('font_family', selected_font)
+        try:
+            model = combo.get_model()
+            selected_font = model.get_string(combo.get_selected())
+            self.config.set('font_family', selected_font)
+        except Exception as e:
+            print(_("Error changing font family: {}").format(e))
 
     def _on_font_size_changed(self, spin, pspec):
         """Handle font size change"""
-        self.config.set('font_size', int(spin.get_value()))
+        try:
+            self.config.set('font_size', int(spin.get_value()))
+        except Exception as e:
+            print(_("Error changing font size: {}").format(e))
 
     def _on_auto_save_changed(self, switch, pspec):
         """Handle auto save toggle"""
-        self.config.set('auto_save', switch.get_active())
+        try:
+            self.config.set('auto_save', switch.get_active())
+        except Exception as e:
+            print(_("Error changing auto save: {}").format(e))
 
     def _on_word_wrap_changed(self, switch, pspec):
         """Handle word wrap toggle"""
-        self.config.set('word_wrap', switch.get_active())
+        try:
+            self.config.set('word_wrap', switch.get_active())
+        except Exception as e:
+            print(_("Error changing word wrap: {}").format(e))
 
     def _on_line_numbers_changed(self, switch, pspec):
         """Handle line numbers toggle"""
-        self.config.set('show_line_numbers', switch.get_active())
+        try:
+            self.config.set('show_line_numbers', switch.get_active())
+        except Exception as e:
+            print(_("Error changing line numbers: {}").format(e))
 
 
 class WelcomeDialog(Adw.Window):
@@ -751,18 +816,21 @@ class WelcomeDialog(Adw.Window):
         headerbar.add_css_class("flat")
 
         # Apply custom CSS to reduce header padding
-        css_provider = Gtk.CssProvider()
-        css_provider.load_from_data(b"""
-        headerbar {
-            min-height: 24px;
-            padding: 2px 6px;
-        }
-        """)
-        Gtk.StyleContext.add_provider_for_display(
-            Gdk.Display.get_default(),
-            css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
-        )
+        try:
+            css_provider = Gtk.CssProvider()
+            css_provider.load_from_data(b"""
+            headerbar {
+                min-height: 24px;
+                padding: 2px 6px;
+            }
+            """)
+            Gtk.StyleContext.add_provider_for_display(
+                Gdk.Display.get_default(),
+                css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION,
+            )
+        except Exception as e:
+            print(_("Error applying welcome dialog CSS: {}").format(e))
 
         main_box.append(headerbar)
 
@@ -874,8 +942,11 @@ class WelcomeDialog(Adw.Window):
 
     def _on_switch_toggled(self, switch, gparam):
         """Handle switch toggle"""
-        self.config.set('show_welcome_dialog', switch.get_active())
-        self.config.save()
+        try:
+            self.config.set('show_welcome_dialog', switch.get_active())
+            self.config.save()
+        except Exception as e:
+            print(_("Error saving welcome dialog preference: {}").format(e))
 
     def _on_start_clicked(self, button):
         """Handle start button click"""
@@ -883,7 +954,6 @@ class WelcomeDialog(Adw.Window):
         
     def _on_wiki_clicked(self, button):
         """Handle wiki button click - open external browser"""
-        import subprocess
         import webbrowser
         
         wiki_url = "https://github.com/big-comm/comm-tac-writer/wiki"
@@ -896,40 +966,8 @@ class WelcomeDialog(Adw.Window):
             try:
                 subprocess.run(['xdg-open', wiki_url], check=False)
             except Exception as e:
-                print(f"Could not open wiki URL: {e}")
+                print(_("Could not open wiki URL: {}").format(e))
 
-
-def AboutDialog(parent):
-    """Create and show about dialog"""
-    dialog = Adw.AboutWindow()
-    dialog.set_transient_for(parent)
-    dialog.set_modal(True)
-
-    # Get config instance to access version info
-    config = Config()
-
-    # Application information
-    dialog.set_application_name(config.APP_NAME)
-    dialog.set_application_icon("tac-writer")
-    dialog.set_version(config.APP_VERSION)
-    dialog.set_developer_name(_(config.APP_DESCRIPTION))
-    dialog.set_website(config.APP_WEBSITE)
-
-    # Description
-    dialog.set_comments(_(config.APP_DESCRIPTION))
-
-    # License
-    dialog.set_license_type(Gtk.License.GPL_3_0)
-
-    # Credits
-    dialog.set_developers([
-        f"{', '.join(config.APP_DEVELOPERS)} {config.APP_WEBSITE}"
-    ])
-    dialog.set_designers(config.APP_DESIGNERS)
-
-    dialog.set_copyright(config.APP_COPYRIGHT)
-
-    return dialog
 
 def AboutDialog(parent):
     """Create and show about dialog"""
@@ -1028,7 +1066,15 @@ class BackupManagerDialog(Adw.Window):
         status_group = Adw.PreferencesGroup()
         status_group.set_title(_("Current Database"))
         
-        db_info = self.project_manager.get_database_info()
+        try:
+            db_info = self.project_manager.get_database_info()
+        except Exception as e:
+            print(_("Error getting database info: {}").format(e))
+            db_info = {
+                'database_path': 'Unknown',
+                'database_size_bytes': 0,
+                'project_count': 0
+            }
         
         # Database path
         path_row = Adw.ActionRow()
@@ -1085,7 +1131,11 @@ class BackupManagerDialog(Adw.Window):
             child = next_child
 
         # Load backups
-        self.backups_list = self.project_manager.list_available_backups()
+        try:
+            self.backups_list = self.project_manager.list_available_backups()
+        except Exception as e:
+            print(_("Error listing backups: {}").format(e))
+            self.backups_list = []
 
         if not self.backups_list:
             # Show empty state
@@ -1155,8 +1205,12 @@ class BackupManagerDialog(Adw.Window):
         button.set_label(_("Creating..."))
 
         def backup_thread():
-            backup_path = self.project_manager.create_manual_backup()
-            GLib.idle_add(self._backup_created, backup_path, button)
+            try:
+                backup_path = self.project_manager.create_manual_backup()
+                GLib.idle_add(self._backup_created, backup_path, button)
+            except Exception as e:
+                print(_("Error in backup thread: {}").format(e))
+                GLib.idle_add(self._backup_created, None, button)
 
         thread = threading.Thread(target=backup_thread, daemon=True)
         thread.start()
@@ -1224,14 +1278,18 @@ class BackupManagerDialog(Adw.Window):
     def _confirm_import(self, backup_path: Path):
         """Show confirmation dialog for import"""
         # Validate backup first
-        if not self.project_manager._validate_backup_file(backup_path):
-            error_dialog = Adw.MessageDialog.new(
-                self,
-                _("Invalid Backup"),
-                _("The selected file is not a valid TAC database backup.")
-            )
-            error_dialog.add_response("ok", _("OK"))
-            error_dialog.present()
+        try:
+            if not self.project_manager._validate_backup_file(backup_path):
+                error_dialog = Adw.MessageDialog.new(
+                    self,
+                    _("Invalid Backup"),
+                    _("The selected file is not a valid TAC database backup.")
+                )
+                error_dialog.add_response("ok", _("OK"))
+                error_dialog.present()
+                return
+        except Exception as e:
+            print(_("Error validating backup: {}").format(e))
             return
 
         # Get backup info
@@ -1240,7 +1298,8 @@ class BackupManagerDialog(Adw.Window):
                 cursor = conn.cursor()
                 cursor.execute("SELECT COUNT(*) FROM projects")
                 project_count = cursor.fetchone()[0]
-        except:
+        except sqlite3.Error as e:
+            print(_("Error reading backup info: {}").format(e))
             project_count = 0
 
         # Show confirmation
@@ -1278,8 +1337,12 @@ class BackupManagerDialog(Adw.Window):
         loading_dialog.present()
 
         def import_thread():
-            success = self.project_manager.import_database(backup_path)
-            GLib.idle_add(self._import_finished, success, loading_dialog)
+            try:
+                success = self.project_manager.import_database(backup_path)
+                GLib.idle_add(self._import_finished, success, loading_dialog)
+            except Exception as e:
+                print(_("Error in import thread: {}").format(e))
+                GLib.idle_add(self._import_finished, False, loading_dialog)
 
         thread = threading.Thread(target=import_thread, daemon=True)
         thread.start()
@@ -1335,7 +1398,10 @@ class BackupManagerDialog(Adw.Window):
     def _delete_confirmed(self, dialog, response, backup):
         """Handle delete confirmation"""
         if response == "delete":
-            success = self.project_manager.delete_backup(backup['path'])
-            if success:
-                self._refresh_backups()
+            try:
+                success = self.project_manager.delete_backup(backup['path'])
+                if success:
+                    self._refresh_backups()
+            except Exception as e:
+                print(_("Error deleting backup: {}").format(e))
         dialog.destroy()

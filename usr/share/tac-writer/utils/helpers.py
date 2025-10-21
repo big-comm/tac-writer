@@ -7,7 +7,7 @@ import os
 import re
 import mimetypes
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Tuple
+from typing import Optional, Dict, Any, Tuple
 from datetime import datetime
 
 from utils.i18n import _

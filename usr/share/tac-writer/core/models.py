@@ -17,7 +17,9 @@ class ParagraphType(Enum):
     TITLE_2 = "title_2"
     INTRODUCTION = "introduction"
     ARGUMENT = "argument"
+    ARGUMENT_RESUMPTION = "argument_resumption"
     QUOTE = "quote"
+    EPIGRAPH = "epigraph"
     CONCLUSION = "conclusion"
 
 class Paragraph:
@@ -70,11 +72,23 @@ class Paragraph:
             self.formatting.update({
                 'indent_first_line': 1.5,
             })
+        elif self.type == ParagraphType.ARGUMENT_RESUMPTION:
+            self.formatting.update({
+                'indent_first_line': 1.5,
+            })
         elif self.type == ParagraphType.QUOTE:
             self.formatting.update({
                 'font_size': 10,
                 'indent_left': 4.0,
                 'line_spacing': 1.0,
+                'italic': True
+            })
+        elif self.type == ParagraphType.EPIGRAPH:
+            self.formatting.update({
+                'font_size': 12,
+                'indent_left': 7.5,
+                'line_spacing': 1.5,
+                'alignment': 'right',
                 'italic': True
             })
 
@@ -307,9 +321,67 @@ class Project:
         self._update_modified_time()
         return True
 
+    @staticmethod
+    def _calculate_word_count(content: str) -> int:
+        """
+        Calculate accurate word count from text content.
+        
+        Args:
+            content: Text content to count words in
+            
+        Returns:
+            int: Number of words
+        """
+        if not content or not content.strip():
+            return 0
+        # Split on whitespace and filter empty strings
+        words = [word for word in content.split() if word.strip()]
+        return len(words)
+
+    @staticmethod
+    def _count_logical_paragraphs(paragraphs: List['Paragraph']) -> int:
+        """
+        Count logical paragraphs following TAC methodology.
+        
+        TAC logical paragraphs are defined as:
+        - Starting with INTRODUCTION type
+        - Followed by optional ARGUMENT and CONCLUSION types
+        - TITLE_1, TITLE_2, and QUOTE types don't count as logical paragraphs
+        
+        Args:
+            paragraphs: List of Paragraph objects
+            
+        Returns:
+            int: Number of logical paragraphs
+        """
+        total_paragraphs = 0
+        is_in_paragraph = False
+        
+        for p in paragraphs:
+            # Types that always start a new logical paragraph block
+            if p.type == ParagraphType.INTRODUCTION:
+                total_paragraphs += 1
+                is_in_paragraph = True
+            # Types that continue a paragraph, but only if one was already started
+            elif p.type in [ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                if not is_in_paragraph:
+                    # If we find an argument without an introduction before,
+                    # count it as a separate paragraph to not lose it
+                    total_paragraphs += 1
+                    is_in_paragraph = False  # Reset for the next one
+            # Other types (TITLE_1, TITLE_2, QUOTE) don't affect main paragraph counting
+        
+        return total_paragraphs
+
     def get_statistics(self) -> Dict[str, int]:
-        """Get project statistics"""
-        total_words = sum(p.get_word_count() for p in self.paragraphs)
+        """
+        Get comprehensive project statistics.
+        
+        Returns:
+            dict: Statistics including word count, character count, and paragraph counts
+        """
+        # Calculate word counts using static method for consistency
+        total_words = sum(self._calculate_word_count(p.content) for p in self.paragraphs)
         total_chars = sum(p.get_character_count() for p in self.paragraphs)
         total_chars_no_spaces = sum(p.get_character_count(False) for p in self.paragraphs)
         
@@ -320,23 +392,8 @@ class Project:
                 1 for p in self.paragraphs if p.type == paragraph_type
             )
         
-        # Count logical paragraphs following TAC technique
-        # Paragraphs that start with INTRODUCTION or are standalone titles/quotes
-        total_paragraphs = 0
-        is_in_paragraph = False
-        for p in self.paragraphs:
-            # Types that always start a new logical paragraph block
-            if p.type in [ParagraphType.INTRODUCTION]:
-                total_paragraphs += 1
-                is_in_paragraph = (p.type == ParagraphType.INTRODUCTION)
-            # Types that continue a paragraph, but only if one was already started
-            elif p.type in [ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                if not is_in_paragraph:
-                    # If we find an argument without an introduction before,
-                    # count it as a separate paragraph to not lose it.
-                    total_paragraphs += 1
-                    is_in_paragraph = False  # Reset for the next one
-            # Other types don't affect main paragraph counting
+        # Count logical paragraphs using static method
+        total_paragraphs = self._count_logical_paragraphs(self.paragraphs)
         
         return {
             'total_paragraphs': total_paragraphs,

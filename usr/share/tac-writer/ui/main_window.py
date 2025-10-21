@@ -7,16 +7,15 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Adw, Gio, GObject, GLib, Gdk
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
 from core.models import Project, ParagraphType
 from core.services import ProjectManager, ExportService
 from core.config import Config
-from utils.helpers import TextHelper, ValidationHelper, FormatHelper
+from utils.helpers import FormatHelper
 from utils.i18n import _
-from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper
+from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper, PomodoroTimer
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog
-from .components import PomodoroTimer
 
 
 class MainWindow(Adw.ApplicationWindow):
@@ -330,7 +329,9 @@ class MainWindow(Adw.ApplicationWindow):
             (_("Title 2"), ParagraphType.TITLE_2),
             (_("Introduction"), ParagraphType.INTRODUCTION),
             (_("Argument"), ParagraphType.ARGUMENT),
+            (_("Argument Resumption"), ParagraphType.ARGUMENT_RESUMPTION),
             (_("Quote"), ParagraphType.QUOTE),
+            (_("Epigraph"), ParagraphType.EPIGRAPH),
             (_("Conclusion"), ParagraphType.CONCLUSION),
         ]
 

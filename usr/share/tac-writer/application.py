@@ -9,7 +9,6 @@ import gettext
 import locale
 import os
 import warnings
-import enchant
 import traceback
 
 # Third-party imports
@@ -24,6 +23,14 @@ from core.config import Config
 from core.services import ProjectManager
 from ui.main_window import MainWindow
 from utils.i18n import _
+
+# Try to load enchant for spell checking
+try:
+    import enchant
+    ENCHANT_AVAILABLE = True
+except ImportError:
+    ENCHANT_AVAILABLE = False
+    enchant = None
 
 # Try to load PyGTKSpellcheck
 try:
@@ -109,12 +116,15 @@ def setup_system_localization():
     try:
         # Configure locale using automatic detection
         locale.setlocale(locale.LC_ALL, '')
-    except locale.Error:
+    except locale.Error as e:
         # Fallback to C locale
         try:
             locale.setlocale(locale.LC_ALL, 'C.UTF-8')
         except locale.Error:
-            locale.setlocale(locale.LC_ALL, 'C')
+            try:
+                locale.setlocale(locale.LC_ALL, 'C')
+            except locale.Error as fallback_error:
+                print(_("Warning: Could not set system locale: {}").format(fallback_error))
     
     # Configure environment variables for GTK/GSpell translations
     detected_language = target_language.split('_')[0]  # pt_BR -> pt
@@ -139,10 +149,10 @@ def setup_system_localization():
             try:
                 gettext.bindtextdomain(domain, '/usr/share/locale')
             except Exception:
-                pass  # Silent failure
+                pass  # Silent failure for optional domains
     
     except Exception:
-        pass  # Silent failure
+        pass  # Silent failure for gettext configuration
     
     return target_language
 
@@ -195,60 +205,78 @@ class TacApplication(Adw.Application):
     
     def _check_spell_dependencies(self):
         """Check and configure spell checking dependencies"""
-        if SPELL_CHECK_AVAILABLE:
-            try:
-                # Check for available dictionaries
-                available_dicts = []
-                for lang in ['pt_BR', 'en_US', 'en_GB', 'es_ES', 'fr_FR', 'de_DE', 'it_IT']:
-                    try:
-                        if enchant.dict_exists(lang):
-                            available_dicts.append(lang)
-                    except:
-                        pass
-
-                if available_dicts:
-                    if os.environ.get('TAC_DEBUG'):
-                        print(f"Available spell check dictionaries: {available_dicts}")
-                    # Update config with actually available languages
-                    self.config.set('spell_check_available_languages', available_dicts)
-                    
-                    # Use auto-detected language if available
-                    if DETECTED_SPELLCHECK_LANGUAGE in available_dicts:
-                        detected_language = DETECTED_SPELLCHECK_LANGUAGE
-                        if os.environ.get('TAC_DEBUG'):
-                            print(f"Using auto-detected language: {detected_language}")
-                    else:
-                        # Fallback to first available
-                        detected_language = available_dicts[0]
-                        if os.environ.get('TAC_DEBUG'):
-                            print(f"Auto-detected language not available, using fallback: {detected_language}")
-                    
-                    self.config.set_spell_check_language(detected_language)
-                    
-                else:
-                    if os.environ.get('TAC_DEBUG'):
-                        print("No spell check dictionaries found - disabling spell checking")
-                    self.config.set_spell_check_enabled(False)
-                    
-            except ImportError:
-                if os.environ.get('TAC_DEBUG'):
-                    print("Enchant backend not available - disabling spell checking")
-                self.config.set_spell_check_enabled(False)
-        else:
+        if not SPELL_CHECK_AVAILABLE:
             if os.environ.get('TAC_DEBUG'):
-                print("PyGTKSpellcheck not installed - disabling spell checking")
+                print(_("PyGTKSpellcheck not installed - disabling spell checking"))
+            self.config.set_spell_check_enabled(False)
+            return
+        
+        if not ENCHANT_AVAILABLE:
+            if os.environ.get('TAC_DEBUG'):
+                print(_("Enchant backend not available - disabling spell checking"))
+            self.config.set_spell_check_enabled(False)
+            return
+        
+        try:
+            # Check for available dictionaries
+            available_dicts = []
+            for lang in ['pt_BR', 'en_US', 'en_GB', 'es_ES', 'fr_FR', 'de_DE', 'it_IT']:
+                try:
+                    if enchant.dict_exists(lang):
+                        available_dicts.append(lang)
+                except Exception as e:
+                    if os.environ.get('TAC_DEBUG'):
+                        print(_("Error checking dictionary {}: {}").format(lang, e))
+
+            if available_dicts:
+                if os.environ.get('TAC_DEBUG'):
+                    print(_("Available spell check dictionaries: {}").format(available_dicts))
+                
+                # Update config with actually available languages
+                self.config.set('spell_check_available_languages', available_dicts)
+                
+                # Use auto-detected language if available
+                if DETECTED_SPELLCHECK_LANGUAGE in available_dicts:
+                    detected_language = DETECTED_SPELLCHECK_LANGUAGE
+                    if os.environ.get('TAC_DEBUG'):
+                        print(_("Using auto-detected language: {}").format(detected_language))
+                else:
+                    # Fallback to first available
+                    detected_language = available_dicts[0]
+                    if os.environ.get('TAC_DEBUG'):
+                        print(_("Auto-detected language not available, using fallback: {}").format(detected_language))
+                
+                self.config.set_spell_check_language(detected_language)
+                
+            else:
+                if os.environ.get('TAC_DEBUG'):
+                    print(_("No spell check dictionaries found - disabling spell checking"))
+                self.config.set_spell_check_enabled(False)
+                
+        except ImportError as e:
+            if os.environ.get('TAC_DEBUG'):
+                print(_("Import error while checking spell dependencies: {}").format(e))
+            self.config.set_spell_check_enabled(False)
+        except Exception as e:
+            if os.environ.get('TAC_DEBUG'):
+                print(_("Unexpected error checking spell dependencies: {}").format(e))
             self.config.set_spell_check_enabled(False)
     
     def _on_startup(self, app):
         """Called when application starts"""
-        # Setup application actions
-        self._setup_actions()
-        
-        # Setup application menu and shortcuts
-        self._setup_menu()
-        
-        # Apply application theme
-        self._setup_theme()
+        try:
+            # Setup application actions
+            self._setup_actions()
+            
+            # Setup application menu and shortcuts
+            self._setup_menu()
+            
+            # Apply application theme
+            self._setup_theme()
+            
+        except Exception as e:
+            print(_("Error during application startup: {}: {}").format(type(e).__name__, e))
+            traceback.print_exc()
     
     def _on_activate(self, app):
         """Called when application is activated"""
@@ -260,14 +288,14 @@ class TacApplication(Adw.Application):
                     config=self.config
                 )
                 if os.environ.get('TAC_DEBUG'):
-                    print("Main window created")
+                    print(_("Main window created"))
             
             self.main_window.present()
             if os.environ.get('TAC_DEBUG'):
-                print("Main window presented")
+                print(_("Main window presented"))
             
         except Exception as e:
-            print(f"Error activating application: {e}")
+            print(_("Error activating application: {}: {}").format(type(e).__name__, e))
             traceback.print_exc()
             self.quit()
     
@@ -283,165 +311,205 @@ class TacApplication(Adw.Application):
             ('quit', self._action_quit),
         ]
         
-        for action_name, callback in actions:
-            action = Gio.SimpleAction.new(action_name, None)
-            action.connect('activate', callback)
-            self.add_action(action)
+        try:
+            for action_name, callback in actions:
+                action = Gio.SimpleAction.new(action_name, None)
+                action.connect('activate', callback)
+                self.add_action(action)
+        except Exception as e:
+            print(_("Error setting up actions: {}: {}").format(type(e).__name__, e))
+            traceback.print_exc()
     
     def _setup_menu(self):
         """Setup application menu and keyboard shortcuts"""
-        # Keyboard shortcuts
-        shortcuts = [
-            ('<Control>n', 'app.new_project'),
-            ('<Control>o', 'app.open_project'),
-            ('<Control>s', 'app.save_project'),
-            ('<Control>e', 'app.export_project'),
-            ('<Control>comma', 'app.preferences'),
-            ('<Control>q', 'app.quit'),
-            # Global undo/redo shortcuts (backup if window shortcuts fail)
-            ('<Control>z', 'app.undo'),
-            ('<Control><Shift>z', 'app.redo'),
-        ]
-        
-        for accelerator, action in shortcuts:
-            self.set_accels_for_action(action, [accelerator])
+        try:
+            # Keyboard shortcuts
+            shortcuts = [
+                ('<Control>n', 'app.new_project'),
+                ('<Control>o', 'app.open_project'),
+                ('<Control>s', 'app.save_project'),
+                ('<Control>e', 'app.export_project'),
+                ('<Control>comma', 'app.preferences'),
+                ('<Control>q', 'app.quit'),
+                # Global undo/redo shortcuts (backup if window shortcuts fail)
+                ('<Control>z', 'app.undo'),
+                ('<Control><Shift>z', 'app.redo'),
+            ]
+            
+            for accelerator, action in shortcuts:
+                self.set_accels_for_action(action, [accelerator])
+                
+        except Exception as e:
+            print(_("Error setting up menu: {}: {}").format(type(e).__name__, e))
+            traceback.print_exc()
     
     def _setup_theme(self):
         """Setup application theme"""
-        style_manager = Adw.StyleManager.get_default()
-        
-        # Apply theme preference
-        if self.config.get('use_dark_theme', False):
-            style_manager.set_color_scheme(Adw.ColorScheme.FORCE_DARK)
-        else:
-            style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
-        
-        # Force GTK to reload translations with new locale
         try:
-            # This forces GTK to reload translations
-            display = Gtk.Widget.get_default_direction()
+            style_manager = Adw.StyleManager.get_default()
             
-        except Exception:
-            pass  # Silent failure
-        
-        # Load custom CSS for drag and drop and spell checking
-        css_provider = Gtk.CssProvider()
-        css_data = '''
-        .card.draggable-hover {
-            background: alpha(@accent_color, 0.05);
-            border: 1px solid alpha(@accent_color, 0.3);
-            transition: all 200ms ease;
-        }
+            # Apply theme preference
+            if self.config.get('use_dark_theme', False):
+                style_manager.set_color_scheme(Adw.ColorScheme.FORCE_DARK)
+            else:
+                style_manager.set_color_scheme(Adw.ColorScheme.DEFAULT)
+            
+            # Force GTK to reload translations with new locale
+            try:
+                # This forces GTK to reload translations
+                display = Gtk.Widget.get_default_direction()
+                
+            except Exception:
+                pass  # Silent failure for translation reload
+            
+            # Load custom CSS for drag and drop and spell checking
+            css_provider = Gtk.CssProvider()
+            css_data = '''
+            .card.draggable-hover {
+                background: alpha(@accent_color, 0.05);
+                border: 1px solid alpha(@accent_color, 0.3);
+                transition: all 200ms ease;
+            }
 
-        .card.dragging {
-            opacity: 0.6;
-            transform: scale(0.98);
-            transition: all 150ms ease;
-        }
+            .card.dragging {
+                opacity: 0.6;
+                transform: scale(0.98);
+                transition: all 150ms ease;
+            }
 
-        .card.drop-target {
-            background: alpha(@accent_color, 0.1);
-            border: 2px solid @accent_color;
-            transition: all 200ms ease;
-        }
+            .card.drop-target {
+                background: alpha(@accent_color, 0.1);
+                border: 2px solid @accent_color;
+                transition: all 200ms ease;
+            }
 
-        /* Spell check styles */
-        .spell-error {
-            text-decoration: underline;
-            text-decoration-color: red;
-            text-decoration-style: wavy;
-        }
+            /* Spell check styles */
+            .spell-error {
+                text-decoration: underline;
+                text-decoration-color: red;
+                text-decoration-style: wavy;
+            }
 
-        /* Undo/redo feedback styles */
-        .undo-feedback {
-            background: alpha(@success_color, 0.1);
-            border: 1px solid alpha(@success_color, 0.3);
-            transition: all 300ms ease;
-        }
+            /* Undo/redo feedback styles */
+            .undo-feedback {
+                background: alpha(@success_color, 0.1);
+                border: 1px solid alpha(@success_color, 0.3);
+                transition: all 300ms ease;
+            }
 
-        .redo-feedback {
-            background: alpha(@warning_color, 0.1);
-            border: 1px solid alpha(@warning_color, 0.3);
-            transition: all 300ms ease;
-        }
+            .redo-feedback {
+                background: alpha(@warning_color, 0.1);
+                border: 1px solid alpha(@warning_color, 0.3);
+                transition: all 300ms ease;
+            }
 
-        /* Wiki help button highlight */
-        .wiki-help-button {
-            background: alpha(@warning_color, 0.35);
-            border: 1px solid alpha(@warning_color, 0.5);
-            border-radius: 6px;
-            transition: all 200ms ease;
-        }
+            /* Wiki help button highlight */
+            .wiki-help-button {
+                background: alpha(@warning_color, 0.35);
+                border: 1px solid alpha(@warning_color, 0.5);
+                border-radius: 6px;
+                transition: all 200ms ease;
+            }
 
-        .wiki-help-button:hover {
-            background: alpha(@warning_color, 0.45);
-            border: 1px solid alpha(@warning_color, 0.6);
-        }
-        '''
-        
-        css_provider.load_from_data(css_data.encode())
-        
-        # Apply CSS safely
-        try:
-            display = Gdk.Display.get_default()
-            if display:
-                Gtk.StyleContext.add_provider_for_display(
-                    display,
-                    css_provider,
-                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-                )
+            .wiki-help-button:hover {
+                background: alpha(@warning_color, 0.45);
+                border: 1px solid alpha(@warning_color, 0.6);
+            }
+            '''
+            
+            css_provider.load_from_data(css_data.encode())
+            
+            # Apply CSS safely
+            try:
+                display = Gdk.Display.get_default()
+                if display:
+                    Gtk.StyleContext.add_provider_for_display(
+                        display,
+                        css_provider,
+                        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                    )
+            except Exception as e:
+                if os.environ.get('TAC_DEBUG'):
+                    print(_("Could not apply CSS: {}").format(e))
+                    
         except Exception as e:
-            if os.environ.get('TAC_DEBUG'):
-                print(f"Could not apply CSS: {e}")
+            print(_("Error setting up theme: {}: {}").format(type(e).__name__, e))
+            traceback.print_exc()
     
     # Existing action methods
     def _action_new_project(self, action, param):
         """Handle new project action"""
-        if self.main_window:
-            self.main_window.show_new_project_dialog()
+        try:
+            if self.main_window:
+                self.main_window.show_new_project_dialog()
+        except Exception as e:
+            print(_("Error showing new project dialog: {}: {}").format(type(e).__name__, e))
     
     def _action_open_project(self, action, param):
         """Handle open project action"""
-        if self.main_window:
-            self.main_window.show_open_project_dialog()
+        try:
+            if self.main_window:
+                self.main_window.show_open_project_dialog()
+        except Exception as e:
+            print(_("Error showing open project dialog: {}: {}").format(type(e).__name__, e))
     
     def _action_save_project(self, action, param):
         """Handle save project action"""
-        if self.main_window:
-            self.main_window.save_current_project()
+        try:
+            if self.main_window:
+                self.main_window.save_current_project()
+        except Exception as e:
+            print(_("Error saving project: {}: {}").format(type(e).__name__, e))
     
     def _action_export_project(self, action, param):
         """Handle export project action"""
-        if self.main_window:
-            self.main_window.show_export_dialog()
+        try:
+            if self.main_window:
+                self.main_window.show_export_dialog()
+        except Exception as e:
+            print(_("Error showing export dialog: {}: {}").format(type(e).__name__, e))
     
     def _action_preferences(self, action, param):
         """Handle preferences action"""
-        if self.main_window:
-            self.main_window.show_preferences_dialog()
+        try:
+            if self.main_window:
+                self.main_window.show_preferences_dialog()
+        except Exception as e:
+            print(_("Error showing preferences dialog: {}: {}").format(type(e).__name__, e))
     
     def _action_about(self, action, param):
-        """Handle about action"""  
-        if self.main_window:
-            self.main_window.show_about_dialog()
+        """Handle about action"""
+        try:
+            if self.main_window:
+                self.main_window.show_about_dialog()
+        except Exception as e:
+            print(_("Error showing about dialog: {}: {}").format(type(e).__name__, e))
     
     def _action_quit(self, action, param):
         """Handle quit action"""
-        self.quit()
+        try:
+            self.quit()
+        except Exception as e:
+            print(_("Error quitting application: {}: {}").format(type(e).__name__, e))
     
     def do_shutdown(self):
         """Called when application shuts down"""
-        # Save configuration
-        if self.config:
-            self.config.save()
+        try:
+            # Save configuration
+            if self.config:
+                self.config.save()
+                if os.environ.get('TAC_DEBUG'):
+                    print(_("Configuration saved"))
+            
+            # Call parent shutdown
+            Adw.Application.do_shutdown(self)
+            
             if os.environ.get('TAC_DEBUG'):
-                print("Configuration saved")
-        
-        # Call parent shutdown
-        Adw.Application.do_shutdown(self)
-        
-        if os.environ.get('TAC_DEBUG'):
-            print("Application shutdown complete")
+                print(_("Application shutdown complete"))
+                
+        except Exception as e:
+            print(_("Error during shutdown: {}: {}").format(type(e).__name__, e))
+            traceback.print_exc()
     
     # Utility methods for debugging
     def debug_spell_config(self):
@@ -449,7 +517,7 @@ class TacApplication(Adw.Application):
         if self.config:
             self.config.debug_spell_config()
         else:
-            print("No config available for spell check debug")
+            print(_("No config available for spell check debug"))
     
     def get_main_window(self):
         """Get reference to main window"""

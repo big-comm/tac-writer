@@ -297,64 +297,67 @@ class PomodoroDialog(Adw.Window):
     
     def _setup_styles(self):
         """Setup custom CSS styles"""
-        css_provider = Gtk.CssProvider()
-        css_data = """
-        .timer-display {
-            font-size: 72px;
-            font-weight: bold;
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
-            color: @accent_color;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .header-area {
-            background: transparent;
-        }
-        
-        .timer-container {
-            background: alpha(@accent_color, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-        }
-        
-        button.pill {
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
-        
-        button.pill:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        button.pill:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        button.circular {
-            border-radius: 15px;
-            min-width: 30px;
-            min-height: 30px;
-            max-width: 30px;
-            max-height: 30px;
-            padding: 0;
-        }
-        
-        button.circular:hover {
-            background: alpha(@accent_color, 0.1);
-        }
-        """
-        
-        css_provider.load_from_data(css_data.encode())
-        Gtk.StyleContext.add_provider_for_display(
-            Gdk.Display.get_default(),
-            css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        )
+        try:
+            css_provider = Gtk.CssProvider()
+            css_data = """
+            .timer-display {
+                font-size: 72px;
+                font-weight: bold;
+                font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+                color: @accent_color;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .header-area {
+                background: transparent;
+            }
+            
+            .timer-container {
+                background: alpha(@accent_color, 0.1);
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+            }
+            
+            button.pill {
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 16px;
+                transition: all 0.2s ease;
+            }
+            
+            button.pill:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            }
+            
+            button.pill:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            button.circular {
+                border-radius: 15px;
+                min-width: 30px;
+                min-height: 30px;
+                max-width: 30px;
+                max-height: 30px;
+                padding: 0;
+            }
+            
+            button.circular:hover {
+                background: alpha(@accent_color, 0.1);
+            }
+            """
+            
+            css_provider.load_from_data(css_data.encode())
+            Gtk.StyleContext.add_provider_for_display(
+                Gdk.Display.get_default(),
+                css_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            )
+        except Exception as e:
+            print(_("Error setting up Pomodoro dialog styles: {}").format(e))
     
     def _update_display(self):
         """Update dialog display with current timer information"""
@@ -487,10 +490,11 @@ class SpellCheckHelper:
                 try:
                     if enchant.dict_exists(lang):
                         self.available_languages.append(lang)
-                except:
-                    pass
+                except Exception as e:
+                    print(_("Error checking dictionary {}: {}").format(lang, e))
 
-        except ImportError:
+        except ImportError as e:
+            print(_("Enchant not available for spell checking: {}").format(e))
             self.available_languages = ['pt_BR', 'en_US', 'es_ES', 'fr_FR', 'de_DE']
 
     def setup_spell_check(self, text_view, language=None):
@@ -514,6 +518,7 @@ class SpellCheckHelper:
             return spell_checker
 
         except Exception as e:
+            print(_("Spell check setup failed: {}").format(e))
             return None
 
     def enable_spell_check(self, text_view, enabled=True):
@@ -530,8 +535,8 @@ class SpellCheckHelper:
                     spell_checker.enable()
                 else:
                     spell_checker.disable()
-        except Exception:
-            pass
+        except Exception as e:
+            print(_("Error toggling spell check: {}").format(e))
 
 
 class WelcomeView(Gtk.Box):
@@ -615,12 +620,6 @@ class WelcomeView(Gtk.Box):
         note.set_halign(Gtk.Align.CENTER)
         content_box.append(note)
 
-        # Tips
-        #tips = Gtk.Label()
-        #tips.set_markup("<span size='small'><i>" + _("Tip:") + " " + _("for direct quotes with less than 4 lines, use argument box.") + "</i></span>")
-        #tips.set_halign(Gtk.Align.CENTER)
-        #content_box.append(tips)
-
     def _create_template_section(self):
         """Create template selection section"""
         template_group = Adw.PreferencesGroup()
@@ -655,12 +654,12 @@ class WelcomeView(Gtk.Box):
         try:
             # Try to open with default browser
             webbrowser.open(wiki_url)
-        except Exception:
+        except Exception as e:
             # Fallback: try xdg-open on Linux
             try:
                 subprocess.run(['xdg-open', wiki_url], check=False)
-            except Exception as e:
-                print(f"Could not open wiki URL: {e}")
+            except Exception as fallback_error:
+                print(_("Could not open wiki URL: {}").format(fallback_error))
 
     def _create_recent_section(self):
         """Create recent projects section"""
@@ -804,7 +803,7 @@ class ProjectListWidget(Gtk.Box):
                 date_label.add_css_class("caption")
                 date_label.add_css_class("dim-label")
                 header_box.append(date_label)
-            except:
+            except (ValueError, TypeError):
                 pass
 
         box.append(header_box)
@@ -972,29 +971,33 @@ class ParagraphEditor(Gtk.Box):
 
     def _on_realize(self, widget):
         """Called when widget is shown for the first time"""
-        formatting = self.paragraph.formatting
-        font_family = formatting.get('font_family', 'Adwaita Sans')
-        font_size = formatting.get('font_size', 12)
-        
-        # Use CSS cache instead of creating individual provider
-        css_cache = get_cached_css_provider(font_family, font_size)
-        self.text_view.add_css_class(css_cache['class_name'])
-        
-        # Apply provider globally only once
-        if not hasattr(self.__class__, '_css_applied'):
-            display = Gdk.Display.get_default()
-            if display:
-                Gtk.StyleContext.add_provider_for_display(
-                    display,
-                    css_cache['provider'],
-                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-                )
-            self.__class__._css_applied = True
-        
-        self._apply_formatting()
-        
-        # Setup spell check synchronously after text_view is ready
-        self._setup_spell_check()
+        try:
+            formatting = self.paragraph.formatting
+            font_family = formatting.get('font_family', 'Adwaita Sans')
+            font_size = formatting.get('font_size', 12)
+            
+            # Use CSS cache instead of creating individual provider
+            css_cache = get_cached_css_provider(font_family, font_size)
+            self.text_view.add_css_class(css_cache['class_name'])
+            
+            # Apply provider globally only once
+            if not hasattr(self.__class__, '_css_applied'):
+                display = Gdk.Display.get_default()
+                if display:
+                    Gtk.StyleContext.add_provider_for_display(
+                        display,
+                        css_cache['provider'],
+                        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+                    )
+                self.__class__._css_applied = True
+            
+            self._apply_formatting()
+            
+            # Setup spell check synchronously after text_view is ready
+            self._setup_spell_check()
+            
+        except Exception as e:
+            print(_("Error during paragraph editor initialization: {}").format(e))
 
     def _setup_spell_check(self):
         """Setup spell check once when text view is ready"""
@@ -1014,7 +1017,7 @@ class ParagraphEditor(Gtk.Box):
             self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
             self._spell_check_setup = True
         except Exception as e:
-            print(f"Spell check setup failed: {e}")
+            print(_("Spell check setup failed: {}").format(e))
 
     def _create_header(self):
         """Create paragraph header with type and controls"""
@@ -1085,8 +1088,8 @@ class ParagraphEditor(Gtk.Box):
         elif self.spell_checker:
             try:
                 self.spell_helper.enable_spell_check(self.text_view, enabled)
-            except Exception:
-                pass
+            except Exception as e:
+                print(_("Error toggling spell check: {}").format(e))
         
         if self.config:
             self.config.set_spell_check_enabled(enabled)
@@ -1148,7 +1151,7 @@ class ParagraphEditor(Gtk.Box):
         try:
             paintable = Gtk.WidgetPaintable.new(self)
             drag_source.set_icon(paintable, 0, 0)
-        except:
+        except Exception:
             pass
 
     def _on_drag_end(self, drag_source, drag, delete_data):
@@ -1196,7 +1199,9 @@ class ParagraphEditor(Gtk.Box):
             ParagraphType.TITLE_2: _("Title 2"),
             ParagraphType.INTRODUCTION: _("Introduction"),
             ParagraphType.ARGUMENT: _("Argument"),
+            ParagraphType.ARGUMENT_RESUMPTION: _("Argument Resumption"),
             ParagraphType.QUOTE: _("Quote"),
+            ParagraphType.EPIGRAPH: _("Epigraph"),
             ParagraphType.CONCLUSION: _("Conclusion")
         }
         return type_labels.get(self.paragraph.type, _("Paragraph"))
@@ -1329,8 +1334,8 @@ class TextEditor(Gtk.Box):
         if self.config and self.config.get_spell_check_enabled():
             try:
                 self.spell_checker = self.spell_helper.setup_spell_check(self.text_view)
-            except Exception:
-                pass
+            except Exception as e:
+                print(_("Error setting up spell check: {}").format(e))
         
         return False
 
@@ -1446,7 +1451,6 @@ class FootnoteDialog(Adw.Window):
             return 0
         
         # Find the project that contains this paragraph
-        # We need to traverse up to get the project reference
         try:
             # Try to get project from parent window
             parent = self.get_transient_for()
@@ -1461,7 +1465,7 @@ class FootnoteDialog(Adw.Window):
                         total_footnotes += len(p.footnotes)
                 
                 return total_footnotes
-        except:
+        except Exception:
             pass
         
         return 0

@@ -11,9 +11,11 @@ import threading
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime
-# 'shutil' é usado no ExportService
+
 from .config import Config
+from .models import Project, Paragraph, ParagraphType
 from utils.helpers import FileHelper
+from utils.i18n import _
 
 # ODT export dependencies
 try:
@@ -33,9 +35,6 @@ try:
 except ImportError:
     PDF_AVAILABLE = False
 
-from .models import Project, Paragraph, ParagraphType
-from .config import Config
-
 
 class ProjectManager:
     """Manages project operations using a SQLite database"""
@@ -47,21 +46,25 @@ class ProjectManager:
         self._init_db()
         self._run_migration_if_needed()
         
-        print(f"ProjectManager initialized with database: {self.db_path}")
+        print(_("ProjectManager initialized with database: {}").format(self.db_path))
 
     def _get_db_connection(self):
         """Get a new database connection with optimized settings"""
-        conn = sqlite3.connect(
-            self.db_path, 
-            timeout=30.0,  # 30 second timeout
-            check_same_thread=False
-        )
-        conn.row_factory = sqlite3.Row
-        # Enable WAL mode for better concurrency
-        conn.execute("PRAGMA journal_mode = WAL;")
-        conn.execute("PRAGMA foreign_keys = ON;")
-        conn.execute("PRAGMA synchronous = NORMAL;")
-        return conn
+        try:
+            conn = sqlite3.connect(
+                self.db_path, 
+                timeout=30.0,
+                check_same_thread=False
+            )
+            conn.row_factory = sqlite3.Row
+            # Enable WAL mode for better concurrency
+            conn.execute("PRAGMA journal_mode = WAL;")
+            conn.execute("PRAGMA foreign_keys = ON;")
+            conn.execute("PRAGMA synchronous = NORMAL;")
+            return conn
+        except sqlite3.Error as e:
+            print(_("Database connection error: {}").format(e))
+            raise
     
     def _project_exists(self, project_id: str) -> bool:
         """Check if project exists in database"""
@@ -70,7 +73,8 @@ class ProjectManager:
                 cursor = conn.cursor()
                 cursor.execute("SELECT 1 FROM projects WHERE id = ? LIMIT 1", (project_id,))
                 return cursor.fetchone() is not None
-        except Exception:
+        except sqlite3.Error as e:
+            print(_("Error checking project existence: {}").format(e))
             return False
 
     def _validate_json_data(self, data: Dict[str, Any]) -> bool:
@@ -79,7 +83,7 @@ class ProjectManager:
         
         for field in required_fields:
             if field not in data:
-                print(f"Invalid project data: missing field '{field}'")
+                print(_("Invalid project data: missing field '{}'").format(field))
                 return False
         
         # Validate paragraphs if present
@@ -88,7 +92,7 @@ class ProjectManager:
                 required_para_fields = ['id', 'type', 'content', 'order']
                 for field in required_para_fields:
                     if field not in para_data:
-                        print(f"Invalid paragraph {i}: missing field '{field}'")
+                        print(_("Invalid paragraph {}: missing field '{}'").format(i, field))
                         return False
         
         return True
@@ -106,11 +110,11 @@ class ProjectManager:
                 for json_file in json_files:
                     zf.write(json_file, json_file.name)
             
-            print(f"Created migration backup: {backup_file}")
+            print(_("Created migration backup: {}").format(backup_file))
             return backup_file
             
-        except Exception as e:
-            print(f"Failed to create migration backup: {e}")
+        except (OSError, zipfile.BadZipFile) as e:
+            print(_("Failed to create migration backup: {}").format(e))
             return None
 
     def _run_migration_if_needed(self):
@@ -124,12 +128,12 @@ class ProjectManager:
             if not json_files:
                 return
 
-            print(f"Found {len(json_files)} old JSON projects. Starting migration...")
+            print(_("Found {} old JSON projects. Starting migration...").format(len(json_files)))
             
             # Create backup first
             backup_file = self._create_migration_backup(json_files)
             if not backup_file:
-                print("Migration aborted: Could not create backup")
+                print(_("Migration aborted: Could not create backup"))
                 return
             
             # Load and validate all projects before migration
@@ -148,15 +152,15 @@ class ProjectManager:
                     project = Project.from_dict(project_data)
                     projects_to_migrate.append((project, project_file))
                     
-                except Exception as e:
-                    print(f"Error loading {project_file.name}: {e}")
+                except (json.JSONDecodeError, OSError) as e:
+                    print(_("Error loading {}: {}").format(project_file.name, e))
                     invalid_files.append(project_file)
             
             if invalid_files:
-                print(f"Warning: {len(invalid_files)} files have validation errors and will be skipped")
+                print(_("Warning: {} files have validation errors and will be skipped").format(len(invalid_files)))
             
             if not projects_to_migrate:
-                print("No valid projects to migrate")
+                print(_("No valid projects to migrate"))
                 return
             
             # Perform migration in single transaction
@@ -178,31 +182,31 @@ class ProjectManager:
                                 failed_projects.append(project_file)
                         
                         if failed_projects:
-                            raise Exception(f"Failed to migrate {len(failed_projects)} projects")
+                            raise RuntimeError(_("Failed to migrate {} projects").format(len(failed_projects)))
                         
                         # Commit transaction
                         conn.commit()
-                        print(f"Migration transaction committed successfully")
+                        print(_("Migration transaction committed successfully"))
                         
                         # Mark files as migrated only after successful DB commit
                         for project, project_file in projects_to_migrate:
                             try:
                                 migrated_file = project_file.with_suffix('.json.migrated')
                                 project_file.rename(migrated_file)
-                            except Exception as e:
-                                print(f"Warning: Could not rename {project_file.name}: {e}")
+                            except OSError as e:
+                                print(_("Warning: Could not rename {}: {}").format(project_file.name, e))
                         
                     except Exception as e:
                         # Rollback transaction
                         conn.rollback()
-                        print(f"Migration failed, transaction rolled back: {e}")
+                        print(_("Migration failed, transaction rolled back: {}").format(e))
                         return
                         
-            except Exception as e:
-                print(f"Migration failed with database error: {e}")
+            except sqlite3.Error as e:
+                print(_("Migration failed with database error: {}").format(e))
                 return
             
-            print(f"Migration complete. {migrated_count} projects successfully migrated.")
+            print(_("Migration complete. {} projects successfully migrated.").format(migrated_count))
             
             # Run database maintenance after migration
             self._vacuum_database()
@@ -214,8 +218,8 @@ class ProjectManager:
             try:
                 metadata_json = json.dumps(project.metadata)
                 formatting_json = json.dumps(project.document_formatting)
-            except Exception as e:
-                print(f"JSON serialization error for project {project.name}: {e}")
+            except (TypeError, ValueError) as e:
+                print(_("JSON serialization error for project {}: {}").format(project.name, e))
                 return False
             
             cursor.execute("""
@@ -244,8 +248,8 @@ class ProjectManager:
                 try:
                     formatting_json = json.dumps(p.formatting)
                     footnotes_json = json.dumps(p.footnotes if hasattr(p, 'footnotes') else [])
-                except Exception as e:
-                    print(f"JSON serialization error for paragraph {p.id}: {e}")
+                except (TypeError, ValueError) as e:
+                    print(_("JSON serialization error for paragraph {}: {}").format(p.id, e))
                     return False
                     
                 paragraphs_data.append((
@@ -262,8 +266,8 @@ class ProjectManager:
             
             return True
             
-        except Exception as e:
-            print(f"Error saving project {project.name} to database: {e}")
+        except sqlite3.Error as e:
+            print(_("Database error saving project {}: {}").format(project.name, e))
             return False
 
     def save_project(self, project: Project, is_migration: bool = False) -> bool:
@@ -283,17 +287,30 @@ class ProjectManager:
                     success = self._save_project_to_db(cursor, project)
                     if success:
                         conn.commit()
-                        print(f"Saved project to database: {project.name}")
+                        print(_("Saved project to database: {}").format(project.name))
                         return True
                     else:
                         conn.rollback()
+                        print(_("Failed to save project to database: {}").format(project.name))
                         return False
-                except Exception:
+                except sqlite3.Error as db_error:
                     conn.rollback()
+                    print(_("Database error saving project '{}': {}").format(project.name, db_error))
+                    raise
+                except Exception as e:
+                    conn.rollback()
+                    print(_("Unexpected error saving project '{}': {}: {}").format(
+                        project.name, type(e).__name__, e))
                     raise
                     
+        except sqlite3.Error as db_error:
+            print(_("Database connection error for project '{}': {}").format(project.name, db_error))
+            return False
         except Exception as e:
-            print(f"Error saving project to database: {e}")
+            print(_("Unexpected error in save_project for '{}': {}: {}").format(
+                project.name, type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
         
     def _create_database_backup(self) -> bool:
@@ -322,28 +339,28 @@ class ProjectManager:
             # Clean old backups - keep only 3 most recent
             self._cleanup_old_backups(backup_dir)
             
-            print(f"Database backup created: {backup_path}")
+            print(_("Database backup created: {}").format(backup_path))
             return True
             
-        except Exception as e:
-            print(f"Warning: Database backup failed: {e}")
+        except (OSError, shutil.Error) as e:
+            print(_("Warning: Database backup failed: {}").format(e))
             return False
 
-    def _cleanup_old_backups(self, backup_dir: Path):
-        """Keep only 3 most recent database backups"""
+    def _cleanup_old_backups(self, backup_dir: Path, max_backups: int = 3):
+        """Keep only the most recent backups"""
         try:
             backup_files = list(backup_dir.glob("backup_*.db"))
             
             # Sort by modification time (most recent first)
             backup_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
             
-            # Remove files beyond the 3 most recent
-            for old_backup in backup_files[3:]:
+            # Remove files beyond the limit
+            for old_backup in backup_files[max_backups:]:
                 old_backup.unlink()
-                print(f"Removed old backup: {old_backup}")
+                print(_("Removed old backup: {}").format(old_backup))
                 
-        except Exception as e:
-            print(f"Warning: Cleanup of old backups failed: {e}")
+        except OSError as e:
+            print(_("Warning: Cleanup of old backups failed: {}").format(e))
             
     def _get_documents_directory(self) -> Path:
         """Get user's Documents directory in a language-aware way"""
@@ -358,33 +375,17 @@ class ProjectManager:
                 documents_path = Path(result.stdout.strip())
                 if documents_path.exists():
                     return documents_path
-        except:
+        except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):
             pass
         
         # Try common localized directory names
         possible_names = [
-            'Documents',    # English, French
-            'Documentos',   # Portuguese, Spanish
-            'Dokumente',    # German
-            'Documenti',    # Italian
-            'Документы',    # Russian
-            'Документи',    # Bulgarian, Ukrainian
-            'Dokumenty',    # Czech, Polish, Slovak
-            'Dokumenter',   # Danish, Norwegian
-            'Έγγραφα',      # Greek
-            'Dokumendid',   # Estonian
-            'Asiakirjat',   # Finnish
-            'מסמכים',       # Hebrew
-            'Dokumenti',    # Croatian
-            'Dokumentumok', # Hungarian
-            'Skjöl',        # Icelandic
-            'ドキュメント',     # Japanese
-            '문서',          # Korean
-            'Documenten',   # Dutch
-            'Documente',    # Romanian
-            'Dokument',     # Swedish
-            'Belgeler',     # Turkish
-            '文档',          # Chinese
+            'Documents', 'Documentos', 'Dokumente', 'Documenti',
+            'Документы', 'Документи', 'Dokumenty', 'Dokumenter',
+            'Έγγραφα', 'Dokumendid', 'Asiakirjat', 'מסמכים',
+            'Dokumenti', 'Dokumentumok', 'Skjöl', 'ドキュメント',
+            '문서', 'Documenten', 'Documente', 'Dokument',
+            'Belgeler', '文档',
         ]
         
         for name in possible_names:
@@ -394,14 +395,6 @@ class ProjectManager:
         
         # Fallback: use data directory
         return self.config.data_dir
-
-    def _calculate_word_count_python(self, content: str) -> int:
-        """Calculate word count using Python (more accurate than SQL)"""
-        if not content or not content.strip():
-            return 0
-        # Split on whitespace and filter empty strings
-        words = [word for word in content.split() if word.strip()]
-        return len(words)
 
     def list_projects(self) -> List[Dict[str, Any]]:
         """List all projects from the database with optimized statistics"""
@@ -426,28 +419,35 @@ class ProjectManager:
                         SELECT type, content FROM paragraphs 
                         WHERE project_id = ? ORDER BY "order" ASC
                     """, (project_id,))
-                    paragraphs = cursor.fetchall()
+                    paragraphs_rows = cursor.fetchall()
                     
-                    # Calculate statistics using same logic as Project.get_statistics()
-                    total_words = 0
-                    total_paragraphs = 0
-                    is_in_paragraph = False
+                    # Convert database rows to lightweight paragraph objects for calculation
+                    paragraph_data = []
+                    for p_row in paragraphs_rows:
+                        # Create a simple object with the attributes needed for statistics
+                        class LightParagraph:
+                            def __init__(self, p_type, content):
+                                try:
+                                    self.type = ParagraphType(p_type)
+                                except ValueError:
+                                    # Handle old 'argument_quote' -> 'quote' migration
+                                    if p_type == 'argument_quote':
+                                        self.type = ParagraphType.QUOTE
+                                    else:
+                                        # Skip invalid types
+                                        self.type = None
+                                self.content = content or ''
+                        
+                        light_p = LightParagraph(p_row['type'], p_row['content'])
+                        if light_p.type is not None:
+                            paragraph_data.append(light_p)
                     
-                    for p_row in paragraphs:
-                        content = p_row['content'] or ''
-                        total_words += self._calculate_word_count_python(content)
-                        
-                        p_type = p_row['type']
-                        
-                        # Count logical paragraphs following TAC technique
-                        if p_type == 'introduction':
-                            total_paragraphs += 1
-                            is_in_paragraph = True
-                        elif p_type in ['argument', 'conclusion']:
-                            if not is_in_paragraph:
-                                total_paragraphs += 1
-                                is_in_paragraph = False
-                        # title_1, title_2, quote don't affect main paragraph counting
+                    # Use consolidated static methods from Project class
+                    total_words = sum(
+                        Project._calculate_word_count(p.content) 
+                        for p in paragraph_data
+                    )
+                    total_paragraphs = Project._count_logical_paragraphs(paragraph_data)
                     
                     stats = {
                         'total_paragraphs': total_paragraphs,
@@ -463,8 +463,10 @@ class ProjectManager:
                         'file_path': None
                     })
                     
+        except sqlite3.Error as e:
+            print(_("Database error listing projects: {}").format(e))
         except Exception as e:
-            print(f"Error listing projects from database: {e}")
+            print(_("Unexpected error listing projects: {}: {}").format(type(e).__name__, e))
         
         return projects_info
 
@@ -474,9 +476,9 @@ class ProjectManager:
             with self._get_db_connection() as conn:
                 conn.execute("VACUUM;")
                 conn.execute("ANALYZE;")
-                print("Database maintenance completed")
-        except Exception as e:
-            print(f"Database maintenance failed: {e}")
+                print(_("Database maintenance completed"))
+        except sqlite3.Error as e:
+            print(_("Database maintenance failed: {}").format(e))
 
     def get_database_info(self) -> Dict[str, Any]:
         """Get database statistics and health information"""
@@ -502,64 +504,79 @@ class ProjectManager:
                     'health_status': 'healthy'
                 }
                 
+        except sqlite3.Error as e:
+            return {
+                'database_path': str(self.db_path),
+                'health_status': _('error: {}').format(e),
+                'project_count': 0,
+                'paragraph_count': 0
+            }
         except Exception as e:
             return {
                 'database_path': str(self.db_path),
-                'health_status': f'error: {e}',
+                'health_status': _('unexpected error: {}').format(e),
                 'project_count': 0,
                 'paragraph_count': 0
             }
     
     def _init_db(self):
         """Initialize the database and create tables if they don't exist"""
-        with self._get_db_connection() as conn:
-            cursor = conn.cursor()
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS projects (
-                    id TEXT PRIMARY KEY,
-                    name TEXT NOT NULL,
-                    created_at TEXT NOT NULL,
-                    modified_at TEXT NOT NULL,
-                    metadata TEXT,
-                    document_formatting TEXT
-                );
-            """)
-            cursor.execute("""
-                CREATE TABLE IF NOT EXISTS paragraphs (
-                    id TEXT PRIMARY KEY,
-                    project_id TEXT NOT NULL,
-                    type TEXT NOT NULL,
-                    content TEXT,
-                    created_at TEXT NOT NULL,
-                    modified_at TEXT NOT NULL,
-                    "order" INTEGER NOT NULL,
-                    formatting TEXT,
-                    footnotes TEXT,
-                    FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE
-                );
-            """)
-            
-            # Add footnotes column if it doesn't exist (migration)
-            try:
-                cursor.execute("ALTER TABLE paragraphs ADD COLUMN footnotes TEXT")
-            except sqlite3.OperationalError:
-                # Column already exists
-                pass
+        try:
+            with self._get_db_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS projects (
+                        id TEXT PRIMARY KEY,
+                        name TEXT NOT NULL,
+                        created_at TEXT NOT NULL,
+                        modified_at TEXT NOT NULL,
+                        metadata TEXT,
+                        document_formatting TEXT
+                    );
+                """)
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS paragraphs (
+                        id TEXT PRIMARY KEY,
+                        project_id TEXT NOT NULL,
+                        type TEXT NOT NULL,
+                        content TEXT,
+                        created_at TEXT NOT NULL,
+                        modified_at TEXT NOT NULL,
+                        "order" INTEGER NOT NULL,
+                        formatting TEXT,
+                        footnotes TEXT,
+                        FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE
+                    );
+                """)
                 
-            conn.commit()
+                # Add footnotes column if it doesn't exist (migration)
+                try:
+                    cursor.execute("ALTER TABLE paragraphs ADD COLUMN footnotes TEXT")
+                except sqlite3.OperationalError:
+                    # Column already exists
+                    pass
+                    
+                conn.commit()
+        except sqlite3.Error as e:
+            print(_("Database initialization error: {}").format(e))
+            raise
 
     def create_project(self, name: str, template: str = "academic_essay") -> Project:
         """Create a new project"""
-        project = Project(name)
-        
-        if template == "academic_essay":
-            pass
-        
-        if self.save_project(project):
-            print(f"Created project: {project.name} ({project.id})")
-            return project
-        else:
-            raise Exception("Failed to save new project to database")
+        try:
+            project = Project(name)
+            
+            if template == "academic_essay":
+                pass
+            
+            if self.save_project(project):
+                print(_("Created project: {} ({})").format(project.name, project.id))
+                return project
+            else:
+                raise RuntimeError(_("Failed to save new project to database"))
+        except Exception as e:
+            print(_("Error creating project: {}: {}").format(type(e).__name__, e))
+            raise
 
     def load_project(self, project_id: str) -> Optional[Project]:
         """Load project by ID from the database"""
@@ -571,7 +588,7 @@ class ProjectManager:
                 project_row = cursor.fetchone()
                 
                 if not project_row:
-                    print(f"Project with ID {project_id} not found in database.")
+                    print(_("Project with ID {} not found in database.").format(project_id))
                     return None
                 
                 project_data = dict(project_row)
@@ -590,7 +607,7 @@ class ProjectManager:
                     if p_data.get('footnotes'):
                         try:
                             p_data['footnotes'] = json.loads(p_data['footnotes'])
-                        except:
+                        except (json.JSONDecodeError, TypeError):
                             p_data['footnotes'] = []
                     else:
                         p_data['footnotes'] = []
@@ -600,10 +617,19 @@ class ProjectManager:
                 project_data['paragraphs'] = paragraphs_data
                 
                 project = Project.from_dict(project_data)
-                print(f"Loaded project from database: {project.name}")
+                print(_("Loaded project from database: {}").format(project.name))
                 return project
+                
+        except sqlite3.Error as e:
+            print(_("Database error loading project: {}").format(e))
+            return None
+        except (json.JSONDecodeError, KeyError, ValueError) as e:
+            print(_("Data error loading project: {}: {}").format(type(e).__name__, e))
+            return None
         except Exception as e:
-            print(f"Error loading project from database: {e}")
+            print(_("Unexpected error loading project: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return None
 
     def delete_project(self, project_id: str) -> bool:
@@ -614,10 +640,10 @@ class ProjectManager:
                 cursor.execute("DELETE FROM projects WHERE id = ?", (project_id,))
                 conn.commit()
                 
-                print(f"Deleted project from database: {project_id}")
+                print(_("Deleted project from database: {}").format(project_id))
                 return True
-        except Exception as e:
-            print(f"Error deleting project from database: {e}")
+        except sqlite3.Error as e:
+            print(_("Database error deleting project: {}").format(e))
             return False
 
     def create_manual_backup(self) -> Optional[Path]:
@@ -642,11 +668,11 @@ class ProjectManager:
             # Clean old backups - keep only 10 most recent
             self._cleanup_old_backups(backup_dir, max_backups=10)
             
-            print(f"Manual backup created: {backup_path}")
+            print(_("Manual backup created: {}").format(backup_path))
             return backup_path
             
-        except Exception as e:
-            print(f"Error creating manual backup: {e}")
+        except (OSError, shutil.Error) as e:
+            print(_("Error creating manual backup: {}").format(e))
             return None
 
     def list_available_backups(self) -> List[Dict[str, Any]]:
@@ -674,7 +700,7 @@ class ProjectManager:
                             cursor = conn.cursor()
                             cursor.execute("SELECT COUNT(*) FROM projects")
                             project_count = cursor.fetchone()[0]
-                    except:
+                    except sqlite3.Error:
                         pass
                     
                     backups.append({
@@ -685,15 +711,15 @@ class ProjectManager:
                         'project_count': project_count,
                         'is_valid': self._validate_backup_file(backup_file)
                     })
-                except Exception as e:
-                    print(f"Error reading backup file {backup_file}: {e}")
+                except (OSError, ValueError) as e:
+                    print(_("Error reading backup file {}: {}").format(backup_file, e))
                     continue
             
             # Sort by creation date (newest first)
             backups.sort(key=lambda x: x['created_at'], reverse=True)
             
-        except Exception as e:
-            print(f"Error listing backups: {e}")
+        except OSError as e:
+            print(_("Error listing backups: {}").format(e))
             
         return backups
 
@@ -724,8 +750,8 @@ class ProjectManager:
                 
                 return True
                 
-        except Exception as e:
-            print(f"Backup validation error: {e}")
+        except sqlite3.Error as e:
+            print(_("Backup validation error: {}").format(e))
             return False
 
     def import_database(self, backup_path: Path) -> bool:
@@ -733,12 +759,8 @@ class ProjectManager:
         try:
             # Validate backup file
             if not self._validate_backup_file(backup_path):
-                print("Invalid backup file")
+                print(_("Invalid backup file"))
                 return False
-            
-            # Close all current connections
-            # Note: In a real implementation, you'd want to notify all components
-            # to close their connections first
             
             # Create backup of current database
             current_backup_path = None
@@ -746,7 +768,7 @@ class ProjectManager:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 current_backup_path = self.db_path.with_suffix(f'.backup_{timestamp}.db')
                 shutil.copy2(self.db_path, current_backup_path)
-                print(f"Current database backed up to: {current_backup_path}")
+                print(_("Current database backed up to: {}").format(current_backup_path))
             
             try:
                 # Replace current database
@@ -757,19 +779,21 @@ class ProjectManager:
                     cursor = conn.cursor()
                     cursor.execute("SELECT COUNT(*) FROM projects")
                     project_count = cursor.fetchone()[0]
-                    print(f"Successfully imported database with {project_count} projects")
+                    print(_("Successfully imported database with {} projects").format(project_count))
                 
                 return True
                 
-            except Exception as e:
+            except (shutil.Error, sqlite3.Error) as e:
                 # Restore backup if import failed
                 if current_backup_path and current_backup_path.exists():
                     shutil.copy2(current_backup_path, self.db_path)
-                    print("Import failed, restored previous database")
+                    print(_("Import failed, restored previous database"))
                 raise e
                 
         except Exception as e:
-            print(f"Error importing database: {e}")
+            print(_("Error importing database: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
 
     def delete_backup(self, backup_path: Path) -> bool:
@@ -777,28 +801,12 @@ class ProjectManager:
         try:
             if backup_path.exists():
                 backup_path.unlink()
-                print(f"Deleted backup: {backup_path}")
+                print(_("Deleted backup: {}").format(backup_path))
                 return True
             return False
-        except Exception as e:
-            print(f"Error deleting backup: {e}")
+        except OSError as e:
+            print(_("Error deleting backup: {}").format(e))
             return False
-
-    def _cleanup_old_backups(self, backup_dir: Path, max_backups: int = 3):
-        """Keep only the most recent backups"""
-        try:
-            backup_files = list(backup_dir.glob("*.db"))
-            
-            # Sort by modification time (most recent first)
-            backup_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
-            
-            # Remove files beyond the limit
-            for old_backup in backup_files[max_backups:]:
-                old_backup.unlink()
-                print(f"Removed old backup: {old_backup}")
-                
-        except Exception as e:
-            print(f"Warning: Cleanup of old backups failed: {e}")
 
     @property
     def projects_dir(self) -> Path:
@@ -814,9 +822,173 @@ class ExportService:
         self.pdf_available = PDF_AVAILABLE
         
         if not self.odt_available:
-            print("Warning: ODT export not available (missing xml dependencies)")
+            print(_("Warning: ODT export not available (missing xml dependencies)"))
         if not self.pdf_available:
-            print("Warning: PDF export not available (missing reportlab)")
+            print(_("Warning: PDF export not available (missing reportlab)"))
+    
+    def _collect_footnotes(self, project: Project) -> tuple:
+        """
+        Collect all unique footnotes from project and create mapping.
+        
+        Returns:
+            tuple: (all_footnotes list, footnote_map dict)
+        """
+        all_footnotes = []
+        footnote_map = {}
+        
+        for paragraph in project.paragraphs:
+            if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
+                paragraph_footnotes = []
+                for footnote_text in paragraph.footnotes:
+                    # Check if footnote already exists
+                    existing_num = None
+                    for i, existing_footnote in enumerate(all_footnotes):
+                        if footnote_text == existing_footnote:
+                            existing_num = i + 1
+                            break
+                    
+                    if existing_num is None:
+                        # New footnote
+                        footnote_num = len(all_footnotes) + 1
+                        all_footnotes.append(footnote_text)
+                        paragraph_footnotes.append(footnote_num)
+                    else:
+                        # Reuse existing footnote
+                        paragraph_footnotes.append(existing_num)
+                
+                footnote_map[paragraph.id] = paragraph_footnotes
+        
+        return all_footnotes, footnote_map
+    
+    def _group_paragraphs(self, project: Project, footnote_map: dict) -> list:
+        """
+        Group paragraphs following TAC methodology.
+        
+        Returns:
+            list: List of grouped paragraph dictionaries with structure:
+                {
+                    'type': 'title1' | 'title2' | 'quote' | 'content',
+                    'content': str,
+                    'indent': bool (for content type only)
+                }
+        """
+        grouped = []
+        current_paragraph_content = []
+        paragraph_starts_with_introduction = False
+        last_was_quote = False
+        
+        for i, paragraph in enumerate(project.paragraphs):
+            content = paragraph.content.strip()
+            
+            if paragraph.type == ParagraphType.TITLE_1:
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                grouped.append({'type': 'title1', 'content': content})
+                last_was_quote = False
+            
+            elif paragraph.type == ParagraphType.TITLE_2:
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                grouped.append({'type': 'title2', 'content': content})
+                last_was_quote = False
+            
+            elif paragraph.type == ParagraphType.QUOTE:
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                grouped.append({'type': 'quote', 'content': content})
+                last_was_quote = True
+            
+            elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                # Determine if should start new paragraph
+                should_start_new = (
+                    paragraph.type == ParagraphType.INTRODUCTION or
+                    last_was_quote or
+                    not current_paragraph_content
+                )
+                
+                if should_start_new and current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                # Determine paragraph style
+                if not current_paragraph_content:
+                    if paragraph.type == ParagraphType.INTRODUCTION:
+                        paragraph_starts_with_introduction = True
+                    elif last_was_quote:
+                        paragraph_starts_with_introduction = False
+                
+                # Add footnote references
+                if paragraph.id in footnote_map:
+                    for footnote_num in footnote_map[paragraph.id]:
+                        content += f"^{footnote_num}"
+                
+                current_paragraph_content.append(content)
+                
+                # Check if next paragraph starts new group
+                next_is_new = False
+                if i + 1 < len(project.paragraphs):
+                    next_p = project.paragraphs[i + 1]
+                    if next_p.type in [ParagraphType.INTRODUCTION, ParagraphType.TITLE_1, 
+                                      ParagraphType.TITLE_2, ParagraphType.QUOTE]:
+                        next_is_new = True
+                else:
+                    next_is_new = True
+                
+                if next_is_new:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                last_was_quote = False
+        
+        # Write any remaining content
+        if current_paragraph_content:
+            combined = " ".join(current_paragraph_content)
+            grouped.append({
+                'type': 'content',
+                'content': combined,
+                'indent': paragraph_starts_with_introduction
+            })
+        
+        return grouped
 
     def get_available_formats(self) -> List[str]:
         """Get list of available export formats"""
@@ -839,11 +1011,13 @@ class ExportService:
             elif format_type.lower() == 'pdf' and self.pdf_available:
                 return self._export_pdf(project, file_path)
             else:
-                print(f"Export format '{format_type}' not available")
+                print(_("Export format '{}' not available").format(format_type))
                 return False
                 
         except Exception as e:
-            print(f"Error exporting project: {e}")
+            print(_("Error exporting project: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
 
     def _export_txt(self, project: Project, file_path: str) -> bool:
@@ -853,166 +1027,49 @@ class ExportService:
             file_path_obj = Path(file_path)
             file_path_obj.parent.mkdir(parents=True, exist_ok=True)
             
+            # Collect footnotes and group paragraphs
+            all_footnotes, footnote_map = self._collect_footnotes(project)
+            grouped = self._group_paragraphs(project, footnote_map)
+            
             with open(file_path, 'w', encoding='utf-8') as f:
                 # Project title
                 f.write(f"{project.name}\n")
                 f.write("=" * len(project.name) + "\n\n")
                 
-                # Collect ALL footnotes first to avoid duplicates
-                all_footnotes = []
-                footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
-                
-                for paragraph in project.paragraphs:
-                    if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
-                        paragraph_footnotes = []
-                        for footnote_text in paragraph.footnotes:
-                            # Check if this footnote already exists
-                            existing_num = None
-                            for i, existing_footnote in enumerate(all_footnotes):
-                                if footnote_text in existing_footnote:
-                                    existing_num = i + 1
-                                    break
-                            
-                            if existing_num is None:
-                                # New footnote
-                                footnote_num = len(all_footnotes) + 1
-                                all_footnotes.append(f"{footnote_num}. {footnote_text}")
-                                paragraph_footnotes.append(footnote_num)
-                            else:
-                                # Reuse existing footnote
-                                paragraph_footnotes.append(existing_num)
-                        
-                        footnote_map[paragraph.id] = paragraph_footnotes
-                
-                # Group and write content
-                current_paragraph_content = []
-                paragraph_starts_with_introduction = False
-                last_was_quote = False
-                
-                for i, paragraph in enumerate(project.paragraphs):
-                    content = paragraph.content.strip()
+                # Write grouped content
+                for item in grouped:
+                    if item['type'] == 'title1':
+                        f.write(f"\n{item['content']}\n")
+                        f.write("-" * len(item['content']) + "\n\n")
                     
-                    if paragraph.type == ParagraphType.TITLE_1:
-                        # Write any accumulated content first
-                        if current_paragraph_content:
-                            combined_content = " ".join(current_paragraph_content)
-                            if paragraph_starts_with_introduction:
-                                f.write(f"    {combined_content}\n\n")  # Indented
-                            else:
-                                f.write(f"{combined_content}\n\n")  # Not indented
-                            current_paragraph_content = []
-                            paragraph_starts_with_introduction = False
-                        
-                        f.write(f"\n{content}\n")
-                        f.write("-" * len(content) + "\n\n")
-                        last_was_quote = False
-                        
-                    elif paragraph.type == ParagraphType.TITLE_2:
-                        # Write any accumulated content first
-                        if current_paragraph_content:
-                            combined_content = " ".join(current_paragraph_content)
-                            if paragraph_starts_with_introduction:
-                                f.write(f"    {combined_content}\n\n")  # Indented
-                            else:
-                                f.write(f"{combined_content}\n\n")  # Not indented
-                            current_paragraph_content = []
-                            paragraph_starts_with_introduction = False
-                        
-                        f.write(f"\n{content}\n\n")
-                        last_was_quote = False
-                        
-                    elif paragraph.type == ParagraphType.QUOTE:
-                        # Write any accumulated content first
-                        if current_paragraph_content:
-                            combined_content = " ".join(current_paragraph_content)
-                            if paragraph_starts_with_introduction:
-                                f.write(f"    {combined_content}\n\n")  # Indented
-                            else:
-                                f.write(f"{combined_content}\n\n")  # Not indented
-                            current_paragraph_content = []
-                            paragraph_starts_with_introduction = False
-                        
-                        # Write quote indented
-                        f.write(f"        {content}\n\n")
-                        last_was_quote = True
-                        
-                    elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                        # Determine if should start new paragraph
-                        should_start_new_paragraph = False
-                        
-                        if paragraph.type == ParagraphType.INTRODUCTION:
-                            should_start_new_paragraph = True
-                        elif last_was_quote:
-                            should_start_new_paragraph = True
-                        elif not current_paragraph_content:
-                            should_start_new_paragraph = True
-                        
-                        # Write accumulated content if starting new paragraph
-                        if should_start_new_paragraph and current_paragraph_content:
-                            combined_content = " ".join(current_paragraph_content)
-                            if paragraph_starts_with_introduction:
-                                f.write(f"    {combined_content}\n\n")  # Indented
-                            else:
-                                f.write(f"{combined_content}\n\n")  # Not indented
-                            current_paragraph_content = []
-                            paragraph_starts_with_introduction = False
-                        
-                        # Determine paragraph style
-                        if not current_paragraph_content:
-                            if paragraph.type == ParagraphType.INTRODUCTION:
-                                paragraph_starts_with_introduction = True
-                            elif last_was_quote:
-                                paragraph_starts_with_introduction = False
-                            # If it's not INTRODUCTION and not after quote, keep current state
-                        
-                        # Add footnote references to content using pre-collected footnotes
-                        if paragraph.id in footnote_map:
-                            for footnote_num in footnote_map[paragraph.id]:
-                                content += f"^{footnote_num}"
-                        
-                        # Accumulate content
-                        current_paragraph_content.append(content)
-                        
-                        # Check if should write now
-                        next_is_new_paragraph = False
-                        if i + 1 < len(project.paragraphs):
-                            next_paragraph = project.paragraphs[i + 1]
-                            if (next_paragraph.type == ParagraphType.INTRODUCTION or
-                                next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
-                                next_is_new_paragraph = True
+                    elif item['type'] == 'title2':
+                        f.write(f"\n{item['content']}\n\n")
+                    
+                    elif item['type'] == 'quote':
+                        f.write(f"        {item['content']}\n\n")
+                    
+                    elif item['type'] == 'content':
+                        if item['indent']:
+                            f.write(f"    {item['content']}\n\n")
                         else:
-                            next_is_new_paragraph = True
-                        
-                        if next_is_new_paragraph:
-                            combined_content = " ".join(current_paragraph_content)
-                            if paragraph_starts_with_introduction:
-                                f.write(f"    {combined_content}\n\n")  # Indented
-                            else:
-                                f.write(f"{combined_content}\n\n")  # Not indented
-                            current_paragraph_content = []
-                            paragraph_starts_with_introduction = False
-                        
-                        last_was_quote = False
+                            f.write(f"{item['content']}\n\n")
                 
-                # Write any remaining content
-                if current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    if paragraph_starts_with_introduction:
-                        f.write(f"    {combined_content}\n\n")  # Indented
-                    else:
-                        f.write(f"{combined_content}\n\n")  # Not indented
-                
-                # Write footnotes at the end if any exist
+                # Write footnotes
                 if all_footnotes:
                     f.write("\n" + "=" * 20 + "\n")
-                    f.write("Footnotes:\n\n")
-                    for footnote in all_footnotes:
-                        f.write(f"{footnote}\n\n")
+                    f.write(_("Footnotes:") + "\n\n")
+                    for i, footnote in enumerate(all_footnotes):
+                        f.write(f"{i + 1}. {footnote}\n\n")
             
             return True
             
+        except OSError as e:
+            print(_("File error exporting to TXT: {}").format(e))
+            return False
         except Exception as e:
-            print(f"Error exporting to TXT: {e}")
+            print(_("Unexpected error exporting to TXT: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
 
     def _export_odt(self, project: Project, file_path: str) -> bool:
@@ -1063,162 +1120,143 @@ class ExportService:
                 # Clean up temp directory
                 shutil.rmtree(temp_dir, ignore_errors=True)
                 
+        except (OSError, zipfile.BadZipFile) as e:
+            print(_("File error exporting to ODT: {}").format(e))
+            return False
         except Exception as e:
-            print(f"Error exporting to ODT: {e}")
+            print(_("Unexpected error exporting to ODT: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
 
     def _generate_odt_content(self, project: Project) -> str:
-        """Generate content.xml for ODT with proper formatting - Fixed footnote duplication"""
+        """Generate content.xml for ODT with proper formatting"""
         
-        # Collect ALL footnotes first to avoid duplicates
-        all_footnotes = []
-        footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
+        # Collect footnotes and group paragraphs
+        all_footnotes, footnote_map = self._collect_footnotes(project)
         
-        for paragraph in project.paragraphs:
-            if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
-                paragraph_footnotes = []
-                for footnote_text in paragraph.footnotes:
-                    # Check if this footnote already exists
-                    existing_num = None
-                    for i, existing_footnote in enumerate(all_footnotes):
-                        if footnote_text == existing_footnote:
-                            existing_num = i + 1
-                            break
-                    
-                    if existing_num is None:
-                        # New footnote
-                        footnote_num = len(all_footnotes) + 1
-                        all_footnotes.append(footnote_text)
-                        paragraph_footnotes.append(footnote_num)
-                    else:
-                        # Reuse existing footnote
-                        paragraph_footnotes.append(existing_num)
-                
-                footnote_map[paragraph.id] = paragraph_footnotes
-        
-        content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
-    <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
-                            xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
-                            xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
-                            xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
-    <office:automatic-styles/>
-    <office:body>
-    <office:text>'''
-
-        # Title
-        content_xml += f'<text:p text:style-name="Title">{project.name}</text:p>\n'
-
-        # Group content
+        # Build grouped structure with footnote references for ODT
+        grouped_odt = []
         current_paragraph_content = []
         paragraph_starts_with_introduction = False
         last_was_quote = False
-
+        
         for i, paragraph in enumerate(project.paragraphs):
-            # Escape XML special characters
             content = paragraph.content.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-
+            
             if paragraph.type == ParagraphType.TITLE_1:
-                # Write any accumulated content first
                 if current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-
-                content_xml += f'<text:p text:style-name="Title1">{content}</text:p>\n'
+                
+                grouped_odt.append({'type': 'title1', 'content': content})
                 last_was_quote = False
-
+            
             elif paragraph.type == ParagraphType.TITLE_2:
-                # Write any accumulated content first
                 if current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-
-                content_xml += f'<text:p text:style-name="Title2">{content}</text:p>\n'
+                
+                grouped_odt.append({'type': 'title2', 'content': content})
                 last_was_quote = False
-
+            
             elif paragraph.type == ParagraphType.QUOTE:
-                # Write any accumulated content first
                 if current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-
-                # Write quote as separate paragraph
-                content_xml += f'<text:p text:style-name="Quote">{content}</text:p>\n'
+                
+                grouped_odt.append({'type': 'quote', 'content': content})
                 last_was_quote = True
-                
+            
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                # Determine if should start new paragraph
-                should_start_new_paragraph = False
+                should_start_new = (
+                    paragraph.type == ParagraphType.INTRODUCTION or
+                    last_was_quote or
+                    not current_paragraph_content
+                )
                 
-                if paragraph.type == ParagraphType.INTRODUCTION:
-                    should_start_new_paragraph = True
-                elif last_was_quote:
-                    should_start_new_paragraph = True
-                elif not current_paragraph_content:
-                    should_start_new_paragraph = True
-
-                # If should start new paragraph, write accumulated content first
-                if should_start_new_paragraph and current_paragraph_content:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                if should_start_new and current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-
-                # Determine if this paragraph should have indent
+                
                 if not current_paragraph_content:
                     if paragraph.type == ParagraphType.INTRODUCTION:
                         paragraph_starts_with_introduction = True
                     elif last_was_quote:
                         paragraph_starts_with_introduction = False
-                    # If it's ARGUMENT or CONCLUSION and not after quote, keep current state
-
-                # Add footnote references to content using pre-collected footnotes
+                
+                # Add ODT footnote references
                 if paragraph.id in footnote_map:
                     for footnote_num in footnote_map[paragraph.id]:
                         footnote_text = all_footnotes[footnote_num - 1]
                         content += f'<text:note text:id="ftn{footnote_num}" text:note-class="footnote"><text:note-citation>{footnote_num}</text:note-citation><text:note-body><text:p text:style-name="Footnote">{footnote_text}</text:p></text:note-body></text:note>'
-
-                # Accumulate content
+                
                 current_paragraph_content.append(content.strip())
-
-                # Determine when to write the grouped paragraph
-                next_is_new_paragraph = False
+                
+                next_is_new = False
                 if i + 1 < len(project.paragraphs):
-                    next_paragraph = project.paragraphs[i + 1]
-                    if (next_paragraph.type == ParagraphType.INTRODUCTION or
-                        next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
-                        next_is_new_paragraph = True
+                    next_p = project.paragraphs[i + 1]
+                    if next_p.type in [ParagraphType.INTRODUCTION, ParagraphType.TITLE_1, 
+                                      ParagraphType.TITLE_2, ParagraphType.QUOTE]:
+                        next_is_new = True
                 else:
-                    next_is_new_paragraph = True
-
-                if next_is_new_paragraph:
-                    combined_content = " ".join(current_paragraph_content)
-                    style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-                    content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
+                    next_is_new = True
+                
+                if next_is_new:
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
                     current_paragraph_content = []
                     paragraph_starts_with_introduction = False
-
+                
                 last_was_quote = False
-
-        # Write any remaining content
+        
+        # Write remaining
         if current_paragraph_content:
-            combined_content = " ".join(current_paragraph_content)
-            style_name = "Introduction" if paragraph_starts_with_introduction else "Normal"
-            content_xml += f'<text:p text:style-name="{style_name}">{combined_content}</text:p>\n'
-
+            combined = " ".join(current_paragraph_content)
+            style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+            grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
+        
+        # Generate XML
+        content_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+                        xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+                        xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+                        xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
+<office:automatic-styles/>
+<office:body>
+<office:text>'''
+        
+        # Project title
+        content_xml += f'<text:p text:style-name="Title">{project.name}</text:p>\n'
+        
+        # Write grouped content
+        for item in grouped_odt:
+            if item['type'] == 'title1':
+                content_xml += f'<text:p text:style-name="Title1">{item["content"]}</text:p>\n'
+            elif item['type'] == 'title2':
+                content_xml += f'<text:p text:style-name="Title2">{item["content"]}</text:p>\n'
+            elif item['type'] == 'quote':
+                content_xml += f'<text:p text:style-name="Quote">{item["content"]}</text:p>\n'
+            elif item['type'] == 'content':
+                content_xml += f'<text:p text:style-name="{item["style"]}">{item["content"]}</text:p>\n'
+        
         content_xml += '''</office:text>
-    </office:body>
-    </office:document-content>'''
-
+</office:body>
+</office:document-content>'''
+        
         return content_xml
 
     def _create_manifest(self, file_path: Path):
@@ -1396,42 +1434,13 @@ class ExportService:
                 alignment=TA_JUSTIFY
             )
             
-            # Collect ALL footnotes first to avoid duplicates
-            all_footnotes = []
-            footnote_map = {}  # Maps paragraph.id -> list of footnote numbers
+            # Collect footnotes and group paragraphs (with PDF-specific footnote formatting)
+            all_footnotes, footnote_map = self._collect_footnotes(project)
             
-            for paragraph in project.paragraphs:
-                if hasattr(paragraph, 'footnotes') and paragraph.footnotes:
-                    paragraph_footnotes = []
-                    for footnote_text in paragraph.footnotes:
-                        # Check if this footnote already exists
-                        existing_num = None
-                        for i, existing_footnote in enumerate(all_footnotes):
-                            if footnote_text == existing_footnote:
-                                existing_num = i + 1
-                                break
-                        
-                        if existing_num is None:
-                            # New footnote
-                            footnote_num = len(all_footnotes) + 1
-                            all_footnotes.append(footnote_text)
-                            paragraph_footnotes.append(footnote_num)
-                        else:
-                            # Reuse existing footnote
-                            paragraph_footnotes.append(existing_num)
-                    
-                    footnote_map[paragraph.id] = paragraph_footnotes
-            
-            # Build content
-            story = []
-            
-            # Add title
-            story.append(RLParagraph(project.name, title_style))
-            story.append(Spacer(1, 20))
-            
-            # Group content
+            # Build PDF-specific grouped structure
+            grouped_pdf = []
             current_paragraph_content = []
-            current_paragraph_style = None
+            current_style = None
             paragraph_starts_with_introduction = False
             last_was_quote = False
             
@@ -1439,118 +1448,126 @@ class ExportService:
                 content = paragraph.content.strip()
                 
                 if paragraph.type == ParagraphType.TITLE_1:
-                    # Write any accumulated content first
                     if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
                         current_paragraph_content = []
-                        current_paragraph_style = None
+                        current_style = None
                         paragraph_starts_with_introduction = False
                     
-                    story.append(RLParagraph(content, title1_style))
+                    grouped_pdf.append({'type': 'title1', 'content': content})
                     last_was_quote = False
-                    
+                
                 elif paragraph.type == ParagraphType.TITLE_2:
-                    # Write any accumulated content first
                     if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
                         current_paragraph_content = []
-                        current_paragraph_style = None
+                        current_style = None
                         paragraph_starts_with_introduction = False
                     
-                    story.append(RLParagraph(content, title2_style))
+                    grouped_pdf.append({'type': 'title2', 'content': content})
                     last_was_quote = False
-                    
+                
                 elif paragraph.type == ParagraphType.QUOTE:
-                    # Write any accumulated content first
                     if current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
                         current_paragraph_content = []
-                        current_paragraph_style = None
+                        current_style = None
                         paragraph_starts_with_introduction = False
                     
-                    # Add quote
-                    story.append(RLParagraph(content, quote_style))
+                    grouped_pdf.append({'type': 'quote', 'content': content})
                     last_was_quote = True
-                    
+                
                 elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
-                    # Determine if should start new paragraph
-                    should_start_new_paragraph = False
+                    should_start_new = (
+                        paragraph.type == ParagraphType.INTRODUCTION or
+                        last_was_quote or
+                        not current_paragraph_content
+                    )
                     
-                    if paragraph.type == ParagraphType.INTRODUCTION:
-                        should_start_new_paragraph = True
-                    elif last_was_quote:
-                        should_start_new_paragraph = True
-                    elif not current_paragraph_content:
-                        should_start_new_paragraph = True
-
-                    # If should start new paragraph, write accumulated content first
-                    if should_start_new_paragraph and current_paragraph_content:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                    if should_start_new and current_paragraph_content:
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
                         current_paragraph_content = []
-                        current_paragraph_style = None
+                        current_style = None
                         paragraph_starts_with_introduction = False
-
-                    # Check if this is the start of a new grouped paragraph
+                    
                     if not current_paragraph_content:
                         if paragraph.type == ParagraphType.INTRODUCTION:
                             paragraph_starts_with_introduction = True
-                            current_paragraph_style = introduction_style
+                            current_style = introduction_style
                         elif last_was_quote:
                             paragraph_starts_with_introduction = False
-                            current_paragraph_style = normal_style
+                            current_style = normal_style
                         else:
-                            # If it's ARGUMENT or CONCLUSION and not after quote, keep current state
-                            if current_paragraph_style is None:
-                                current_paragraph_style = normal_style
-
-                    # Add footnote references to content using pre-collected footnotes
+                            if current_style is None:
+                                current_style = normal_style
+                    
+                    # Add PDF footnote references
                     if paragraph.id in footnote_map:
                         for footnote_num in footnote_map[paragraph.id]:
                             content += f"<sup>{footnote_num}</sup>"
-
-                    # Accumulate content
+                    
                     current_paragraph_content.append(content)
-
-                    # Check if next paragraph starts a new logical paragraph
-                    next_is_new_paragraph = False
+                    
+                    next_is_new = False
                     if i + 1 < len(project.paragraphs):
-                        next_paragraph = project.paragraphs[i + 1]
-                        if (next_paragraph.type == ParagraphType.INTRODUCTION or
-                            next_paragraph.type in [ParagraphType.TITLE_1, ParagraphType.TITLE_2, ParagraphType.QUOTE]):
-                            next_is_new_paragraph = True
+                        next_p = project.paragraphs[i + 1]
+                        if next_p.type in [ParagraphType.INTRODUCTION, ParagraphType.TITLE_1, 
+                                          ParagraphType.TITLE_2, ParagraphType.QUOTE]:
+                            next_is_new = True
                     else:
-                        next_is_new_paragraph = True
-
-                    if next_is_new_paragraph:
-                        combined_content = " ".join(current_paragraph_content)
-                        story.append(RLParagraph(combined_content, current_paragraph_style))
+                        next_is_new = True
+                    
+                    if next_is_new:
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
                         current_paragraph_content = []
-                        current_paragraph_style = None
+                        current_style = None
                         paragraph_starts_with_introduction = False
-
+                    
                     last_was_quote = False
             
-            # Write any remaining content
+            # Write remaining
             if current_paragraph_content:
-                combined_content = " ".join(current_paragraph_content)
-                story.append(RLParagraph(combined_content, current_paragraph_style))
-
-            # Add footnotes at the end if any exist
+                combined = " ".join(current_paragraph_content)
+                grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
+            
+            # Build story
+            story = []
+            story.append(RLParagraph(project.name, title_style))
+            story.append(Spacer(1, 20))
+            
+            # Write grouped content
+            for item in grouped_pdf:
+                if item['type'] == 'title1':
+                    story.append(RLParagraph(item['content'], title1_style))
+                elif item['type'] == 'title2':
+                    story.append(RLParagraph(item['content'], title2_style))
+                elif item['type'] == 'quote':
+                    story.append(RLParagraph(item['content'], quote_style))
+                elif item['type'] == 'content':
+                    story.append(RLParagraph(item['content'], item['style']))
+            
+            # Add footnotes
             if all_footnotes:
                 story.append(Spacer(1, 20))
-                story.append(RLParagraph("Footnotes:", title2_style))
+                story.append(RLParagraph(_("Footnotes:"), title2_style))
                 for i, footnote_text in enumerate(all_footnotes):
                     footnote_content = f"{i + 1}. {footnote_text}"
                     story.append(RLParagraph(footnote_content, footnote_style))
-
+            
             # Build PDF
             doc.build(story)
             return True
             
+        except OSError as e:
+            print(_("File error exporting to PDF: {}").format(e))
+            return False
         except Exception as e:
-            print(f"Error exporting to PDF: {e}")
+            print(_("Unexpected error exporting to PDF: {}: {}").format(type(e).__name__, e))
+            import traceback
+            traceback.print_exc()
             return False
