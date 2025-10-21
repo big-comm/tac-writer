@@ -277,10 +277,20 @@ msgstr "Wählen Sie eine Vorlage, mit der Sie beginnen möchten."
 msgid "Document Template"
 msgstr "Dokumentvorlage"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+# File: usr/share/tac-writer/ui/dialogs.py, line: 286
 #: NEEDS WORK
-msgid "Error Creating Project"
-msgstr "Fehler beim Erstellen des Projekts"
+msgid "Project name is too long (max 100 characters)"
+msgstr "Der Projektname ist zu lang (max. 100 Zeichen)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 299
+#: NEEDS WORK
+msgid "Failed to save project to database"
+msgstr "Projekt konnte nicht in der Datenbank gespeichert werden"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 309
+#: NEEDS WORK
+msgid "Invalid Input"
+msgstr "Ungültige Eingabe"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 303
 # File: usr/share/tac-writer/ui/dialogs.py, line: 553
@@ -292,6 +302,23 @@ msgstr "Fehler beim Erstellen des Projekts"
 #: NEEDS WORK
 msgid "OK"
 msgstr "OK"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Fehler beim Erstellen des Projekts"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 331
+#: NEEDS WORK
+msgid "Unexpected Error"
+msgstr "Unerwarteter Fehler"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+#: NEEDS WORK
+msgid ""
+"An unexpected error occurred. Please report this issue:\n"
+"\n"
+msgstr "Ein unerwarteter Fehler ist aufgetreten. Bitte melden Sie dieses Problem:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
 #: NEEDS WORK
@@ -360,6 +387,12 @@ msgstr "Klicken Sie, um den Speicherort auszuwählen"
 #: NEEDS WORK
 msgid "Choose..."
 msgstr "Wählen..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 452
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not create default export directory: {}"
+msgstr "Warnung: Konnte das Standard-Exportverzeichnis nicht erstellen: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 477
 #: NEEDS WORK
@@ -444,6 +477,12 @@ msgstr "Standard Schriftart"
 msgid "Font Family"
 msgstr "Schriftartfamilie"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading system fonts: {}"
+msgstr "Fehler beim Laden der Systemschriftarten: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 641
 #: NEEDS WORK
 msgid "Font Size"
@@ -483,6 +522,54 @@ msgstr "Zeilennummern anzeigen"
 #: NEEDS WORK
 msgid "Display line numbers in the editor"
 msgstr "Zeilennummern im Editor anzeigen"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 737
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading preferences: {}"
+msgstr "Fehler beim Laden der Einstellungen: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 751
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing theme: {}"
+msgstr "Fehler beim Ändern des Themas: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font family: {}"
+msgstr "Fehler beim Ändern der Schriftartfamilie: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 767
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font size: {}"
+msgstr "Fehler beim Ändern der Schriftgröße: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing auto save: {}"
+msgstr "Fehler beim Ändern der automatischen Speicherung: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 781
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing word wrap: {}"
+msgstr "Fehler beim Ändern des Zeilenumbruchs: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 788
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing line numbers: {}"
+msgstr "Fehler beim Ändern der Zeilennummern: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 833
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error applying welcome dialog CSS: {}"
+msgstr "Fehler beim Anwenden des CSS für den Willkommensdialog: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 793
 #: NEEDS WORK
@@ -527,6 +614,21 @@ msgstr "Dieses Dialogfeld beim Start anzeigen"
 msgid "Let's Start"
 msgstr "Lass uns anfangen"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 949
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving welcome dialog preference: {}"
+msgstr "Fehler beim Speichern der Einstellungen für den Willkommensdialog: {}"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+# File: usr/share/tac-writer/ui/components.py, line: 662
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not open wiki URL: {}"
+msgstr "Konnte die Wiki-URL nicht öffnen: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 978
 #: NEEDS WORK
 msgid "Backup Manager"
@@ -554,6 +656,12 @@ msgstr "Datenbank importieren"
 msgid "Current Database"
 msgstr "Aktuelle Datenbank"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1072
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error getting database info: {}"
+msgstr "Fehler beim Abrufen der Datenbankinformationen: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1035
 #: NEEDS WORK
 msgid "Database Location"
@@ -574,6 +682,15 @@ msgstr "Verfügbare Sicherungen"
 #: NEEDS WORK
 msgid "Backups are stored in Documents/TAC Projects/database_backups"
 msgstr "Backups werden in Dokumente/TAC-Projekte/datenbank_backups gespeichert."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
+# File: usr/share/tac-writer/core/services.py, line: 722
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error listing backups: {}"
+msgstr "Fehler beim Auflisten der Backups: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1093
 #: NEEDS WORK
@@ -616,6 +733,12 @@ msgstr "Backup löschen"
 msgid "Creating..."
 msgstr "Erstelle..."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1212
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in backup thread: {}"
+msgstr "Fehler im Sicherungs-Thread: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1173
 #: NEEDS WORK
 msgid "Backup created successfully"
@@ -657,6 +780,18 @@ msgstr "Ungültige Sicherung"
 msgid "The selected file is not a valid TAC database backup."
 msgstr "Die ausgewählte Datei ist kein gültiges TAC-Datenbank-Backup."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1292
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error validating backup: {}"
+msgstr "Fehler bei der Validierung des Backups: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup info: {}"
+msgstr "Fehler beim Lesen der Backup-Informationen: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1249
 #: NEEDS WORK
 msgid "Import Database?"
@@ -687,6 +822,12 @@ msgstr "Datenbank importieren"
 #: NEEDS WORK
 msgid "Please wait while the database is being imported..."
 msgstr "Bitte warten, während die Datenbank importiert wird..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1344
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in import thread: {}"
+msgstr "Fehler im Import-Thread: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1295
 #: NEEDS WORK
@@ -735,6 +876,15 @@ msgstr ""
 msgid "Delete"
 msgstr "Löschen"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1406
+# File: usr/share/tac-writer/core/services.py, line: 808
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error deleting backup: {}"
+msgstr "Fehler beim Löschen des Backups: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -769,6 +919,12 @@ msgstr "Minimieren"
 msgid "Reset"
 msgstr "Zurücksetzen"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up Pomodoro dialog styles: {}"
+msgstr "Fehler beim Einrichten der Pomodoro-Dialogstile: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 386
 #: NEEDS WORK
 msgid "⏸ Pause"
@@ -778,6 +934,35 @@ msgstr "⏸ Pause"
 #: NEEDS WORK
 msgid "▶ Start"
 msgstr "▶ Start"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 494
+# File: usr/share/tac-writer/application.py, line: 229
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dictionary {}: {}"
+msgstr "Fehlerüberprüfung Wörterbuch {}: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 497
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enchant not available for spell checking: {}"
+msgstr "Zauber nicht verfügbar für die Rechtschreibprüfung: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 521
+# File: usr/share/tac-writer/ui/components.py, line: 1020
+#: NEEDS WORK
+#, python-brace-format
+msgid "Spell check setup failed: {}"
+msgstr "Rechtschreibprüfung konnte nicht eingerichtet werden: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 539
+# File: usr/share/tac-writer/ui/components.py, line: 1092
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error toggling spell check: {}"
+msgstr "Fehler beim Umschalten der Rechtschreibprüfung: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 575
 #: NEEDS WORK
@@ -874,6 +1059,12 @@ msgstr "Löschen '{}' ?"
 msgid "This project will be moved to trash and can be recovered."
 msgstr "Dieses Projekt wird in den Papierkorb verschoben und kann wiederhergestellt werden."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1000
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during paragraph editor initialization: {}"
+msgstr "Fehler bei der Initialisierung des Absatzeditors: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1044
 #: NEEDS WORK
 msgid "Manage footnotes"
@@ -923,11 +1114,27 @@ msgstr "Argument"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1202
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+#: NEEDS WORK
+msgid "Argument Resumption"
+msgstr "Argument Wiederaufnahme"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1199
 # File: usr/share/tac-writer/ui/main_window.py, line: 333
 #: NEEDS WORK
 msgid "Quote"
 msgstr "Zitat"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1204
+# File: usr/share/tac-writer/ui/main_window.py, line: 334
+#: NEEDS WORK
+msgid "Epigraph"
+msgstr "Epigraph"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
@@ -956,6 +1163,12 @@ msgstr "Diese Aktion kann nicht rückgängig gemacht werden."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Entfernen"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1338
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up spell check: {}"
+msgstr "Fehler beim Einrichten der Rechtschreibprüfung: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1364
 #: NEEDS WORK
@@ -1138,6 +1351,571 @@ msgstr "Projekt wird geladen..."
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "Projekt konnte nicht geöffnet werden: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 127
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not set system locale: {}"
+msgstr "Warnung: Systemgebietsschema konnte nicht festgelegt werden: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 210
+#: NEEDS WORK
+msgid "PyGTKSpellcheck not installed - disabling spell checking"
+msgstr "PyGTKSpellcheck nicht installiert - Rechtschreibprüfung wird deaktiviert"
+# 
+# File: usr/share/tac-writer/application.py, line: 216
+#: NEEDS WORK
+msgid "Enchant backend not available - disabling spell checking"
+msgstr "Enchant-Backend nicht verfügbar - Rechtschreibprüfung wird deaktiviert"
+# 
+# File: usr/share/tac-writer/application.py, line: 233
+#: NEEDS WORK
+#, python-brace-format
+msgid "Available spell check dictionaries: {}"
+msgstr "Verfügbare Rechtschreibprüfungswörterbücher: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 242
+#: NEEDS WORK
+#, python-brace-format
+msgid "Using auto-detected language: {}"
+msgstr "Verwende automatisch erkannte Sprache: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 247
+#: NEEDS WORK
+#, python-brace-format
+msgid "Auto-detected language not available, using fallback: {}"
+msgstr "Automatisch erkannte Sprache nicht verfügbar, verwende Fallback: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 253
+#: NEEDS WORK
+msgid "No spell check dictionaries found - disabling spell checking"
+msgstr "Keine Rechtschreibprüfungswörterbücher gefunden - Rechtschreibprüfung wird deaktiviert"
+# 
+# File: usr/share/tac-writer/application.py, line: 258
+#: NEEDS WORK
+#, python-brace-format
+msgid "Import error while checking spell dependencies: {}"
+msgstr "Importfehler beim Überprüfen der Rechtschreibabhängigkeiten: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error checking spell dependencies: {}"
+msgstr "Unerwarteter Fehler beim Überprüfen der Rechtschreibabhängigkeiten: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 278
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during application startup: {}: {}"
+msgstr "Fehler beim Start der Anwendung: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 291
+#: NEEDS WORK
+msgid "Main window created"
+msgstr "Hauptfenster erstellt"
+# 
+# File: usr/share/tac-writer/application.py, line: 295
+#: NEEDS WORK
+msgid "Main window presented"
+msgstr "Hauptfenster angezeigt"
+# 
+# File: usr/share/tac-writer/application.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error activating application: {}: {}"
+msgstr "Fehler bei der Aktivierung der Anwendung: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 320
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up actions: {}: {}"
+msgstr "Fehler beim Einrichten der Aktionen: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up menu: {}: {}"
+msgstr "Fehler beim Einrichten des Menüs: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 433
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not apply CSS: {}"
+msgstr "Konnte CSS nicht anwenden: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 436
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up theme: {}: {}"
+msgstr "Fehler beim Einrichten des Themas: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing new project dialog: {}: {}"
+msgstr "Fehler beim Anzeigen des neuen Projektdialogs: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 454
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing open project dialog: {}: {}"
+msgstr "Fehler beim Anzeigen des Dialogs zum Öffnen des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 462
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving project: {}: {}"
+msgstr "Fehler beim Speichern des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 470
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing export dialog: {}: {}"
+msgstr "Fehler beim Anzeigen des Exportdialogs: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 478
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing preferences dialog: {}: {}"
+msgstr "Fehler beim Anzeigen des Einstellungsdialogs: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 486
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing about dialog: {}: {}"
+msgstr "Fehler beim Anzeigen des Über-Dialogs: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 493
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error quitting application: {}: {}"
+msgstr "Fehler beim Beenden der Anwendung: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 502
+#: NEEDS WORK
+msgid "Configuration saved"
+msgstr "Konfiguration gespeichert"
+# 
+# File: usr/share/tac-writer/application.py, line: 508
+#: NEEDS WORK
+msgid "Application shutdown complete"
+msgstr "Anwendungshutdown abgeschlossen"
+# 
+# File: usr/share/tac-writer/application.py, line: 511
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during shutdown: {}: {}"
+msgstr "Fehler beim Herunterfahren: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 520
+#: NEEDS WORK
+msgid "No config available for spell check debug"
+msgstr "Keine Konfiguration für die Rechtschreibprüfung im Debug-Modus verfügbar"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 49
+#: NEEDS WORK
+#, python-brace-format
+msgid "ProjectManager initialized with database: {}"
+msgstr "Projektmanager mit Datenbank initialisiert: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 66
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error: {}"
+msgstr "Datenbankverbindungsfehler: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 77
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking project existence: {}"
+msgstr "Fehler beim Überprüfen der Projektexistenz: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 86
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid project data: missing field '{}'"
+msgstr "Ungültige Projektdaten: fehlendes Feld '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid paragraph {}: missing field '{}'"
+msgstr "Ungültiger Absatz {}: fehlendes Feld '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 113
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created migration backup: {}"
+msgstr "Erstellte Migrationssicherung: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 117
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to create migration backup: {}"
+msgstr "Fehler beim Erstellen der Migrationssicherung: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 131
+#: NEEDS WORK
+#, python-brace-format
+msgid "Found {} old JSON projects. Starting migration..."
+msgstr "Gefunden {} alte JSON-Projekte. Migration wird gestartet..."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 136
+#: NEEDS WORK
+msgid "Migration aborted: Could not create backup"
+msgstr "Migration abgebrochen: Backup konnte nicht erstellt werden"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 156
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading {}: {}"
+msgstr "Fehler beim Laden {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 160
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: {} files have validation errors and will be skipped"
+msgstr "Warnung: {} Dateien haben Validierungsfehler und werden übersprungen"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 163
+#: NEEDS WORK
+msgid "No valid projects to migrate"
+msgstr "Keine gültigen Projekte zum Migrieren"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 185
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to migrate {} projects"
+msgstr "Migration von {} Projekten fehlgeschlagen"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 189
+#: NEEDS WORK
+msgid "Migration transaction committed successfully"
+msgstr "Migrationstransaktion erfolgreich abgeschlossen"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 197
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not rename {}: {}"
+msgstr "Warnung: Konnte {} nicht umbenennen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 202
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed, transaction rolled back: {}"
+msgstr "Migration fehlgeschlagen, Transaktion zurückgerollt: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 206
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed with database error: {}"
+msgstr "Migration ist mit Datenbankfehler fehlgeschlagen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration complete. {} projects successfully migrated."
+msgstr "Migration abgeschlossen. {} Projekte erfolgreich migriert."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 222
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for project {}: {}"
+msgstr "JSON-Serialisierungsfehler für Projekt {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 252
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for paragraph {}: {}"
+msgstr "JSON-Serialisierungsfehler für Absatz {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 270
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project {}: {}"
+msgstr "Datenbankfehler beim Speichern des Projekts {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 290
+#: NEEDS WORK
+#, python-brace-format
+msgid "Saved project to database: {}"
+msgstr "Projekt in der Datenbank gespeichert: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 294
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to save project to database: {}"
+msgstr "Fehler beim Speichern des Projekts in der Datenbank: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project '{}': {}"
+msgstr "Datenbankfehler beim Speichern des Projekts '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error saving project '{}': {}: {}"
+msgstr "Unerwarteter Fehler beim Speichern des Projekts '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 307
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error for project '{}': {}"
+msgstr "Datenbankverbindungsfehler für Projekt '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 310
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error in save_project for '{}': {}: {}"
+msgstr "Unerwarteter Fehler in save_project für '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 342
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database backup created: {}"
+msgstr "Datenbanksicherung erstellt: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 346
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Database backup failed: {}"
+msgstr "Warnung: Datenbanksicherung fehlgeschlagen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Removed old backup: {}"
+msgstr "Alte Sicherung entfernt: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 363
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Cleanup of old backups failed: {}"
+msgstr "Warnung: Bereinigung alter Backups fehlgeschlagen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 467
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error listing projects: {}"
+msgstr "Datenbankfehler beim Auflisten von Projekten: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 469
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error listing projects: {}: {}"
+msgstr "Unerwarteter Fehler beim Auflisten der Projekte: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 479
+#: NEEDS WORK
+msgid "Database maintenance completed"
+msgstr "Datenbankwartung abgeschlossen"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 481
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database maintenance failed: {}"
+msgstr "Datenbankwartung fehlgeschlagen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 510
+#: NEEDS WORK
+#, python-brace-format
+msgid "error: {}"
+msgstr "Fehler: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 517
+#: NEEDS WORK
+#, python-brace-format
+msgid "unexpected error: {}"
+msgstr "unerwarteter Fehler: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 561
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database initialization error: {}"
+msgstr "Datenbank-Initialisierungsfehler: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 573
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created project: {} ({})"
+msgstr "Projekt erstellt: {} ({})"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 576
+#: NEEDS WORK
+msgid "Failed to save new project to database"
+msgstr "Fehler beim Speichern des neuen Projekts in der Datenbank"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 578
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating project: {}: {}"
+msgstr "Fehler beim Erstellen des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 591
+#: NEEDS WORK
+#, python-brace-format
+msgid "Project with ID {} not found in database."
+msgstr "Projekt mit der ID {} nicht in der Datenbank gefunden."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 620
+#: NEEDS WORK
+#, python-brace-format
+msgid "Loaded project from database: {}"
+msgstr "Projekt aus der Datenbank geladen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 624
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error loading project: {}"
+msgstr "Datenbankfehler beim Laden des Projekts: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 627
+#: NEEDS WORK
+#, python-brace-format
+msgid "Data error loading project: {}: {}"
+msgstr "Datenfehler beim Laden des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 630
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error loading project: {}: {}"
+msgstr "Unerwarteter Fehler beim Laden des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 643
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted project from database: {}"
+msgstr "Projekt aus der Datenbank gelöscht: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 646
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error deleting project: {}"
+msgstr "Datenbankfehler beim Löschen des Projekts: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Manual backup created: {}"
+msgstr "Manueller Backup erstellt: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 675
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating manual backup: {}"
+msgstr "Fehler beim Erstellen der manuellen Sicherung: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 715
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup file {}: {}"
+msgstr "Fehler beim Lesen der Sicherungsdatei {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 754
+#: NEEDS WORK
+#, python-brace-format
+msgid "Backup validation error: {}"
+msgstr "Backup-Validierungsfehler: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 762
+#: NEEDS WORK
+msgid "Invalid backup file"
+msgstr "Ungültige Sicherungsdatei"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 771
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current database backed up to: {}"
+msgstr "Aktuelle Datenbank gesichert auf: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 782
+#: NEEDS WORK
+#, python-brace-format
+msgid "Successfully imported database with {} projects"
+msgstr "Datenbank mit {} Projekten erfolgreich importiert"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 790
+#: NEEDS WORK
+msgid "Import failed, restored previous database"
+msgstr "Import fehlgeschlagen, vorherige Datenbank wiederhergestellt"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 794
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error importing database: {}: {}"
+msgstr "Fehler beim Importieren der Datenbank: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 804
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted backup: {}"
+msgstr "Gelöschtes Backup: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 825
+#: NEEDS WORK
+msgid "Warning: ODT export not available (missing xml dependencies)"
+msgstr "Warnung: ODT-Export nicht verfügbar (fehlende XML-Abhängigkeiten)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 827
+#: NEEDS WORK
+msgid "Warning: PDF export not available (missing reportlab)"
+msgstr "Warnung: PDF-Export nicht verfügbar (reportlab fehlt)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1030
+#: NEEDS WORK
+#, python-brace-format
+msgid "Export format '{}' not available"
+msgstr "Exportformat '{}' nicht verfügbar"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1034
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error exporting project: {}: {}"
+msgstr "Fehler beim Exportieren des Projekts: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1081
+# File: usr/share/tac-writer/core/services.py, line: 1621
+#: NEEDS WORK
+msgid "Footnotes:"
+msgstr "Fußnoten:"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1088
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to TXT: {}"
+msgstr "Dateifehler beim Exportieren nach TXT: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1091
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to TXT: {}: {}"
+msgstr "Unerwarteter Fehler beim Exportieren nach TXT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1145
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to ODT: {}"
+msgstr "Dateifehler beim Exportieren nach ODT: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1148
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to ODT: {}: {}"
+msgstr "Unerwarteter Fehler beim Exportieren nach ODT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1631
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to PDF: {}"
+msgstr "Dateifehler beim Exportieren nach PDF: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1634
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to PDF: {}: {}"
+msgstr "Unerwarteter Fehler beim Exportieren nach PDF: {}: {}"
 # 
 # File: usr/share/tac-writer/core/models.py, line: 440
 #: NEEDS WORK

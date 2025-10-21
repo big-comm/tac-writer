@@ -1879,55 +1879,55 @@ msgid "Warning: PDF export not available (missing reportlab)"
 msgstr "Warning: PDF export not available (missing reportlab)"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1014
+# File: usr/share/tac-writer/core/services.py, line: 1030
 #, python-brace-format
 msgid "Export format '{}' not available"
 msgstr "Export format '{}' not available"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1018
+# File: usr/share/tac-writer/core/services.py, line: 1034
 #, python-brace-format
 msgid "Error exporting project: {}: {}"
 msgstr "Error exporting project: {}: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1060
-# File: usr/share/tac-writer/core/services.py, line: 1557
+# File: usr/share/tac-writer/core/services.py, line: 1081
+# File: usr/share/tac-writer/core/services.py, line: 1621
 msgid "Footnotes:"
 msgstr "Footnotes:"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1067
+# File: usr/share/tac-writer/core/services.py, line: 1088
 #, python-brace-format
 msgid "File error exporting to TXT: {}"
 msgstr "File error exporting to TXT: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1070
+# File: usr/share/tac-writer/core/services.py, line: 1091
 #, python-brace-format
 msgid "Unexpected error exporting to TXT: {}: {}"
 msgstr "Unexpected error exporting to TXT: {}: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1124
+# File: usr/share/tac-writer/core/services.py, line: 1145
 #, python-brace-format
 msgid "File error exporting to ODT: {}"
 msgstr "File error exporting to ODT: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1127
+# File: usr/share/tac-writer/core/services.py, line: 1148
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "Unexpected error exporting to ODT: {}: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1567
+# File: usr/share/tac-writer/core/services.py, line: 1631
 #, python-brace-format
 msgid "File error exporting to PDF: {}"
 msgstr "File error exporting to PDF: {}"
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1570
+# File: usr/share/tac-writer/core/services.py, line: 1634
 #, python-brace-format
 msgid "Unexpected error exporting to PDF: {}: {}"
 msgstr "Unexpected error exporting to PDF: {}: {}"
