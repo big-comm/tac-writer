@@ -277,10 +277,20 @@ msgstr "Odaberite predložak za početak"
 msgid "Document Template"
 msgstr "Predložak dokumenta"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+# File: usr/share/tac-writer/ui/dialogs.py, line: 286
 #: NEEDS WORK
-msgid "Error Creating Project"
-msgstr "Greška prilikom kreiranja projekta"
+msgid "Project name is too long (max 100 characters)"
+msgstr "Ime projekta je predugačko (maksimalno 100 znakova)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 299
+#: NEEDS WORK
+msgid "Failed to save project to database"
+msgstr "Neuspjelo spremanje projekta u bazu podataka"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 309
+#: NEEDS WORK
+msgid "Invalid Input"
+msgstr "Nevažeći unos"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 303
 # File: usr/share/tac-writer/ui/dialogs.py, line: 553
@@ -292,6 +302,23 @@ msgstr "Greška prilikom kreiranja projekta"
 #: NEEDS WORK
 msgid "OK"
 msgstr "U redu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Greška prilikom kreiranja projekta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 331
+#: NEEDS WORK
+msgid "Unexpected Error"
+msgstr "Neočekivana pogreška"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+#: NEEDS WORK
+msgid ""
+"An unexpected error occurred. Please report this issue:\n"
+"\n"
+msgstr "Došlo je do neočekivane pogreške. Molimo prijavite ovaj problem:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
 #: NEEDS WORK
@@ -360,6 +387,12 @@ msgstr "Kliknite za odabir lokacije"
 #: NEEDS WORK
 msgid "Choose..."
 msgstr "Odaberite..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 452
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not create default export directory: {}"
+msgstr "Upozorenje: Nije moguće stvoriti zadani direktorij za izvoz: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 477
 #: NEEDS WORK
@@ -444,6 +477,12 @@ msgstr "Zadani font"
 msgid "Font Family"
 msgstr "Obitelj fonta"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading system fonts: {}"
+msgstr "Greška pri učitavanju sustavnih fontova: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 641
 #: NEEDS WORK
 msgid "Font Size"
@@ -483,6 +522,54 @@ msgstr "Prikaži brojeve redaka"
 #: NEEDS WORK
 msgid "Display line numbers in the editor"
 msgstr "Prikaži brojeve redaka u uređivaču"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 737
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading preferences: {}"
+msgstr "Greška pri učitavanju postavki: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 751
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing theme: {}"
+msgstr "Greška pri promjeni teme: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font family: {}"
+msgstr "Greška prilikom promjene obitelji fonta: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 767
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font size: {}"
+msgstr "Greška pri promjeni veličine fonta: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing auto save: {}"
+msgstr "Greška prilikom promjene automatskog spremanja: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 781
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing word wrap: {}"
+msgstr "Greška prilikom promjene obavijanja riječi: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 788
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing line numbers: {}"
+msgstr "Greška pri promjeni brojeva redaka: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 833
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error applying welcome dialog CSS: {}"
+msgstr "Greška pri primjeni CSS-a za dijalog dobrodošlice: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 793
 #: NEEDS WORK
@@ -526,6 +613,21 @@ msgstr "Prikaži ovaj dijalog pri pokretanju"
 msgid "Let's Start"
 msgstr "Započnimo"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 949
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving welcome dialog preference: {}"
+msgstr "Greška pri spremanju postavke dijaloga dobrodošlice: {}"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+# File: usr/share/tac-writer/ui/components.py, line: 662
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not open wiki URL: {}"
+msgstr "Nije moguće otvoriti wiki URL: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 978
 #: NEEDS WORK
 msgid "Backup Manager"
@@ -553,6 +655,12 @@ msgstr "Uvezi bazu podataka"
 msgid "Current Database"
 msgstr "Trenutna baza podataka"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1072
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error getting database info: {}"
+msgstr "Greška prilikom dobivanja informacija iz baze podataka: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1035
 #: NEEDS WORK
 msgid "Database Location"
@@ -573,6 +681,15 @@ msgstr "Dostupne sigurnosne kopije"
 #: NEEDS WORK
 msgid "Backups are stored in Documents/TAC Projects/database_backups"
 msgstr "Sigurnosne kopije pohranjene su u Dokumenti/TAC Projekti/baza_podataka_sigurnosne_kopije"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
+# File: usr/share/tac-writer/core/services.py, line: 722
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error listing backups: {}"
+msgstr "Greška prilikom navođenja sigurnosnih kopija: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1093
 #: NEEDS WORK
@@ -615,6 +732,12 @@ msgstr "Izbriši sigurnosnu kopiju"
 msgid "Creating..."
 msgstr "Stvaranje..."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1212
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in backup thread: {}"
+msgstr "Greška u niti za sigurnosnu kopiju: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1173
 #: NEEDS WORK
 msgid "Backup created successfully"
@@ -656,6 +779,18 @@ msgstr "Nevažeća sigurnosna kopija"
 msgid "The selected file is not a valid TAC database backup."
 msgstr "Odabrana datoteka nije važeća TAC sigurnosna kopija baze podataka."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1292
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error validating backup: {}"
+msgstr "Greška pri provjeri sigurnosne kopije: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup info: {}"
+msgstr "Greška prilikom čitanja informacija o sigurnosnoj kopiji: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1249
 #: NEEDS WORK
 msgid "Import Database?"
@@ -686,6 +821,12 @@ msgstr "Učitavanje baze podataka"
 #: NEEDS WORK
 msgid "Please wait while the database is being imported..."
 msgstr "Molimo pričekajte dok se baza podataka uvozi..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1344
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in import thread: {}"
+msgstr "Greška u niti za uvoz: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1295
 #: NEEDS WORK
@@ -732,6 +873,15 @@ msgstr ""
 msgid "Delete"
 msgstr "Izbriši"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1406
+# File: usr/share/tac-writer/core/services.py, line: 808
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error deleting backup: {}"
+msgstr "Greška prilikom brisanja sigurnosne kopije: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -766,6 +916,12 @@ msgstr "Smanji"
 msgid "Reset"
 msgstr "Ponovno postavi"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up Pomodoro dialog styles: {}"
+msgstr "Greška prilikom postavljanja stilova dijaloga Pomodoro: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 386
 #: NEEDS WORK
 msgid "⏸ Pause"
@@ -775,6 +931,35 @@ msgstr "⏸ Pauza"
 #: NEEDS WORK
 msgid "▶ Start"
 msgstr "▶ Pokreni"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 494
+# File: usr/share/tac-writer/application.py, line: 229
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dictionary {}: {}"
+msgstr "Provjera pogrešaka rječnika {}: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 497
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enchant not available for spell checking: {}"
+msgstr "Čarolija nije dostupna za provjeru pravopisa: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 521
+# File: usr/share/tac-writer/ui/components.py, line: 1020
+#: NEEDS WORK
+#, python-brace-format
+msgid "Spell check setup failed: {}"
+msgstr "Postavke provjere pravopisa nisu uspjeli: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 539
+# File: usr/share/tac-writer/ui/components.py, line: 1092
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error toggling spell check: {}"
+msgstr "Greška pri prebacivanju provjere pravopisa: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 575
 #: NEEDS WORK
@@ -871,6 +1056,12 @@ msgstr "Izbriši '{}' ?"
 msgid "This project will be moved to trash and can be recovered."
 msgstr "Ovaj projekt će biti premješten u smeće i može se oporaviti."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1000
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during paragraph editor initialization: {}"
+msgstr "Greška tijekom inicijalizacije uređivača odlomaka: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1044
 #: NEEDS WORK
 msgid "Manage footnotes"
@@ -920,11 +1111,27 @@ msgstr "Argument"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1202
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+#: NEEDS WORK
+msgid "Argument Resumption"
+msgstr "Nastavak argumenta"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1199
 # File: usr/share/tac-writer/ui/main_window.py, line: 333
 #: NEEDS WORK
 msgid "Quote"
 msgstr "Citat"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1204
+# File: usr/share/tac-writer/ui/main_window.py, line: 334
+#: NEEDS WORK
+msgid "Epigraph"
+msgstr "Epigraf"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
@@ -953,6 +1160,12 @@ msgstr "Ova radnja se ne može poništiti."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Ukloni"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1338
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up spell check: {}"
+msgstr "Greška prilikom postavljanja provjere pravopisa: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1364
 #: NEEDS WORK
@@ -1135,6 +1348,571 @@ msgstr "Učitavanje projekta..."
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "Neuspješno otvaranje projekta: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 127
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not set system locale: {}"
+msgstr "Upozorenje: Nije moguće postaviti sistemski jezik: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 210
+#: NEEDS WORK
+msgid "PyGTKSpellcheck not installed - disabling spell checking"
+msgstr "PyGTKSpellcheck nije instaliran - onemogućavanje provjere pravopisa"
+# 
+# File: usr/share/tac-writer/application.py, line: 216
+#: NEEDS WORK
+msgid "Enchant backend not available - disabling spell checking"
+msgstr "Enchant backend nije dostupan - onemogućavanje provjere pravopisa"
+# 
+# File: usr/share/tac-writer/application.py, line: 233
+#: NEEDS WORK
+#, python-brace-format
+msgid "Available spell check dictionaries: {}"
+msgstr "Dostupni rječnici za provjeru pravopisa: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 242
+#: NEEDS WORK
+#, python-brace-format
+msgid "Using auto-detected language: {}"
+msgstr "Koristeći automatski otkriveni jezik: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 247
+#: NEEDS WORK
+#, python-brace-format
+msgid "Auto-detected language not available, using fallback: {}"
+msgstr "Automatski prepoznati jezik nije dostupan, koristi se rezervni: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 253
+#: NEEDS WORK
+msgid "No spell check dictionaries found - disabling spell checking"
+msgstr "Nema pronađenih rječnika za provjeru pravopisa - onemogućavanje provjere pravopisa"
+# 
+# File: usr/share/tac-writer/application.py, line: 258
+#: NEEDS WORK
+#, python-brace-format
+msgid "Import error while checking spell dependencies: {}"
+msgstr "Greška pri uvozu prilikom provjere ovisnosti pravopisa: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error checking spell dependencies: {}"
+msgstr "Neočekivana greška prilikom provjere ovisnosti pravopisa: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 278
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during application startup: {}: {}"
+msgstr "Greška tijekom pokretanja aplikacije: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 291
+#: NEEDS WORK
+msgid "Main window created"
+msgstr "Glavni prozor je stvoren"
+# 
+# File: usr/share/tac-writer/application.py, line: 295
+#: NEEDS WORK
+msgid "Main window presented"
+msgstr "Glavni prozor prikazan"
+# 
+# File: usr/share/tac-writer/application.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error activating application: {}: {}"
+msgstr "Greška prilikom aktivacije aplikacije: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 320
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up actions: {}: {}"
+msgstr "Greška prilikom postavljanja radnji: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up menu: {}: {}"
+msgstr "Greška prilikom postavljanja izbornika: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 433
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not apply CSS: {}"
+msgstr "Nije moguće primijeniti CSS: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 436
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up theme: {}: {}"
+msgstr "Greška prilikom postavljanja teme: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing new project dialog: {}: {}"
+msgstr "Greška pri prikazivanju dijaloga za novi projekt: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 454
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing open project dialog: {}: {}"
+msgstr "Greška prilikom prikazivanja dijaloga za otvaranje projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 462
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving project: {}: {}"
+msgstr "Greška pri spremanju projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 470
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing export dialog: {}: {}"
+msgstr "Greška prilikom prikazivanja dijaloga za izvoz: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 478
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing preferences dialog: {}: {}"
+msgstr "Greška prilikom prikazivanja dijaloga s postavkama: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 486
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing about dialog: {}: {}"
+msgstr "Greška prilikom prikazivanja dijaloga o programu: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 493
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error quitting application: {}: {}"
+msgstr "Greška pri zatvaranju aplikacije: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 502
+#: NEEDS WORK
+msgid "Configuration saved"
+msgstr "Konfiguracija spremljena"
+# 
+# File: usr/share/tac-writer/application.py, line: 508
+#: NEEDS WORK
+msgid "Application shutdown complete"
+msgstr "Zatvaranje aplikacije je završeno"
+# 
+# File: usr/share/tac-writer/application.py, line: 511
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during shutdown: {}: {}"
+msgstr "Greška tijekom gašenja: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 520
+#: NEEDS WORK
+msgid "No config available for spell check debug"
+msgstr "Nema dostupne konfiguracije za ispravak pravopisa u načinu ispravljanja grešaka"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 49
+#: NEEDS WORK
+#, python-brace-format
+msgid "ProjectManager initialized with database: {}"
+msgstr "ProjectManager inicijaliziran s bazom podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 66
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error: {}"
+msgstr "Greška u vezi s bazom podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 77
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking project existence: {}"
+msgstr "Provjera greške u postojanju projekta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 86
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid project data: missing field '{}'"
+msgstr "Nevažeći podaci o projektu: nedostaje polje '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid paragraph {}: missing field '{}'"
+msgstr "Nevažeći odlomak {}: nedostaje polje '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 113
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created migration backup: {}"
+msgstr "Stvorena sigurnosna kopija migracije: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 117
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to create migration backup: {}"
+msgstr "Nije uspjelo kreirati sigurnosnu kopiju migracije: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 131
+#: NEEDS WORK
+#, python-brace-format
+msgid "Found {} old JSON projects. Starting migration..."
+msgstr "Pronađeno {} starih JSON projekata. Započinjem migraciju..."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 136
+#: NEEDS WORK
+msgid "Migration aborted: Could not create backup"
+msgstr "Migracija prekinuta: Nije moguće stvoriti sigurnosnu kopiju"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 156
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading {}: {}"
+msgstr "Greška pri učitavanju {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 160
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: {} files have validation errors and will be skipped"
+msgstr "Upozorenje: {} datoteke imaju pogreške u validaciji i bit će preskočene"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 163
+#: NEEDS WORK
+msgid "No valid projects to migrate"
+msgstr "Nema valjanih projekata za migraciju"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 185
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to migrate {} projects"
+msgstr "Neuspjela migracija {} projekata"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 189
+#: NEEDS WORK
+msgid "Migration transaction committed successfully"
+msgstr "Migracija transakcije uspješno je izvršena"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 197
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not rename {}: {}"
+msgstr "Upozorenje: Nije moguće preimenovati {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 202
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed, transaction rolled back: {}"
+msgstr "Migracija nije uspjela, transakcija je vraćena: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 206
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed with database error: {}"
+msgstr "Migracija je neuspjela s greškom u bazi podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration complete. {} projects successfully migrated."
+msgstr "Migracija završena. {} projekata uspješno migrirano."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 222
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for project {}: {}"
+msgstr "Greška pri serijalizaciji JSON-a za projekt {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 252
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for paragraph {}: {}"
+msgstr "Greška u JSON serijalizaciji za odlomak {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 270
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project {}: {}"
+msgstr "Greška baze podataka prilikom spremanja projekta {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 290
+#: NEEDS WORK
+#, python-brace-format
+msgid "Saved project to database: {}"
+msgstr "Spremljen projekt u bazu podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 294
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to save project to database: {}"
+msgstr "Neuspjelo spremanje projekta u bazu podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project '{}': {}"
+msgstr "Greška baze podataka prilikom spremanja projekta '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error saving project '{}': {}: {}"
+msgstr "Neočekivana greška prilikom spremanja projekta '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 307
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error for project '{}': {}"
+msgstr "Greška u vezi s bazom podataka za projekt '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 310
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error in save_project for '{}': {}: {}"
+msgstr "Neočekivana greška u save_project za '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 342
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database backup created: {}"
+msgstr "Izrada sigurnosne kopije baze podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 346
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Database backup failed: {}"
+msgstr "Upozorenje: Izrada sigurnosne kopije baze podataka nije uspjela: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Removed old backup: {}"
+msgstr "Uklonjena stara sigurnosna kopija: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 363
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Cleanup of old backups failed: {}"
+msgstr "Upozorenje: Čišćenje starih sigurnosnih kopija nije uspjelo: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 467
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error listing projects: {}"
+msgstr "Greška baze podataka prilikom navođenja projekata: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 469
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error listing projects: {}: {}"
+msgstr "Neočekivana greška prilikom navođenja projekata: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 479
+#: NEEDS WORK
+msgid "Database maintenance completed"
+msgstr "Održavanje baze podataka završeno"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 481
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database maintenance failed: {}"
+msgstr "Održavanje baze podataka nije uspjelo: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 510
+#: NEEDS WORK
+#, python-brace-format
+msgid "error: {}"
+msgstr "greška: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 517
+#: NEEDS WORK
+#, python-brace-format
+msgid "unexpected error: {}"
+msgstr "neočekivana greška: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 561
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database initialization error: {}"
+msgstr "Greška pri inicijalizaciji baze podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 573
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created project: {} ({})"
+msgstr "Stvoren projekt: {} ({})"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 576
+#: NEEDS WORK
+msgid "Failed to save new project to database"
+msgstr "Neuspjelo spremanje novog projekta u bazu podataka"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 578
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating project: {}: {}"
+msgstr "Greška prilikom kreiranja projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 591
+#: NEEDS WORK
+#, python-brace-format
+msgid "Project with ID {} not found in database."
+msgstr "Projekt s ID-jem {} nije pronađen u bazi podataka."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 620
+#: NEEDS WORK
+#, python-brace-format
+msgid "Loaded project from database: {}"
+msgstr "Učitani projekt iz baze podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 624
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error loading project: {}"
+msgstr "Greška baze podataka prilikom učitavanja projekta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 627
+#: NEEDS WORK
+#, python-brace-format
+msgid "Data error loading project: {}: {}"
+msgstr "Pogreška podataka prilikom učitavanja projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 630
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error loading project: {}: {}"
+msgstr "Neočekivana greška prilikom učitavanja projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 643
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted project from database: {}"
+msgstr "Izbrisan projekt iz baze podataka: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 646
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error deleting project: {}"
+msgstr "Greška baze podataka prilikom brisanja projekta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Manual backup created: {}"
+msgstr "Ručno izrađena sigurnosna kopija: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 675
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating manual backup: {}"
+msgstr "Greška prilikom stvaranja ručne sigurnosne kopije: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 715
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup file {}: {}"
+msgstr "Greška pri čitanju datoteke sigurnosne kopije {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 754
+#: NEEDS WORK
+#, python-brace-format
+msgid "Backup validation error: {}"
+msgstr "Pogreška pri provjeri sigurnosne kopije: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 762
+#: NEEDS WORK
+msgid "Invalid backup file"
+msgstr "Nevažeća datoteka sigurnosne kopije"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 771
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current database backed up to: {}"
+msgstr "Trenutna baza podataka sigurnosno kopirana na: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 782
+#: NEEDS WORK
+#, python-brace-format
+msgid "Successfully imported database with {} projects"
+msgstr "Uspješno uvezena baza podataka s {} projekata"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 790
+#: NEEDS WORK
+msgid "Import failed, restored previous database"
+msgstr "Uvoz nije uspio, vraćena prethodna baza podataka"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 794
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error importing database: {}: {}"
+msgstr "Greška prilikom uvoza baze podataka: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 804
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted backup: {}"
+msgstr "Izbrisana sigurnosna kopija: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 825
+#: NEEDS WORK
+msgid "Warning: ODT export not available (missing xml dependencies)"
+msgstr "Upozorenje: ODT izvoz nije dostupan (nedostaju xml ovisnosti)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 827
+#: NEEDS WORK
+msgid "Warning: PDF export not available (missing reportlab)"
+msgstr "Upozorenje: PDF izvoz nije dostupan (nedostaje reportlab)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1014
+#: NEEDS WORK
+#, python-brace-format
+msgid "Export format '{}' not available"
+msgstr "Format izvoza '{}' nije dostupan"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1018
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error exporting project: {}: {}"
+msgstr "Greška prilikom izvoza projekta: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1060
+# File: usr/share/tac-writer/core/services.py, line: 1557
+#: NEEDS WORK
+msgid "Footnotes:"
+msgstr "Bilješke:"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1067
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to TXT: {}"
+msgstr "Greška pri izvozu u TXT: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1070
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to TXT: {}: {}"
+msgstr "Neočekivana greška prilikom izvoza u TXT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1124
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to ODT: {}"
+msgstr "Greška pri izvozu u ODT: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1127
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to ODT: {}: {}"
+msgstr "Neočekivana greška prilikom izvoza u ODT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1567
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to PDF: {}"
+msgstr "Greška pri izvozu u PDF: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1570
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to PDF: {}: {}"
+msgstr "Neočekivana greška prilikom izvoza u PDF: {}: {}"
 # 
 # File: usr/share/tac-writer/core/models.py, line: 440
 #: NEEDS WORK

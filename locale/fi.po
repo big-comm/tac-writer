@@ -277,10 +277,20 @@ msgstr "Valitse malli, jota käyttää aloittamiseen"
 msgid "Document Template"
 msgstr "Asiakirjamalli"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+# File: usr/share/tac-writer/ui/dialogs.py, line: 286
 #: NEEDS WORK
-msgid "Error Creating Project"
-msgstr "Virhe projektin luomisessa"
+msgid "Project name is too long (max 100 characters)"
+msgstr "Projektin nimi on liian pitkä (max 100 merkkiä)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 299
+#: NEEDS WORK
+msgid "Failed to save project to database"
+msgstr "Projektin tallentaminen tietokantaan epäonnistui"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 309
+#: NEEDS WORK
+msgid "Invalid Input"
+msgstr "Virheellinen syöte"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 303
 # File: usr/share/tac-writer/ui/dialogs.py, line: 553
@@ -292,6 +302,23 @@ msgstr "Virhe projektin luomisessa"
 #: NEEDS WORK
 msgid "OK"
 msgstr "OK"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 300
+#: NEEDS WORK
+msgid "Error Creating Project"
+msgstr "Virhe projektin luomisessa"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 331
+#: NEEDS WORK
+msgid "Unexpected Error"
+msgstr "Odottamaton virhe"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+#: NEEDS WORK
+msgid ""
+"An unexpected error occurred. Please report this issue:\n"
+"\n"
+msgstr "Odottamaton virhe tapahtui. Ilmoita tästä ongelmasta:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
 #: NEEDS WORK
@@ -360,6 +387,12 @@ msgstr "Napsauta valitaksesi sijainnin"
 #: NEEDS WORK
 msgid "Choose..."
 msgstr "Valitse..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 452
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not create default export directory: {}"
+msgstr "Varoitus: Oletusvientiä varten hakemistoa ei voitu luoda: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 477
 #: NEEDS WORK
@@ -444,6 +477,12 @@ msgstr "Oletusfontti"
 msgid "Font Family"
 msgstr "Fonttiperhe"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading system fonts: {}"
+msgstr "Virhe järjestelmäfonttien lataamisessa: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 641
 #: NEEDS WORK
 msgid "Font Size"
@@ -483,6 +522,54 @@ msgstr "Näytä rivinumerot"
 #: NEEDS WORK
 msgid "Display line numbers in the editor"
 msgstr "Näytä rivinumerot editorissa"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 737
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading preferences: {}"
+msgstr "Virhe ladattaessa asetuksia: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 751
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing theme: {}"
+msgstr "Virhe teeman vaihtamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font family: {}"
+msgstr "Virhe fonttiperheen vaihtamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 767
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing font size: {}"
+msgstr "Virhe fonttikoon muuttamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing auto save: {}"
+msgstr "Virhe automaattisen tallennuksen muuttamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 781
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing word wrap: {}"
+msgstr "Virhe sanan kääntämisessä: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 788
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error changing line numbers: {}"
+msgstr "Virhe rivinumeroiden muuttamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 833
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error applying welcome dialog CSS: {}"
+msgstr "Virhe tervetulo-dialogin CSS:n soveltamisessa: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 793
 #: NEEDS WORK
@@ -527,6 +614,21 @@ msgstr "Näytä tämä valintaikkuna käynnistyksessä"
 msgid "Let's Start"
 msgstr "Aloitetaan"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 949
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving welcome dialog preference: {}"
+msgstr "Virhe tallennettaessa tervetuloaikkunan asetusta: {}"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 969
+# File: usr/share/tac-writer/ui/components.py, line: 662
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not open wiki URL: {}"
+msgstr "Ei voitu avata wiki-URL-osoitetta: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 978
 #: NEEDS WORK
 msgid "Backup Manager"
@@ -554,6 +656,12 @@ msgstr "Tuo tietokanta"
 msgid "Current Database"
 msgstr "Nykyinen tietokanta"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1072
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error getting database info: {}"
+msgstr "Virhe tietokannan tietojen hakemisessa: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1035
 #: NEEDS WORK
 msgid "Database Location"
@@ -574,6 +682,15 @@ msgstr "Saatavilla olevat varmuuskopiot"
 #: NEEDS WORK
 msgid "Backups are stored in Documents/TAC Projects/database_backups"
 msgstr "Varmuuskopiot tallennetaan kansioon Asiakirjat/TAC-projektit/tietokantavarmuuskopiot"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1137
+# File: usr/share/tac-writer/core/services.py, line: 722
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error listing backups: {}"
+msgstr "Virhe varmuuskopioiden luetteloinnissa: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1093
 #: NEEDS WORK
@@ -616,6 +733,12 @@ msgstr "Poista varmuuskopio"
 msgid "Creating..."
 msgstr "Luodaan..."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1212
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in backup thread: {}"
+msgstr "Virhe varmuuskopiointisäikeessä: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1173
 #: NEEDS WORK
 msgid "Backup created successfully"
@@ -657,6 +780,18 @@ msgstr "Virheellinen varmuuskopio"
 msgid "The selected file is not a valid TAC database backup."
 msgstr "Valittu tiedosto ei ole voimassa oleva TAC-tietokannan varmuuskopio."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1292
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error validating backup: {}"
+msgstr "Virhe varmuuskopion vahvistamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup info: {}"
+msgstr "Virhe varmuuskopiointitietojen lukemisessa: {}"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1249
 #: NEEDS WORK
 msgid "Import Database?"
@@ -687,6 +822,12 @@ msgstr "Tietokannan tuonti"
 #: NEEDS WORK
 msgid "Please wait while the database is being imported..."
 msgstr "Ole hyvä ja odota, kun tietokanta tuodaan..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1344
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error in import thread: {}"
+msgstr "Virhe tuontisäikeessä: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1295
 #: NEEDS WORK
@@ -733,6 +874,15 @@ msgstr ""
 msgid "Delete"
 msgstr "Poista"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1406
+# File: usr/share/tac-writer/core/services.py, line: 808
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error deleting backup: {}"
+msgstr "Virhe varmuuskopion poistamisessa: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -767,6 +917,12 @@ msgstr "Pienennä"
 msgid "Reset"
 msgstr "Nollaa"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up Pomodoro dialog styles: {}"
+msgstr "Virhe Pomodoro-dialogin tyylien asetuksessa: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 386
 #: NEEDS WORK
 msgid "⏸ Pause"
@@ -776,6 +932,35 @@ msgstr "⏸ Pysäytä"
 #: NEEDS WORK
 msgid "▶ Start"
 msgstr "▶ Aloita"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 494
+# File: usr/share/tac-writer/application.py, line: 229
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking dictionary {}: {}"
+msgstr "Virhe tarkistettaessa sanakirjaa {}: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 497
+#: NEEDS WORK
+#, python-brace-format
+msgid "Enchant not available for spell checking: {}"
+msgstr "Lumo ei ole saatavilla oikeinkirjoituksen tarkistusta varten: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 521
+# File: usr/share/tac-writer/ui/components.py, line: 1020
+#: NEEDS WORK
+#, python-brace-format
+msgid "Spell check setup failed: {}"
+msgstr "Oikolukuasetuksen määrittäminen epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 539
+# File: usr/share/tac-writer/ui/components.py, line: 1092
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error toggling spell check: {}"
+msgstr "Virhe oikoluvun kytkemisessä: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 575
 #: NEEDS WORK
@@ -872,6 +1057,12 @@ msgstr "Poista '{}'?"
 msgid "This project will be moved to trash and can be recovered."
 msgstr "Tämä projekti siirretään roskakoriin ja se voidaan palauttaa."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1000
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during paragraph editor initialization: {}"
+msgstr "Virhe kappaleeditorin alustuksessa: {}"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1044
 #: NEEDS WORK
 msgid "Manage footnotes"
@@ -921,11 +1112,27 @@ msgstr "Argumentti"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1202
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
+#: NEEDS WORK
+msgid "Argument Resumption"
+msgstr "Argumentin jatkaminen"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1199
 # File: usr/share/tac-writer/ui/main_window.py, line: 333
 #: NEEDS WORK
 msgid "Quote"
 msgstr "Lainaus"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1204
+# File: usr/share/tac-writer/ui/main_window.py, line: 334
+#: NEEDS WORK
+msgid "Epigraph"
+msgstr "Epigrafi"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
@@ -954,6 +1161,12 @@ msgstr "Tätä toimintoa ei voi peruuttaa."
 #: NEEDS WORK
 msgid "Remove"
 msgstr "Poista"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1338
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up spell check: {}"
+msgstr "Virhe oikoluvun asetuksessa: {}"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1364
 #: NEEDS WORK
@@ -1136,6 +1349,573 @@ msgstr "Ladataan projektia..."
 #, python-brace-format
 msgid "Failed to open project: {}"
 msgstr "Projektin avaaminen epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 127
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not set system locale: {}"
+msgstr "Varoitus: Järjestelmän alueasetusta ei voitu asettaa: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 210
+#: NEEDS WORK
+msgid "PyGTKSpellcheck not installed - disabling spell checking"
+msgstr "PyGTKSpellcheck ei ole asennettu - oikeinkirjoituksen tarkistus poistettu käytöstä"
+# 
+# File: usr/share/tac-writer/application.py, line: 216
+#: NEEDS WORK
+msgid "Enchant backend not available - disabling spell checking"
+msgstr "Enchant-taustapalvelua ei ole saatavilla - oikeinkirjoituksen tarkistus poistettu käytöstä"
+# 
+# File: usr/share/tac-writer/application.py, line: 233
+#: NEEDS WORK
+#, python-brace-format
+msgid "Available spell check dictionaries: {}"
+msgstr "Saatavilla olevat oikeinkirjoituksen tarkistussanakirjat: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 242
+#: NEEDS WORK
+#, python-brace-format
+msgid "Using auto-detected language: {}"
+msgstr "Käytetään automaattisesti tunnistettua kieltä: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 247
+#: NEEDS WORK
+#, python-brace-format
+msgid "Auto-detected language not available, using fallback: {}"
+msgstr "Automaattisesti tunnistettua kieltä ei ole saatavilla, käytetään varakieltä: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 253
+#: NEEDS WORK
+msgid "No spell check dictionaries found - disabling spell checking"
+msgstr ""
+"Ei oikeinkirjoituksen tarkistussanakirjoja löytynyt - oikeinkirjoituksen tarkistus poistettu "
+"käytöstä"
+# 
+# File: usr/share/tac-writer/application.py, line: 258
+#: NEEDS WORK
+#, python-brace-format
+msgid "Import error while checking spell dependencies: {}"
+msgstr "Tuontivirhe tarkistaessa oikeinkirjoitusriippuvuuksia: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error checking spell dependencies: {}"
+msgstr "Odottamaton virhe tarkistaessa loitsujen riippuvuuksia: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 278
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during application startup: {}: {}"
+msgstr "Virhe sovelluksen käynnistyksessä: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 291
+#: NEEDS WORK
+msgid "Main window created"
+msgstr "Pääikkuna luotu"
+# 
+# File: usr/share/tac-writer/application.py, line: 295
+#: NEEDS WORK
+msgid "Main window presented"
+msgstr "Pääikkuna esitetty"
+# 
+# File: usr/share/tac-writer/application.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error activating application: {}: {}"
+msgstr "Virhe sovelluksen aktivoinnissa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 320
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up actions: {}: {}"
+msgstr "Virhe toimintojen asetuksessa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 343
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up menu: {}: {}"
+msgstr "Virhe valikon asetuksessa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 433
+#: NEEDS WORK
+#, python-brace-format
+msgid "Could not apply CSS: {}"
+msgstr "CSS: {} ei voitu soveltaa."
+# 
+# File: usr/share/tac-writer/application.py, line: 436
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up theme: {}: {}"
+msgstr "Virhe teeman asetuksessa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing new project dialog: {}: {}"
+msgstr "Virhe uuden projektin dialogin näyttämisessä: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 454
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing open project dialog: {}: {}"
+msgstr "Virhe avattaessa projektin dialogia: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 462
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error saving project: {}: {}"
+msgstr "Virhe tallennettaessa projektia: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 470
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing export dialog: {}: {}"
+msgstr "Virhe vientidialogin näyttämisessä: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 478
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing preferences dialog: {}: {}"
+msgstr "Virhe asetusten valintaikkunan näyttämisessä: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 486
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error showing about dialog: {}: {}"
+msgstr "Virhe näytettäessä tietoja: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 493
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error quitting application: {}: {}"
+msgstr "Virhe sovelluksen sulkemisessa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 502
+#: NEEDS WORK
+msgid "Configuration saved"
+msgstr "Asetukset tallennettu"
+# 
+# File: usr/share/tac-writer/application.py, line: 508
+#: NEEDS WORK
+msgid "Application shutdown complete"
+msgstr "Sovelluksen sulkeminen valmis"
+# 
+# File: usr/share/tac-writer/application.py, line: 511
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error during shutdown: {}: {}"
+msgstr "Virhe sammutettaessa: {}: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 520
+#: NEEDS WORK
+msgid "No config available for spell check debug"
+msgstr "Ei konfiguraatiota saatavilla oikeinkirjoituksen tarkistuksen virheenkorjaukselle"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 49
+#: NEEDS WORK
+#, python-brace-format
+msgid "ProjectManager initialized with database: {}"
+msgstr "Projektinhallinta alustettu tietokannalla: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 66
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error: {}"
+msgstr "Tietokantayhteyden virhe: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 77
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error checking project existence: {}"
+msgstr "Virheen tarkistaminen projektin olemassaolosta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 86
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid project data: missing field '{}'"
+msgstr "Virheellinen projektitieto: puuttuva kenttä '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "Invalid paragraph {}: missing field '{}'"
+msgstr "Virheellinen kappale {}: puuttuva kenttä '{}'"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 113
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created migration backup: {}"
+msgstr "Luotu siirto varmuuskopio: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 117
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to create migration backup: {}"
+msgstr "Siirron varmuuskopion luominen epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 131
+#: NEEDS WORK
+#, python-brace-format
+msgid "Found {} old JSON projects. Starting migration..."
+msgstr "Löydetty {} vanhaa JSON-projektia. Aloitetaan siirto..."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 136
+#: NEEDS WORK
+msgid "Migration aborted: Could not create backup"
+msgstr "Siirto keskeytetty: Varmuuskopion luominen epäonnistui"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 156
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading {}: {}"
+msgstr "Virhe ladattaessa {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 160
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: {} files have validation errors and will be skipped"
+msgstr "Varoitus: {} tiedostolla on validoimattomia virheitä ja ne ohitetaan."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 163
+#: NEEDS WORK
+msgid "No valid projects to migrate"
+msgstr "Ei voimassa olevia projekteja siirrettäväksi"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 185
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to migrate {} projects"
+msgstr "Siirto epäonnistui {} projektia"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 189
+#: NEEDS WORK
+msgid "Migration transaction committed successfully"
+msgstr "Siirto-osa on vahvistettu onnistuneesti"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 197
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Could not rename {}: {}"
+msgstr "Varoitus: {} ei voitu nimetä uudelleen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 202
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed, transaction rolled back: {}"
+msgstr "Siirto epäonnistui, tapahtuma peruutettiin: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 206
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration failed with database error: {}"
+msgstr "Siirto epäonnistui tietokantavirheen vuoksi: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Migration complete. {} projects successfully migrated."
+msgstr "Siirto valmis. {} projektia siirretty onnistuneesti."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 222
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for project {}: {}"
+msgstr "JSON-sarjallistusvirhe projektille {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 252
+#: NEEDS WORK
+#, python-brace-format
+msgid "JSON serialization error for paragraph {}: {}"
+msgstr "JSON-sarjallistusvirhe kappaleelle {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 270
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project {}: {}"
+msgstr "Tietokantavirhe tallennettaessa projektia {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 290
+#: NEEDS WORK
+#, python-brace-format
+msgid "Saved project to database: {}"
+msgstr "Tallennettu projekti tietokantaan: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 294
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to save project to database: {}"
+msgstr "Projektin tallentaminen tietokantaan epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 298
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error saving project '{}': {}"
+msgstr "Tietokantavirhe tallennettaessa projektia '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 302
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error saving project '{}': {}: {}"
+msgstr "Odottamaton virhe tallennettaessa projektia '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 307
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database connection error for project '{}': {}"
+msgstr "Tietokantayhteyden virhe projektille '{}': {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 310
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error in save_project for '{}': {}: {}"
+msgstr "Odottamaton virhe save_project-toiminnossa '{}': {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 342
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database backup created: {}"
+msgstr "Tietokannan varmuuskopio luotu: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 346
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Database backup failed: {}"
+msgstr "Varoitus: Tietokannan varmuuskopiointi epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 360
+#: NEEDS WORK
+#, python-brace-format
+msgid "Removed old backup: {}"
+msgstr "Poistettu vanha varmuuskopio: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 363
+#: NEEDS WORK
+#, python-brace-format
+msgid "Warning: Cleanup of old backups failed: {}"
+msgstr "Varoitus: Vanhojen varmuuskopioiden puhdistus epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 467
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error listing projects: {}"
+msgstr "Tietokantavirhe projektien luetteloinnissa: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 469
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error listing projects: {}: {}"
+msgstr "Odottamaton virhe projektien luetteloinnissa: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 479
+#: NEEDS WORK
+msgid "Database maintenance completed"
+msgstr "Tietokannan ylläpito suoritettu"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 481
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database maintenance failed: {}"
+msgstr "Tietokannan ylläpito epäonnistui: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 510
+#: NEEDS WORK
+#, python-brace-format
+msgid "error: {}"
+msgstr "virhe: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 517
+#: NEEDS WORK
+#, python-brace-format
+msgid "unexpected error: {}"
+msgstr "odottamaton virhe: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 561
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database initialization error: {}"
+msgstr "Tietokannan alustamisvirhe: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 573
+#: NEEDS WORK
+#, python-brace-format
+msgid "Created project: {} ({})"
+msgstr "Luotu projekti: {} ({})"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 576
+#: NEEDS WORK
+msgid "Failed to save new project to database"
+msgstr "Uuden projektin tallentaminen tietokantaan epäonnistui"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 578
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating project: {}: {}"
+msgstr "Virhe projektin luomisessa: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 591
+#: NEEDS WORK
+#, python-brace-format
+msgid "Project with ID {} not found in database."
+msgstr "Projektia, jonka ID on {}, ei löytynyt tietokannasta."
+# 
+# File: usr/share/tac-writer/core/services.py, line: 620
+#: NEEDS WORK
+#, python-brace-format
+msgid "Loaded project from database: {}"
+msgstr "Ladattu projekti tietokannasta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 624
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error loading project: {}"
+msgstr "Tietokanta virhe ladattaessa projektia: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 627
+#: NEEDS WORK
+#, python-brace-format
+msgid "Data error loading project: {}: {}"
+msgstr "Tietovirhe ladattaessa projektia: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 630
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error loading project: {}: {}"
+msgstr "Odottamaton virhe ladattaessa projektia: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 643
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted project from database: {}"
+msgstr "Poistettu projekti tietokannasta: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 646
+#: NEEDS WORK
+#, python-brace-format
+msgid "Database error deleting project: {}"
+msgstr "Tietokantavirhe projektin poistamisessa: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 671
+#: NEEDS WORK
+#, python-brace-format
+msgid "Manual backup created: {}"
+msgstr "Manuaalinen varmuuskopio luotu: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 675
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error creating manual backup: {}"
+msgstr "Virhe manuaalisen varmuuskopion luomisessa: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 715
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error reading backup file {}: {}"
+msgstr "Virhe varmuuskopiotiedoston lukemisessa {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 754
+#: NEEDS WORK
+#, python-brace-format
+msgid "Backup validation error: {}"
+msgstr "Varmuuskopion vahvistusvirhe: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 762
+#: NEEDS WORK
+msgid "Invalid backup file"
+msgstr "Virheellinen varmuuskopiotiedosto"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 771
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current database backed up to: {}"
+msgstr "Nykyinen tietokanta varmuuskopioitu osoitteeseen: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 782
+#: NEEDS WORK
+#, python-brace-format
+msgid "Successfully imported database with {} projects"
+msgstr "Tietokanta on tuotu onnistuneesti, jossa on {} projektia"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 790
+#: NEEDS WORK
+msgid "Import failed, restored previous database"
+msgstr "Tuonti epäonnistui, edellinen tietokanta palautettu"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 794
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error importing database: {}: {}"
+msgstr "Virhe tietokannan tuonnissa: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 804
+#: NEEDS WORK
+#, python-brace-format
+msgid "Deleted backup: {}"
+msgstr "Poistettu varmuuskopio: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 825
+#: NEEDS WORK
+msgid "Warning: ODT export not available (missing xml dependencies)"
+msgstr "Varoitus: ODT-vienti ei ole käytettävissä (puuttuvat xml-riippuvuudet)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 827
+#: NEEDS WORK
+msgid "Warning: PDF export not available (missing reportlab)"
+msgstr "Varoitus: PDF-vienti ei ole käytettävissä (puuttuu reportlab)"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1014
+#: NEEDS WORK
+#, python-brace-format
+msgid "Export format '{}' not available"
+msgstr "Vienti muotoa '{}' ei ole saatavilla"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1018
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error exporting project: {}: {}"
+msgstr "Virhe projektin vientissä: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1060
+# File: usr/share/tac-writer/core/services.py, line: 1557
+#: NEEDS WORK
+msgid "Footnotes:"
+msgstr "Jalkineet:"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1067
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to TXT: {}"
+msgstr "Tiedosto virhe vienti TXT: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1070
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to TXT: {}: {}"
+msgstr "Odottamaton virhe viedessä TXT-tiedostoon: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1124
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to ODT: {}"
+msgstr "Tiedosto-ongelma viedessä ODT-muotoon: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1127
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to ODT: {}: {}"
+msgstr "Odottamaton virhe ODT-tiedostoon vientiä tehdessä: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1567
+#: NEEDS WORK
+#, python-brace-format
+msgid "File error exporting to PDF: {}"
+msgstr "Tiedostovirhe PDF:ään vientiä varten: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1570
+#: NEEDS WORK
+#, python-brace-format
+msgid "Unexpected error exporting to PDF: {}: {}"
+msgstr "Odottamaton virhe PDF:ään vientiä tehdessä: {}: {}"
 # 
 # File: usr/share/tac-writer/core/models.py, line: 440
 #: NEEDS WORK
