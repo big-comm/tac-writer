@@ -925,7 +925,23 @@ class ExportService:
                 grouped.append({'type': 'quote', 'content': content})
                 last_was_quote = True
             
-            elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+            elif paragraph.type == ParagraphType.EPIGRAPH: # New block
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                # Add epigraph with its own type for special formatting
+                grouped.append({'type': 'epigraph', 'content': content})
+                last_was_quote = True # Treat it like a quote to start a new paragraph after
+            
+            elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                 # Determine if should start new paragraph
                 should_start_new = (
                     paragraph.type == ParagraphType.INTRODUCTION or
@@ -1047,6 +1063,11 @@ class ExportService:
                     
                     elif item['type'] == 'quote':
                         f.write(f"        {item['content']}\n\n")
+
+                    elif item['type'] == 'epigraph': # New block
+                        # Indent epigraph significantly to the right
+                        f.write(f"                            {item['content']}\n\n")
+                    
                     
                     elif item['type'] == 'content':
                         if item['indent']:
@@ -1176,8 +1197,19 @@ class ExportService:
                 
                 grouped_odt.append({'type': 'quote', 'content': content})
                 last_was_quote = True
+                
+            elif paragraph.type == ParagraphType.EPIGRAPH:
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                grouped_odt.append({'type': 'epigraph', 'content': content})
+                last_was_quote = True
             
-            elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+            elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                 should_start_new = (
                     paragraph.type == ParagraphType.INTRODUCTION or
                     last_was_quote or
@@ -1250,6 +1282,8 @@ class ExportService:
                 content_xml += f'<text:p text:style-name="Title2">{item["content"]}</text:p>\n'
             elif item['type'] == 'quote':
                 content_xml += f'<text:p text:style-name="Quote">{item["content"]}</text:p>\n'
+            elif item['type'] == 'epigraph':
+                content_xml += f'<text:p text:style-name="Epigraph">{item["content"]}</text:p>\n'
             elif item['type'] == 'content':
                 content_xml += f'<text:p text:style-name="{item["style"]}">{item["content"]}</text:p>\n'
         
@@ -1309,6 +1343,11 @@ class ExportService:
     <style:paragraph-properties fo:text-align="justify" fo:margin-left="4cm" fo:margin-bottom="0.3cm" fo:line-height="100%"/>
   </style:style>
   
+  <style:style style:name="Epigraph" style:family="paragraph"> <!-- New style -->
+    <style:text-properties fo:font-size="12pt" fo:font-style="italic"/>
+    <style:paragraph-properties fo:text-align="right" fo:margin-left="7.5cm" fo:margin-bottom="0.3cm" fo:line-height="150%"/>
+  </style:style>
+
   <style:style style:name="Footnote" style:family="paragraph">
     <style:text-properties fo:font-size="9pt"/>
     <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.2cm" fo:line-height="100%"/>
@@ -1423,6 +1462,18 @@ class ExportService:
                 alignment=TA_JUSTIFY
             )
             
+            epigraph_style = ParagraphStyle(
+                'Epigraph',
+                parent=styles['Normal'],
+                fontSize=12,
+                leading=18, # 12 * 1.5
+                leftIndent=7.5*cm,
+                spaceBefore=12,
+                spaceAfter=12,
+                fontName='Times-Italic',
+                alignment=TA_RIGHT
+            )
+            
             footnote_style = ParagraphStyle(
                 'Footnote',
                 parent=styles['Normal'],
@@ -1480,7 +1531,18 @@ class ExportService:
                     grouped_pdf.append({'type': 'quote', 'content': content})
                     last_was_quote = True
                 
-                elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+                elif paragraph.type == ParagraphType.EPIGRAPH: # New block
+                    if current_paragraph_content:
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
+                        current_paragraph_content = []
+                        current_style = None
+                        paragraph_starts_with_introduction = False
+                    
+                    grouped_pdf.append({'type': 'epigraph', 'content': content})
+                    last_was_quote = True
+                
+                elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                     should_start_new = (
                         paragraph.type == ParagraphType.INTRODUCTION or
                         last_was_quote or
@@ -1548,6 +1610,8 @@ class ExportService:
                     story.append(RLParagraph(item['content'], title2_style))
                 elif item['type'] == 'quote':
                     story.append(RLParagraph(item['content'], quote_style))
+                elif item['type'] == 'epigraph':
+                    story.append(RLParagraph(item['content'], epigraph_style))
                 elif item['type'] == 'content':
                     story.append(RLParagraph(item['content'], item['style']))
             
