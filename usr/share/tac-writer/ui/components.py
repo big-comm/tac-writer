@@ -953,6 +953,9 @@ class ParagraphEditor(Gtk.Box):
         self.spell_helper = None
         self._spell_check_setup = False
         
+        # Footnote badge reference
+        self.footnote_badge = None
+        
         self.set_spacing(8)
         self.add_css_class("card")
         self.set_margin_start(4)
@@ -1040,14 +1043,36 @@ class ParagraphEditor(Gtk.Box):
         spacer.set_hexpand(True)
         header_box.append(spacer)
 
-        # Footnote button (only for Introduction, Argument, Conclusion)
-        if self.paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION]:
+        # Footnote button with badge (only for specific types)
+        if self.paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
+            # Horizontal container for button + badge
+            footnote_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
+            footnote_container.set_halign(Gtk.Align.CENTER)
+            footnote_container.set_valign(Gtk.Align.CENTER)
+            
+            # Footnote button
             footnote_button = Gtk.Button()
             footnote_button.set_icon_name("text-x-generic-symbolic")
             footnote_button.set_tooltip_text(_("Manage footnotes"))
             footnote_button.add_css_class("flat")
             footnote_button.connect('clicked', self._on_footnote_clicked)
-            header_box.append(footnote_button)
+            footnote_container.append(footnote_button)
+            
+            # Badge (small, next to button)
+            self.footnote_badge = Gtk.Label()
+            self.footnote_badge.add_css_class("footnote-badge")
+            self.footnote_badge.set_halign(Gtk.Align.CENTER)
+            self.footnote_badge.set_valign(Gtk.Align.CENTER)
+            self.footnote_badge.set_opacity(0.0)  # Start invisible
+            footnote_container.append(self.footnote_badge)
+            
+            header_box.append(footnote_container)
+            
+            # Update badge with initial count
+            self._update_footnote_badge()
+        else:
+            # Initialize badge as None for other types
+            self.footnote_badge = None
 
         # Spell check toggle button
         if SPELL_CHECK_AVAILABLE and self.config:
@@ -1289,7 +1314,32 @@ class ParagraphEditor(Gtk.Box):
 
     def _on_footnotes_updated(self, dialog):
         """Handle footnotes update"""
+        self._update_footnote_badge()
         self.emit('content-changed')
+        
+    def _update_footnote_badge(self):
+        """Update the footnote count badge"""
+        if not self.footnote_badge:
+            return
+        
+        # Get footnote count
+        footnote_count = len(self.paragraph.footnotes) if hasattr(self.paragraph, 'footnotes') and self.paragraph.footnotes else 0
+        
+        if footnote_count > 0:
+            # Show badge with count
+            self.footnote_badge.set_text(str(footnote_count))
+            self.footnote_badge.set_opacity(1.0)  # Fade in
+            
+            # Update tooltip
+            if footnote_count == 1:
+                self.footnote_badge.set_tooltip_text(_("1 footnote"))
+            else:
+                self.footnote_badge.set_tooltip_text(_("{} footnotes").format(footnote_count))
+        else:
+            # Hide badge but keep space reserved
+            self.footnote_badge.set_text("")
+            self.footnote_badge.set_opacity(0.0)  # Fade out
+            self.footnote_badge.set_tooltip_text("")
 
 
 class TextEditor(Gtk.Box):

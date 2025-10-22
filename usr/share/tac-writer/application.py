@@ -415,6 +415,19 @@ class TacApplication(Adw.Application):
                 background: alpha(@warning_color, 0.45);
                 border: 1px solid alpha(@warning_color, 0.6);
             }
+
+            /* Footnote badge styles */
+            .footnote-badge {
+                background: @accent_bg_color;
+                color: @accent_fg_color;
+                font-size: 10px;
+                font-weight: bold;
+                min-width: 16px;
+                min-height: 16px;
+                padding: 2px 4px;
+                border-radius: 8px;
+                box-shadow: 0 1px 2px alpha(black, 0.2);
+            }
             '''
             
             css_provider.load_from_data(css_data.encode())

@@ -73,7 +73,7 @@ class Config:
             'word_wrap': True,
             'highlight_current_line': True,
             'auto_save': True,
-            'auto_save_interval': 120,
+            'auto_save_interval': 5,
 
             # Spell checking settings
             'spell_check_enabled': True,

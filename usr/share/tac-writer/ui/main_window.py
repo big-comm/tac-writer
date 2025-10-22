@@ -23,7 +23,6 @@ class MainWindow(Adw.ApplicationWindow):
 
     __gtype_name__ = 'TacMainWindow'
 
-    # File: ui/main_window.py (around line 35, in MainWindow.__init__)
     def __init__(self, application, project_manager: ProjectManager, config: Config, **kwargs):
         super().__init__(application=application, **kwargs)
 
@@ -39,6 +38,10 @@ class MainWindow(Adw.ApplicationWindow):
         # Pomodoro Timer
         self.pomodoro_dialog = None
         self.timer = PomodoroTimer()
+
+        # Auto-save timer tracking
+        self.auto_save_timeout_id = None
+        self.auto_save_pending = False
 
         # UI components
         self.header_bar = None
@@ -528,6 +531,9 @@ class MainWindow(Adw.ApplicationWindow):
             # Update sidebar project list in real-time with current statistics
             current_stats = self.current_project.get_statistics()
             self.project_list.update_project_statistics(self.current_project.id, current_stats)
+            
+            # Schedule auto-save if enabled
+            self._schedule_auto_save()
 
     def _on_paragraph_remove_requested(self, paragraph_editor, paragraph_id):
         """Handle paragraph removal request"""
@@ -565,11 +571,23 @@ class MainWindow(Adw.ApplicationWindow):
 
     def _on_close_request(self, window):
         """Handle window close request"""
+        # Cancel any pending auto-save timer
+        if self.auto_save_timeout_id is not None:
+            GLib.source_remove(self.auto_save_timeout_id)
+            self.auto_save_timeout_id = None
+        
+        # If there's a pending auto-save, perform final save now
+        if self.auto_save_pending and self.current_project:
+            self.project_manager.save_project(self.current_project)
+        
+        # Save window state
         self._save_window_state()
-
-        if self.current_project:
-            self.save_current_project()
-
+        
+        # Check if project needs saving (optional confirmation)
+        if self.current_project and self.config.get('confirm_on_close', True):
+            # Could add unsaved changes dialog here
+            pass
+        
         return False
 
     def _on_window_state_changed(self, window, pspec):
@@ -665,6 +683,53 @@ class MainWindow(Adw.ApplicationWindow):
             self._show_toast(_("Failed to save project"), Adw.ToastPriority.HIGH)
 
         return success
+    
+    def _schedule_auto_save(self):
+        """Schedule an auto-save operation after a delay"""
+        # Check if auto-save is enabled
+        if not self.config.get('auto_save', True):
+            return
+        
+        # Cancel existing timeout if any
+        if self.auto_save_timeout_id is not None:
+            GLib.source_remove(self.auto_save_timeout_id)
+            self.auto_save_timeout_id = None
+        
+        # Get auto-save interval (default 120 seconds = 2 minutes)
+        interval_seconds = self.config.get('auto_save_interval', 120)
+        interval_ms = interval_seconds * 1000
+        
+        # Mark that auto-save is pending
+        self.auto_save_pending = True
+        
+        # Schedule new auto-save
+        self.auto_save_timeout_id = GLib.timeout_add(interval_ms, self._perform_auto_save)
+
+    def _perform_auto_save(self):
+        """Perform the actual auto-save operation"""
+        # Reset timeout ID since this callback is executing
+        self.auto_save_timeout_id = None
+        self.auto_save_pending = False
+        
+        # Only save if there's a current project
+        if not self.current_project:
+            return False  # Don't repeat timeout
+        
+        # Perform save (this will trigger backup creation)
+        success = self.project_manager.save_project(self.current_project)
+        
+        if success:
+            # Silent save - no toast for auto-save to avoid interrupting user
+            self.project_list.refresh_projects()
+            self.config.add_recent_project(self.current_project.id)
+            
+            # Update header to show saved state (remove asterisk if you have one)
+            self._update_header_for_view("editor")
+        else:
+            # Only show toast on failure
+            self._show_toast(_("Auto-save failed"), Adw.ToastPriority.HIGH)
+        
+        return False  # Don't repeat the timeout
 
     def show_export_dialog(self):
         """Show export dialog"""
