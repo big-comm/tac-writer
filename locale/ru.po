@@ -1162,6 +1162,17 @@ msgstr "Это действие нельзя отменить."
 msgid "Remove"
 msgstr "Удалить"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 сноска"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} сноски"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1322,6 +1333,11 @@ msgstr "Проект успешно сохранён"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Не удалось сохранить проект"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Ошибка автоматического сохранения"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

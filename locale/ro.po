@@ -1164,6 +1164,17 @@ msgstr "Această acțiune nu poate fi anulată."
 msgid "Remove"
 msgstr "Elimină"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 notă de subsol"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} note de subsol"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1324,6 +1335,11 @@ msgstr "Proiect salvat cu succes"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Salvarea proiectului a eșuat"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Salvarea automată a eșuat"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

@@ -1164,6 +1164,17 @@ msgstr "Denna åtgärd kan inte ångras."
 msgid "Remove"
 msgstr "Ta bort"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 fotnot"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} fotnoter"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1324,6 +1335,11 @@ msgstr "Projektet har sparats framgångsrikt"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Misslyckades med att spara projekt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Automatisk sparande misslyckades"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

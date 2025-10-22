@@ -1164,6 +1164,17 @@ msgstr "Esta ação não pode ser desfeita."
 msgid "Remove"
 msgstr "Remover"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 nota de rodapé"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} notas de rodapé"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1324,6 +1335,11 @@ msgstr "Projeto salvo com sucesso"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Falha ao salvar o projeto"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Falha ao salvar automaticamente"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

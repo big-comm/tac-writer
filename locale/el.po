@@ -1162,6 +1162,17 @@ msgstr "Αυτή η ενέργεια δεν μπορεί να αναιρεθεί
 msgid "Remove"
 msgstr "Αφαίρεση"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 υποσημείωση"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} υποσημειώσεις"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1322,6 +1333,11 @@ msgstr "Το έργο αποθηκεύτηκε με επιτυχία"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Αποτυχία αποθήκευσης έργου"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Αυτόματη αποθήκευση απέτυχε"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

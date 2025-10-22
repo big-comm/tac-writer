@@ -1161,6 +1161,17 @@ msgstr "Цю дію не можна скасувати."
 msgid "Remove"
 msgstr "Видалити"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 виноска"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} примітки"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1321,6 +1332,11 @@ msgstr "Проект успішно збережено"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Не вдалося зберегти проект"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Автозбереження не вдалося"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

@@ -1161,6 +1161,17 @@ msgstr "この操作は元に戻せません。"
 msgid "Remove"
 msgstr "削除"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 脚注"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} 脚注"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1321,6 +1332,11 @@ msgstr "プロジェクトが正常に保存されました"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "プロジェクトの保存に失敗しました"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "自動保存に失敗しました"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

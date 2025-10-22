@@ -110,7 +110,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/utils/helpers.py, line: 285
-# File: usr/share/tac-writer/ui/components.py, line: 1249
+# File: usr/share/tac-writer/ui/components.py, line: 1274
 #, python-brace-format
 msgid   "{count} words"
 msgstr  ""
@@ -217,9 +217,9 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1390
 # File: usr/share/tac-writer/ui/components.py, line: 879
 # File: usr/share/tac-writer/ui/components.py, line: 916
-# File: usr/share/tac-writer/ui/components.py, line: 1269
-# File: usr/share/tac-writer/ui/components.py, line: 1391
-# File: usr/share/tac-writer/ui/main_window.py, line: 619
+# File: usr/share/tac-writer/ui/components.py, line: 1294
+# File: usr/share/tac-writer/ui/components.py, line: 1441
+# File: usr/share/tac-writer/ui/main_window.py, line: 637
 msgid   "Cancel"
 msgstr  ""
 
@@ -438,7 +438,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 620
-# File: usr/share/tac-writer/ui/main_window.py, line: 153
+# File: usr/share/tac-writer/ui/main_window.py, line: 156
 msgid   "Preferences"
 msgstr  ""
 
@@ -892,7 +892,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 189
-# File: usr/share/tac-writer/ui/main_window.py, line: 114
+# File: usr/share/tac-writer/ui/main_window.py, line: 117
 msgid   "Pomodoro Timer"
 msgstr  ""
 
@@ -939,14 +939,14 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 521
-# File: usr/share/tac-writer/ui/components.py, line: 1020
+# File: usr/share/tac-writer/ui/components.py, line: 1023
 #, python-brace-format
 msgid   "Spell check setup failed: {}"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/components.py, line: 539
-# File: usr/share/tac-writer/ui/components.py, line: 1092
+# File: usr/share/tac-writer/ui/components.py, line: 1117
 #, python-brace-format
 msgid   "Error toggling spell check: {}"
 msgstr  ""
@@ -960,7 +960,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 586
-# File: usr/share/tac-writer/ui/main_window.py, line: 778
+# File: usr/share/tac-writer/ui/main_window.py, line: 843
 msgid   "Continuous Argumentation Technique"
 msgstr  ""
 
@@ -1047,295 +1047,311 @@ msgid   "This project will be moved to trash and can be recovered."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1000
+# File: usr/share/tac-writer/ui/components.py, line: 1003
 #, python-brace-format
 msgid   "Error during paragraph editor initialization: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1047
+# File: usr/share/tac-writer/ui/components.py, line: 1056
 msgid   "Manage footnotes"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1056
+# File: usr/share/tac-writer/ui/components.py, line: 1081
 msgid   "Toggle spell checking"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1072
+# File: usr/share/tac-writer/ui/components.py, line: 1097
 msgid   "Remove paragraph"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1198
-# File: usr/share/tac-writer/ui/main_window.py, line: 328
+# File: usr/share/tac-writer/ui/components.py, line: 1223
+# File: usr/share/tac-writer/ui/main_window.py, line: 331
 msgid   "Title 1"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1199
-# File: usr/share/tac-writer/ui/main_window.py, line: 329
+# File: usr/share/tac-writer/ui/components.py, line: 1224
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
 msgid   "Title 2"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1200
-# File: usr/share/tac-writer/ui/main_window.py, line: 330
+# File: usr/share/tac-writer/ui/components.py, line: 1225
+# File: usr/share/tac-writer/ui/main_window.py, line: 333
 msgid   "Introduction"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1201
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/components.py, line: 1226
+# File: usr/share/tac-writer/ui/main_window.py, line: 334
 msgid   "Argument"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1202
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/components.py, line: 1227
+# File: usr/share/tac-writer/ui/main_window.py, line: 335
 msgid   "Argument Resumption"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1203
-# File: usr/share/tac-writer/ui/main_window.py, line: 333
+# File: usr/share/tac-writer/ui/components.py, line: 1228
+# File: usr/share/tac-writer/ui/main_window.py, line: 336
 msgid   "Quote"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1204
-# File: usr/share/tac-writer/ui/main_window.py, line: 334
+# File: usr/share/tac-writer/ui/components.py, line: 1229
+# File: usr/share/tac-writer/ui/main_window.py, line: 337
 msgid   "Epigraph"
 msgstr  ""
 
 #
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1205
-# File: usr/share/tac-writer/ui/main_window.py, line: 335
+# File: usr/share/tac-writer/ui/components.py, line: 1230
+# File: usr/share/tac-writer/ui/main_window.py, line: 338
 msgid   "Conclusion"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1207
+# File: usr/share/tac-writer/ui/components.py, line: 1232
 msgid   "Paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1265
+# File: usr/share/tac-writer/ui/components.py, line: 1290
 msgid   "Remove Paragraph?"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1266
+# File: usr/share/tac-writer/ui/components.py, line: 1291
 msgid   "This action cannot be undone."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1270
+# File: usr/share/tac-writer/ui/components.py, line: 1295
 msgid   "Remove"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1338
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+msgid   "1 footnote"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#, python-brace-format
+msgid   "{} footnotes"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/components.py, line: 1388
 #, python-brace-format
 msgid   "Error setting up spell check: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1369
+# File: usr/share/tac-writer/ui/components.py, line: 1419
 msgid   "Manage Footnotes"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1396
+# File: usr/share/tac-writer/ui/components.py, line: 1446
 msgid   "Save"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1413
+# File: usr/share/tac-writer/ui/components.py, line: 1463
 msgid   "Add footnotes that will appear as numbered references in your "
         "paragraph:"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1429
+# File: usr/share/tac-writer/ui/components.py, line: 1479
 msgid   "Add Footnote"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/components.py, line: 1502
+# File: usr/share/tac-writer/ui/components.py, line: 1552
 msgid   "Enter footnote text..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 63
+# File: usr/share/tac-writer/ui/main_window.py, line: 66
 msgid   "TAC - Continuous Argumentation Technique"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 107
+# File: usr/share/tac-writer/ui/main_window.py, line: 110
 msgid   "New Project (Ctrl+N)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 122
+# File: usr/share/tac-writer/ui/main_window.py, line: 125
 msgid   "Save Project (Ctrl+S)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 131
+# File: usr/share/tac-writer/ui/main_window.py, line: 134
 msgid   "Main Menu"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 141
+# File: usr/share/tac-writer/ui/main_window.py, line: 144
 msgid   "Export Project..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 142
+# File: usr/share/tac-writer/ui/main_window.py, line: 145
 msgid   "Backup Manager..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 147
-# File: usr/share/tac-writer/ui/main_window.py, line: 478
+# File: usr/share/tac-writer/ui/main_window.py, line: 150
+# File: usr/share/tac-writer/ui/main_window.py, line: 481
 msgid   "Undo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 148
-# File: usr/share/tac-writer/ui/main_window.py, line: 498
+# File: usr/share/tac-writer/ui/main_window.py, line: 151
+# File: usr/share/tac-writer/ui/main_window.py, line: 501
 msgid   "Redo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 158
+# File: usr/share/tac-writer/ui/main_window.py, line: 161
 msgid   "Welcome Guide"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 159
+# File: usr/share/tac-writer/ui/main_window.py, line: 162
 msgid   "About TAC"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 191
+# File: usr/share/tac-writer/ui/main_window.py, line: 194
 msgid   "Projects"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 321
+# File: usr/share/tac-writer/ui/main_window.py, line: 324
 msgid   "Add Paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 358
+# File: usr/share/tac-writer/ui/main_window.py, line: 361
 msgid   "Go to beginning"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 368
+# File: usr/share/tac-writer/ui/main_window.py, line: 371
 msgid   "Go to end"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 488
+# File: usr/share/tac-writer/ui/main_window.py, line: 491
 msgid   "Nothing to undo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 508
+# File: usr/share/tac-writer/ui/main_window.py, line: 511
 msgid   "Nothing to redo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 564
+# File: usr/share/tac-writer/ui/main_window.py, line: 570
 msgid   "Paragraph reordered"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 615
+# File: usr/share/tac-writer/ui/main_window.py, line: 633
 msgid   "Open Project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 618
+# File: usr/share/tac-writer/ui/main_window.py, line: 636
 msgid   "Open"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 627
+# File: usr/share/tac-writer/ui/main_window.py, line: 645
 msgid   "TAC Projects (*.json)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 632
+# File: usr/share/tac-writer/ui/main_window.py, line: 650
 msgid   "All Files"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 646
-# File: usr/share/tac-writer/ui/main_window.py, line: 833
+# File: usr/share/tac-writer/ui/main_window.py, line: 664
+# File: usr/share/tac-writer/ui/main_window.py, line: 898
 #, python-brace-format
 msgid   "Opened project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 648
-# File: usr/share/tac-writer/ui/main_window.py, line: 835
+# File: usr/share/tac-writer/ui/main_window.py, line: 666
+# File: usr/share/tac-writer/ui/main_window.py, line: 900
 msgid   "Failed to open project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 661
+# File: usr/share/tac-writer/ui/main_window.py, line: 679
 msgid   "Project saved successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 665
+# File: usr/share/tac-writer/ui/main_window.py, line: 683
 msgid   "Failed to save project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 672
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+msgid   "Auto-save failed"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 737
 msgid   "No project to export"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 711
+# File: usr/share/tac-writer/ui/main_window.py, line: 776
 msgid   "Database imported successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 747
+# File: usr/share/tac-writer/ui/main_window.py, line: 812
 #, python-brace-format
 msgid   "Created project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 808
+# File: usr/share/tac-writer/ui/main_window.py, line: 873
 msgid   "Loading project..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 825
+# File: usr/share/tac-writer/ui/main_window.py, line: 890
 #, python-brace-format
 msgid   "Failed to open project: {}"
 msgstr  ""
@@ -1426,77 +1442,77 @@ msgid   "Error setting up menu: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 433
+# File: usr/share/tac-writer/application.py, line: 446
 #, python-brace-format
 msgid   "Could not apply CSS: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 436
+# File: usr/share/tac-writer/application.py, line: 449
 #, python-brace-format
 msgid   "Error setting up theme: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 446
+# File: usr/share/tac-writer/application.py, line: 459
 #, python-brace-format
 msgid   "Error showing new project dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 454
+# File: usr/share/tac-writer/application.py, line: 467
 #, python-brace-format
 msgid   "Error showing open project dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 462
+# File: usr/share/tac-writer/application.py, line: 475
 #, python-brace-format
 msgid   "Error saving project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 470
+# File: usr/share/tac-writer/application.py, line: 483
 #, python-brace-format
 msgid   "Error showing export dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 478
+# File: usr/share/tac-writer/application.py, line: 491
 #, python-brace-format
 msgid   "Error showing preferences dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 486
+# File: usr/share/tac-writer/application.py, line: 499
 #, python-brace-format
 msgid   "Error showing about dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 493
+# File: usr/share/tac-writer/application.py, line: 506
 #, python-brace-format
 msgid   "Error quitting application: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 502
+# File: usr/share/tac-writer/application.py, line: 515
 msgid   "Configuration saved"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 508
+# File: usr/share/tac-writer/application.py, line: 521
 msgid   "Application shutdown complete"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 511
+# File: usr/share/tac-writer/application.py, line: 524
 #, python-brace-format
 msgid   "Error during shutdown: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 520
+# File: usr/share/tac-writer/application.py, line: 533
 msgid   "No config available for spell check debug"
 msgstr  ""
 

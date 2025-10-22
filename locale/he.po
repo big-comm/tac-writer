@@ -1161,6 +1161,17 @@ msgstr "פעולה זו אינה ניתנת לביטול."
 msgid "Remove"
 msgstr "הסר"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 הערת שוליים"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} הערות שוליים"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1321,6 +1332,11 @@ msgstr "הפרויקט נשמר בהצלחה"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "שגיאה בשמירת הפרויקט"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "שמור אוטומטי נכשל"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

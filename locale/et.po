@@ -1162,6 +1162,17 @@ msgstr "Seda toimingut ei saa tagasi võtta."
 msgid "Remove"
 msgstr "Eemalda"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 jalutuskoht"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} jalutusmärgid"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1322,6 +1333,11 @@ msgstr "Projekt salvestatud edukalt"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Projekti salvestamine ebaõnnestus"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Automaatne salvestamine ebaõnnestus"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK

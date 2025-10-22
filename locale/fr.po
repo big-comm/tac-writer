@@ -1164,6 +1164,17 @@ msgstr "Cette action ne peut pas être annulée."
 msgid "Remove"
 msgstr "Supprimer"
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1335
+#: NEEDS WORK
+msgid "1 footnote"
+msgstr "1 note de bas de page"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1337
+#: NEEDS WORK
+#, python-brace-format
+msgid "{} footnotes"
+msgstr "{} notes de bas de page"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 1338
 #: NEEDS WORK
 #, python-brace-format
@@ -1326,6 +1337,11 @@ msgstr "Projet enregistré avec succès"
 #: NEEDS WORK
 msgid "Failed to save project"
 msgstr "Échec de l'enregistrement du projet"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 730
+#: NEEDS WORK
+msgid "Auto-save failed"
+msgstr "Échec de l'enregistrement automatique"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 671
 #: NEEDS WORK
