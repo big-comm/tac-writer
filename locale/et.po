@@ -883,6 +883,187 @@ msgstr "Kustuta"
 msgid "Error deleting backup: {}"
 msgstr "Viga varukoopia kustutamisel: {}"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Insert Image"
+msgstr "Sisesta pilt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+#: NEEDS WORK
+msgid "Insert"
+msgstr "Sisesta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+#: NEEDS WORK
+msgid "Image File"
+msgstr "Pildifail"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+#: NEEDS WORK
+msgid "Select an image file to insert into your document"
+msgstr "Valige pildifail, et lisada see oma dokumenti."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+#: NEEDS WORK
+msgid "Select Image"
+msgstr "Vali pilt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+#: NEEDS WORK
+msgid "No file selected"
+msgstr "Ühtegi faili ei ole valitud"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+#: NEEDS WORK
+msgid "Browse..."
+msgstr "Sirvi..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+#: NEEDS WORK
+msgid "Preview"
+msgstr "Eelvaade"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+#: NEEDS WORK
+msgid "Image Formatting"
+msgstr "Pildi vormindamine"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+#: NEEDS WORK
+msgid "Display Width (%)"
+msgstr "Kuva laius (%)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+#: NEEDS WORK
+msgid "Percentage of page width"
+msgstr "Lehe laius protsent"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+#: NEEDS WORK
+msgid "Alignment"
+msgstr "Joondamine"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+#: NEEDS WORK
+msgid "Image position on the page"
+msgstr "Pildi asukoht lehel"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+#: NEEDS WORK
+msgid "Left"
+msgstr "Vasak"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+#: NEEDS WORK
+msgid "Center"
+msgstr "Keskus"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+#: NEEDS WORK
+msgid "Right"
+msgstr "Parem"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+#: NEEDS WORK
+msgid "Caption (optional)"
+msgstr "Pealkiri (valikuline)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+#: NEEDS WORK
+msgid "Alternative Text (optional)"
+msgstr "Alternatiivne tekst (valikuline)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+#: NEEDS WORK
+msgid "Position in Document"
+msgstr "Dokumendi asukoht"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+#: NEEDS WORK
+msgid "Insert After"
+msgstr "Sisesta pärast"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+#: NEEDS WORK
+msgid "Choose where to place the image"
+msgstr "Vali, kuhu pilt paigutada"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+#: NEEDS WORK
+msgid "Beginning of document"
+msgstr "Dokumendi algus"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+#: NEEDS WORK
+msgid "Image"
+msgstr "Pilt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+#: NEEDS WORK
+msgid "(empty)"
+msgstr "(empty)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+#: NEEDS WORK
+msgid "Image Files"
+msgstr "Pildifailid"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error selecting file: {}"
+msgstr "Viga faili valimisel: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#: NEEDS WORK
+#, python-brace-format
+msgid "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr "Suurus: {} x {} pikslit  •  {:.1f} KB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading image: {}"
+msgstr "Pildi laadimine ebaõnnestus: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+#: NEEDS WORK
+msgid "Error Loading Image"
+msgstr "Pildi laadimise viga"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not load the selected image file.\n"
+"\n"
+"{}"
+msgstr "Valitud pildifaili ei saanud laadida."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error inserting image: {}"
+msgstr "Piltide sisestamise viga: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+#: NEEDS WORK
+msgid "Error Inserting Image"
+msgstr "Pildi sisestamise viga"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not insert the image.\n"
+"\n"
+"{}"
+msgstr "Pilti ei saanud sisestada."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1266,6 +1447,11 @@ msgstr "Projektid"
 msgid "Add Paragraph"
 msgstr "Lisa lõik"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+#: NEEDS WORK
+msgid "Insert Image (Ctrl+Shift+I)"
+msgstr "Sisesta pilt (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Go to beginning"
@@ -1275,6 +1461,48 @@ msgstr "Mine algusesse"
 #: NEEDS WORK
 msgid "Go to end"
 msgstr "Mine lõpuni"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+#: NEEDS WORK
+msgid "⚠️ Error: Invalid image data"
+msgstr "⚠️ Viga: Kehtetu pilditeave"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Image not found: {}"
+msgstr "⚠️ Pilti ei leitud: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Error loading image: {}"
+msgstr "⚠️ Piltide laadimise viga: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+#: NEEDS WORK
+msgid "Remove Image"
+msgstr "Eemalda pilt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+#: NEEDS WORK
+msgid "Remove Image?"
+msgstr "Kustuta pilt?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+#: NEEDS WORK
+msgid "Are you sure you want to remove this image from the document?"
+msgstr "Kas olete kindel, et soovite selle pildi dokumendist eemaldada?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+#: NEEDS WORK
+msgid "Image removed"
+msgstr "Pilt eemaldatud"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+#: NEEDS WORK
+msgid "Error removing image"
+msgstr "Pilt eemaldamisel tekkis viga"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
@@ -1290,6 +1518,11 @@ msgstr "Midagi ei ole uuesti teha"
 #: NEEDS WORK
 msgid "Paragraph reordered"
 msgstr "Lõik ümber korraldatud"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+#: NEEDS WORK
+msgid "No project open"
+msgstr "Ühtegi projekti ei ole avatud"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 614
 #: NEEDS WORK
@@ -1354,6 +1587,16 @@ msgstr "Andmebaas imporditi edukalt"
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "Loodud projekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+#: NEEDS WORK
+msgid "Image inserted successfully"
+msgstr "Pilt lisatud edukalt"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Piltide sisestamise viga"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1930,6 +2173,12 @@ msgstr "Faili viga ODT-sse eksportimisel: {}"
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "Ootamatu viga ODT-sse eksportimisel: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error adding image to PDF: {}"
+msgstr "Viga pildi lisamisel PDF-ile: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 1567
 #: NEEDS WORK

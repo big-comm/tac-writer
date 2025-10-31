@@ -883,6 +883,187 @@ msgstr "Διαγραφή"
 msgid "Error deleting backup: {}"
 msgstr "Σφάλμα κατά τη διαγραφή αντιγράφου ασφαλείας: {}"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Insert Image"
+msgstr "Εισαγωγή Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+#: NEEDS WORK
+msgid "Insert"
+msgstr "Εισαγωγή"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+#: NEEDS WORK
+msgid "Image File"
+msgstr "Αρχείο Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+#: NEEDS WORK
+msgid "Select an image file to insert into your document"
+msgstr "Επιλέξτε ένα αρχείο εικόνας για να το εισαγάγετε στο έγγραφό σας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+#: NEEDS WORK
+msgid "Select Image"
+msgstr "Επιλέξτε Εικόνα"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+#: NEEDS WORK
+msgid "No file selected"
+msgstr "Δεν έχει επιλεγεί αρχείο"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+#: NEEDS WORK
+msgid "Browse..."
+msgstr "Περιήγηση..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+#: NEEDS WORK
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+#: NEEDS WORK
+msgid "Image Formatting"
+msgstr "Μορφοποίηση Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+#: NEEDS WORK
+msgid "Display Width (%)"
+msgstr "Πλάτος Εμφάνισης (%)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+#: NEEDS WORK
+msgid "Percentage of page width"
+msgstr "Ποσοστό πλάτους σελίδας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+#: NEEDS WORK
+msgid "Alignment"
+msgstr "Στοίχιση"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+#: NEEDS WORK
+msgid "Image position on the page"
+msgstr "Θέση εικόνας στη σελίδα"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+#: NEEDS WORK
+msgid "Left"
+msgstr "Αριστερά"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+#: NEEDS WORK
+msgid "Center"
+msgstr "Κέντρο"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+#: NEEDS WORK
+msgid "Right"
+msgstr "Δεξί"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+#: NEEDS WORK
+msgid "Caption (optional)"
+msgstr "Λεζάντα (προαιρετικά)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+#: NEEDS WORK
+msgid "Alternative Text (optional)"
+msgstr "Εναλλακτικό Κείμενο (προαιρετικό)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+#: NEEDS WORK
+msgid "Position in Document"
+msgstr "Θέση στο Έγγραφο"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+#: NEEDS WORK
+msgid "Insert After"
+msgstr "Εισαγωγή Μετά"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+#: NEEDS WORK
+msgid "Choose where to place the image"
+msgstr "Επιλέξτε πού να τοποθετήσετε την εικόνα"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+#: NEEDS WORK
+msgid "Beginning of document"
+msgstr "Αρχή εγγράφου"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+#: NEEDS WORK
+msgid "Image"
+msgstr "Εικόνα"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+#: NEEDS WORK
+msgid "(empty)"
+msgstr "(empty)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+#: NEEDS WORK
+msgid "Image Files"
+msgstr "Αρχεία Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error selecting file: {}"
+msgstr "Σφάλμα κατά την επιλογή αρχείου: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#: NEEDS WORK
+#, python-brace-format
+msgid "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr "Μέγεθος: {} x {} εικονοστοιχεία  •  {:.1f} KB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading image: {}"
+msgstr "Σφάλμα κατά τη φόρτωση εικόνας: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+#: NEEDS WORK
+msgid "Error Loading Image"
+msgstr "Σφάλμα φόρτωσης εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not load the selected image file.\n"
+"\n"
+"{}"
+msgstr "Δεν ήταν δυνατή η φόρτωση του επιλεγμένου αρχείου εικόνας."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error inserting image: {}"
+msgstr "Σφάλμα κατά την εισαγωγή εικόνας: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+#: NEEDS WORK
+msgid "Error Inserting Image"
+msgstr "Σφάλμα κατά την εισαγωγή εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not insert the image.\n"
+"\n"
+"{}"
+msgstr "Δεν ήταν δυνατή η εισαγωγή της εικόνας."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1266,6 +1447,11 @@ msgstr "Έργα"
 msgid "Add Paragraph"
 msgstr "Προσθήκη Παραγράφου"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+#: NEEDS WORK
+msgid "Insert Image (Ctrl+Shift+I)"
+msgstr "Εισαγωγή Εικόνας (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Go to beginning"
@@ -1275,6 +1461,48 @@ msgstr "Μετάβαση στην αρχή"
 #: NEEDS WORK
 msgid "Go to end"
 msgstr "Μετάβαση στο τέλος"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+#: NEEDS WORK
+msgid "⚠️ Error: Invalid image data"
+msgstr "⚠️ Σφάλμα: Μη έγκυρα δεδομένα εικόνας"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Image not found: {}"
+msgstr "⚠️ Εικόνα δεν βρέθηκε: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Error loading image: {}"
+msgstr "⚠️ Σφάλμα κατά την φόρτωση εικόνας: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+#: NEEDS WORK
+msgid "Remove Image"
+msgstr "Αφαίρεση Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+#: NEEDS WORK
+msgid "Remove Image?"
+msgstr "Αφαίρεση Εικόνας;"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+#: NEEDS WORK
+msgid "Are you sure you want to remove this image from the document?"
+msgstr "Είστε σίγουροι ότι θέλετε να αφαιρέσετε αυτήν την εικόνα από το έγγραφο;"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+#: NEEDS WORK
+msgid "Image removed"
+msgstr "Εικόνα αφαιρέθηκε"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+#: NEEDS WORK
+msgid "Error removing image"
+msgstr "Σφάλμα κατά την αφαίρεση εικόνας"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
@@ -1290,6 +1518,11 @@ msgstr "Τίποτα προς επανάληψη"
 #: NEEDS WORK
 msgid "Paragraph reordered"
 msgstr "Παράγραφος αναδιοργανώθηκε"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+#: NEEDS WORK
+msgid "No project open"
+msgstr "Κανένα έργο ανοιχτό"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 614
 #: NEEDS WORK
@@ -1354,6 +1587,16 @@ msgstr "Η βάση δεδομένων εισήχθη με επιτυχία"
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "Δημιουργήθηκε έργο: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+#: NEEDS WORK
+msgid "Image inserted successfully"
+msgstr "Η εικόνα εισήχθη με επιτυχία"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Σφάλμα κατά την εισαγωγή εικόνας"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1930,6 +2173,12 @@ msgstr "Σφάλμα αρχείου κατά την εξαγωγή σε ODT: {}"
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "Αναπάντεχο σφάλμα κατά την εξαγωγή σε ODT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error adding image to PDF: {}"
+msgstr "Σφάλμα κατά την προσθήκη εικόνας στο PDF: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 1567
 #: NEEDS WORK

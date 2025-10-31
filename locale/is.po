@@ -883,6 +883,187 @@ msgstr "Eyða"
 msgid "Error deleting backup: {}"
 msgstr "Villa að eyða afriti: {}"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Insert Image"
+msgstr "Setja inn mynd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+#: NEEDS WORK
+msgid "Insert"
+msgstr "Setja"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+#: NEEDS WORK
+msgid "Image File"
+msgstr "Myndaskrá"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+#: NEEDS WORK
+msgid "Select an image file to insert into your document"
+msgstr "Veldu myndaskrá til að setja inn í skjalið þitt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+#: NEEDS WORK
+msgid "Select Image"
+msgstr "Veldu mynd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+#: NEEDS WORK
+msgid "No file selected"
+msgstr "Engin valin ekki."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+#: NEEDS WORK
+msgid "Browse..."
+msgstr "Skoða..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+#: NEEDS WORK
+msgid "Preview"
+msgstr "Forskoðun"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+#: NEEDS WORK
+msgid "Image Formatting"
+msgstr "Myndaskipulag"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+#: NEEDS WORK
+msgid "Display Width (%)"
+msgstr "Sýndarbreidd (%)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+#: NEEDS WORK
+msgid "Percentage of page width"
+msgstr "Prósent af síðu breidd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+#: NEEDS WORK
+msgid "Alignment"
+msgstr "Línun"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+#: NEEDS WORK
+msgid "Image position on the page"
+msgstr "Myndastöða á síðu"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+#: NEEDS WORK
+msgid "Left"
+msgstr "Vinstri"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+#: NEEDS WORK
+msgid "Center"
+msgstr "Miðja"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+#: NEEDS WORK
+msgid "Right"
+msgstr "Hægra"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+#: NEEDS WORK
+msgid "Caption (optional)"
+msgstr "Titill (valfrjálst)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+#: NEEDS WORK
+msgid "Alternative Text (optional)"
+msgstr "Valkostatexti (valfrjálst)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+#: NEEDS WORK
+msgid "Position in Document"
+msgstr "Staða í skjali"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+#: NEEDS WORK
+msgid "Insert After"
+msgstr "Setja inn eftir"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+#: NEEDS WORK
+msgid "Choose where to place the image"
+msgstr "Veldu hvar á að setja myndina"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+#: NEEDS WORK
+msgid "Beginning of document"
+msgstr "Byrjun skjalas"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+#: NEEDS WORK
+msgid "Image"
+msgstr "Mynd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+#: NEEDS WORK
+msgid "(empty)"
+msgstr "(empty)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+#: NEEDS WORK
+msgid "Image Files"
+msgstr "Myndaskrár"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error selecting file: {}"
+msgstr "Villa að velja skrá: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#: NEEDS WORK
+#, python-brace-format
+msgid "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr "Stærð: {} x {} pixlar  •  {:.1f} KB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading image: {}"
+msgstr "Villa að hlaða mynd: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+#: NEEDS WORK
+msgid "Error Loading Image"
+msgstr "Villa að hlaða mynd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not load the selected image file.\n"
+"\n"
+"{}"
+msgstr "Gat ekki hlaðið valda myndaskrá."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error inserting image: {}"
+msgstr "Villa að setja mynd inn: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+#: NEEDS WORK
+msgid "Error Inserting Image"
+msgstr "Villa að setja inn mynd"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not insert the image.\n"
+"\n"
+"{}"
+msgstr "Gat ekki að setja inn myndina."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1266,6 +1447,11 @@ msgstr "Verkefni"
 msgid "Add Paragraph"
 msgstr "Bæta við málsgrein"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+#: NEEDS WORK
+msgid "Insert Image (Ctrl+Shift+I)"
+msgstr "Setja inn mynd (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Go to beginning"
@@ -1275,6 +1461,48 @@ msgstr "Fara í byrjun"
 #: NEEDS WORK
 msgid "Go to end"
 msgstr "Fara í lok"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+#: NEEDS WORK
+msgid "⚠️ Error: Invalid image data"
+msgstr "⚠️ Villa: Ógild myndagögn"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Image not found: {}"
+msgstr "⚠️ Mynd fannst ekki: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Error loading image: {}"
+msgstr "⚠️ Villa myndar: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+#: NEEDS WORK
+msgid "Remove Image"
+msgstr "Fjarlægja mynd"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+#: NEEDS WORK
+msgid "Remove Image?"
+msgstr "Fjarlægja mynd?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+#: NEEDS WORK
+msgid "Are you sure you want to remove this image from the document?"
+msgstr "Ertu viss um að þú viljir fjarlægja þessa mynd úr skjalinu?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+#: NEEDS WORK
+msgid "Image removed"
+msgstr "Mynd fjarlægð"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+#: NEEDS WORK
+msgid "Error removing image"
+msgstr "Villa að fjarlægja mynd"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
@@ -1290,6 +1518,11 @@ msgstr "Ekkert til að endurtaka"
 #: NEEDS WORK
 msgid "Paragraph reordered"
 msgstr "Paragraphur röðað"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+#: NEEDS WORK
+msgid "No project open"
+msgstr "Engin verkefni opið"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 614
 #: NEEDS WORK
@@ -1354,6 +1587,16 @@ msgstr "Gagnagrunnur fluttur inn með góðum árangri"
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "Skráður verkefni: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+#: NEEDS WORK
+msgid "Image inserted successfully"
+msgstr "Mynd sett inn með góðum árangri"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Villa að setja inn mynd"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1930,6 +2173,12 @@ msgstr "Skjalvilla við útflutning í ODT: {}"
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "Óvænt villa við útflutning í ODT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error adding image to PDF: {}"
+msgstr "Villa að bæta mynd við PDF: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 1567
 #: NEEDS WORK

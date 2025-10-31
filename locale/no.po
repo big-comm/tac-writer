@@ -885,6 +885,187 @@ msgstr "Slett"
 msgid "Error deleting backup: {}"
 msgstr "Feil ved sletting av sikkerhetskopi: {}"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Insert Image"
+msgstr "Sett inn bilde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+#: NEEDS WORK
+msgid "Insert"
+msgstr "Sett inn"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+#: NEEDS WORK
+msgid "Image File"
+msgstr "Bildefil"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+#: NEEDS WORK
+msgid "Select an image file to insert into your document"
+msgstr "Velg en bildefil for å sette inn i dokumentet ditt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+#: NEEDS WORK
+msgid "Select Image"
+msgstr "Velg bilde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+#: NEEDS WORK
+msgid "No file selected"
+msgstr "Ingen fil valgt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+#: NEEDS WORK
+msgid "Browse..."
+msgstr "Bla gjennom..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+#: NEEDS WORK
+msgid "Preview"
+msgstr "Forhåndsvisning"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+#: NEEDS WORK
+msgid "Image Formatting"
+msgstr "Bildeformatering"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+#: NEEDS WORK
+msgid "Display Width (%)"
+msgstr "Visningsbredde (%)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+#: NEEDS WORK
+msgid "Percentage of page width"
+msgstr "Prosentandel av sidebredde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+#: NEEDS WORK
+msgid "Alignment"
+msgstr "Justering"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+#: NEEDS WORK
+msgid "Image position on the page"
+msgstr "Bildeposisjon på siden"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+#: NEEDS WORK
+msgid "Left"
+msgstr "Venstre"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+#: NEEDS WORK
+msgid "Center"
+msgstr "Senter"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+#: NEEDS WORK
+msgid "Right"
+msgstr "Høyre"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+#: NEEDS WORK
+msgid "Caption (optional)"
+msgstr "Bildtekst (valgfritt)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+#: NEEDS WORK
+msgid "Alternative Text (optional)"
+msgstr "Alternativ tekst (valgfritt)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+#: NEEDS WORK
+msgid "Position in Document"
+msgstr "Posisjon i dokumentet"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+#: NEEDS WORK
+msgid "Insert After"
+msgstr "Sett inn etter"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+#: NEEDS WORK
+msgid "Choose where to place the image"
+msgstr "Velg hvor du vil plassere bildet"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+#: NEEDS WORK
+msgid "Beginning of document"
+msgstr "Begynnelse av dokumentet"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+#: NEEDS WORK
+msgid "Image"
+msgstr "Bilde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+#: NEEDS WORK
+msgid "(empty)"
+msgstr "(ingen tekst å oversette)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+#: NEEDS WORK
+msgid "Image Files"
+msgstr "Bildefiler"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error selecting file: {}"
+msgstr "Feil ved valg av fil: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#: NEEDS WORK
+#, python-brace-format
+msgid "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr "Størrelse: {} x {} piksler  •  {:.1f} KB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading image: {}"
+msgstr "Feil ved lasting av bilde: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+#: NEEDS WORK
+msgid "Error Loading Image"
+msgstr "Feil ved lasting av bilde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not load the selected image file.\n"
+"\n"
+"{}"
+msgstr "Kunne ikke laste det valgte bildefilen."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error inserting image: {}"
+msgstr "Feil ved innsetting av bilde: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+#: NEEDS WORK
+msgid "Error Inserting Image"
+msgstr "Feil ved innsetting av bilde"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not insert the image.\n"
+"\n"
+"{}"
+msgstr "Kunne ikke sette inn bildet."
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1268,6 +1449,11 @@ msgstr "Prosjekter"
 msgid "Add Paragraph"
 msgstr "Legg til avsnitt"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+#: NEEDS WORK
+msgid "Insert Image (Ctrl+Shift+I)"
+msgstr "Sett inn bilde (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Go to beginning"
@@ -1277,6 +1463,48 @@ msgstr "Gå til begynnelsen"
 #: NEEDS WORK
 msgid "Go to end"
 msgstr "Gå til slutten"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+#: NEEDS WORK
+msgid "⚠️ Error: Invalid image data"
+msgstr "⚠️ Feil: Ugyldige bildedata"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Image not found: {}"
+msgstr "⚠️ Bild ikke funnet: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Error loading image: {}"
+msgstr "⚠️ Feil ved lasting av bilde: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+#: NEEDS WORK
+msgid "Remove Image"
+msgstr "Fjern bilde"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+#: NEEDS WORK
+msgid "Remove Image?"
+msgstr "Fjern bilde?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+#: NEEDS WORK
+msgid "Are you sure you want to remove this image from the document?"
+msgstr "Er du sikker på at du vil fjerne dette bildet fra dokumentet?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+#: NEEDS WORK
+msgid "Image removed"
+msgstr "Bilde fjernet"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+#: NEEDS WORK
+msgid "Error removing image"
+msgstr "Feil ved fjerning av bilde"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
@@ -1292,6 +1520,11 @@ msgstr "Ingenting å gjøre på nytt"
 #: NEEDS WORK
 msgid "Paragraph reordered"
 msgstr "Avsnitt omorganisert"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+#: NEEDS WORK
+msgid "No project open"
+msgstr "Ingen prosjekt åpent"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 614
 #: NEEDS WORK
@@ -1356,6 +1589,16 @@ msgstr "Databasen ble importert med suksess"
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "Opprettet prosjekt: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+#: NEEDS WORK
+msgid "Image inserted successfully"
+msgstr "Bilde satt inn vellykket"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Feil ved innsetting av bilde"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1932,6 +2175,12 @@ msgstr "Filfeil ved eksport til ODT: {}"
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "Uventet feil ved eksportering til ODT: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error adding image to PDF: {}"
+msgstr "Feil ved å legge til bilde i PDF: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 1567
 #: NEEDS WORK

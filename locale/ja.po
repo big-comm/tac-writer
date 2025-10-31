@@ -882,6 +882,187 @@ msgstr "削除"
 msgid "Error deleting backup: {}"
 msgstr "バックアップの削除中にエラーが発生しました: {}"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+#: NEEDS WORK
+msgid "Insert Image"
+msgstr "画像を挿入"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+#: NEEDS WORK
+msgid "Insert"
+msgstr "挿入"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+#: NEEDS WORK
+msgid "Image File"
+msgstr "画像ファイル"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+#: NEEDS WORK
+msgid "Select an image file to insert into your document"
+msgstr "ドキュメントに挿入する画像ファイルを選択してください"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+#: NEEDS WORK
+msgid "Select Image"
+msgstr "画像を選択"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+#: NEEDS WORK
+msgid "No file selected"
+msgstr "ファイルが選択されていません"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+#: NEEDS WORK
+msgid "Browse..."
+msgstr "ブラウズ..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+#: NEEDS WORK
+msgid "Preview"
+msgstr "プレビュー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+#: NEEDS WORK
+msgid "Image Formatting"
+msgstr "画像フォーマット"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+#: NEEDS WORK
+msgid "Display Width (%)"
+msgstr "表示幅 (%)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+#: NEEDS WORK
+msgid "Percentage of page width"
+msgstr "ページ幅の割合"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+#: NEEDS WORK
+msgid "Alignment"
+msgstr "アライメント"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+#: NEEDS WORK
+msgid "Image position on the page"
+msgstr "ページ上の画像の位置"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+#: NEEDS WORK
+msgid "Left"
+msgstr "左"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+#: NEEDS WORK
+msgid "Center"
+msgstr "センター"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+#: NEEDS WORK
+msgid "Right"
+msgstr "右"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+#: NEEDS WORK
+msgid "Caption (optional)"
+msgstr "キャプション（オプション）"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+#: NEEDS WORK
+msgid "Alternative Text (optional)"
+msgstr "代替テキスト（オプション）"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+#: NEEDS WORK
+msgid "Position in Document"
+msgstr "文書内の位置"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+#: NEEDS WORK
+msgid "Insert After"
+msgstr "挿入後"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+#: NEEDS WORK
+msgid "Choose where to place the image"
+msgstr "画像の配置場所を選択してください"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+#: NEEDS WORK
+msgid "Beginning of document"
+msgstr "文書の開始"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+#: NEEDS WORK
+msgid "Image"
+msgstr "画像"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+#: NEEDS WORK
+msgid "(empty)"
+msgstr "(空)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+#: NEEDS WORK
+msgid "Image Files"
+msgstr "画像ファイル"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error selecting file: {}"
+msgstr "ファイルの選択中にエラーが発生しました: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#: NEEDS WORK
+#, python-brace-format
+msgid "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr "サイズ: {} x {} ピクセル  •  {:.1f} KB"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading image: {}"
+msgstr "画像の読み込みエラー: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+#: NEEDS WORK
+msgid "Error Loading Image"
+msgstr "画像の読み込みエラー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not load the selected image file.\n"
+"\n"
+"{}"
+msgstr "選択した画像ファイルを読み込むことができませんでした。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error inserting image: {}"
+msgstr "画像の挿入中にエラーが発生しました: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+#: NEEDS WORK
+msgid "Error Inserting Image"
+msgstr "画像の挿入エラー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Could not insert the image.\n"
+"\n"
+"{}"
+msgstr "画像を挿入できませんでした。"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1265,6 +1446,11 @@ msgstr "プロジェクト"
 msgid "Add Paragraph"
 msgstr "段落を追加"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+#: NEEDS WORK
+msgid "Insert Image (Ctrl+Shift+I)"
+msgstr "画像を挿入 (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Go to beginning"
@@ -1274,6 +1460,48 @@ msgstr "最初に戻る"
 #: NEEDS WORK
 msgid "Go to end"
 msgstr "最後へ移動"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+#: NEEDS WORK
+msgid "⚠️ Error: Invalid image data"
+msgstr "⚠️ エラー: 無効な画像データ"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Image not found: {}"
+msgstr "⚠️ 画像が見つかりません: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#: NEEDS WORK
+#, python-brace-format
+msgid "⚠️ Error loading image: {}"
+msgstr "⚠️ 画像の読み込みエラー: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+#: NEEDS WORK
+msgid "Remove Image"
+msgstr "画像を削除"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+#: NEEDS WORK
+msgid "Remove Image?"
+msgstr "画像を削除しますか？"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+#: NEEDS WORK
+msgid "Are you sure you want to remove this image from the document?"
+msgstr "この画像をドキュメントから削除してもよろしいですか？"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+#: NEEDS WORK
+msgid "Image removed"
+msgstr "画像が削除されました"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+#: NEEDS WORK
+msgid "Error removing image"
+msgstr "画像の削除中にエラーが発生しました"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
@@ -1289,6 +1517,11 @@ msgstr "やり直すものはありません"
 #: NEEDS WORK
 msgid "Paragraph reordered"
 msgstr "段落が再配置されました"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+#: NEEDS WORK
+msgid "No project open"
+msgstr "プロジェクトが開いていません"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 614
 #: NEEDS WORK
@@ -1353,6 +1586,16 @@ msgstr "データベースが正常にインポートされました"
 #, python-brace-format
 msgid "Created project: {}"
 msgstr "作成したプロジェクト: {}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+#: NEEDS WORK
+msgid "Image inserted successfully"
+msgstr "画像が正常に挿入されました"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "画像の挿入エラー"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1929,6 +2172,12 @@ msgstr "ODTへのエクスポート中にファイルエラーが発生しまし
 #, python-brace-format
 msgid "Unexpected error exporting to ODT: {}: {}"
 msgstr "ODTへのエクスポート中に予期しないエラーが発生しました: {}: {}"
+# 
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error adding image to PDF: {}"
+msgstr "PDFへの画像の追加エラー: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 1567
 #: NEEDS WORK

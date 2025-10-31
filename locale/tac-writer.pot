@@ -215,11 +215,13 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1248
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1314
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1390
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1449
 # File: usr/share/tac-writer/ui/components.py, line: 879
 # File: usr/share/tac-writer/ui/components.py, line: 916
 # File: usr/share/tac-writer/ui/components.py, line: 1294
 # File: usr/share/tac-writer/ui/components.py, line: 1441
-# File: usr/share/tac-writer/ui/main_window.py, line: 637
+# File: usr/share/tac-writer/ui/main_window.py, line: 584
+# File: usr/share/tac-writer/ui/main_window.py, line: 830
 msgid   "Cancel"
 msgstr  ""
 
@@ -304,6 +306,8 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1288
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1361
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1377
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1721
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1804
 msgid   "OK"
 msgstr  ""
 
@@ -684,7 +688,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1137
-# File: usr/share/tac-writer/core/services.py, line: 722
+# File: usr/share/tac-writer/core/services.py, line: 730
 #, python-brace-format
 msgid   "Error listing backups: {}"
 msgstr  ""
@@ -867,9 +871,188 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1406
-# File: usr/share/tac-writer/core/services.py, line: 808
+# File: usr/share/tac-writer/core/services.py, line: 816
 #, python-brace-format
 msgid   "Error deleting backup: {}"
+msgstr  ""
+
+#
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1421
+# File: usr/share/tac-writer/ui/main_window.py, line: 357
+msgid   "Insert Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1454
+msgid   "Insert"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1478
+msgid   "Image File"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1479
+msgid   "Select an image file to insert into your document"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1484
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1658
+msgid   "Select Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1485
+msgid   "No file selected"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1489
+msgid   "Browse..."
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1501
+msgid   "Preview"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1523
+msgid   "Image Formatting"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1529
+msgid   "Display Width (%)"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1530
+msgid   "Percentage of page width"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1548
+msgid   "Alignment"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1549
+msgid   "Image position on the page"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1556
+msgid   "Left"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1557
+msgid   "Center"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1558
+msgid   "Right"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1579
+msgid   "Caption (optional)"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1585
+msgid   "Alternative Text (optional)"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1592
+msgid   "Position in Document"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1598
+msgid   "Insert After"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1599
+msgid   "Choose where to place the image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1610
+msgid   "Beginning of document"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1620
+msgid   "Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1622
+msgid   "(empty)"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1645
+msgid   "Image Files"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1672
+#, python-brace-format
+msgid   "Error selecting file: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1695
+#, python-brace-format
+msgid   "Size: {} x {} pixels  •  {:.1f} KB"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1714
+#, python-brace-format
+msgid   "Error loading image: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1718
+msgid   "Error Loading Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+#, python-brace-format
+msgid   "Could not load the selected image file.\n"
+        "\n"
+        "{}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+#, python-brace-format
+msgid   "Error inserting image: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+msgid   "Error Inserting Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+#, python-brace-format
+msgid   "Could not insert the image.\n"
+        "\n"
+        "{}"
 msgstr  ""
 
 #
@@ -960,7 +1143,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 586
-# File: usr/share/tac-writer/ui/main_window.py, line: 843
+# File: usr/share/tac-writer/ui/main_window.py, line: 1087
 msgid   "Continuous Argumentation Technique"
 msgstr  ""
 
@@ -1071,7 +1254,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1223
-# File: usr/share/tac-writer/ui/main_window.py, line: 331
+# File: usr/share/tac-writer/ui/main_window.py, line: 339
 msgid   "Title 1"
 msgstr  ""
 
@@ -1079,7 +1262,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1224
-# File: usr/share/tac-writer/ui/main_window.py, line: 332
+# File: usr/share/tac-writer/ui/main_window.py, line: 340
 msgid   "Title 2"
 msgstr  ""
 
@@ -1087,7 +1270,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1225
-# File: usr/share/tac-writer/ui/main_window.py, line: 333
+# File: usr/share/tac-writer/ui/main_window.py, line: 341
 msgid   "Introduction"
 msgstr  ""
 
@@ -1095,7 +1278,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1226
-# File: usr/share/tac-writer/ui/main_window.py, line: 334
+# File: usr/share/tac-writer/ui/main_window.py, line: 342
 msgid   "Argument"
 msgstr  ""
 
@@ -1103,7 +1286,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1227
-# File: usr/share/tac-writer/ui/main_window.py, line: 335
+# File: usr/share/tac-writer/ui/main_window.py, line: 343
 msgid   "Argument Resumption"
 msgstr  ""
 
@@ -1111,7 +1294,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1228
-# File: usr/share/tac-writer/ui/main_window.py, line: 336
+# File: usr/share/tac-writer/ui/main_window.py, line: 344
 msgid   "Quote"
 msgstr  ""
 
@@ -1119,7 +1302,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1229
-# File: usr/share/tac-writer/ui/main_window.py, line: 337
+# File: usr/share/tac-writer/ui/main_window.py, line: 345
 msgid   "Epigraph"
 msgstr  ""
 
@@ -1127,7 +1310,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 1230
-# File: usr/share/tac-writer/ui/main_window.py, line: 338
+# File: usr/share/tac-writer/ui/main_window.py, line: 346
 msgid   "Conclusion"
 msgstr  ""
 
@@ -1147,7 +1330,10 @@ msgid   "This action cannot be undone."
 msgstr  ""
 
 #
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+#
 # File: usr/share/tac-writer/ui/components.py, line: 1295
+# File: usr/share/tac-writer/ui/main_window.py, line: 585
 msgid   "Remove"
 msgstr  ""
 
@@ -1226,13 +1412,13 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 150
-# File: usr/share/tac-writer/ui/main_window.py, line: 481
+# File: usr/share/tac-writer/ui/main_window.py, line: 652
 msgid   "Undo"
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 151
-# File: usr/share/tac-writer/ui/main_window.py, line: 501
+# File: usr/share/tac-writer/ui/main_window.py, line: 672
 msgid   "Redo"
 msgstr  ""
 
@@ -1252,106 +1438,169 @@ msgid   "Projects"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 324
+# File: usr/share/tac-writer/ui/main_window.py, line: 332
 msgid   "Add Paragraph"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 361
+# File: usr/share/tac-writer/ui/main_window.py, line: 359
+msgid   "Insert Image (Ctrl+Shift+I)"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 377
 msgid   "Go to beginning"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 371
+# File: usr/share/tac-writer/ui/main_window.py, line: 387
 msgid   "Go to end"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 491
+# File: usr/share/tac-writer/ui/main_window.py, line: 476
+msgid   "⚠️ Error: Invalid image data"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 541
+#, python-brace-format
+msgid   "⚠️ Image not found: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 549
+#, python-brace-format
+msgid   "⚠️ Error loading image: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 565
+msgid   "Remove Image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 580
+msgid   "Remove Image?"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 581
+msgid   "Are you sure you want to remove this image from the document?"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 603
+msgid   "Image removed"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 606
+msgid   "Error removing image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 662
 msgid   "Nothing to undo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 511
+# File: usr/share/tac-writer/ui/main_window.py, line: 682
 msgid   "Nothing to redo"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 570
+# File: usr/share/tac-writer/ui/main_window.py, line: 741
 msgid   "Paragraph reordered"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 633
+# File: usr/share/tac-writer/ui/main_window.py, line: 789
+msgid   "No project open"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 826
 msgid   "Open Project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 636
+# File: usr/share/tac-writer/ui/main_window.py, line: 829
 msgid   "Open"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 645
+# File: usr/share/tac-writer/ui/main_window.py, line: 838
 msgid   "TAC Projects (*.json)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 650
+# File: usr/share/tac-writer/ui/main_window.py, line: 843
 msgid   "All Files"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 664
-# File: usr/share/tac-writer/ui/main_window.py, line: 898
+# File: usr/share/tac-writer/ui/main_window.py, line: 857
+# File: usr/share/tac-writer/ui/main_window.py, line: 1142
 #, python-brace-format
 msgid   "Opened project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 666
-# File: usr/share/tac-writer/ui/main_window.py, line: 900
+# File: usr/share/tac-writer/ui/main_window.py, line: 859
+# File: usr/share/tac-writer/ui/main_window.py, line: 1144
 msgid   "Failed to open project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 679
+# File: usr/share/tac-writer/ui/main_window.py, line: 872
 msgid   "Project saved successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 683
+# File: usr/share/tac-writer/ui/main_window.py, line: 876
+# File: usr/share/tac-writer/ui/main_window.py, line: 1049
 msgid   "Failed to save project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 730
+# File: usr/share/tac-writer/ui/main_window.py, line: 923
 msgid   "Auto-save failed"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 737
+# File: usr/share/tac-writer/ui/main_window.py, line: 930
 msgid   "No project to export"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 776
+# File: usr/share/tac-writer/ui/main_window.py, line: 969
 msgid   "Database imported successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 812
+# File: usr/share/tac-writer/ui/main_window.py, line: 1005
 #, python-brace-format
 msgid   "Created project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 873
+# File: usr/share/tac-writer/ui/main_window.py, line: 1043
+msgid   "Image inserted successfully"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+msgid   "Error inserting image"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 1117
 msgid   "Loading project..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 890
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
 #, python-brace-format
 msgid   "Failed to open project: {}"
 msgstr  ""
@@ -1529,416 +1778,422 @@ msgid   "No config available for spell check debug"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 49
+# File: usr/share/tac-writer/core/services.py, line: 57
 #, python-brace-format
 msgid   "ProjectManager initialized with database: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 66
+# File: usr/share/tac-writer/core/services.py, line: 74
 #, python-brace-format
 msgid   "Database connection error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 77
+# File: usr/share/tac-writer/core/services.py, line: 85
 #, python-brace-format
 msgid   "Error checking project existence: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 86
+# File: usr/share/tac-writer/core/services.py, line: 94
 #, python-brace-format
 msgid   "Invalid project data: missing field '{}'"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 95
+# File: usr/share/tac-writer/core/services.py, line: 103
 #, python-brace-format
 msgid   "Invalid paragraph {}: missing field '{}'"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 113
+# File: usr/share/tac-writer/core/services.py, line: 121
 #, python-brace-format
 msgid   "Created migration backup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 117
+# File: usr/share/tac-writer/core/services.py, line: 125
 #, python-brace-format
 msgid   "Failed to create migration backup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 131
+# File: usr/share/tac-writer/core/services.py, line: 139
 #, python-brace-format
 msgid   "Found {} old JSON projects. Starting migration..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 136
+# File: usr/share/tac-writer/core/services.py, line: 144
 msgid   "Migration aborted: Could not create backup"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 156
+# File: usr/share/tac-writer/core/services.py, line: 164
 #, python-brace-format
 msgid   "Error loading {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 160
+# File: usr/share/tac-writer/core/services.py, line: 168
 #, python-brace-format
 msgid   "Warning: {} files have validation errors and will be skipped"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 163
+# File: usr/share/tac-writer/core/services.py, line: 171
 msgid   "No valid projects to migrate"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 185
+# File: usr/share/tac-writer/core/services.py, line: 193
 #, python-brace-format
 msgid   "Failed to migrate {} projects"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 189
+# File: usr/share/tac-writer/core/services.py, line: 197
 msgid   "Migration transaction committed successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 197
+# File: usr/share/tac-writer/core/services.py, line: 205
 #, python-brace-format
 msgid   "Warning: Could not rename {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 202
+# File: usr/share/tac-writer/core/services.py, line: 210
 #, python-brace-format
 msgid   "Migration failed, transaction rolled back: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 206
+# File: usr/share/tac-writer/core/services.py, line: 214
 #, python-brace-format
 msgid   "Migration failed with database error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 209
+# File: usr/share/tac-writer/core/services.py, line: 217
 #, python-brace-format
 msgid   "Migration complete. {} projects successfully migrated."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 222
+# File: usr/share/tac-writer/core/services.py, line: 230
 #, python-brace-format
 msgid   "JSON serialization error for project {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 252
+# File: usr/share/tac-writer/core/services.py, line: 260
 #, python-brace-format
 msgid   "JSON serialization error for paragraph {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 270
+# File: usr/share/tac-writer/core/services.py, line: 278
 #, python-brace-format
 msgid   "Database error saving project {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 290
+# File: usr/share/tac-writer/core/services.py, line: 298
 #, python-brace-format
 msgid   "Saved project to database: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 294
+# File: usr/share/tac-writer/core/services.py, line: 302
 #, python-brace-format
 msgid   "Failed to save project to database: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 298
+# File: usr/share/tac-writer/core/services.py, line: 306
 #, python-brace-format
 msgid   "Database error saving project '{}': {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 302
+# File: usr/share/tac-writer/core/services.py, line: 310
 #, python-brace-format
 msgid   "Unexpected error saving project '{}': {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 307
+# File: usr/share/tac-writer/core/services.py, line: 315
 #, python-brace-format
 msgid   "Database connection error for project '{}': {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 310
+# File: usr/share/tac-writer/core/services.py, line: 318
 #, python-brace-format
 msgid   "Unexpected error in save_project for '{}': {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 342
+# File: usr/share/tac-writer/core/services.py, line: 350
 #, python-brace-format
 msgid   "Database backup created: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 346
+# File: usr/share/tac-writer/core/services.py, line: 354
 #, python-brace-format
 msgid   "Warning: Database backup failed: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 360
+# File: usr/share/tac-writer/core/services.py, line: 368
 #, python-brace-format
 msgid   "Removed old backup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 363
+# File: usr/share/tac-writer/core/services.py, line: 371
 #, python-brace-format
 msgid   "Warning: Cleanup of old backups failed: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 467
+# File: usr/share/tac-writer/core/services.py, line: 475
 #, python-brace-format
 msgid   "Database error listing projects: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 469
+# File: usr/share/tac-writer/core/services.py, line: 477
 #, python-brace-format
 msgid   "Unexpected error listing projects: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 479
+# File: usr/share/tac-writer/core/services.py, line: 487
 msgid   "Database maintenance completed"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 481
+# File: usr/share/tac-writer/core/services.py, line: 489
 #, python-brace-format
 msgid   "Database maintenance failed: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 510
+# File: usr/share/tac-writer/core/services.py, line: 518
 #, python-brace-format
 msgid   "error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 517
+# File: usr/share/tac-writer/core/services.py, line: 525
 #, python-brace-format
 msgid   "unexpected error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 561
+# File: usr/share/tac-writer/core/services.py, line: 569
 #, python-brace-format
 msgid   "Database initialization error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 573
+# File: usr/share/tac-writer/core/services.py, line: 581
 #, python-brace-format
 msgid   "Created project: {} ({})"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 576
+# File: usr/share/tac-writer/core/services.py, line: 584
 msgid   "Failed to save new project to database"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 578
+# File: usr/share/tac-writer/core/services.py, line: 586
 #, python-brace-format
 msgid   "Error creating project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 591
+# File: usr/share/tac-writer/core/services.py, line: 599
 #, python-brace-format
 msgid   "Project with ID {} not found in database."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 620
+# File: usr/share/tac-writer/core/services.py, line: 628
 #, python-brace-format
 msgid   "Loaded project from database: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 624
+# File: usr/share/tac-writer/core/services.py, line: 632
 #, python-brace-format
 msgid   "Database error loading project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 627
+# File: usr/share/tac-writer/core/services.py, line: 635
 #, python-brace-format
 msgid   "Data error loading project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 630
+# File: usr/share/tac-writer/core/services.py, line: 638
 #, python-brace-format
 msgid   "Unexpected error loading project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 643
+# File: usr/share/tac-writer/core/services.py, line: 651
 #, python-brace-format
 msgid   "Deleted project from database: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 646
+# File: usr/share/tac-writer/core/services.py, line: 654
 #, python-brace-format
 msgid   "Database error deleting project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 671
+# File: usr/share/tac-writer/core/services.py, line: 679
 #, python-brace-format
 msgid   "Manual backup created: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 675
+# File: usr/share/tac-writer/core/services.py, line: 683
 #, python-brace-format
 msgid   "Error creating manual backup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 715
+# File: usr/share/tac-writer/core/services.py, line: 723
 #, python-brace-format
 msgid   "Error reading backup file {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 754
+# File: usr/share/tac-writer/core/services.py, line: 762
 #, python-brace-format
 msgid   "Backup validation error: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 762
+# File: usr/share/tac-writer/core/services.py, line: 770
 msgid   "Invalid backup file"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 771
+# File: usr/share/tac-writer/core/services.py, line: 779
 #, python-brace-format
 msgid   "Current database backed up to: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 782
+# File: usr/share/tac-writer/core/services.py, line: 790
 #, python-brace-format
 msgid   "Successfully imported database with {} projects"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 790
+# File: usr/share/tac-writer/core/services.py, line: 798
 msgid   "Import failed, restored previous database"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 794
+# File: usr/share/tac-writer/core/services.py, line: 802
 #, python-brace-format
 msgid   "Error importing database: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 804
+# File: usr/share/tac-writer/core/services.py, line: 812
 #, python-brace-format
 msgid   "Deleted backup: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 825
+# File: usr/share/tac-writer/core/services.py, line: 833
 msgid   "Warning: ODT export not available (missing xml dependencies)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 827
+# File: usr/share/tac-writer/core/services.py, line: 835
 msgid   "Warning: PDF export not available (missing reportlab)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1030
+# File: usr/share/tac-writer/core/services.py, line: 1057
 #, python-brace-format
 msgid   "Export format '{}' not available"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1034
+# File: usr/share/tac-writer/core/services.py, line: 1061
 #, python-brace-format
 msgid   "Error exporting project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1081
-# File: usr/share/tac-writer/core/services.py, line: 1621
+# File: usr/share/tac-writer/core/services.py, line: 1116
+# File: usr/share/tac-writer/core/services.py, line: 1837
 msgid   "Footnotes:"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1088
+# File: usr/share/tac-writer/core/services.py, line: 1123
 #, python-brace-format
 msgid   "File error exporting to TXT: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1091
+# File: usr/share/tac-writer/core/services.py, line: 1126
 #, python-brace-format
 msgid   "Unexpected error exporting to TXT: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1145
+# File: usr/share/tac-writer/core/services.py, line: 1195
 #, python-brace-format
 msgid   "File error exporting to ODT: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1148
+# File: usr/share/tac-writer/core/services.py, line: 1198
 #, python-brace-format
 msgid   "Unexpected error exporting to ODT: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1631
+# File: usr/share/tac-writer/core/services.py, line: 1827
+#, python-brace-format
+msgid   "Error adding image to PDF: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/core/services.py, line: 1847
 #, python-brace-format
 msgid   "File error exporting to PDF: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/services.py, line: 1634
+# File: usr/share/tac-writer/core/services.py, line: 1850
 #, python-brace-format
 msgid   "Unexpected error exporting to PDF: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 497
+# File: usr/share/tac-writer/core/models.py, line: 535
 msgid   "Academic Essay"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/core/models.py, line: 498
+# File: usr/share/tac-writer/core/models.py, line: 536
 msgid   "Standard academic essay structure"
 msgstr  ""
