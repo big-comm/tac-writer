@@ -224,7 +224,7 @@ class PomodoroDialog(Adw.Window):
         
         # Minimize button in top right corner
         self.minimize_button = Gtk.Button()
-        self.minimize_button.set_icon_name("window-minimize-symbolic")
+        self.minimize_button.set_icon_name('tac-window-minimize-symbolic')
         self.minimize_button.set_tooltip_text(_("Minimize"))
         self.minimize_button.add_css_class("flat")
         self.minimize_button.add_css_class("circular")
@@ -570,7 +570,7 @@ class WelcomeView(Gtk.Box):
         content_box.set_halign(Gtk.Align.CENTER)
 
         # Icon
-        icon = Gtk.Image.new_from_icon_name("document-edit-symbolic")
+        icon = Gtk.Image.new_from_icon_name('tac-document-edit-symbolic')
         icon.set_pixel_size(96)
         icon.add_css_class("welcome-icon")
         content_box.append(icon)
@@ -603,7 +603,7 @@ class WelcomeView(Gtk.Box):
         
         wiki_button = Gtk.Button()
         wiki_button.set_label(_("How To Wiki"))
-        wiki_button.set_icon_name("help-browser-symbolic")
+        wiki_button.set_icon_name('tac-help-browser-symbolic')
         wiki_button.add_css_class("flat")
         wiki_button.add_css_class("wiki-help-button")
         wiki_button.set_tooltip_text(_("Access the online documentation and tutorials"))
@@ -776,7 +776,7 @@ class ProjectListWidget(Gtk.Box):
 
         # Edit button
         edit_button = Gtk.Button()
-        edit_button.set_icon_name("edit-symbolic")
+        edit_button.set_icon_name('tac-edit-symbolic')
         edit_button.set_tooltip_text(_("Rename project"))
         edit_button.add_css_class("flat")
         edit_button.add_css_class("circular")
@@ -785,7 +785,7 @@ class ProjectListWidget(Gtk.Box):
 
         # Delete button
         delete_button = Gtk.Button()
-        delete_button.set_icon_name("user-trash-symbolic")
+        delete_button.set_icon_name('tac-user-trash-symbolic')
         delete_button.set_tooltip_text(_("Delete project"))
         delete_button.add_css_class("flat")
         delete_button.add_css_class("circular")
@@ -1052,7 +1052,7 @@ class ParagraphEditor(Gtk.Box):
             
             # Footnote button
             footnote_button = Gtk.Button()
-            footnote_button.set_icon_name("text-x-generic-symbolic")
+            footnote_button.set_icon_name('tac-text-x-generic-symbolic')
             footnote_button.set_tooltip_text(_("Manage footnotes"))
             footnote_button.add_css_class("flat")
             footnote_button.connect('clicked', self._on_footnote_clicked)
@@ -1077,7 +1077,7 @@ class ParagraphEditor(Gtk.Box):
         # Spell check toggle button
         if SPELL_CHECK_AVAILABLE and self.config:
             self.spell_button = Gtk.ToggleButton()
-            self.spell_button.set_icon_name("tools-check-spelling-symbolic")
+            self.spell_button.set_icon_name('tac-tools-check-spelling-symbolic')
             self.spell_button.set_tooltip_text(_("Toggle spell checking"))
             self.spell_button.add_css_class("flat")
             self.spell_button.set_active(self.config.get_spell_check_enabled())
@@ -1093,7 +1093,7 @@ class ParagraphEditor(Gtk.Box):
 
         # Remove button
         remove_button = Gtk.Button()
-        remove_button.set_icon_name("edit-delete-symbolic")
+        remove_button.set_icon_name('tac-edit-delete-symbolic')
         remove_button.set_tooltip_text(_("Remove paragraph"))
         remove_button.add_css_class("flat")
         remove_button.connect('clicked', self._on_remove_clicked)
@@ -1477,7 +1477,7 @@ class FootnoteDialog(Adw.Window):
         # Add footnote button
         add_button = Gtk.Button()
         add_button.set_label(_("Add Footnote"))
-        add_button.set_icon_name("list-add-symbolic")
+        add_button.set_icon_name('tac-list-add-symbolic')
         add_button.add_css_class("suggested-action")
         add_button.connect('clicked', self._on_add_footnote)
         main_box.append(add_button)
@@ -1554,7 +1554,7 @@ class FootnoteDialog(Adw.Window):
 
         # Remove button
         remove_button = Gtk.Button()
-        remove_button.set_icon_name("edit-delete-symbolic")
+        remove_button.set_icon_name('tac-edit-delete-symbolic')
         remove_button.add_css_class("flat")
         remove_button.connect('clicked', lambda btn: self._remove_footnote_row(row_box))
         row_box.append(remove_button)
