@@ -1417,6 +1417,18 @@ msgstr "Innflutningsvilla við athugun á stafsetningarferlum: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Óvænt villa við að athuga stafsetningarferla: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Sérsniðin táknþema slóð bætt við: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Villa við að stilla táknþema: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

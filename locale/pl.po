@@ -1419,6 +1419,18 @@ msgstr "Błąd importu podczas sprawdzania zależności od słowników: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Nieoczekiwany błąd podczas sprawdzania zależności zaklęcia: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Dodano ścieżkę do niestandardowego motywu ikon: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Błąd podczas ustawiania motywu ikon: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

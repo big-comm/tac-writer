@@ -1419,6 +1419,18 @@ msgstr "Грешка при импортиране при проверка на 
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Неочаквана грешка при проверка на зависимостите на заклинанията: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Добавен път към персонализирана икона тема: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Грешка при настройка на иконна тема: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

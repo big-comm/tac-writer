@@ -1416,6 +1416,18 @@ msgstr "שגיאת ייבוא בזמן בדיקת תלויות ההגהה: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "שגיאה בלתי צפויה בבדיקת תלויות ההגייה: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "נתיב נושא סמל מותאם נוסף: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "שגיאה בהגדרת נושא האייקונים: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

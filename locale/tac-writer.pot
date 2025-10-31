@@ -1408,111 +1408,123 @@ msgid   "Unexpected error checking spell dependencies: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 278
+# File: usr/share/tac-writer/application.py, line: 301
+#, python-brace-format
+msgid   "Custom icon theme path added: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/application.py, line: 305
+#, python-brace-format
+msgid   "Error setting up icon theme: {}: {}"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/application.py, line: 323
 #, python-brace-format
 msgid   "Error during application startup: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 291
+# File: usr/share/tac-writer/application.py, line: 365
 msgid   "Main window created"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 295
+# File: usr/share/tac-writer/application.py, line: 369
 msgid   "Main window presented"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 298
+# File: usr/share/tac-writer/application.py, line: 372
 #, python-brace-format
 msgid   "Error activating application: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 320
+# File: usr/share/tac-writer/application.py, line: 394
 #, python-brace-format
 msgid   "Error setting up actions: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 343
+# File: usr/share/tac-writer/application.py, line: 417
 #, python-brace-format
 msgid   "Error setting up menu: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 446
+# File: usr/share/tac-writer/application.py, line: 520
 #, python-brace-format
 msgid   "Could not apply CSS: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 449
+# File: usr/share/tac-writer/application.py, line: 523
 #, python-brace-format
 msgid   "Error setting up theme: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 459
+# File: usr/share/tac-writer/application.py, line: 533
 #, python-brace-format
 msgid   "Error showing new project dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 467
+# File: usr/share/tac-writer/application.py, line: 541
 #, python-brace-format
 msgid   "Error showing open project dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 475
+# File: usr/share/tac-writer/application.py, line: 549
 #, python-brace-format
 msgid   "Error saving project: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 483
+# File: usr/share/tac-writer/application.py, line: 557
 #, python-brace-format
 msgid   "Error showing export dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 491
+# File: usr/share/tac-writer/application.py, line: 565
 #, python-brace-format
 msgid   "Error showing preferences dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 499
+# File: usr/share/tac-writer/application.py, line: 573
 #, python-brace-format
 msgid   "Error showing about dialog: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 506
+# File: usr/share/tac-writer/application.py, line: 580
 #, python-brace-format
 msgid   "Error quitting application: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 515
+# File: usr/share/tac-writer/application.py, line: 589
 msgid   "Configuration saved"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 521
+# File: usr/share/tac-writer/application.py, line: 595
 msgid   "Application shutdown complete"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 524
+# File: usr/share/tac-writer/application.py, line: 598
 #, python-brace-format
 msgid   "Error during shutdown: {}: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/application.py, line: 533
+# File: usr/share/tac-writer/application.py, line: 607
 msgid   "No config available for spell check debug"
 msgstr  ""
 

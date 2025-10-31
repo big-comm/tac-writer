@@ -1415,6 +1415,18 @@ msgstr "의존성 검사 중 가져오기 오류: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "예기치 않은 오류: 주문 종속성 확인 중: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "사용자 정의 아이콘 테마 경로가 추가되었습니다: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "아이콘 테마 설정 오류: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

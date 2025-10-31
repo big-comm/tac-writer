@@ -1419,6 +1419,18 @@ msgstr "Eroare de import în timp ce se verificau dependențele de ortografie: {
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Eroare neașteptată la verificarea dependențelor de vrăji: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Calea temei de pictograme personalizate a fost adăugată: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Eroare la configurarea temei de pictograme: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

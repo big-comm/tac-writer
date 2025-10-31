@@ -1417,6 +1417,18 @@ msgstr "Σφάλμα εισαγωγής κατά τον έλεγχο των εξ
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Αναπάντεχο σφάλμα κατά τον έλεγχο εξαρτήσεων ξόρκων: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Προσαρμοσμένη διαδρομή θέματος εικονιδίων προστέθηκε: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Σφάλμα κατά την ρύθμιση του θέματος εικονιδίων: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

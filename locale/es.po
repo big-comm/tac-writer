@@ -1419,6 +1419,18 @@ msgstr "Error de importación al verificar las dependencias de la ortografía: {
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Error inesperado al verificar las dependencias de la hechicería: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Ruta del tema de iconos personalizado añadida: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Error al configurar el tema de iconos: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

@@ -1417,6 +1417,18 @@ msgstr "Chyba importu při kontrole závislostí na kouzlech: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Neočekávaná chyba při kontrole závislostí kouzel: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Cesta k vlastnímu motivu ikon byla přidána: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Chyba při nastavování motivu ikon: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

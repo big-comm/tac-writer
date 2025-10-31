@@ -1417,6 +1417,18 @@ msgstr "Importimise viga loitsude sõltuvuste kontrollimisel: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Ootamatu viga loitsude sõltuvuste kontrollimisel: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Kohandatud ikooniteema tee lisatud: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Ikoni teema seadistamise viga: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format

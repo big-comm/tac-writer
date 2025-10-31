@@ -1416,6 +1416,18 @@ msgstr "Greška pri uvozu prilikom provjere ovisnosti pravopisa: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Neočekivana greška prilikom provjere ovisnosti pravopisa: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 301
+#: NEEDS WORK
+#, python-brace-format
+msgid "Custom icon theme path added: {}"
+msgstr "Putanja prilagođene teme ikona dodana: {}"
+# 
+# File: usr/share/tac-writer/application.py, line: 305
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error setting up icon theme: {}: {}"
+msgstr "Greška prilikom postavljanja teme ikona: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
 #, python-brace-format
