@@ -29,11 +29,19 @@ try:
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.units import cm
-    from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer
+    from reportlab.platypus import SimpleDocTemplate, Paragraph as RLParagraph, Spacer, Image as RLImage
     from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_RIGHT, TA_JUSTIFY
     PDF_AVAILABLE = True
 except ImportError:
     PDF_AVAILABLE = False
+
+# Image processing dependencies
+try:
+    from PIL import Image as PILImage
+    import base64
+    IMAGE_PROCESSING_AVAILABLE = True
+except ImportError:
+    IMAGE_PROCESSING_AVAILABLE = False
 
 
 class ProjectManager:
@@ -941,10 +949,29 @@ class ExportService:
                 grouped.append({'type': 'epigraph', 'content': content})
                 last_was_quote = True # Treat it like a quote to start a new paragraph after
             
+            elif paragraph.type == ParagraphType.IMAGE:
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    grouped.append({
+                        'type': 'content',
+                        'content': combined,
+                        'indent': paragraph_starts_with_introduction
+                    })
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                # Add image to grouped list
+                img_metadata = paragraph.get_image_metadata()
+                if img_metadata:
+                    grouped.append({'type': 'image', 'metadata': img_metadata})
+                last_was_quote = False
+            
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                 # Determine if should start new paragraph
                 should_start_new = (
                     paragraph.type == ParagraphType.INTRODUCTION or
+                    paragraph.type == ParagraphType.ARGUMENT_RESUMPTION or
                     last_was_quote or
                     not current_paragraph_content
                 )
@@ -961,7 +988,7 @@ class ExportService:
                 
                 # Determine paragraph style
                 if not current_paragraph_content:
-                    if paragraph.type == ParagraphType.INTRODUCTION:
+                    if paragraph.type == ParagraphType.INTRODUCTION or paragraph.type == ParagraphType.ARGUMENT_RESUMPTION:
                         paragraph_starts_with_introduction = True
                     elif last_was_quote:
                         paragraph_starts_with_introduction = False
@@ -1068,6 +1095,14 @@ class ExportService:
                         # Indent epigraph significantly to the right
                         f.write(f"                            {item['content']}\n\n")
                     
+                    elif item['type'] == 'image':
+                        # Add image placeholder in TXT
+                        metadata = item['metadata']
+                        caption = metadata.get('caption', '')
+                        if caption:
+                            f.write(f"\n[IMAGE: {metadata.get('filename', 'image')} - {caption}]\n\n")
+                        else:
+                            f.write(f"\n[IMAGE: {metadata.get('filename', 'image')}]\n\n")
                     
                     elif item['type'] == 'content':
                         if item['indent']:
@@ -1107,9 +1142,24 @@ class ExportService:
             try:
                 # Create ODT directory structure
                 (temp_dir / "META-INF").mkdir(exist_ok=True)
+                (temp_dir / "Pictures").mkdir(exist_ok=True)
                 
-                # Create manifest.xml
-                self._create_manifest(temp_dir / "META-INF" / "manifest.xml")
+                # Collect image files and copy them to Pictures directory
+                image_files = []
+                for paragraph in project.paragraphs:
+                    if paragraph.type == ParagraphType.IMAGE:
+                        img_metadata = paragraph.get_image_metadata()
+                        if img_metadata:
+                            img_path = Path(img_metadata['path'])
+                            if img_path.exists():
+                                # Copy image to Pictures directory
+                                dest_name = img_metadata['filename']
+                                dest_path = temp_dir / "Pictures" / dest_name
+                                shutil.copy2(img_path, dest_path)
+                                image_files.append(dest_name)
+                
+                # Create manifest.xml (with images)
+                self._create_manifest(temp_dir / "META-INF" / "manifest.xml", image_files)
                 
                 # Create styles.xml
                 self._create_styles(temp_dir / "styles.xml")
@@ -1209,9 +1259,25 @@ class ExportService:
                 grouped_odt.append({'type': 'epigraph', 'content': content})
                 last_was_quote = True
             
+            elif paragraph.type == ParagraphType.IMAGE:
+                # Write accumulated content first
+                if current_paragraph_content:
+                    combined = " ".join(current_paragraph_content)
+                    style = "Introduction" if paragraph_starts_with_introduction else "Normal"
+                    grouped_odt.append({'type': 'content', 'content': combined, 'style': style})
+                    current_paragraph_content = []
+                    paragraph_starts_with_introduction = False
+                
+                # Add image to grouped list
+                img_metadata = paragraph.get_image_metadata()
+                if img_metadata:
+                    grouped_odt.append({'type': 'image', 'metadata': img_metadata})
+                last_was_quote = False
+            
             elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                 should_start_new = (
                     paragraph.type == ParagraphType.INTRODUCTION or
+                    paragraph.type == ParagraphType.ARGUMENT_RESUMPTION or
                     last_was_quote or
                     not current_paragraph_content
                 )
@@ -1224,7 +1290,7 @@ class ExportService:
                     paragraph_starts_with_introduction = False
                 
                 if not current_paragraph_content:
-                    if paragraph.type == ParagraphType.INTRODUCTION:
+                    if paragraph.type == ParagraphType.INTRODUCTION or paragraph.type == ParagraphType.ARGUMENT_RESUMPTION:
                         paragraph_starts_with_introduction = True
                     elif last_was_quote:
                         paragraph_starts_with_introduction = False
@@ -1266,6 +1332,9 @@ class ExportService:
 <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
                         xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
                         xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+                        xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"
                         xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0">
 <office:automatic-styles/>
 <office:body>
@@ -1284,6 +1353,45 @@ class ExportService:
                 content_xml += f'<text:p text:style-name="Quote">{item["content"]}</text:p>\n'
             elif item['type'] == 'epigraph':
                 content_xml += f'<text:p text:style-name="Epigraph">{item["content"]}</text:p>\n'
+            elif item['type'] == 'image':
+                # Add actual image to ODT
+                metadata = item['metadata']
+                filename = metadata.get('filename', 'image')
+                original_size = metadata.get('original_size', (800, 600))
+                width_percent = metadata.get('width_percent', 80.0)
+                alignment = metadata.get('alignment', 'center')
+                caption = metadata.get('caption', '')
+                
+                # Calculate image size for ODT
+                # A4 page width is 21cm, minus 6cm margins (3cm each side) = 15cm usable
+                usable_page_width_cm = 15.0
+                img_width_cm = usable_page_width_cm * (width_percent / 100.0)
+                
+                # Calculate height maintaining aspect ratio
+                aspect_ratio = original_size[1] / original_size[0]
+                img_height_cm = img_width_cm * aspect_ratio
+                
+                # Determine alignment style name
+                if alignment == 'center':
+                    style_name = 'GraphicsCenter'
+                elif alignment == 'right':
+                    style_name = 'GraphicsRight'
+                else:  # left
+                    style_name = 'GraphicsLeft'
+                
+                # Create draw:frame with image
+                content_xml += f'''<text:p text:style-name="Normal">
+  <draw:frame draw:style-name="{style_name}" draw:name="{filename}" text:anchor-type="paragraph" 
+              svg:width="{img_width_cm:.2f}cm" svg:height="{img_height_cm:.2f}cm" 
+              draw:z-index="0">
+    <draw:image xlink:href="Pictures/{filename}" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/>
+  </draw:frame>
+</text:p>\n'''
+                
+                # Add caption if exists
+                if caption:
+                    content_xml += f'<text:p text:style-name="ImageCaption">{caption}</text:p>\n'
+                    
             elif item['type'] == 'content':
                 content_xml += f'<text:p text:style-name="{item["style"]}">{item["content"]}</text:p>\n'
         
@@ -1293,15 +1401,31 @@ class ExportService:
         
         return content_xml
 
-    def _create_manifest(self, file_path: Path):
+    def _create_manifest(self, file_path: Path, image_files: list = None):
         """Create manifest.xml for ODT"""
         manifest_xml = '''<?xml version="1.0" encoding="UTF-8"?>
 <manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0">
   <manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.text"/>
   <manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/>
   <manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/>
-  <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>
-</manifest:manifest>'''
+  <manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/>'''
+        
+        # Add image file entries
+        if image_files:
+            for img_file in image_files:
+                # Determine MIME type based on extension
+                ext = Path(img_file).suffix.lower()
+                mime_types = {
+                    '.png': 'image/png',
+                    '.jpg': 'image/jpeg',
+                    '.jpeg': 'image/jpeg',
+                    '.webp': 'image/webp'
+                }
+                mime_type = mime_types.get(ext, 'image/png')
+                
+                manifest_xml += f'\n  <manifest:file-entry manifest:full-path="Pictures/{img_file}" manifest:media-type="{mime_type}"/>'
+        
+        manifest_xml += '\n</manifest:manifest>'
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(manifest_xml)
@@ -1351,6 +1475,23 @@ class ExportService:
   <style:style style:name="Footnote" style:family="paragraph">
     <style:text-properties fo:font-size="9pt"/>
     <style:paragraph-properties fo:text-align="justify" fo:margin-bottom="0.2cm" fo:line-height="100%"/>
+  </style:style>
+  
+  <style:style style:name="ImageCaption" style:family="paragraph">
+    <style:text-properties fo:font-size="10pt" fo:font-style="italic"/>
+    <style:paragraph-properties fo:text-align="center" fo:margin-top="0.2cm" fo:margin-bottom="0.5cm"/>
+  </style:style>
+  
+  <style:style style:name="GraphicsLeft" style:family="graphic">
+    <style:graphic-properties style:run-through="foreground" style:wrap="none" style:horizontal-pos="left" style:horizontal-rel="paragraph" style:vertical-pos="top" style:vertical-rel="paragraph"/>
+  </style:style>
+  
+  <style:style style:name="GraphicsCenter" style:family="graphic">
+    <style:graphic-properties style:run-through="foreground" style:wrap="none" style:horizontal-pos="center" style:horizontal-rel="paragraph" style:vertical-pos="top" style:vertical-rel="paragraph"/>
+  </style:style>
+  
+  <style:style style:name="GraphicsRight" style:family="graphic">
+    <style:graphic-properties style:run-through="foreground" style:wrap="none" style:horizontal-pos="right" style:horizontal-rel="paragraph" style:vertical-pos="top" style:vertical-rel="paragraph"/>
   </style:style>
 </office:styles>
 </office:document-styles>'''
@@ -1542,9 +1683,24 @@ class ExportService:
                     grouped_pdf.append({'type': 'epigraph', 'content': content})
                     last_was_quote = True
                 
+                elif paragraph.type == ParagraphType.IMAGE:
+                    if current_paragraph_content:
+                        combined = " ".join(current_paragraph_content)
+                        grouped_pdf.append({'type': 'content', 'content': combined, 'style': current_style})
+                        current_paragraph_content = []
+                        current_style = None
+                        paragraph_starts_with_introduction = False
+                    
+                    # Add image to grouped list
+                    img_metadata = paragraph.get_image_metadata()
+                    if img_metadata:
+                        grouped_pdf.append({'type': 'image', 'metadata': img_metadata})
+                    last_was_quote = False
+                
                 elif paragraph.type in [ParagraphType.INTRODUCTION, ParagraphType.ARGUMENT, ParagraphType.CONCLUSION, ParagraphType.ARGUMENT_RESUMPTION]:
                     should_start_new = (
                         paragraph.type == ParagraphType.INTRODUCTION or
+                        paragraph.type == ParagraphType.ARGUMENT_RESUMPTION or
                         last_was_quote or
                         not current_paragraph_content
                     )
@@ -1557,7 +1713,7 @@ class ExportService:
                         paragraph_starts_with_introduction = False
                     
                     if not current_paragraph_content:
-                        if paragraph.type == ParagraphType.INTRODUCTION:
+                        if paragraph.type == ParagraphType.INTRODUCTION or paragraph.type == ParagraphType.ARGUMENT_RESUMPTION:
                             paragraph_starts_with_introduction = True
                             current_style = introduction_style
                         elif last_was_quote:
@@ -1612,6 +1768,66 @@ class ExportService:
                     story.append(RLParagraph(item['content'], quote_style))
                 elif item['type'] == 'epigraph':
                     story.append(RLParagraph(item['content'], epigraph_style))
+                elif item['type'] == 'image':
+                    # Add image to PDF
+                    try:
+                        metadata = item['metadata']
+                        img_path = Path(metadata['path'])
+                        
+                        if img_path.exists():
+                            # Get metadata
+                            original_size = metadata.get('original_size', (800, 600))
+                            width_percent = metadata.get('width_percent', 80.0)
+                            alignment = metadata.get('alignment', 'center')
+                            
+                            # Calculate image size for PDF based on page width percentage
+                            # A4 width is 21cm, minus 6cm margins (3cm each side) = 15cm usable
+                            usable_page_width = 15.0  # cm
+                            img_width_cm = usable_page_width * (width_percent / 100.0)
+                            
+                            # Calculate height maintaining aspect ratio
+                            aspect_ratio = original_size[1] / original_size[0]
+                            img_height_cm = img_width_cm * aspect_ratio
+                            
+                            # Create image with correct size
+                            pdf_img = RLImage(str(img_path), width=img_width_cm*cm, height=img_height_cm*cm)
+                            
+                            # Set alignment
+                            if alignment == 'center':
+                                pdf_img.hAlign = 'CENTER'
+                            elif alignment == 'right':
+                                pdf_img.hAlign = 'RIGHT'
+                            else:
+                                pdf_img.hAlign = 'LEFT'
+                            
+                            story.append(pdf_img)
+                            story.append(Spacer(1, 12))
+                            
+                            # Add caption if exists
+                            caption = metadata.get('caption', '')
+                            if caption:
+                                # Caption alignment should match image alignment
+                                if alignment == 'left':
+                                    caption_alignment = TA_LEFT
+                                elif alignment == 'right':
+                                    caption_alignment = TA_RIGHT
+                                else:
+                                    caption_alignment = TA_CENTER
+                                
+                                caption_style = ParagraphStyle(
+                                    'ImageCaption',
+                                    parent=normal_style,
+                                    fontSize=10,
+                                    alignment=caption_alignment,
+                                    fontName='Times-Italic'
+                                )
+                                story.append(RLParagraph(caption, caption_style))
+                                story.append(Spacer(1, 12))
+                    except Exception as e:
+                        print(_("Error adding image to PDF: {}").format(e))
+                        # Add placeholder text if image fails
+                        story.append(RLParagraph(f"[Image: {metadata.get('filename', 'image')}]", normal_style))
+                
                 elif item['type'] == 'content':
                     story.append(RLParagraph(item['content'], item['style']))
             

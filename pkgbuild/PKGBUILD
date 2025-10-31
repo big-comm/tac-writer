@@ -12,6 +12,7 @@ depends=(
     'python-reportlab'
     'python-gtkspellcheck'
     'python-pyenchant'
+    'python-pillow'
     'gettext'
     'ttf-liberation'
 )

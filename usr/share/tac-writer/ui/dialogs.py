@@ -801,7 +801,7 @@ class WelcomeDialog(Adw.Window):
         self.config = config
 
         # Smaller window size since we removed content
-        self.set_default_size(600, 450)
+        self.set_default_size(600, 500)
 
         # Create UI
         self._create_ui()
@@ -1405,3 +1405,401 @@ class BackupManagerDialog(Adw.Window):
             except Exception as e:
                 print(_("Error deleting backup: {}").format(e))
         dialog.destroy()
+
+
+class ImageDialog(Adw.Window):
+    """Dialog for adding images to the document"""
+
+    __gtype_name__ = 'TacImageDialog'
+
+    __gsignals__ = {
+        'image-added': (GObject.SIGNAL_RUN_FIRST, None, (object,)),
+    }
+
+    def __init__(self, parent, project, insert_after_index: int = -1, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Insert Image"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(700, 600)
+        self.set_resizable(True)
+
+        self.project = project
+        self.insert_after_index = insert_after_index
+        self.selected_file = None
+        self.image_preview = None
+        self.original_size = None
+        
+        self.config = Config()
+        
+        # Create UI
+        self._create_ui()
+
+    def _create_ui(self):
+        """Create the dialog UI"""
+        # Main content
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(content_box)
+
+        # Header bar
+        header_bar = Adw.HeaderBar()
+        header_bar.set_show_end_title_buttons(False)
+
+        # Cancel button
+        cancel_button = Gtk.Button(label=_("Cancel"))
+        cancel_button.connect('clicked', lambda b: self.destroy())
+        header_bar.pack_start(cancel_button)
+
+        # Insert button
+        self.insert_button = Gtk.Button(label=_("Insert"))
+        self.insert_button.add_css_class('suggested-action')
+        self.insert_button.set_sensitive(False)
+        self.insert_button.connect('clicked', self._on_insert_clicked)
+        header_bar.pack_end(self.insert_button)
+
+        content_box.append(header_bar)
+
+        # Scrolled window for content
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_vexpand(True)
+        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        content_box.append(scrolled)
+
+        # Main content box
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        main_box.set_margin_top(24)
+        main_box.set_margin_bottom(24)
+        main_box.set_margin_start(24)
+        main_box.set_margin_end(24)
+        scrolled.set_child(main_box)
+
+        # File selection group
+        file_group = Adw.PreferencesGroup()
+        file_group.set_title(_("Image File"))
+        file_group.set_description(_("Select an image file to insert into your document"))
+        main_box.append(file_group)
+
+        # File chooser button
+        file_button_row = Adw.ActionRow()
+        file_button_row.set_title(_("Select Image"))
+        self.file_label = Gtk.Label(label=_("No file selected"))
+        self.file_label.add_css_class('dim-label')
+        file_button_row.add_suffix(self.file_label)
+        
+        choose_button = Gtk.Button(label=_("Browse..."))
+        choose_button.set_valign(Gtk.Align.CENTER)
+        choose_button.connect('clicked', self._on_choose_file)
+        file_button_row.add_suffix(choose_button)
+        file_group.add(file_button_row)
+
+        # Image preview
+        self.preview_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        self.preview_box.set_visible(False)
+        main_box.append(self.preview_box)
+
+        preview_label = Gtk.Label()
+        preview_label.set_markup(f"<b>{_('Preview')}</b>")
+        preview_label.set_xalign(0)
+        self.preview_box.append(preview_label)
+
+        # Preview frame
+        preview_frame = Gtk.Frame()
+        preview_frame.set_halign(Gtk.Align.CENTER)
+        self.preview_box.append(preview_frame)
+
+        self.preview_image = Gtk.Picture()
+        self.preview_image.set_can_shrink(True)
+        self.preview_image.set_content_fit(Gtk.ContentFit.CONTAIN)
+        preview_frame.set_child(self.preview_image)
+
+        # Image info label
+        self.info_label = Gtk.Label()
+        self.info_label.add_css_class('dim-label')
+        self.info_label.set_xalign(0)
+        self.preview_box.append(self.info_label)
+
+        # Formatting group
+        self.format_group = Adw.PreferencesGroup()
+        self.format_group.set_title(_("Image Formatting"))
+        self.format_group.set_visible(False)
+        main_box.append(self.format_group)
+
+        # Width adjustment
+        width_row = Adw.ActionRow()
+        width_row.set_title(_("Display Width (%)"))
+        width_row.set_subtitle(_("Percentage of page width"))
+        
+        width_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        width_box.set_valign(Gtk.Align.CENTER)
+        
+        self.width_scale = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, 10, 100, 5)
+        self.width_scale.set_value(80)
+        self.width_scale.set_draw_value(True)
+        self.width_scale.set_value_pos(Gtk.PositionType.RIGHT)
+        self.width_scale.set_hexpand(True)
+        self.width_scale.set_size_request(200, -1)
+        width_box.append(self.width_scale)
+        
+        width_row.add_suffix(width_box)
+        self.format_group.add(width_row)
+
+        # Alignment selection
+        alignment_row = Adw.ActionRow()
+        alignment_row.set_title(_("Alignment"))
+        alignment_row.set_subtitle(_("Image position on the page"))
+        
+        alignment_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+        alignment_box.set_valign(Gtk.Align.CENTER)
+        
+        self.alignment_group = None
+        alignments = [
+            ('left', _("Left")),
+            ('center', _("Center")),
+            ('right', _("Right"))
+        ]
+        
+        for value, label in alignments:
+            radio = Gtk.CheckButton(label=label)
+            if self.alignment_group is None:
+                self.alignment_group = radio
+                radio.set_active(True)  # Center is default
+            else:
+                radio.set_group(self.alignment_group)
+                if value == 'center':
+                    radio.set_active(True)
+            
+            radio.alignment_value = value
+            alignment_box.append(radio)
+        
+        alignment_row.add_suffix(alignment_box)
+        self.format_group.add(alignment_row)
+
+        # Caption entry
+        caption_row = Adw.EntryRow()
+        caption_row.set_title(_("Caption (optional)"))
+        self.caption_entry = caption_row
+        self.format_group.add(caption_row)
+
+        # Alt text entry
+        alt_row = Adw.EntryRow()
+        alt_row.set_title(_("Alternative Text (optional)"))
+        alt_row.set_show_apply_button(False)
+        self.alt_entry = alt_row
+        self.format_group.add(alt_row)
+
+        # Position group
+        self.position_group = Adw.PreferencesGroup()
+        self.position_group.set_title(_("Position in Document"))
+        self.position_group.set_visible(False)
+        main_box.append(self.position_group)
+
+        # Position selection
+        position_row = Adw.ActionRow()
+        position_row.set_title(_("Insert After"))
+        position_row.set_subtitle(_("Choose where to place the image"))
+        
+        self.position_dropdown = Gtk.DropDown()
+        self.position_dropdown.set_valign(Gtk.Align.CENTER)
+        position_row.add_suffix(self.position_dropdown)
+        self.position_group.add(position_row)
+        
+        self._update_position_list()
+
+    def _update_position_list(self):
+        """Update the position dropdown with current paragraphs"""
+        options = [_("Beginning of document")]
+        
+        for i, para in enumerate(self.project.paragraphs):
+            from core.models import ParagraphType
+            
+            if para.type == ParagraphType.TITLE_1:
+                text = f"📑 {para.content[:30]}"
+            elif para.type == ParagraphType.TITLE_2:
+                text = f"  📄 {para.content[:30]}"
+            elif para.type == ParagraphType.IMAGE:
+                text = f"🖼️ {_('Image')}"
+            else:
+                content_preview = para.content[:30] if para.content else _("(empty)")
+                text = f"  {content_preview}"
+            
+            if len(para.content) > 30:
+                text += "..."
+            
+            options.append(text)
+        
+        string_list = Gtk.StringList()
+        for option in options:
+            string_list.append(option)
+        
+        self.position_dropdown.set_model(string_list)
+        
+        # Set default position
+        if self.insert_after_index >= 0 and self.insert_after_index < len(options) - 1:
+            self.position_dropdown.set_selected(self.insert_after_index + 1)
+        else:
+            self.position_dropdown.set_selected(0)
+
+    def _on_choose_file(self, button):
+        """Handle file chooser button click"""
+        file_filter = Gtk.FileFilter()
+        file_filter.set_name(_("Image Files"))
+        file_filter.add_mime_type("image/png")
+        file_filter.add_mime_type("image/jpeg")
+        file_filter.add_mime_type("image/webp")
+        file_filter.add_pattern("*.png")
+        file_filter.add_pattern("*.jpg")
+        file_filter.add_pattern("*.jpeg")
+        file_filter.add_pattern("*.webp")
+        
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        filters.append(file_filter)
+        
+        dialog = Gtk.FileDialog()
+        dialog.set_title(_("Select Image"))
+        dialog.set_filters(filters)
+        dialog.set_default_filter(file_filter)
+        
+        dialog.open(self, None, self._on_file_selected)
+
+    def _on_file_selected(self, dialog, result):
+        """Handle file selection"""
+        try:
+            file = dialog.open_finish(result)
+            if file:
+                file_path = file.get_path()
+                self._load_image(file_path)
+        except Exception as e:
+            print(_("Error selecting file: {}").format(e))
+
+    def _load_image(self, file_path: str):
+        """Load and display the selected image"""
+        try:
+            from PIL import Image
+            import os
+            
+            # Store file info
+            self.selected_file = Path(file_path)
+            
+            # Update file label
+            self.file_label.set_text(self.selected_file.name)
+            self.file_label.remove_css_class('dim-label')
+            
+            # Load image to get dimensions
+            with Image.open(file_path) as img:
+                self.original_size = img.size
+                
+                # Get file size
+                file_size = os.path.getsize(file_path) / 1024  # KB
+                
+                # Update info label
+                info_text = _("Size: {} x {} pixels  •  {:.1f} KB").format(
+                    self.original_size[0], 
+                    self.original_size[1],
+                    file_size
+                )
+                self.info_label.set_text(info_text)
+            
+            # Load preview
+            texture = Gdk.Texture.new_from_filename(file_path)
+            self.preview_image.set_paintable(texture)
+            self.preview_image.set_size_request(400, 300)
+            
+            # Show preview and formatting options
+            self.preview_box.set_visible(True)
+            self.format_group.set_visible(True)
+            self.position_group.set_visible(True)
+            self.insert_button.set_sensitive(True)
+            
+        except Exception as e:
+            print(_("Error loading image: {}").format(e))
+            # Show error dialog
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Error Loading Image"),
+                _("Could not load the selected image file.\n\n{}").format(str(e))
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()
+
+    def _get_selected_alignment(self):
+        """Get the selected alignment value"""
+        for child in self.alignment_group.get_parent().observe_children():
+            radio = child
+            if hasattr(radio, 'alignment_value') and radio.get_active():
+                return radio.alignment_value
+        
+        # Fallback: iterate differently
+        alignment_box = self.alignment_group.get_parent()
+        child = alignment_box.get_first_child()
+        while child:
+            if isinstance(child, Gtk.CheckButton) and child.get_active():
+                if hasattr(child, 'alignment_value'):
+                    return child.alignment_value
+            child = child.get_next_sibling()
+        
+        return 'center'  # Default
+
+    def _on_insert_clicked(self, button):
+        """Handle insert button click"""
+        if not self.selected_file or not self.original_size:
+            return
+        
+        try:
+            # Create images directory if it doesn't exist
+            images_dir = self.config.data_dir / 'images' / self.project.id
+            images_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Copy image to project images directory
+            import shutil
+            dest_filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.selected_file.name}"
+            dest_path = images_dir / dest_filename
+            shutil.copy2(self.selected_file, dest_path)
+            
+            # Calculate display size based on width percentage
+            width_percent = self.width_scale.get_value()
+            display_width = int(self.original_size[0] * (width_percent / 100))
+            aspect_ratio = self.original_size[1] / self.original_size[0]
+            display_height = int(display_width * aspect_ratio)
+            
+            # Get selected alignment
+            alignment = self._get_selected_alignment()
+            
+            # Get caption and alt text
+            caption = self.caption_entry.get_text()
+            alt_text = self.alt_entry.get_text()
+            
+            # Create image paragraph
+            from core.models import Paragraph, ParagraphType
+            image_para = Paragraph(ParagraphType.IMAGE)
+            image_para.set_image_metadata(
+                filename=dest_filename,
+                path=str(dest_path),
+                original_size=self.original_size,
+                display_size=(display_width, display_height),
+                alignment=alignment,
+                caption=caption,
+                alt_text=alt_text,
+                width_percent=width_percent
+            )
+            
+            # Get insert position
+            selected_index = self.position_dropdown.get_selected()
+            insert_position = selected_index  # 0 = beginning, 1 = after first para, etc.
+            
+            # Emit signal with image paragraph and position
+            self.emit('image-added', {'paragraph': image_para, 'position': insert_position})
+            
+            self.destroy()
+            
+        except Exception as e:
+            print(_("Error inserting image: {}").format(e))
+            import traceback
+            traceback.print_exc()
+            
+            error_dialog = Adw.MessageDialog.new(
+                self,
+                _("Error Inserting Image"),
+                _("Could not insert the image.\n\n{}").format(str(e))
+            )
+            error_dialog.add_response("ok", _("OK"))
+            error_dialog.present()

@@ -21,6 +21,7 @@ class ParagraphType(Enum):
     QUOTE = "quote"
     EPIGRAPH = "epigraph"
     CONCLUSION = "conclusion"
+    IMAGE = "image"
 
 class Paragraph:
     """Represents a single paragraph in a document"""
@@ -117,6 +118,38 @@ class Paragraph:
         if not self.content:
             return 0
         return len(self.content) if include_spaces else len(self.content.replace(' ', ''))
+    
+    def set_image_metadata(self, filename: str, path: str, original_size: tuple, 
+                          display_size: tuple, alignment: str = 'center', 
+                          caption: str = '', alt_text: str = '', width_percent: float = 80.0) -> None:
+        """Set metadata for image paragraph"""
+        import json
+        if self.type != ParagraphType.IMAGE:
+            raise ValueError("Can only set image metadata on IMAGE type paragraphs")
+        
+        metadata = {
+            'filename': filename,
+            'path': path,
+            'original_size': original_size,
+            'display_size': display_size,
+            'alignment': alignment,
+            'caption': caption,
+            'alt_text': alt_text,
+            'width_percent': width_percent
+        }
+        self.content = json.dumps(metadata)
+        self.modified_at = datetime.now()
+    
+    def get_image_metadata(self) -> Optional[Dict[str, Any]]:
+        """Get metadata from image paragraph"""
+        import json
+        if self.type != ParagraphType.IMAGE:
+            return None
+        
+        try:
+            return json.loads(self.content) if self.content else None
+        except json.JSONDecodeError:
+            return None
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert paragraph to dictionary"""
@@ -417,6 +450,11 @@ class Project:
         """Reorder paragraph numbers"""
         for i, paragraph in enumerate(self.paragraphs):
             paragraph.order = i
+    
+    def update_paragraph_order(self) -> None:
+        """Public method to update paragraph order after manual reordering"""
+        self._reorder_paragraphs()
+        self._update_modified_time()
 
     def _update_modified_time(self) -> None:
         """Update the modification timestamp"""

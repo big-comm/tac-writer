@@ -15,7 +15,7 @@ from core.config import Config
 from utils.helpers import FormatHelper
 from utils.i18n import _
 from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper, PomodoroTimer
-from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog
+from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog, ImageDialog
 
 
 class MainWindow(Adw.ApplicationWindow):
@@ -208,6 +208,7 @@ class MainWindow(Adw.ApplicationWindow):
         actions = [
             ('toggle_sidebar', self._action_toggle_sidebar),
             ('add_paragraph', self._action_add_paragraph, 's'),
+            ('insert_image', self._action_insert_image),
             ('show_welcome', self._action_show_welcome),
             ('undo', self._action_undo),
             ('redo', self._action_redo),
@@ -239,6 +240,13 @@ class MainWindow(Adw.ApplicationWindow):
             Gtk.NamedAction.new("win.redo")
         )
         shortcut_controller.add_shortcut(redo_shortcut)
+        
+        # Insert Image
+        insert_image_shortcut = Gtk.Shortcut.new(
+            Gtk.ShortcutTrigger.parse_string("<Ctrl><Shift>i"),
+            Gtk.NamedAction.new("win.insert_image")
+        )
+        shortcut_controller.add_shortcut(insert_image_shortcut)
         
         self.add_controller(shortcut_controller)
 
@@ -343,6 +351,14 @@ class MainWindow(Adw.ApplicationWindow):
 
         add_button.set_menu_model(menu_model)
         toolbar_box.append(add_button)
+        
+        # Add image button
+        image_button = Gtk.Button()
+        image_button.set_label(_("Insert Image"))
+        image_button.set_icon_name('insert-image-symbolic')
+        image_button.set_tooltip_text(_("Insert Image (Ctrl+Shift+I)"))
+        image_button.set_action_name('win.insert_image')
+        toolbar_box.append(image_button)
 
         return toolbar_box
     
@@ -425,18 +441,173 @@ class MainWindow(Adw.ApplicationWindow):
             return False
 
         paragraph = self._paragraphs_to_add.pop(0)
-        if paragraph.id in self._existing_widgets:
-            widget = self._existing_widgets[paragraph.id]
-            self.paragraphs_box.append(widget)
+        
+        # Check if it's an image paragraph
+        if paragraph.type == ParagraphType.IMAGE:
+            if paragraph.id in self._existing_widgets:
+                widget = self._existing_widgets[paragraph.id]
+                self.paragraphs_box.append(widget)
+            else:
+                image_widget = self._create_image_widget(paragraph)
+                self.paragraphs_box.append(image_widget)
+                self._existing_widgets[paragraph.id] = image_widget
         else:
-            paragraph_editor = ParagraphEditor(paragraph, config=self.config)
-            paragraph_editor.connect('content-changed', self._on_paragraph_changed)
-            paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
-            paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
-            self.paragraphs_box.append(paragraph_editor)
-            self._existing_widgets[paragraph.id] = paragraph_editor
+            if paragraph.id in self._existing_widgets:
+                widget = self._existing_widgets[paragraph.id]
+                self.paragraphs_box.append(widget)
+            else:
+                paragraph_editor = ParagraphEditor(paragraph, config=self.config)
+                paragraph_editor.connect('content-changed', self._on_paragraph_changed)
+                paragraph_editor.connect('remove-requested', self._on_paragraph_remove_requested)
+                paragraph_editor.connect('paragraph-reorder', self._on_paragraph_reorder)
+                self.paragraphs_box.append(paragraph_editor)
+                self._existing_widgets[paragraph.id] = paragraph_editor
 
         return True
+    
+    def _create_image_widget(self, paragraph):
+        """Create widget to display an image paragraph"""
+        from pathlib import Path
+        
+        metadata = paragraph.get_image_metadata()
+        if not metadata:
+            # Fallback for malformed image paragraph
+            error_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+            error_label = Gtk.Label(label=_("⚠️ Error: Invalid image data"))
+            error_label.add_css_class('error')
+            error_box.append(error_label)
+            error_box.paragraph = paragraph  # Store reference
+            return error_box
+        
+        # Create main container
+        image_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        image_container.set_margin_top(12)
+        image_container.set_margin_bottom(12)
+        image_container.paragraph = paragraph  # Store reference for tracking
+        
+        # Set alignment
+        alignment = metadata.get('alignment', 'center')
+        if alignment == 'center':
+            image_container.set_halign(Gtk.Align.CENTER)
+        elif alignment == 'right':
+            image_container.set_halign(Gtk.Align.END)
+        else:
+            image_container.set_halign(Gtk.Align.START)
+        
+        # Try to load and display image
+        try:
+            img_path = Path(metadata['path'])
+            if img_path.exists():
+                texture = Gdk.Texture.new_from_filename(str(img_path))
+                
+                # Create picture widget
+                picture = Gtk.Picture()
+                picture.set_paintable(texture)
+                picture.set_can_shrink(True)
+                picture.set_content_fit(Gtk.ContentFit.CONTAIN)
+                
+                # Set size - Always display as 200px height thumbnail
+                # Calculate width maintaining aspect ratio
+                original_size = metadata.get('original_size', (800, 600))
+                aspect_ratio = original_size[0] / original_size[1]
+                thumbnail_height = 200
+                thumbnail_width = int(thumbnail_height * aspect_ratio)
+                
+                picture.set_size_request(thumbnail_width, thumbnail_height)
+                
+                # Add frame
+                frame = Gtk.Frame()
+                frame.set_child(picture)
+                image_container.append(frame)
+                
+                # Add caption if exists
+                caption = metadata.get('caption', '')
+                if caption:
+                    caption_label = Gtk.Label(label=caption)
+                    caption_label.add_css_class('caption')
+                    caption_label.add_css_class('dim-label')
+                    caption_label.set_wrap(True)
+                    caption_label.set_max_width_chars(60)
+                    caption_label.set_xalign(0.5)
+                    image_container.append(caption_label)
+                
+                # Add toolbar for image actions
+                toolbar = self._create_image_toolbar(paragraph)
+                image_container.append(toolbar)
+            
+            else:
+                # Image file not found
+                placeholder = Gtk.Label(
+                    label=_("⚠️ Image not found: {}").format(metadata.get('filename', 'unknown'))
+                )
+                placeholder.add_css_class('warning')
+                image_container.append(placeholder)
+        
+        except Exception as e:
+            # Error loading image
+            error_label = Gtk.Label(
+                label=_("⚠️ Error loading image: {}").format(str(e))
+            )
+            error_label.add_css_class('error')
+            image_container.append(error_label)
+        
+        return image_container
+    
+    def _create_image_toolbar(self, paragraph):
+        """Create toolbar with actions for image paragraph"""
+        toolbar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
+        toolbar.set_halign(Gtk.Align.CENTER)
+        toolbar.set_margin_top(6)
+        
+        # Remove button
+        remove_btn = Gtk.Button()
+        remove_btn.set_icon_name('user-trash-symbolic')
+        remove_btn.set_tooltip_text(_("Remove Image"))
+        remove_btn.add_css_class('destructive-action')
+        remove_btn.connect('clicked', lambda b: self._on_remove_image(paragraph))
+        toolbar.append(remove_btn)
+        
+        return toolbar
+    
+    def _on_remove_image(self, paragraph):
+        """Handle image removal"""
+        if not self.current_project:
+            return
+        
+        # Show confirmation dialog
+        dialog = Adw.MessageDialog.new(
+            self,
+            _("Remove Image?"),
+            _("Are you sure you want to remove this image from the document?")
+        )
+        
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("remove", _("Remove"))
+        dialog.set_response_appearance("remove", Adw.ResponseAppearance.DESTRUCTIVE)
+        dialog.set_default_response("cancel")
+        
+        def on_response(d, response):
+            if response == "remove":
+                try:
+                    # Remove from project
+                    self.current_project.paragraphs.remove(paragraph)
+                    self.current_project.update_paragraph_order()
+                    
+                    # Save
+                    self.project_manager.save_project(self.current_project)
+                    
+                    # Refresh UI
+                    self._refresh_paragraphs()
+                    self._update_header_for_view("editor")
+                    
+                    self._show_toast(_("Image removed"))
+                except Exception as e:
+                    print(f"Error removing image: {e}")
+                    self._show_toast(_("Error removing image"), Adw.ToastPriority.HIGH)
+            d.destroy()
+        
+        dialog.connect('response', on_response)
+        dialog.present()
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
@@ -611,6 +782,28 @@ class MainWindow(Adw.ApplicationWindow):
         if param:
             paragraph_type = ParagraphType(param.get_string())
             self._add_paragraph(paragraph_type)
+    
+    def _action_insert_image(self, action, param):
+        """Handle insert image action"""
+        if not self.current_project:
+            self._show_toast(_("No project open"), Adw.ToastPriority.HIGH)
+            return
+        
+        # Get current position (insert at end by default)
+        current_index = len(self.current_project.paragraphs) - 1 if self.current_project.paragraphs else -1
+        
+        # Show image dialog
+        dialog = ImageDialog(
+            parent=self,
+            project=self.current_project,
+            insert_after_index=current_index
+        )
+        
+        # Connect signal
+        dialog.connect('image-added', self._on_image_added)
+        
+        # Present dialog
+        dialog.present()
 
     def _action_show_welcome(self, action, param):
         """Handle show welcome action"""
@@ -810,6 +1003,57 @@ class MainWindow(Adw.ApplicationWindow):
 
         self.project_list.refresh_projects()
         self._show_toast(_("Created project: {}").format(project.name))
+    
+    def _on_image_added(self, dialog, data):
+        """Handle image added from ImageDialog"""
+        if not self.current_project:
+            return
+        
+        try:
+            from datetime import datetime
+            
+            paragraph = data['paragraph']
+            position = data['position']
+            
+            # Insert into project
+            if position == 0:
+                # Insert at beginning
+                self.current_project.paragraphs.insert(0, paragraph)
+            else:
+                # Insert after specified paragraph (position is index + 1 from dropdown)
+                self.current_project.paragraphs.insert(position, paragraph)
+            
+            # Update order
+            self.current_project.update_paragraph_order()
+            
+            # Mark as modified
+            self.current_project.modified_at = datetime.now()
+            
+            # Save project
+            success = self.project_manager.save_project(self.current_project)
+            
+            if success:
+                # Refresh UI
+                self._refresh_paragraphs()
+                
+                # Update header
+                self._update_header_for_view("editor")
+                
+                # Show success message
+                self._show_toast(_("Image inserted successfully"))
+                
+                # Update statistics
+                current_stats = self.current_project.get_statistics()
+                self.project_list.update_project_statistics(self.current_project.id, current_stats)
+            else:
+                self._show_toast(_("Failed to save project"), Adw.ToastPriority.HIGH)
+        
+        except Exception as e:
+            print(f"Error adding image: {e}")
+            import traceback
+            traceback.print_exc()
+            
+            self._show_toast(_("Error inserting image"), Adw.ToastPriority.HIGH)
 
     def _show_toast(self, message: str, priority=Adw.ToastPriority.NORMAL):
         """Show a toast notification"""
