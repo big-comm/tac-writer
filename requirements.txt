@@ -1,3 +1,4 @@
 PyGObject
 pycairo
 Pillow
+reportlab
