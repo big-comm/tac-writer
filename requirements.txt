@@ -2,3 +2,5 @@ PyGObject
 pycairo
 Pillow
 reportlab
+python3-gtkspellcheck
+python3-pyenchant
