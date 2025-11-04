@@ -15,8 +15,9 @@ depends=(
     'python-pillow'
     'gettext'
     'ttf-liberation'
-    'hunspell-pt-br: For Brazilian Portuguese spell checking'
-    'hunspell-en_us: For US English spell checking'
+    'hunspell-pt-br'
+    'hunspell-en_us'
+    'hunspell-es_any'
 )
 makedepends=('gettext')
 optdepends=(
