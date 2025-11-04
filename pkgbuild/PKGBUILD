@@ -11,7 +11,9 @@ depends=(
     'python-gobject'
     'python-reportlab'
     'python-gtkspellcheck'
+    'python3-gtkspellcheck' # for ubuntu based
     'python-pyenchant'
+    'python3-pyenchant' # for ubuntu based
     'python-pillow'
     'gettext'
     'ttf-liberation'
