@@ -19,8 +19,10 @@ from utils.i18n import _
 try:
     import gtkspellcheck
     SPELL_CHECK_AVAILABLE = True
+    print("PyGTKSpellcheck available - spell checking enabled")
 except ImportError:
     SPELL_CHECK_AVAILABLE = False
+    print("PyGTKSpellcheck not available - spell checking disabled")
 
 # Global CSS provider cache
 _css_cache = {}
