@@ -1,6 +1,6 @@
 PyGObject
-pycairo
+PyCairo
 Pillow
 reportlab
-python3-gtkspellcheck
-python3-pyenchant
+pygtkspellcheck
+pyenchant
