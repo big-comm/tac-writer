@@ -14,6 +14,7 @@ from .models import (
     
 )
 from .services import ProjectManager, ExportService
+from .ai_assistant import WritingAiAssistant
 
 __all__ = [
     # Configuration
@@ -29,7 +30,8 @@ __all__ = [
     
     # Services
     'ProjectManager',
-    'ExportService'
+    'ExportService',
+    'WritingAiAssistant'
 ]
 
 __version__ = Config.APP_VERSION

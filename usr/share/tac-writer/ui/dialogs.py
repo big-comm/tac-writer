@@ -712,6 +712,107 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.line_numbers_row.connect('notify::active', self._on_line_numbers_changed)
         behavior_group.add(self.line_numbers_row)
 
+        # AI assistant page
+        ai_page = Adw.PreferencesPage()
+        ai_page.set_title(_("AI Assistant"))
+        ai_page.set_icon_name('applications-science-symbolic')
+        self.add(ai_page)
+
+        ai_group = Adw.PreferencesGroup()
+        ai_group.set_title(_("Assistant Settings"))
+        ai_group.set_description(
+            _("Configure the provider and credentials used to generate suggestions.")
+        )
+        ai_page.add(ai_group)
+
+        self.ai_enabled_row = Adw.SwitchRow(
+            title=_("Enable AI Assistant"),
+            subtitle=_("Allow prompts to use an external provider (Ctrl+Shift+I)."),
+        )
+        self.ai_enabled_row.connect("notify::active", self._on_ai_enabled_changed)
+        ai_group.add(self.ai_enabled_row)
+
+        self.ai_provider_row = Adw.ComboRow()
+        self.ai_provider_row.set_title(_("Provider"))
+        self._ai_provider_options = [
+            ("groq", "Groq"),
+            ("gemini", "Gemini"),
+            ("openrouter", "OpenRouter.ai"),
+        ]
+        provider_model = Gtk.StringList.new([label for _pid, label in self._ai_provider_options])
+        self.ai_provider_row.set_model(provider_model)
+        self.ai_provider_row.connect("notify::selected", self._on_ai_provider_changed)
+        ai_group.add(self.ai_provider_row)
+
+        self.ai_model_row = Adw.ActionRow(
+            title=_("Model Identifier"),
+            subtitle=_("Examples: llama-3.1-8b-instant, gemini-2.5-flash."),
+        )
+        self.ai_model_entry = Gtk.Entry()
+        self.ai_model_entry.set_placeholder_text(_("llama-3.1-8b-instant"))
+        self.ai_model_entry.connect("changed", self._on_ai_model_changed)
+        self.ai_model_row.add_suffix(self.ai_model_entry)
+        self.ai_model_row.set_activatable_widget(self.ai_model_entry)
+        ai_group.add(self.ai_model_row)
+
+        self.ai_api_key_row = Adw.ActionRow(
+            title=_("API Key"),
+            subtitle=_("Stored locally and used to authenticate requests."),
+        )
+        self.ai_api_key_entry = Gtk.PasswordEntry(
+            placeholder_text=_("Paste your API key"),
+            show_peek_icon=True,
+            hexpand=True,
+        )
+        self.ai_api_key_entry.connect("changed", self._on_ai_api_key_changed)
+        self.ai_api_key_row.add_suffix(self.ai_api_key_entry)
+        self.ai_api_key_row.set_activatable_widget(self.ai_api_key_entry)
+        ai_group.add(self.ai_api_key_row)
+
+        self.ai_openrouter_site_row = Adw.ActionRow(
+            title=_("Site URL (optional)"),
+            subtitle=_("Used as HTTP Referer header for OpenRouter rankings."),
+        )
+        self.ai_openrouter_site_entry = Gtk.Entry(
+            placeholder_text=_("https://example.com"),
+        )
+        self.ai_openrouter_site_entry.connect(
+            "changed", self._on_openrouter_site_url_changed
+        )
+        self.ai_openrouter_site_row.add_suffix(self.ai_openrouter_site_entry)
+        self.ai_openrouter_site_row.set_activatable_widget(
+            self.ai_openrouter_site_entry
+        )
+        ai_group.add(self.ai_openrouter_site_row)
+
+        self.ai_openrouter_title_row = Adw.ActionRow(
+            title=_("Site title (optional)"),
+            subtitle=_("Sent via X-Title header for OpenRouter rankings."),
+        )
+        self.ai_openrouter_title_entry = Gtk.Entry(
+            placeholder_text=_("My Project"),
+        )
+        self.ai_openrouter_title_entry.connect(
+            "changed", self._on_openrouter_site_name_changed
+        )
+        self.ai_openrouter_title_row.add_suffix(self.ai_openrouter_title_entry)
+        self.ai_openrouter_title_row.set_activatable_widget(
+            self.ai_openrouter_title_entry
+        )
+        ai_group.add(self.ai_openrouter_title_row)
+
+        self._ai_config_widgets = [
+            self.ai_provider_row,
+            self.ai_model_row,
+            self.ai_model_entry,
+            self.ai_api_key_row,
+            self.ai_api_key_entry,
+            self.ai_openrouter_site_row,
+            self.ai_openrouter_site_entry,
+            self.ai_openrouter_title_row,
+            self.ai_openrouter_title_entry,
+        ]
+
     def _load_preferences(self):
         """Load preferences from config"""
         try:
@@ -732,6 +833,20 @@ class PreferencesDialog(Adw.PreferencesWindow):
             self.auto_save_row.set_active(self.config.get('auto_save', True))
             self.word_wrap_row.set_active(self.config.get('word_wrap', True))
             self.line_numbers_row.set_active(self.config.get('show_line_numbers', True))
+            self.ai_enabled_row.set_active(self.config.get_ai_assistant_enabled())
+            provider = self.config.get_ai_assistant_provider()
+            provider_ids = [pid for pid, _label in self._ai_provider_options]
+            try:
+                self.ai_provider_row.set_selected(provider_ids.index(provider))
+            except ValueError:
+                self.ai_provider_row.set_selected(0)
+                provider = provider_ids[0]
+            self.ai_model_entry.set_text(self.config.get_ai_assistant_model() or "")
+            self.ai_api_key_entry.set_text(self.config.get_ai_assistant_api_key() or "")
+            self.ai_openrouter_site_entry.set_text(self.config.get_openrouter_site_url() or "")
+            self.ai_openrouter_title_entry.set_text(self.config.get_openrouter_site_name() or "")
+            self._update_ai_controls_sensitive(self.config.get_ai_assistant_enabled())
+            self._update_ai_provider_ui(provider)
             
         except Exception as e:
             print(_("Error loading preferences: {}").format(e))
@@ -786,6 +901,69 @@ class PreferencesDialog(Adw.PreferencesWindow):
             self.config.set('show_line_numbers', switch.get_active())
         except Exception as e:
             print(_("Error changing line numbers: {}").format(e))
+
+    def _on_ai_enabled_changed(self, switch, pspec):
+        enabled = switch.get_active()
+        self.config.set_ai_assistant_enabled(enabled)
+        self._update_ai_controls_sensitive(enabled)
+
+    def _on_ai_provider_changed(self, combo_row, pspec):
+        index = combo_row.get_selected()
+        if 0 <= index < len(self._ai_provider_options):
+            provider_id = self._ai_provider_options[index][0]
+            self.config.set_ai_assistant_provider(provider_id)
+            self._update_ai_provider_ui(provider_id)
+
+    def _on_ai_model_changed(self, entry):
+        self.config.set_ai_assistant_model(entry.get_text().strip())
+
+    def _on_ai_api_key_changed(self, entry):
+        self.config.set_ai_assistant_api_key(entry.get_text().strip())
+
+    def _on_openrouter_site_url_changed(self, entry):
+        self.config.set_openrouter_site_url(entry.get_text().strip())
+
+    def _on_openrouter_site_name_changed(self, entry):
+        self.config.set_openrouter_site_name(entry.get_text().strip())
+
+    def _update_ai_controls_sensitive(self, enabled: bool) -> None:
+        for widget in getattr(self, "_ai_config_widgets", []):
+            widget.set_sensitive(enabled)
+
+    def _update_ai_provider_ui(self, provider: str) -> None:
+        provider = provider or "groq"
+        if provider == "groq":
+            self.ai_model_entry.set_placeholder_text("llama-3.1-8b-instant")
+            self.ai_model_row.set_subtitle(
+                _("Model identifier (for example: llama-3.1-8b-instant).")
+            )
+            self.ai_api_key_row.set_subtitle(_("Groq API key."))
+            self.ai_openrouter_site_row.set_visible(False)
+            self.ai_openrouter_title_row.set_visible(False)
+        elif provider == "gemini":
+            self.ai_model_entry.set_placeholder_text("gemini-2.5-flash")
+            self.ai_model_row.set_subtitle(
+                _("Gemini model identifier (for example: gemini-2.5-flash).")
+            )
+            self.ai_api_key_row.set_subtitle(_("Google AI Studio API key."))
+            self.ai_openrouter_site_row.set_visible(False)
+            self.ai_openrouter_title_row.set_visible(False)
+        elif provider == "openrouter":
+            self.ai_model_entry.set_placeholder_text("openrouter/polaris-alpha")
+            self.ai_model_row.set_subtitle(
+                _("OpenRouter model identifier (for example: openrouter/polaris-alpha).")
+            )
+            self.ai_api_key_row.set_subtitle(_("OpenRouter API key."))
+            self.ai_openrouter_site_row.set_visible(True)
+            self.ai_openrouter_title_row.set_visible(True)
+        else:
+            self.ai_model_entry.set_placeholder_text(_("model-name"))
+            self.ai_model_row.set_subtitle(
+                _("Model identifier required by the selected provider.")
+            )
+            self.ai_api_key_row.set_subtitle(_("API key used to authenticate requests."))
+            self.ai_openrouter_site_row.set_visible(False)
+            self.ai_openrouter_title_row.set_visible(False)
 
 
 class WelcomeDialog(Adw.Window):

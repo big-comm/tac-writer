@@ -1,0 +1,448 @@
+"""
+Writing AI assistant integration for TAC Writer.
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+import threading
+import weakref
+from typing import Any, Dict, List, Optional, Tuple
+
+import requests
+
+import gi
+
+gi.require_version("Adw", "1")
+gi.require_version("GLib", "2.0")
+from gi.repository import Adw, GLib
+
+from utils.i18n import _
+
+
+class WritingAiAssistant:
+    """Coordinates conversations with an external AI service."""
+
+    DEFAULT_GROQ_MODEL = "llama-3.1-8b-instant"
+    DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+    DEFAULT_OPENROUTER_MODEL = "openrouter/polaris-alpha"
+    _SYSTEM_PROMPT = (
+        "You are the TAC Writer assistant, a specialist in academic Portuguese writing."
+        " Help the user craft clear, well-structured paragraphs using the Continuous"
+        " Argumentation Technique: introduction, argumentation, evidence, and connection."
+        " When improving or rewriting a paragraph, preserve the author's intent and keep the"
+        " tone formal. Always answer in Portuguese unless explicitly asked otherwise."
+        " Respond ONLY as JSON with the fields 'reply' (string with the improved paragraph"
+        " or guidance) and 'suggestions' (optional list with entries containing 'title',"
+        " 'text', and 'description'). Do not return any other text outside the JSON object."
+    )
+
+    def __init__(self, window, config):
+        self._window_ref = weakref.ref(window)
+        self.config = config
+        self.logger = logging.getLogger(__name__)
+        self._lock = threading.RLock()
+        self._inflight = False
+
+    def missing_configuration(self) -> List[str]:
+        missing: List[str] = []
+        provider = (self.config.get_ai_assistant_provider() or "").strip()
+        api_key = (self.config.get_ai_assistant_api_key() or "").strip()
+        if not provider:
+            missing.append("provider")
+            return missing
+        if provider in {"groq", "gemini", "openrouter"} and not api_key:
+            missing.append("api_key")
+        return missing
+
+    def request_assistance(self, prompt: str, context_text: Optional[str] = None) -> bool:
+        prompt = (prompt or "").strip()
+        if not prompt:
+            return False
+
+        with self._lock:
+            if self._inflight:
+                self._queue_toast(
+                    _("The AI assistant is already processing another request.")
+                )
+                return False
+            self._inflight = True
+
+        worker = threading.Thread(
+            target=self._process_request_thread,
+            args=(prompt, context_text),
+            daemon=True,
+        )
+        worker.start()
+        return True
+
+    def handle_setting_changed(self) -> None:
+        """Placeholder for future cache invalidation."""
+        pass
+
+    def _process_request_thread(self, prompt: str, context_text: Optional[str]) -> None:
+        try:
+            messages = self._build_messages(prompt, context_text)
+            config = self._load_configuration()
+            content = self._perform_request(config, messages)
+            reply, suggestions = self._parse_response_payload(content)
+            GLib.idle_add(self._display_reply, reply, suggestions)
+        except Exception as exc:  # pylint: disable=broad-except
+            self.logger.error("AI assistant request failed: %s", exc)
+            GLib.idle_add(
+                self._queue_toast,
+                _("AI assistant error: {error}").format(error=str(exc)),
+            )
+        finally:
+            with self._lock:
+                self._inflight = False
+
+    def _load_configuration(self) -> Dict[str, str]:
+        config = {
+            "provider": (self.config.get_ai_assistant_provider() or "").strip(),
+            "model": (self.config.get_ai_assistant_model() or "").strip(),
+            "api_key": (self.config.get_ai_assistant_api_key() or "").strip(),
+            "openrouter_site_url": (self.config.get_openrouter_site_url() or "").strip(),
+            "openrouter_site_name": (self.config.get_openrouter_site_name() or "").strip(),
+        }
+        if not config["provider"]:
+            raise RuntimeError(
+                _("Select an AI provider in Preferences ▸ AI Assistant.")
+            )
+        if config["provider"] == "groq" and not config["model"]:
+            config["model"] = self.DEFAULT_GROQ_MODEL
+        elif config["provider"] == "gemini" and not config["model"]:
+            config["model"] = self.DEFAULT_GEMINI_MODEL
+        elif config["provider"] == "openrouter" and not config["model"]:
+            config["model"] = self.DEFAULT_OPENROUTER_MODEL
+        return config
+
+    def _build_messages(
+        self, prompt: str, context_text: Optional[str]
+    ) -> List[Dict[str, str]]:
+        user_content = prompt.strip()
+        if context_text:
+            context_text = context_text.strip()
+            if context_text:
+                user_content = (
+                    f"{prompt.strip()}\n\n"
+                    + _("Contexto do texto atual:\n{context}").format(
+                        context=context_text[:4000]
+                    )
+                )
+        return [
+            {"role": "system", "content": self._SYSTEM_PROMPT},
+            {"role": "user", "content": user_content},
+        ]
+
+    def _perform_request(
+        self, config: Dict[str, str], messages: List[Dict[str, str]]
+    ) -> str:
+        provider = config["provider"]
+        if provider == "groq":
+            return self._perform_groq_request(config, messages)
+        if provider == "gemini":
+            return self._perform_gemini_request(config, messages)
+        if provider == "openrouter":
+            return self._perform_openrouter_request(config, messages)
+        raise RuntimeError(
+            _("Provider '{provider}' is not supported.").format(provider=provider)
+        )
+
+    def _perform_groq_request(
+        self, config: Dict[str, str], messages: List[Dict[str, str]]
+    ) -> str:
+        api_key = config.get("api_key", "").strip()
+        if not api_key:
+            raise RuntimeError(_("Configure the Groq API key in Preferences."))
+
+        model = config.get("model", "").strip() or self.DEFAULT_GROQ_MODEL
+        payload_messages = self._build_openai_messages(messages)
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        payload: Dict[str, Any] = {"model": model, "messages": payload_messages}
+
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
+
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=60)
+        except requests.RequestException as exc:
+            raise RuntimeError(_("Failed to contact Groq: {error}").format(error=exc)) from exc
+
+        if response.status_code >= 400:
+            raise RuntimeError(
+                _("Groq responded with HTTP {status}: {detail}").format(
+                    status=response.status_code, detail=response.text.strip()
+                )
+            )
+
+        return self._extract_content_from_choices(response)
+
+    def _perform_gemini_request(
+        self, config: Dict[str, str], messages: List[Dict[str, str]]
+    ) -> str:
+        api_key = config.get("api_key", "").strip()
+        if not api_key:
+            raise RuntimeError(_("Configure the Gemini API key in Preferences."))
+
+        model = config.get("model", "").strip() or self.DEFAULT_GEMINI_MODEL
+        system_instruction, contents = self._build_gemini_conversation(messages)
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        payload: Dict[str, Any] = {"contents": contents}
+        if system_instruction:
+            payload["system_instruction"] = {"parts": [{"text": system_instruction}]}
+
+        headers = {
+            "Content-Type": "application/json",
+            "x-goog-api-key": api_key,
+        }
+
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=60)
+        except requests.RequestException as exc:
+            raise RuntimeError(
+                _("Failed to contact Gemini: {error}").format(error=exc)
+            ) from exc
+
+        if response.status_code >= 400:
+            raise RuntimeError(
+                _("Gemini responded with HTTP {status}: {detail}").format(
+                    status=response.status_code, detail=response.text.strip()
+                )
+            )
+
+        try:
+            response_data = response.json()
+        except ValueError as exc:
+            raise RuntimeError(_("Gemini returned an invalid JSON response.")) from exc
+
+        candidates = response_data.get("candidates") or []
+        collected: List[str] = []
+        for candidate in candidates:
+            content = candidate.get("content") if isinstance(candidate, dict) else None
+            parts = content.get("parts") if isinstance(content, dict) else None
+            if not parts:
+                continue
+            for part in parts:
+                if isinstance(part, dict) and part.get("text"):
+                    collected.append(part["text"])
+
+        if collected:
+            return "\n".join(collected)
+
+        raise RuntimeError(_("Gemini did not return any usable content."))
+
+    def _perform_openrouter_request(
+        self, config: Dict[str, str], messages: List[Dict[str, str]]
+    ) -> str:
+        api_key = config.get("api_key", "").strip()
+        if not api_key:
+            raise RuntimeError(_("Configure the OpenRouter API key in Preferences."))
+
+        model = config.get("model", "").strip() or self.DEFAULT_OPENROUTER_MODEL
+        payload_messages = self._build_openai_messages(messages)
+        url = "https://openrouter.ai/api/v1/chat/completions"
+        payload: Dict[str, Any] = {"model": model, "messages": payload_messages}
+
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}",
+        }
+        site_url = config.get("openrouter_site_url")
+        site_name = config.get("openrouter_site_name")
+        if site_url:
+            headers["HTTP-Referer"] = site_url
+        if site_name:
+            headers["X-Title"] = site_name
+
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=60)
+        except requests.RequestException as exc:
+            raise RuntimeError(
+                _("Failed to contact OpenRouter: {error}").format(error=exc)
+            ) from exc
+
+        if response.status_code >= 400:
+            raise RuntimeError(self._format_openrouter_error(response))
+
+        return self._extract_content_from_choices(response)
+
+    def _extract_content_from_choices(self, response: requests.Response) -> str:
+        try:
+            response_data = response.json()
+        except ValueError as exc:
+            raise RuntimeError(_("AI provider returned an invalid JSON response.")) from exc
+
+        choices = response_data.get("choices") or []
+        if not choices:
+            raise RuntimeError(_("The AI provider returned an empty response."))
+
+        message = choices[0].get("message") if isinstance(choices[0], dict) else None
+        content = message.get("content") if isinstance(message, dict) else None
+        if isinstance(content, list):
+            content = "\n".join(
+                part.get("text", "")
+                for part in content
+                if isinstance(part, dict) and part.get("text")
+            )
+
+        if not isinstance(content, str) or not content.strip():
+            raise RuntimeError(_("The AI provider did not return any usable content."))
+        return content.strip()
+
+    def _parse_response_payload(
+        self, content: str
+    ) -> Tuple[str, List[Dict[str, str]]]:
+        reply_text = self._clean_response(content)
+        suggestions: List[Dict[str, str]] = []
+
+        payload = None
+        try:
+            payload = json.loads(reply_text)
+        except json.JSONDecodeError:
+            payload = self._extract_json_object(reply_text)
+
+        if isinstance(payload, dict):
+            reply_candidate = payload.get("reply")
+            if isinstance(reply_candidate, str) and reply_candidate.strip():
+                reply_text = reply_candidate.strip()
+            suggestions = self._normalize_suggestions(
+                payload.get("suggestions") or payload.get("commands")
+            )
+
+        return reply_text, suggestions
+
+    def _build_gemini_conversation(
+        self, messages: List[Dict[str, str]]
+    ) -> Tuple[str, List[Dict[str, Any]]]:
+        system_instruction = ""
+        contents: List[Dict[str, Any]] = []
+        for message in messages:
+            role = message.get("role", "user")
+            text = message.get("content", "")
+            if not text:
+                continue
+            if role == "system" and not system_instruction:
+                system_instruction = text
+                continue
+            mapped_role = "model" if role == "assistant" else "user"
+            contents.append({
+                "role": mapped_role,
+                "parts": [{"text": text}],
+            })
+        if not contents:
+            contents.append({"role": "user", "parts": [{"text": ""}]})
+        return system_instruction, contents
+
+    def _build_openai_messages(
+        self, messages: List[Dict[str, str]]
+    ) -> List[Dict[str, str]]:
+        formatted: List[Dict[str, str]] = []
+        for message in messages:
+            role = message.get("role", "user")
+            content = message.get("content", "")
+            if not isinstance(content, str) or not content:
+                continue
+            role_mapped = role if role in {"system", "user", "assistant"} else "user"
+            formatted.append({"role": role_mapped, "content": content})
+        return formatted
+
+    def _normalize_suggestions(self, value: Any) -> List[Dict[str, str]]:
+        suggestions: List[Dict[str, str]] = []
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, str) and item.strip():
+                    suggestions.append({
+                        "title": "",
+                        "text": item.strip(),
+                        "description": "",
+                    })
+                elif isinstance(item, dict):
+                    text = (
+                        item.get("text")
+                        or item.get("content")
+                        or item.get("command")
+                        or ""
+                    )
+                    text = text.strip()
+                    if not text:
+                        continue
+                    suggestions.append({
+                        "title": item.get("title", "").strip(),
+                        "text": text,
+                        "description": (item.get("description") or "").strip(),
+                    })
+        return suggestions
+
+    def _clean_response(self, raw_content: str) -> str:
+        clean = (raw_content or "").strip()
+        if clean.startswith("```"):
+            lines = clean.splitlines()
+            if len(lines) >= 2 and lines[-1].strip().startswith("```"):
+                clean = "\n".join(lines[1:-1]).strip()
+        return clean
+
+    def _extract_json_object(self, text: str) -> Optional[Dict[str, Any]]:
+        start = text.find("{")
+        while start != -1:
+            brace_level = 0
+            for end in range(start, len(text)):
+                char = text[end]
+                if char == "{":
+                    brace_level += 1
+                elif char == "}":
+                    brace_level -= 1
+                    if brace_level == 0:
+                        candidate = text[start : end + 1]
+                        try:
+                            return json.loads(candidate)
+                        except json.JSONDecodeError:
+                            break
+            start = text.find("{", start + 1)
+        return None
+
+    def _display_reply(self, reply: str, suggestions: List[Dict[str, str]]) -> bool:
+        window = self._window_ref()
+        if window and hasattr(window, "show_ai_response_dialog"):
+            window.show_ai_response_dialog(reply, suggestions)
+        return False
+
+    def _queue_toast(self, message: str) -> None:
+        def _show_toast():
+            window = self._window_ref()
+            if window and hasattr(window, "toast_overlay"):
+                toast = Adw.Toast(title=message)
+                window.toast_overlay.add_toast(toast)
+            return False
+
+        GLib.idle_add(_show_toast)
+
+    def _format_openrouter_error(self, response: requests.Response) -> str:
+        status = response.status_code
+        fallback = response.text.strip() or _("Unknown error.")
+        try:
+            payload = response.json()
+        except ValueError:
+            return _("OpenRouter respondeu com HTTP {status}: {message}").format(
+                status=status, message=fallback
+            )
+
+        error_obj = payload.get("error")
+        if not isinstance(error_obj, dict):
+            return _("OpenRouter respondeu com HTTP {status}: {message}").format(
+                status=status, message=fallback
+            )
+
+        message = error_obj.get("message") or fallback
+        metadata = error_obj.get("metadata", {})
+        provider_name = metadata.get("provider_name")
+        raw_detail = metadata.get("raw")
+        details = []
+        if provider_name:
+            details.append(str(provider_name))
+        if raw_detail:
+            details.append(str(raw_detail))
+        suffix = f" ({' | '.join(details)})" if details else ""
+        return _("OpenRouter respondeu com HTTP {status}: {message}{detail}").format(
+            status=status, message=message, detail=suffix
+        )

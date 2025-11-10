@@ -13,7 +13,7 @@ class Config:
     """Application configuration manager"""
 
     # Application version and metadata
-    APP_VERSION = "1.3.17"
+    APP_VERSION = "1.4.0"
     APP_NAME = "TAC"
     APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
     APP_DESCRIPTION = "Academic Writing Assistant"
@@ -112,6 +112,14 @@ class Config:
             'export_location': str(Path.home() / 'Documents'),
             'default_export_format': 'odt',
             'include_metadata': True,
+
+            # AI assistant
+            'ai_assistant_enabled': False,
+            'ai_assistant_provider': 'groq',
+            'ai_assistant_model': 'llama-3.1-8b-instant',
+            'ai_assistant_api_key': '',
+            'ai_openrouter_site_url': '',
+            'ai_openrouter_site_name': '',
 
             # Recent projects list
             'recent_projects': []
@@ -255,3 +263,40 @@ class Config:
     def set_available_spell_languages(self, languages: List[str]) -> None:
         """Set list of available spell check languages"""
         self.set('spell_check_available_languages', languages)
+
+    # --- AI assistant helpers ---
+    def get_ai_assistant_enabled(self) -> bool:
+        return self.get('ai_assistant_enabled', False)
+
+    def set_ai_assistant_enabled(self, enabled: bool) -> None:
+        self.set('ai_assistant_enabled', enabled)
+
+    def get_ai_assistant_provider(self) -> str:
+        return self.get('ai_assistant_provider', 'groq')
+
+    def set_ai_assistant_provider(self, provider: str) -> None:
+        self.set('ai_assistant_provider', provider)
+
+    def get_ai_assistant_model(self) -> str:
+        return self.get('ai_assistant_model', '')
+
+    def set_ai_assistant_model(self, model: str) -> None:
+        self.set('ai_assistant_model', model)
+
+    def get_ai_assistant_api_key(self) -> str:
+        return self.get('ai_assistant_api_key', '')
+
+    def set_ai_assistant_api_key(self, api_key: str) -> None:
+        self.set('ai_assistant_api_key', api_key)
+
+    def get_openrouter_site_url(self) -> str:
+        return self.get('ai_openrouter_site_url', '')
+
+    def set_openrouter_site_url(self, url: str) -> None:
+        self.set('ai_openrouter_site_url', url)
+
+    def get_openrouter_site_name(self) -> str:
+        return self.get('ai_openrouter_site_name', '')
+
+    def set_openrouter_site_name(self, name: str) -> None:
+        self.set('ai_openrouter_site_name', name)

@@ -383,6 +383,7 @@ Type=Scalable
             ('preferences', self._action_preferences),
             ('about', self._action_about),
             ('quit', self._action_quit),
+            ('ai_assistant', self._action_ai_assistant),
         ]
         
         try:
@@ -408,6 +409,7 @@ Type=Scalable
                 # Global undo/redo shortcuts (backup if window shortcuts fail)
                 ('<Control>z', 'app.undo'),
                 ('<Control><Shift>z', 'app.redo'),
+                ('<Control><Shift>i', 'app.ai_assistant'),
             ]
             
             for accelerator, action in shortcuts:
@@ -571,6 +573,14 @@ Type=Scalable
                 self.main_window.show_about_dialog()
         except Exception as e:
             print(_("Error showing about dialog: {}: {}").format(type(e).__name__, e))
+
+    def _action_ai_assistant(self, action, param):
+        """Handle AI assistant action"""
+        try:
+            if self.main_window:
+                self.main_window.open_ai_assistant_prompt()
+        except Exception as e:
+            print(_("Error opening AI assistant: {}: {}").format(type(e).__name__, e))
     
     def _action_quit(self, action, param):
         """Handle quit action"""

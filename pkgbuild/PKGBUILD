@@ -13,6 +13,7 @@ depends=(
     'python-gtkspellcheck'
     'python-pyenchant'
     'python-pillow'
+    'python-requests'
     'gettext'
     'ttf-liberation'
     'hunspell-pt-br'
