@@ -1892,20 +1892,20 @@ msgstr "Odgovor"
 msgid "Copy to clipboard"
 msgstr "Kopiraj u međuspremnik"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "Umetni u dokument"
+msgid "Insert at cursor"
+msgstr "Umetni na kursor"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "Primijeni ispravak"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "Dodatne sugestije"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "Kopiraj"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1926,6 +1926,21 @@ msgstr "Nema što za umetnuti."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "Tekst umetnut u dokument."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "Nema dostupnog konteksta za odlomak. Pokušajte umetnuti na kursor."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "Nije moguće odrediti izvorni odlomak."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "Odjeljak ažuriran s AI prijedlogom."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2157,11 +2172,32 @@ msgstr "Odaberite AI pružatelja u Postavkama ▸ AI Asistent."
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"Kontekst trenutnog teksta:  \n"
+"Upute za korisnika:  \n"
+"{instruction}  \n"
+"\n"
+"Tekst za reviziju:  \n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"Revidirajte sljedeći tekst, ispravite samo ono što je potrebno i zadržite akademski ton:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "Revidirajte sljedeći tekst i odgovorite samo s ispravljenom verzijom."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

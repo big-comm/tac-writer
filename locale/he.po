@@ -1892,20 +1892,20 @@ msgstr "תגובה"
 msgid "Copy to clipboard"
 msgstr "העתק ללוח שנה"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "הכנס למסמך"
+msgid "Insert at cursor"
+msgstr "הכנס בסמן"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "החל תיקון"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "הצעות נוספות"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "העתק"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1926,6 +1926,21 @@ msgstr "אין מה להכניס."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "טקסט שהוזן למסמך."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "אין הקשר לפסקה זמין. נסה להכניס במקום הסמן."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "לא ניתן לקבוע את הפסקה המקורית."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "פסקה עודכנה עם הצעת AI."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2157,11 +2172,32 @@ msgstr "בחר ספק AI בהעדפות ▸ עוזר AI."
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"הקשר של הטקסט הנוכחי:  \n"
+"הוראת משתמש:\n"
+"{instruction}\n"
+"\n"
+"טקסט לעיון:\n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"סקור את הטקסט הבא, תקן רק את הנדרש ושמור על הטון האקדמי:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "שפר את הטקסט הבא וענה רק עם הגרסה המתוקנת."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

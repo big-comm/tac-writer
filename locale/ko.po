@@ -1891,20 +1891,20 @@ msgstr "응답"
 msgid "Copy to clipboard"
 msgstr "클립보드에 복사"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "문서에 삽입"
+msgid "Insert at cursor"
+msgstr "커서에 삽입"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "수정 적용"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "추가 제안"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "복사"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1925,6 +1925,21 @@ msgstr "삽입할 내용이 없습니다."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "문서에 삽입된 텍스트."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "단락 컨텍스트를 사용할 수 없습니다. 커서에 삽입해 보세요."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "원본 단락을 확인할 수 없습니다."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "AI 제안으로 단락이 업데이트되었습니다."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2156,11 +2171,32 @@ msgstr "환경설정 ▸ AI 어시스턴트에서 AI 공급자를 선택하세�
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"현재 텍스트의 맥락:  \n"
+"사용자 지침:\n"
+"{instruction}\n"
+"\n"
+"검토할 텍스트:\n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"다음 텍스트를 검토하여 필요한 부분만 수정하고 학술적인 톤을 유지하십시오:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "다음 텍스트를 수정하고 수정된 버전만 응답하십시오."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

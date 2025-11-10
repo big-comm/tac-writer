@@ -1893,20 +1893,20 @@ msgstr "Odpoveď"
 msgid "Copy to clipboard"
 msgstr "Kopírovať do schránky"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "Vložiť do dokumentu"
+msgid "Insert at cursor"
+msgstr "Vložiť na kurzor"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "Použiť opravu"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "Ďalšie návrhy"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "Kopírovať"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1927,6 +1927,21 @@ msgstr "Nič na vloženie."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "Text vložený do dokumentu."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "Nie je k dispozícii žiadny kontext odseku. Skúste vložiť na kurzor."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "Nedalo sa určiť pôvodný odsek."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "Odsek aktualizovaný s návrhom AI."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2158,11 +2173,32 @@ msgstr "Vyberte poskytovateľa AI v Predvoľbách ▸ Asistent AI."
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"Kontext aktuálneho textu:  \n"
+"Pokyn pre používateľa:  \n"
+"{instruction}  \n"
+"\n"
+"Text na revíziu:  \n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"Skontrolujte nasledujúci text, opravte iba to, čo je potrebné, a zachovajte akademický tón:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "Skontrolujte nasledujúci text a odpovedzte iba s opravenou verziou."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

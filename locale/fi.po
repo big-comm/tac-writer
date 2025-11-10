@@ -1893,20 +1893,20 @@ msgstr "Vastaus"
 msgid "Copy to clipboard"
 msgstr "Kopioi leikepöydälle"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "Lisää asiakirjaan"
+msgid "Insert at cursor"
+msgstr "Lisää kohdistimeen"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "Käytä korjausta"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "Lisäehdotuksia"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "Kopioi"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1927,6 +1927,21 @@ msgstr "Ei mitään lisättävää."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "Teksti, joka on lisätty asiakirjaan."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "Ei kappaletta saatavilla. Yritä lisätä kohdistimeen."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "Ei voitu määrittää alkuperäistä kappaletta."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "Kappale päivitetty AI-ehdotuksen avulla."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2160,11 +2175,32 @@ msgstr "Valitse AI-toimittaja Asetuksista ▸ AI-avustaja."
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"Nykyisen tekstin konteksti:  \n"
+"Käyttäjän ohje:\n"
+"{instruction}\n"
+"\n"
+"Teksti tarkistettavaksi:\n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"Tarkista seuraava teksti, korjaten vain tarpeelliset kohdat ja säilyttäen akateeminen sävy:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "Tarkista seuraava teksti ja vastaa vain korjatulla versiolla."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

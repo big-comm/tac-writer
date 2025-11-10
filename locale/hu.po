@@ -1895,20 +1895,20 @@ msgstr "Válasz"
 msgid "Copy to clipboard"
 msgstr "Másolás a vágólapra"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "Beszúrás a dokumentumba"
+msgid "Insert at cursor"
+msgstr "Beszúrás a kurzornál"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "Javítás alkalmazása"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "További javaslatok"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "Másolás"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1929,6 +1929,21 @@ msgstr "Nincs mit beszúrni."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "Szöveg beillesztve a dokumentumba."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "Nincs bekezdéskörnyezet elérhető. Próbálja meg a kurzornál beszúrni."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "Nem sikerült meghatározni az eredeti bekezdést."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "A bekezdés frissítve az AI javaslatával."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2160,11 +2175,33 @@ msgstr "Válasszon egy AI szolgáltatót a Beállítások ▸ AI Asszisztens men
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"A szöveg aktuális kontextusa:  \n"
+"Felhasználói utasítás:\n"
+"{instruction}\n"
+"\n"
+"Felülvizsgálatra szánt szöveg:\n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"Javítsa ki az alábbi szöveget, csak a szükséges módosításokat végezve, és megőrizve az akadémiai "
+"hangnemet:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "Javítsa ki az alábbi szöveget, és válaszoljon csak a javított verzióval."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK

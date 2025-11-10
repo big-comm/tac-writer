@@ -1893,20 +1893,20 @@ msgstr "Απάντηση"
 msgid "Copy to clipboard"
 msgstr "Αντιγραφή στο πρόχειρο"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 #: NEEDS WORK
-msgid "Insert into document"
-msgstr "Εισαγωγή στο έγγραφο"
+msgid "Insert at cursor"
+msgstr "Εισαγωγή στον κέρσορα"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
+#: NEEDS WORK
+msgid "Apply correction"
+msgstr "Εφαρμογή διόρθωσης"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1443
 #: NEEDS WORK
 msgid "Additional suggestions"
 msgstr "Επιπλέον προτάσεις"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1481
-#: NEEDS WORK
-msgid "Copy"
-msgstr "Αντιγραφή"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1507
 #: NEEDS WORK
@@ -1927,6 +1927,21 @@ msgstr "Τίποτα προς εισαγωγή."
 #: NEEDS WORK
 msgid "Text inserted into the document."
 msgstr "Κείμενο που εισάγεται στο έγγραφο."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1545
+#: NEEDS WORK
+msgid "No paragraph context available. Try inserting at the cursor."
+msgstr "Δεν είναι διαθέσιμος παράγραφος. Δοκιμάστε να εισάγετε στον κέρσορα."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1558
+#: NEEDS WORK
+msgid "Could not determine the original paragraph."
+msgstr "Δεν ήταν δυνατός ο προσδιορισμός της αρχικής παραγράφου."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1572
+#: NEEDS WORK
+msgid "Paragraph updated with AI suggestion."
+msgstr "Παράγραφος ενημερώθηκε με πρόταση AI."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1556
 # File: usr/share/tac-writer/ui/main_window.py, line: 1563
@@ -2158,11 +2173,33 @@ msgstr "Επιλέξτε έναν πάροχο AI στις Προτιμήσει�
 #: NEEDS WORK
 #, python-brace-format
 msgid ""
-"Contexto do texto atual:\n"
+"Instrução do usuário:\n"
+"{instruction}\n"
+"\n"
+"Texto para revisão:\n"
 "{context}"
 msgstr ""
-"Συγκείμενο του τρέχοντος κειμένου:  \n"
+"Οδηγία χρήστη:\n"
+"{instruction}\n"
+"\n"
+"Κείμενο προς αναθεώρηση:\n"
 "{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n"
+"{context}"
+msgstr ""
+"Διορθώστε το παρακάτω κείμενο, διορθώνοντας μόνο ό,τι είναι απαραίτητο και διατηρώντας τον "
+"ακαδημαϊκό τόνο:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+#: NEEDS WORK
+msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
+msgstr "Διορθώστε το παρακάτω κείμενο και απαντήστε μόνο με την διορθωμένη έκδοση."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 150
 #: NEEDS WORK
