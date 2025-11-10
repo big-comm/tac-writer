@@ -2190,23 +2190,23 @@ msgid "No config available for spell check debug"
 msgstr "No config available for spell check debug"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 68
 msgid "The AI assistant is already processing another request."
 msgstr "The AI assistant is already processing another request."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 96
 #, python-brace-format
 msgid "AI assistant error: {error}"
 msgstr "AI assistant error: {error}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 112
 msgid "Select an AI provider in Preferences ▸ AI Assistant."
 msgstr "Select an AI provider in Preferences ▸ AI Assistant."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 131
 #, python-brace-format
 msgid ""
 "Instrução do usuário:\n"
@@ -2222,7 +2222,7 @@ msgstr ""
 "{context}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 137
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 138
 #, python-brace-format
 msgid ""
 "Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom "
@@ -2234,100 +2234,100 @@ msgstr ""
 "{context}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 141
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 142
 msgid "Revise o texto a seguir e responda apenas com a versão corrigida."
 msgstr "Revise o texto a seguir e responda apenas com a versão corrigida."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 160
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 161
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "Provider '{provider}' is not supported."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 168
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 169
 msgid "Configure the Groq API key in Preferences."
 msgstr "Configure the Groq API key in Preferences."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 180
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 181
 #, python-brace-format
 msgid "Failed to contact Groq: {error}"
 msgstr "Failed to contact Groq: {error}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 184
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 185
 #, python-brace-format
 msgid "Groq responded with HTTP {status}: {detail}"
 msgstr "Groq responded with HTTP {status}: {detail}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 196
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 197
 msgid "Configure the Gemini API key in Preferences."
 msgstr "Configure the Gemini API key in Preferences."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 214
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 215
 #, python-brace-format
 msgid "Failed to contact Gemini: {error}"
 msgstr "Failed to contact Gemini: {error}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 219
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 220
 #, python-brace-format
 msgid "Gemini responded with HTTP {status}: {detail}"
 msgstr "Gemini responded with HTTP {status}: {detail}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 227
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 228
 msgid "Gemini returned an invalid JSON response."
 msgstr "Gemini returned an invalid JSON response."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 243
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 244
 msgid "Gemini did not return any usable content."
 msgstr "Gemini did not return any usable content."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 250
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 251
 msgid "Configure the OpenRouter API key in Preferences."
 msgstr "Configure the OpenRouter API key in Preferences."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 272
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 273
 #, python-brace-format
 msgid "Failed to contact OpenRouter: {error}"
 msgstr "Failed to contact OpenRouter: {error}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 284
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 285
 msgid "AI provider returned an invalid JSON response."
 msgstr "AI provider returned an invalid JSON response."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 288
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 289
 msgid "The AI provider returned an empty response."
 msgstr "The AI provider returned an empty response."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 300
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 301
 msgid "The AI provider did not return any usable content."
 msgstr "The AI provider did not return any usable content."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 433
 msgid "Unknown error."
 msgstr "Unknown error."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 436
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 442
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 437
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 443
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}"
 msgstr "OpenRouter respondeu com HTTP {status}: {message}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 456
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 457
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
 msgstr "OpenRouter respondeu com HTTP {status}: {message}{detail}"
