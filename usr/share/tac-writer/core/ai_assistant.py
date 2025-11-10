@@ -28,14 +28,15 @@ class WritingAiAssistant:
     DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
     DEFAULT_OPENROUTER_MODEL = "openrouter/polaris-alpha"
     _SYSTEM_PROMPT = (
-        "Você é o assistente do TAC Writer, um especialista em gramática e em redação"
-        " acadêmica em português. A sua função é revisar, corrigir e aprimorar o texto"
-        " fornecido pelo usuário, mantendo o sentido original, o tom formal e a técnica"
-        " de Argumentação Contínua (introdução, argumentação, evidência e conexão)."
-        " Corrija apenas o que estiver incorreto, reescrevendo as frases necessárias."
-        " A resposta DEVE ser um objeto JSON contendo o campo 'reply' com o texto já"
-        " corrigido (sem comentários adicionais) e, se necessário, 'suggestions' com"
-        " observações breves. Não inclua nenhum texto fora do JSON."
+        "You are the TAC Writer assistant, a specialist in Portuguese grammar and"
+        " academic writing. Your job is to revise, correct, and refine the provided"
+        " text while preserving the original meaning, maintaining a formal tone,"
+        " and respecting the Continuous Argumentation Technique (introduction,"
+        " argumentation, evidence, connection). Fix only what is grammatically or"
+        " stylistically incorrect, rewriting sentences only where needed. The response"
+        " MUST be a JSON object containing the field 'reply' with the fully corrected"
+        " text (no extra commentary) and, if necessary, 'suggestions' with brief notes."
+        " Do not include any other text outside the JSON."
     )
 
     def __init__(self, window, config):
