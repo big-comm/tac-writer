@@ -523,6 +523,102 @@ msgstr "Vis visnummer"
 msgid "Display line numbers in the editor"
 msgstr "Vis visningslinjenumre i editoren"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 717
+# File: usr/share/tac-writer/ui/main_window.py, line: 1380
+#: NEEDS WORK
+msgid "AI Assistant"
+msgstr "AI-assistent"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 722
+#: NEEDS WORK
+msgid "Assistant Settings"
+msgstr "Assistentindstillinger"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Configure the provider and credentials used to generate suggestions."
+msgstr "Konfigurer udbyderen og legitimationsoplysningerne, der bruges til at generere forslag."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 729
+#: NEEDS WORK
+msgid "Enable AI Assistant"
+msgstr "Aktiver AI-assistent"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 730
+#: NEEDS WORK
+msgid "Allow prompts to use an external provider (Ctrl+Shift+I)."
+msgstr "Tillad prompts at bruge en ekstern udbyder (Ctrl+Shift+I)."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 736
+# File: usr/share/tac-writer/ui/main_window.py, line: 1133
+#: NEEDS WORK
+msgid "Provider"
+msgstr "Udbyder"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 748
+#: NEEDS WORK
+msgid "Model Identifier"
+msgstr "Modelidentifikator"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 749
+#: NEEDS WORK
+msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
+msgstr "eksempel: llama-3.1-8b-instant, gemini-2.5-flash."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 752
+#: NEEDS WORK
+msgid "llama-3.1-8b-instant"
+msgstr "llama-3.1-8b-instant"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 759
+#: NEEDS WORK
+msgid "API Key"
+msgstr "API-nøgle"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+msgid "Stored locally and used to authenticate requests."
+msgstr "Lagreret lokalt og brugt til at godkende anmodninger."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+#: NEEDS WORK
+msgid "Paste your API key"
+msgstr "Indsæt din API-nøgle"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "Site URL (optional)"
+msgstr "Websted URL (valgfrit)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+msgid "Used as HTTP Referer header for OpenRouter rankings."
+msgstr "Brugt som HTTP Referer-header til OpenRouter-rangeringer."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 777
+#: NEEDS WORK
+msgid "https://example.com"
+msgstr "https://example.com"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 789
+#: NEEDS WORK
+msgid "Site title (optional)"
+msgstr "Site titel (valgfrit)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 790
+#: NEEDS WORK
+msgid "Sent via X-Title header for OpenRouter rankings."
+msgstr "Sendt via X-Title-header til OpenRouter-rangeringer."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "My Project"
+msgstr "Mit projekt"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
 #: NEEDS WORK
 #, python-brace-format
@@ -564,6 +660,51 @@ msgstr "Fejl ved ændring af ordindpakning: {}"
 #, python-brace-format
 msgid "Error changing line numbers: {}"
 msgstr "Fejl ved ændring af linjenumre: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 938
+#: NEEDS WORK
+msgid "Model identifier (for example: llama-3.1-8b-instant)."
+msgstr "Modelidentifikator (for eksempel: llama-3.1-8b-instant)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Groq API key."
+msgstr "Groq API-nøgle."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+#: NEEDS WORK
+msgid "Gemini model identifier (for example: gemini-2.5-flash)."
+msgstr "Gemini modelidentifikator (for eksempel: gemini-2.5-flash)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 948
+#: NEEDS WORK
+msgid "Google AI Studio API key."
+msgstr "Google AI Studio API-nøgle."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+#: NEEDS WORK
+msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
+msgstr "OpenRouter modelidentifikator (for eksempel: openrouter/polaris-alpha)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 956
+#: NEEDS WORK
+msgid "OpenRouter API key."
+msgstr "OpenRouter API-nøgle."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 960
+#: NEEDS WORK
+msgid "model-name"
+msgstr "model-navn"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 962
+#: NEEDS WORK
+msgid "Model identifier required by the selected provider."
+msgstr "Modelidentifikator krævet af den valgte udbyder."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 964
+#: NEEDS WORK
+msgid "API key used to authenticate requests."
+msgstr "API-nøgle, der bruges til at godkende anmodninger."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 833
 #: NEEDS WORK
@@ -1385,6 +1526,46 @@ msgstr "Tilføj fodnote"
 msgid "Enter footnote text..."
 msgstr "Indtast fodnote tekst..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 25
+#: NEEDS WORK
+msgid "Melhore este parágrafo mantendo o mesmo argumento."
+msgstr "Forbedre dette afsnit, mens du bevarer det samme argument."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 26
+#: NEEDS WORK
+msgid "Sugira uma introdução mais envolvente para este tema."
+msgstr "Foreslå en mere engagerende introduktion til dette emne."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 27
+#: NEEDS WORK
+msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
+msgstr "Omskriv det følgende afsnit med en mere akademisk tone."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 28
+#: NEEDS WORK
+msgid "Resuma o parágrafo selecionado em até três frases objetivas."
+msgstr "Opsummer det valgte afsnit i op til tre objektive sætninger."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 29
+#: NEEDS WORK
+msgid "Quais referências poderiam fortalecer esta ideia?"
+msgstr "Hvilke referencer kunne styrke denne idé?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 30
+#: NEEDS WORK
+msgid "Crie uma transição suave para o próximo parágrafo."
+msgstr "Opret en glidende overgang til det næste afsnit."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 31
+#: NEEDS WORK
+msgid "Como posso encerrar esta conclusão com mais impacto?"
+msgstr "Hvordan kan jeg afslutte denne konklusion med mere impact?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 32
+#: NEEDS WORK
+msgid "Sugira perguntas que eu possa responder na sequência."
+msgstr "Foreslå spørgsmål, som jeg kan besvare i rækkefølge."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1399,6 +1580,21 @@ msgstr "Nyt projekt (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Gem projekt (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 158
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "Spørg AI-assistent (Ctrl+Shift+I)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 165
+#: NEEDS WORK
+msgid "Search..."
+msgstr "Søg..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 172
+#: NEEDS WORK
+msgid "Find next occurrence"
+msgstr "Find næste forekomst"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
 #: NEEDS WORK
@@ -1432,6 +1628,11 @@ msgstr "Gendan"
 msgid "Welcome Guide"
 msgstr "Velkomstguide"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 210
+#: NEEDS WORK
+msgid "Ask AI Assistant"
+msgstr "Spørg AI-assistenten"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
 #: NEEDS WORK
 msgid "About TAC"
@@ -1447,10 +1648,10 @@ msgstr "Projekter"
 msgid "Add Paragraph"
 msgstr "Tilføj afsnit"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 359
+# File: usr/share/tac-writer/ui/main_window.py, line: 409
 #: NEEDS WORK
-msgid "Insert Image (Ctrl+Shift+I)"
-msgstr "Indsæt billede (Ctrl+Shift+I)"
+msgid "Insert Image (Ctrl+Alt+I)"
+msgstr "Indsæt billede (Ctrl+Alt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
@@ -1597,6 +1798,156 @@ msgstr "Billede indsat med succes"
 #: NEEDS WORK
 msgid "Error inserting image"
 msgstr "Fejl ved indsættelse af billede"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+#: NEEDS WORK
+msgid "Enable the AI assistant in Preferences ▸ AI Assistant."
+msgstr "Aktivér AI-assistenten i Indstillinger ▸ AI-assistent."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
+#: NEEDS WORK
+msgid "API key"
+msgstr "API-nøgle"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1138
+#: NEEDS WORK
+#, python-brace-format
+msgid "Configure {items} in Preferences ▸ AI Assistant."
+msgstr "Konfigurer {items} i Indstillinger ▸ AI Assistent."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+#: NEEDS WORK
+#, python-brace-format
+msgid "Selected text ({count} characters)"
+msgstr "Valgt tekst ({count} tegn)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1162
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current paragraph ({count} characters)"
+msgstr "Nuværende afsnit ({count} tegn)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1168
+#: NEEDS WORK
+msgid "Ask the AI Assistant"
+msgstr "Spørg AI-assistenten"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1169
+#: NEEDS WORK
+msgid "Describe the adjustment you need for this paragraph."
+msgstr "Beskriv den justering, du har brug for i dette afsnit."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+#: NEEDS WORK
+msgid "Send"
+msgstr "Send"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1224
+#: NEEDS WORK
+msgid "Include context"
+msgstr "Inkluder kontekst"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1254
+#: NEEDS WORK
+msgid "Quick suggestions"
+msgstr "Hurtige forslag"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1316
+#: NEEDS WORK
+#, python-brace-format
+msgid "Matching suggestions: {count}"
+msgstr "Matchende forslag: {count}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1319
+#: NEEDS WORK
+msgid "No suggestion found."
+msgstr "Ingen forslag fundet."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1322
+#: NEEDS WORK
+msgid "Describe your request or choose one of the suggestions."
+msgstr "Beskriv din anmodning eller vælg en af forslagene."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1339
+#: NEEDS WORK
+msgid "Please enter a question for the assistant."
+msgstr "Indtast venligst et spørgsmål til assistenten."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
+#: NEEDS WORK
+msgid "The AI assistant is processing your request..."
+msgstr "AI-assistenten behandler din anmodning..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+#: NEEDS WORK
+msgid "Here is the assistant's suggestion."
+msgstr "Her er assistentens forslag."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1413
+#: NEEDS WORK
+msgid "Response"
+msgstr "Svar"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1431
+#: NEEDS WORK
+msgid "Copy to clipboard"
+msgstr "Kopier til udklipsholder"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+#: NEEDS WORK
+msgid "Insert into document"
+msgstr "Indsæt i dokument"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
+#: NEEDS WORK
+msgid "Additional suggestions"
+msgstr "Yderligere forslag"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1481
+#: NEEDS WORK
+msgid "Copy"
+msgstr "Kopier"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1507
+#: NEEDS WORK
+msgid "Copied to clipboard."
+msgstr "Kopieret til udklipsholder."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1513
+#: NEEDS WORK
+msgid "Place the cursor inside a paragraph to insert the text."
+msgstr "Placer markøren inde i et afsnit for at indsætte teksten."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1520
+#: NEEDS WORK
+msgid "Nothing to insert."
+msgstr "Intet at indsætte."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1531
+#: NEEDS WORK
+msgid "Text inserted into the document."
+msgstr "Tekst indsat i dokumentet."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1556
+# File: usr/share/tac-writer/ui/main_window.py, line: 1563
+#: NEEDS WORK
+msgid "Enter text to search."
+msgstr "Indtast tekst for at søge."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1559
+#: NEEDS WORK
+msgid "No matches found."
+msgstr "Ingen resultater fundet."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1574
+#: NEEDS WORK
+msgid "No editable paragraphs available."
+msgstr "Ingen redigerbare afsnit tilgængelige."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1598
+#: NEEDS WORK
+msgid "Reached the end of the document."
+msgstr "Nåede slutningen af dokumentet."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1754,6 +2105,12 @@ msgstr "Fejl ved visning af præference-dialog: {}: {}"
 msgid "Error showing about dialog: {}: {}"
 msgstr "Fejl ved visning af om-dialog: {}: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 583
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error opening AI assistant: {}: {}"
+msgstr "Fejl ved åbning af AI-assistent: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 493
 #: NEEDS WORK
 #, python-brace-format
@@ -1780,6 +2137,126 @@ msgstr "Fejl under nedlukning: {}: {}"
 #: NEEDS WORK
 msgid "No config available for spell check debug"
 msgstr "Ingen konfiguration tilgængelig for stavekontrol debug"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+#: NEEDS WORK
+msgid "The AI assistant is already processing another request."
+msgstr "AI-assistenten behandler allerede en anden anmodning."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "AI assistant error: {error}"
+msgstr "AI-assistentfejl: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+#: NEEDS WORK
+msgid "Select an AI provider in Preferences ▸ AI Assistant."
+msgstr "Vælg en AI-udbyder i Indstillinger ▸ AI-assistent."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Contexto do texto atual:\n"
+"{context}"
+msgstr ""
+"Kontext for den aktuelle tekst:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 150
+#: NEEDS WORK
+#, python-brace-format
+msgid "Provider '{provider}' is not supported."
+msgstr "Udbyder '{provider}' understøttes ikke."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
+#: NEEDS WORK
+msgid "Configure the Groq API key in Preferences."
+msgstr "Konfigurer Groq API-nøglen i Indstillinger."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Groq: {error}"
+msgstr "Mislykkedes med at kontakte Groq: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
+#: NEEDS WORK
+#, python-brace-format
+msgid "Groq responded with HTTP {status}: {detail}"
+msgstr "Groq svarede med HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 186
+#: NEEDS WORK
+msgid "Configure the Gemini API key in Preferences."
+msgstr "Konfigurer Gemini API-nøglen i Indstillinger."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 204
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Gemini: {error}"
+msgstr "Mislykkedes at kontakte Gemini: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Gemini responded with HTTP {status}: {detail}"
+msgstr "Gemini svarede med HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 217
+#: NEEDS WORK
+msgid "Gemini returned an invalid JSON response."
+msgstr "Gemini returnerede et ugyldigt JSON-svar."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 233
+#: NEEDS WORK
+msgid "Gemini did not return any usable content."
+msgstr "Gemini returner ikke noget brugbart indhold."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 240
+#: NEEDS WORK
+msgid "Configure the OpenRouter API key in Preferences."
+msgstr "Konfigurer OpenRouter API-nøglen i Indstillinger."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact OpenRouter: {error}"
+msgstr "Mislykkedes med at kontakte OpenRouter: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 274
+#: NEEDS WORK
+msgid "AI provider returned an invalid JSON response."
+msgstr "AI-udbyder returnerede et ugyldigt JSON-svar."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 278
+#: NEEDS WORK
+msgid "The AI provider returned an empty response."
+msgstr "AI-udbyderen returnerede et tomt svar."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 290
+#: NEEDS WORK
+msgid "The AI provider did not return any usable content."
+msgstr "AI-udbyderen returnerede ikke noget brugbart indhold."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 422
+#: NEEDS WORK
+msgid "Unknown error."
+msgstr "Ukendt fejl."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 426
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}"
+msgstr "OpenRouter svarede med HTTP {status}: {message}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
+msgstr "OpenRouter svarede med HTTP {status}: {message}{detail}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

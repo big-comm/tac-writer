@@ -523,6 +523,102 @@ msgstr "行番号を表示"
 msgid "Display line numbers in the editor"
 msgstr "エディタに行番号を表示"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 717
+# File: usr/share/tac-writer/ui/main_window.py, line: 1380
+#: NEEDS WORK
+msgid "AI Assistant"
+msgstr "AIアシスタント"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 722
+#: NEEDS WORK
+msgid "Assistant Settings"
+msgstr "アシスタント設定"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Configure the provider and credentials used to generate suggestions."
+msgstr "提案を生成するために使用されるプロバイダーと資格情報を設定します。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 729
+#: NEEDS WORK
+msgid "Enable AI Assistant"
+msgstr "AIアシスタントを有効にする"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 730
+#: NEEDS WORK
+msgid "Allow prompts to use an external provider (Ctrl+Shift+I)."
+msgstr "プロンプトが外部プロバイダーを使用できるようにする (Ctrl+Shift+I)。"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 736
+# File: usr/share/tac-writer/ui/main_window.py, line: 1133
+#: NEEDS WORK
+msgid "Provider"
+msgstr "プロバイダー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 748
+#: NEEDS WORK
+msgid "Model Identifier"
+msgstr "モデル識別子"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 749
+#: NEEDS WORK
+msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
+msgstr "例: llama-3.1-8b-instant, gemini-2.5-flash."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 752
+#: NEEDS WORK
+msgid "llama-3.1-8b-instant"
+msgstr "ラマ-3.1-8b-インスタント"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 759
+#: NEEDS WORK
+msgid "API Key"
+msgstr "APIキー"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+msgid "Stored locally and used to authenticate requests."
+msgstr "ローカルに保存され、リクエストの認証に使用されます。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+#: NEEDS WORK
+msgid "Paste your API key"
+msgstr "APIキーを貼り付けてください"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "Site URL (optional)"
+msgstr "サイトのURL（オプション）"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+msgid "Used as HTTP Referer header for OpenRouter rankings."
+msgstr "OpenRouterのランキング用にHTTP Refererヘッダーとして使用されます。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 777
+#: NEEDS WORK
+msgid "https://example.com"
+msgstr "https://example.com"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 789
+#: NEEDS WORK
+msgid "Site title (optional)"
+msgstr "サイトタイトル（オプション）"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 790
+#: NEEDS WORK
+msgid "Sent via X-Title header for OpenRouter rankings."
+msgstr "OpenRouterランキングのためにX-Titleヘッダー経由で送信されました。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "My Project"
+msgstr "私のプロジェクト"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
 #: NEEDS WORK
 #, python-brace-format
@@ -564,6 +660,51 @@ msgstr "ワードラップの変更中にエラーが発生しました: {}"
 #, python-brace-format
 msgid "Error changing line numbers: {}"
 msgstr "行番号の変更中にエラーが発生しました: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 938
+#: NEEDS WORK
+msgid "Model identifier (for example: llama-3.1-8b-instant)."
+msgstr "モデル識別子（例：llama-3.1-8b-instant）。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Groq API key."
+msgstr "Groq APIキー。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+#: NEEDS WORK
+msgid "Gemini model identifier (for example: gemini-2.5-flash)."
+msgstr "Geminiモデル識別子（例：gemini-2.5-flash）。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 948
+#: NEEDS WORK
+msgid "Google AI Studio API key."
+msgstr "Google AI Studio APIキー。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+#: NEEDS WORK
+msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
+msgstr "OpenRouterモデル識別子（例：openrouter/polaris-alpha）。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 956
+#: NEEDS WORK
+msgid "OpenRouter API key."
+msgstr "OpenRouter APIキー。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 960
+#: NEEDS WORK
+msgid "model-name"
+msgstr "モデル名"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 962
+#: NEEDS WORK
+msgid "Model identifier required by the selected provider."
+msgstr "選択したプロバイダーによって必要なモデル識別子。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 964
+#: NEEDS WORK
+msgid "API key used to authenticate requests."
+msgstr "リクエストを認証するために使用されるAPIキー。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 833
 #: NEEDS WORK
@@ -1384,6 +1525,46 @@ msgstr "脚注を追加"
 msgid "Enter footnote text..."
 msgstr "脚注テキストを入力..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 25
+#: NEEDS WORK
+msgid "Melhore este parágrafo mantendo o mesmo argumento."
+msgstr "この段落を改善し、同じ主張を維持してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 26
+#: NEEDS WORK
+msgid "Sugira uma introdução mais envolvente para este tema."
+msgstr "このテーマに対して、より魅力的な導入を提案してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 27
+#: NEEDS WORK
+msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
+msgstr "以下の部分をより学術的なトーンで書き直してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 28
+#: NEEDS WORK
+msgid "Resuma o parágrafo selecionado em até três frases objetivas."
+msgstr "選択した段落を最大三つの客観的な文に要約してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 29
+#: NEEDS WORK
+msgid "Quais referências poderiam fortalecer esta ideia?"
+msgstr "このアイデアを強化するための参考文献は何ですか？"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 30
+#: NEEDS WORK
+msgid "Crie uma transição suave para o próximo parágrafo."
+msgstr "次の段落へのスムーズな移行を作成します。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 31
+#: NEEDS WORK
+msgid "Como posso encerrar esta conclusão com mais impacto?"
+msgstr "この結論をよりインパクトのある形で締めくくるにはどうすればよいですか？"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 32
+#: NEEDS WORK
+msgid "Sugira perguntas que eu possa responder na sequência."
+msgstr "次に答えられる質問を提案してください。"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1398,6 +1579,21 @@ msgstr "新規プロジェクト (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "プロジェクトを保存 (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 158
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "AIアシスタントに聞く (Ctrl+Shift+I)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 165
+#: NEEDS WORK
+msgid "Search..."
+msgstr "検索..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 172
+#: NEEDS WORK
+msgid "Find next occurrence"
+msgstr "次の出現を見つける"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
 #: NEEDS WORK
@@ -1431,6 +1627,11 @@ msgstr "やり直し"
 msgid "Welcome Guide"
 msgstr "ウェルカムガイド"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 210
+#: NEEDS WORK
+msgid "Ask AI Assistant"
+msgstr "AIアシスタントに聞く"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
 #: NEEDS WORK
 msgid "About TAC"
@@ -1446,10 +1647,10 @@ msgstr "プロジェクト"
 msgid "Add Paragraph"
 msgstr "段落を追加"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 359
+# File: usr/share/tac-writer/ui/main_window.py, line: 409
 #: NEEDS WORK
-msgid "Insert Image (Ctrl+Shift+I)"
-msgstr "画像を挿入 (Ctrl+Shift+I)"
+msgid "Insert Image (Ctrl+Alt+I)"
+msgstr "画像を挿入 (Ctrl+Alt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
@@ -1596,6 +1797,156 @@ msgstr "画像が正常に挿入されました"
 #: NEEDS WORK
 msgid "Error inserting image"
 msgstr "画像の挿入エラー"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+#: NEEDS WORK
+msgid "Enable the AI assistant in Preferences ▸ AI Assistant."
+msgstr "設定 ▸ AIアシスタントでAIアシスタントを有効にする。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
+#: NEEDS WORK
+msgid "API key"
+msgstr "APIキー"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1138
+#: NEEDS WORK
+#, python-brace-format
+msgid "Configure {items} in Preferences ▸ AI Assistant."
+msgstr "設定 {items} を環境設定 ▸ AI アシスタントで行います。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+#: NEEDS WORK
+#, python-brace-format
+msgid "Selected text ({count} characters)"
+msgstr "選択したテキスト（{count} 文字）"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1162
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current paragraph ({count} characters)"
+msgstr "現在の段落（{count} 文字）"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1168
+#: NEEDS WORK
+msgid "Ask the AI Assistant"
+msgstr "AIアシスタントに尋ねる"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1169
+#: NEEDS WORK
+msgid "Describe the adjustment you need for this paragraph."
+msgstr "この段落に必要な調整を説明してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+#: NEEDS WORK
+msgid "Send"
+msgstr "送信"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1224
+#: NEEDS WORK
+msgid "Include context"
+msgstr "含めるコンテキスト"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1254
+#: NEEDS WORK
+msgid "Quick suggestions"
+msgstr "クイックサジェスト"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1316
+#: NEEDS WORK
+#, python-brace-format
+msgid "Matching suggestions: {count}"
+msgstr "一致する提案: {count}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1319
+#: NEEDS WORK
+msgid "No suggestion found."
+msgstr "提案は見つかりませんでした。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1322
+#: NEEDS WORK
+msgid "Describe your request or choose one of the suggestions."
+msgstr "リクエストを説明するか、提案のいずれかを選択してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1339
+#: NEEDS WORK
+msgid "Please enter a question for the assistant."
+msgstr "アシスタントに質問を入力してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
+#: NEEDS WORK
+msgid "The AI assistant is processing your request..."
+msgstr "AIアシスタントがリクエストを処理しています..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+#: NEEDS WORK
+msgid "Here is the assistant's suggestion."
+msgstr "ここにアシスタントの提案があります。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1413
+#: NEEDS WORK
+msgid "Response"
+msgstr "応答"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1431
+#: NEEDS WORK
+msgid "Copy to clipboard"
+msgstr "クリップボードにコピー"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+#: NEEDS WORK
+msgid "Insert into document"
+msgstr "ドキュメントに挿入"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
+#: NEEDS WORK
+msgid "Additional suggestions"
+msgstr "追加の提案"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1481
+#: NEEDS WORK
+msgid "Copy"
+msgstr "コピー"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1507
+#: NEEDS WORK
+msgid "Copied to clipboard."
+msgstr "クリップボードにコピーされました。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1513
+#: NEEDS WORK
+msgid "Place the cursor inside a paragraph to insert the text."
+msgstr "段落内にカーソルを置いてテキストを挿入します。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1520
+#: NEEDS WORK
+msgid "Nothing to insert."
+msgstr "挿入するものはありません。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1531
+#: NEEDS WORK
+msgid "Text inserted into the document."
+msgstr "文書に挿入されたテキスト。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1556
+# File: usr/share/tac-writer/ui/main_window.py, line: 1563
+#: NEEDS WORK
+msgid "Enter text to search."
+msgstr "検索するテキストを入力してください。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1559
+#: NEEDS WORK
+msgid "No matches found."
+msgstr "一致する項目が見つかりませんでした。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1574
+#: NEEDS WORK
+msgid "No editable paragraphs available."
+msgstr "編集可能な段落はありません。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1598
+#: NEEDS WORK
+msgid "Reached the end of the document."
+msgstr "ドキュメントの終わりに達しました。"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1753,6 +2104,12 @@ msgstr "設定ダイアログの表示中にエラーが発生しました: {}: 
 msgid "Error showing about dialog: {}: {}"
 msgstr "ダイアログの表示中にエラーが発生しました: {}: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 583
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error opening AI assistant: {}: {}"
+msgstr "AIアシスタントを開く際のエラー: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 493
 #: NEEDS WORK
 #, python-brace-format
@@ -1779,6 +2136,126 @@ msgstr "シャットダウン中のエラー: {}: {}"
 #: NEEDS WORK
 msgid "No config available for spell check debug"
 msgstr "スペルチェックデバッグのための設定は利用できません"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+#: NEEDS WORK
+msgid "The AI assistant is already processing another request."
+msgstr "AIアシスタントはすでに別のリクエストを処理しています。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "AI assistant error: {error}"
+msgstr "AIアシスタントエラー: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+#: NEEDS WORK
+msgid "Select an AI provider in Preferences ▸ AI Assistant."
+msgstr "設定 ▸ AI アシスタントで AI プロバイダーを選択します。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Contexto do texto atual:\n"
+"{context}"
+msgstr ""
+"現在のテキストのコンテキスト:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 150
+#: NEEDS WORK
+#, python-brace-format
+msgid "Provider '{provider}' is not supported."
+msgstr "プロバイダー '{provider}' はサポートされていません。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
+#: NEEDS WORK
+msgid "Configure the Groq API key in Preferences."
+msgstr "設定でGroq APIキーを構成します。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Groq: {error}"
+msgstr "Groqに連絡できませんでした: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
+#: NEEDS WORK
+#, python-brace-format
+msgid "Groq responded with HTTP {status}: {detail}"
+msgstr "GroqはHTTP {status}で応答しました: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 186
+#: NEEDS WORK
+msgid "Configure the Gemini API key in Preferences."
+msgstr "PreferencesでGemini APIキーを設定します。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 204
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Gemini: {error}"
+msgstr "Geminiに接続できませんでした: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Gemini responded with HTTP {status}: {detail}"
+msgstr "GeminiはHTTP {status}で応答しました: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 217
+#: NEEDS WORK
+msgid "Gemini returned an invalid JSON response."
+msgstr "Geminiは無効なJSONレスポンスを返しました。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 233
+#: NEEDS WORK
+msgid "Gemini did not return any usable content."
+msgstr "Geminiは使用可能なコンテンツを返しませんでした。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 240
+#: NEEDS WORK
+msgid "Configure the OpenRouter API key in Preferences."
+msgstr "PreferencesでOpenRouter APIキーを設定します。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact OpenRouter: {error}"
+msgstr "OpenRouterに接続できませんでした: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 274
+#: NEEDS WORK
+msgid "AI provider returned an invalid JSON response."
+msgstr "AIプロバイダーが無効なJSONレスポンスを返しました。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 278
+#: NEEDS WORK
+msgid "The AI provider returned an empty response."
+msgstr "AIプロバイダーは空の応答を返しました。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 290
+#: NEEDS WORK
+msgid "The AI provider did not return any usable content."
+msgstr "AIプロバイダーは、使用可能なコンテンツを返しませんでした。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 422
+#: NEEDS WORK
+msgid "Unknown error."
+msgstr "不明なエラー。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 426
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}"
+msgstr "OpenRouterはHTTP {status}で応答しました: {message}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
+msgstr "OpenRouterはHTTP {status}で応答しました: {message}{detail}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

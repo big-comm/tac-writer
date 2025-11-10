@@ -523,6 +523,102 @@ msgstr "Näytä rivinumerot"
 msgid "Display line numbers in the editor"
 msgstr "Näytä rivinumerot editorissa"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 717
+# File: usr/share/tac-writer/ui/main_window.py, line: 1380
+#: NEEDS WORK
+msgid "AI Assistant"
+msgstr "AI-avustaja"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 722
+#: NEEDS WORK
+msgid "Assistant Settings"
+msgstr "Asetukset"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Configure the provider and credentials used to generate suggestions."
+msgstr "Määritä tarjoaja ja käyttöoikeustiedot, joita käytetään ehdotusten luomiseen."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 729
+#: NEEDS WORK
+msgid "Enable AI Assistant"
+msgstr "Ota käyttöön AI-avustaja"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 730
+#: NEEDS WORK
+msgid "Allow prompts to use an external provider (Ctrl+Shift+I)."
+msgstr "Salli kehotteiden käyttää ulkoista palveluntarjoajaa (Ctrl+Shift+I)."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 736
+# File: usr/share/tac-writer/ui/main_window.py, line: 1133
+#: NEEDS WORK
+msgid "Provider"
+msgstr "Palveluntarjoaja"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 748
+#: NEEDS WORK
+msgid "Model Identifier"
+msgstr "Malli Tunnus"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 749
+#: NEEDS WORK
+msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
+msgstr "esimerkkejä: llama-3.1-8b-instant, gemini-2.5-flash."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 752
+#: NEEDS WORK
+msgid "llama-3.1-8b-instant"
+msgstr "llama-3.1-8b-instant"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 759
+#: NEEDS WORK
+msgid "API Key"
+msgstr "API-avain"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+msgid "Stored locally and used to authenticate requests."
+msgstr "Tallennettu paikallisesti ja käytetään pyyntöjen todennukseen."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+#: NEEDS WORK
+msgid "Paste your API key"
+msgstr "Liitä API-avaimesi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "Site URL (optional)"
+msgstr "Sivuston URL (valinnainen)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+msgid "Used as HTTP Referer header for OpenRouter rankings."
+msgstr "Käytetään HTTP Referer -otsikkona OpenRouter-rankingia varten."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 777
+#: NEEDS WORK
+msgid "https://example.com"
+msgstr "https://example.com"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 789
+#: NEEDS WORK
+msgid "Site title (optional)"
+msgstr "Sivuston otsikko (valinnainen)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 790
+#: NEEDS WORK
+msgid "Sent via X-Title header for OpenRouter rankings."
+msgstr "Lähetetty X-Title-otsikkopäivityksen kautta OpenRouter-rankingia varten."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "My Project"
+msgstr "Oma projekti"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
 #: NEEDS WORK
 #, python-brace-format
@@ -564,6 +660,51 @@ msgstr "Virhe sanan kääntämisessä: {}"
 #, python-brace-format
 msgid "Error changing line numbers: {}"
 msgstr "Virhe rivinumeroiden muuttamisessa: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 938
+#: NEEDS WORK
+msgid "Model identifier (for example: llama-3.1-8b-instant)."
+msgstr "Mallin tunnus (esimerkiksi: llama-3.1-8b-instant)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Groq API key."
+msgstr "Groq API-avain."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+#: NEEDS WORK
+msgid "Gemini model identifier (for example: gemini-2.5-flash)."
+msgstr "Gemini-mallin tunniste (esimerkiksi: gemini-2.5-flash)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 948
+#: NEEDS WORK
+msgid "Google AI Studio API key."
+msgstr "Google AI Studio API-avain."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+#: NEEDS WORK
+msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
+msgstr "OpenRouter-mallin tunniste (esimerkiksi: openrouter/polaris-alpha)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 956
+#: NEEDS WORK
+msgid "OpenRouter API key."
+msgstr "OpenRouter API-avain."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 960
+#: NEEDS WORK
+msgid "model-name"
+msgstr "mallin-nimi"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 962
+#: NEEDS WORK
+msgid "Model identifier required by the selected provider."
+msgstr "Mallin tunnus vaaditaan valitulta tarjoajalta."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 964
+#: NEEDS WORK
+msgid "API key used to authenticate requests."
+msgstr "API-avain, jota käytetään pyyntöjen todennukseen."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 833
 #: NEEDS WORK
@@ -1385,6 +1526,46 @@ msgstr "Lisää alaviite"
 msgid "Enter footnote text..."
 msgstr "Syötä alaviitteen teksti..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 25
+#: NEEDS WORK
+msgid "Melhore este parágrafo mantendo o mesmo argumento."
+msgstr "Paranna tätä kappaletta säilyttäen sama argumentti."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 26
+#: NEEDS WORK
+msgid "Sugira uma introdução mais envolvente para este tema."
+msgstr "Ehdota mukaansatempaavampaa johdantoa tälle aiheelle."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 27
+#: NEEDS WORK
+msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
+msgstr "Kirjoita alla oleva kappale uudelleen akateemisemmalla sävyllä."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 28
+#: NEEDS WORK
+msgid "Resuma o parágrafo selecionado em até três frases objetivas."
+msgstr "Tiivistä valittu kappale enintään kolmeen ytimekkääseen lauseeseen."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 29
+#: NEEDS WORK
+msgid "Quais referências poderiam fortalecer esta ideia?"
+msgstr "Mitkä viittaukset voisivat vahvistaa tätä ideaa?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 30
+#: NEEDS WORK
+msgid "Crie uma transição suave para o próximo parágrafo."
+msgstr "Luo sujuva siirtymä seuraavaan kappaleeseen."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 31
+#: NEEDS WORK
+msgid "Como posso encerrar esta conclusão com mais impacto?"
+msgstr "Miten voin päättää tämän johtopäätöksen vaikuttavammin?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 32
+#: NEEDS WORK
+msgid "Sugira perguntas que eu possa responder na sequência."
+msgstr "Ehdota kysymyksiä, joihin voin vastata peräkkäin."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1399,6 +1580,21 @@ msgstr "Uusi projekti (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Tallenna projekti (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 158
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "Kysy AI-avustajalta (Ctrl+Shift+I)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 165
+#: NEEDS WORK
+msgid "Search..."
+msgstr "Hae..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 172
+#: NEEDS WORK
+msgid "Find next occurrence"
+msgstr "Etsi seuraava esiintyminen"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
 #: NEEDS WORK
@@ -1432,6 +1628,11 @@ msgstr "Uudelleen tehdä"
 msgid "Welcome Guide"
 msgstr "Tervetuloa-opas"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 210
+#: NEEDS WORK
+msgid "Ask AI Assistant"
+msgstr "Kysy AI-avustajalta"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
 #: NEEDS WORK
 msgid "About TAC"
@@ -1447,10 +1648,10 @@ msgstr "Projektit"
 msgid "Add Paragraph"
 msgstr "Lisää kappale"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 359
+# File: usr/share/tac-writer/ui/main_window.py, line: 409
 #: NEEDS WORK
-msgid "Insert Image (Ctrl+Shift+I)"
-msgstr "Lisää kuva (Ctrl+Shift+I)"
+msgid "Insert Image (Ctrl+Alt+I)"
+msgstr "Lisää kuva (Ctrl+Alt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
@@ -1597,6 +1798,156 @@ msgstr "Kuva lisätty onnistuneesti"
 #: NEEDS WORK
 msgid "Error inserting image"
 msgstr "Virhe kuvan lisäämisessä"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+#: NEEDS WORK
+msgid "Enable the AI assistant in Preferences ▸ AI Assistant."
+msgstr "Ota käyttöön AI-avustaja Asetuksissa ▸ AI-avustaja."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
+#: NEEDS WORK
+msgid "API key"
+msgstr "API-avain"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1138
+#: NEEDS WORK
+#, python-brace-format
+msgid "Configure {items} in Preferences ▸ AI Assistant."
+msgstr "Määritä {items} Asetuksissa ▸ AI-avustaja."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+#: NEEDS WORK
+#, python-brace-format
+msgid "Selected text ({count} characters)"
+msgstr "Valittu teksti ({count} merkkiä)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1162
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current paragraph ({count} characters)"
+msgstr "Nykyinen kappale ({count} merkkiä)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1168
+#: NEEDS WORK
+msgid "Ask the AI Assistant"
+msgstr "Kysy AI-avustajalta"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1169
+#: NEEDS WORK
+msgid "Describe the adjustment you need for this paragraph."
+msgstr "Kuvaile säätöä, jota tarvitset tälle kappaleelle."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+#: NEEDS WORK
+msgid "Send"
+msgstr "Lähetä"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1224
+#: NEEDS WORK
+msgid "Include context"
+msgstr "Sisällytä konteksti"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1254
+#: NEEDS WORK
+msgid "Quick suggestions"
+msgstr "Nopeat ehdotukset"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1316
+#: NEEDS WORK
+#, python-brace-format
+msgid "Matching suggestions: {count}"
+msgstr "Vastaavat ehdotukset: {count}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1319
+#: NEEDS WORK
+msgid "No suggestion found."
+msgstr "Ei ehdotusta löytynyt."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1322
+#: NEEDS WORK
+msgid "Describe your request or choose one of the suggestions."
+msgstr "Kuvaile pyyntösi tai valitse jokin ehdotuksista."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1339
+#: NEEDS WORK
+msgid "Please enter a question for the assistant."
+msgstr "Ole hyvä ja kirjoita kysymys avustajalle."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
+#: NEEDS WORK
+msgid "The AI assistant is processing your request..."
+msgstr "AI-avustaja käsittelee pyyntöäsi..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+#: NEEDS WORK
+msgid "Here is the assistant's suggestion."
+msgstr "Tässä on avustajan ehdotus."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1413
+#: NEEDS WORK
+msgid "Response"
+msgstr "Vastaus"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1431
+#: NEEDS WORK
+msgid "Copy to clipboard"
+msgstr "Kopioi leikepöydälle"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+#: NEEDS WORK
+msgid "Insert into document"
+msgstr "Lisää asiakirjaan"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
+#: NEEDS WORK
+msgid "Additional suggestions"
+msgstr "Lisäehdotuksia"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1481
+#: NEEDS WORK
+msgid "Copy"
+msgstr "Kopioi"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1507
+#: NEEDS WORK
+msgid "Copied to clipboard."
+msgstr "Kopioitu leikepöydälle."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1513
+#: NEEDS WORK
+msgid "Place the cursor inside a paragraph to insert the text."
+msgstr "Aseta kohdistin kappaleen sisään lisätäksesi tekstin."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1520
+#: NEEDS WORK
+msgid "Nothing to insert."
+msgstr "Ei mitään lisättävää."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1531
+#: NEEDS WORK
+msgid "Text inserted into the document."
+msgstr "Teksti, joka on lisätty asiakirjaan."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1556
+# File: usr/share/tac-writer/ui/main_window.py, line: 1563
+#: NEEDS WORK
+msgid "Enter text to search."
+msgstr "Syötä etsittävä teksti."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1559
+#: NEEDS WORK
+msgid "No matches found."
+msgstr "Ei osumia löytynyt."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1574
+#: NEEDS WORK
+msgid "No editable paragraphs available."
+msgstr "Ei muokattavia kappaleita saatavilla."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1598
+#: NEEDS WORK
+msgid "Reached the end of the document."
+msgstr "Saavuttiin asiakirjan loppuun."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1756,6 +2107,12 @@ msgstr "Virhe asetusten valintaikkunan näyttämisessä: {}: {}"
 msgid "Error showing about dialog: {}: {}"
 msgstr "Virhe näytettäessä tietoja: {}: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 583
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error opening AI assistant: {}: {}"
+msgstr "Virhe avattaessa AI-avustajaa: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 493
 #: NEEDS WORK
 #, python-brace-format
@@ -1782,6 +2139,126 @@ msgstr "Virhe sammutettaessa: {}: {}"
 #: NEEDS WORK
 msgid "No config available for spell check debug"
 msgstr "Ei konfiguraatiota saatavilla oikeinkirjoituksen tarkistuksen virheenkorjaukselle"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+#: NEEDS WORK
+msgid "The AI assistant is already processing another request."
+msgstr "AI-avustaja käsittelee jo toista pyyntöä."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "AI assistant error: {error}"
+msgstr "AI-avustajan virhe: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+#: NEEDS WORK
+msgid "Select an AI provider in Preferences ▸ AI Assistant."
+msgstr "Valitse AI-toimittaja Asetuksista ▸ AI-avustaja."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Contexto do texto atual:\n"
+"{context}"
+msgstr ""
+"Nykyisen tekstin konteksti:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 150
+#: NEEDS WORK
+#, python-brace-format
+msgid "Provider '{provider}' is not supported."
+msgstr "Palveluntarjoajaa '{provider}' ei tueta."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
+#: NEEDS WORK
+msgid "Configure the Groq API key in Preferences."
+msgstr "Määritä Groq API -avain asetuksissa."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Groq: {error}"
+msgstr "Epäonnistui yhteyden muodostaminen Groq: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
+#: NEEDS WORK
+#, python-brace-format
+msgid "Groq responded with HTTP {status}: {detail}"
+msgstr "Groq vastasi HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 186
+#: NEEDS WORK
+msgid "Configure the Gemini API key in Preferences."
+msgstr "Määritä Gemini API -avain asetuksissa."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 204
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Gemini: {error}"
+msgstr "Epäonnistui yhteyden muodostaminen Geminiin: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Gemini responded with HTTP {status}: {detail}"
+msgstr "Gemini vastasi HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 217
+#: NEEDS WORK
+msgid "Gemini returned an invalid JSON response."
+msgstr "Gemini palautti virheellisen JSON-vastauksen."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 233
+#: NEEDS WORK
+msgid "Gemini did not return any usable content."
+msgstr "Gemini ei palannut mitään käyttökelpoista sisältöä."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 240
+#: NEEDS WORK
+msgid "Configure the OpenRouter API key in Preferences."
+msgstr "Määritä OpenRouter API -avain asetuksissa."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact OpenRouter: {error}"
+msgstr "Epäonnistui yhteyden muodostaminen OpenRouteriin: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 274
+#: NEEDS WORK
+msgid "AI provider returned an invalid JSON response."
+msgstr "AI-toimittaja palautti virheellisen JSON-vastauksen."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 278
+#: NEEDS WORK
+msgid "The AI provider returned an empty response."
+msgstr "AI-toimittaja palautti tyhjän vastauksen."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 290
+#: NEEDS WORK
+msgid "The AI provider did not return any usable content."
+msgstr "AI-toimittaja ei palauttanut mitään käyttökelpoista sisältöä."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 422
+#: NEEDS WORK
+msgid "Unknown error."
+msgstr "Tuntematon virhe."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 426
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}"
+msgstr "OpenRouter vastasi HTTP {status}: {message}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
+msgstr "OpenRouter vastasi HTTP {status}: {message}{detail}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

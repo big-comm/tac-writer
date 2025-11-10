@@ -523,6 +523,102 @@ msgstr "הצג מספרי שורות"
 msgid "Display line numbers in the editor"
 msgstr "הצג מספרי שורות בעורך"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 717
+# File: usr/share/tac-writer/ui/main_window.py, line: 1380
+#: NEEDS WORK
+msgid "AI Assistant"
+msgstr "עוזר בינה מלאכותית"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 722
+#: NEEDS WORK
+msgid "Assistant Settings"
+msgstr "הגדרות העוזר"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Configure the provider and credentials used to generate suggestions."
+msgstr "הגדר את הספק ואת האישורים המשמשים ליצירת הצעות."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 729
+#: NEEDS WORK
+msgid "Enable AI Assistant"
+msgstr "אפשר עוזר בינה מלאכותית"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 730
+#: NEEDS WORK
+msgid "Allow prompts to use an external provider (Ctrl+Shift+I)."
+msgstr "אפשר להפעיל הנחיות להשתמש בספק חיצוני (Ctrl+Shift+I)."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 736
+# File: usr/share/tac-writer/ui/main_window.py, line: 1133
+#: NEEDS WORK
+msgid "Provider"
+msgstr "ספק"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 748
+#: NEEDS WORK
+msgid "Model Identifier"
+msgstr "מזהה מודל"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 749
+#: NEEDS WORK
+msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
+msgstr "דוגמאות: לימה-3.1-8b-מיידי, ג'מיני-2.5-פלאש."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 752
+#: NEEDS WORK
+msgid "llama-3.1-8b-instant"
+msgstr "למה-3.1-8b-מיידי"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 759
+#: NEEDS WORK
+msgid "API Key"
+msgstr "מפתח API"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+msgid "Stored locally and used to authenticate requests."
+msgstr "מאוחסן מקומית ומשמש לאימות בקשות."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+#: NEEDS WORK
+msgid "Paste your API key"
+msgstr "הדבק את מפתח ה-API שלך"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "Site URL (optional)"
+msgstr "כתובת אתר (אופציונלי)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+msgid "Used as HTTP Referer header for OpenRouter rankings."
+msgstr "שימש ככותרת Referer של HTTP עבור דירוגי OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 777
+#: NEEDS WORK
+msgid "https://example.com"
+msgstr "https://example.com"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 789
+#: NEEDS WORK
+msgid "Site title (optional)"
+msgstr "כותרת האתר (אופציונלי)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 790
+#: NEEDS WORK
+msgid "Sent via X-Title header for OpenRouter rankings."
+msgstr "נשלח באמצעות כותרת X-Title עבור דירוגי OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "My Project"
+msgstr "הפרויקט שלי"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
 #: NEEDS WORK
 #, python-brace-format
@@ -564,6 +660,51 @@ msgstr "שגיאה בשינוי עטיפת המילים: {}"
 #, python-brace-format
 msgid "Error changing line numbers: {}"
 msgstr "שגיאה בשינוי מספרי שורות: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 938
+#: NEEDS WORK
+msgid "Model identifier (for example: llama-3.1-8b-instant)."
+msgstr "מזהה מודל (למשל: llama-3.1-8b-instant)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Groq API key."
+msgstr "מפתח API של Groq."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+#: NEEDS WORK
+msgid "Gemini model identifier (for example: gemini-2.5-flash)."
+msgstr "מזהה מודל ג'מיני (למשל: gemini-2.5-flash)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 948
+#: NEEDS WORK
+msgid "Google AI Studio API key."
+msgstr "מפתח API של Google AI Studio."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+#: NEEDS WORK
+msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
+msgstr "מזהה מודל OpenRouter (למשל: openrouter/polaris-alpha)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 956
+#: NEEDS WORK
+msgid "OpenRouter API key."
+msgstr "מפתח API של OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 960
+#: NEEDS WORK
+msgid "model-name"
+msgstr "שם-מודל"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 962
+#: NEEDS WORK
+msgid "Model identifier required by the selected provider."
+msgstr "מזהה מודל נדרש על ידי הספק הנבחר."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 964
+#: NEEDS WORK
+msgid "API key used to authenticate requests."
+msgstr "מפתח API המשמש לאימות בקשות."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 833
 #: NEEDS WORK
@@ -1384,6 +1525,46 @@ msgstr "הוסף הערת שוליים"
 msgid "Enter footnote text..."
 msgstr "הזן טקסט הערה שוליים..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 25
+#: NEEDS WORK
+msgid "Melhore este parágrafo mantendo o mesmo argumento."
+msgstr "שפר את הפסקה הזו תוך שמירה על אותו טיעון."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 26
+#: NEEDS WORK
+msgid "Sugira uma introdução mais envolvente para este tema."
+msgstr "הצע הקדמה יותר מעורבת לנושא הזה."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 27
+#: NEEDS WORK
+msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
+msgstr "שכתב את הקטע למטה בטון אקדמי יותר."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 28
+#: NEEDS WORK
+msgid "Resuma o parágrafo selecionado em até três frases objetivas."
+msgstr "סכם את הפסקה שנבחרה בשלוש משפטים מדויקים לכל היותר."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 29
+#: NEEDS WORK
+msgid "Quais referências poderiam fortalecer esta ideia?"
+msgstr "אילו הפניות יכולות לחזק רעיון זה?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 30
+#: NEEDS WORK
+msgid "Crie uma transição suave para o próximo parágrafo."
+msgstr "צור מעבר חלק לפסקה הבאה."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 31
+#: NEEDS WORK
+msgid "Como posso encerrar esta conclusão com mais impacto?"
+msgstr "איך אני יכול לסיים את הסיכום הזה עם יותר השפעה?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 32
+#: NEEDS WORK
+msgid "Sugira perguntas que eu possa responder na sequência."
+msgstr "הצע שאלות שאני יכול לענות עליהן ברצף."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1398,6 +1579,21 @@ msgstr "פרויקט חדש (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "שמור פרויקט (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 158
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "שאל את עוזר ה-AI (Ctrl+Shift+I)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 165
+#: NEEDS WORK
+msgid "Search..."
+msgstr "חפש..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 172
+#: NEEDS WORK
+msgid "Find next occurrence"
+msgstr "מצא את ההתרחשות הבאה"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
 #: NEEDS WORK
@@ -1431,6 +1627,11 @@ msgstr "שחזר"
 msgid "Welcome Guide"
 msgstr "מדריך ברוך הבא"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 210
+#: NEEDS WORK
+msgid "Ask AI Assistant"
+msgstr "שאל את העוזר הבינה המלאכותית"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
 #: NEEDS WORK
 msgid "About TAC"
@@ -1446,10 +1647,10 @@ msgstr "פרויקטים"
 msgid "Add Paragraph"
 msgstr "הוסף פסקה"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 359
+# File: usr/share/tac-writer/ui/main_window.py, line: 409
 #: NEEDS WORK
-msgid "Insert Image (Ctrl+Shift+I)"
-msgstr "הכנס תמונה (Ctrl+Shift+I)"
+msgid "Insert Image (Ctrl+Alt+I)"
+msgstr "הכנס תמונה (Ctrl+Alt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
@@ -1596,6 +1797,156 @@ msgstr "התמונה הוזנה בהצלחה"
 #: NEEDS WORK
 msgid "Error inserting image"
 msgstr "שגיאה בהכנסת תמונה"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+#: NEEDS WORK
+msgid "Enable the AI assistant in Preferences ▸ AI Assistant."
+msgstr "אפשר את העוזר הווירטואלי בהעדפות ▸ עוזר וירטואלי."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
+#: NEEDS WORK
+msgid "API key"
+msgstr "מפתח API"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1138
+#: NEEDS WORK
+#, python-brace-format
+msgid "Configure {items} in Preferences ▸ AI Assistant."
+msgstr "הגדר {items} בהעדפות ▸ עוזר AI."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+#: NEEDS WORK
+#, python-brace-format
+msgid "Selected text ({count} characters)"
+msgstr "טקסט שנבחר ({count} תווים)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1162
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current paragraph ({count} characters)"
+msgstr "פסקה נוכחית ({count} תווים)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1168
+#: NEEDS WORK
+msgid "Ask the AI Assistant"
+msgstr "שאל את העוזר הבינה המלאכותית"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1169
+#: NEEDS WORK
+msgid "Describe the adjustment you need for this paragraph."
+msgstr "תאר את ההתאמה שאתה צריך לפסקה זו."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+#: NEEDS WORK
+msgid "Send"
+msgstr "שלח"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1224
+#: NEEDS WORK
+msgid "Include context"
+msgstr "מפתח (שמשמש להקשר): כלול הקשר"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1254
+#: NEEDS WORK
+msgid "Quick suggestions"
+msgstr "הצעות מהירות"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1316
+#: NEEDS WORK
+#, python-brace-format
+msgid "Matching suggestions: {count}"
+msgstr "הצעות תואמות: {count}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1319
+#: NEEDS WORK
+msgid "No suggestion found."
+msgstr "לא נמצאה הצעה."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1322
+#: NEEDS WORK
+msgid "Describe your request or choose one of the suggestions."
+msgstr "תאר את הבקשה שלך או בחר אחת מההצעות."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1339
+#: NEEDS WORK
+msgid "Please enter a question for the assistant."
+msgstr "אנא הזן שאלה עבור העוזר."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
+#: NEEDS WORK
+msgid "The AI assistant is processing your request..."
+msgstr "העוזר הווירטואלי מעבד את הבקשה שלך..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+#: NEEDS WORK
+msgid "Here is the assistant's suggestion."
+msgstr "הנה ההמלצה של העוזר."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1413
+#: NEEDS WORK
+msgid "Response"
+msgstr "תגובה"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1431
+#: NEEDS WORK
+msgid "Copy to clipboard"
+msgstr "העתק ללוח שנה"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+#: NEEDS WORK
+msgid "Insert into document"
+msgstr "הכנס למסמך"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
+#: NEEDS WORK
+msgid "Additional suggestions"
+msgstr "הצעות נוספות"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1481
+#: NEEDS WORK
+msgid "Copy"
+msgstr "העתק"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1507
+#: NEEDS WORK
+msgid "Copied to clipboard."
+msgstr "הועתק ללוח."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1513
+#: NEEDS WORK
+msgid "Place the cursor inside a paragraph to insert the text."
+msgstr "מקם את הסמן בתוך פסקה כדי להכניס את הטקסט."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1520
+#: NEEDS WORK
+msgid "Nothing to insert."
+msgstr "אין מה להכניס."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1531
+#: NEEDS WORK
+msgid "Text inserted into the document."
+msgstr "טקסט שהוזן למסמך."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1556
+# File: usr/share/tac-writer/ui/main_window.py, line: 1563
+#: NEEDS WORK
+msgid "Enter text to search."
+msgstr "הזן טקסט לחיפוש."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1559
+#: NEEDS WORK
+msgid "No matches found."
+msgstr "לא נמצאו תוצאות."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1574
+#: NEEDS WORK
+msgid "No editable paragraphs available."
+msgstr "אין פסקאות ניתנות לעריכה."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1598
+#: NEEDS WORK
+msgid "Reached the end of the document."
+msgstr "הגעת לסוף המסמך."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1753,6 +2104,12 @@ msgstr "שגיאה בהצגת דיאלוג העדפות: {}: {}"
 msgid "Error showing about dialog: {}: {}"
 msgstr "שגיאה בהצגת דיאלוג מידע: {}: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 583
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error opening AI assistant: {}: {}"
+msgstr "שגיאה בפתיחת עוזר ה-AI: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 493
 #: NEEDS WORK
 #, python-brace-format
@@ -1779,6 +2136,126 @@ msgstr "שגיאה במהלך כיבוי: {}: {}"
 #: NEEDS WORK
 msgid "No config available for spell check debug"
 msgstr "אין קונפיגורציה זמינה עבור דיבוג בדיקת איות"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+#: NEEDS WORK
+msgid "The AI assistant is already processing another request."
+msgstr "העוזר הווירטואלי כבר מעבד בקשה אחרת."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "AI assistant error: {error}"
+msgstr "שגיאת עוזר ה-AI: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+#: NEEDS WORK
+msgid "Select an AI provider in Preferences ▸ AI Assistant."
+msgstr "בחר ספק AI בהעדפות ▸ עוזר AI."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Contexto do texto atual:\n"
+"{context}"
+msgstr ""
+"הקשר של הטקסט הנוכחי:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 150
+#: NEEDS WORK
+#, python-brace-format
+msgid "Provider '{provider}' is not supported."
+msgstr "ספק '{provider}' אינו נתמך."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
+#: NEEDS WORK
+msgid "Configure the Groq API key in Preferences."
+msgstr "הגדר את מפתח ה-API של Groq בהעדפות."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Groq: {error}"
+msgstr "נכשל בקשר עם Groq: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
+#: NEEDS WORK
+#, python-brace-format
+msgid "Groq responded with HTTP {status}: {detail}"
+msgstr "גרוק השיב עם HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 186
+#: NEEDS WORK
+msgid "Configure the Gemini API key in Preferences."
+msgstr "הגדר את מפתח ה-API של ג'מיני בהעדפות."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 204
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Gemini: {error}"
+msgstr "כישלון בקשר עם גמיני: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Gemini responded with HTTP {status}: {detail}"
+msgstr "ג'מיני השיב עם HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 217
+#: NEEDS WORK
+msgid "Gemini returned an invalid JSON response."
+msgstr "ג'מיני החזיר תגובה JSON לא תקינה."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 233
+#: NEEDS WORK
+msgid "Gemini did not return any usable content."
+msgstr "גמיני לא החזיר תוכן שניתן להשתמש בו."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 240
+#: NEEDS WORK
+msgid "Configure the OpenRouter API key in Preferences."
+msgstr "הגדר את מפתח ה-API של OpenRouter בהעדפות."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact OpenRouter: {error}"
+msgstr "כישלון בקשר עם OpenRouter: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 274
+#: NEEDS WORK
+msgid "AI provider returned an invalid JSON response."
+msgstr "ספק ה-AI החזיר תגובה JSON לא תקינה."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 278
+#: NEEDS WORK
+msgid "The AI provider returned an empty response."
+msgstr "ספק ה-AI החזיר תגובה ריקה."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 290
+#: NEEDS WORK
+msgid "The AI provider did not return any usable content."
+msgstr "ספק ה-AI לא החזיר שום תוכן שניתן להשתמש בו."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 422
+#: NEEDS WORK
+msgid "Unknown error."
+msgstr "שגיאה לא ידועה."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 426
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}"
+msgstr "OpenRouter השיב עם HTTP {status}: {message}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
+msgstr "OpenRouter השיב עם HTTP {status}: {message}{detail}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

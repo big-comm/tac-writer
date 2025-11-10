@@ -523,6 +523,102 @@ msgstr "Afișează numerele de linie"
 msgid "Display line numbers in the editor"
 msgstr "Afișează numerele de linie în editor"
 # 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 717
+# File: usr/share/tac-writer/ui/main_window.py, line: 1380
+#: NEEDS WORK
+msgid "AI Assistant"
+msgstr "Asistent AI"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 722
+#: NEEDS WORK
+msgid "Assistant Settings"
+msgstr "Setări Asistent"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 724
+#: NEEDS WORK
+msgid "Configure the provider and credentials used to generate suggestions."
+msgstr "Configurează furnizorul și acreditivele utilizate pentru a genera sugestii."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 729
+#: NEEDS WORK
+msgid "Enable AI Assistant"
+msgstr "Activează Asistentul AI"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 730
+#: NEEDS WORK
+msgid "Allow prompts to use an external provider (Ctrl+Shift+I)."
+msgstr "Permite utilizarea unui furnizor extern pentru sugestii (Ctrl+Shift+I)."
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 736
+# File: usr/share/tac-writer/ui/main_window.py, line: 1133
+#: NEEDS WORK
+msgid "Provider"
+msgstr "Furnizor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 748
+#: NEEDS WORK
+msgid "Model Identifier"
+msgstr "Identificator model"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 749
+#: NEEDS WORK
+msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
+msgstr "exemplu: llama-3.1-8b-instant, gemini-2.5-flash."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 752
+#: NEEDS WORK
+msgid "llama-3.1-8b-instant"
+msgstr "llama-3.1-8b-instant"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 759
+#: NEEDS WORK
+msgid "API Key"
+msgstr "Cheie API"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 760
+#: NEEDS WORK
+msgid "Stored locally and used to authenticate requests."
+msgstr "Stocat local și folosit pentru a autentifica cererile."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 763
+#: NEEDS WORK
+msgid "Paste your API key"
+msgstr "Introduceți cheia API-ului dvs."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 773
+#: NEEDS WORK
+msgid "Site URL (optional)"
+msgstr "URL-ul site-ului (opțional)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 774
+#: NEEDS WORK
+msgid "Used as HTTP Referer header for OpenRouter rankings."
+msgstr "Utilizat ca antet HTTP Referer pentru clasamentele OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 777
+#: NEEDS WORK
+msgid "https://example.com"
+msgstr "https://example.com"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 789
+#: NEEDS WORK
+msgid "Site title (optional)"
+msgstr "Titlu site (opțional)"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 790
+#: NEEDS WORK
+msgid "Sent via X-Title header for OpenRouter rankings."
+msgstr "Trimis prin antetul X-Title pentru clasamentele OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 793
+#: NEEDS WORK
+msgid "My Project"
+msgstr "Proiectul Meu"
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
 #: NEEDS WORK
 #, python-brace-format
@@ -564,6 +660,51 @@ msgstr "Eroare la schimbarea înfășurării cuvintelor: {}"
 #, python-brace-format
 msgid "Error changing line numbers: {}"
 msgstr "Eroare la schimbarea numerelor de linie: {}"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 938
+#: NEEDS WORK
+msgid "Model identifier (for example: llama-3.1-8b-instant)."
+msgstr "Identificator de model (de exemplu: llama-3.1-8b-instant)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 940
+#: NEEDS WORK
+msgid "Groq API key."
+msgstr "Cheia API Groq."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 946
+#: NEEDS WORK
+msgid "Gemini model identifier (for example: gemini-2.5-flash)."
+msgstr "Identificatorul modelului Gemini (de exemplu: gemini-2.5-flash)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 948
+#: NEEDS WORK
+msgid "Google AI Studio API key."
+msgstr "Cheia API Google AI Studio."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+#: NEEDS WORK
+msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
+msgstr "Identificatorul modelului OpenRouter (de exemplu: openrouter/polaris-alpha)."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 956
+#: NEEDS WORK
+msgid "OpenRouter API key."
+msgstr "Cheia API OpenRouter."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 960
+#: NEEDS WORK
+msgid "model-name"
+msgstr "nume-model"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 962
+#: NEEDS WORK
+msgid "Model identifier required by the selected provider."
+msgstr "Identificatorul modelului este necesar de către furnizorul selectat."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 964
+#: NEEDS WORK
+msgid "API key used to authenticate requests."
+msgstr "Cheie API utilizată pentru a autentifica cererile."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 833
 #: NEEDS WORK
@@ -1387,6 +1528,46 @@ msgstr "Adaugă Notă de Subsol"
 msgid "Enter footnote text..."
 msgstr "Introduceți textul notei de subsol..."
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 25
+#: NEEDS WORK
+msgid "Melhore este parágrafo mantendo o mesmo argumento."
+msgstr "Îmbunătățește acest paragraf menținând aceeași argumentație."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 26
+#: NEEDS WORK
+msgid "Sugira uma introdução mais envolvente para este tema."
+msgstr "Sugerați o introducere mai captivantă pentru acest subiect."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 27
+#: NEEDS WORK
+msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
+msgstr "Rescrieți fragmentul de mai jos cu un ton mai academic."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 28
+#: NEEDS WORK
+msgid "Resuma o parágrafo selecionado em até três frases objetivas."
+msgstr "Rezumați paragraful selectat în maximum trei propoziții obiective."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 29
+#: NEEDS WORK
+msgid "Quais referências poderiam fortalecer esta ideia?"
+msgstr "Ce referințe ar putea întări această idee?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 30
+#: NEEDS WORK
+msgid "Crie uma transição suave para o próximo parágrafo."
+msgstr "Creeți o tranziție lină către următorul paragraf."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 31
+#: NEEDS WORK
+msgid "Como posso encerrar esta conclusão com mais impacto?"
+msgstr "Cum pot încheia această concluzie cu mai mult impact?"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 32
+#: NEEDS WORK
+msgid "Sugira perguntas que eu possa responder na sequência."
+msgstr "Sugerați întrebări la care pot răspunde în continuare."
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1401,6 +1582,21 @@ msgstr "Proiect Nou (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Salvează Proiectul (Ctrl+S)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 158
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "Întreabă Asistentul AI (Ctrl+Shift+I)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 165
+#: NEEDS WORK
+msgid "Search..."
+msgstr "Caută..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 172
+#: NEEDS WORK
+msgid "Find next occurrence"
+msgstr "Găsește următoarea apariție"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 132
 #: NEEDS WORK
@@ -1434,6 +1630,11 @@ msgstr "Refă"
 msgid "Welcome Guide"
 msgstr "Ghid de bun venit"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 210
+#: NEEDS WORK
+msgid "Ask AI Assistant"
+msgstr "Întreabă Asistentul AI"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 160
 #: NEEDS WORK
 msgid "About TAC"
@@ -1449,10 +1650,10 @@ msgstr "Proiecte"
 msgid "Add Paragraph"
 msgstr "Adaugă paragraf"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 359
+# File: usr/share/tac-writer/ui/main_window.py, line: 409
 #: NEEDS WORK
-msgid "Insert Image (Ctrl+Shift+I)"
-msgstr "Inserare imagine (Ctrl+Shift+I)"
+msgid "Insert Image (Ctrl+Alt+I)"
+msgstr "Inserare imagine (Ctrl+Alt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
@@ -1599,6 +1800,156 @@ msgstr "Imagine inserată cu succes"
 #: NEEDS WORK
 msgid "Error inserting image"
 msgstr "Eroare la inserarea imaginii"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+#: NEEDS WORK
+msgid "Enable the AI assistant in Preferences ▸ AI Assistant."
+msgstr "Activați asistentul AI în Preferințe ▸ Asistent AI."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1134
+#: NEEDS WORK
+msgid "API key"
+msgstr "cheie API"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1138
+#: NEEDS WORK
+#, python-brace-format
+msgid "Configure {items} in Preferences ▸ AI Assistant."
+msgstr "Configurează {items} în Preferințe ▸ Asistent AI."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+#: NEEDS WORK
+#, python-brace-format
+msgid "Selected text ({count} characters)"
+msgstr "Text selectat ({count} caractere)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1162
+#: NEEDS WORK
+#, python-brace-format
+msgid "Current paragraph ({count} characters)"
+msgstr "Paragraful curent ({count} caractere)"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1168
+#: NEEDS WORK
+msgid "Ask the AI Assistant"
+msgstr "Întreabă Asistentul AI"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1169
+#: NEEDS WORK
+msgid "Describe the adjustment you need for this paragraph."
+msgstr "Descrie ajustarea de care ai nevoie pentru acest paragraf."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+#: NEEDS WORK
+msgid "Send"
+msgstr "Trimite"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1224
+#: NEEDS WORK
+msgid "Include context"
+msgstr "Include context"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1254
+#: NEEDS WORK
+msgid "Quick suggestions"
+msgstr "Sugestii rapide"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1316
+#: NEEDS WORK
+#, python-brace-format
+msgid "Matching suggestions: {count}"
+msgstr "Sugestii de potrivire: {count}"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1319
+#: NEEDS WORK
+msgid "No suggestion found."
+msgstr "Nici o sugestie găsită."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1322
+#: NEEDS WORK
+msgid "Describe your request or choose one of the suggestions."
+msgstr "Descrie cererea ta sau alege una dintre sugestii."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1339
+#: NEEDS WORK
+msgid "Please enter a question for the assistant."
+msgstr "Vă rugăm să introduceți o întrebare pentru asistent."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
+#: NEEDS WORK
+msgid "The AI assistant is processing your request..."
+msgstr "Asistentul AI procesează cererea dumneavoastră..."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+#: NEEDS WORK
+msgid "Here is the assistant's suggestion."
+msgstr "Iată sugestia asistentului."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1413
+#: NEEDS WORK
+msgid "Response"
+msgstr "Răspuns"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1431
+#: NEEDS WORK
+msgid "Copy to clipboard"
+msgstr "Copiază în clipboard"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1435
+#: NEEDS WORK
+msgid "Insert into document"
+msgstr "Inserare în document"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
+#: NEEDS WORK
+msgid "Additional suggestions"
+msgstr "Sugestii suplimentare"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1481
+#: NEEDS WORK
+msgid "Copy"
+msgstr "Copiază"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1507
+#: NEEDS WORK
+msgid "Copied to clipboard."
+msgstr "Copiat în clipboard."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1513
+#: NEEDS WORK
+msgid "Place the cursor inside a paragraph to insert the text."
+msgstr "Plasați cursorul în interiorul unui paragraf pentru a insera textul."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1520
+#: NEEDS WORK
+msgid "Nothing to insert."
+msgstr "Nimic de inserat."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1531
+#: NEEDS WORK
+msgid "Text inserted into the document."
+msgstr "Text inserat în document."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1556
+# File: usr/share/tac-writer/ui/main_window.py, line: 1563
+#: NEEDS WORK
+msgid "Enter text to search."
+msgstr "Introduceți textul pentru a căuta."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1559
+#: NEEDS WORK
+msgid "No matches found."
+msgstr "Nu au fost găsite potriviri."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1574
+#: NEEDS WORK
+msgid "No editable paragraphs available."
+msgstr "Nu sunt disponibile paragrafe editabile."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1598
+#: NEEDS WORK
+msgid "Reached the end of the document."
+msgstr "Ați ajuns la sfârșitul documentului."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 807
 #: NEEDS WORK
@@ -1756,6 +2107,12 @@ msgstr "Eroare la afișarea dialogului de preferințe: {}: {}"
 msgid "Error showing about dialog: {}: {}"
 msgstr "Eroare la afișarea dialogului despre: {}: {}"
 # 
+# File: usr/share/tac-writer/application.py, line: 583
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error opening AI assistant: {}: {}"
+msgstr "Eroare la deschiderea asistentului AI: {}: {}"
+# 
 # File: usr/share/tac-writer/application.py, line: 493
 #: NEEDS WORK
 #, python-brace-format
@@ -1782,6 +2139,126 @@ msgstr "Eroare în timpul închiderii: {}: {}"
 #: NEEDS WORK
 msgid "No config available for spell check debug"
 msgstr "Nu există configurație disponibilă pentru depanarea corectării ortografice."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 67
+#: NEEDS WORK
+msgid "The AI assistant is already processing another request."
+msgstr "Asistentul AI procesează deja o altă solicitare."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 95
+#: NEEDS WORK
+#, python-brace-format
+msgid "AI assistant error: {error}"
+msgstr "Eroare asistent AI: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 111
+#: NEEDS WORK
+msgid "Select an AI provider in Preferences ▸ AI Assistant."
+msgstr "Selectați un furnizor AI în Preferințe ▸ Asistent AI."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 130
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"Contexto do texto atual:\n"
+"{context}"
+msgstr ""
+"Contextul textului actual:  \n"
+"{context}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 150
+#: NEEDS WORK
+#, python-brace-format
+msgid "Provider '{provider}' is not supported."
+msgstr "Furnizorul '{provider}' nu este acceptat."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
+#: NEEDS WORK
+msgid "Configure the Groq API key in Preferences."
+msgstr "Configurează cheia API Groq în Preferințe."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Groq: {error}"
+msgstr "A eșuat contactarea Groq: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
+#: NEEDS WORK
+#, python-brace-format
+msgid "Groq responded with HTTP {status}: {detail}"
+msgstr "Groq a răspuns cu HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 186
+#: NEEDS WORK
+msgid "Configure the Gemini API key in Preferences."
+msgstr "Configurează cheia API Gemini în Preferințe."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 204
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact Gemini: {error}"
+msgstr "Eșec la contactarea Gemini: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 209
+#: NEEDS WORK
+#, python-brace-format
+msgid "Gemini responded with HTTP {status}: {detail}"
+msgstr "Gemini a răspuns cu HTTP {status}: {detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 217
+#: NEEDS WORK
+msgid "Gemini returned an invalid JSON response."
+msgstr "Gemini a returnat un răspuns JSON invalid."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 233
+#: NEEDS WORK
+msgid "Gemini did not return any usable content."
+msgstr "Gemini nu a returnat niciun conținut utilizabil."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 240
+#: NEEDS WORK
+msgid "Configure the OpenRouter API key in Preferences."
+msgstr "Configurează cheia API OpenRouter în Preferințe."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 262
+#: NEEDS WORK
+#, python-brace-format
+msgid "Failed to contact OpenRouter: {error}"
+msgstr "Nu s-a putut contacta OpenRouter: {error}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 274
+#: NEEDS WORK
+msgid "AI provider returned an invalid JSON response."
+msgstr "Furnizorul de AI a returnat un răspuns JSON invalid."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 278
+#: NEEDS WORK
+msgid "The AI provider returned an empty response."
+msgstr "Furnizorul de AI a returnat un răspuns gol."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 290
+#: NEEDS WORK
+msgid "The AI provider did not return any usable content."
+msgstr "Furnizorul de AI nu a returnat niciun conținut utilizabil."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 422
+#: NEEDS WORK
+msgid "Unknown error."
+msgstr "Eroare necunoscută."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 426
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 432
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}"
+msgstr "OpenRouter a răspuns cu HTTP {status}: {message}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 446
+#: NEEDS WORK
+#, python-brace-format
+msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
+msgstr "OpenRouter a răspuns cu HTTP {status}: {message}{detail}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK
