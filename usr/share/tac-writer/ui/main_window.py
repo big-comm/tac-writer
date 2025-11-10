@@ -8,6 +8,7 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
 from typing import Dict, List, Optional
+import re
 
 from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
@@ -56,6 +57,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         # AI assistant
         self.ai_assistant = WritingAiAssistant(self, self.config)
+        self._ai_context_target: Optional[dict] = None
 
         # Search state
         self.search_entry: Optional[Gtk.SearchEntry] = None
@@ -1146,7 +1148,11 @@ class MainWindow(Adw.ApplicationWindow):
         self._show_ai_prompt_dialog(context_text, context_label)
 
     def _collect_ai_context(self) -> tuple[str, str]:
+        self._ai_context_target = None
         text_view = self._get_focused_text_view()
+        if not text_view:
+            views = self._get_paragraph_textviews()
+            text_view = views[0] if views else None
         if not text_view:
             return "", ""
 
@@ -1155,11 +1161,20 @@ class MainWindow(Adw.ApplicationWindow):
             start, end = buffer.get_selection_bounds()
             text = buffer.get_text(start, end, True)
             label = _("Selected text ({count} characters)").format(count=len(text))
+            start_offset = start.get_offset()
+            end_offset = end.get_offset()
         else:
             start = buffer.get_start_iter()
             end = buffer.get_end_iter()
             text = buffer.get_text(start, end, True)
             label = _("Current paragraph ({count} characters)").format(count=len(text))
+            start_offset = 0
+            end_offset = end.get_offset()
+        self._ai_context_target = {
+            'text_view': text_view,
+            'start': start_offset,
+            'end': end_offset,
+        }
         return text.strip(), label
 
     def _show_ai_prompt_dialog(self, context_text: str, context_label: str) -> None:
@@ -1432,15 +1447,24 @@ class MainWindow(Adw.ApplicationWindow):
         copy_button.connect("clicked", lambda *_a: self._copy_to_clipboard(reply))
         actions_row.append(copy_button)
 
-        insert_button = Gtk.Button(label=_("Insert into document"))
-        insert_button.add_css_class("suggested-action")
+        insert_button = Gtk.Button(label=_("Insert at cursor"))
         insert_button.connect("clicked", lambda *_a: self._insert_text_into_editor(reply))
         actions_row.append(insert_button)
 
         reply_box.append(actions_row)
 
+        apply_button = Gtk.Button(label=_("Apply correction"))
+        apply_button.add_css_class("suggested-action")
+        apply_button.set_sensitive(self._ai_context_target is not None)
+        apply_button.connect(
+            "clicked",
+            lambda *_a: self._apply_ai_correction(reply),
+        )
+        actions_row.append(apply_button)
+
         if suggestions:
             suggestions_box = add_section(_("Additional suggestions"))
+            suggestions_box.add_css_class("card")
             for suggestion in suggestions:
                 text = suggestion.get("text", "").strip()
                 if not text:
@@ -1448,11 +1472,9 @@ class MainWindow(Adw.ApplicationWindow):
                 title = suggestion.get("title", "").strip()
                 description = suggestion.get("description", "").strip()
 
-                row_frame = Gtk.Frame()
-                row_frame.add_css_class("card")
                 row_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
-                row_box.set_margin_top(10)
-                row_box.set_margin_bottom(10)
+                row_box.set_margin_top(8)
+                row_box.set_margin_bottom(8)
                 row_box.set_margin_start(12)
                 row_box.set_margin_end(12)
 
@@ -1477,22 +1499,7 @@ class MainWindow(Adw.ApplicationWindow):
                     desc_label.add_css_class("dim-label")
                     row_box.append(desc_label)
 
-                buttons_row = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
-                copy_btn = Gtk.Button(label=_("Copy"))
-                copy_btn.connect("clicked", lambda _b, value=text: self._copy_to_clipboard(value))
-                buttons_row.append(copy_btn)
-
-                insert_btn = Gtk.Button(label=_("Insert"))
-                insert_btn.add_css_class("suggested-action")
-                insert_btn.connect(
-                    "clicked",
-                    lambda _b, value=text: self._insert_text_into_editor(value),
-                )
-                buttons_row.append(insert_btn)
-                row_box.append(buttons_row)
-
-                row_frame.set_child(row_box)
-                suggestions_box.append(row_frame)
+                suggestions_box.append(row_box)
 
         dialog.set_extra_child(content_box)
         dialog.connect("response", lambda dlg, _resp: dlg.destroy())
@@ -1515,7 +1522,7 @@ class MainWindow(Adw.ApplicationWindow):
             )
             return False
 
-        cleaned = text.strip()
+        cleaned = self._extract_ai_output(text)
         if not cleaned:
             self._show_toast(_("Nothing to insert."))
             return False
@@ -1530,6 +1537,93 @@ class MainWindow(Adw.ApplicationWindow):
         buffer.insert(iter_, cleaned + "\n\n")
         self._show_toast(_("Text inserted into the document."))
         return True
+
+    def _apply_ai_correction(self, text: str) -> None:
+        target = getattr(self, "_ai_context_target", None)
+        if not target:
+            self._show_toast(
+                _("No paragraph context available. Try inserting at the cursor."),
+                Adw.ToastPriority.HIGH,
+            )
+            return
+
+        cleaned = self._extract_ai_output(text)
+        if not cleaned:
+            self._show_toast(_("Nothing to insert."))
+            return
+
+        text_view = target.get("text_view")
+        if not text_view:
+            self._show_toast(
+                _("Could not determine the original paragraph."),
+                Adw.ToastPriority.HIGH,
+            )
+            return
+
+        buffer = text_view.get_buffer()
+        start_iter = buffer.get_iter_at_offset(target.get("start", 0))
+        end_iter = buffer.get_iter_at_offset(target.get("end", buffer.get_char_count()))
+
+        buffer.begin_user_action()
+        buffer.delete(start_iter, end_iter)
+        buffer.insert(start_iter, cleaned + "\n\n")
+        buffer.end_user_action()
+
+        self._show_toast(_("Paragraph updated with AI suggestion."))
+        self._ai_context_target = None
+
+    def _extract_ai_output(self, text: str) -> str:
+        cleaned = (text or "").strip()
+        if not cleaned:
+            return ""
+
+        lowered = cleaned.casefold()
+        prefixes = [
+            "o texto corrigido é",
+            "o texto corrigido está",
+            "o texto corrigido esta",
+            "texto corrigido é",
+            "texto corrigido",
+            "texto revisado",
+            "versão corrigida",
+            "versão revisada",
+            "correção",
+            "correcao",
+            "a versão corrigida da frase",
+            "a versao corrigida da frase",
+        ]
+        for prefix in prefixes:
+            if lowered.startswith(prefix):
+                cleaned = cleaned[len(prefix):].lstrip(" :.-–—\n\"'“”‘’`")
+                break
+
+        quote_pairs = {
+            '"': '"',
+            "'": "'",
+            "“": "”",
+            "‘": "’",
+            "«": "»",
+        }
+        if cleaned and cleaned[0] in quote_pairs:
+            closing = quote_pairs[cleaned[0]]
+            if cleaned.endswith(closing):
+                cleaned = cleaned[1:-1].strip()
+
+        # If the assistant returned explicit quoted segments, use the last quoted text.
+        patterns = [
+            r"'([^']+)'",
+            r'"([^"]+)"',
+            r"“([^”]+)”",
+            r"‘([^’]+)’",
+            r"«([^»]+)»",
+        ]
+        matches = []
+        for pattern in patterns:
+            matches.extend(re.findall(pattern, cleaned))
+        if matches:
+            cleaned = matches[-1].strip()
+
+        return cleaned.strip()
 
     # --- Search helpers -------------------------------------------------------
     def _reset_search_state(self):

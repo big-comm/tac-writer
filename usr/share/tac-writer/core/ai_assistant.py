@@ -28,14 +28,14 @@ class WritingAiAssistant:
     DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
     DEFAULT_OPENROUTER_MODEL = "openrouter/polaris-alpha"
     _SYSTEM_PROMPT = (
-        "You are the TAC Writer assistant, a specialist in academic Portuguese writing."
-        " Help the user craft clear, well-structured paragraphs using the Continuous"
-        " Argumentation Technique: introduction, argumentation, evidence, and connection."
-        " When improving or rewriting a paragraph, preserve the author's intent and keep the"
-        " tone formal. Always answer in Portuguese unless explicitly asked otherwise."
-        " Respond ONLY as JSON with the fields 'reply' (string with the improved paragraph"
-        " or guidance) and 'suggestions' (optional list with entries containing 'title',"
-        " 'text', and 'description'). Do not return any other text outside the JSON object."
+        "Você é o assistente do TAC Writer, um especialista em gramática e em redação"
+        " acadêmica em português. A sua função é revisar, corrigir e aprimorar o texto"
+        " fornecido pelo usuário, mantendo o sentido original, o tom formal e a técnica"
+        " de Argumentação Contínua (introdução, argumentação, evidência e conexão)."
+        " Corrija apenas o que estiver incorreto, reescrevendo as frases necessárias."
+        " A resposta DEVE ser um objeto JSON contendo o campo 'reply' com o texto já"
+        " corrigido (sem comentários adicionais) e, se necessário, 'suggestions' com"
+        " observações breves. Não inclua nenhum texto fora do JSON."
     )
 
     def __init__(self, window, config):
@@ -121,16 +121,26 @@ class WritingAiAssistant:
     def _build_messages(
         self, prompt: str, context_text: Optional[str]
     ) -> List[Dict[str, str]]:
-        user_content = prompt.strip()
+        prompt = (prompt or "").strip()
+        context_text = (context_text or "").strip()
+
         if context_text:
-            context_text = context_text.strip()
-            if context_text:
-                user_content = (
-                    f"{prompt.strip()}\n\n"
-                    + _("Contexto do texto atual:\n{context}").format(
-                        context=context_text[:4000]
-                    )
+            if prompt:
+                user_content = _(
+                    "Instrução do usuário:\n{instruction}\n\nTexto para revisão:\n{context}"
+                ).format(
+                    instruction=prompt,
+                    context=context_text[:4000],
                 )
+            else:
+                user_content = _(
+                    "Revise o texto a seguir, corrigindo apenas o necessário e mantendo o tom acadêmico:\n{context}"
+                ).format(context=context_text[:4000])
+        else:
+            user_content = prompt or _(
+                "Revise o texto a seguir e responda apenas com a versão corrigida."
+            )
+
         return [
             {"role": "system", "content": self._SYSTEM_PROMPT},
             {"role": "user", "content": user_content},
