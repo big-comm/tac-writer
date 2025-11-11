@@ -22,16 +22,16 @@ from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCh
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog, ImageDialog
 
 
-AI_SUGGESTIONS: List[str] = [
-    _("Melhore este parágrafo mantendo o mesmo argumento."),
-    _("Sugira uma introdução mais envolvente para este tema."),
-    _("Reescreva o trecho abaixo com um tom mais acadêmico."),
-    _("Resuma o parágrafo selecionado em até três frases objetivas."),
-    _("Quais referências poderiam fortalecer esta ideia?"),
-    _("Crie uma transição suave para o próximo parágrafo."),
-    _("Como posso encerrar esta conclusão com mais impacto?"),
-    _("Sugira perguntas que eu possa responder na sequência."),
-]
+#AI_SUGGESTIONS: List[str] = [
+#    _("Melhore este parágrafo mantendo o mesmo argumento."),
+#    _("Sugira uma introdução mais envolvente para este tema."),
+#    _("Reescreva o trecho abaixo com um tom mais acadêmico."),
+#    _("Resuma o parágrafo selecionado em até três frases objetivas."),
+#    _("Quais referências poderiam fortalecer esta ideia?"),
+#    _("Crie uma transição suave para o próximo parágrafo."),
+#    _("Como posso encerrar esta conclusão com mais impacto?"),
+#    _("Sugira perguntas que eu possa responder na sequência."),
+#]
 
 
 class MainWindow(Adw.ApplicationWindow):
@@ -56,8 +56,8 @@ class MainWindow(Adw.ApplicationWindow):
         self.timer = PomodoroTimer()
 
         # AI assistant
-        self.ai_assistant = WritingAiAssistant(self, self.config)
-        self._ai_context_target: Optional[dict] = None
+        #self.ai_assistant = WritingAiAssistant(self, self.config)
+        #self._ai_context_target: Optional[dict] = None
 
         # Search state
         self.search_entry: Optional[Gtk.SearchEntry] = None
@@ -155,11 +155,11 @@ class MainWindow(Adw.ApplicationWindow):
         self.save_button = save_button
 
         # AI assistant button
-        self.ai_button = Gtk.Button()
-        self.ai_button.set_icon_name('avatar-default-symbolic')
-        self.ai_button.set_tooltip_text(_("Ask AI Assistant (Ctrl+Shift+I)"))
-        self.ai_button.set_action_name("app.ai_assistant")
-        self.header_bar.pack_end(self.ai_button)
+        #self.ai_button = Gtk.Button()
+        #self.ai_button.set_icon_name('avatar-default-symbolic')
+        #self.ai_button.set_tooltip_text(_("Ask AI Assistant (Ctrl+Shift+I)"))
+        #self.ai_button.set_action_name("app.ai_assistant")
+        #self.header_bar.pack_end(self.ai_button)
 
         # Search box
         search_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
