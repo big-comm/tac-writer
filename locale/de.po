@@ -1530,46 +1530,6 @@ msgstr "Fußnote hinzufügen"
 msgid "Enter footnote text..."
 msgstr "Fügen Sie Fußnotentext ein..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 25
-#: NEEDS WORK
-msgid "Melhore este parágrafo mantendo o mesmo argumento."
-msgstr "Verbessern Sie diesen Absatz, während Sie dasselbe Argument beibehalten."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 26
-#: NEEDS WORK
-msgid "Sugira uma introdução mais envolvente para este tema."
-msgstr "Schlagen Sie eine fesselndere Einführung zu diesem Thema vor."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 27
-#: NEEDS WORK
-msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
-msgstr "Formulieren Sie den folgenden Abschnitt in einem akademischeren Ton um."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 28
-#: NEEDS WORK
-msgid "Resuma o parágrafo selecionado em até três frases objetivas."
-msgstr "Fassen Sie den ausgewählten Absatz in bis zu drei prägnanten Sätzen zusammen."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 29
-#: NEEDS WORK
-msgid "Quais referências poderiam fortalecer esta ideia?"
-msgstr "Welche Referenzen könnten diese Idee stärken?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 30
-#: NEEDS WORK
-msgid "Crie uma transição suave para o próximo parágrafo."
-msgstr "Erstellen Sie einen sanften Übergang zum nächsten Absatz."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 31
-#: NEEDS WORK
-msgid "Como posso encerrar esta conclusão com mais impacto?"
-msgstr "Wie kann ich diesen Schluss mit mehr Wirkung beenden?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 32
-#: NEEDS WORK
-msgid "Sugira perguntas que eu possa responder na sequência."
-msgstr "Schlage Fragen vor, die ich nacheinander beantworten kann."
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1584,11 +1544,6 @@ msgstr "Neues Projekt (Strg+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Projekt speichern (Strg+S)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 158
-#: NEEDS WORK
-msgid "Ask AI Assistant (Ctrl+Shift+I)"
-msgstr "KI-Assistent fragen (Strg+Umschalt+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK

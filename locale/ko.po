@@ -1524,46 +1524,6 @@ msgstr "각주 추가"
 msgid "Enter footnote text..."
 msgstr "각주 텍스트 입력..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 25
-#: NEEDS WORK
-msgid "Melhore este parágrafo mantendo o mesmo argumento."
-msgstr "이 단락을 개선하되 동일한 주장을 유지하십시오."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 26
-#: NEEDS WORK
-msgid "Sugira uma introdução mais envolvente para este tema."
-msgstr "이 주제에 대해 더 매력적인 소개를 제안하세요."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 27
-#: NEEDS WORK
-msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
-msgstr "아래의 구문을 보다 학문적인 어조로 다시 작성하십시오."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 28
-#: NEEDS WORK
-msgid "Resuma o parágrafo selecionado em até três frases objetivas."
-msgstr "선택한 단락을 최대 세 개의 객관적인 문장으로 요약하십시오."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 29
-#: NEEDS WORK
-msgid "Quais referências poderiam fortalecer esta ideia?"
-msgstr "이 아이디어를 강화할 수 있는 참고자료는 무엇인가요?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 30
-#: NEEDS WORK
-msgid "Crie uma transição suave para o próximo parágrafo."
-msgstr "다음 단락으로 부드러운 전환을 만드세요."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 31
-#: NEEDS WORK
-msgid "Como posso encerrar esta conclusão com mais impacto?"
-msgstr "이 결론을 더 강렬하게 마무리할 수 있는 방법은 무엇인가요?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 32
-#: NEEDS WORK
-msgid "Sugira perguntas que eu possa responder na sequência."
-msgstr "연속으로 답변할 수 있는 질문을 제안해 주세요."
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1578,11 +1538,6 @@ msgstr "새 프로젝트 (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "프로젝트 저장 (Ctrl+S)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 158
-#: NEEDS WORK
-msgid "Ask AI Assistant (Ctrl+Shift+I)"
-msgstr "AI 어시스턴트 요청 (Ctrl+Shift+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK

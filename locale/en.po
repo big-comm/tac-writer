@@ -1561,46 +1561,6 @@ msgid "Enter footnote text..."
 msgstr "Enter footnote text..."
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 26
-msgid "Melhore este parágrafo mantendo o mesmo argumento."
-msgstr "Melhore este parágrafo mantendo o mesmo argumento."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 27
-msgid "Sugira uma introdução mais envolvente para este tema."
-msgstr "Sugira uma introdução mais envolvente para este tema."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 28
-msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
-msgstr "Reescreva o trecho abaixo com um tom mais acadêmico."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 29
-msgid "Resuma o parágrafo selecionado em até três frases objetivas."
-msgstr "Resuma o parágrafo selecionado em até três frases objetivas."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 30
-msgid "Quais referências poderiam fortalecer esta ideia?"
-msgstr "Quais referências poderiam fortalecer esta ideia?"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 31
-msgid "Crie uma transição suave para o próximo parágrafo."
-msgstr "Crie uma transição suave para o próximo parágrafo."
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 32
-msgid "Como posso encerrar esta conclusão com mais impacto?"
-msgstr "Como posso encerrar esta conclusão com mais impacto?"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 33
-msgid "Sugira perguntas que eu possa responder na sequência."
-msgstr "Sugira perguntas que eu possa responder na sequência."
-
-#
 # File: usr/share/tac-writer/ui/main_window.py, line: 92
 msgid "TAC - Continuous Argumentation Technique"
 msgstr "TAC - Continuous Argumentation Technique"
@@ -1614,11 +1574,6 @@ msgstr "New Project (Ctrl+N)"
 # File: usr/share/tac-writer/ui/main_window.py, line: 151
 msgid "Save Project (Ctrl+S)"
 msgstr "Save Project (Ctrl+S)"
-
-#
-# File: usr/share/tac-writer/ui/main_window.py, line: 160
-msgid "Ask AI Assistant (Ctrl+Shift+I)"
-msgstr "Ask AI Assistant (Ctrl+Shift+I)"
 
 #
 # File: usr/share/tac-writer/ui/main_window.py, line: 167

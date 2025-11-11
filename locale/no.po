@@ -1528,46 +1528,6 @@ msgstr "Legg til fotnote"
 msgid "Enter footnote text..."
 msgstr "Skriv fotnote tekst..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 25
-#: NEEDS WORK
-msgid "Melhore este parágrafo mantendo o mesmo argumento."
-msgstr "Forbedre dette avsnittet mens du opprettholder det samme argumentet."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 26
-#: NEEDS WORK
-msgid "Sugira uma introdução mais envolvente para este tema."
-msgstr "Foreslå en mer engasjerende introduksjon til dette temaet."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 27
-#: NEEDS WORK
-msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
-msgstr "Skriv om avsnittet nedenfor med en mer akademisk tone."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 28
-#: NEEDS WORK
-msgid "Resuma o parágrafo selecionado em até três frases objetivas."
-msgstr "Oppsummer det valgte avsnittet i opptil tre objektive setninger."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 29
-#: NEEDS WORK
-msgid "Quais referências poderiam fortalecer esta ideia?"
-msgstr "Hvilke referanser kunne styrke denne ideen?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 30
-#: NEEDS WORK
-msgid "Crie uma transição suave para o próximo parágrafo."
-msgstr "Lag en jevn overgang til neste avsnitt."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 31
-#: NEEDS WORK
-msgid "Como posso encerrar esta conclusão com mais impacto?"
-msgstr "Hvordan kan jeg avslutte denne konklusjonen med mer innvirkning?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 32
-#: NEEDS WORK
-msgid "Sugira perguntas que eu possa responder na sequência."
-msgstr "Foreslå spørsmål som jeg kan svare på i rekkefølge."
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1582,11 +1542,6 @@ msgstr "Nytt prosjekt (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Lagre prosjekt (Ctrl+S)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 158
-#: NEEDS WORK
-msgid "Ask AI Assistant (Ctrl+Shift+I)"
-msgstr "Spør AI-assistent (Ctrl+Shift+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK

@@ -1528,46 +1528,6 @@ msgstr "Добави бележка под линия"
 msgid "Enter footnote text..."
 msgstr "Въведете текст на бележка под линия..."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 25
-#: NEEDS WORK
-msgid "Melhore este parágrafo mantendo o mesmo argumento."
-msgstr "Подобрете този параграф, запазвайки същия аргумент."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 26
-#: NEEDS WORK
-msgid "Sugira uma introdução mais envolvente para este tema."
-msgstr "Предложете по-ангажиращо въведение за тази тема."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 27
-#: NEEDS WORK
-msgid "Reescreva o trecho abaixo com um tom mais acadêmico."
-msgstr "Препишете следния откъс с по-академичен тон."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 28
-#: NEEDS WORK
-msgid "Resuma o parágrafo selecionado em até três frases objetivas."
-msgstr "Резюмирайте избрания параграф в до три обективни изречения."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 29
-#: NEEDS WORK
-msgid "Quais referências poderiam fortalecer esta ideia?"
-msgstr "Кои референции биха могли да укрепят тази идея?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 30
-#: NEEDS WORK
-msgid "Crie uma transição suave para o próximo parágrafo."
-msgstr "Създайте плавен преход към следващия параграф."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 31
-#: NEEDS WORK
-msgid "Como posso encerrar esta conclusão com mais impacto?"
-msgstr "Как мога да завърша това заключение с по-голямо въздействие?"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 32
-#: NEEDS WORK
-msgid "Sugira perguntas que eu possa responder na sequência."
-msgstr "Предложи въпроси, на които мога да отговоря последователно."
-# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
@@ -1582,11 +1542,6 @@ msgstr "Нов проект (Ctrl+N)"
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
 msgstr "Запази проекта (Ctrl+S)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 158
-#: NEEDS WORK
-msgid "Ask AI Assistant (Ctrl+Shift+I)"
-msgstr "Попитай AI асистент (Ctrl+Shift+I)"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK
