@@ -1203,6 +1203,48 @@ msgid ""
 "{}"
 msgstr "无法插入图像。"
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1992
+#: NEEDS WORK
+msgid "Revisão IA via PDF"
+msgstr "通过 PDF 的 AI 审查"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2027
+#: NEEDS WORK
+msgid ""
+"Selecione um arquivo PDF do seu texto para revisão.\n"
+"A IA fará uma análise ortográfica, gramatical e semântica."
+msgstr "从您的文本中选择一个 PDF 文件进行审阅。人工智能将进行拼写、语法和语义分析。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+#: NEEDS WORK
+msgid "Nenhum arquivo selecionado"
+msgstr "未选择任何文件"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+#: NEEDS WORK
+msgid "Escolher PDF..."
+msgstr "选择 PDF..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+#: NEEDS WORK
+msgid "Executar Análise"
+msgstr "执行分析"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+#: NEEDS WORK
+msgid "Selecione o PDF"
+msgstr "选择 PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+#: NEEDS WORK
+msgid "Analisando..."
+msgstr "分析中..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2105
+#: NEEDS WORK
+msgid "Resultado da Análise"
+msgstr "分析结果"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1539,6 +1581,11 @@ msgstr "新建项目 (Ctrl+N)"
 msgid "Save Project (Ctrl+S)"
 msgstr "保存项目 (Ctrl+S)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "询问 AI 助手 (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK
 msgid "Search..."
@@ -1768,58 +1815,10 @@ msgstr "API 密钥"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "在“首选项”▸“AI助手”中配置{items}。"
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+# File: usr/share/tac-writer/ui/main_window.py, line: 1142
 #: NEEDS WORK
-#, python-brace-format
-msgid "Selected text ({count} characters)"
-msgstr "选定文本（{count} 个字符）"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1162
-#: NEEDS WORK
-#, python-brace-format
-msgid "Current paragraph ({count} characters)"
-msgstr "当前段落（{count} 个字符）"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1168
-#: NEEDS WORK
-msgid "Ask the AI Assistant"
-msgstr "询问AI助手"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1169
-#: NEEDS WORK
-msgid "Describe the adjustment you need for this paragraph."
-msgstr "描述您对本段落所需的调整。"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1173
-#: NEEDS WORK
-msgid "Send"
-msgstr "发送"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1224
-#: NEEDS WORK
-msgid "Include context"
-msgstr "包含上下文"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1254
-#: NEEDS WORK
-msgid "Quick suggestions"
-msgstr "快速建议"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1316
-#: NEEDS WORK
-#, python-brace-format
-msgid "Matching suggestions: {count}"
-msgstr "匹配建议：{count}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1319
-#: NEEDS WORK
-msgid "No suggestion found."
-msgstr "未找到建议。"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1322
-#: NEEDS WORK
-msgid "Describe your request or choose one of the suggestions."
-msgstr "描述您的请求或选择其中一个建议。"
+msgid "Habilite a IA nas Preferências primeiro."
+msgstr "请先在设置中启用人工智能。"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK
@@ -2246,6 +2245,33 @@ msgstr "OpenRouter 以 HTTP {status} 响应: {message}"
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
 msgstr "OpenRouter 返回 HTTP {status}: {message}{detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 472
+#: NEEDS WORK
+msgid "Biblioteca pypdf não instalada."
+msgstr "未安装 pypdf 库。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 480
+#: NEEDS WORK
+msgid "O assistente já está processando uma solicitação."
+msgstr "助手正在处理请求。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 502
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro ao ler PDF: {}"
+msgstr "读取 PDF 时出错: {}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+#: NEEDS WORK
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
+msgstr "无法从PDF中提取文本（可能是图像）。"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro na análise: {error}"
+msgstr "分析错误: {error}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

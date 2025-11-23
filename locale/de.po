@@ -1209,6 +1209,50 @@ msgid ""
 "{}"
 msgstr "Das Bild konnte nicht eingefügt werden."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1992
+#: NEEDS WORK
+msgid "Revisão IA via PDF"
+msgstr "KI-Überprüfung über PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2027
+#: NEEDS WORK
+msgid ""
+"Selecione um arquivo PDF do seu texto para revisão.\n"
+"A IA fará uma análise ortográfica, gramatical e semântica."
+msgstr ""
+"Wählen Sie eine PDF-Datei aus Ihrem Text zur Überprüfung aus. Die KI wird eine Rechtschreib-, "
+"Grammatik- und Semantikanalyse durchführen."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+#: NEEDS WORK
+msgid "Nenhum arquivo selecionado"
+msgstr "Keine Datei ausgewählt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+#: NEEDS WORK
+msgid "Escolher PDF..."
+msgstr "PDF auswählen..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+#: NEEDS WORK
+msgid "Executar Análise"
+msgstr "Analyse ausführen"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+#: NEEDS WORK
+msgid "Selecione o PDF"
+msgstr "Wählen Sie das PDF aus"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+#: NEEDS WORK
+msgid "Analisando..."
+msgstr "Analysiere..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2105
+#: NEEDS WORK
+msgid "Resultado da Análise"
+msgstr "Analyseergebnis"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1545,6 +1589,11 @@ msgstr "Neues Projekt (Strg+N)"
 msgid "Save Project (Ctrl+S)"
 msgstr "Projekt speichern (Strg+S)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "KI-Assistent fragen (Strg+Umschalt+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK
 msgid "Search..."
@@ -1774,58 +1823,10 @@ msgstr "API-Schlüssel"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "Konfigurieren Sie {items} in den Einstellungen ▸ KI-Assistent."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+# File: usr/share/tac-writer/ui/main_window.py, line: 1142
 #: NEEDS WORK
-#, python-brace-format
-msgid "Selected text ({count} characters)"
-msgstr "Ausgewählter Text ({count} Zeichen)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1162
-#: NEEDS WORK
-#, python-brace-format
-msgid "Current paragraph ({count} characters)"
-msgstr "Aktueller Absatz ({count} Zeichen)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1168
-#: NEEDS WORK
-msgid "Ask the AI Assistant"
-msgstr "Frage den KI-Assistenten"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1169
-#: NEEDS WORK
-msgid "Describe the adjustment you need for this paragraph."
-msgstr "Beschreiben Sie die Anpassung, die Sie für diesen Absatz benötigen."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1173
-#: NEEDS WORK
-msgid "Send"
-msgstr "Senden"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1224
-#: NEEDS WORK
-msgid "Include context"
-msgstr "Einschließen Sie den Kontext"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1254
-#: NEEDS WORK
-msgid "Quick suggestions"
-msgstr "Schnelle Vorschläge"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1316
-#: NEEDS WORK
-#, python-brace-format
-msgid "Matching suggestions: {count}"
-msgstr "Übereinstimmende Vorschläge: {count}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1319
-#: NEEDS WORK
-msgid "No suggestion found."
-msgstr "Keine Vorschläge gefunden."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1322
-#: NEEDS WORK
-msgid "Describe your request or choose one of the suggestions."
-msgstr "Beschreiben Sie Ihre Anfrage oder wählen Sie einen der Vorschläge aus."
+msgid "Habilite a IA nas Preferências primeiro."
+msgstr "Aktivieren Sie zuerst die KI in den Einstellungen."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK
@@ -2253,6 +2254,33 @@ msgstr "OpenRouter antwortete mit HTTP {status}: {message}"
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
 msgstr "OpenRouter antwortete mit HTTP {status}: {message}{detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 472
+#: NEEDS WORK
+msgid "Biblioteca pypdf não instalada."
+msgstr "Bibliothek pypdf nicht installiert."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 480
+#: NEEDS WORK
+msgid "O assistente já está processando uma solicitação."
+msgstr "Der Assistent verarbeitet bereits eine Anfrage."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 502
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro ao ler PDF: {}"
+msgstr "Fehler beim Lesen von PDF: {}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+#: NEEDS WORK
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
+msgstr "Es war nicht möglich, Text aus dem PDF zu extrahieren (es könnte sich um ein Bild handeln)."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro na análise: {error}"
+msgstr "Fehler bei der Analyse: {error}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

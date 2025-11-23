@@ -1205,6 +1205,50 @@ msgid ""
 "{}"
 msgstr "Gat ekki að setja inn myndina."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1992
+#: NEEDS WORK
+msgid "Revisão IA via PDF"
+msgstr "Revisão IA í gegnum PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2027
+#: NEEDS WORK
+msgid ""
+"Selecione um arquivo PDF do seu texto para revisão.\n"
+"A IA fará uma análise ortográfica, gramatical e semântica."
+msgstr ""
+"Veldu PDF skjal úr texta þínum til endurskoðunar. Gervigreindin mun framkvæma stafsetningar-, "
+"málfræðilegar- og merkingargreiningar."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+#: NEEDS WORK
+msgid "Nenhum arquivo selecionado"
+msgstr "Engin valinn skrá."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+#: NEEDS WORK
+msgid "Escolher PDF..."
+msgstr "Velja PDF..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+#: NEEDS WORK
+msgid "Executar Análise"
+msgstr "Keyra greiningar"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+#: NEEDS WORK
+msgid "Selecione o PDF"
+msgstr "Veldu PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+#: NEEDS WORK
+msgid "Analisando..."
+msgstr "Greining..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2105
+#: NEEDS WORK
+msgid "Resultado da Análise"
+msgstr "Niðurstöður greiningar"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1541,6 +1585,11 @@ msgstr "Nýr Verkefni (Ctrl+N)"
 msgid "Save Project (Ctrl+S)"
 msgstr "Vista Verkefni (Ctrl+S)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "Spyrja AI aðstoðarmann (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK
 msgid "Search..."
@@ -1770,58 +1819,10 @@ msgstr "API lykill"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "Stillir {items} í Stillingum ▸ AI Aðstoðarmaður."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+# File: usr/share/tac-writer/ui/main_window.py, line: 1142
 #: NEEDS WORK
-#, python-brace-format
-msgid "Selected text ({count} characters)"
-msgstr "Valin texti ({count} stafir)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1162
-#: NEEDS WORK
-#, python-brace-format
-msgid "Current paragraph ({count} characters)"
-msgstr "Núverandi málsgrein ({count} stafir)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1168
-#: NEEDS WORK
-msgid "Ask the AI Assistant"
-msgstr "Spyrðu AI aðstoðarmanninum"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1169
-#: NEEDS WORK
-msgid "Describe the adjustment you need for this paragraph."
-msgstr "Lýstu aðlöguninni sem þú þarft fyrir þennan málsgrein."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1173
-#: NEEDS WORK
-msgid "Send"
-msgstr "Senda"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1224
-#: NEEDS WORK
-msgid "Include context"
-msgstr "Innihalda samhengi"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1254
-#: NEEDS WORK
-msgid "Quick suggestions"
-msgstr "Hraðviðbrögð"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1316
-#: NEEDS WORK
-#, python-brace-format
-msgid "Matching suggestions: {count}"
-msgstr "Samsvarandi tillögur: {count}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1319
-#: NEEDS WORK
-msgid "No suggestion found."
-msgstr "Engin tillaga fannst ekki."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1322
-#: NEEDS WORK
-msgid "Describe your request or choose one of the suggestions."
-msgstr "Lýstu beiðni þinni eða veldu eina af tillögunum."
+msgid "Habilite a IA nas Preferências primeiro."
+msgstr "Virkjaðu IA í Stillinum fyrst."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK
@@ -2244,6 +2245,33 @@ msgstr "OpenRouter svaraði með HTTP {status}: {message}"
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
 msgstr "OpenRouter svaraði með HTTP {status}: {message}{detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 472
+#: NEEDS WORK
+msgid "Biblioteca pypdf não instalada."
+msgstr "Pypdf bókasafn ekki uppsett."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 480
+#: NEEDS WORK
+msgid "O assistente já está processando uma solicitação."
+msgstr "A aðstoðarmaðurinn er þegar að vinna að beiðni."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 502
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro ao ler PDF: {}"
+msgstr "Villa við að lesa PDF: {}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+#: NEEDS WORK
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
+msgstr "Ekki var hægt að draga út texta úr PDF (gæti verið mynd)."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro na análise: {error}"
+msgstr "Villa í greiningu: {error}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

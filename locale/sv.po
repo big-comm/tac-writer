@@ -1207,6 +1207,50 @@ msgid ""
 "{}"
 msgstr "Kunde inte infoga bilden."
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1992
+#: NEEDS WORK
+msgid "Revisão IA via PDF"
+msgstr "Granskning av AI via PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2027
+#: NEEDS WORK
+msgid ""
+"Selecione um arquivo PDF do seu texto para revisão.\n"
+"A IA fará uma análise ortográfica, gramatical e semântica."
+msgstr ""
+"Välj en PDF-fil från din text för granskning. AI:n kommer att göra en stavnings-, grammatik- och "
+"semantikanalys."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+#: NEEDS WORK
+msgid "Nenhum arquivo selecionado"
+msgstr "Inga filer valda"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+#: NEEDS WORK
+msgid "Escolher PDF..."
+msgstr "Välj PDF..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+#: NEEDS WORK
+msgid "Executar Análise"
+msgstr "Kör analys"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+#: NEEDS WORK
+msgid "Selecione o PDF"
+msgstr "Välj PDF"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+#: NEEDS WORK
+msgid "Analisando..."
+msgstr "Analyserar..."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2105
+#: NEEDS WORK
+msgid "Resultado da Análise"
+msgstr "Analysresultat"
+# 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
 #, python-brace-format
@@ -1543,6 +1587,11 @@ msgstr "Nytt projekt (Ctrl+N)"
 msgid "Save Project (Ctrl+S)"
 msgstr "Spara projekt (Ctrl+S)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 149
+#: NEEDS WORK
+msgid "Ask AI Assistant (Ctrl+Shift+I)"
+msgstr "Fråga AI-assistent (Ctrl+Shift+I)"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 165
 #: NEEDS WORK
 msgid "Search..."
@@ -1772,58 +1821,10 @@ msgstr "API-nyckel"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "Konfigurera {items} i Inställningar ▸ AI-assistent."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1157
+# File: usr/share/tac-writer/ui/main_window.py, line: 1142
 #: NEEDS WORK
-#, python-brace-format
-msgid "Selected text ({count} characters)"
-msgstr "Vald text ({count} tecken)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1162
-#: NEEDS WORK
-#, python-brace-format
-msgid "Current paragraph ({count} characters)"
-msgstr "Aktuell stycke ({count} tecken)"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1168
-#: NEEDS WORK
-msgid "Ask the AI Assistant"
-msgstr "Fråga AI-assistenten"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1169
-#: NEEDS WORK
-msgid "Describe the adjustment you need for this paragraph."
-msgstr "Beskriv justeringen du behöver för detta stycke."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1173
-#: NEEDS WORK
-msgid "Send"
-msgstr "Skicka"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1224
-#: NEEDS WORK
-msgid "Include context"
-msgstr "Inkludera sammanhang"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1254
-#: NEEDS WORK
-msgid "Quick suggestions"
-msgstr "Snabba förslag"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1316
-#: NEEDS WORK
-#, python-brace-format
-msgid "Matching suggestions: {count}"
-msgstr "Matchande förslag: {count}"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1319
-#: NEEDS WORK
-msgid "No suggestion found."
-msgstr "Inga förslag hittades."
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1322
-#: NEEDS WORK
-msgid "Describe your request or choose one of the suggestions."
-msgstr "Beskriv din begäran eller välj ett av förslagen."
+msgid "Habilite a IA nas Preferências primeiro."
+msgstr "Aktivera AI i Inställningar först."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK
@@ -2250,6 +2251,33 @@ msgstr "OpenRouter svarade med HTTP {status}: {message}"
 #, python-brace-format
 msgid "OpenRouter respondeu com HTTP {status}: {message}{detail}"
 msgstr "OpenRouter svarade med HTTP {status}: {message}{detail}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 472
+#: NEEDS WORK
+msgid "Biblioteca pypdf não instalada."
+msgstr "Biblioteket pypdf är inte installerat."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 480
+#: NEEDS WORK
+msgid "O assistente já está processando uma solicitação."
+msgstr "Assistenten bearbetar redan en begäran."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 502
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro ao ler PDF: {}"
+msgstr "Fel vid läsning av PDF: {}"
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+#: NEEDS WORK
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
+msgstr "Det gick inte att extrahera text från PDF:en (det kan vara en bild)."
+# 
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+#: NEEDS WORK
+#, python-brace-format
+msgid "Erro na análise: {error}"
+msgstr "Fel vid analys: {error}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK
