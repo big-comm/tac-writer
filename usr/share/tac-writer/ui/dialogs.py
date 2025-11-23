@@ -2026,7 +2026,7 @@ class AiPdfDialog(Adw.Window):
         label = Gtk.Label(
             label=_("Select a PDF file of your text for review.\n"
                     "The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
-                    "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple files may be an alternative."),
+                    "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple files may be an alternative to paid API."),
             justify=Gtk.Justification.CENTER,
             wrap=True
         )
