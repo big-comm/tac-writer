@@ -2024,8 +2024,9 @@ class AiPdfDialog(Adw.Window):
 
         # Instructions
         label = Gtk.Label(
-            label=_("Selecione um arquivo PDF do seu texto para revisão.\n"
-                    "A IA fará uma análise ortográfica, gramatical e semântica."),
+            label=_("Select a PDF file of your text for review.\n"
+                    "The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
+                    "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple files may be an alternative."),
             justify=Gtk.Justification.CENTER,
             wrap=True
         )
@@ -2061,11 +2062,11 @@ class AiPdfDialog(Adw.Window):
 
     def _on_choose_file(self, btn):
         dialog = Gtk.FileDialog()
-        dialog.set_title(_("Selecione o PDF"))
+        dialog.set_title(_("Select PDF"))
         
         # Filtro para PDF
         pdf_filter = Gtk.FileFilter()
-        pdf_filter.set_name("Arquivos PDF")
+        pdf_filter.set_name("PDF files")
         pdf_filter.add_pattern("*.pdf")
         
         filters = Gio.ListStore.new(Gtk.FileFilter)
@@ -2088,42 +2089,55 @@ class AiPdfDialog(Adw.Window):
     def _on_run_clicked(self, btn):
         if self.selected_file_path:
             self.run_btn.set_sensitive(False)
-            self.run_btn.set_label(_("Analisando..."))
+            self.run_btn.set_label(_("Analyzing (may take a few minutes)"))
             self.spinner.start()
             
             # Chama o método no core
             success = self.ai_assistant.request_pdf_review(self.selected_file_path)
-            if success:
-                # Fecha este diálogo para esperar o resultado na Main Window
-                # ou poderíamos manter aberto, mas a arquitetura atual usa callbacks via window
-                self.destroy()
+            
 
 class AiResultDialog(Adw.Window):
     """Dialog to show AI Results text"""
+    __gtype_name__ = 'TacAiResultDialog'
+
     def __init__(self, parent, result_text, **kwargs):
         super().__init__(**kwargs)
-        self.set_title(_("Resultado da Análise"))
+        self.set_title(_("Analysis Results"))
         self.set_transient_for(parent)
         self.set_modal(True)
-        self.set_default_size(800, 600)
+        # Aumentei um pouco o tamanho padrão para leitura confortável
+        self.set_default_size(900, 700)
 
+        # Container Principal
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.set_content(box)
         
+        # Header
         header = Adw.HeaderBar()
         box.append(header)
 
+        # Scrolled Window (Importante: vexpand=True para ocupar a altura)
         scrolled = Gtk.ScrolledWindow()
+        scrolled.set_vexpand(True)
+        scrolled.set_hexpand(True)
+        scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         box.append(scrolled)
 
+        # Text View
         text_view = Gtk.TextView()
         text_view.set_editable(False)
+        text_view.set_cursor_visible(False)
         text_view.set_wrap_mode(Gtk.WrapMode.WORD)
-        text_view.set_margin_top(15)
-        text_view.set_margin_bottom(15)
-        text_view.set_margin_start(15)
-        text_view.set_margin_end(15)
+        text_view.set_vexpand(True)
+        text_view.set_hexpand(True)
         
+        # Margens para o texto não colar na borda
+        text_view.set_margin_top(20)
+        text_view.set_margin_bottom(20)
+        text_view.set_margin_start(20)
+        text_view.set_margin_end(20)
+        
+        # Define o texto
         buff = text_view.get_buffer()
         buff.set_text(result_text)
         

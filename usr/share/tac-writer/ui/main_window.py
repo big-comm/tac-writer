@@ -31,6 +31,9 @@ class MainWindow(Adw.ApplicationWindow):
     def __init__(self, application, project_manager: ProjectManager, config: Config, **kwargs):
         super().__init__(application=application, **kwargs)
 
+        # Track pdf dialog
+        self.pdf_loading_dialog = None
+
         # Store references
         self.project_manager = project_manager
         self.config = config
@@ -1139,15 +1142,21 @@ class MainWindow(Adw.ApplicationWindow):
         # Adicione este método na MainWindow para abrir o diálogo de seleção
     def _on_ai_pdf_clicked(self, btn):
         if not self.config.get_ai_assistant_enabled():
-            self._show_toast(_("Habilite a IA nas Preferências primeiro."), Adw.ToastPriority.HIGH)
+            self._show_toast(_("Enable AI in Preferences. API key is required. Read Wiki if there is any doubt."), Adw.ToastPriority.HIGH)
             return
 
         from ui.dialogs import AiPdfDialog
-        dialog = AiPdfDialog(self, self.ai_assistant)
-        dialog.present()
+        self.pdf_loading_dialog = AiPdfDialog(self, self.ai_assistant)
+        self.pdf_loading_dialog.present()
 
     # Adicione este método para exibir o resultado (chamado pelo ai_assistant)
     def show_ai_pdf_result_dialog(self, result_text: str):
+        # 1. Fecha a janela de "Analisando..." se ela estiver aberta
+        if self.pdf_loading_dialog:
+            self.pdf_loading_dialog.destroy()
+            self.pdf_loading_dialog = None
+
+        # 2. Abre a janela de resultado (com o layout corrigido)
         from ui.dialogs import AiResultDialog
         dialog = AiResultDialog(self, result_text)
         dialog.present()

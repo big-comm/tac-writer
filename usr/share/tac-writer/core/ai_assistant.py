@@ -8,6 +8,7 @@ import json
 import logging
 import threading
 import weakref
+import os
 from typing import Any, Dict, List, Optional, Tuple
 try:
     from pypdf import PdfReader
@@ -526,6 +527,8 @@ class WritingAiAssistant:
             ]
 
             config = self._load_configuration()
+            content = self._perform_request(config, messages)
+            clean_reply = self._clean_response(content)
             GLib.idle_add(self._display_pdf_result, clean_reply)
 
         except Exception as exc:
