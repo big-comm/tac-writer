@@ -1216,12 +1216,12 @@ msgid ""
 "Select a PDF file of your text for review.\n"
 "The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
 "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple "
-"files may be an alternative."
+"files may be an alternative to paid API."
 msgstr ""
 "Επιλέξτε ένα αρχείο PDF του κειμένου σας για αναθεώρηση.  \n"
 "Η AI θα εκτελέσει ανάλυση ορθογραφίας, γραμματικής και σημασιολογίας.  \n"
 "ΣΗΜΑΝΤΙΚΟ: Λάβετε υπόψη το όριο των 10.000 χαρακτήρων για δωρεάν APIs. Η διαίρεση του κειμένου σας "
-"σε πολλαπλά αρχεία μπορεί να είναι μια εναλλακτική λύση."
+"σε πολλαπλά αρχεία μπορεί να είναι μια εναλλακτική λύση για πληρωμένα API."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2038
 #: NEEDS WORK

@@ -1216,12 +1216,12 @@ msgid ""
 "Select a PDF file of your text for review.\n"
 "The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
 "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple "
-"files may be an alternative."
+"files may be an alternative to paid API."
 msgstr ""
 "Valige oma teksti ülevaatamiseks PDF-fail.  \n"
 "Tehisintellekt viib läbi õigekirja, grammatika ja semantilise analüüsi.  \n"
-"OLULINE: Arvestage 10 000 tähemärgi piiranguga tasuta API-de jaoks. Teksti jagamine mitmeks failiks "
-"võib olla alternatiiv."
+"OLULINE: Arvestage 10 000 tähemärgi piiranguga tasuta API-de puhul. Teksti jagamine mitmeks failiks "
+"võib olla alternatiiv tasulisele API-le."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2038
 #: NEEDS WORK

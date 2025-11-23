@@ -1216,12 +1216,12 @@ msgid ""
 "Select a PDF file of your text for review.\n"
 "The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
 "IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple "
-"files may be an alternative."
+"files may be an alternative to paid API."
 msgstr ""
 "Vyberte súbor PDF vášho textu na preskúmanie.  \n"
 "AI vykoná analýzu pravopisu, gramatiky a sémantiky.  \n"
-"DÔLEŽITÉ: Zohľadnite limit 10 000 znakov pre bezplatné API. Rozdelenie vášho textu na viacero "
-"súborov môže byť alternatívou."
+"DÔLEŽITÉ: Zohľadnite limit 10 000 znakov pre bezplatné API. Rozdelenie vášho textu do viacerých "
+"súborov môže byť alternatívou k platenému API."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2038
 #: NEEDS WORK
