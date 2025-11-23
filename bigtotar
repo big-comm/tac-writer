@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Obtém o nome do diretório atual de forma segura
+current_dir_name=${PWD##*/}
+
+# Define o nome do arquivo final
+txt_file="$current_dir_name.txt"
+tar_file="$current_dir_name.tar"
+
+# Remove o arquivo .txt de destino se ele já existir
+if [ -f "$txt_file" ]; then
+    rm -f "$txt_file"
+fi
+
+# Encontra e remove recursivamente todas as pastas __pycache__
+find . -type d -name "__pycache__" -print0 | xargs -0 rm -rf
+
+# Cria um arquivo .tar sem compressão, excluindo arquivos binários, de imagem e outros não-texto.
+tar \
+  --create \
+  --file="$tar_file" \
+  --numeric-owner \
+  --owner=0 \
+  --group=0 \
+  --no-acls \
+  --no-selinux \
+  --no-xattrs \
+  --exclude="$tar_file" \
+  --exclude="$txt_file" \
+  --exclude='./.git' \
+  --exclude='./.vscode' \
+  --exclude='./.idea' \
+  --exclude='node_modules' \
+  --exclude='venv' \
+  --exclude='dist' \
+  --exclude='build' \
+  --exclude='*.po' \
+  --exclude='*.pot' \
+  --exclude='*.mo' \
+  --exclude='*.png' \
+  --exclude='*.jpg' \
+  --exclude='*.jpeg' \
+  --exclude='*.gif' \
+  --exclude='*.bmp' \
+  --exclude='*.svg' \
+  --exclude='*.ico' \
+  --exclude='*.wav' \
+  --exclude='*.webp' \
+  --exclude='*.mp3' \
+  --exclude='*.mp4' \
+  --exclude='*.avi' \
+  --exclude='*.mov' \
+  --exclude='*.o' \
+  --exclude='*.a' \
+  --exclude='*.so' \
+  --exclude='*.dll' \
+  --exclude='*.exe' \
+  --exclude='*.class' \
+  --exclude='*.pyc' \
+  --exclude='*.zip' \
+  --exclude='*.gz' \
+  --exclude='*.tar' \
+  --exclude='*.task' \
+  --exclude='*.rar' \
+  --exclude='*.7z' \
+  --exclude='*.pdf' \
+  --exclude='*.doc' \
+  --exclude='*.docx' \
+  --exclude='*.xls' \
+  --exclude='*.xlsx' \
+  --exclude='*.db' \
+  --exclude='*.sqlite3' \
+  .
+
+# Se o arquivo .tar não foi criado (porque não havia nada para arquivar), sai para evitar erro no mv
+if [ ! -f "$tar_file" ]; then
+    echo "Nenhum arquivo de código fonte encontrado para arquivar. O arquivo de saída não foi criado."
+    exit 1
+fi
+
+# Renomeia o arquivo .tar para .txt
+mv "$tar_file" "$txt_file"
+
+echo "Arquivo $txt_file foi criado, contendo apenas arquivos de texto/código fonte."

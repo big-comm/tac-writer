@@ -22,17 +22,6 @@ from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCh
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog, ImageDialog
 
 
-#AI_SUGGESTIONS: List[str] = [
-#    _("Melhore este parágrafo mantendo o mesmo argumento."),
-#    _("Sugira uma introdução mais envolvente para este tema."),
-#    _("Reescreva o trecho abaixo com um tom mais acadêmico."),
-#    _("Resuma o parágrafo selecionado em até três frases objetivas."),
-#    _("Quais referências poderiam fortalecer esta ideia?"),
-#    _("Crie uma transição suave para o próximo parágrafo."),
-#    _("Como posso encerrar esta conclusão com mais impacto?"),
-#    _("Sugira perguntas que eu possa responder na sequência."),
-#]
-
 
 class MainWindow(Adw.ApplicationWindow):
     """Main application window"""
@@ -56,8 +45,8 @@ class MainWindow(Adw.ApplicationWindow):
         self.timer = PomodoroTimer()
 
         # AI assistant
-        #self.ai_assistant = WritingAiAssistant(self, self.config)
-        #self._ai_context_target: Optional[dict] = None
+        self.ai_assistant = WritingAiAssistant(self, self.config)
+        self._ai_context_target: Optional[dict] = None
 
         # Search state
         self.search_entry: Optional[Gtk.SearchEntry] = None
@@ -155,11 +144,11 @@ class MainWindow(Adw.ApplicationWindow):
         self.save_button = save_button
 
         # AI assistant button
-        #self.ai_button = Gtk.Button()
-        #self.ai_button.set_icon_name('avatar-default-symbolic')
-        #self.ai_button.set_tooltip_text(_("Ask AI Assistant (Ctrl+Shift+I)"))
-        #self.ai_button.set_action_name("app.ai_assistant")
-        #self.header_bar.pack_end(self.ai_button)
+        self.ai_button = Gtk.Button()
+        self.ai_button.set_icon_name('avatar-default-symbolic')
+        self.ai_button.set_tooltip_text(_("Ask AI Assistant (Ctrl+Shift+I)"))
+        self.ai_button.connect('clicked', self._on_ai_pdf_clicked)
+        self.header_bar.pack_end(self.ai_button)
 
         # Search box
         search_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=4)
@@ -997,7 +986,7 @@ class MainWindow(Adw.ApplicationWindow):
 
     def open_ai_assistant_prompt(self):
         """Trigger the AI assistant prompt dialog."""
-        self._on_ai_assistant_requested()
+        self._on_ai_pdf_clicked(None)
 
     def show_welcome_dialog(self):
         """Show the welcome dialog"""
@@ -1147,204 +1136,21 @@ class MainWindow(Adw.ApplicationWindow):
         context_text, context_label = self._collect_ai_context()
         self._show_ai_prompt_dialog(context_text, context_label)
 
-    def _collect_ai_context(self) -> tuple[str, str]:
-        self._ai_context_target = None
-        text_view = self._get_focused_text_view()
-        if not text_view:
-            views = self._get_paragraph_textviews()
-            text_view = views[0] if views else None
-        if not text_view:
-            return "", ""
+        # Adicione este método na MainWindow para abrir o diálogo de seleção
+    def _on_ai_pdf_clicked(self, btn):
+        if not self.config.get_ai_assistant_enabled():
+            self._show_toast(_("Habilite a IA nas Preferências primeiro."), Adw.ToastPriority.HIGH)
+            return
 
-        buffer = text_view.get_buffer()
-        if buffer.get_has_selection():
-            start, end = buffer.get_selection_bounds()
-            text = buffer.get_text(start, end, True)
-            label = _("Selected text ({count} characters)").format(count=len(text))
-            start_offset = start.get_offset()
-            end_offset = end.get_offset()
-        else:
-            start = buffer.get_start_iter()
-            end = buffer.get_end_iter()
-            text = buffer.get_text(start, end, True)
-            label = _("Current paragraph ({count} characters)").format(count=len(text))
-            start_offset = 0
-            end_offset = end.get_offset()
-        self._ai_context_target = {
-            'text_view': text_view,
-            'start': start_offset,
-            'end': end_offset,
-        }
-        return text.strip(), label
+        from ui.dialogs import AiPdfDialog
+        dialog = AiPdfDialog(self, self.ai_assistant)
+        dialog.present()
 
-    def _show_ai_prompt_dialog(self, context_text: str, context_label: str) -> None:
-        dialog = Adw.MessageDialog(
-            transient_for=self,
-            heading=_("Ask the AI Assistant"),
-            body=_("Describe the adjustment you need for this paragraph."),
-            close_response="cancel",
-        )
-        dialog.add_response("cancel", _("Cancel"))
-        dialog.add_response("send", _("Send"))
-        dialog.set_default_response("send")
-        dialog.set_response_appearance("send", Adw.ResponseAppearance.SUGGESTED)
-
-        text_view = Gtk.TextView(
-            wrap_mode=Gtk.WrapMode.WORD_CHAR,
-            hexpand=True,
-            vexpand=True,
-        )
-        text_view.set_margin_top(8)
-        text_view.set_margin_bottom(8)
-        text_view.set_margin_start(8)
-        text_view.set_margin_end(8)
-
-        scrolled = Gtk.ScrolledWindow(vexpand=True, hexpand=True)
-        scrolled.set_child(text_view)
-        scrolled.set_min_content_height(200)
-
-        content_box = Gtk.Box(
-            orientation=Gtk.Orientation.VERTICAL,
-            spacing=10,
-            margin_top=6,
-            margin_bottom=6,
-            margin_start=6,
-            margin_end=6,
-        )
-        content_box.append(scrolled)
-
-        include_context_switch = Gtk.Switch()
-        include_context_switch.set_active(bool(context_text))
-        include_context_switch.set_sensitive(bool(context_text))
-
-        if context_text:
-            context_frame = Gtk.Frame()
-            context_frame.add_css_class("card")
-            context_frame.set_hexpand(True)
-
-            header = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
-            header.set_margin_top(10)
-            header.set_margin_start(12)
-            header.set_margin_end(12)
-
-            context_label_widget = Gtk.Label(
-                label=context_label,
-                halign=Gtk.Align.START,
-                hexpand=True,
-            )
-            context_label_widget.add_css_class("heading")
-            header.append(context_label_widget)
-
-            switch_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
-            switch_label = Gtk.Label(label=_("Include context"), halign=Gtk.Align.END)
-            switch_box.append(switch_label)
-            switch_box.append(include_context_switch)
-            header.append(switch_box)
-
-            preview = Gtk.Label(
-                label=context_text[:600] + ("…" if len(context_text) > 600 else ""),
-                wrap=True,
-                halign=Gtk.Align.START,
-            )
-            preview.add_css_class("dim-label")
-            preview.set_margin_start(12)
-            preview.set_margin_end(12)
-            preview.set_margin_bottom(12)
-
-            container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
-            container.append(header)
-            container.append(preview)
-            context_frame.set_child(container)
-            content_box.append(context_frame)
-
-        suggestion_label = Gtk.Label(label="", halign=Gtk.Align.START, wrap=True)
-        suggestion_label.add_css_class("dim-label")
-        content_box.append(suggestion_label)
-
-        suggestion_rows: List[Gtk.ListBoxRow] = []
-        suggestions_scrolled = None
-
-        if AI_SUGGESTIONS:
-            suggestions_header = Gtk.Label(
-                label=_("Quick suggestions"),
-                halign=Gtk.Align.START,
-            )
-            suggestions_header.add_css_class("heading")
-            content_box.append(suggestions_header)
-
-            suggestions_scrolled = Gtk.ScrolledWindow(
-                hexpand=True,
-                vexpand=False,
-                min_content_height=200,
-            )
-            suggestions_scrolled.set_policy(
-                Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC
-            )
-
-            suggestions_box = Gtk.ListBox(selection_mode=Gtk.SelectionMode.NONE)
-
-            def on_suggestion_clicked(_button: Gtk.Button, phrase: str) -> None:
-                buffer.set_text(phrase)
-                end_iter = buffer.get_end_iter()
-                buffer.place_cursor(end_iter)
-                text_view.grab_focus()
-                update_suggestions()
-
-            for phrase in AI_SUGGESTIONS:
-                row = Gtk.ListBoxRow()
-                row.prompt_text = phrase  # type: ignore[attr-defined]
-                button = Gtk.Button()
-                prompt_label = Gtk.Label(label=phrase, wrap=True)
-                prompt_label.set_xalign(0.0)
-                button.set_child(prompt_label)
-                button.set_halign(Gtk.Align.FILL)
-                button.set_hexpand(True)
-                button.add_css_class("pill")
-                button.add_css_class("flat")
-                button.connect("clicked", on_suggestion_clicked, phrase)
-                row.set_child(button)
-                suggestions_box.append(row)
-                suggestion_rows.append(row)
-
-            suggestions_scrolled.set_child(suggestions_box)
-            content_box.append(suggestions_scrolled)
-
-        dialog.set_extra_child(content_box)
-        dialog.set_default_size(880, 640)
-
-        buffer = text_view.get_buffer()
-        buffer.set_text("")
-
-        def update_suggestions() -> None:
-            query = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True).strip().casefold()
-            matches = 0
-            for row in suggestion_rows:
-                phrase = getattr(row, "prompt_text", "")
-                visible = not query or query in phrase.casefold()
-                row.set_visible(visible)
-                if visible:
-                    matches += 1
-            if suggestion_label:
-                if query:
-                    if matches:
-                        suggestion_label.set_text(
-                            _("Matching suggestions: {count}").format(count=matches)
-                        )
-                    else:
-                        suggestion_label.set_text(_("No suggestion found."))
-                else:
-                    suggestion_label.set_text(
-                        _("Describe your request or choose one of the suggestions.")
-                    )
-            if suggestions_scrolled:
-                min_height = 0
-                if matches:
-                    min_height = min(420, max(120, matches * 28))
-                else:
-                    min_height = 140
-                suggestions_scrolled.set_min_content_height(min_height)
-
-        update_suggestions()
+    # Adicione este método para exibir o resultado (chamado pelo ai_assistant)
+    def show_ai_pdf_result_dialog(self, result_text: str):
+        from ui.dialogs import AiResultDialog
+        dialog = AiResultDialog(self, result_text)
+        dialog.present()
 
         def handle_send() -> bool:
             start_iter = buffer.get_start_iter()

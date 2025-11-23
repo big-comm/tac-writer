@@ -8,6 +8,7 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, GObject, Gio, Gdk, Pango, GLib
 
+import os
 import sqlite3
 import threading
 import subprocess
@@ -1981,3 +1982,149 @@ class ImageDialog(Adw.Window):
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
+
+class AiPdfDialog(Adw.Window):
+    """Dialog for AI PDF Review"""
+    __gtype_name__ = 'TacAiPdfDialog'
+
+    def __init__(self, parent, ai_assistant, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Revisão IA via PDF"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(600, 400)
+        self.set_resizable(True)
+
+        self.ai_assistant = ai_assistant
+        self.selected_file_path = None
+
+        self._create_ui()
+
+    def _create_ui(self):
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        self.set_content(content_box)
+
+        # Header
+        header = Adw.HeaderBar()
+        content_box.append(header)
+
+        # Main Area
+        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        main_box.set_margin_top(20)
+        main_box.set_margin_bottom(20)
+        main_box.set_margin_start(20)
+        main_box.set_margin_end(20)
+        main_box.set_valign(Gtk.Align.CENTER)
+        content_box.append(main_box)
+
+        # Icon
+        icon = Gtk.Image.new_from_icon_name("application-pdf-symbolic")
+        icon.set_pixel_size(64)
+        main_box.append(icon)
+
+        # Instructions
+        label = Gtk.Label(
+            label=_("Selecione um arquivo PDF do seu texto para revisão.\n"
+                    "A IA fará uma análise ortográfica, gramatical e semântica."),
+            justify=Gtk.Justification.CENTER,
+            wrap=True
+        )
+        main_box.append(label)
+
+        # File Selection Group
+        files_group = Adw.PreferencesGroup()
+        main_box.append(files_group)
+
+        self.file_row = Adw.ActionRow(title=_("Nenhum arquivo selecionado"))
+        
+        select_btn = Gtk.Button(label=_("Escolher PDF..."))
+        select_btn.connect("clicked", self._on_choose_file)
+        select_btn.set_valign(Gtk.Align.CENTER)
+        
+        self.file_row.add_suffix(select_btn)
+        files_group.add(self.file_row)
+
+        # Execute Button
+        self.run_btn = Gtk.Button(label=_("Executar Análise"))
+        self.run_btn.add_css_class("suggested-action")
+        self.run_btn.add_css_class("pill")
+        self.run_btn.set_halign(Gtk.Align.CENTER)
+        self.run_btn.set_size_request(200, 50)
+        self.run_btn.set_sensitive(False)
+        self.run_btn.connect("clicked", self._on_run_clicked)
+        main_box.append(self.run_btn)
+
+        # Spinner (Loading)
+        self.spinner = Gtk.Spinner()
+        self.spinner.set_halign(Gtk.Align.CENTER)
+        main_box.append(self.spinner)
+
+    def _on_choose_file(self, btn):
+        dialog = Gtk.FileDialog()
+        dialog.set_title(_("Selecione o PDF"))
+        
+        # Filtro para PDF
+        pdf_filter = Gtk.FileFilter()
+        pdf_filter.set_name("Arquivos PDF")
+        pdf_filter.add_pattern("*.pdf")
+        
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        filters.append(pdf_filter)
+        dialog.set_filters(filters)
+        dialog.set_default_filter(pdf_filter)
+
+        dialog.open(self, None, self._on_file_open_finish)
+
+    def _on_file_open_finish(self, dialog, result):
+        try:
+            file = dialog.open_finish(result)
+            if file:
+                self.selected_file_path = file.get_path()
+                self.file_row.set_title(os.path.basename(self.selected_file_path))
+                self.run_btn.set_sensitive(True)
+        except Exception as e:
+            print(f"Error selecting file: {e}")
+
+    def _on_run_clicked(self, btn):
+        if self.selected_file_path:
+            self.run_btn.set_sensitive(False)
+            self.run_btn.set_label(_("Analisando..."))
+            self.spinner.start()
+            
+            # Chama o método no core
+            success = self.ai_assistant.request_pdf_review(self.selected_file_path)
+            if success:
+                # Fecha este diálogo para esperar o resultado na Main Window
+                # ou poderíamos manter aberto, mas a arquitetura atual usa callbacks via window
+                self.destroy()
+
+class AiResultDialog(Adw.Window):
+    """Dialog to show AI Results text"""
+    def __init__(self, parent, result_text, **kwargs):
+        super().__init__(**kwargs)
+        self.set_title(_("Resultado da Análise"))
+        self.set_transient_for(parent)
+        self.set_modal(True)
+        self.set_default_size(800, 600)
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(box)
+        
+        header = Adw.HeaderBar()
+        box.append(header)
+
+        scrolled = Gtk.ScrolledWindow()
+        box.append(scrolled)
+
+        text_view = Gtk.TextView()
+        text_view.set_editable(False)
+        text_view.set_wrap_mode(Gtk.WrapMode.WORD)
+        text_view.set_margin_top(15)
+        text_view.set_margin_bottom(15)
+        text_view.set_margin_start(15)
+        text_view.set_margin_end(15)
+        
+        buff = text_view.get_buffer()
+        buff.set_text(result_text)
+        
+        scrolled.set_child(text_view)

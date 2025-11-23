@@ -5,3 +5,4 @@ reportlab
 pygtkspellcheck
 pyenchant
 requests
+pypdf

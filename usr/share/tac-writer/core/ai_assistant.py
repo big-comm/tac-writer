@@ -9,6 +9,11 @@ import logging
 import threading
 import weakref
 from typing import Any, Dict, List, Optional, Tuple
+try:
+    from pypdf import PdfReader
+    PDF_AVAILABLE = True
+except ImportError:
+    PDF_AVAILABLE = False
 
 import requests
 
@@ -457,3 +462,84 @@ class WritingAiAssistant:
         return _("OpenRouter respondeu com HTTP {status}: {message}{detail}").format(
             status=status, message=message, detail=suffix
         )
+
+
+    def request_pdf_review(self, pdf_path: str) -> bool:
+        """
+        Lê um PDF, extrai o texto e envia para análise com o prompt específico.
+        """
+        if not PDF_AVAILABLE:
+            self._queue_toast(_("Biblioteca pypdf não instalada."))
+            return False
+
+        if not pdf_path or not os.path.exists(pdf_path):
+            return False
+
+        with self._lock:
+            if self._inflight:
+                self._queue_toast(_("O assistente já está processando uma solicitação."))
+                return False
+            self._inflight = True
+
+        # Executa em thread separada para não travar a UI
+        worker = threading.Thread(
+            target=self._process_pdf_thread,
+            args=(pdf_path,),
+            daemon=True,
+        )
+        worker.start()
+        return True
+
+    def _process_pdf_thread(self, pdf_path: str) -> None:
+        try:
+            # 1. Extração do Texto do PDF
+            text_content = ""
+            try:
+                reader = PdfReader(pdf_path)
+                for page in reader.pages:
+                    text_content += page.extract_text() + "\n"
+            except Exception as e:
+                raise RuntimeError(_("Erro ao ler PDF: {}").format(str(e)))
+
+            if not text_content.strip():
+                raise RuntimeError(_("Não foi possível extrair texto do PDF (pode ser uma imagem)."))
+
+            # 2. Montagem do Prompt Fixo
+            fixed_prompt = (
+                "Faça uma revisão ortográfica, gramatical e semântica do texto abaixo. "
+                "Procure por palavras que, ainda que digitadas corretamente, possam não fazer sentido "
+                "com o conteúdo de uma frase. Identifique repetições de palavras em excesso em pequenos "
+                "períodos de texto.\n\n"
+                "--- INÍCIO DO TEXTO ---\n"
+                f"{text_content}\n"
+                "--- FIM DO TEXTO ---"
+            )
+            messages = [
+                {
+                    "role": "system", 
+                    "content": "Você é um especialista em revisão de textos acadêmicos em Português."
+                },
+                {
+                    "role": "user", 
+                    "content": fixed_prompt
+                }
+            ]
+
+            config = self._load_configuration()
+            GLib.idle_add(self._display_pdf_result, clean_reply)
+
+        except Exception as exc:
+            self.logger.error("AI PDF review failed: %s", exc)
+            GLib.idle_add(
+                self._queue_toast,
+                _("Erro na análise: {error}").format(error=str(exc)),
+            )
+        finally:
+            with self._lock:
+                self._inflight = False
+
+    def _display_pdf_result(self, result_text: str) -> bool:
+        window = self._window_ref()
+        if window and hasattr(window, "show_ai_pdf_result_dialog"):
+            window.show_ai_pdf_result_dialog(result_text)
+        return False

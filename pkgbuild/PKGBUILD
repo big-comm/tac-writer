@@ -16,6 +16,7 @@ depends=(
     'python-requests'
     'gettext'
     'ttf-liberation'
+    'python-pypdf'
     'hunspell-pt-br'
     'hunspell-en_us'
     'hunspell-es_any'
