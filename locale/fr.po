@@ -1215,11 +1215,15 @@ msgstr "Révision IA via PDF"
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
 msgid ""
-"Selecione um arquivo PDF do seu texto para revisão.\n"
-"A IA fará uma análise ortográfica, gramatical e semântica."
+"Select a PDF file of your text for review.\n"
+"The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
+"IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple "
+"files may be an alternative."
 msgstr ""
-"Sélectionnez un fichier PDF de votre texte pour révision. L'IA effectuera une analyse "
-"orthographique, grammaticale et sémantique."
+"Sélectionnez un fichier PDF de votre texte pour révision.  \n"
+"L'IA effectuera une analyse orthographique, grammaticale et sémantique.  \n"
+"IMPORTANT : Tenez compte de la limite de 10 000 caractères pour les API gratuites. Diviser votre "
+"texte en plusieurs fichiers peut être une alternative."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2038
 #: NEEDS WORK
@@ -1236,20 +1240,20 @@ msgstr "Choisir PDF..."
 msgid "Executar Análise"
 msgstr "Exécuter l'analyse"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
-msgid "Selecione o PDF"
-msgstr "Sélectionnez le PDF"
+msgid "Select PDF"
+msgstr "Sélectionner PDF"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2092
 #: NEEDS WORK
-msgid "Analisando..."
-msgstr "Analyse en cours..."
+msgid "Analyzing (may take a few minutes)"
+msgstr "Analyse en cours (cela peut prendre quelques minutes)"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2105
 #: NEEDS WORK
-msgid "Resultado da Análise"
-msgstr "Résultat de l'analyse"
+msgid "Analysis Results"
+msgstr "Résultats d'analyse"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
@@ -1823,10 +1827,10 @@ msgstr "clé API"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "Configurer {items} dans Préférences ▸ Assistant IA."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1142
+# File: usr/share/tac-writer/ui/main_window.py, line: 1145
 #: NEEDS WORK
-msgid "Habilite a IA nas Preferências primeiro."
-msgstr "Activez l'IA dans les Préférences d'abord."
+msgid "Enable AI in Preferences. API key is required. Read Wiki if there is any doubt."
+msgstr "Activer l'IA dans les Préférences. Une clé API est requise. Consultez le Wiki en cas de doute."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK

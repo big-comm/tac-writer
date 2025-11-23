@@ -1212,9 +1212,15 @@ msgstr "סקירה של IA באמצעות PDF"
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
 msgid ""
-"Selecione um arquivo PDF do seu texto para revisão.\n"
-"A IA fará uma análise ortográfica, gramatical e semântica."
-msgstr "בחר קובץ PDF מהטקסט שלך לצורך סקירה. הבינה המלאכותית תבצע ניתוח אורתוגרפי, דקדוקי וסמנטי."
+"Select a PDF file of your text for review.\n"
+"The AI ​​will perform a spelling, grammar, and semantic analysis.\n"
+"IMPORTANT: Consider the 10,000 character limit for free APIs. Splitting your text into multiple "
+"files may be an alternative."
+msgstr ""
+"בחר קובץ PDF של הטקסט שלך לסקירה.  \n"
+"ה-AI יבצע ניתוח איות, דקדוק ומשמעות.  \n"
+"חשוב: קח בחשבון את מגבלת 10,000 התווים עבור APIs חינמיים. חלוקת הטקסט שלך למספר קבצים עשויה להיות "
+"חלופה."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2038
 #: NEEDS WORK
@@ -1231,20 +1237,20 @@ msgstr "בחר PDF..."
 msgid "Executar Análise"
 msgstr "בצע ניתוח"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2064
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
-msgid "Selecione o PDF"
-msgstr "בחר את ה-PDF"
+msgid "Select PDF"
+msgstr "בחר PDF"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2091
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2092
 #: NEEDS WORK
-msgid "Analisando..."
-msgstr "מנתח..."
+msgid "Analyzing (may take a few minutes)"
+msgstr "מנתח (עשוי לקחת כמה דקות)"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2105
 #: NEEDS WORK
-msgid "Resultado da Análise"
-msgstr "תוצאת הניתוח"
+msgid "Analysis Results"
+msgstr "תוצאות ניתוח"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 163
 #: NEEDS WORK
@@ -1816,10 +1822,10 @@ msgstr "מפתח API"
 msgid "Configure {items} in Preferences ▸ AI Assistant."
 msgstr "הגדר {items} בהעדפות ▸ עוזר AI."
 # 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1142
+# File: usr/share/tac-writer/ui/main_window.py, line: 1145
 #: NEEDS WORK
-msgid "Habilite a IA nas Preferências primeiro."
-msgstr "אפשר את ה-AI בהגדרות קודם."
+msgid "Enable AI in Preferences. API key is required. Read Wiki if there is any doubt."
+msgstr "אפשרות AI בהעדפות. מפתח API נדרש. קרא את הוויקי אם יש ספק."
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1339
 #: NEEDS WORK
