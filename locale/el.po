@@ -661,16 +661,6 @@ msgstr "Σφάλμα κατά την αλλαγή της περιτύλιξης 
 msgid "Error changing line numbers: {}"
 msgstr "Σφάλμα κατά την αλλαγή αριθμών γραμμών: {}"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 938
-#: NEEDS WORK
-msgid "Model identifier (for example: llama-3.1-8b-instant)."
-msgstr "Ταυτοποίηση μοντέλου (για παράδειγμα: llama-3.1-8b-instant)."
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 940
-#: NEEDS WORK
-msgid "Groq API key."
-msgstr "Κλειδί API Groq."
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 946
 #: NEEDS WORK
 msgid "Gemini model identifier (for example: gemini-2.5-flash)."
@@ -681,10 +671,10 @@ msgstr "Ταυτοποίηση μοντέλου Gemini (για παράδειγ�
 msgid "Google AI Studio API key."
 msgstr "Κλειδί API Google AI Studio."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+# File: usr/share/tac-writer/ui/dialogs.py, line: 950
 #: NEEDS WORK
-msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
-msgstr "Ταυτοποίηση μοντέλου OpenRouter (για παράδειγμα: openrouter/polaris-alpha)."
+msgid "OpenRouter model identifier (for example: x-ai/grok-4.1-fast:free)."
+msgstr "Ταυτοποίηση μοντέλου OpenRouter (για παράδειγμα: x-ai/grok-4.1-fast:free)."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 956
 #: NEEDS WORK

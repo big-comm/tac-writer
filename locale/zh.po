@@ -661,16 +661,6 @@ msgstr "更改换行方式时出错：{}"
 msgid "Error changing line numbers: {}"
 msgstr "更改行号时出错：{}"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 938
-#: NEEDS WORK
-msgid "Model identifier (for example: llama-3.1-8b-instant)."
-msgstr "模型标识符（例如：llama-3.1-8b-instant）。"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 940
-#: NEEDS WORK
-msgid "Groq API key."
-msgstr "Groq API 密钥。"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 946
 #: NEEDS WORK
 msgid "Gemini model identifier (for example: gemini-2.5-flash)."
@@ -681,10 +671,10 @@ msgstr "Gemini模型标识符（例如：gemini-2.5-flash）。"
 msgid "Google AI Studio API key."
 msgstr "Google AI Studio API 密钥。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 954
+# File: usr/share/tac-writer/ui/dialogs.py, line: 950
 #: NEEDS WORK
-msgid "OpenRouter model identifier (for example: openrouter/polaris-alpha)."
-msgstr "OpenRouter 模型标识符（例如：openrouter/polaris-alpha）。"
+msgid "OpenRouter model identifier (for example: x-ai/grok-4.1-fast:free)."
+msgstr "OpenRouter 模型标识符（例如：x-ai/grok-4.1-fast:free）。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 956
 #: NEEDS WORK
