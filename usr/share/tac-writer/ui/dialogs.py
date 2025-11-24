@@ -736,7 +736,6 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.ai_provider_row = Adw.ComboRow()
         self.ai_provider_row.set_title(_("Provider"))
         self._ai_provider_options = [
-            ("groq", "Groq"),
             ("gemini", "Gemini"),
             ("openrouter", "OpenRouter.ai"),
         ]
@@ -932,16 +931,11 @@ class PreferencesDialog(Adw.PreferencesWindow):
             widget.set_sensitive(enabled)
 
     def _update_ai_provider_ui(self, provider: str) -> None:
-        provider = provider or "groq"
-        if provider == "groq":
-            self.ai_model_entry.set_placeholder_text("llama-3.1-8b-instant")
-            self.ai_model_row.set_subtitle(
-                _("Model identifier (for example: llama-3.1-8b-instant).")
-            )
-            self.ai_api_key_row.set_subtitle(_("Groq API key."))
-            self.ai_openrouter_site_row.set_visible(False)
-            self.ai_openrouter_title_row.set_visible(False)
-        elif provider == "gemini":
+        # Se o provider vier vazio ou inválido (ex: antigo groq), define um padrão
+        if not provider or provider == "groq":
+            provider = "gemini"
+
+        if provider == "gemini":
             self.ai_model_entry.set_placeholder_text("gemini-2.5-flash")
             self.ai_model_row.set_subtitle(
                 _("Gemini model identifier (for example: gemini-2.5-flash).")
@@ -949,15 +943,18 @@ class PreferencesDialog(Adw.PreferencesWindow):
             self.ai_api_key_row.set_subtitle(_("Google AI Studio API key."))
             self.ai_openrouter_site_row.set_visible(False)
             self.ai_openrouter_title_row.set_visible(False)
+        
         elif provider == "openrouter":
-            self.ai_model_entry.set_placeholder_text("openrouter/polaris-alpha")
+            self.ai_model_entry.set_placeholder_text("x-ai/grok-4.1-fast:free")
             self.ai_model_row.set_subtitle(
-                _("OpenRouter model identifier (for example: openrouter/polaris-alpha).")
+                _("OpenRouter model identifier (for example: x-ai/grok-4.1-fast:free).")
             )
             self.ai_api_key_row.set_subtitle(_("OpenRouter API key."))
             self.ai_openrouter_site_row.set_visible(True)
             self.ai_openrouter_title_row.set_visible(True)
+        
         else:
+            # Fallback genérico
             self.ai_model_entry.set_placeholder_text(_("model-name"))
             self.ai_model_row.set_subtitle(
                 _("Model identifier required by the selected provider.")

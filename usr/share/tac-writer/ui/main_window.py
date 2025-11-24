@@ -1184,8 +1184,8 @@ class MainWindow(Adw.ApplicationWindow):
                 return
             dlg.destroy()
 
-        key_controller = Gtk.EventControllerKey.new()
-        buffer.connect("changed", lambda *_args: update_suggestions())
+        #key_controller = Gtk.EventControllerKey.new()
+        #buffer.connect("changed", lambda *_args: update_suggestions())
 
         def on_prompt_key_pressed(_controller, keyval, _keycode, state):
             if keyval in (Gdk.KEY_Return, Gdk.KEY_KP_Enter) and not (
@@ -1196,8 +1196,8 @@ class MainWindow(Adw.ApplicationWindow):
                 return Gdk.EVENT_STOP
             return Gdk.EVENT_PROPAGATE
 
-        key_controller.connect("key-pressed", on_prompt_key_pressed)
-        text_view.add_controller(key_controller)
+        #key_controller.connect("key-pressed", on_prompt_key_pressed)
+        #text_view.add_controller(key_controller)
 
         dialog.connect("response", on_response)
         dialog.present()
