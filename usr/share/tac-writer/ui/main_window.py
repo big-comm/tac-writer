@@ -138,6 +138,13 @@ class MainWindow(Adw.ApplicationWindow):
         self.header_bar.pack_start(self.pomodoro_button)
 
         # Right side buttons
+        # Menu button
+        menu_button = Gtk.MenuButton()
+        menu_button.set_icon_name('tac-open-menu-symbolic')
+        menu_button.set_tooltip_text(_("Main Menu"))
+        self._setup_menu(menu_button)
+        self.header_bar.pack_end(menu_button)
+        
         save_button = Gtk.Button()
         save_button.set_icon_name('tac-document-save-symbolic')
         save_button.set_tooltip_text(_("Save Project (Ctrl+S)"))
@@ -170,12 +177,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         self.header_bar.pack_end(search_box)
 
-        # Menu button
-        menu_button = Gtk.MenuButton()
-        menu_button.set_icon_name('tac-open-menu-symbolic')
-        menu_button.set_tooltip_text(_("Main Menu"))
-        self._setup_menu(menu_button)
-        self.header_bar.pack_end(menu_button)
+        
 
     def _setup_menu(self, menu_button):
         """Setup the main menu"""
