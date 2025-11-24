@@ -1209,8 +1209,8 @@ msgstr "Kon de afbeelding niet invoegen."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "AI Review via PDF"
+msgid "PDF Review by AI"
+msgstr "PDF Beoordeling door AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1225,20 +1225,15 @@ msgstr ""
 "gratis API's. Het splitsen van uw tekst in meerdere bestanden kan een alternatief zijn voor "
 "betaalde API's."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Geen bestand geselecteerd"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Kies PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
-msgstr "Uitvoeren Analyse"
+msgid "Run Analysis"
+msgstr "Analyse uitvoeren"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
@@ -1586,6 +1581,11 @@ msgstr "TAC - Continue Argumentatietechniek"
 msgid "New Project (Ctrl+N)"
 msgstr "Nieuw Project (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1605,11 +1605,6 @@ msgstr "Zoeken..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Volgende voorkomen zoeken"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Hoofdmenu"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

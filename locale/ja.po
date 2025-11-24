@@ -1206,8 +1206,8 @@ msgstr "画像を挿入できませんでした。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "PDFによるAIレビュー"
+msgid "PDF Review by AI"
+msgstr "AIによるPDFレビュー"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1221,19 +1221,14 @@ msgstr ""
 "AIはスペル、文法、意味の分析を行います。  \n"
 "重要: 無料APIの10,000文字制限を考慮してください。テキストを複数のファイルに分割することは、有料APIの代替手段となる場合があります。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "ファイルが選択されていません"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "PDFを選択..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "分析を実行"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1582,6 +1577,11 @@ msgstr "TAC - 継続的議論技術"
 msgid "New Project (Ctrl+N)"
 msgstr "新規プロジェクト (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "メインメニュー"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1601,11 +1601,6 @@ msgstr "検索..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "次の出現を見つける"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "メインメニュー"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

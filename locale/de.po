@@ -1211,8 +1211,8 @@ msgstr "Das Bild konnte nicht eingefügt werden."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "KI-Überprüfung über PDF"
+msgid "PDF Review by AI"
+msgstr "PDF-Überprüfung durch KI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1227,19 +1227,14 @@ msgstr ""
 "Zeichen für kostenlose APIs. Das Aufteilen Ihres Textes in mehrere Dateien kann eine Alternative zu "
 "kostenpflichtigen APIs sein."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Keine Datei ausgewählt"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "PDF auswählen..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Analyse ausführen"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1588,6 +1583,11 @@ msgstr "TAC - Kontinuierliche Argumentationstechnik"
 msgid "New Project (Ctrl+N)"
 msgstr "Neues Projekt (Strg+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Hauptmenü"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1607,11 +1607,6 @@ msgstr "Suchen..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Nächste Vorkommen finden"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Hauptmenü"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

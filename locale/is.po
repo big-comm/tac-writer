@@ -1207,8 +1207,8 @@ msgstr "Gat ekki að setja inn myndina."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Revisão IA í gegnum PDF"
+msgid "PDF Review by AI"
+msgstr "PDF Endurskoðun af AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1223,19 +1223,14 @@ msgstr ""
 "Mikilvægt: Íhugaðu 10.000 stafa takmarkið fyrir ókeypis API. Að skipta texta þínum í mörg skjöl "
 "gæti verið valkostur við greitt API."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Engin valinn skrá."
+msgid "Choose PDF..."
+msgstr "Veldu PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Escolher PDF..."
-msgstr "Velja PDF..."
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
-#: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Keyra greiningar"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1584,6 +1579,11 @@ msgstr "TAC - Samfelldar röksemdaraðferð"
 msgid "New Project (Ctrl+N)"
 msgstr "Nýr Verkefni (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Aðalvalmynd"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1603,11 +1603,6 @@ msgstr "Leita..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Finndu næstu tilvik"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Aðalvalmynd"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

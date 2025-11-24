@@ -1051,6 +1051,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1664
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2039
 msgid   "No file selected"
 msgstr  ""
 
@@ -1201,7 +1202,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
-msgid   "Revisão IA via PDF"
+msgid   "PDF Review by AI"
 msgstr  ""
 
 #
@@ -1214,18 +1215,13 @@ msgid   "Select a PDF file of your text for review.\n"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2039
-msgid   "Nenhum arquivo selecionado"
-msgstr  ""
-
-#
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2041
-msgid   "Escolher PDF..."
+msgid   "Choose PDF..."
 msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2049
-msgid   "Executar Análise"
+msgid   "Run Analysis"
 msgstr  ""
 
 #

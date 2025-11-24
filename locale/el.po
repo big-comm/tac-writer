@@ -1207,8 +1207,8 @@ msgstr "Δεν ήταν δυνατή η εισαγωγή της εικόνας."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Αναθεώρηση IA μέσω PDF"
+msgid "PDF Review by AI"
+msgstr "Αξιολόγηση PDF από AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1223,19 +1223,14 @@ msgstr ""
 "ΣΗΜΑΝΤΙΚΟ: Λάβετε υπόψη το όριο των 10.000 χαρακτήρων για δωρεάν APIs. Η διαίρεση του κειμένου σας "
 "σε πολλαπλά αρχεία μπορεί να είναι μια εναλλακτική λύση για πληρωμένα API."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Κανένα αρχείο επιλεγμένο"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Επιλέξτε PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Εκτέλεση Ανάλυσης"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1584,6 +1579,11 @@ msgstr "ΤΑC - Συνεχής Τεχνική Επιχειρηματολογία
 msgid "New Project (Ctrl+N)"
 msgstr "Νέο Έργο (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Κύριο Μενού"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1603,11 +1603,6 @@ msgstr "Αναζήτηση..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Βρείτε την επόμενη εμφάνιση"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Κύριο Μενού"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

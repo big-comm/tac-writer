@@ -1205,8 +1205,8 @@ msgstr "无法插入图像。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "通过 PDF 的 AI 审查"
+msgid "PDF Review by AI"
+msgstr "AI PDF审阅"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1220,20 +1220,15 @@ msgstr ""
 "AI 将执行拼写、语法和语义分析。  \n"
 "重要提示：请考虑免费 API 的 10,000 字符限制。将您的文本拆分为多个文件可能是付费 API 的替代方案。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "未选择任何文件"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "选择 PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
-msgstr "执行分析"
+msgid "Run Analysis"
+msgstr "运行分析"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
@@ -1581,6 +1576,11 @@ msgstr "TAC - 持续论证技术"
 msgid "New Project (Ctrl+N)"
 msgstr "新建项目 (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "主菜单"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1600,11 +1600,6 @@ msgstr "搜索..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "查找下一个出现位置"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "主菜单"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

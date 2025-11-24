@@ -1207,8 +1207,8 @@ msgstr "Pilti ei saanud sisestada."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "IA ülevaade PDF-i kaudu"
+msgid "PDF Review by AI"
+msgstr "PDF ülevaade AI poolt"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1223,20 +1223,15 @@ msgstr ""
 "OLULINE: Arvestage 10 000 tähemärgi piiranguga tasuta API-de puhul. Teksti jagamine mitmeks failiks "
 "võib olla alternatiiv tasulisele API-le."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Ühtegi faili ei ole valitud"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Vali PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
-msgstr "Teostada analüüs"
+msgid "Run Analysis"
+msgstr "Käivita analüüs"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
@@ -1584,6 +1579,11 @@ msgstr "TAC - Jätkuv Argumenteerimise Tehnika"
 msgid "New Project (Ctrl+N)"
 msgstr "Uus projekt (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Peamenüü"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1603,11 +1603,6 @@ msgstr "Otsi..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Leia järgmine esinemine"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Peamenüü"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

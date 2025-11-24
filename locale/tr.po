@@ -1207,8 +1207,8 @@ msgstr "Görüntü eklenemedi."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "PDF üzerinden IA İncelemesi"
+msgid "PDF Review by AI"
+msgstr "AI ile PDF İncelemesi"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1223,20 +1223,15 @@ msgstr ""
 "ÖNEMLİ: Ücretsiz API'ler için 10.000 karakter sınırını dikkate alın. Metninizi birden fazla dosyaya "
 "ayırmak, ücretli API'ye bir alternatif olabilir."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Hiçbir dosya seçilmedi"
+msgid "Choose PDF..."
+msgstr "PDF Seçin..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Escolher PDF..."
-msgstr "PDF Seç..."
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
-#: NEEDS WORK
-msgid "Executar Análise"
-msgstr "Analizi Çalıştır"
+msgid "Run Analysis"
+msgstr "Analiz Çalıştır"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
@@ -1584,6 +1579,11 @@ msgstr "TAC - Sürekli Argümantasyon Tekniği"
 msgid "New Project (Ctrl+N)"
 msgstr "Yeni Proje (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Ana Menü"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1603,11 +1603,6 @@ msgstr "Ara..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Sonraki durumu bul"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Ana Menü"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

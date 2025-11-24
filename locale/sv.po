@@ -1209,8 +1209,8 @@ msgstr "Kunde inte infoga bilden."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Granskning av AI via PDF"
+msgid "PDF Review by AI"
+msgstr "PDF-granskning av AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1225,19 +1225,14 @@ msgstr ""
 "VIKTIGT: Tänk på gränsen på 10 000 tecken för gratis-API:er. Att dela upp din text i flera filer "
 "kan vara ett alternativ till betalda API:er."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Inga filer valda"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Välj PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Kör analys"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1586,6 +1581,11 @@ msgstr "TAC - Kontinuerlig Argumentationsteknik"
 msgid "New Project (Ctrl+N)"
 msgstr "Nytt projekt (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Huvudmeny"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1605,11 +1605,6 @@ msgstr "Sök..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Hitta nästa förekomst"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Huvudmeny"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

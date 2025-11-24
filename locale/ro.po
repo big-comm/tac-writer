@@ -1209,8 +1209,8 @@ msgstr "Nu s-a putut insera imaginea."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Revizuire IA prin PDF"
+msgid "PDF Review by AI"
+msgstr "Revizuire PDF de către AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1225,19 +1225,14 @@ msgstr ""
 "caractere pentru API-urile gratuite. Împărțirea textului dumneavoastră în mai multe fișiere poate "
 "fi o alternativă la API-urile plătite."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Niciun fișier selectat"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Alege PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Execută Analiza"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1586,6 +1581,11 @@ msgstr "TAC - Tehnica de Argumentare Continuă"
 msgid "New Project (Ctrl+N)"
 msgstr "Proiect Nou (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Meniu Principal"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1605,11 +1605,6 @@ msgstr "Caută..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Găsește următoarea apariție"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Meniu Principal"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

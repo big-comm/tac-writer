@@ -1209,8 +1209,8 @@ msgstr "Не можа да се вмъкне изображението."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Ревизия ИА чрез PDF"
+msgid "PDF Review by AI"
+msgstr "PDF преглед от ИИ"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1225,20 +1225,15 @@ msgstr ""
 "ВАЖНО: Имайте предвид лимита от 10,000 знака за безплатни API. Разделянето на текста на множество "
 "файлове може да бъде алтернатива на платения API."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Няма избран файл"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Изберете PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
-msgstr "Изпълни анализ"
+msgid "Run Analysis"
+msgstr "Стартиране на анализ"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
 #: NEEDS WORK
@@ -1586,6 +1581,11 @@ msgstr "ТАК - Непрекъсната аргументационна тех�
 msgid "New Project (Ctrl+N)"
 msgstr "Нов проект (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Главно меню"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1605,11 +1605,6 @@ msgstr "Търсене..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Намери следващото срещане"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Главно меню"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

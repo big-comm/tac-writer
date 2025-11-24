@@ -1209,8 +1209,8 @@ msgstr "Impossible d'insérer l'image."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Révision IA via PDF"
+msgid "PDF Review by AI"
+msgstr "Révision PDF par IA"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1225,19 +1225,14 @@ msgstr ""
 "IMPORTANT : Tenez compte de la limite de 10 000 caractères pour les API gratuites. Diviser votre "
 "texte en plusieurs fichiers peut être une alternative à l'API payante."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Aucun fichier sélectionné"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "Choisir PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Exécuter l'analyse"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1588,6 +1583,11 @@ msgstr "TAC - Technique d'Argumentation Continue"
 msgid "New Project (Ctrl+N)"
 msgstr "Nouveau projet (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Menu Principal"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1607,11 +1607,6 @@ msgstr "Recherche..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Trouver la prochaine occurrence"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Menu Principal"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

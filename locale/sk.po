@@ -1207,8 +1207,8 @@ msgstr "Nepodarilo sa vložiť obrázok."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "Revízia IA cez PDF"
+msgid "PDF Review by AI"
+msgstr "PDF recenzia pomocou AI"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1223,19 +1223,14 @@ msgstr ""
 "DÔLEŽITÉ: Zohľadnite limit 10 000 znakov pre bezplatné API. Rozdelenie vášho textu do viacerých "
 "súborov môže byť alternatívou k platenému API."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "Žiadny súbor nebol vybraný"
+msgid "Choose PDF..."
+msgstr "Vyberte PDF..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Escolher PDF..."
-msgstr "Vybrať PDF..."
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
-#: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "Spustiť analýzu"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1584,6 +1579,11 @@ msgstr "TAC - Kontinuálna argumentačná technika"
 msgid "New Project (Ctrl+N)"
 msgstr "Nový projekt (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "Hlavné menu"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1603,11 +1603,6 @@ msgstr "Hľadať..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "Nájsť ďalší výskyt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "Hlavné menu"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK

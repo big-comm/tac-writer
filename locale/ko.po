@@ -1205,8 +1205,8 @@ msgstr "이미지를 삽입할 수 없습니다."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
-msgid "Revisão IA via PDF"
-msgstr "PDF를 통한 IA 검토"
+msgid "PDF Review by AI"
+msgstr "AI에 의한 PDF 검토"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2027
 #: NEEDS WORK
@@ -1220,19 +1220,14 @@ msgstr ""
 "AI가 맞춤법, 문법 및 의미 분석을 수행합니다.  \n"
 "중요: 무료 API의 10,000자 제한을 고려하세요. 텍스트를 여러 파일로 나누는 것이 유료 API의 대안이 될 수 있습니다."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2038
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2041
 #: NEEDS WORK
-msgid "Nenhum arquivo selecionado"
-msgstr "선택된 파일이 없습니다."
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2040
-#: NEEDS WORK
-msgid "Escolher PDF..."
+msgid "Choose PDF..."
 msgstr "PDF 선택..."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 2048
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2049
 #: NEEDS WORK
-msgid "Executar Análise"
+msgid "Run Analysis"
 msgstr "분석 실행"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 2065
@@ -1581,6 +1576,11 @@ msgstr "TAC - 지속적 논증 기법"
 msgid "New Project (Ctrl+N)"
 msgstr "새 프로젝트 (Ctrl+N)"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 132
+#: NEEDS WORK
+msgid "Main Menu"
+msgstr "메인 메뉴"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 123
 #: NEEDS WORK
 msgid "Save Project (Ctrl+S)"
@@ -1600,11 +1600,6 @@ msgstr "검색..."
 #: NEEDS WORK
 msgid "Find next occurrence"
 msgstr "다음 항목 찾기"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 132
-#: NEEDS WORK
-msgid "Main Menu"
-msgstr "메인 메뉴"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 142
 #: NEEDS WORK
