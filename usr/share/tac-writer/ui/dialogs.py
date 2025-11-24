@@ -1989,7 +1989,7 @@ class AiPdfDialog(Adw.Window):
 
     def __init__(self, parent, ai_assistant, **kwargs):
         super().__init__(**kwargs)
-        self.set_title(_("Revisão IA via PDF"))
+        self.set_title(_("PDF Review by AI"))
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(600, 400)
@@ -2036,9 +2036,9 @@ class AiPdfDialog(Adw.Window):
         files_group = Adw.PreferencesGroup()
         main_box.append(files_group)
 
-        self.file_row = Adw.ActionRow(title=_("Nenhum arquivo selecionado"))
+        self.file_row = Adw.ActionRow(title=_("No file selected"))
         
-        select_btn = Gtk.Button(label=_("Escolher PDF..."))
+        select_btn = Gtk.Button(label=_("Choose PDF..."))
         select_btn.connect("clicked", self._on_choose_file)
         select_btn.set_valign(Gtk.Align.CENTER)
         
@@ -2046,7 +2046,7 @@ class AiPdfDialog(Adw.Window):
         files_group.add(self.file_row)
 
         # Execute Button
-        self.run_btn = Gtk.Button(label=_("Executar Análise"))
+        self.run_btn = Gtk.Button(label=_("Run Analysis"))
         self.run_btn.add_css_class("suggested-action")
         self.run_btn.add_css_class("pill")
         self.run_btn.set_halign(Gtk.Align.CENTER)
