@@ -1919,6 +1919,11 @@ msgstr "טוען פרויקט..."
 msgid "Failed to open project: {}"
 msgstr "נכשל בפתיחת הפרויקט: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "כישלון בניתוח"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2254,16 +2259,16 @@ msgstr "האסיסטנט כבר מעבד בקשה."
 msgid "Erro ao ler PDF: {}"
 msgstr "שגיאה בקריאת PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "לא ניתן לחלץ טקסט מה-PDF (ייתכן שמדובר בתמונה)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "לא ניתן לחלץ טקסט מה-PDF (ייתכן שמדובר בתמונה או ריק)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "שגיאה בניתוח: {error}"
+msgid "Erro IA: {}"
+msgstr "שגיאת IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

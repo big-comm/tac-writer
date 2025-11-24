@@ -1922,6 +1922,11 @@ msgstr "Project laden..."
 msgid "Failed to open project: {}"
 msgstr "Kon project niet openen: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Analysefout"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2257,16 +2262,16 @@ msgstr "De assistent is al een verzoek aan het verwerken."
 msgid "Erro ao ler PDF: {}"
 msgstr "Fout bij het lezen van PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Het was niet mogelijk om tekst uit de PDF te extraheren (het kan een afbeelding zijn)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Het was niet mogelijk om tekst uit de PDF te extraheren (het kan een afbeelding of leeg zijn)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Fout bij de analyse: {error}"
+msgid "Erro IA: {}"
+msgstr "Fout IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

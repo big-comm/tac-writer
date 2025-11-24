@@ -1920,6 +1920,11 @@ msgstr "Proje yükleniyor..."
 msgid "Failed to open project: {}"
 msgstr "Proje açılamadı: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Analiz Hatası"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2255,16 +2260,16 @@ msgstr "Asistan zaten bir isteği işliyor."
 msgid "Erro ao ler PDF: {}"
 msgstr "PDF okuma hatası: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "PDF'den metin çıkarılamadı (bir resim olabilir)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "PDF'den metin çıkarılamadı (bir resim veya boş olabilir)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Analizadaki hata: {error}"
+msgid "Erro IA: {}"
+msgstr "Hata IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

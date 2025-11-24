@@ -1920,6 +1920,11 @@ msgstr "Hlaða verkefni..."
 msgid "Failed to open project: {}"
 msgstr "Mistók að opna verkefni: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Greiningarbilun"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2251,16 +2256,16 @@ msgstr "A aðstoðarmaðurinn er þegar að vinna að beiðni."
 msgid "Erro ao ler PDF: {}"
 msgstr "Villa við að lesa PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Ekki var hægt að draga út texta úr PDF (gæti verið mynd)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Ekki var hægt að draga út texta úr PDF (gæti verið mynd eða tómt)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Villa í greiningu: {error}"
+msgid "Erro IA: {}"
+msgstr "Villa IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

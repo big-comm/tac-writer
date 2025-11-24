@@ -1922,6 +1922,11 @@ msgstr "Cargando proyecto..."
 msgid "Failed to open project: {}"
 msgstr "Error al abrir el proyecto: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Fallo de Análisis"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2257,16 +2262,16 @@ msgstr "El asistente ya está procesando una solicitud."
 msgid "Erro ao ler PDF: {}"
 msgstr "Error al leer PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "No se pudo extraer texto del PDF (puede ser una imagen)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "No se pudo extraer texto del PDF (puede ser una imagen o estar vacío)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Error en el análisis: {error}"
+msgid "Erro IA: {}"
+msgstr "Error IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

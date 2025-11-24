@@ -1919,6 +1919,11 @@ msgstr "Učitavanje projekta..."
 msgid "Failed to open project: {}"
 msgstr "Neuspješno otvaranje projekta: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Neuspjeh analize"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2254,16 +2259,16 @@ msgstr "Asistent već obrađuje zahtjev."
 msgid "Erro ao ler PDF: {}"
 msgstr "Greška prilikom čitanja PDF-a: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Nije moguće izvući tekst iz PDF-a (može biti slika)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Nije moguće izvući tekst iz PDF-a (može biti slika ili prazno)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Greška u analizi: {error}"
+msgid "Erro IA: {}"
+msgstr "Greška IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

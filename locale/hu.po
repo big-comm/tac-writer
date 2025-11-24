@@ -1922,6 +1922,11 @@ msgstr "Projekt betöltése..."
 msgid "Failed to open project: {}"
 msgstr "A projekt megnyitása nem sikerült: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Elemzés hiba"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2258,16 +2263,16 @@ msgstr "A segédprogram már feldolgozza a kérést."
 msgid "Erro ao ler PDF: {}"
 msgstr "Hiba a PDF olvasásakor: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Nem sikerült szöveget kinyerni a PDF-ből (lehet, hogy egy kép)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Nem sikerült szöveget kinyerni a PDF-ből (lehet, hogy egy kép vagy üres)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Hiba az elemzésben: {error}"
+msgid "Erro IA: {}"
+msgstr "Hiba IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

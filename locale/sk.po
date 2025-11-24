@@ -1920,6 +1920,11 @@ msgstr "Načítanie projektu..."
 msgid "Failed to open project: {}"
 msgstr "Nepodarilo sa otvoriť projekt: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Zlyhanie analýzy"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2255,16 +2260,16 @@ msgstr "Asistent už spracováva požiadavku."
 msgid "Erro ao ler PDF: {}"
 msgstr "Chyba pri čítaní PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Nedalo sa extrahovať text z PDF (môže to byť obrázok)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Nedalo sa extrahovať text z PDF (môže to byť obrázok alebo prázdne)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Chyba pri analýze: {error}"
+msgid "Erro IA: {}"
+msgstr "Chyba IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

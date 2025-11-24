@@ -784,6 +784,7 @@ msgstr "Backup Manager"
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1214
 # File: usr/share/tac-writer/ui/main_window.py, line: 1216
+# File: usr/share/tac-writer/ui/main_window.py, line: 1641
 msgid "Close"
 msgstr "Close"
 
@@ -1961,6 +1962,11 @@ msgid "Failed to open project: {}"
 msgstr "Failed to open project: {}"
 
 #
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+msgid "Analysis Failure"
+msgstr "Analysis Failure"
+
+#
 # File: usr/share/tac-writer/application.py, line: 127
 #, python-brace-format
 msgid "Warning: Could not set system locale: {}"
@@ -2292,21 +2298,21 @@ msgid "O assistente já está processando uma solicitação."
 msgstr "O assistente já está processando uma solicitação."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 503
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
 #, python-brace-format
 msgid "Erro ao ler PDF: {}"
 msgstr "Erro ao ler PDF: {}"
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 506
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Não foi possível extrair texto do PDF (pode ser uma imagem)."
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
 
 #
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 538
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Erro na análise: {error}"
+msgid "Erro IA: {}"
+msgstr "Erro IA: {}"
 
 #
 # File: usr/share/tac-writer/core/services.py, line: 57

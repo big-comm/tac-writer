@@ -1920,6 +1920,11 @@ msgstr "Laadimine..."
 msgid "Failed to open project: {}"
 msgstr "Projekti avamine ebaõnnestus: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Analüüsi ebaõnnestumine"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2255,16 +2260,16 @@ msgstr "Abistaja töötleb juba taotlust."
 msgid "Erro ao ler PDF: {}"
 msgstr "PDF-i lugemise viga: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "PDF-i tekst ei õnnestunud välja võtta (võib olla pilt)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "PDF-i tekst ei õnnestunud välja võtta (see võib olla pilt või tühi)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Analüüsi viga: {error}"
+msgid "Erro IA: {}"
+msgstr "Erro IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

@@ -1922,6 +1922,11 @@ msgstr "Φόρτωση έργου..."
 msgid "Failed to open project: {}"
 msgstr "Αποτυχία ανοίγματος έργου: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "Αποτυχία Ανάλυσης"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2258,16 +2263,16 @@ msgstr "Ο βοηθός επεξεργάζεται ήδη ένα αίτημα."
 msgid "Erro ao ler PDF: {}"
 msgstr "Σφάλμα κατά την ανάγνωση PDF: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "Δεν ήταν δυνατή η εξαγωγή κειμένου από το PDF (μπορεί να είναι μια εικόνα)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "Δεν ήταν δυνατή η εξαγωγή κειμένου από το PDF (μπορεί να είναι μια εικόνα ή κενό)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "Σφάλμα στην ανάλυση: {error}"
+msgid "Erro IA: {}"
+msgstr "Σφάλμα Τεχνητής Νοημοσύνης: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK

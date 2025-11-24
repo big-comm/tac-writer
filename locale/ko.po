@@ -1917,6 +1917,11 @@ msgstr "프로젝트 로딩 중..."
 msgid "Failed to open project: {}"
 msgstr "프로젝트를 열지 못했습니다: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+#: NEEDS WORK
+msgid "Analysis Failure"
+msgstr "분석 실패"
+# 
 # File: usr/share/tac-writer/application.py, line: 127
 #: NEEDS WORK
 #, python-brace-format
@@ -2252,16 +2257,16 @@ msgstr "어시스턴트가 이미 요청을 처리하고 있습니다."
 msgid "Erro ao ler PDF: {}"
 msgstr "PDF 읽기 오류: {}"
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 505
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 508
 #: NEEDS WORK
-msgid "Não foi possível extrair texto do PDF (pode ser uma imagem)."
-msgstr "PDF에서 텍스트를 추출할 수 없습니다(이미지일 수 있습니다)."
+msgid "Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."
+msgstr "PDF에서 텍스트를 추출할 수 없습니다(이미지이거나 비어 있을 수 있습니다)."
 # 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 535
+# File: usr/share/tac-writer/core/ai_assistant.py, line: 556
 #: NEEDS WORK
 #, python-brace-format
-msgid "Erro na análise: {error}"
-msgstr "분석 오류: {error}"
+msgid "Erro IA: {}"
+msgstr "오류 IA: {}"
 # 
 # File: usr/share/tac-writer/core/services.py, line: 49
 #: NEEDS WORK
