@@ -1622,3 +1622,28 @@ class MainWindow(Adw.ApplicationWindow):
         
         self.main_stack.set_visible_child_name("editor")
         self._update_header_for_view("editor")
+
+    def handle_ai_pdf_error(self, error_message: str):
+        """Lida com erros vindos do assistente de IA durante análise de PDF"""
+        
+        # 1. Fecha a janela de "Analisando..." (o spinner)
+        if self.pdf_loading_dialog:
+            self.pdf_loading_dialog.destroy()
+            self.pdf_loading_dialog = None
+
+        # 2. Mostra o erro em um diálogo de alerta (Adw.MessageDialog)
+        # Isso é melhor que o toast pois obriga o usuário a ler e fechar
+        error_dialog = Adw.MessageDialog.new(
+            self,
+            _("Analysis Failure"),
+            error_message
+        )
+        error_dialog.add_response("close", _("Close"))
+        error_dialog.set_response_appearance("close", Adw.ResponseAppearance.DESTRUCTIVE)
+        error_dialog.set_default_response("close")
+        error_dialog.set_close_response("close")
+        
+        # Conecta o sinal para fechar o diálogo
+        error_dialog.connect("response", lambda dlg, resp: dlg.destroy())
+        
+        error_dialog.present()

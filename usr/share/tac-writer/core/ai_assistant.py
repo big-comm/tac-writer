@@ -498,14 +498,16 @@ class WritingAiAssistant:
             try:
                 reader = PdfReader(pdf_path)
                 for page in reader.pages:
-                    text_content += page.extract_text() + "\n"
+                    extracted = page.extract_text()
+                    if extracted:
+                        text_content += extracted + "\n"
             except Exception as e:
                 raise RuntimeError(_("Erro ao ler PDF: {}").format(str(e)))
 
             if not text_content.strip():
-                raise RuntimeError(_("Não foi possível extrair texto do PDF (pode ser uma imagem)."))
+                raise RuntimeError(_("Não foi possível extrair texto do PDF (pode ser uma imagem ou vazio)."))
 
-            # 2. Montagem do Prompt Fixo
+            # 2. Montagem do Prompt
             fixed_prompt = (
                 "Faça uma revisão ortográfica, gramatical e semântica do texto abaixo. "
                 "Procure por palavras que, ainda que digitadas corretamente, possam não fazer sentido "
@@ -515,10 +517,11 @@ class WritingAiAssistant:
                 f"{text_content}\n"
                 "--- FIM DO TEXTO ---"
             )
+            
             messages = [
                 {
                     "role": "system", 
-                    "content": "Você é um especialista em revisão de textos acadêmicos em Português."
+                    "content": "Você é um especialista em revisão de textos acadêmicos em Português. Responda apenas com a revisão solicitada, sem JSON."
                 },
                 {
                     "role": "user", 
@@ -527,19 +530,32 @@ class WritingAiAssistant:
             ]
 
             config = self._load_configuration()
+            
             content = self._perform_request(config, messages)
             clean_reply = self._clean_response(content)
+            
             GLib.idle_add(self._display_pdf_result, clean_reply)
 
         except Exception as exc:
             self.logger.error("AI PDF review failed: %s", exc)
-            GLib.idle_add(
-                self._queue_toast,
-                _("Erro na análise: {error}").format(error=str(exc)),
-            )
+            # MUDANÇA AQUI: Em vez de só mandar um toast, chamamos a notificação de erro específica
+            GLib.idle_add(self._notify_pdf_error, str(exc))
         finally:
             with self._lock:
                 self._inflight = False
+
+    # ADICIONE ESTE MÉTODO NOVO
+    def _notify_pdf_error(self, error_msg: str) -> bool:
+        """Notifica a janela principal que houve um erro no processamento do PDF"""
+        window = self._window_ref()
+        # Verifica se a janela tem o método de tratamento de erro
+        if window and hasattr(window, "handle_ai_pdf_error"):
+            window.handle_ai_pdf_error(error_msg)
+        # Fallback para o toast antigo caso o método não exista
+        elif window: 
+            self._queue_toast(_("Erro IA: {}").format(error_msg))
+        return False
+
 
     def _display_pdf_result(self, result_text: str) -> bool:
         window = self._window_ref()
