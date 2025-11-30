@@ -13,7 +13,7 @@ class Config:
     """Application configuration manager"""
 
     # Application version and metadata
-    APP_VERSION = "1.4.9"
+    APP_VERSION = "1.4.10"
     APP_NAME = "TAC"
     APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
     APP_DESCRIPTION = "Academic Writing Assistant"
@@ -270,7 +270,7 @@ class Config:
         self.set('ai_assistant_enabled', enabled)
 
     def get_ai_assistant_provider(self) -> str:
-        return self.get('ai_assistant_provider', 'groq')
+        return self.get('ai_assistant_provider', 'gemini')
 
     def set_ai_assistant_provider(self, provider: str) -> None:
         self.set('ai_assistant_provider', provider)

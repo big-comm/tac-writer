@@ -70,7 +70,7 @@ The Continuous Argumentation Technique emphasizes interconnected paragraphs that
 - **Spell Checking**: Real-time spell checking support
 - **Keyboard Shortcuts**: Efficient workflow with customizable shortcuts
 - **Distraction-Free Mode**: Focus on writing with minimal UI
-- **AI Assistant**: Connect to Groq, Gemini or OpenRouter to rewrite, resume or suggest paragraphs directly from the editor (`Ctrl+Shift+I`)
+- **AI Assistant**: Connect to Gemini or OpenRouter to rewrite, resume or suggest paragraphs directly from the editor (`Ctrl+Shift+I`)
 
 ## System Requirements
 
@@ -164,7 +164,7 @@ python main.py
 
 ### AI Assistant
 
-1. Open **Preferences ▸ AI Assistant**, enable the feature and choose your provider (Groq, Gemini ou OpenRouter).
+1. Open **Preferences ▸ AI Assistant**, enable the feature and choose your provider (Gemini ou OpenRouter).
 2. Informe o **Model ID** e a **API key** correspondente (OpenRouter também aceita Referer e Título opcionais para ranking).
 3. No editor, posicione o cursor ou selecione o trecho desejado e pressione `Ctrl+Shift+I` (ou clique no avatar da barra superior).
 4. Descreva como quer melhorar o parágrafo, escolha uma sugestão rápida se quiser e envie.  
