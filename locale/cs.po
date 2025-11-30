@@ -566,13 +566,13 @@ msgstr "Identifikátor modelu"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "příklady: llama-3.1-8b-instant, gemini-2.5-flash."
+msgid "Examples:gemini-2.5-flash."
+msgstr "příklady:gemini-2.5-blesk."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "llama-3.1-8b-instant"
+msgid "gemini-2.5-flash"
+msgstr "gemini-2.5-flash"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2155,23 +2155,6 @@ msgstr "Zkontrolujte následující text a odpovězte pouze s opravenou verzí."
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "Poskytovatel '{provider}' není podporován."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "Nakonfigurujte klíč API Groq v předvolbách."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Nepodařilo se kontaktovat Groq: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq odpověděl s HTTP {status}: {detail}"
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK

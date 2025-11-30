@@ -566,13 +566,13 @@ msgstr "Identificador do Modelo"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "exemplos: llama-3.1-8b-instant, gemini-2.5-flash."
+msgid "Examples:gemini-2.5-flash."
+msgstr "exemplos:gemini-2.5-flash."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "llama-3.1-8b-instant"
+msgid "gemini-2.5-flash"
+msgstr "gemini-2.5-flash"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2157,23 +2157,6 @@ msgstr "Revise o texto a seguir e responda apenas com a versão corrigida."
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "O provedor '{provider}' não é suportado."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "Configure a chave da API Groq nas Preferências."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Falha ao contatar Groq: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq respondeu com HTTP {status}: {detail}"
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK

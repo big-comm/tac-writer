@@ -566,13 +566,13 @@ msgstr "모델 식별자"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "예: llama-3.1-8b-인스턴트, gemini-2.5-플래시."
+msgid "Examples:gemini-2.5-flash."
+msgstr "예:제미니-2.5-플래시."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "llama-3.1-8b-인스턴트"
+msgid "gemini-2.5-flash"
+msgstr "제미니-2.5-플래시"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2152,23 +2152,6 @@ msgstr "다음 텍스트를 수정하고 수정된 버전만 응답하십시오.
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "'{provider}' 공급자는 지원되지 않습니다."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "환경 설정에서 Groq API 키를 구성합니다."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Groq에 연결하지 못했습니다: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq가 HTTP {status}: {detail}로 응답했습니다."
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK

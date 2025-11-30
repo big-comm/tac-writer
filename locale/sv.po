@@ -566,13 +566,13 @@ msgstr "Modellidentifierare"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "exempel: llama-3.1-8b-ögonblick, gemini-2.5-blix."
+msgid "Examples:gemini-2.5-flash."
+msgstr "exempel:gemini-2.5-blink."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "llama-3.1-8b-instant"
+msgid "gemini-2.5-flash"
+msgstr "gemini-2.5-blink"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2157,23 +2157,6 @@ msgstr "Granska följande text och svara endast med den korrigerade versionen."
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "Leverantör '{provider}' stöds inte."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "Konfigurera Groq API-nyckeln i Inställningar."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Misslyckades med att kontakta Groq: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq svarade med HTTP {status}: {detail}"
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK

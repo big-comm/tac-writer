@@ -566,13 +566,13 @@ msgstr "Идентификатор на модела"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "примери: llama-3.1-8b-инстант, gemini-2.5-флаш."
+msgid "Examples:gemini-2.5-flash."
+msgstr "Примери:gemini-2.5-flash."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "лама-3.1-8b-мигновен"
+msgid "gemini-2.5-flash"
+msgstr "гемини-2.5-флаш"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2157,23 +2157,6 @@ msgstr "Прегледайте следния текст и отговорете
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "Доставчик '{provider}' не се поддържа."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "Конфигурирайте Groq API ключа в Настройки."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Неуспешно свързване с Groq: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq отговори с HTTP {status}: {detail}"
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK

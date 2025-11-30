@@ -566,13 +566,13 @@ msgstr "Líkani auðkenni"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 749
 #: NEEDS WORK
-msgid "Examples: llama-3.1-8b-instant, gemini-2.5-flash."
-msgstr "llama-3.1-8b-óstutt, gemini-2.5-flash."
+msgid "Examples:gemini-2.5-flash."
+msgstr "Dæmi:gemini-2.5-flash."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 752
 #: NEEDS WORK
-msgid "llama-3.1-8b-instant"
-msgstr "llama-3.1-8b-ókeyr"
+msgid "gemini-2.5-flash"
+msgstr "gemini-2.5-flash"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 759
 #: NEEDS WORK
@@ -2151,23 +2151,6 @@ msgstr "Endurskoðaðu textann hér að neðan og svaraðu aðeins með leiðré
 #, python-brace-format
 msgid "Provider '{provider}' is not supported."
 msgstr "Veita '{provider}' er ekki studd."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 158
-#: NEEDS WORK
-msgid "Configure the Groq API key in Preferences."
-msgstr "Stillir Groq API lykilinn í Stillingum."
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 170
-#: NEEDS WORK
-#, python-brace-format
-msgid "Failed to contact Groq: {error}"
-msgstr "Tókst ekki að hafa samband við Groq: {error}"
-# 
-# File: usr/share/tac-writer/core/ai_assistant.py, line: 174
-#: NEEDS WORK
-#, python-brace-format
-msgid "Groq responded with HTTP {status}: {detail}"
-msgstr "Groq svaraði með HTTP {status}: {detail}"
 # 
 # File: usr/share/tac-writer/core/ai_assistant.py, line: 186
 #: NEEDS WORK
