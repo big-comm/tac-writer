@@ -13,7 +13,7 @@ class Config:
     """Application configuration manager"""
 
     # Application version and metadata
-    APP_VERSION = "1.4.8"
+    APP_VERSION = "1.4.9"
     APP_NAME = "TAC"
     APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
     APP_DESCRIPTION = "Academic Writing Assistant"
@@ -115,8 +115,6 @@ class Config:
 
             # AI assistant
             'ai_assistant_enabled': False,
-            'ai_assistant_provider': 'groq',
-            'ai_assistant_model': 'llama-3.1-8b-instant',
             'ai_assistant_api_key': '',
             'ai_openrouter_site_url': '',
             'ai_openrouter_site_name': '',
