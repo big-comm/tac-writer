@@ -30,7 +30,6 @@ from utils.i18n import _
 class WritingAiAssistant:
     """Coordinates conversations with an external AI service."""
 
-    DEFAULT_GROQ_MODEL = "llama-3.1-8b-instant"
     DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
     DEFAULT_OPENROUTER_MODEL = "openrouter/polaris-alpha"
     _SYSTEM_PROMPT = (
@@ -59,7 +58,7 @@ class WritingAiAssistant:
         if not provider:
             missing.append("provider")
             return missing
-        if provider in {"groq", "gemini", "openrouter"} and not api_key:
+        if provider in {"gemini", "openrouter"} and not api_key:
             missing.append("api_key")
         return missing
 
@@ -117,9 +116,7 @@ class WritingAiAssistant:
             raise RuntimeError(
                 _("Select an AI provider in Preferences ▸ AI Assistant.")
             )
-        if config["provider"] == "groq" and not config["model"]:
-            config["model"] = self.DEFAULT_GROQ_MODEL
-        elif config["provider"] == "gemini" and not config["model"]:
+        if config["provider"] == "gemini" and not config["model"]:
             config["model"] = self.DEFAULT_GEMINI_MODEL
         elif config["provider"] == "openrouter" and not config["model"]:
             config["model"] = self.DEFAULT_OPENROUTER_MODEL
@@ -157,8 +154,6 @@ class WritingAiAssistant:
         self, config: Dict[str, str], messages: List[Dict[str, str]]
     ) -> str:
         provider = config["provider"]
-        if provider == "groq":
-            return self._perform_groq_request(config, messages)
         if provider == "gemini":
             return self._perform_gemini_request(config, messages)
         if provider == "openrouter":
@@ -167,33 +162,6 @@ class WritingAiAssistant:
             _("Provider '{provider}' is not supported.").format(provider=provider)
         )
 
-    def _perform_groq_request(
-        self, config: Dict[str, str], messages: List[Dict[str, str]]
-    ) -> str:
-        api_key = config.get("api_key", "").strip()
-        if not api_key:
-            raise RuntimeError(_("Configure the Groq API key in Preferences."))
-
-        model = config.get("model", "").strip() or self.DEFAULT_GROQ_MODEL
-        payload_messages = self._build_openai_messages(messages)
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        payload: Dict[str, Any] = {"model": model, "messages": payload_messages}
-
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-
-        try:
-            response = requests.post(url, headers=headers, json=payload, timeout=60)
-        except requests.RequestException as exc:
-            raise RuntimeError(_("Failed to contact Groq: {error}").format(error=exc)) from exc
-
-        if response.status_code >= 400:
-            raise RuntimeError(
-                _("Groq responded with HTTP {status}: {detail}").format(
-                    status=response.status_code, detail=response.text.strip()
-                )
-            )
-
-        return self._extract_content_from_choices(response)
 
     def _perform_gemini_request(
         self, config: Dict[str, str], messages: List[Dict[str, str]]

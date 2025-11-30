@@ -746,10 +746,10 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
         self.ai_model_row = Adw.ActionRow(
             title=_("Model Identifier"),
-            subtitle=_("Examples: llama-3.1-8b-instant, gemini-2.5-flash."),
+            subtitle=_("Examples:gemini-2.5-flash."),
         )
         self.ai_model_entry = Gtk.Entry()
-        self.ai_model_entry.set_placeholder_text(_("llama-3.1-8b-instant"))
+        self.ai_model_entry.set_placeholder_text(_("gemini-2.5-flash"))
         self.ai_model_entry.connect("changed", self._on_ai_model_changed)
         self.ai_model_row.add_suffix(self.ai_model_entry)
         self.ai_model_row.set_activatable_widget(self.ai_model_entry)
