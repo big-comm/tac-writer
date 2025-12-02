@@ -969,6 +969,10 @@ class WelcomeDialog(Adw.Window):
 
     __gtype_name__ = 'TacWelcomeDialog'
 
+    __gsignals__ = {
+        'dialog-closed': (GObject.SIGNAL_RUN_FIRST, None, ()),
+    }
+
     def __init__(self, parent, config: Config, **kwargs):
         super().__init__(**kwargs)
         self.set_transient_for(parent)
@@ -1126,6 +1130,8 @@ class WelcomeDialog(Adw.Window):
 
     def _on_start_clicked(self, button):
         """Handle start button click"""
+        # Emit signal before destroying
+        self.emit('dialog-closed')
         self.destroy()
         
     def _on_wiki_clicked(self, button):

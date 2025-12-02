@@ -13,7 +13,7 @@ class Config:
     """Application configuration manager"""
 
     # Application version and metadata
-    APP_VERSION = "1.4.10"
+    APP_VERSION = "1.5.0"
     APP_NAME = "TAC"
     APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
     APP_DESCRIPTION = "Academic Writing Assistant"
@@ -98,6 +98,7 @@ class Config:
             'confirm_on_close': True,
             'restore_session': True,
             'show_welcome_dialog': True,
+            'show_first_run_tutorial': True,
 
             # Theme and appearance
             'use_dark_theme': False,

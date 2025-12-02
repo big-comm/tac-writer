@@ -7,7 +7,7 @@ import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 
-from gi.repository import Gtk, Adw, GObject, Gdk, GLib, Pango
+from gi.repository import Gtk, Adw, GObject, Gdk, GLib, Pango, Graphene
 from datetime import datetime
 
 from core.models import Paragraph, ParagraphType, DEFAULT_TEMPLATES
@@ -1602,3 +1602,235 @@ class FootnoteDialog(Adw.Window):
         self.paragraph.footnotes = footnotes
         self.emit('footnotes-updated')
         self.destroy()
+
+
+class FirstRunTour:
+    """Interactive tour for first-time users with multiple steps"""
+
+    def __init__(self, main_window, config):
+        self.main_window = main_window
+        self.config = config
+        self.current_step = 0
+        self.popover = None
+
+        # Define tour steps with target widget and message
+        self.steps = [
+            {
+                'target': 'new_project_button',
+                'title': _("Welcome to TAC Writer!"),
+                'message': _("Let's take a quick tour. Click here to create your first project and start writing."),
+                'position': Gtk.PositionType.BOTTOM,
+            },
+            {
+                'target': 'sidebar',
+                'title': _("Project Library"),
+                'message': _("All your projects are listed here. You can search, rename, or delete them at any time."),
+                'position': Gtk.PositionType.RIGHT,
+            },
+            {
+                'target': 'pomodoro_button',
+                'title': _("Pomodoro Timer"),
+                'message': _("Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"),
+                'position': Gtk.PositionType.BOTTOM,
+            },
+            {
+                'target': 'ai_button',
+                'title': _("AI Assistant"),
+                'message': _("Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."),
+                'position': Gtk.PositionType.BOTTOM,
+            },
+            {
+                'target': 'save_button',
+                'title': _("Save Your Work"),
+                'message': _("Don't worry! Auto-save is enabled by default, but you can also save manually here."),
+                'position': Gtk.PositionType.BOTTOM,
+            },
+        ]
+
+        # Add CSS for overlay
+        self._setup_css()
+
+    def _setup_css(self):
+        """Setup CSS for tour overlay"""
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(b"""
+            /* Dark overlay that covers everything - 50% opacity to see interface */
+            .dark-overlay {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            /* Popover stays visible and bright */
+            popover {
+                opacity: 1.0;
+            }
+        """)
+
+        display = Gdk.Display.get_default()
+        Gtk.StyleContext.add_provider_for_display(
+            display,
+            css_provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
+    def start(self):
+        """Start the tour by showing first step"""
+        # Simply show the dark overlay (already created in main_window)
+        if hasattr(self.main_window, 'tour_dark_overlay'):
+            self.main_window.tour_dark_overlay.set_visible(True)
+
+        # Show first step
+        GLib.timeout_add(100, lambda: self.show_step(0))
+
+    def show_step(self, step_index):
+        """Show a specific step of the tour"""
+        if step_index < 0 or step_index >= len(self.steps):
+            self.end_tour()
+            return
+
+        self.current_step = step_index
+        step = self.steps[step_index]
+
+        # Close previous popover if exists
+        if self.popover:
+            self.popover.popdown()
+            self.popover.unparent()
+            self.popover = None
+
+        # Get target widget
+        target_widget = self._get_target_widget(step['target'])
+
+        if not target_widget:
+            # Skip to next step if target not found
+            self.show_step(step_index + 1)
+            return
+
+        # Create new popover
+        self.popover = Gtk.Popover()
+        self.popover.set_position(step['position'])
+        self.popover.set_autohide(False)  # Don't close when clicking outside
+        self.popover.set_has_arrow(True)
+        self.popover.add_css_class('tour-popover')
+
+        # Create content
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
+        content_box.set_margin_top(20)
+        content_box.set_margin_bottom(20)
+        content_box.set_margin_start(20)
+        content_box.set_margin_end(20)
+
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup(f"<span size='large' weight='bold'>{step['title']}</span>")
+        title_label.set_wrap(True)
+        title_label.set_max_width_chars(35)
+        title_label.set_justify(Gtk.Justification.CENTER)
+        content_box.append(title_label)
+
+        # Message
+        message_label = Gtk.Label()
+        message_label.set_text(step['message'])
+        message_label.set_wrap(True)
+        message_label.set_max_width_chars(35)
+        message_label.set_justify(Gtk.Justification.CENTER)
+        content_box.append(message_label)
+
+        # Progress indicator
+        progress_label = Gtk.Label()
+        progress_label.set_markup(
+            f"<span size='small' alpha='60%'>{step_index + 1} / {len(self.steps)}</span>"
+        )
+        progress_label.set_halign(Gtk.Align.CENTER)
+        content_box.append(progress_label)
+
+        # Buttons box
+        buttons_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+        buttons_box.set_halign(Gtk.Align.CENTER)
+
+        # Skip button (only on first step)
+        if step_index == 0:
+            skip_button = Gtk.Button.new_with_label(_("Skip Tour"))
+            skip_button.connect('clicked', lambda b: self.end_tour())
+            buttons_box.append(skip_button)
+
+        # Previous button (if not first step)
+        if step_index > 0:
+            prev_button = Gtk.Button.new_with_label(_("Previous"))
+            prev_button.connect('clicked', lambda b: self.show_step(step_index - 1))
+            buttons_box.append(prev_button)
+
+        # Next/Finish button
+        if step_index < len(self.steps) - 1:
+            next_button = Gtk.Button.new_with_label(_("Next"))
+            next_button.add_css_class("suggested-action")
+            next_button.connect('clicked', lambda b: self.show_step(step_index + 1))
+        else:
+            next_button = Gtk.Button.new_with_label(_("Finish"))
+            next_button.add_css_class("suggested-action")
+            next_button.connect('clicked', lambda b: self.end_tour())
+
+        buttons_box.append(next_button)
+        content_box.append(buttons_box)
+
+        self.popover.set_child(content_box)
+
+        # CRITICAL FIX: If target widget is disabled, use window as parent
+        # Otherwise GTK will disable the entire popover!
+        if target_widget.get_sensitive():
+            # Widget is enabled - use it as parent (normal behavior)
+            self.popover.set_parent(target_widget)
+        else:
+            # Widget is DISABLED - use main window as parent
+            # and manually position the popover
+            self.popover.set_parent(self.main_window)
+            self.popover.set_pointing_to(self._get_widget_rect(target_widget))
+
+        self.popover.popup()
+
+    def _get_widget_rect(self, widget):
+        """Get the rectangle position of a widget relative to window"""
+        # Get widget size
+        width = widget.get_width()
+        height = widget.get_height()
+
+        # Get widget position relative to window
+        # In GTK4, compute_point returns (success, point)
+        result = widget.compute_point(self.main_window, Graphene.Point().init(0, 0))
+
+        if result and result[0]:  # Check if successful
+            point = result[1]
+            rect = Gdk.Rectangle()
+            rect.x = int(point.x)
+            rect.y = int(point.y)
+            rect.width = width
+            rect.height = height
+            return rect
+
+        # Fallback - use approximate position
+        rect = Gdk.Rectangle()
+        rect.x = 100
+        rect.y = 100
+        rect.width = width if width > 0 else 100
+        rect.height = height if height > 0 else 40
+        return rect
+
+    def _get_target_widget(self, target_name):
+        """Get widget by name from main window"""
+        if hasattr(self.main_window, target_name):
+            return getattr(self.main_window, target_name)
+        return None
+
+    def end_tour(self):
+        """End the tour and restore normal UI"""
+        # Close popover
+        if self.popover:
+            self.popover.popdown()
+            self.popover.unparent()
+            self.popover = None
+
+        # Hide dark overlay
+        if hasattr(self.main_window, 'tour_dark_overlay'):
+            self.main_window.tour_dark_overlay.set_visible(False)
+
+        # Save config to not show tour again
+        self.config.set('show_first_run_tutorial', False)
+        self.config.save()

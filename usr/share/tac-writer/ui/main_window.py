@@ -18,7 +18,7 @@ from core.config import Config
 from core.ai_assistant import WritingAiAssistant
 from utils.helpers import FormatHelper
 from utils.i18n import _
-from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper, PomodoroTimer
+from .components import WelcomeView, ParagraphEditor, ProjectListWidget, SpellCheckHelper, PomodoroTimer, FirstRunTour
 from .dialogs import NewProjectDialog, ExportDialog, PreferencesDialog, AboutDialog, WelcomeDialog, BackupManagerDialog, ImageDialog
 
 
@@ -97,7 +97,23 @@ class MainWindow(Adw.ApplicationWindow):
         """Setup the user interface"""
         # Toast overlay for notifications
         self.toast_overlay = Adw.ToastOverlay()
-        self.set_content(self.toast_overlay)
+
+        # Create overlay for tour (with dark background)
+        self.tour_overlay_container = Gtk.Overlay()
+        self.set_content(self.tour_overlay_container)
+
+        # Add toast overlay as child
+        self.tour_overlay_container.set_child(self.toast_overlay)
+
+        # Create dark overlay for tour (initially hidden)
+        # Use Gtk.DrawingArea to ensure background is rendered
+        self.tour_dark_overlay = Gtk.DrawingArea()
+        self.tour_dark_overlay.set_vexpand(True)
+        self.tour_dark_overlay.set_hexpand(True)
+        self.tour_dark_overlay.add_css_class('dark-overlay')
+        self.tour_dark_overlay.set_visible(False)
+        self.tour_dark_overlay.set_can_target(False)  # Don't block mouse events
+        self.tour_overlay_container.add_overlay(self.tour_dark_overlay)
 
         # Main container
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -123,11 +139,11 @@ class MainWindow(Adw.ApplicationWindow):
         self.header_bar.set_title_widget(title_widget)
 
         # Left side buttons
-        new_button = Gtk.Button()
-        new_button.set_icon_name('tac-document-new-symbolic')
-        new_button.set_tooltip_text(_("New Project (Ctrl+N)"))
-        new_button.set_action_name("app.new_project")
-        self.header_bar.pack_start(new_button)
+        self.new_project_button = Gtk.Button()
+        self.new_project_button.set_icon_name('tac-document-new-symbolic')
+        self.new_project_button.set_tooltip_text(_("New Project (Ctrl+N)"))
+        self.new_project_button.set_action_name("app.new_project")
+        self.header_bar.pack_start(self.new_project_button)
 
         # Pomodoro Timer Button
         self.pomodoro_button = Gtk.Button()
@@ -996,7 +1012,17 @@ class MainWindow(Adw.ApplicationWindow):
     def show_welcome_dialog(self):
         """Show the welcome dialog"""
         dialog = WelcomeDialog(self, self.config)
+
+        # Start tour when welcome dialog is closed (if first run)
+        dialog.connect('dialog-closed', self._on_welcome_dialog_closed)
+
         dialog.present()
+
+    def _on_welcome_dialog_closed(self, dialog):
+        """Handle welcome dialog close - start tour if first run"""
+        # Start tour after a short delay
+        if self.config.get('show_first_run_tutorial', True):
+            GLib.timeout_add(500, self._maybe_show_first_run_tutorial)
 
     def show_backup_manager_dialog(self):
         """Show the backup manager dialog"""
@@ -1534,6 +1560,17 @@ class MainWindow(Adw.ApplicationWindow):
         """Show welcome dialog if enabled in config"""
         if self.config.get('show_welcome_dialog', True):
             self.show_welcome_dialog()
+        return False
+
+    def _maybe_show_first_run_tutorial(self):
+        """Show first run tutorial with multiple steps"""
+        if not self.config.get('show_first_run_tutorial', True):
+            return False
+
+        # Create and start the tour
+        tour = FirstRunTour(self, self.config)
+        tour.start()
+
         return False
 
     def _update_header_for_view(self, view_name: str):
