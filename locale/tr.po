@@ -1559,6 +1559,72 @@ msgstr "Dipnot Ekle"
 msgid "Enter footnote text..."
 msgstr "Dipnot metnini girin..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "TAC Writer'a hoş geldiniz!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr "Hızlı bir tur atalım. İlk projenizi oluşturmak ve yazmaya başlamak için buraya tıklayın."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Proje Kütüphanesi"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr ""
+"Tüm projeleriniz burada listelenmiştir. İstediğiniz zaman arama yapabilir, yeniden adlandırabilir "
+"veya silebilirsiniz."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Yerleşik Pomodoro zamanlayıcısıyla odaklanın. Yazma oturumları için mükemmel!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Yazılarınızı yeniden yazmak, özetlemek veya geliştirmek için AI kullanın. Bunu Tercihler'de "
+"yapılandırın."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Çalışmanızı Kaydedin"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr ""
+"Endişelenmeyin! Otomatik kaydetme varsayılan olarak etkinleştirilmiştir, ancak burada manuel olarak "
+"da kaydedebilirsiniz."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Turu Atla"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Önceki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Sonraki"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Bitir"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"

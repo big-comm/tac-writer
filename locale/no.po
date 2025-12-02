@@ -1561,6 +1561,68 @@ msgstr "Legg til fotnote"
 msgid "Enter footnote text..."
 msgstr "Skriv fotnote tekst..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "Velkommen til TAC Writer!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr "La oss ta en rask omvisning. Klikk her for å opprette ditt første prosjekt og begynne å skrive."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Prosjektbibliotek"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr "Alle prosjektene dine er listet her. Du kan søke, gi dem nytt navn eller slette dem når som helst."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Hold deg fokusert med den innebygde Pomodoro-timeren. Perfekt for skrivesesjoner!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Bruk AI for å hjelpe med å omskrive, oppsummere eller forbedre avsnittene dine. Konfigurer det i "
+"Innstillinger."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Lagre arbeidet ditt"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr "Ikke bekymre deg! Automatisk lagring er aktivert som standard, men du kan også lagre manuelt her."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Hopp over omvisning"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Forrige"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Neste"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Fullfør"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"

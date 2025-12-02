@@ -1559,6 +1559,70 @@ msgstr "Bæta við fótnoðu"
 msgid "Enter footnote text..."
 msgstr "Sláðu inn fótnotatexta..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "Velkomin í TAC Writer!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr "Látum okkur fara í stuttan ferð. Smelltu hér til að búa til þitt fyrsta verkefni og byrja að skrifa."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Verkefnabókasafn"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr "Öll verkefnin þín eru listuð hér. Þú getur leitað, endurnefnt eða eytt þeim hvenær sem er."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Halduðu einbeitingu með innbyggða Pomodoro tímamætinu. Fullkomið fyrir skrifstundir!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Notaðu AI til að aðstoða við að endurskrifa, draga saman eða bæta við málsgreinar þínar. Stilltu "
+"það í Valkostum."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Vistaðu vinnuna þína"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr ""
+"Ekki hafa áhyggjur! Sjálfvirk geymsla er virkjuð að sjálfsögðu, en þú getur einnig geymt handvirkt "
+"hér."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Sleppa ferðina"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Fyrri"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Næsta"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Klára"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"

@@ -1559,6 +1559,68 @@ msgstr "Lisa jalutusmärkus"
 msgid "Enter footnote text..."
 msgstr "Sisestage jalusteksti..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "Tere tulemast TAC Writerisse!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr "Teeme kiire ringkäik. Klõpsake siin, et luua oma esimene projekt ja alustada kirjutamist."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Projektiraamatukogu"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr "Kõik teie projektid on siin loetletud. Saate neid igal ajal otsida, ümber nimetada või kustutada."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Jääge keskendunuks sisseehitatud Pomodoro taimeriga. Täiuslik kirjutamise sessioonide jaoks!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Kasutage tehisintellekti, et aidata ümber kirjutada, kokku võtta või parandada oma lõike. "
+"Konfigureerige see eelistustes."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Salvesta oma töö"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr "Ära muretse! Automaatne salvestamine on vaikimisi lubatud, kuid saad ka siin käsitsi salvestada."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Jäta ringkäik vahele"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Eelmine"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Järgmine"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Lõpeta"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"

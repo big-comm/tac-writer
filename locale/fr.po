@@ -1563,6 +1563,72 @@ msgstr "Ajouter une note de bas de page"
 msgid "Enter footnote text..."
 msgstr "Entrez le texte de la note de bas de page..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "Bienvenue dans TAC Writer !"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr "Faisons un rapide tour. Cliquez ici pour créer votre premier projet et commencer à écrire."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Bibliothèque de projet"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr ""
+"Tous vos projets sont listés ici. Vous pouvez les rechercher, les renommer ou les supprimer à tout "
+"moment."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Restez concentré avec le minuteur Pomodoro intégré. Parfait pour les sessions d'écriture !"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Utilisez l'IA pour vous aider à réécrire, résumer ou améliorer vos paragraphes. Configurez-le dans "
+"les Préférences."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Enregistrez votre travail"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr ""
+"Ne vous inquiétez pas ! La sauvegarde automatique est activée par défaut, mais vous pouvez "
+"également sauvegarder manuellement ici."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Passer le tour"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Précédent"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Suivant"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Terminer"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"

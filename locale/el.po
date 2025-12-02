@@ -1559,6 +1559,74 @@ msgstr "Προσθήκη Υποσημείωσης"
 msgid "Enter footnote text..."
 msgstr "Εισάγετε κείμενο υποσημείωσης..."
 # 
+# File: usr/share/tac-writer/ui/components.py, line: 1620
+#: NEEDS WORK
+msgid "Welcome to TAC Writer!"
+msgstr "Καλώς ήρθατε στο TAC Writer!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1621
+#: NEEDS WORK
+msgid "Let's take a quick tour. Click here to create your first project and start writing."
+msgstr ""
+"Ας κάνουμε μια γρήγορη περιήγηση. Κάντε κλικ εδώ για να δημιουργήσετε το πρώτο σας έργο και να "
+"αρχίσετε να γράφετε."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1626
+#: NEEDS WORK
+msgid "Project Library"
+msgstr "Βιβλιοθήκη Έργου"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1627
+#: NEEDS WORK
+msgid "All your projects are listed here. You can search, rename, or delete them at any time."
+msgstr ""
+"Όλα τα έργα σας είναι καταχωρημένα εδώ. Μπορείτε να τα αναζητήσετε, να τα μετονομάσετε ή να τα "
+"διαγράψετε οποιαδήποτε στιγμή."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1633
+#: NEEDS WORK
+msgid "Stay focused with the built-in Pomodoro timer. Perfect for writing sessions!"
+msgstr "Μείνετε συγκεντρωμένοι με τον ενσωματωμένο χρονομετρητή Pomodoro. Ιδανικό για συνεδρίες συγγραφής!"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1639
+#: NEEDS WORK
+msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgstr ""
+"Χρησιμοποιήστε την Τεχνητή Νοημοσύνη για να βοηθήσετε στην αναδιατύπωση, τη σύνοψη ή τη βελτίωση "
+"των παραγράφων σας. Ρυθμίστε το στις Προτιμήσεις."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1644
+#: NEEDS WORK
+msgid "Save Your Work"
+msgstr "Αποθήκευσε τη Δουλειά Σου"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1645
+#: NEEDS WORK
+msgid "Don't worry! Auto-save is enabled by default, but you can also save manually here."
+msgstr ""
+"Μην ανησυχείς! Η αυτόματη αποθήκευση είναι ενεργοποιημένη από προεπιλογή, αλλά μπορείς επίσης να "
+"αποθηκεύσεις χειροκίνητα εδώ."
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1751
+#: NEEDS WORK
+msgid "Skip Tour"
+msgstr "Παράλειψη Ξενάγησης"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1757
+#: NEEDS WORK
+msgid "Previous"
+msgstr "Προηγούμενος"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1763
+#: NEEDS WORK
+msgid "Next"
+msgstr "Επόμενο"
+# 
+# File: usr/share/tac-writer/ui/components.py, line: 1767
+#: NEEDS WORK
+msgid "Finish"
+msgstr "Τέλος"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 64
 #: NEEDS WORK
 msgid "TAC - Continuous Argumentation Technique"
