@@ -330,7 +330,7 @@ class NewProjectDialog(Adw.Window):
             error_dialog = Adw.MessageDialog.new(
                 self,
                 _("Unexpected Error"),
-                _("An unexpected error occurred. Please report this issue:\n\n") + error_msg
+                _("An unexpected error occurred. Please report this issue:") + "\n\n" + error_msg
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
@@ -1898,7 +1898,7 @@ class ImageDialog(Adw.Window):
             error_dialog = Adw.MessageDialog.new(
                 self,
                 _("Error Loading Image"),
-                _("Could not load the selected image file.\n\n{}").format(str(e))
+                _("Could not load the selected image file.") + "\n\n" + str(e)
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
@@ -1981,7 +1981,7 @@ class ImageDialog(Adw.Window):
             error_dialog = Adw.MessageDialog.new(
                 self,
                 _("Error Inserting Image"),
-                _("Could not insert the image.\n\n{}").format(str(e))
+                _("Could not insert the image.") + "\n\n" + str(e)
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
