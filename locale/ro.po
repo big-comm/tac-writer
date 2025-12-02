@@ -313,11 +313,9 @@ msgstr "Eroare la crearea proiectului"
 msgid "Unexpected Error"
 msgstr "Eroare neașteptată"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "A apărut o eroare neașteptată. Vă rugăm să raportați această problemă:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1168,13 +1166,9 @@ msgstr "Eroare la încărcarea imaginii: {}"
 msgid "Error Loading Image"
 msgstr "Eroare la încărcarea imaginii"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "Nu s-a putut încărca fișierul de imagine selectat."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1188,13 +1182,9 @@ msgstr "Eroare la inserarea imaginii: {}"
 msgid "Error Inserting Image"
 msgstr "Eroare la inserarea imaginii"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "Nu s-a putut insera imaginea."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992

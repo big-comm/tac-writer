@@ -323,8 +323,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 333
-msgid   "An unexpected error occurred. Please report this issue:\n"
-        "\n"
+msgid   "An unexpected error occurred. Please report this issue:"
 msgstr  ""
 
 #
@@ -1169,10 +1168,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1901
-#, python-brace-format
-msgid   "Could not load the selected image file.\n"
-        "\n"
-        "{}"
+msgid   "Could not load the selected image file."
 msgstr  ""
 
 #
@@ -1188,10 +1184,7 @@ msgstr  ""
 
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1984
-#, python-brace-format
-msgid   "Could not insert the image.\n"
-        "\n"
-        "{}"
+msgid   "Could not insert the image."
 msgstr  ""
 
 #

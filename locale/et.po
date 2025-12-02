@@ -313,11 +313,9 @@ msgstr "Viga projekti loomisel"
 msgid "Unexpected Error"
 msgstr "Ootamatu viga"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "Ilmnen ootamatu viga. Palun teatage sellest probleemist:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1166,13 +1164,9 @@ msgstr "Pildi laadimine ebaõnnestus: {}"
 msgid "Error Loading Image"
 msgstr "Pildi laadimise viga"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "Valitud pildifaili ei saanud laadida."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1186,14 +1180,10 @@ msgstr "Piltide sisestamise viga: {}"
 msgid "Error Inserting Image"
 msgstr "Pildi sisestamise viga"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
-msgstr "Pilti ei saanud sisestada."
+msgid "Could not insert the image."
+msgstr "Pilti ei saanud lisada."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK

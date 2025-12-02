@@ -313,11 +313,9 @@ msgstr "Fel vid skapande av projekt"
 msgid "Unexpected Error"
 msgstr "Oväntat fel"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "Ett oväntat fel inträffade. Vänligen rapportera detta problem:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1168,13 +1166,9 @@ msgstr "Fel vid inläsning av bild: {}"
 msgid "Error Loading Image"
 msgstr "Fel vid inläsning av bild"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "Kunde inte ladda den valda bildfilen."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1188,13 +1182,9 @@ msgstr "Fel vid inmatning av bild: {}"
 msgid "Error Inserting Image"
 msgstr "Fel vid insättning av bild"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "Kunde inte infoga bilden."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992

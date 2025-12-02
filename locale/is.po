@@ -313,11 +313,9 @@ msgstr "Villa að búa til verkefni"
 msgid "Unexpected Error"
 msgstr "Óvænt villa"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "Óvænt villa kom upp. Vinsamlegast tilkynnið um þetta vandamál:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1166,14 +1164,10 @@ msgstr "Villa að hlaða mynd: {}"
 msgid "Error Loading Image"
 msgstr "Villa að hlaða mynd"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
-msgstr "Gat ekki hlaðið valda myndaskrá."
+msgid "Could not load the selected image file."
+msgstr "Gat ekki að hlaða valda myndaskrá."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
 #: NEEDS WORK
@@ -1186,13 +1180,9 @@ msgstr "Villa að setja mynd inn: {}"
 msgid "Error Inserting Image"
 msgstr "Villa að setja inn mynd"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "Gat ekki að setja inn myndina."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992

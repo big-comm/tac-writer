@@ -313,11 +313,9 @@ msgstr "프로젝트 생성 오류"
 msgid "Unexpected Error"
 msgstr "예기치 않은 오류"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "예기치 않은 오류가 발생했습니다. 이 문제를 보고해 주십시오:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1164,13 +1162,9 @@ msgstr "이미지 로드 오류: {}"
 msgid "Error Loading Image"
 msgstr "이미지 로드 오류"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "선택한 이미지 파일을 로드할 수 없습니다."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1184,13 +1178,9 @@ msgstr "이미지 삽입 오류: {}"
 msgid "Error Inserting Image"
 msgstr "이미지 삽입 오류"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "이미지를 삽입할 수 없습니다."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992

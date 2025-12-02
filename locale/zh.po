@@ -313,11 +313,9 @@ msgstr "创建项目时出错"
 msgid "Unexpected Error"
 msgstr "意外错误"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "发生了意外错误。请报告此问题："
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1164,13 +1162,9 @@ msgstr "加载图像时出错：{}"
 msgid "Error Loading Image"
 msgstr "加载图像时出错"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "无法加载所选的图像文件。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1184,13 +1178,9 @@ msgstr "插入图像时出错：{}"
 msgid "Error Inserting Image"
 msgstr "插入图像时出错"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "无法插入图像。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992

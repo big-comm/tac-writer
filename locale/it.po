@@ -313,11 +313,9 @@ msgstr "Errore nella creazione del progetto"
 msgid "Unexpected Error"
 msgstr "Errore imprevisto"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 332
+# File: usr/share/tac-writer/ui/dialogs.py, line: 333
 #: NEEDS WORK
-msgid ""
-"An unexpected error occurred. Please report this issue:\n"
-"\n"
+msgid "An unexpected error occurred. Please report this issue:"
 msgstr "Si è verificato un errore imprevisto. Si prega di segnalare questo problema:"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 314
@@ -1166,13 +1164,9 @@ msgstr "Errore nel caricamento dell'immagine: {}"
 msgid "Error Loading Image"
 msgstr "Errore di caricamento dell'immagine"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1719
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1901
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not load the selected image file.\n"
-"\n"
-"{}"
+msgid "Could not load the selected image file."
 msgstr "Impossibile caricare il file immagine selezionato."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1795
@@ -1186,13 +1180,9 @@ msgstr "Errore durante l'inserimento dell'immagine: {}"
 msgid "Error Inserting Image"
 msgstr "Erro durante l'inserimento dell'immagine"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1802
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
 #: NEEDS WORK
-#, python-brace-format
-msgid ""
-"Could not insert the image.\n"
-"\n"
-"{}"
+msgid "Could not insert the image."
 msgstr "Impossibile inserire l'immagine."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
