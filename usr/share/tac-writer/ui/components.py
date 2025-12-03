@@ -1636,7 +1636,7 @@ class FirstRunTour:
             {
                 'target': 'ai_button',
                 'title': _("AI Assistant"),
-                'message': _("Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."),
+                'message': _("Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."),
                 'position': Gtk.PositionType.BOTTOM,
             },
             {

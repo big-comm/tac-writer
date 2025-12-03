@@ -33,7 +33,7 @@ class WritingAiAssistant:
     DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
     DEFAULT_OPENROUTER_MODEL = "openrouter/polaris-alpha"
     _SYSTEM_PROMPT = (
-        "You are the TAC Writer assistant, a specialist in Portuguese grammar and"
+        "You are the TAC Writer assistant, a specialist in Portuguese and English grammar and"
         " academic writing. Your job is to revise, correct, and refine the provided"
         " text while preserving the original meaning, maintaining a formal tone,"
         " and respecting the Continuous Argumentation Technique (introduction,"
