@@ -710,16 +710,16 @@ msgstr "TAC Writer是什么？"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "持续论证技术 (葡萄牙语中的 TAC)"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
-"Tac Writer 是一款基于 TAC 技术（持续论证技术）和番茄工作法的工具。由 Narayan Silva 开发，TAC "
-"技术帮助写作者以有组织的方式发展一个想法或解释一个概念，将段落分为不同的阶段：引言、论点、引用和结论。"
+"Tac Writer 是一款基于 TAC 技术（持续论证技术）和番茄工作法的工具。TAC "
+"技术帮助写作者以有组织的方式发展想法，将段落分成不同的阶段。阅读维基以利用所有资源。要打开维基，请点击“？”图标。"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1573,8 +1573,8 @@ msgstr "使用内置的番茄钟保持专注。非常适合写作时使用！"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
-msgstr "使用人工智能帮助重写、总结或改进您的段落。在“首选项”中进行配置。"
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
+msgstr "使用人工智能修订您导出的文本。在“首选项”中进行配置。阅读维基以获取指导配置。"
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

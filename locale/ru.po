@@ -710,18 +710,18 @@ msgstr "Что такое TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Техника непрерывной аргументации (TAC на португальском)"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer — это инструмент, основанный на технике TAC (Техника Продолженной Аргументации) и методе "
-"Помодоро. Разработанный Нараяном Силвой, техника TAC помогает писателям развивать идею или "
-"объяснять концепцию организованным образом, разделяя абзац на разные этапы: введение, аргумент, "
-"цитата и заключение."
+"Помодоро. Техника TAC помогает писателям развивать идею организованным образом, разделяя абзац на "
+"разные этапы. Читайте вики, чтобы воспользоваться всеми ресурсами. Чтобы открыть вики, нажмите на "
+"значок '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1575,10 +1575,10 @@ msgstr "Оставайтесь сосредоточенными с встрое�
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Используйте ИИ, чтобы помочь переписать, резюмировать или улучшить ваши абзацы. Настройте это в "
-"Настройках."
+"Используйте ИИ для редактирования вашего экспортированного текста. Настройте в параметрах. Читайте "
+"вики для пошаговой настройки."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

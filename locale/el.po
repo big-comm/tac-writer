@@ -710,18 +710,18 @@ msgstr "Τι είναι το TAC Writer;"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Συνεχής Τεχνική Επιχειρηματολογίας (TAC στα Πορτογαλικά):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Το Tac Writer είναι ένα εργαλείο βασισμένο στην τεχνική TAC (Τεχνική Συνεχιζόμενης "
-"Επιχειρηματολογίας) και στη μέθοδο Pomodoro. Αναπτυγμένο από τον Narayan Silva, η τεχνική TAC βοηθά "
-"τους συγγραφείς να αναπτύξουν μια ιδέα ή να εξηγήσουν μια έννοια με οργανωμένο τρόπο, χωρίζοντας "
-"την παράγραφο σε διαφορετικά στάδια: εισαγωγή, επιχείρημα, παράθεση και συμπέρασμα."
+"Επιχειρηματολογίας) και στη μέθοδο Pomodoro. Η τεχνική TAC βοηθά τους συγγραφείς να αναπτύξουν μια "
+"ιδέα με οργανωμένο τρόπο, χωρίζοντας την παράγραφο σε διαφορετικά στάδια. Διαβάστε το wiki για να "
+"εκμεταλλευτείτε όλους τους πόρους. Για να ανοίξετε το wiki, κάντε κλικ στο εικονίδιο '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1580,10 +1580,10 @@ msgstr "Μείνετε συγκεντρωμένοι με τον ενσωματω
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Χρησιμοποιήστε την Τεχνητή Νοημοσύνη για να βοηθήσετε στην αναδιατύπωση, τη σύνοψη ή τη βελτίωση "
-"των παραγράφων σας. Ρυθμίστε το στις Προτιμήσεις."
+"Χρησιμοποιήστε την AI για να αναθεωρήσετε το εξαγόμενο κείμενό σας. Ρυθμίστε στις Προτιμήσεις. "
+"Διαβάστε το wiki για καθοδηγούμενη ρύθμιση."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

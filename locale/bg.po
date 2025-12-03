@@ -710,18 +710,18 @@ msgstr "Какво е TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Непрекъсната аргументационна техника (TAC на португалски):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
-"Tac Writer е инструмент, базиран на TAC техниката (Техника на продължаваща аргументация) и метода "
-"Помодоро. Разработен от Нараян Силва, TAC техниката помага на писателите да развият идея или да "
-"обяснят концепция по организиран начин, разделяйки параграфа на различни етапи: въведение, "
-"аргумент, цитат и заключение."
+"Tac Writer е инструмент, базиран на техниката TAC (Техника на продължаваща аргументация) и метода "
+"Помодоро. Техниката TAC помага на писателите да развият идея по организиран начин, разделяйки "
+"параграфа на различни етапи. Прочетете уики, за да се възползвате от всички ресурси. За да отворите "
+"уики, кликнете върху иконата '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1580,10 +1580,10 @@ msgstr "Останете фокусирани с вградения таймер
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Използвайте ИИ, за да помогнете за пренаписване, обобщаване или подобряване на вашите абзаци. "
-"Конфигурирайте го в Настройки."
+"Използвайте ИИ, за да преработите експортирания си текст. Конфигурирайте в Настройки. Прочетете "
+"уики за ръководена конфигурация."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

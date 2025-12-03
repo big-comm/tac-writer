@@ -710,18 +710,18 @@ msgstr "Mis on TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Jätkuv Argumenteerimise Tehnika (TAC portugali keeles):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer on tööriist, mis põhineb TAC tehnikal (Jätkuva Argumenteerimise Tehnika) ja Pomodoro "
-"meetodil. Narayan Silva arendatud TAC tehnika aitab kirjanikel arendada ideed või selgitada "
-"kontseptsiooni organiseeritud viisil, jagades lõigu erinevateks etappideks: sissejuhatus, argument, "
-"viide ja järeldus."
+"meetodil. TAC tehnika aitab kirjanikel arendada ideed organiseeritud viisil, jagades lõigu "
+"erinevateks etappideks. Loe wiki, et kasutada ära kõiki ressursse. Wiki avamiseks klõpsa '?' "
+"ikoonil."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1576,10 +1576,10 @@ msgstr "Jääge keskendunuks sisseehitatud Pomodoro taimeriga. Täiuslik kirjuta
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Kasutage tehisintellekti, et aidata ümber kirjutada, kokku võtta või parandada oma lõike. "
-"Konfigureerige see eelistustes."
+"Kasutage tehisintellekti oma eksporditud teksti redigeerimiseks. Konfigureerige eelistustes. Lugeda "
+"wiki juhendatud konfigureerimise jaoks."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

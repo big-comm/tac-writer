@@ -710,17 +710,18 @@ msgstr "Što je TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Kontinuirana tehnika argumentacije (TAC na portugalskom):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer je alat temeljen na TAC tehnici (Tehnika kontinuirane argumentacije) i Pomodoro metodi. "
-"Razvijen od strane Narayana Silve, TAC tehnika pomaže piscima da razviju ideju ili objasne koncept "
-"na organiziran način, dijeleći odlomak na različite faze: uvod, argument, citat i zaključak."
+"TAC tehnika pomaže piscima da razviju ideju na organiziran način, razdvajajući odlomak u različite "
+"faze. Pročitajte wiki kako biste iskoristili sve resurse. Da biste otvorili wiki, kliknite na ikonu "
+"'?'"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1577,10 +1578,10 @@ msgstr "Ostanite usredotočeni s ugrađenim Pomodoro tajmerom. Savršeno za sesi
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Koristite AI za pomoć pri prepisivanju, sažimanju ili poboljšanju vaših odlomaka. Konfigurirajte to "
-"u Postavkama."
+"Koristite AI za reviziju vašeg izvoznog teksta. Konfigurirajte u Postavkama. Pročitajte wiki za "
+"vođenu konfiguraciju."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

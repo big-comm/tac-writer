@@ -710,18 +710,18 @@ msgstr "Ce este TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Tehnica de Argumentare Continuă (TAC în portugheză):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer este un instrument bazat pe tehnica TAC (Tehnica de Argumentare Continuă) și metoda "
-"Pomodoro. Dezvoltat de Narayan Silva, tehnica TAC ajută scriitorii să dezvolte o idee sau să "
-"explice un concept într-un mod organizat, separând paragraful în diferite etape: introducere, "
-"argument, citare și concluzie."
+"Pomodoro. Tehnica TAC ajută scriitorii să dezvolte o idee într-un mod organizat, separând "
+"paragraful în diferite etape. Citiți wiki pentru a profita de toate resursele. Pentru a deschide "
+"wiki, faceți clic pe pictograma '?'"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1578,10 +1578,10 @@ msgstr "Rămâi concentrat cu cronometru Pomodoro încorporat. Perfect pentru se
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Folosește AI pentru a ajuta la rescrierea, sumarizarea sau îmbunătățirea paragrafelor tale. "
-"Configurează-l în Preferințe."
+"Utilizați AI pentru a revizui textul exportat. Configurați în Preferințe. Citiți wiki pentru o "
+"configurare ghidată."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

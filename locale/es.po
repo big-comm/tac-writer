@@ -710,18 +710,18 @@ msgstr "¿Qué es TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Técnica de Argumentação Contínua (TAC en portugués):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer es una herramienta basada en la técnica TAC (Técnica de Argumentación Continua) y el "
-"método Pomodoro. Desarrollada por Narayan Silva, la técnica TAC ayuda a los escritores a "
-"desarrollar una idea o explicar un concepto de manera organizada, separando el párrafo en "
-"diferentes etapas: introducción, argumento, cita y conclusión."
+"método Pomodoro. La técnica TAC ayuda a los escritores a desarrollar una idea de manera organizada, "
+"separando el párrafo en diferentes etapas. Lee la wiki para aprovechar todos los recursos. Para "
+"abrir la wiki, haz clic en el icono de '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1580,8 +1580,10 @@ msgstr "Mantente enfocado con el temporizador Pomodoro integrado. ¡Perfecto par
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
-msgstr "Utiliza la IA para ayudar a reescribir, resumir o mejorar tus párrafos. Configúralo en Preferencias."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
+msgstr ""
+"Utiliza IA para revisar tu texto exportado. Configura en Preferencias. Lee la wiki para una "
+"configuración guiada."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

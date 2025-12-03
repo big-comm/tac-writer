@@ -710,16 +710,16 @@ msgstr "TAC 작가란 무엇인가요?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "지속적인 논증 기법 (포르투갈어로 TAC):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
-"택 작가(Tac Writer)는 TAC 기법(지속적 논증 기법)과 포모도로 방법에 기반한 도구입니다. 나라얀 실바(Narayan Silva)가 개발한 TAC 기법은 작가들이 "
-"아이디어를 발전시키거나 개념을 체계적으로 설명하는 데 도움을 주며, 단락을 서론, 주장, 인용, 결론의 다양한 단계로 나눕니다."
+"택 작가(Tac Writer)는 TAC 기법(지속적 논증 기법)과 포모도로 방법에 기반한 도구입니다. TAC 기법은 작가가 아이디어를 체계적으로 발전시킬 수 있도록 도와주며, "
+"단락을 여러 단계로 나눕니다. 모든 리소스를 활용하려면 위키를 읽어보세요. 위키를 열려면 '?' 아이콘을 클릭하세요."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1573,8 +1573,8 @@ msgstr "내장된 포모도로 타이머로 집중하세요. 글쓰기 세션에
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
-msgstr "AI를 사용하여 단락을 다시 작성, 요약 또는 개선하세요. 환경설정에서 구성하세요."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
+msgstr "AI를 사용하여 내보낸 텍스트를 수정하세요. 환경설정에서 구성하세요. 안내 구성을 위해 위키를 읽으세요."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

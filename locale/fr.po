@@ -710,18 +710,18 @@ msgstr "Qu'est-ce que TAC Writer ?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Technique d'Argumentation Continue (TAC en portugais) :"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer est un outil basé sur la technique TAC (Technique d'Argumentation Continue) et la "
-"méthode Pomodoro. Développée par Narayan Silva, la technique TAC aide les écrivains à développer "
-"une idée ou à expliquer un concept de manière organisée, en séparant le paragraphe en différentes "
-"étapes : introduction, argument, citation et conclusion."
+"méthode Pomodoro. La technique TAC aide les écrivains à développer une idée de manière organisée, "
+"en séparant le paragraphe en différentes étapes. Lisez le wiki pour profiter de toutes les "
+"ressources. Pour ouvrir le wiki, cliquez sur l'icône '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1582,10 +1582,10 @@ msgstr "Restez concentré avec le minuteur Pomodoro intégré. Parfait pour les 
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Utilisez l'IA pour vous aider à réécrire, résumer ou améliorer vos paragraphes. Configurez-le dans "
-"les Préférences."
+"Utilisez l'IA pour réviser votre texte exporté. Configurez dans les Préférences. Lisez le wiki pour "
+"une configuration guidée."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

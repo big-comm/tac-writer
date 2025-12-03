@@ -710,17 +710,17 @@ msgstr "מהו TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "טכניקת טיעון מתמשך (TAC בפורטוגזית):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
-"טק רייטר הוא כלי המבוסס על טכניקת TAC (טכניקת טיעון מתמשך) ושיטת פומודורו. פותח על ידי נריאן סילבה, "
-"טכניקת TAC מסייעת לכותבים לפתח רעיון או להסביר מושג בצורה מאורגנת, תוך הפרדת הפסקה לשלבים שונים: "
-"הקדמה, טיעון, ציטוט, וסיכום."
+"טק רייטר הוא כלי המבוסס על טכניקת TAC (טכניקת טיעון מתמשך) ושיטת פומודורו. טכניקת TAC מסייעת "
+"לכותבים לפתח רעיון בצורה מאורגנת, על ידי הפרדת הפסקה לשלבים שונים. קרא את הוויקי כדי לנצל את כל "
+"המשאבים. כדי לפתוח את הוויקי לחץ על האייקון '?'"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1575,8 +1575,8 @@ msgstr "שמור על ריכוז עם טיימר פומודורו המובנה. 
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
-msgstr "השתמש ב-AI כדי לעזור לכתוב מחדש, לסכם או לשפר את הפסקאות שלך. הגדר זאת בהעדפות."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
+msgstr "השתמש ב-AI כדי לערוך את הטקסט המיוצא שלך. הגדר בהעדפות. קרא את הוויקי להכוונה בהגדרה."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

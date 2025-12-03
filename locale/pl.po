@@ -710,18 +710,18 @@ msgstr "Czym jest TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Ciągła Technika Argumentacji (TAC w języku portugalskim):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer to narzędzie oparte na technice TAC (Technika Ciągłej Argumentacji) oraz metodzie "
-"Pomodoro. Opracowane przez Narayana Silvę, technika TAC pomaga pisarzom rozwijać pomysł lub "
-"wyjaśniać koncepcję w zorganizowany sposób, dzieląc akapit na różne etapy: wprowadzenie, argument, "
-"cytat i wnioski."
+"Pomodoro. Technika TAC pomaga pisarzom rozwijać pomysł w zorganizowany sposób, dzieląc akapit na "
+"różne etapy. Przeczytaj wiki, aby skorzystać ze wszystkich zasobów. Aby otworzyć wiki, kliknij "
+"ikonę '?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1580,10 +1580,10 @@ msgstr "Zachowaj koncentrację dzięki wbudowanemu timerowi Pomodoro. Idealny do
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Użyj AI, aby pomóc w przepisaniu, podsumowaniu lub poprawieniu swoich akapitów. Skonfiguruj to w "
-"Preferencjach."
+"Użyj AI, aby poprawić swój wyeksportowany tekst. Skonfiguruj w Preferencjach. Przeczytaj wiki, aby "
+"uzyskać wskazówki dotyczące konfiguracji."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK

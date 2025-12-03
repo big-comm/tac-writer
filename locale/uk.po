@@ -710,17 +710,18 @@ msgstr "What is TAC Writer?"
 msgid "Continuous Argumentation Technique (TAC in Portuguese):"
 msgstr "Техніка безперервної аргументації (TAC португальською):"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 809
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1057
 #: NEEDS WORK
 msgid ""
 "Tac Writer is a tool based on the TAC technique (Continued Argumentation Technique) and the "
-"Pomodoro method. Developed by Narayan Silva, the TAC technique helps writers develop an idea or "
-"explain a concept in an organized manner, separating the paragraph into different stages: "
-"introduction, argument, citation, and conclusion."
+"Pomodoro method. TAC technique helps writers develop an idea in an organized manner, separating the "
+"paragraph into different stages. Read wiki to take advantage of all the resources. To open wiki "
+"click on '?' icon"
 msgstr ""
 "Tac Writer є інструментом, заснованим на техніці TAC (Техніка Продовженої Аргументації) та методі "
-"Помодоро. Розроблений Нараяном Сілвою, метод TAC допомагає авторам розвивати ідею або пояснювати "
-"концепцію організованим чином, розділяючи абзац на різні етапи: вступ, аргумент, цитата та висновок."
+"Помодоро. Техніка TAC допомагає авторам розвивати ідею організованим чином, розділяючи абзац на "
+"різні етапи. Читайте вікі, щоб скористатися всіма ресурсами. Щоб відкрити вікі, натисніть на значок "
+"'?'."
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 822
 #: NEEDS WORK
@@ -1575,10 +1576,10 @@ msgstr "Залишайтеся зосередженими з вбудовани�
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1639
 #: NEEDS WORK
-msgid "Use AI to help rewrite, summarize, or improve your paragraphs. Configure it in Preferences."
+msgid "Use AI to revise your exported text. Configure in Preferences. Read wiki for guided configuration."
 msgstr ""
-"Використовуйте ШІ, щоб допомогти переписати, підсумувати або покращити ваші абзаци. Налаштуйте це в "
-"Налаштуваннях."
+"Використовуйте ШІ для перегляду вашого експортованого тексту. Налаштуйте в Налаштуваннях. Читайте "
+"вікі для керованої конфігурації."
 # 
 # File: usr/share/tac-writer/ui/components.py, line: 1644
 #: NEEDS WORK
