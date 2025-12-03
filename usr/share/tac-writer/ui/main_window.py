@@ -390,10 +390,10 @@ class MainWindow(Adw.ApplicationWindow):
         toolbar_box.add_css_class("toolbar")
 
         # Add paragraph menu button
-        add_button = Gtk.MenuButton()
-        add_button.set_label(_("Add Paragraph"))
-        add_button.set_icon_name('tac-list-add-symbolic')
-        add_button.add_css_class("suggested-action")
+        self.add_button = Gtk.MenuButton()
+        self.add_button.set_label(_("Add Paragraph"))
+        self.add_button.set_icon_name('tac-list-add-symbolic')
+        self.add_button.add_css_class("suggested-action")
 
         # Create menu model
         menu_model = Gio.Menu()
@@ -411,8 +411,8 @@ class MainWindow(Adw.ApplicationWindow):
         for label, ptype in paragraph_types:
             menu_model.append(label, f"win.add_paragraph('{ptype.value}')")
 
-        add_button.set_menu_model(menu_model)
-        toolbar_box.append(add_button)
+        self.add_button.set_menu_model(menu_model)
+        toolbar_box.append(self.add_button)
         
         # Add image button
         image_button = Gtk.Button()
@@ -868,8 +868,13 @@ class MainWindow(Adw.ApplicationWindow):
         dialog.present()
 
     def _action_show_welcome(self, action, param):
-        """Handle show welcome action"""
+        """Handle show welcome action - show tour guide"""
+        # Show welcome dialog first, then tour
         self.show_welcome_dialog()
+
+        # Force the tour to show after welcome dialog is closed
+        # by temporarily enabling it
+        self.config.set('show_first_run_tutorial', True)
         
     def _action_backup_manager(self, action, param):
         """Handle backup manager action"""
@@ -1079,7 +1084,57 @@ class MainWindow(Adw.ApplicationWindow):
 
         self.project_list.refresh_projects()
         self._show_toast(_("Created project: {}").format(project.name))
-    
+
+        # Show popover pointing to add button (only for first-time users)
+        if self.config.get('show_post_creation_tip', True):
+            GLib.timeout_add(500, self._show_post_creation_popover)
+
+    def _show_post_creation_popover(self):
+        """Show a popover pointing to the add paragraph button after project creation"""
+        if not hasattr(self, 'add_button'):
+            return False
+
+        # Create popover
+        popover = Gtk.Popover()
+        popover.set_position(Gtk.PositionType.BOTTOM)
+        popover.set_autohide(False)
+
+        # Content
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        content_box.set_margin_top(20)
+        content_box.set_margin_bottom(20)
+        content_box.set_margin_start(20)
+        content_box.set_margin_end(20)
+
+        # Message
+        message_label = Gtk.Label()
+        message_label.set_text(_("Click here to start writing!\n\nAdd paragraphs to build your text."))
+        message_label.set_wrap(True)
+        message_label.set_max_width_chars(30)
+        message_label.set_justify(Gtk.Justification.CENTER)
+        content_box.append(message_label)
+
+        # Got it button
+        got_it_button = Gtk.Button.new_with_label(_("Got it!"))
+        got_it_button.add_css_class("suggested-action")
+        got_it_button.set_halign(Gtk.Align.CENTER)
+
+        def on_got_it_clicked(button):
+            popover.popdown()
+            popover.unparent()
+            # Don't show this tip again
+            self.config.set('show_post_creation_tip', False)
+            self.config.save()
+
+        got_it_button.connect('clicked', on_got_it_clicked)
+        content_box.append(got_it_button)
+
+        popover.set_child(content_box)
+        popover.set_parent(self.add_button)
+        popover.popup()
+
+        return False  # Don't repeat timeout
+
     def _on_image_added(self, dialog, data):
         """Handle image added from ImageDialog"""
         if not self.current_project:

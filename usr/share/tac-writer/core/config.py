@@ -13,12 +13,12 @@ class Config:
     """Application configuration manager"""
 
     # Application version and metadata
-    APP_VERSION = "1.5.1"
+    APP_VERSION = "1.7.0"
     APP_NAME = "TAC"
     APP_FULL_NAME = "TAC - Continuous Argumentation Technique"
     APP_DESCRIPTION = "Academic Writing Assistant"
-    APP_WEBSITE = "https://github.com/big-comm/comm-tac-writer"
-    APP_COPYRIGHT = "© 2025 TAC Development Team"
+    APP_WEBSITE = "https://github.com/big-comm/tac-writer"
+    APP_COPYRIGHT = "© 2025 TAC Development"
     APP_DEVELOPERS = ["Tales Mendonça, Narayan Silva"]
     APP_DESIGNERS = ["Narayan Silva"]
 
@@ -99,6 +99,7 @@ class Config:
             'restore_session': True,
             'show_welcome_dialog': True,
             'show_first_run_tutorial': True,
+            'show_post_creation_tip': True,
 
             # Theme and appearance
             'use_dark_theme': False,
