@@ -1838,6 +1838,22 @@ msgstr "Tietokanta tuotiin onnistuneesti"
 msgid "Created project: {}"
 msgstr "Luotu projekti: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Napsauta täällä aloittaaksesi kirjoittamisen!\n"
+"\n"
+"Lisää kappaleita rakentaaksesi tekstiäsi."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Sain sen!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

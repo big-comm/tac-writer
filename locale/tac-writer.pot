@@ -221,7 +221,7 @@ msgstr  ""
 # File: usr/share/tac-writer/ui/components.py, line: 1296
 # File: usr/share/tac-writer/ui/components.py, line: 1443
 # File: usr/share/tac-writer/ui/main_window.py, line: 646
-# File: usr/share/tac-writer/ui/main_window.py, line: 892
+# File: usr/share/tac-writer/ui/main_window.py, line: 897
 msgid   "Cancel"
 msgstr  ""
 
@@ -533,7 +533,7 @@ msgstr  ""
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 718
 # File: usr/share/tac-writer/ui/components.py, line: 1638
-# File: usr/share/tac-writer/ui/main_window.py, line: 1238
+# File: usr/share/tac-writer/ui/main_window.py, line: 1293
 msgid   "AI Assistant"
 msgstr  ""
 
@@ -561,7 +561,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 737
-# File: usr/share/tac-writer/ui/main_window.py, line: 1155
+# File: usr/share/tac-writer/ui/main_window.py, line: 1210
 msgid   "Provider"
 msgstr  ""
 
@@ -772,8 +772,8 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1220
-# File: usr/share/tac-writer/ui/main_window.py, line: 1242
-# File: usr/share/tac-writer/ui/main_window.py, line: 1678
+# File: usr/share/tac-writer/ui/main_window.py, line: 1297
+# File: usr/share/tac-writer/ui/main_window.py, line: 1733
 msgid   "Close"
 msgstr  ""
 
@@ -1315,7 +1315,7 @@ msgstr  ""
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 #
 # File: usr/share/tac-writer/ui/components.py, line: 588
-# File: usr/share/tac-writer/ui/main_window.py, line: 1581
+# File: usr/share/tac-writer/ui/main_window.py, line: 1636
 msgid   "Continuous Argumentation Technique"
 msgstr  ""
 
@@ -1777,212 +1777,224 @@ msgid   "No project open"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 888
+# File: usr/share/tac-writer/ui/main_window.py, line: 893
 msgid   "Open Project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 891
+# File: usr/share/tac-writer/ui/main_window.py, line: 896
 msgid   "Open"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 900
+# File: usr/share/tac-writer/ui/main_window.py, line: 905
 msgid   "TAC Projects (*.json)"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 905
+# File: usr/share/tac-writer/ui/main_window.py, line: 910
 msgid   "All Files"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 919
-# File: usr/share/tac-writer/ui/main_window.py, line: 1636
+# File: usr/share/tac-writer/ui/main_window.py, line: 924
+# File: usr/share/tac-writer/ui/main_window.py, line: 1691
 #, python-brace-format
 msgid   "Opened project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 921
-# File: usr/share/tac-writer/ui/main_window.py, line: 1638
+# File: usr/share/tac-writer/ui/main_window.py, line: 926
+# File: usr/share/tac-writer/ui/main_window.py, line: 1693
 msgid   "Failed to open project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 934
+# File: usr/share/tac-writer/ui/main_window.py, line: 939
 msgid   "Project saved successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 938
-# File: usr/share/tac-writer/ui/main_window.py, line: 1125
+# File: usr/share/tac-writer/ui/main_window.py, line: 943
+# File: usr/share/tac-writer/ui/main_window.py, line: 1180
 msgid   "Failed to save project"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 985
+# File: usr/share/tac-writer/ui/main_window.py, line: 990
 msgid   "Auto-save failed"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 992
+# File: usr/share/tac-writer/ui/main_window.py, line: 997
 msgid   "No project to export"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1045
+# File: usr/share/tac-writer/ui/main_window.py, line: 1050
 msgid   "Database imported successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1081
+# File: usr/share/tac-writer/ui/main_window.py, line: 1086
 #, python-brace-format
 msgid   "Created project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1119
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+msgid   "Click here to start writing!\n"
+        "\n"
+        "Add paragraphs to build your text."
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+msgid   "Got it!"
+msgstr  ""
+
+#
+# File: usr/share/tac-writer/ui/main_window.py, line: 1174
 msgid   "Image inserted successfully"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1132
+# File: usr/share/tac-writer/ui/main_window.py, line: 1187
 msgid   "Error inserting image"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1147
+# File: usr/share/tac-writer/ui/main_window.py, line: 1202
 msgid   "Enable the AI assistant in Preferences ▸ AI Assistant."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1156
+# File: usr/share/tac-writer/ui/main_window.py, line: 1211
 msgid   "API key"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1160
+# File: usr/share/tac-writer/ui/main_window.py, line: 1215
 #, python-brace-format
 msgid   "Configure {items} in Preferences ▸ AI Assistant."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1173
+# File: usr/share/tac-writer/ui/main_window.py, line: 1228
 msgid   "Enable AI in Preferences. API key is required. Read Wiki if there is "
         "any doubt."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1197
+# File: usr/share/tac-writer/ui/main_window.py, line: 1252
 msgid   "Please enter a question for the assistant."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1202
+# File: usr/share/tac-writer/ui/main_window.py, line: 1257
 msgid   "The AI assistant is processing your request..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1239
+# File: usr/share/tac-writer/ui/main_window.py, line: 1294
 msgid   "Here is the assistant's suggestion."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1271
+# File: usr/share/tac-writer/ui/main_window.py, line: 1326
 msgid   "Response"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1289
+# File: usr/share/tac-writer/ui/main_window.py, line: 1344
 msgid   "Copy to clipboard"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1293
+# File: usr/share/tac-writer/ui/main_window.py, line: 1348
 msgid   "Insert at cursor"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1299
+# File: usr/share/tac-writer/ui/main_window.py, line: 1354
 msgid   "Apply correction"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1309
+# File: usr/share/tac-writer/ui/main_window.py, line: 1364
 msgid   "Additional suggestions"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1357
+# File: usr/share/tac-writer/ui/main_window.py, line: 1412
 msgid   "Copied to clipboard."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1363
+# File: usr/share/tac-writer/ui/main_window.py, line: 1418
 msgid   "Place the cursor inside a paragraph to insert the text."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1370
-# File: usr/share/tac-writer/ui/main_window.py, line: 1395
+# File: usr/share/tac-writer/ui/main_window.py, line: 1425
+# File: usr/share/tac-writer/ui/main_window.py, line: 1450
 msgid   "Nothing to insert."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1381
+# File: usr/share/tac-writer/ui/main_window.py, line: 1436
 msgid   "Text inserted into the document."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1388
+# File: usr/share/tac-writer/ui/main_window.py, line: 1443
 msgid   "No paragraph context available. Try inserting at the cursor."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1401
+# File: usr/share/tac-writer/ui/main_window.py, line: 1456
 msgid   "Could not determine the original paragraph."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1415
+# File: usr/share/tac-writer/ui/main_window.py, line: 1470
 msgid   "Paragraph updated with AI suggestion."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1493
-# File: usr/share/tac-writer/ui/main_window.py, line: 1500
+# File: usr/share/tac-writer/ui/main_window.py, line: 1548
+# File: usr/share/tac-writer/ui/main_window.py, line: 1555
 msgid   "Enter text to search."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1496
+# File: usr/share/tac-writer/ui/main_window.py, line: 1551
 msgid   "No matches found."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1511
+# File: usr/share/tac-writer/ui/main_window.py, line: 1566
 msgid   "No editable paragraphs available."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1535
+# File: usr/share/tac-writer/ui/main_window.py, line: 1590
 msgid   "Reached the end of the document."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1611
+# File: usr/share/tac-writer/ui/main_window.py, line: 1666
 msgid   "Loading project..."
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1628
+# File: usr/share/tac-writer/ui/main_window.py, line: 1683
 #, python-brace-format
 msgid   "Failed to open project: {}"
 msgstr  ""
 
 #
-# File: usr/share/tac-writer/ui/main_window.py, line: 1675
+# File: usr/share/tac-writer/ui/main_window.py, line: 1730
 msgid   "Analysis Failure"
 msgstr  ""
 

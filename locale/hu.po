@@ -1838,6 +1838,22 @@ msgstr "Az adatbázis sikeresen importálva."
 msgid "Created project: {}"
 msgstr "Létrehozott projekt: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Kattints ide a kezdéshez! \n"
+"\n"
+"Adj hozzá bekezdéseket a szöveg felépítéséhez."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Rendben!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

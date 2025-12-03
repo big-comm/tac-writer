@@ -1836,6 +1836,22 @@ msgstr "Databasen importerades framgångsrikt"
 msgid "Created project: {}"
 msgstr "Skapat projekt: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Klicka här för att börja skriva!\n"
+"\n"
+"Lägg till stycken för att bygga din text."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Förstått!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

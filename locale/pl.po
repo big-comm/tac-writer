@@ -1840,6 +1840,22 @@ msgstr "Baza danych została pomyślnie zaimportowana"
 msgid "Created project: {}"
 msgstr "Utworzony projekt: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Kliknij tutaj, aby zacząć pisać!\n"
+"\n"
+"Dodaj akapity, aby zbudować swój tekst."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Zrozumiano!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

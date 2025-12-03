@@ -1829,6 +1829,22 @@ msgstr "데이터베이스가 성공적으로 가져와졌습니다."
 msgid "Created project: {}"
 msgstr "프로젝트 생성됨: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"여기를 클릭하여 작성을 시작하세요!\n"
+"\n"
+"단락을 추가하여 텍스트를 작성하세요."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "알겠어요!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

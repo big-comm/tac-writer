@@ -1840,6 +1840,22 @@ msgstr "Η βάση δεδομένων εισήχθη με επιτυχία"
 msgid "Created project: {}"
 msgstr "Δημιουργήθηκε έργο: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Κάντε κλικ εδώ για να ξεκινήσετε να γράφετε!\n"
+"\n"
+"Προσθέστε παραγράφους για να δημιουργήσετε το κείμενό σας."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Το κατάλαβα!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

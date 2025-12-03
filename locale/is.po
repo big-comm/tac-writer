@@ -1836,6 +1836,22 @@ msgstr "Gagnagrunnur fluttur inn með góðum árangri"
 msgid "Created project: {}"
 msgstr "Skráður verkefni: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Smelltu hér til að byrja að skrifa!\n"
+"\n"
+"Bættu við málsgreinum til að byggja upp textann þinn."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Fékk það!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

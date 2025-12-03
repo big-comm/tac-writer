@@ -1834,6 +1834,22 @@ msgstr "Databáza bola úspešne importovaná"
 msgid "Created project: {}"
 msgstr "Vytvorený projekt: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"Kliknite sem, aby ste začali písať!\n"
+"\n"
+"Pridajte odseky na vytvorenie vášho textu."
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "Rozumiem!"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"

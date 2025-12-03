@@ -1830,6 +1830,22 @@ msgstr "データベースが正常にインポートされました"
 msgid "Created project: {}"
 msgstr "作成したプロジェクト: {}"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1111
+#: NEEDS WORK
+msgid ""
+"Click here to start writing!\n"
+"\n"
+"Add paragraphs to build your text."
+msgstr ""
+"ここをクリックして書き始めてください！\n"
+"\n"
+"段落を追加してテキストを構築します。"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1118
+#: NEEDS WORK
+msgid "Got it!"
+msgstr "わかった！"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1043
 #: NEEDS WORK
 msgid "Image inserted successfully"
