@@ -655,7 +655,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         editor_page.set_icon_name('tac-accessories-text-editor-symbolic')
         self.add(editor_page)
 
-        # Font group
+        '''# Font group
         font_group = Adw.PreferencesGroup()
         font_group.set_title(_("Default Font"))
         editor_page.add(font_group)
@@ -685,7 +685,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.font_size_row.set_title(_("Font Size"))
         self.font_size_row.set_adjustment(adjustment)
         self.font_size_row.connect('notify::value', self._on_font_size_changed)
-        font_group.add(self.font_size_row)
+        font_group.add(self.font_size_row)'''
 
         # Behavior group
         behavior_group = Adw.PreferencesGroup()
