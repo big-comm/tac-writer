@@ -465,27 +465,6 @@ msgstr "Використовуйте темну тему для програми
 msgid "Editor"
 msgstr "Редактор"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 621
-#: NEEDS WORK
-msgid "Default Font"
-msgstr "Шрифт за замовчуванням"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 626
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Шрифт"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 671
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "Помилка завантаження системних шрифтів: {}"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 641
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Шрифт Розмір"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 648
 #: NEEDS WORK
 msgid "Behavior"

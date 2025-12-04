@@ -465,27 +465,6 @@ msgstr "为应用程序使用深色主题"
 msgid "Editor"
 msgstr "编辑器"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 621
-#: NEEDS WORK
-msgid "Default Font"
-msgstr "默认字体"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 626
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "字体系列"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 671
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "加载系统字体时出错：{}"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 641
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "字体大小"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 648
 #: NEEDS WORK
 msgid "Behavior"

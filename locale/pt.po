@@ -465,27 +465,6 @@ msgstr "Use o tema escuro para o aplicativo"
 msgid "Editor"
 msgstr "Editor"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 621
-#: NEEDS WORK
-msgid "Default Font"
-msgstr "Fonte Padrão"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 626
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Família de Fontes"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 671
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "Erro ao carregar fontes do sistema: {}"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 641
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Tamanho da Fonte"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 648
 #: NEEDS WORK
 msgid "Behavior"

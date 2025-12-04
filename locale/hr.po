@@ -465,27 +465,6 @@ msgstr "Koristite tamnu temu za aplikaciju"
 msgid "Editor"
 msgstr "Uređivač"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 621
-#: NEEDS WORK
-msgid "Default Font"
-msgstr "Zadani font"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 626
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Obitelj fonta"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 671
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "Greška pri učitavanju sustavnih fontova: {}"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 641
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Veličina fonta"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 648
 #: NEEDS WORK
 msgid "Behavior"

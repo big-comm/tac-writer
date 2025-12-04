@@ -465,27 +465,6 @@ msgstr "Χρησιμοποιήστε σκοτεινή θεματολογία γ�
 msgid "Editor"
 msgstr "Επεξεργαστής"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 621
-#: NEEDS WORK
-msgid "Default Font"
-msgstr "Προεπιλεγμένη Γραμματοσειρά"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 626
-#: NEEDS WORK
-msgid "Font Family"
-msgstr "Οικογένεια Γραμματοσειρών"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 671
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "Σφάλμα κατά τη φόρτωση των συστημικών γραμματοσειρών: {}"
-# 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 641
-#: NEEDS WORK
-msgid "Font Size"
-msgstr "Μέγεθος Γραμματοσειράς"
-# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 648
 #: NEEDS WORK
 msgid "Behavior"

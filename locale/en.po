@@ -476,27 +476,6 @@ msgid "Editor"
 msgstr "Editor"
 
 #
-# File: usr/share/tac-writer/ui/dialogs.py, line: 660
-msgid "Default Font"
-msgstr "Default Font"
-
-#
-# File: usr/share/tac-writer/ui/dialogs.py, line: 665
-msgid "Font Family"
-msgstr "Font Family"
-
-#
-# File: usr/share/tac-writer/ui/dialogs.py, line: 672
-#, python-brace-format
-msgid "Error loading system fonts: {}"
-msgstr "Error loading system fonts: {}"
-
-#
-# File: usr/share/tac-writer/ui/dialogs.py, line: 685
-msgid "Font Size"
-msgstr "Font Size"
-
-#
 # File: usr/share/tac-writer/ui/dialogs.py, line: 692
 msgid "Behavior"
 msgstr "Behavior"
