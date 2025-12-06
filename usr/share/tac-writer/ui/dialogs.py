@@ -1596,11 +1596,20 @@ class ImageDialog(Adw.Window):
 
     __gsignals__ = {
         'image-added': (GObject.SIGNAL_RUN_FIRST, None, (object,)),
+        'image-updated': (GObject.SIGNAL_RUN_FIRST, None, (object,)),
     }
 
-    def __init__(self, parent, project, insert_after_index: int = -1, **kwargs):
+    def __init__(self, parent, project, insert_after_index: int = -1, edit_paragraph=None, **kwargs):
         super().__init__(**kwargs)
-        self.set_title(_("Insert Image"))
+
+        self.edit_mode = edit_paragraph is not None
+        self.edit_paragraph = edit_paragraph
+
+        if self.edit_mode:
+            self.set_title(_("Edit Image"))
+        else:
+            self.set_title(_("Insert Image"))
+
         self.set_transient_for(parent)
         self.set_modal(True)
         self.set_default_size(700, 600)
@@ -1611,11 +1620,15 @@ class ImageDialog(Adw.Window):
         self.selected_file = None
         self.image_preview = None
         self.original_size = None
-        
+
         self.config = Config()
-        
+
         # Create UI
         self._create_ui()
+
+        # If editing, load existing image data
+        if self.edit_mode:
+            self._load_existing_image()
 
     def _create_ui(self):
         """Create the dialog UI"""
@@ -1632,10 +1645,11 @@ class ImageDialog(Adw.Window):
         cancel_button.connect('clicked', lambda b: self.destroy())
         header_bar.pack_start(cancel_button)
 
-        # Insert button
-        self.insert_button = Gtk.Button(label=_("Insert"))
+        # Insert/Update button
+        button_label = _("Update") if self.edit_mode else _("Insert")
+        self.insert_button = Gtk.Button(label=button_label)
         self.insert_button.add_css_class('suggested-action')
-        self.insert_button.set_sensitive(False)
+        self.insert_button.set_sensitive(self.edit_mode)  # Enabled in edit mode by default
         self.insert_button.connect('clicked', self._on_insert_clicked)
         header_bar.pack_end(self.insert_button)
 
@@ -1922,69 +1936,139 @@ class ImageDialog(Adw.Window):
         return 'center'  # Default
 
     def _on_insert_clicked(self, button):
-        """Handle insert button click"""
-        if not self.selected_file or not self.original_size:
-            return
-        
+        """Handle insert/update button click"""
         try:
-            # Create images directory if it doesn't exist
-            images_dir = self.config.data_dir / 'images' / self.project.id
-            images_dir.mkdir(parents=True, exist_ok=True)
-            
-            # Copy image to project images directory
-            import shutil
-            dest_filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.selected_file.name}"
-            dest_path = images_dir / dest_filename
-            shutil.copy2(self.selected_file, dest_path)
-            
+            # In edit mode, we can update without selecting a new file
+            # In insert mode, we need a file selected
+            if not self.edit_mode and (not self.selected_file or not self.original_size):
+                return
+
+            # Determine image file info
+            if self.selected_file:
+                # New image selected - copy to project directory
+                images_dir = self.config.data_dir / 'images' / self.project.id
+                images_dir.mkdir(parents=True, exist_ok=True)
+
+                import shutil
+                dest_filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.selected_file.name}"
+                dest_path = images_dir / dest_filename
+                shutil.copy2(self.selected_file, dest_path)
+
+                img_filename = dest_filename
+                img_path = str(dest_path)
+                img_original_size = self.original_size
+            elif self.edit_mode:
+                # No new image - keep existing image
+                existing_metadata = self.edit_paragraph.get_image_metadata()
+                img_filename = existing_metadata.get('filename')
+                img_path = existing_metadata.get('path')
+                img_original_size = existing_metadata.get('original_size')
+            else:
+                return
+
             # Calculate display size based on width percentage
             width_percent = self.width_scale.get_value()
-            display_width = int(self.original_size[0] * (width_percent / 100))
-            aspect_ratio = self.original_size[1] / self.original_size[0]
+            display_width = int(img_original_size[0] * (width_percent / 100))
+            aspect_ratio = img_original_size[1] / img_original_size[0]
             display_height = int(display_width * aspect_ratio)
-            
+
             # Get selected alignment
             alignment = self._get_selected_alignment()
-            
+
             # Get caption and alt text
             caption = self.caption_entry.get_text()
             alt_text = self.alt_entry.get_text()
-            
+
             # Create image paragraph
             from core.models import Paragraph, ParagraphType
             image_para = Paragraph(ParagraphType.IMAGE)
             image_para.set_image_metadata(
-                filename=dest_filename,
-                path=str(dest_path),
-                original_size=self.original_size,
+                filename=img_filename,
+                path=img_path,
+                original_size=img_original_size,
                 display_size=(display_width, display_height),
                 alignment=alignment,
                 caption=caption,
                 alt_text=alt_text,
                 width_percent=width_percent
             )
-            
-            # Get insert position
-            selected_index = self.position_dropdown.get_selected()
-            insert_position = selected_index  # 0 = beginning, 1 = after first para, etc.
-            
-            # Emit signal with image paragraph and position
-            self.emit('image-added', {'paragraph': image_para, 'position': insert_position})
-            
+
+            if self.edit_mode:
+                # Emit update signal
+                self.emit('image-updated', {
+                    'paragraph': image_para,
+                    'original_paragraph': self.edit_paragraph
+                })
+            else:
+                # Get insert position
+                selected_index = self.position_dropdown.get_selected()
+                insert_position = selected_index  # 0 = beginning, 1 = after first para, etc.
+
+                # Emit insert signal
+                self.emit('image-added', {'paragraph': image_para, 'position': insert_position})
+
             self.destroy()
-            
+
         except Exception as e:
-            print(_("Error inserting image: {}").format(e))
+            error_msg = _("Error updating image") if self.edit_mode else _("Error inserting image")
+            print(f"{error_msg}: {e}")
             import traceback
             traceback.print_exc()
-            
+
             error_dialog = Adw.MessageDialog.new(
                 self,
-                _("Error Inserting Image"),
-                _("Could not insert the image.") + "\n\n" + str(e)
+                error_msg.title(),
+                _("Could not {} the image.").format(_("update") if self.edit_mode else _("insert")) + "\n\n" + str(e)
             )
             error_dialog.add_response("ok", _("OK"))
             error_dialog.present()
+
+    def _load_existing_image(self):
+        """Load existing image data when in edit mode"""
+        if not self.edit_paragraph:
+            return
+
+        metadata = self.edit_paragraph.get_image_metadata()
+        if not metadata:
+            return
+
+        try:
+            from pathlib import Path
+
+            # Load the existing image file
+            img_path = Path(metadata.get('path', ''))
+            if img_path.exists():
+                self._load_image(str(img_path))
+
+                # Set width percentage
+                width_percent = metadata.get('width_percent', 80)
+                self.width_scale.set_value(width_percent)
+
+                # Set alignment
+                alignment = metadata.get('alignment', 'center')
+                alignment_box = self.alignment_group.get_parent()
+                child = alignment_box.get_first_child()
+                while child:
+                    if isinstance(child, Gtk.CheckButton) and hasattr(child, 'alignment_value'):
+                        if child.alignment_value == alignment:
+                            child.set_active(True)
+                            break
+                    child = child.get_next_sibling()
+
+                # Set caption
+                caption = metadata.get('caption', '')
+                if caption:
+                    self.caption_entry.set_text(caption)
+
+                # Set alt text
+                alt_text = metadata.get('alt_text', '')
+                if alt_text:
+                    self.alt_entry.set_text(alt_text)
+
+        except Exception as e:
+            print(_("Error loading existing image: {}").format(e))
+            import traceback
+            traceback.print_exc()
 
 class AiPdfDialog(Adw.Window):
     """Dialog for AI PDF Review"""

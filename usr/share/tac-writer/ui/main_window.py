@@ -620,7 +620,14 @@ class MainWindow(Adw.ApplicationWindow):
         toolbar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
         toolbar.set_halign(Gtk.Align.CENTER)
         toolbar.set_margin_top(6)
-        
+
+        # Edit button
+        edit_btn = Gtk.Button()
+        edit_btn.set_icon_name('document-edit-symbolic')
+        edit_btn.set_tooltip_text(_("Edit Image"))
+        edit_btn.connect('clicked', lambda b: self._on_edit_image(paragraph))
+        toolbar.append(edit_btn)
+
         # Remove button
         remove_btn = Gtk.Button()
         remove_btn.set_icon_name('user-trash-symbolic')
@@ -628,7 +635,7 @@ class MainWindow(Adw.ApplicationWindow):
         remove_btn.add_css_class('destructive-action')
         remove_btn.connect('clicked', lambda b: self._on_remove_image(paragraph))
         toolbar.append(remove_btn)
-        
+
         return toolbar
     
     def _on_remove_image(self, paragraph):
@@ -670,6 +677,60 @@ class MainWindow(Adw.ApplicationWindow):
         
         dialog.connect('response', on_response)
         dialog.present()
+
+    def _on_edit_image(self, paragraph):
+        """Handle image editing"""
+        if not self.current_project:
+            return
+
+        from ui.dialogs import ImageDialog
+
+        # Get paragraph index
+        try:
+            para_index = self.current_project.paragraphs.index(paragraph)
+        except ValueError:
+            print("Error: Paragraph not found in project")
+            return
+
+        # Open ImageDialog in edit mode
+        dialog = ImageDialog(
+            parent=self,
+            project=self.current_project,
+            insert_after_index=para_index,
+            edit_paragraph=paragraph
+        )
+        dialog.connect('image-updated', self._on_image_updated)
+        dialog.present()
+
+    def _on_image_updated(self, dialog, data):
+        """Handle image update from dialog"""
+        updated_paragraph = data.get('paragraph')
+        original_paragraph = data.get('original_paragraph')
+
+        if not updated_paragraph or not original_paragraph:
+            return
+
+        try:
+            # Find and replace the original paragraph
+            index = self.current_project.paragraphs.index(original_paragraph)
+            self.current_project.paragraphs[index] = updated_paragraph
+
+            # Update order
+            updated_paragraph.order = original_paragraph.order
+
+            # Save project
+            self.project_manager.save_project(self.current_project)
+
+            # Refresh UI
+            self._refresh_paragraphs()
+            self._update_header_for_view("editor")
+
+            self._show_toast(_("Image updated"))
+        except (ValueError, Exception) as e:
+            print(f"Error updating image: {e}")
+            import traceback
+            traceback.print_exc()
+            self._show_toast(_("Error updating image"), Adw.ToastPriority.HIGH)
 
     def _get_focused_text_view(self):
         """Get the currently focused TextView widget"""
