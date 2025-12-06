@@ -993,11 +993,24 @@ msgstr "Greška prilikom brisanja sigurnosne kopije: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Uredi sliku"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Umetni sliku"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Ažuriranje"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1148,21 +1161,40 @@ msgstr "Greška pri učitavanju slike"
 msgid "Could not load the selected image file."
 msgstr "Nije moguće učitati odabranu sliku."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Greška prilikom umetanja slike: {}"
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
 #: NEEDS WORK
-msgid "Error Inserting Image"
+msgid "Error updating image"
+msgstr "Greška prilikom ažuriranja slike"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
 msgstr "Greška prilikom umetanja slike"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Nije moguće umetnuti sliku."
+#, python-brace-format
+msgid "Could not {} the image."
+msgstr "Nije moguće {} sliku."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "update"
+msgstr "ažuriranje"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "insert"
+msgstr "umetni"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Greška prilikom učitavanja postojećeg slike: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1733,6 +1765,11 @@ msgstr "Slika uklonjena"
 msgid "Error removing image"
 msgstr "Greška prilikom uklanjanja slike"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Slika ažurirana"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1837,11 +1874,6 @@ msgstr "Razumijem!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Slika je uspješno umetnuta"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Greška prilikom umetanja slike"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

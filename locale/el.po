@@ -993,11 +993,24 @@ msgstr "Σφάλμα κατά τη διαγραφή αντιγράφου ασφ�
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Επεξεργασία Εικόνας"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Εισαγωγή Εικόνας"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Ενημέρωση"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1148,21 +1161,40 @@ msgstr "Σφάλμα φόρτωσης εικόνας"
 msgid "Could not load the selected image file."
 msgstr "Δεν ήταν δυνατή η φόρτωση του επιλεγμένου αρχείου εικόνας."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Σφάλμα κατά την εισαγωγή εικόνας: {}"
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
 #: NEEDS WORK
-msgid "Error Inserting Image"
+msgid "Error updating image"
+msgstr "Σφάλμα κατά την ενημέρωση της εικόνας"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
 msgstr "Σφάλμα κατά την εισαγωγή εικόνας"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Δεν ήταν δυνατή η εισαγωγή της εικόνας."
+#, python-brace-format
+msgid "Could not {} the image."
+msgstr "Δεν ήταν δυνατή η {} της εικόνας."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "update"
+msgstr "ενημέρωση"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "insert"
+msgstr "εισάγετε"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Σφάλμα κατά τη φόρτωση υπάρχουσας εικόνας: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1735,6 +1767,11 @@ msgstr "Εικόνα αφαιρέθηκε"
 msgid "Error removing image"
 msgstr "Σφάλμα κατά την αφαίρεση εικόνας"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Η εικόνα ενημερώθηκε"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1839,11 +1876,6 @@ msgstr "Το κατάλαβα!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Η εικόνα εισήχθη με επιτυχία"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Σφάλμα κατά την εισαγωγή εικόνας"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

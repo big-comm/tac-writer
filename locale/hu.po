@@ -995,11 +995,24 @@ msgstr "Hiba a biztonsági másolat törlésekor: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Kép szerkesztése"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Kép beszúrása"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Frissítés"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1150,21 +1163,40 @@ msgstr "Kép betöltési hiba"
 msgid "Could not load the selected image file."
 msgstr "A kiválasztott képfájl betöltése nem sikerült."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
+#: NEEDS WORK
+msgid "Error updating image"
+msgstr "Hiba a kép frissítésekor"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Hiba a kép beszúrásakor"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Hiba a kép beszúrásakor: {}"
+msgid "Could not {} the image."
+msgstr "Nem sikerült {} a képet."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Error Inserting Image"
-msgstr "Kép beszúrási hiba"
+msgid "update"
+msgstr "frissítés"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Nem sikerült beszúrni a képet."
+msgid "insert"
+msgstr "beszúrás"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Hiba a meglévő kép betöltésekor: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1733,6 +1765,11 @@ msgstr "Kép eltávolítva"
 msgid "Error removing image"
 msgstr "Hiba a kép eltávolításakor"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Kép frissítve"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1837,11 +1874,6 @@ msgstr "Rendben!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Kép sikeresen beillesztve"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Hiba a kép beszúrásakor"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

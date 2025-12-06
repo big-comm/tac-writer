@@ -993,11 +993,24 @@ msgstr "Errore durante l'eliminazione del backup: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Modifica Immagine"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Inserisci Immagine"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Aggiornamento"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1148,21 +1161,40 @@ msgstr "Errore di caricamento dell'immagine"
 msgid "Could not load the selected image file."
 msgstr "Impossibile caricare il file immagine selezionato."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Errore durante l'inserimento dell'immagine: {}"
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
 #: NEEDS WORK
-msgid "Error Inserting Image"
+msgid "Error updating image"
+msgstr "Erro durante l'aggiornamento dell'immagine"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
 msgstr "Erro durante l'inserimento dell'immagine"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Impossibile inserire l'immagine."
+#, python-brace-format
+msgid "Could not {} the image."
+msgstr "Impossibile {} l'immagine."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "update"
+msgstr "aggiornamento"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "insert"
+msgstr "inserisci"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Errore nel caricamento dell'immagine esistente: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1733,6 +1765,11 @@ msgstr "Immagine rimossa"
 msgid "Error removing image"
 msgstr "Errore durante la rimozione dell'immagine"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Immagine aggiornata"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1837,11 +1874,6 @@ msgstr "Capito!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Immagine inserita con successo"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Erro durante l'inserimento dell'immagine"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

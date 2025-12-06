@@ -993,11 +993,24 @@ msgstr "Fejl ved sletning af backup: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Rediger billede"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Indsæt billede"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Opdatering"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1148,21 +1161,40 @@ msgstr "Fejl ved indlæsning af billede"
 msgid "Could not load the selected image file."
 msgstr "Kunne ikke indlæse den valgte billedfil."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Fejl ved indsættelse af billede: {}"
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
 #: NEEDS WORK
-msgid "Error Inserting Image"
+msgid "Error updating image"
+msgstr "Fejl ved opdatering af billede"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
 msgstr "Fejl ved indsættelse af billede"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Kunne ikke indsætte billedet."
+#, python-brace-format
+msgid "Could not {} the image."
+msgstr "Kunne ikke {} billedet."
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "update"
+msgstr "opdatering"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "insert"
+msgstr "indsæt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Fejl ved indlæsning af eksisterende billede: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1729,6 +1761,11 @@ msgstr "Billede fjernet"
 msgid "Error removing image"
 msgstr "Fejl ved fjernelse af billede"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Billede opdateret"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1833,11 +1870,6 @@ msgstr "Fikset!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Billede indsat med succes"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Fejl ved indsættelse af billede"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

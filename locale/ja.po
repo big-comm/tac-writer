@@ -991,11 +991,24 @@ msgstr "バックアップの削除中にエラーが発生しました: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "画像を編集"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "画像を挿入"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "更新"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1146,21 +1159,40 @@ msgstr "画像の読み込みエラー"
 msgid "Could not load the selected image file."
 msgstr "選択した画像ファイルを読み込むことができませんでした。"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
-#: NEEDS WORK
-#, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "画像の挿入中にエラーが発生しました: {}"
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
 #: NEEDS WORK
-msgid "Error Inserting Image"
+msgid "Error updating image"
+msgstr "画像の更新中にエラーが発生しました"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
 msgstr "画像の挿入エラー"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "画像を挿入できませんでした。"
+#, python-brace-format
+msgid "Could not {} the image."
+msgstr "画像を{}できませんでした。"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "update"
+msgstr "更新"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
+#: NEEDS WORK
+msgid "insert"
+msgstr "挿入"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "既存の画像の読み込みエラー: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1724,6 +1756,11 @@ msgstr "画像が削除されました"
 msgid "Error removing image"
 msgstr "画像の削除中にエラーが発生しました"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "画像が更新されました"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1828,11 +1865,6 @@ msgstr "わかった！"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "画像が正常に挿入されました"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "画像の挿入エラー"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK

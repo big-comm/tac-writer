@@ -993,11 +993,24 @@ msgstr "Viga varukoopia kustutamisel: {}"
 # 
 # #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
 # 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1609
+# File: usr/share/tac-writer/ui/main_window.py, line: 627
+#: NEEDS WORK
+msgid "Edit Image"
+msgstr "Muuda pilti"
+# 
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1421
 # File: usr/share/tac-writer/ui/main_window.py, line: 357
 #: NEEDS WORK
 msgid "Insert Image"
 msgstr "Sisesta pilt"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 1649
+#: NEEDS WORK
+msgid "Update"
+msgstr "Uuendus"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1454
 #: NEEDS WORK
@@ -1148,21 +1161,40 @@ msgstr "Pildi laadimise viga"
 msgid "Could not load the selected image file."
 msgstr "Valitud pildifaili ei saanud laadida."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1795
+# #-#-#-#-#  tac-writer.pot (tac-writer)  #-#-#-#-#
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2013
+# File: usr/share/tac-writer/ui/main_window.py, line: 733
+#: NEEDS WORK
+msgid "Error updating image"
+msgstr "Pildi värskendamise viga"
+# 
+# File: usr/share/tac-writer/ui/main_window.py, line: 1056
+#: NEEDS WORK
+msgid "Error inserting image"
+msgstr "Piltide sisestamise viga"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error inserting image: {}"
-msgstr "Piltide sisestamise viga: {}"
+msgid "Could not {} the image."
+msgstr "Ei saanud {} pilti."
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1801
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Error Inserting Image"
-msgstr "Pildi sisestamise viga"
+msgid "update"
+msgstr "uuendus"
 # 
-# File: usr/share/tac-writer/ui/dialogs.py, line: 1984
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2021
 #: NEEDS WORK
-msgid "Could not insert the image."
-msgstr "Pilti ei saanud lisada."
+msgid "insert"
+msgstr "sisesta"
+# 
+# File: usr/share/tac-writer/ui/dialogs.py, line: 2069
+#: NEEDS WORK
+#, python-brace-format
+msgid "Error loading existing image: {}"
+msgstr "Viga olemasoleva pildi laadimisel: {}"
 # 
 # File: usr/share/tac-writer/ui/dialogs.py, line: 1992
 #: NEEDS WORK
@@ -1729,6 +1761,11 @@ msgstr "Pilt eemaldatud"
 msgid "Error removing image"
 msgstr "Pilt eemaldamisel tekkis viga"
 # 
+# File: usr/share/tac-writer/ui/main_window.py, line: 728
+#: NEEDS WORK
+msgid "Image updated"
+msgstr "Pilt uuendatud"
+# 
 # File: usr/share/tac-writer/ui/main_window.py, line: 487
 #: NEEDS WORK
 msgid "Nothing to undo"
@@ -1833,11 +1870,6 @@ msgstr "Sain!"
 #: NEEDS WORK
 msgid "Image inserted successfully"
 msgstr "Pilt lisatud edukalt"
-# 
-# File: usr/share/tac-writer/ui/main_window.py, line: 1056
-#: NEEDS WORK
-msgid "Error inserting image"
-msgstr "Piltide sisestamise viga"
 # 
 # File: usr/share/tac-writer/ui/main_window.py, line: 1125
 #: NEEDS WORK
