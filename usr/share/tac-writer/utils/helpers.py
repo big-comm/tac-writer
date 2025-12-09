@@ -29,7 +29,7 @@ class FileHelper:
     @staticmethod
     def get_safe_filename(filename: str) -> str:
         """Convert filename to safe version (remove invalid characters)"""
-        safe_chars = re.sub(r'[<>:"/\\|?*]', '_', filename)
+        safe_chars = re.sub(r'[<>/\\|?*]', '_', filename)
         
         # Remove multiple spaces and underscores
         safe_chars = re.sub(r'[ _]+', '_', safe_chars)
