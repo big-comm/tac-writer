@@ -2059,17 +2059,17 @@ msgstr "Import hiba a varázslat függőségek ellenőrzése közben: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Váratlan hiba a varázslatok függőségeinek ellenőrzésekor: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Egyedi ikon téma elérési útvonal hozzáadva: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Egyedi ikonok betöltve prioritással: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Hiba az ikon téma beállításakor: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Figyelmeztetés: Nem sikerült beállítani az ikon témát: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

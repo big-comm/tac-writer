@@ -2063,17 +2063,17 @@ msgstr "Importfout bij het controleren van spellingsafhankelijkheden: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Onverwachte fout bij het controleren van spellingsafhankelijkheden: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Aangepaste pictogramthemapad toegevoegd: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Aangepaste pictogrammen geladen met prioriteit: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Fout bij het instellen van het pictogramthema: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Waarschuwing: Kon het pictogramthema niet instellen: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

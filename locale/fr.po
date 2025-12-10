@@ -2065,17 +2065,17 @@ msgstr "Erreur d'importation lors de la vérification des dépendances d'orthogr
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Erreur inattendue lors de la vérification des dépendances de l'orthographe : {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Chemin du thème d'icône personnalisé ajouté : {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Icônes personnalisées chargées avec priorité : {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Erreur lors de la configuration du thème d'icônes : {} : {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Avertissement : Impossible de configurer le thème d'icônes : {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

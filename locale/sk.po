@@ -2055,17 +2055,17 @@ msgstr "Chyba pri importe počas kontroly závislostí pravopisu: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Neočakávaná chyba pri kontrole závislostí kúziel: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Cesta k prispôsobenej téme ikony bola pridaná: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Vlastné ikony načítané s prioritou: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Chyba pri nastavovaní témy ikon: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Upozornenie: Nepodarilo sa nastaviť tému ikon: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

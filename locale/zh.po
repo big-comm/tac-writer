@@ -2050,17 +2050,17 @@ msgstr "导入错误，检查拼写依赖项时出现问题：{}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "检查法术依赖项时发生意外错误：{}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "自定义图标主题路径已添加：{}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "自定义图标已按优先级加载：{}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "设置图标主题时出错：{}：{}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "警告：无法设置图标主题：{}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

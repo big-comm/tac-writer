@@ -2057,17 +2057,17 @@ msgstr "Importfeil under sjekk av staveavhengigheter: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Uventet feil ved sjekk av staveavhengigheter: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Egendefinert ikon-tema sti lagt til: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Egendefinerte ikoner lastet med prioritet: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Feil ved oppsett av ikon-tema: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Advarsel: Kunne ikke sette opp ikon-tema: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

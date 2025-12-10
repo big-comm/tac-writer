@@ -2057,17 +2057,17 @@ msgstr "Importfel vid kontroll av stavningsberoenden: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Oväntat fel vid kontroll av stavningsberoenden: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Anpassad ikon-temasökväg tillagd: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Anpassade ikoner laddade med prioritet: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Fel vid inställning av ikontema: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Varning: Kunde inte ställa in ikontema: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

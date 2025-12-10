@@ -2050,17 +2050,17 @@ msgstr "スペル依存関係を確認中にインポートエラーが発生し
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "予期しないエラーが呪文の依存関係をチェックしています: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "カスタムアイコンテーマパスが追加されました: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "優先度で読み込まれたカスタムアイコン: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "アイコンテーマの設定中にエラーが発生しました: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "警告: アイコンテーマを設定できませんでした: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

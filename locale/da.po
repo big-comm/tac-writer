@@ -2055,17 +2055,17 @@ msgstr "Importfejl under kontrol af staveafhængigheder: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Uventet fejl ved kontrol af staveafhængigheder: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Brugerdefineret ikon-temastieret tilføjet: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Brugerdefinerede ikoner indlæst med prioritet: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Fejl ved opsætning af ikon-tema: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Advarsel: Kunne ikke oprette ikon-tema: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

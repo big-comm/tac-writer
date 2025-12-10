@@ -2061,17 +2061,17 @@ msgstr "Tuontivirhe tarkistaessa oikeinkirjoitusriippuvuuksia: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Odottamaton virhe tarkistaessa loitsujen riippuvuuksia: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Mukautetun kuvakeaiheen polku lisätty: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Mukautetut kuvakkeet ladattu prioriteetilla: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Virhe kuvateeman asetuksessa: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Varoitus: Kuvateeman asetusta ei voitu määrittää: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

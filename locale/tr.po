@@ -2059,17 +2059,17 @@ msgstr "Hata: Büyü bağımlılıkları kontrol edilirken içe aktarma hatası:
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Beklenmedik hata, büyü bağımlılıklarını kontrol etme: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Özel simge teması yolu eklendi: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Özel simgeler öncelikle yüklendi: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Simge temasını ayarlarken hata: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Uyarı: Simge temasını ayarlamak mümkün olmadı: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

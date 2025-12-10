@@ -2055,17 +2055,17 @@ msgstr "Importimise viga loitsude sõltuvuste kontrollimisel: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Ootamatu viga loitsude sõltuvuste kontrollimisel: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Kohandatud ikooniteema tee lisatud: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Kohandatud ikoonid laaditi prioriteediga: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Ikoni teema seadistamise viga: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Hoiatus: Ikoni teemat ei õnnestunud seadistada: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK

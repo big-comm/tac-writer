@@ -2065,17 +2065,17 @@ msgstr "Importfehler beim Überprüfen der Rechtschreibabhängigkeiten: {}"
 msgid "Unexpected error checking spell dependencies: {}"
 msgstr "Unerwarteter Fehler beim Überprüfen der Rechtschreibabhängigkeiten: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 301
+# File: usr/share/tac-writer/application.py, line: 285
 #: NEEDS WORK
 #, python-brace-format
-msgid "Custom icon theme path added: {}"
-msgstr "Benutzerdefinierter Symbolthemenpfad hinzugefügt: {}"
+msgid "Custom icons loaded with priority: {}"
+msgstr "Benutzerdefinierte Symbole mit Priorität geladen: {}"
 # 
-# File: usr/share/tac-writer/application.py, line: 305
+# File: usr/share/tac-writer/application.py, line: 289
 #: NEEDS WORK
 #, python-brace-format
-msgid "Error setting up icon theme: {}: {}"
-msgstr "Fehler beim Einrichten des Symbolthemas: {}: {}"
+msgid "Warning: Could not setup icon theme: {}"
+msgstr "Warnung: Konnte das Symbolthema nicht einrichten: {}"
 # 
 # File: usr/share/tac-writer/application.py, line: 278
 #: NEEDS WORK
