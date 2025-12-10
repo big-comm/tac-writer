@@ -140,14 +140,14 @@ class MainWindow(Adw.ApplicationWindow):
 
         # Left side buttons
         self.new_project_button = Gtk.Button()
-        self.new_project_button.set_icon_name('tac-document-new-symbolic')
+        self.new_project_button.set_icon_name('document-new-symbolic')
         self.new_project_button.set_tooltip_text(_("New Project (Ctrl+N)"))
         self.new_project_button.set_action_name("app.new_project")
         self.header_bar.pack_start(self.new_project_button)
 
         # Pomodoro Timer Button
         self.pomodoro_button = Gtk.Button()
-        self.pomodoro_button.set_icon_name('tac-alarm-symbolic')
+        self.pomodoro_button.set_icon_name('alarm-symbolic')
         self.pomodoro_button.set_tooltip_text(_("Pomodoro Timer"))
         self.pomodoro_button.connect('clicked', self._on_pomodoro_clicked)
         self.pomodoro_button.set_sensitive(False)
@@ -156,13 +156,13 @@ class MainWindow(Adw.ApplicationWindow):
         # Right side buttons
         # Menu button
         menu_button = Gtk.MenuButton()
-        menu_button.set_icon_name('tac-open-menu-symbolic')
+        menu_button.set_icon_name('open-menu-symbolic')
         menu_button.set_tooltip_text(_("Main Menu"))
         self._setup_menu(menu_button)
         self.header_bar.pack_end(menu_button)
-        
+
         save_button = Gtk.Button()
-        save_button.set_icon_name('tac-document-save-symbolic')
+        save_button.set_icon_name('document-save-symbolic')
         save_button.set_tooltip_text(_("Save Project (Ctrl+S)"))
         save_button.set_action_name("app.save_project")
         save_button.set_sensitive(False)
@@ -392,7 +392,7 @@ class MainWindow(Adw.ApplicationWindow):
         # Add paragraph menu button
         self.add_button = Gtk.MenuButton()
         self.add_button.set_label(_("Add Paragraph"))
-        self.add_button.set_icon_name('tac-list-add-symbolic')
+        self.add_button.set_icon_name('list-add-symbolic')
         self.add_button.add_css_class("suggested-action")
 
         # Create menu model
@@ -435,7 +435,7 @@ class MainWindow(Adw.ApplicationWindow):
 
         # Go to top button
         top_button = Gtk.Button()
-        top_button.set_icon_name('tac-go-up-symbolic')
+        top_button.set_icon_name('go-up-symbolic')
         top_button.set_tooltip_text(_("Go to beginning"))
         top_button.add_css_class("circular")
         top_button.add_css_class("flat")
@@ -443,9 +443,9 @@ class MainWindow(Adw.ApplicationWindow):
         top_button.connect('clicked', self._on_scroll_to_top)
         nav_container.append(top_button)
 
-        # Go to bottom button  
+        # Go to bottom button
         bottom_button = Gtk.Button()
-        bottom_button.set_icon_name('tac-go-down-symbolic')
+        bottom_button.set_icon_name('go-down-symbolic')
         bottom_button.set_tooltip_text(_("Go to end"))
         bottom_button.add_css_class("circular")
         bottom_button.add_css_class("flat")

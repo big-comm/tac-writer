@@ -634,7 +634,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         # General page
         general_page = Adw.PreferencesPage()
         general_page.set_title(_("General"))
-        general_page.set_icon_name('tac-preferences-system-symbolic')
+        general_page.set_icon_name('preferences-system-symbolic')
         self.add(general_page)
 
         # Appearance group
@@ -652,7 +652,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         # Editor page
         editor_page = Adw.PreferencesPage()
         editor_page.set_title(_("Editor"))
-        editor_page.set_icon_name('tac-accessories-text-editor-symbolic')
+        editor_page.set_icon_name('accessories-text-editor-symbolic')
         self.add(editor_page)
 
         '''# Font group
@@ -1031,7 +1031,7 @@ class WelcomeDialog(Adw.Window):
         title_box.set_halign(Gtk.Align.CENTER)
 
         # App icon
-        icon = Gtk.Image.new_from_icon_name('tac-document-edit-symbolic')
+        icon = Gtk.Image.new_from_icon_name('document-edit-symbolic')
         icon.set_pixel_size(56)
         icon.add_css_class("accent")
         title_box.append(icon)
@@ -1068,7 +1068,7 @@ class WelcomeDialog(Adw.Window):
 
         wiki_button = Gtk.Button()
         wiki_button.set_label(_("Learn More - Online Documentation"))
-        wiki_button.set_icon_name('tac-help-browser-symbolic')
+        wiki_button.set_icon_name('help-browser-symbolic')
         wiki_button.add_css_class("suggested-action")
         wiki_button.add_css_class("wiki-help-button")
         wiki_button.set_tooltip_text(_("Access the complete guide and tutorials"))
@@ -1348,13 +1348,13 @@ class BackupManagerDialog(Adw.Window):
 
         # Status indicator
         if backup['is_valid']:
-            status_icon = Gtk.Image.new_from_icon_name('tac-emblem-ok-symbolic')
+            status_icon = Gtk.Image.new_from_icon_name('emblem-ok-symbolic')
             status_icon.set_tooltip_text(_("Valid backup"))
         else:
-            status_icon = Gtk.Image.new_from_icon_name('tac-dialog-warning-symbolic')
+            status_icon = Gtk.Image.new_from_icon_name('dialog-warning-symbolic')
             status_icon.set_tooltip_text(_("Invalid or corrupted backup"))
             status_icon.add_css_class("warning")
-            
+
         row.add_prefix(status_icon)
 
         # Action buttons
@@ -1363,7 +1363,7 @@ class BackupManagerDialog(Adw.Window):
         # Restore button
         if backup['is_valid']:
             restore_button = Gtk.Button()
-            restore_button.set_icon_name('tac-document-revert-symbolic')
+            restore_button.set_icon_name('document-revert-symbolic')
             restore_button.set_tooltip_text(_("Import this backup"))
             restore_button.add_css_class("flat")
             restore_button.connect('clicked', lambda btn, b=backup: self._on_restore_backup(b))
@@ -1371,7 +1371,7 @@ class BackupManagerDialog(Adw.Window):
 
         # Delete button
         delete_button = Gtk.Button()
-        delete_button.set_icon_name('tac-user-trash-symbolic')
+        delete_button.set_icon_name('user-trash-symbolic')
         delete_button.set_tooltip_text(_("Delete backup"))
         delete_button.add_css_class("flat")
         delete_button.add_css_class("destructive-action")

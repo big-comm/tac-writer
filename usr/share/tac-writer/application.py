@@ -263,46 +263,30 @@ class TacApplication(Adw.Application):
             self.config.set_spell_check_enabled(False)
     
     def _setup_icon_theme(self):
-        """Setup custom icon theme path for bundled icons"""
+        """Setup custom icon theme path with PRIORITY"""
         try:
-            # Get the application's directory (where application.py is located)
-            app_dir = os.path.dirname(os.path.abspath(__file__))
-            icons_dir = os.path.join(app_dir, 'icons')
-            
+            # Get application's directory
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            icons_dir = os.path.join(script_dir, 'icons')
+
             # Check if icons directory exists
             if os.path.exists(icons_dir):
-                # Create index.theme if it doesn't exist
-                index_theme_path = os.path.join(icons_dir, 'hicolor', 'index.theme')
-                if not os.path.exists(index_theme_path):
-                    try:
-                        os.makedirs(os.path.dirname(index_theme_path), exist_ok=True)
-                        with open(index_theme_path, 'w') as f:
-                            f.write("""[Icon Theme]
-Name=Hicolor
-Comment=Fallback icon theme
-Hidden=true
-Directories=scalable/actions
-
-[scalable/actions]
-Context=Actions
-Size=48
-MinSize=1
-MaxSize=512
-Type=Scalable
-""")
-                    except Exception:
-                        pass  # Silent failure if can't create index.theme
-                
-                # Get default icon theme and add custom icons directory
+                # Get default icon theme
                 icon_theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
-                icon_theme.add_search_path(icons_dir)
-                
+
+                # Get current search paths
+                current_paths = icon_theme.get_search_path()
+
+                # CRITICAL: Prepend (not append) to ensure priority
+                new_paths = [icons_dir] + current_paths
+                icon_theme.set_search_path(new_paths)
+
                 if os.environ.get('TAC_DEBUG'):
-                    print(_("Custom icon theme path added: {}").format(icons_dir))
-                    
+                    print(_("Custom icons loaded with priority: {}").format(icons_dir))
+
         except Exception as e:
             if os.environ.get('TAC_DEBUG'):
-                print(_("Error setting up icon theme: {}: {}").format(type(e).__name__, e))
+                print(_("Warning: Could not setup icon theme: {}").format(e))
     
     def _on_startup(self, app):
         """Called when application starts"""
@@ -326,35 +310,6 @@ Type=Scalable
     def _on_activate(self, app):
         """Called when application is activated"""
         try:
-            # Prioritize the project's bundled icon path over system themes.
-            try:
-                # Get the default icon theme object
-                icon_theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
-                
-                # Get the current list of system search paths
-                current_paths = icon_theme.get_search_path()
-                
-                # Define the path to the project's bundled icons
-                script_dir = os.path.dirname(os.path.abspath(__file__))
-                project_icon_path = os.path.join(script_dir, 'icons')
-                
-                if os.path.isdir(project_icon_path):
-                    # Create a new list of paths with the project's path at the beginning
-                    new_paths = [project_icon_path] + current_paths
-                    
-                    # Set the new, prioritized search path list
-                    icon_theme.set_search_path(new_paths)
-                    
-                    if os.environ.get('TAC_DEBUG'):
-                        print(f"Prioritized project icon path: {project_icon_path}")
-                else:
-                    if os.environ.get('TAC_DEBUG'):
-                        print(f"Project icon path not found: {project_icon_path}")
-
-            except Exception as e:
-                if os.environ.get('TAC_DEBUG'):
-                    print(f"Could not set prioritized icon path: {e}")
-
             if not self.main_window:
                 self.main_window = MainWindow(
                     application=self,
